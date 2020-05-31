@@ -16,5 +16,18 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void buttonItem19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIngreso_Click(object sender, EventArgs e)
+        {
+            btnIngreso.Enabled = false;
+            frmIngreso frm = new frmIngreso();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
