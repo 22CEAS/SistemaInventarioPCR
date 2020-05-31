@@ -79,7 +79,6 @@
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.applicationButton1,
             this.ribbonTabItem1,
             this.ribbonTabItem2,
             this.ribbonTabItem3,
@@ -89,6 +88,7 @@
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.ribbonControl1.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.applicationButton1,
             this.buttonItem1,
             this.qatCustomizeItem1});
             this.ribbonControl1.Size = new System.Drawing.Size(800, 154);
@@ -123,10 +123,10 @@
             this.ribbonPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel1.Controls.Add(this.ribbonBar1);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(800, 98);
+            this.ribbonPanel1.Size = new System.Drawing.Size(800, 95);
             // 
             // 
             // 
@@ -153,10 +153,10 @@
             // 
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(800, 98);
+            this.ribbonPanel2.Size = new System.Drawing.Size(800, 95);
             // 
             // 
             // 
@@ -173,7 +173,7 @@
             // 
             // styleManager1
             // 
-            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2010Blue;
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2007Blue;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // qatCustomizeItem1
@@ -195,7 +195,7 @@
             this.ribbonBar1.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar1.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar1.Name = "ribbonBar1";
-            this.ribbonBar1.Size = new System.Drawing.Size(100, 95);
+            this.ribbonBar1.Size = new System.Drawing.Size(100, 92);
             this.ribbonBar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar1.TabIndex = 0;
             this.ribbonBar1.Text = "ribbonBar1";
@@ -214,9 +214,8 @@
             this.applicationButton1.CanCustomize = false;
             this.applicationButton1.HotTrackingStyle = DevComponents.DotNetBar.eHotTrackingStyle.Image;
             this.applicationButton1.Image = ((System.Drawing.Image)(resources.GetObject("applicationButton1.Image")));
-            this.applicationButton1.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.applicationButton1.ImagePaddingHorizontal = 0;
-            this.applicationButton1.ImagePaddingVertical = 0;
+            this.applicationButton1.ImagePaddingHorizontal = 2;
+            this.applicationButton1.ImagePaddingVertical = 2;
             this.applicationButton1.Name = "applicationButton1";
             this.applicationButton1.ShowSubItems = false;
             this.applicationButton1.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -487,6 +486,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ribbonControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ribbonControl1.ResumeLayout(false);
