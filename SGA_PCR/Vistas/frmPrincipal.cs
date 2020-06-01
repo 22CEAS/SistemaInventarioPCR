@@ -35,7 +35,7 @@ namespace Vistas
 
         private void btnCrearMemoria_Click(object sender, EventArgs e)
         {
-            btnCrearProcesador.Enabled = false;
+            btnCrearMemoria.Enabled = false;
             frmCrearMemoria frm = new frmCrearMemoria();
             frm.MdiParent = this;
             frm.Show();
@@ -43,7 +43,7 @@ namespace Vistas
 
         private void btnCrearDisco_Click(object sender, EventArgs e)
         {
-            btnCrearProcesador.Enabled = false;
+            btnCrearDisco.Enabled = false;
             frmCrearDiscoDuro frm = new frmCrearDiscoDuro();
             frm.MdiParent = this;
             frm.Show();
@@ -51,15 +51,15 @@ namespace Vistas
 
         private void btnCrearTarjetaVideo_Click(object sender, EventArgs e)
         {
-            btnCrearProcesador.Enabled = false;
+            btnCrearTarjetaVideo.Enabled = false;
             frmCrearTarjetaVideo frm = new frmCrearTarjetaVideo();
             frm.MdiParent = this;
             frm.Show();
         }
 
-        private void buttonItem14_Click(object sender, EventArgs e)
+        private void btnCrearCliente_Click(object sender, EventArgs e)
         {
-            btnCrearProcesador.Enabled = false;
+            btnCrearCliente.Enabled = false;
             frmCrearCliente frm = new frmCrearCliente();
             frm.MdiParent = this;
             frm.Show();
@@ -67,7 +67,7 @@ namespace Vistas
 
         private void btnProveedor_Click(object sender, EventArgs e)
         {
-            btnCrearProcesador.Enabled = false;
+            btnProveedor.Enabled = false;
             frmCrearProveedor frm = new frmCrearProveedor();
             frm.MdiParent = this;
             frm.Show();
@@ -76,10 +76,23 @@ namespace Vistas
 
         private void btnDevolucion_Click(object sender, EventArgs e)
         {
-            btnCrearProcesador.Enabled = false;
+            btnDevolucion.Enabled = false;
             frmDevolucion frm = new frmDevolucion();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void btnAlquiler_Click(object sender, EventArgs e)
+        {
+            btnAlquiler.Enabled = false;
+            frmAlquiler frm = new frmAlquiler();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnCambio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
