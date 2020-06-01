@@ -92,6 +92,18 @@
     <Compile Include="frmCrearTarjetaVideo.Designer.cs">
       <DependentUpon>frmCrearTarjetaVideo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDevolucion.Designer.cs">
+      <DependentUpon>frmDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvaluarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvaluarEquipo.Designer.cs">
+      <DependentUpon>frmEvaluarEquipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearTarjetaVideo.resx">
       <DependentUpon>frmCrearTarjetaVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDevolucion.resx">
+      <DependentUpon>frmDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvaluarEquipo.resx">
+      <DependentUpon>frmEvaluarEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIngreso.resx">
       <DependentUpon>frmIngreso.cs</DependentUpon>

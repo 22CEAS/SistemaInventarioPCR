@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -61,6 +61,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(361, 21);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -69,6 +70,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(136, 20);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -76,6 +78,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(69, 20);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -83,6 +86,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 3;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // dtpFechaIngreso
             // 
@@ -118,6 +122,7 @@
             this.dtpFechaIngreso.Size = new System.Drawing.Size(141, 20);
             this.dtpFechaIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpFechaIngreso.TabIndex = 5;
+            this.dtpFechaIngreso.Click += new System.EventHandler(this.dtpFechaIngreso_Click);
             // 
             // superGridControl1
             // 
@@ -126,22 +131,22 @@
             this.superGridControl1.ForeColor = System.Drawing.Color.Black;
             this.superGridControl1.Location = new System.Drawing.Point(42, 184);
             this.superGridControl1.Name = "superGridControl1";
-            gridColumn17.Name = "Codigo";
-            gridColumn18.Name = "Modelo";
-            gridColumn19.Name = "Marca";
-            gridColumn20.Name = "Pantalla";
-            gridColumn21.Name = "Procesador";
-            gridColumn22.Name = "Generacion";
-            gridColumn23.Name = "Disco";
-            gridColumn24.Name = "Memoria";
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn17);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn18);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn19);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn20);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn21);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn22);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn23);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn24);
+            gridColumn1.Name = "Codigo";
+            gridColumn2.Name = "Modelo";
+            gridColumn3.Name = "Marca";
+            gridColumn4.Name = "Pantalla";
+            gridColumn5.Name = "Procesador";
+            gridColumn6.Name = "Generacion";
+            gridColumn7.Name = "Disco";
+            gridColumn8.Name = "Memoria";
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn1);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn2);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn3);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn4);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn5);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn6);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn7);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn8);
             this.superGridControl1.Size = new System.Drawing.Size(648, 327);
             this.superGridControl1.TabIndex = 6;
             this.superGridControl1.Text = "superGridControl1";
@@ -155,6 +160,7 @@
             this.label1.Size = new System.Drawing.Size(72, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Proveedor";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -165,6 +171,7 @@
             this.label3.Size = new System.Drawing.Size(115, 16);
             this.label3.TabIndex = 9;
             this.label3.Text = "Guía de Remision";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -175,6 +182,7 @@
             this.label4.Size = new System.Drawing.Size(113, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Fecha de Ingreso";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -185,6 +193,7 @@
             this.label5.Size = new System.Drawing.Size(12, 16);
             this.label5.TabIndex = 11;
             this.label5.Text = "-";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnAgregarProducto
             // 
@@ -206,6 +215,7 @@
             this.label6.Size = new System.Drawing.Size(105, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "Hora de Ingreso";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dateTimeInput1
             // 
@@ -256,6 +266,7 @@
             this.dateTimeInput1.Size = new System.Drawing.Size(97, 20);
             this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput1.TabIndex = 13;
+            this.dateTimeInput1.Click += new System.EventHandler(this.dateTimeInput1_Click);
             // 
             // LabelX4
             // 
@@ -271,6 +282,7 @@
             this.LabelX4.Size = new System.Drawing.Size(29, 16);
             this.LabelX4.TabIndex = 15;
             this.LabelX4.Text = "RUC";
+            this.LabelX4.Click += new System.EventHandler(this.LabelX4_Click);
             // 
             // frmIngreso
             // 

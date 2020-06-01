@@ -73,5 +73,13 @@ namespace Vistas
             frm.Show();
 
         }
+
+        private void btnDevolucion_Click(object sender, EventArgs e)
+        {
+            btnCrearProcesador.Enabled = false;
+            frmDevolucion frm = new frmDevolucion();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
