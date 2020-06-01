@@ -64,6 +64,14 @@ namespace Vistas
             frm.MdiParent = this;
             frm.Show();
         }
-        
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            btnCrearProcesador.Enabled = false;
+            frmCrearProveedor frm = new frmCrearProveedor();
+            frm.MdiParent = this;
+            frm.Show();
+
+        }
     }
 }
