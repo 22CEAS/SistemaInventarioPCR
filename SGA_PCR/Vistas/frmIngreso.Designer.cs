@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -89,8 +89,7 @@
             // 
             // 
             // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaIngreso.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtpFechaIngreso.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFechaIngreso.ButtonDropDown.Visible = true;
             this.dtpFechaIngreso.IsPopupCalendarOpen = false;
@@ -98,35 +97,23 @@
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dtpFechaIngreso.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
+            this.dtpFechaIngreso.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dtpFechaIngreso.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaIngreso.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
+            this.dtpFechaIngreso.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpFechaIngreso.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpFechaIngreso.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaIngreso.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(141, 20);
             this.dtpFechaIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -137,22 +124,22 @@
             this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl1.Location = new System.Drawing.Point(42, 184);
             this.superGridControl1.Name = "superGridControl1";
-            gridColumn9.Name = "Codigo";
-            gridColumn10.Name = "Modelo";
-            gridColumn11.Name = "Marca";
-            gridColumn12.Name = "Pantalla";
-            gridColumn13.Name = "Procesador";
-            gridColumn14.Name = "Generacion";
-            gridColumn15.Name = "Disco";
-            gridColumn16.Name = "Memoria";
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn9);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn10);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn11);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn12);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn13);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn14);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn15);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn16);
+            gridColumn1.Name = "Codigo";
+            gridColumn2.Name = "Modelo";
+            gridColumn3.Name = "Marca";
+            gridColumn4.Name = "Pantalla";
+            gridColumn5.Name = "Procesador";
+            gridColumn6.Name = "Generacion";
+            gridColumn7.Name = "Disco";
+            gridColumn8.Name = "Memoria";
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn1);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn2);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn3);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn4);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn5);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn6);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn7);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn8);
             this.superGridControl1.Size = new System.Drawing.Size(648, 327);
             this.superGridControl1.TabIndex = 6;
             this.superGridControl1.Text = "superGridControl1";
@@ -306,6 +293,7 @@
             this.Name = "frmIngreso";
             this.Text = "frmIngreso";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmIngreso_FormClosed);
+            this.Load += new System.EventHandler(this.frmIngreso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             this.ResumeLayout(false);

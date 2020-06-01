@@ -50,6 +50,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCrearDiscoDuro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearDiscoDuro.Designer.cs">
+      <DependentUpon>frmCrearDiscoDuro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearProcesador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearProcesador.Designer.cs">
+      <DependentUpon>frmCrearProcesador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearMemoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearMemoria.Designer.cs">
+      <DependentUpon>frmCrearMemoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearTarjetaVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearTarjetaVideo.Designer.cs">
+      <DependentUpon>frmCrearTarjetaVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +94,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCrearDiscoDuro.resx">
+      <DependentUpon>frmCrearDiscoDuro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearProcesador.resx">
+      <DependentUpon>frmCrearProcesador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearMemoria.resx">
+      <DependentUpon>frmCrearMemoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearTarjetaVideo.resx">
+      <DependentUpon>frmCrearTarjetaVideo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIngreso.resx">
       <DependentUpon>frmIngreso.cs</DependentUpon>
     </EmbeddedResource>

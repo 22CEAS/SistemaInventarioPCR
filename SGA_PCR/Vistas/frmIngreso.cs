@@ -35,5 +35,10 @@ namespace Vistas
             
             //frmPrincipal.btnIngreso.Enabled = true;
         }
+
+        private void frmIngreso_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
