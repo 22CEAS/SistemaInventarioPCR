@@ -16,5 +16,25 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAlquiler_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void superGridControl2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
