@@ -56,5 +56,14 @@ namespace Vistas
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void buttonItem14_Click(object sender, EventArgs e)
+        {
+            btnCrearProcesador.Enabled = false;
+            frmCrearCliente frm = new frmCrearCliente();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+        
     }
 }
