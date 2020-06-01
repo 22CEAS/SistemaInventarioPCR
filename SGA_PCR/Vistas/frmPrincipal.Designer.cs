@@ -154,7 +154,7 @@
             this.Proveedor.Size = new System.Drawing.Size(100, 95);
             this.Proveedor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.Proveedor.TabIndex = 2;
-            this.Proveedor.Text = "ribbonBar5";
+            this.Proveedor.Text = "Proveedor";
             // 
             // 
             // 
