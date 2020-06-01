@@ -121,7 +121,9 @@
             // 
             // superGridControl1
             // 
+            this.superGridControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl1.ForeColor = System.Drawing.Color.Black;
             this.superGridControl1.Location = new System.Drawing.Point(42, 184);
             this.superGridControl1.Name = "superGridControl1";
             gridColumn1.Name = "Codigo";
@@ -186,6 +188,7 @@
             // 
             // btnAgregarProducto
             // 
+            this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarProducto.Location = new System.Drawing.Point(696, 216);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(75, 41);
