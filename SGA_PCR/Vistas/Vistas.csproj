@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCrearCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearCliente.Designer.cs">
+      <DependentUpon>frmCrearCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrearDiscoDuro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCrearCliente.resx">
+      <DependentUpon>frmCrearCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCrearDiscoDuro.resx">
       <DependentUpon>frmCrearDiscoDuro.cs</DependentUpon>
     </EmbeddedResource>

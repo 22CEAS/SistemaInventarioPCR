@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -126,22 +126,22 @@
             this.superGridControl1.ForeColor = System.Drawing.Color.Black;
             this.superGridControl1.Location = new System.Drawing.Point(42, 184);
             this.superGridControl1.Name = "superGridControl1";
-            gridColumn1.Name = "Codigo";
-            gridColumn2.Name = "Modelo";
-            gridColumn3.Name = "Marca";
-            gridColumn4.Name = "Pantalla";
-            gridColumn5.Name = "Procesador";
-            gridColumn6.Name = "Generacion";
-            gridColumn7.Name = "Disco";
-            gridColumn8.Name = "Memoria";
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn1);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn2);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn3);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn4);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn5);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn6);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn7);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn8);
+            gridColumn17.Name = "Codigo";
+            gridColumn18.Name = "Modelo";
+            gridColumn19.Name = "Marca";
+            gridColumn20.Name = "Pantalla";
+            gridColumn21.Name = "Procesador";
+            gridColumn22.Name = "Generacion";
+            gridColumn23.Name = "Disco";
+            gridColumn24.Name = "Memoria";
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn17);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn18);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn19);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn20);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn21);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn22);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn23);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn24);
             this.superGridControl1.Size = new System.Drawing.Size(648, 327);
             this.superGridControl1.TabIndex = 6;
             this.superGridControl1.Text = "superGridControl1";
@@ -276,6 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 523);
             this.Controls.Add(this.LabelX4);
             this.Controls.Add(this.label6);
@@ -291,6 +292,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmIngreso";
