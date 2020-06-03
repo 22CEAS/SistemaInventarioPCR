@@ -28,16 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn49 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn50 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn51 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn52 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn53 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn54 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn55 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn56 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn57 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn58 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn59 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn60 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn61 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn62 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn63 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn64 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.LabelX4 = new DevComponents.DotNetBar.LabelX();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -46,7 +52,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.dtpFechaIngreso = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -64,9 +69,15 @@
             this.dateTimeInput4 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnEditarMemoria = new System.Windows.Forms.Button();
+            this.btnEditarDisco = new System.Windows.Forms.Button();
             this.superGridControl2 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.superGridControl4 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.btnEditarLicencia = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.superGridControl5 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).BeginInit();
@@ -157,6 +168,7 @@
             this.btnAgregarProducto.TabIndex = 26;
             this.btnAgregarProducto.Text = "Agregar Producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // label5
             // 
@@ -197,31 +209,6 @@
             this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 22;
             this.label1.Text = "Cliente:";
-            // 
-            // superGridControl1
-            // 
-            this.superGridControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.superGridControl1.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl1.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl1.Location = new System.Drawing.Point(48, 155);
-            this.superGridControl1.Name = "superGridControl1";
-            gridColumn1.Name = "Codigo";
-            gridColumn2.Name = "Equipo";
-            gridColumn3.Name = "Modelo";
-            gridColumn4.Name = "Marca";
-            gridColumn5.Name = "Pantalla";
-            gridColumn6.Name = "Procesador";
-            gridColumn7.Name = "Generación";
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn1);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn2);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn3);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn4);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn5);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn6);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn7);
-            this.superGridControl1.Size = new System.Drawing.Size(517, 359);
-            this.superGridControl1.TabIndex = 21;
-            this.superGridControl1.Text = "superGridControl1";
             // 
             // dtpFechaIngreso
             // 
@@ -290,7 +277,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(704, 491);
+            this.button2.Location = new System.Drawing.Point(704, 629);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 31;
@@ -299,7 +286,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(818, 491);
+            this.button1.Location = new System.Drawing.Point(818, 629);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 30;
@@ -439,7 +426,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(608, 155);
+            this.label11.Location = new System.Drawing.Point(608, 164);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 16);
             this.label11.TabIndex = 42;
@@ -449,58 +436,179 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(608, 291);
+            this.label12.Location = new System.Drawing.Point(608, 316);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 16);
             this.label12.TabIndex = 43;
             this.label12.Text = "Disco Duro:";
             // 
-            // button3
+            // btnEditarMemoria
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(824, 146);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(69, 25);
-            this.button3.TabIndex = 44;
-            this.button3.Text = "Editar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEditarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarMemoria.Location = new System.Drawing.Point(824, 155);
+            this.btnEditarMemoria.Name = "btnEditarMemoria";
+            this.btnEditarMemoria.Size = new System.Drawing.Size(69, 25);
+            this.btnEditarMemoria.TabIndex = 44;
+            this.btnEditarMemoria.Text = "Editar";
+            this.btnEditarMemoria.UseVisualStyleBackColor = true;
+            this.btnEditarMemoria.Click += new System.EventHandler(this.btnEditarMemoria_Click);
             // 
-            // button4
+            // btnEditarDisco
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(824, 282);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(69, 25);
-            this.button4.TabIndex = 45;
-            this.button4.Text = "Editar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnEditarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarDisco.Location = new System.Drawing.Point(824, 312);
+            this.btnEditarDisco.Name = "btnEditarDisco";
+            this.btnEditarDisco.Size = new System.Drawing.Size(69, 25);
+            this.btnEditarDisco.TabIndex = 45;
+            this.btnEditarDisco.Text = "Editar";
+            this.btnEditarDisco.UseVisualStyleBackColor = true;
+            this.btnEditarDisco.Click += new System.EventHandler(this.btnEditarDisco_Click);
             // 
             // superGridControl2
             // 
             this.superGridControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.superGridControl2.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl2.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl2.Location = new System.Drawing.Point(606, 177);
+            this.superGridControl2.Location = new System.Drawing.Point(606, 186);
             this.superGridControl2.Name = "superGridControl2";
-            gridColumn8.Name = "Codigo";
-            gridColumn9.Name = "frecuencuia";
-            gridColumn10.Name = "Generación";
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn8);
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn9);
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn10);
+            gridColumn49.Name = "Codigo";
+            gridColumn50.Name = "frecuencuia";
+            gridColumn51.Name = "Generación";
+            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn49);
+            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn50);
+            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn51);
             this.superGridControl2.Size = new System.Drawing.Size(287, 99);
             this.superGridControl2.TabIndex = 46;
             this.superGridControl2.Text = "superGridControl2";
             this.superGridControl2.Click += new System.EventHandler(this.superGridControl2_Click);
             // 
+            // superGridControl3
+            // 
+            this.superGridControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl3.ForeColor = System.Drawing.Color.Black;
+            this.superGridControl3.Location = new System.Drawing.Point(606, 343);
+            this.superGridControl3.Name = "superGridControl3";
+            gridColumn52.Name = "Codigo";
+            gridColumn53.Name = "frecuencuia";
+            gridColumn54.Name = "Generación";
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn52);
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn53);
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn54);
+            this.superGridControl3.Size = new System.Drawing.Size(287, 99);
+            this.superGridControl3.TabIndex = 47;
+            this.superGridControl3.Text = "superGridControl3";
+            // 
+            // superGridControl4
+            // 
+            this.superGridControl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.superGridControl4.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl4.ForeColor = System.Drawing.Color.Black;
+            this.superGridControl4.Location = new System.Drawing.Point(606, 502);
+            this.superGridControl4.Name = "superGridControl4";
+            gridColumn55.Name = "Codigo";
+            gridColumn56.Name = "frecuencuia";
+            gridColumn57.Name = "Generación";
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn55);
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn56);
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn57);
+            this.superGridControl4.Size = new System.Drawing.Size(287, 99);
+            this.superGridControl4.TabIndex = 50;
+            this.superGridControl4.Text = "superGridControl4";
+            // 
+            // btnEditarLicencia
+            // 
+            this.btnEditarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarLicencia.Location = new System.Drawing.Point(824, 471);
+            this.btnEditarLicencia.Name = "btnEditarLicencia";
+            this.btnEditarLicencia.Size = new System.Drawing.Size(69, 25);
+            this.btnEditarLicencia.TabIndex = 49;
+            this.btnEditarLicencia.Text = "Editar";
+            this.btnEditarLicencia.UseVisualStyleBackColor = true;
+            this.btnEditarLicencia.Click += new System.EventHandler(this.btnEditarLicencia_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(608, 475);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 16);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "Licencia:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(45, 164);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(164, 16);
+            this.label14.TabIndex = 51;
+            this.label14.Text = "Productos seleccionados:";
+            // 
+            // superGridControl5
+            // 
+            this.superGridControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.superGridControl5.BackColor = System.Drawing.Color.White;
+            this.superGridControl5.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl5.ForeColor = System.Drawing.Color.Black;
+            this.superGridControl5.Location = new System.Drawing.Point(48, 186);
+            this.superGridControl5.Name = "superGridControl5";
+            this.superGridControl5.PrimaryGrid.AllowRowHeaderResize = true;
+            this.superGridControl5.PrimaryGrid.AllowRowResize = true;
+            this.superGridControl5.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn58.Name = "Código";
+            gridColumn58.Width = 110;
+            gridColumn59.Name = "Equipo";
+            gridColumn59.Width = 110;
+            gridColumn60.FilterAutoScan = true;
+            gridColumn60.Name = "Modelo";
+            gridColumn60.Width = 110;
+            gridColumn61.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
+            gridColumn61.Name = "Marca";
+            gridColumn61.Width = 110;
+            gridColumn62.Name = "Pantalla";
+            gridColumn62.Width = 110;
+            gridColumn63.Name = "Procesador";
+            gridColumn64.Name = "Generación";
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn58);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn59);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn60);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn61);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn62);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn63);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn64);
+            this.superGridControl5.PrimaryGrid.DefaultRowHeight = 24;
+            this.superGridControl5.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.superGridControl5.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.superGridControl5.PrimaryGrid.EnableColumnFiltering = true;
+            this.superGridControl5.PrimaryGrid.EnableFiltering = true;
+            this.superGridControl5.PrimaryGrid.EnableRowFiltering = true;
+            this.superGridControl5.PrimaryGrid.Filter.Visible = true;
+            this.superGridControl5.PrimaryGrid.NullString = "<<null>>";
+            this.superGridControl5.PrimaryGrid.RowHeaderWidth = 45;
+            this.superGridControl5.PrimaryGrid.ShowRowGridIndex = true;
+            this.superGridControl5.Size = new System.Drawing.Size(517, 415);
+            this.superGridControl5.TabIndex = 52;
+            this.superGridControl5.Text = "superGridControl5";
+            // 
             // frmAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 547);
+            this.ClientSize = new System.Drawing.Size(936, 665);
+            this.Controls.Add(this.superGridControl5);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.superGridControl4);
+            this.Controls.Add(this.btnEditarLicencia);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.superGridControl3);
             this.Controls.Add(this.superGridControl2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnEditarDisco);
+            this.Controls.Add(this.btnEditarMemoria);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dateTimeInput4);
@@ -521,7 +629,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.superGridControl1);
             this.Controls.Add(this.dtpFechaIngreso);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -549,7 +656,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl1;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFechaIngreso;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
@@ -567,8 +673,14 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEditarMemoria;
+        private System.Windows.Forms.Button btnEditarDisco;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl2;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl3;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl4;
+        private System.Windows.Forms.Button btnEditarLicencia;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl5;
     }
 }

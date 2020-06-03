@@ -36,5 +36,49 @@ namespace Vistas
         {
 
         }
+
+        private void btnEditarMemoria_Click(object sender, EventArgs e)
+        {
+            using (frmEditarMemoria frm = new frmEditarMemoria())
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void btnEditarDisco_Click(object sender, EventArgs e)
+        {
+            using (frmEditarDisco frm = new frmEditarDisco())
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void btnEditarLicencia_Click(object sender, EventArgs e)
+        {
+            using (frmEditarLicencia frm = new frmEditarLicencia())
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            using (frmAgregarProducto frm = new frmAgregarProducto())
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 }

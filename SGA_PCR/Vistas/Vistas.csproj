@@ -50,6 +50,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarProducto.Designer.cs">
+      <DependentUpon>frmAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarDisco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarDisco.Designer.cs">
+      <DependentUpon>frmEditarDisco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarLicencia.Designer.cs">
+      <DependentUpon>frmEditarLicencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarMemoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarMemoria.Designer.cs">
+      <DependentUpon>frmEditarMemoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlquiler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +148,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgregarProducto.resx">
+      <DependentUpon>frmAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAlquiler.resx">
       <DependentUpon>frmAlquiler.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +174,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDevolucion.resx">
       <DependentUpon>frmDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarDisco.resx">
+      <DependentUpon>frmEditarDisco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarLicencia.resx">
+      <DependentUpon>frmEditarLicencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarMemoria.resx">
+      <DependentUpon>frmEditarMemoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvaluarEquipo.resx">
       <DependentUpon>frmEvaluarEquipo.cs</DependentUpon>
