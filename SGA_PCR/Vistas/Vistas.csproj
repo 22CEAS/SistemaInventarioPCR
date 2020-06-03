@@ -56,6 +56,12 @@
     <Compile Include="frmAlquiler.Designer.cs">
       <DependentUpon>frmAlquiler.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambio.Designer.cs">
+      <DependentUpon>frmCambio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrearCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,10 +128,19 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductoCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductoCambio.Designer.cs">
+      <DependentUpon>frmProductoCambio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAlquiler.resx">
       <DependentUpon>frmAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambio.resx">
+      <DependentUpon>frmCambio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearCliente.resx">
       <DependentUpon>frmCrearCliente.cs</DependentUpon>

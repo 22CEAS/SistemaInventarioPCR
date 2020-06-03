@@ -92,6 +92,10 @@ namespace Vistas
 
         private void btnCambio_Click(object sender, EventArgs e)
         {
+            btnCambio.Enabled = false;
+            frmCambio frm = new frmCambio();
+            frm.MdiParent = this;
+            frm.Show();
 
         }
     }
