@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
@@ -43,6 +47,10 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -59,10 +67,17 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerieFabrico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabItem5 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
+            this.tabItem6 = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
+            this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.superGridControl2 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.tabItem1 = new DevComponents.DotNetBar.TabItem(this.components);
@@ -72,21 +87,18 @@
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.superGridControl1 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.tabItem3 = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
-            this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabItem4 = new DevComponents.DotNetBar.TabItem(this.components);
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.superGridControl4 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabControlPanel6.SuspendLayout();
+            this.tabControlPanel4.SuspendLayout();
             this.tabControlPanel1.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
             this.tabControlPanel3.SuspendLayout();
-            this.tabControlPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -223,6 +235,7 @@
             this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel4);
+            this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.ForeColor = System.Drawing.Color.Black;
             this.tabControl1.Location = new System.Drawing.Point(12, 23);
             this.tabControl1.Name = "tabControl1";
@@ -237,6 +250,7 @@
             this.tabControl1.Tabs.Add(this.tabItem2);
             this.tabControl1.Tabs.Add(this.tabItem3);
             this.tabControl1.Tabs.Add(this.tabItem4);
+            this.tabControl1.Tabs.Add(this.tabItem6);
             // 
             // tabControlPanel5
             // 
@@ -262,14 +276,32 @@
             this.tabControlPanel5.Name = "tabControlPanel5";
             this.tabControlPanel5.Padding = new System.Windows.Forms.Padding(1);
             this.tabControlPanel5.Size = new System.Drawing.Size(618, 311);
-            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.tabControlPanel5.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel5.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.tabControlPanel5.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(198)))));
+            this.tabControlPanel5.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
             this.tabControlPanel5.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel5.Style.GradientAngle = 90;
             this.tabControlPanel5.TabIndex = 5;
             this.tabControlPanel5.TabItem = this.tabItem5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(43, 279);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 16);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Precio";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(103, 279);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(64, 20);
+            this.textBox4.TabIndex = 24;
             // 
             // dataGridView1
             // 
@@ -301,6 +333,96 @@
             this.tabItem5.Name = "tabItem5";
             this.tabItem5.Text = "Detalles";
             // 
+            // tabControlPanel6
+            // 
+            this.tabControlPanel6.Controls.Add(this.superGridControl4);
+            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel6.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel6.Name = "tabControlPanel6";
+            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel6.Size = new System.Drawing.Size(618, 311);
+            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel6.Style.GradientAngle = 90;
+            this.tabControlPanel6.TabIndex = 6;
+            this.tabControlPanel6.TabItem = this.tabItem6;
+            // 
+            // tabItem6
+            // 
+            this.tabItem6.AttachedControl = this.tabControlPanel6;
+            this.tabItem6.Name = "tabItem6";
+            this.tabItem6.Text = "Licencias";
+            // 
+            // tabControlPanel4
+            // 
+            this.tabControlPanel4.Controls.Add(this.superGridControl3);
+            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel4.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel4.Name = "tabControlPanel4";
+            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel4.Size = new System.Drawing.Size(618, 311);
+            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.GradientAngle = 90;
+            this.tabControlPanel4.TabIndex = 4;
+            this.tabControlPanel4.TabItem = this.tabItem4;
+            // 
+            // superGridControl3
+            // 
+            this.superGridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.superGridControl3.BackColor = System.Drawing.Color.White;
+            this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl3.ForeColor = System.Drawing.Color.Black;
+            this.superGridControl3.Location = new System.Drawing.Point(59, 11);
+            this.superGridControl3.Name = "superGridControl3";
+            this.superGridControl3.PrimaryGrid.AllowRowHeaderResize = true;
+            this.superGridControl3.PrimaryGrid.AllowRowResize = true;
+            this.superGridControl3.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn15.Name = "Selección";
+            gridColumn15.Width = 70;
+            gridColumn16.Name = "Marca";
+            gridColumn16.Width = 150;
+            gridColumn17.FilterAutoScan = true;
+            gridColumn17.Name = "Modelo";
+            gridColumn17.Width = 150;
+            gridColumn18.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
+            gridColumn18.Name = "Capacidad";
+            gridColumn18.Width = 150;
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn15);
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn16);
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn17);
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn18);
+            this.superGridControl3.PrimaryGrid.DefaultRowHeight = 24;
+            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.superGridControl3.PrimaryGrid.EnableColumnFiltering = true;
+            this.superGridControl3.PrimaryGrid.EnableFiltering = true;
+            this.superGridControl3.PrimaryGrid.EnableRowFiltering = true;
+            this.superGridControl3.PrimaryGrid.Filter.Visible = true;
+            this.superGridControl3.PrimaryGrid.NullString = "<<null>>";
+            this.superGridControl3.PrimaryGrid.RowHeaderWidth = 45;
+            this.superGridControl3.PrimaryGrid.ShowRowGridIndex = true;
+            this.superGridControl3.Size = new System.Drawing.Size(495, 285);
+            this.superGridControl3.TabIndex = 30;
+            this.superGridControl3.Text = "superGridControl3";
+            // 
+            // tabItem4
+            // 
+            this.tabItem4.AttachedControl = this.tabControlPanel4;
+            this.tabItem4.Name = "tabItem4";
+            this.tabItem4.Text = "Tarjeta de Video";
+            // 
             // tabControlPanel1
             // 
             this.tabControlPanel1.Controls.Add(this.superGridControl2);
@@ -309,9 +431,10 @@
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
             this.tabControlPanel1.Size = new System.Drawing.Size(618, 311);
-            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(198)))));
+            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
             this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel1.Style.GradientAngle = 90;
@@ -331,20 +454,24 @@
             this.superGridControl2.PrimaryGrid.AllowRowHeaderResize = true;
             this.superGridControl2.PrimaryGrid.AllowRowResize = true;
             this.superGridControl2.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.Name = "Tipo";
-            gridColumn1.Width = 120;
-            gridColumn2.Name = "Generación";
+            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn1.Name = "Selección";
+            gridColumn1.Width = 70;
+            gridColumn2.Name = "Tipo";
             gridColumn2.Width = 120;
-            gridColumn3.FilterAutoScan = true;
-            gridColumn3.Name = "Velocidad";
+            gridColumn3.Name = "Generación";
             gridColumn3.Width = 120;
-            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn4.Name = "Velocidad Max";
+            gridColumn4.FilterAutoScan = true;
+            gridColumn4.Name = "Velocidad";
             gridColumn4.Width = 120;
+            gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
+            gridColumn5.Name = "Velocidad Max";
+            gridColumn5.Width = 120;
             this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn1);
             this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn2);
             this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn3);
             this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn4);
+            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn5);
             this.superGridControl2.PrimaryGrid.DefaultRowHeight = 24;
             this.superGridControl2.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.superGridControl2.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -373,9 +500,10 @@
             this.tabControlPanel2.Name = "tabControlPanel2";
             this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
             this.tabControlPanel2.Size = new System.Drawing.Size(618, 311);
-            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(198)))));
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
             this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel2.Style.GradientAngle = 90;
@@ -395,20 +523,24 @@
             this.superGridControl5.PrimaryGrid.AllowRowHeaderResize = true;
             this.superGridControl5.PrimaryGrid.AllowRowResize = true;
             this.superGridControl5.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn5.Name = "Categoría";
-            gridColumn5.Width = 120;
-            gridColumn6.Name = "Tipo";
-            gridColumn6.Width = 120;
-            gridColumn7.FilterAutoScan = true;
-            gridColumn7.Name = "Frecuencia";
+            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn6.Name = "Selección";
+            gridColumn6.Width = 70;
+            gridColumn7.Name = "Categoría";
             gridColumn7.Width = 120;
-            gridColumn8.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn8.Name = "Capacidad";
+            gridColumn8.Name = "Tipo";
             gridColumn8.Width = 120;
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn5);
+            gridColumn9.FilterAutoScan = true;
+            gridColumn9.Name = "Frecuencia";
+            gridColumn9.Width = 120;
+            gridColumn10.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
+            gridColumn10.Name = "Capacidad";
+            gridColumn10.Width = 120;
             this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn6);
             this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn7);
             this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn8);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn9);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn10);
             this.superGridControl5.PrimaryGrid.DefaultRowHeight = 24;
             this.superGridControl5.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.superGridControl5.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -437,9 +569,10 @@
             this.tabControlPanel3.Name = "tabControlPanel3";
             this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
             this.tabControlPanel3.Size = new System.Drawing.Size(618, 311);
-            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(198)))));
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
             this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
             this.tabControlPanel3.Style.GradientAngle = 90;
@@ -459,17 +592,21 @@
             this.superGridControl1.PrimaryGrid.AllowRowHeaderResize = true;
             this.superGridControl1.PrimaryGrid.AllowRowResize = true;
             this.superGridControl1.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn9.Name = "Tipo";
-            gridColumn9.Width = 150;
-            gridColumn10.FilterAutoScan = true;
-            gridColumn10.Name = "Pulgada";
-            gridColumn10.Width = 150;
-            gridColumn11.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn11.Name = "Capacidad";
-            gridColumn11.Width = 150;
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn9);
-            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn10);
+            gridColumn11.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn11.Name = "Selección";
+            gridColumn11.Width = 70;
+            gridColumn12.Name = "Tipo";
+            gridColumn12.Width = 150;
+            gridColumn13.FilterAutoScan = true;
+            gridColumn13.Name = "Pulgada";
+            gridColumn13.Width = 150;
+            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
+            gridColumn14.Name = "Capacidad";
+            gridColumn14.Width = 150;
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn11);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn12);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn13);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn14);
             this.superGridControl1.PrimaryGrid.DefaultRowHeight = 24;
             this.superGridControl1.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.superGridControl1.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -489,67 +626,6 @@
             this.tabItem3.AttachedControl = this.tabControlPanel3;
             this.tabItem3.Name = "tabItem3";
             this.tabItem3.Text = "Disco Duro";
-            // 
-            // tabControlPanel4
-            // 
-            this.tabControlPanel4.Controls.Add(this.superGridControl3);
-            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel4.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel4.Name = "tabControlPanel4";
-            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(618, 311);
-            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(198)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel4.Style.GradientAngle = 90;
-            this.tabControlPanel4.TabIndex = 4;
-            this.tabControlPanel4.TabItem = this.tabItem4;
-            // 
-            // superGridControl3
-            // 
-            this.superGridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.superGridControl3.BackColor = System.Drawing.Color.White;
-            this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl3.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl3.Location = new System.Drawing.Point(59, 11);
-            this.superGridControl3.Name = "superGridControl3";
-            this.superGridControl3.PrimaryGrid.AllowRowHeaderResize = true;
-            this.superGridControl3.PrimaryGrid.AllowRowResize = true;
-            this.superGridControl3.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn12.Name = "Marca";
-            gridColumn12.Width = 150;
-            gridColumn13.FilterAutoScan = true;
-            gridColumn13.Name = "Modelo";
-            gridColumn13.Width = 150;
-            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn14.Name = "Capacidad";
-            gridColumn14.Width = 150;
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn12);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn13);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn14);
-            this.superGridControl3.PrimaryGrid.DefaultRowHeight = 24;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.EnableColumnFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableRowFiltering = true;
-            this.superGridControl3.PrimaryGrid.Filter.Visible = true;
-            this.superGridControl3.PrimaryGrid.NullString = "<<null>>";
-            this.superGridControl3.PrimaryGrid.RowHeaderWidth = 45;
-            this.superGridControl3.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl3.Size = new System.Drawing.Size(495, 285);
-            this.superGridControl3.TabIndex = 30;
-            this.superGridControl3.Text = "superGridControl3";
-            // 
-            // tabItem4
-            // 
-            this.tabItem4.AttachedControl = this.tabControlPanel4;
-            this.tabItem4.Name = "tabItem4";
-            this.tabItem4.Text = "Tarjeta de Video";
             // 
             // btnAceptar
             // 
@@ -571,22 +647,47 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label8
+            // superGridControl4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(43, 279);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 16);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Precio";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(103, 279);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(64, 20);
-            this.textBox4.TabIndex = 24;
+            this.superGridControl4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.superGridControl4.BackColor = System.Drawing.Color.White;
+            this.superGridControl4.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.superGridControl4.ForeColor = System.Drawing.Color.Black;
+            this.superGridControl4.Location = new System.Drawing.Point(23, 22);
+            this.superGridControl4.Name = "superGridControl4";
+            this.superGridControl4.PrimaryGrid.AllowRowHeaderResize = true;
+            this.superGridControl4.PrimaryGrid.AllowRowResize = true;
+            this.superGridControl4.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn19.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn19.Name = "Selección";
+            gridColumn19.Width = 70;
+            gridColumn20.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
+            gridColumn20.Name = "Categoria";
+            gridColumn20.Width = 150;
+            gridColumn21.Name = "Tipo";
+            gridColumn21.Width = 150;
+            gridColumn22.FilterAutoScan = true;
+            gridColumn22.Name = "Versión";
+            gridColumn22.Width = 150;
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn19);
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn20);
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn21);
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn22);
+            this.superGridControl4.PrimaryGrid.DefaultRowHeight = 24;
+            this.superGridControl4.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.superGridControl4.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.superGridControl4.PrimaryGrid.EnableColumnFiltering = true;
+            this.superGridControl4.PrimaryGrid.EnableFiltering = true;
+            this.superGridControl4.PrimaryGrid.EnableRowFiltering = true;
+            this.superGridControl4.PrimaryGrid.Filter.Visible = true;
+            this.superGridControl4.PrimaryGrid.NullString = "<<null>>";
+            this.superGridControl4.PrimaryGrid.RowHeaderWidth = 45;
+            this.superGridControl4.PrimaryGrid.ShowRowGridIndex = true;
+            this.superGridControl4.Size = new System.Drawing.Size(565, 285);
+            this.superGridControl4.TabIndex = 31;
+            this.superGridControl4.Text = "superGridControl4";
             // 
             // frmLaptopCpu
             // 
@@ -607,10 +708,11 @@
             this.tabControlPanel5.ResumeLayout(false);
             this.tabControlPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabControlPanel6.ResumeLayout(false);
+            this.tabControlPanel4.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.tabControlPanel2.ResumeLayout(false);
             this.tabControlPanel3.ResumeLayout(false);
-            this.tabControlPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -653,5 +755,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SerieFabrico;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox4;
+        private DevComponents.DotNetBar.TabControlPanel tabControlPanel6;
+        private DevComponents.DotNetBar.TabItem tabItem6;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl4;
     }
 }

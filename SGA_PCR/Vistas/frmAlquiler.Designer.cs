@@ -28,33 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn49 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn50 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn51 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn52 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn53 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn54 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn55 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn56 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn57 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn58 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn59 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn60 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn61 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn62 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn63 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn64 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.LabelX4 = new DevComponents.DotNetBar.LabelX();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaIngreso = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -65,7 +61,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.dateTimeInput4 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -78,7 +73,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.superGridControl5 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput4)).BeginInit();
@@ -99,70 +99,10 @@
             this.LabelX4.TabIndex = 29;
             this.LabelX4.Text = "RUC / DNI:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(616, 102);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 16);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Hora:";
-            // 
-            // dateTimeInput1
-            // 
-            // 
-            // 
-            // 
-            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dateTimeInput1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.Format = DevComponents.Editors.eDateTimePickerFormat.ShortTime;
-            this.dateTimeInput1.IsPopupCalendarOpen = false;
-            this.dateTimeInput1.Location = new System.Drawing.Point(663, 101);
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.CalendarDimensions = new System.Drawing.Size(1, 1);
-            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
-            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
-            this.dateTimeInput1.MonthCalendar.Visible = false;
-            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(54, 20);
-            this.dateTimeInput1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput1.TabIndex = 27;
-            // 
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(769, 96);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(767, 132);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
             this.btnAgregarProducto.TabIndex = 26;
@@ -170,35 +110,15 @@
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(230, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 16);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "-";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(470, 102);
+            this.label4.Location = new System.Drawing.Point(43, 145);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 16);
+            this.label4.Size = new System.Drawing.Size(126, 16);
             this.label4.TabIndex = 24;
-            this.label4.Text = "Fecha:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 16);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "Guía de Remisión:";
+            this.label4.Text = "Fecha de Traslado:";
             // 
             // label1
             // 
@@ -219,7 +139,7 @@
             this.dtpFechaIngreso.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFechaIngreso.ButtonDropDown.Visible = true;
             this.dtpFechaIngreso.IsPopupCalendarOpen = false;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(525, 101);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(178, 141);
             // 
             // 
             // 
@@ -241,23 +161,9 @@
             this.dtpFechaIngreso.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.dtpFechaIngreso.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(70, 20);
+            this.dtpFechaIngreso.Size = new System.Drawing.Size(100, 20);
             this.dtpFechaIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpFechaIngreso.TabIndex = 20;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(248, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(110, 20);
-            this.textBox3.TabIndex = 19;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(169, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(55, 20);
-            this.textBox2.TabIndex = 18;
             // 
             // textBox1
             // 
@@ -277,7 +183,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(704, 629);
+            this.button2.Location = new System.Drawing.Point(704, 685);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 31;
@@ -286,7 +192,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(818, 629);
+            this.button1.Location = new System.Drawing.Point(818, 685);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 30;
@@ -309,9 +215,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(437, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 16);
+            this.label7.Size = new System.Drawing.Size(112, 16);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Fechas de Contrato:";
+            this.label7.Text = "Plazo de Alquiler:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // dateTimeInput3
@@ -376,17 +282,6 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "-";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(391, 102);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 16);
-            this.label10.TabIndex = 39;
-            this.label10.Text = "Translado:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
             // dateTimeInput4
             // 
             // 
@@ -426,7 +321,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(608, 164);
+            this.label11.Location = new System.Drawing.Point(608, 220);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 16);
             this.label11.TabIndex = 42;
@@ -436,7 +331,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(608, 316);
+            this.label12.Location = new System.Drawing.Point(608, 372);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 16);
             this.label12.TabIndex = 43;
@@ -445,7 +340,7 @@
             // btnEditarMemoria
             // 
             this.btnEditarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarMemoria.Location = new System.Drawing.Point(824, 155);
+            this.btnEditarMemoria.Location = new System.Drawing.Point(824, 211);
             this.btnEditarMemoria.Name = "btnEditarMemoria";
             this.btnEditarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnEditarMemoria.TabIndex = 44;
@@ -456,7 +351,7 @@
             // btnEditarDisco
             // 
             this.btnEditarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarDisco.Location = new System.Drawing.Point(824, 312);
+            this.btnEditarDisco.Location = new System.Drawing.Point(824, 368);
             this.btnEditarDisco.Name = "btnEditarDisco";
             this.btnEditarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnEditarDisco.TabIndex = 45;
@@ -469,14 +364,14 @@
             this.superGridControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.superGridControl2.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl2.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl2.Location = new System.Drawing.Point(606, 186);
+            this.superGridControl2.Location = new System.Drawing.Point(606, 242);
             this.superGridControl2.Name = "superGridControl2";
-            gridColumn49.Name = "Codigo";
-            gridColumn50.Name = "frecuencuia";
-            gridColumn51.Name = "Generación";
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn49);
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn50);
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn51);
+            gridColumn1.Name = "Codigo";
+            gridColumn2.Name = "frecuencuia";
+            gridColumn3.Name = "Generación";
+            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn1);
+            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn2);
+            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn3);
             this.superGridControl2.Size = new System.Drawing.Size(287, 99);
             this.superGridControl2.TabIndex = 46;
             this.superGridControl2.Text = "superGridControl2";
@@ -487,14 +382,14 @@
             this.superGridControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl3.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl3.Location = new System.Drawing.Point(606, 343);
+            this.superGridControl3.Location = new System.Drawing.Point(606, 399);
             this.superGridControl3.Name = "superGridControl3";
-            gridColumn52.Name = "Codigo";
-            gridColumn53.Name = "frecuencuia";
-            gridColumn54.Name = "Generación";
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn52);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn53);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn54);
+            gridColumn4.Name = "Codigo";
+            gridColumn5.Name = "frecuencuia";
+            gridColumn6.Name = "Generación";
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn4);
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn5);
+            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn6);
             this.superGridControl3.Size = new System.Drawing.Size(287, 99);
             this.superGridControl3.TabIndex = 47;
             this.superGridControl3.Text = "superGridControl3";
@@ -504,14 +399,16 @@
             this.superGridControl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.superGridControl4.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl4.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl4.Location = new System.Drawing.Point(606, 502);
+            this.superGridControl4.Location = new System.Drawing.Point(606, 558);
             this.superGridControl4.Name = "superGridControl4";
-            gridColumn55.Name = "Codigo";
-            gridColumn56.Name = "frecuencuia";
-            gridColumn57.Name = "Generación";
-            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn55);
-            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn56);
-            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn57);
+            gridColumn7.Name = "Codigo";
+            gridColumn8.Name = "frecuencuia";
+            gridColumn9.Name = "Generación";
+            gridColumn10.Name = "Contraseña";
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn7);
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn8);
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn9);
+            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn10);
             this.superGridControl4.Size = new System.Drawing.Size(287, 99);
             this.superGridControl4.TabIndex = 50;
             this.superGridControl4.Text = "superGridControl4";
@@ -519,7 +416,7 @@
             // btnEditarLicencia
             // 
             this.btnEditarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarLicencia.Location = new System.Drawing.Point(824, 471);
+            this.btnEditarLicencia.Location = new System.Drawing.Point(824, 527);
             this.btnEditarLicencia.Name = "btnEditarLicencia";
             this.btnEditarLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnEditarLicencia.TabIndex = 49;
@@ -531,7 +428,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(608, 475);
+            this.label13.Location = new System.Drawing.Point(608, 531);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(61, 16);
             this.label13.TabIndex = 48;
@@ -541,7 +438,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(45, 164);
+            this.label14.Location = new System.Drawing.Point(48, 210);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(164, 16);
             this.label14.TabIndex = 51;
@@ -555,32 +452,38 @@
             this.superGridControl5.BackColor = System.Drawing.Color.White;
             this.superGridControl5.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.superGridControl5.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl5.Location = new System.Drawing.Point(48, 186);
+            this.superGridControl5.Location = new System.Drawing.Point(48, 242);
             this.superGridControl5.Name = "superGridControl5";
+            this.superGridControl5.PrimaryGrid.AllowRowDelete = true;
             this.superGridControl5.PrimaryGrid.AllowRowHeaderResize = true;
+            this.superGridControl5.PrimaryGrid.AllowRowInsert = true;
             this.superGridControl5.PrimaryGrid.AllowRowResize = true;
             this.superGridControl5.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn58.Name = "Código";
-            gridColumn58.Width = 110;
-            gridColumn59.Name = "Equipo";
-            gridColumn59.Width = 110;
-            gridColumn60.FilterAutoScan = true;
-            gridColumn60.Name = "Modelo";
-            gridColumn60.Width = 110;
-            gridColumn61.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn61.Name = "Marca";
-            gridColumn61.Width = 110;
-            gridColumn62.Name = "Pantalla";
-            gridColumn62.Width = 110;
-            gridColumn63.Name = "Procesador";
-            gridColumn64.Name = "Generación";
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn58);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn59);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn60);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn61);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn62);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn63);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn64);
+            gridColumn11.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn11.FillWeight = 60;
+            gridColumn11.Name = "Seleccionar";
+            gridColumn12.Name = "Código";
+            gridColumn12.Width = 110;
+            gridColumn13.Name = "Equipo";
+            gridColumn13.Width = 110;
+            gridColumn14.FilterAutoScan = true;
+            gridColumn14.Name = "Modelo";
+            gridColumn14.Width = 110;
+            gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
+            gridColumn15.Name = "Marca";
+            gridColumn15.Width = 110;
+            gridColumn16.Name = "Pantalla";
+            gridColumn16.Width = 110;
+            gridColumn17.Name = "Procesador";
+            gridColumn18.Name = "Generación";
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn11);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn12);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn13);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn14);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn15);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn16);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn17);
+            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn18);
             this.superGridControl5.PrimaryGrid.DefaultRowHeight = 24;
             this.superGridControl5.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.superGridControl5.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -590,16 +493,87 @@
             this.superGridControl5.PrimaryGrid.Filter.Visible = true;
             this.superGridControl5.PrimaryGrid.NullString = "<<null>>";
             this.superGridControl5.PrimaryGrid.RowHeaderWidth = 45;
+            this.superGridControl5.PrimaryGrid.ShowInsertRow = true;
             this.superGridControl5.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl5.Size = new System.Drawing.Size(517, 415);
+            this.superGridControl5.Size = new System.Drawing.Size(517, 455);
             this.superGridControl5.TabIndex = 52;
             this.superGridControl5.Text = "superGridControl5";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(43, 103);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 16);
+            this.label15.TabIndex = 54;
+            this.label15.Text = "Sucursal:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(112, 102);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(352, 21);
+            this.comboBox2.TabIndex = 53;
+            // 
+            // labelX1
+            // 
+            this.labelX1.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(531, 103);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(89, 16);
+            this.labelX1.TabIndex = 56;
+            this.labelX1.Text = "N° CONTRATO";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(620, 102);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(85, 20);
+            this.textBox5.TabIndex = 55;
+            // 
+            // labelX2
+            // 
+            this.labelX2.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(737, 103);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(38, 16);
+            this.labelX2.TabIndex = 58;
+            this.labelX2.Text = "N° OC";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(781, 102);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(85, 20);
+            this.textBox6.TabIndex = 57;
             // 
             // frmAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 665);
+            this.ClientSize = new System.Drawing.Size(936, 749);
+            this.Controls.Add(this.labelX2);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.labelX1);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.superGridControl5);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.superGridControl4);
@@ -612,7 +586,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dateTimeInput4);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox4);
@@ -622,22 +595,15 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LabelX4);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimeInput1);
             this.Controls.Add(this.btnAgregarProducto);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpFechaIngreso);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Name = "frmAlquiler";
             this.Text = "Alquiler";
             this.Load += new System.EventHandler(this.frmAlquiler_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput4)).EndInit();
@@ -649,16 +615,10 @@
         #endregion
 
         internal DevComponents.DotNetBar.LabelX LabelX4;
-        private System.Windows.Forms.Label label6;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
         private System.Windows.Forms.Button btnAgregarProducto;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFechaIngreso;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
@@ -669,7 +629,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -682,5 +641,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl5;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBox2;
+        internal DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.TextBox textBox5;
+        internal DevComponents.DotNetBar.LabelX labelX2;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }

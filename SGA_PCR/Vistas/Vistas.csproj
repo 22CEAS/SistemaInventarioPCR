@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar.Schedule, Version=11.3.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=11.3.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
@@ -55,6 +58,18 @@
     </Compile>
     <Compile Include="frmAgregarProducto.Designer.cs">
       <DependentUpon>frmAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambioPieza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCambioPieza.Designer.cs">
+      <DependentUpon>frmCambioPieza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuadroVencimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCuadroVencimiento.Designer.cs">
+      <DependentUpon>frmCuadroVencimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEditarDisco.cs">
       <SubType>Form</SubType>
@@ -140,11 +155,35 @@
     <Compile Include="frmIngreso.Designer.cs">
       <DependentUpon>frmIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventario.Designer.cs">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLaptopCpu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLaptopCpu.Designer.cs">
       <DependentUpon>frmLaptopCpu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLevantamientoObservaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLevantamientoObservaciones.Designer.cs">
+      <DependentUpon>frmLevantamientoObservaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogueo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogueo.Designer.cs">
+      <DependentUpon>frmLogueo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantenimiento.Designer.cs">
+      <DependentUpon>frmMantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -152,11 +191,65 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoSubirFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoSubirFacturas.Designer.cs">
+      <DependentUpon>frmProcesoSubirFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProductoCambio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProductoCambio.Designer.cs">
       <DependentUpon>frmProductoCambio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteAlquiler.Designer.cs">
+      <DependentUpon>frmReporteAlquiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteCompras.Designer.cs">
+      <DependentUpon>frmReporteCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteMantenimiento.Designer.cs">
+      <DependentUpon>frmReporteMantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteMemoriaDisco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteMemoriaDisco.Designer.cs">
+      <DependentUpon>frmReporteMemoriaDisco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportePendienteFacturar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportePendienteFacturar.Designer.cs">
+      <DependentUpon>frmReportePendienteFacturar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportePendienteRecoger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportePendienteRecoger.Designer.cs">
+      <DependentUpon>frmReportePendienteRecoger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportePendienteReposicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportePendienteReposicion.Designer.cs">
+      <DependentUpon>frmReportePendienteReposicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteStocksLaptops.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteStocksLaptops.Designer.cs">
+      <DependentUpon>frmReporteStocksLaptops.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -168,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambio.resx">
       <DependentUpon>frmCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCambioPieza.resx">
+      <DependentUpon>frmCambioPieza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearCliente.resx">
       <DependentUpon>frmCrearCliente.cs</DependentUpon>
@@ -187,6 +283,9 @@
     <EmbeddedResource Include="frmCrearTarjetaVideo.resx">
       <DependentUpon>frmCrearTarjetaVideo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCuadroVencimiento.resx">
+      <DependentUpon>frmCuadroVencimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDevolucion.resx">
       <DependentUpon>frmDevolucion.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,11 +304,53 @@
     <EmbeddedResource Include="frmIngreso.resx">
       <DependentUpon>frmIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInventario.resx">
+      <DependentUpon>frmInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLaptopCpu.resx">
       <DependentUpon>frmLaptopCpu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLevantamientoObservaciones.resx">
+      <DependentUpon>frmLevantamientoObservaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogueo.resx">
+      <DependentUpon>frmLogueo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantenimiento.resx">
+      <DependentUpon>frmMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoSubirFacturas.resx">
+      <DependentUpon>frmProcesoSubirFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductoCambio.resx">
+      <DependentUpon>frmProductoCambio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteAlquiler.resx">
+      <DependentUpon>frmReporteAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteCompras.resx">
+      <DependentUpon>frmReporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteMantenimiento.resx">
+      <DependentUpon>frmReporteMantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteMemoriaDisco.resx">
+      <DependentUpon>frmReporteMemoriaDisco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportePendienteFacturar.resx">
+      <DependentUpon>frmReportePendienteFacturar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportePendienteRecoger.resx">
+      <DependentUpon>frmReportePendienteRecoger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportePendienteReposicion.resx">
+      <DependentUpon>frmReportePendienteReposicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteStocksLaptops.resx">
+      <DependentUpon>frmReporteStocksLaptops.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -232,6 +373,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

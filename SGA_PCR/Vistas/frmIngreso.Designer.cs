@@ -37,6 +37,12 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,6 +58,10 @@
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.LabelX4 = new DevComponents.DotNetBar.LabelX();
             this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             this.SuspendLayout();
@@ -133,15 +143,21 @@
             this.superGridControl1.ForeColor = System.Drawing.Color.Black;
             this.superGridControl1.Location = new System.Drawing.Point(42, 184);
             this.superGridControl1.Name = "superGridControl1";
-            gridColumn1.Name = "Codigo";
-            gridColumn2.Name = "Modelo";
-            gridColumn3.Name = "Marca";
-            gridColumn4.Name = "Pantalla";
-            gridColumn5.Name = "Procesador";
-            gridColumn6.Name = "Generacion";
-            gridColumn7.Name = "Disco";
-            gridColumn8.Name = "Memoria";
-            gridColumn9.Name = "Precio";
+            gridColumn1.Name = "Modelo";
+            gridColumn2.Name = "Marca";
+            gridColumn3.Name = "Pantalla";
+            gridColumn4.Name = "Procesador";
+            gridColumn5.Name = "Generacion";
+            gridColumn6.Name = "Video";
+            gridColumn7.Name = "Disco1";
+            gridColumn8.Name = "Disco2";
+            gridColumn9.Name = "Memoria1";
+            gridColumn10.Name = "Memoria2";
+            gridColumn11.Name = "Precio";
+            gridColumn12.Name = "Windows";
+            gridColumn13.Name = "Office";
+            gridColumn14.Name = "Antivirus";
+            gridColumn15.Name = "Ubicación";
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn1);
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn2);
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn3);
@@ -151,6 +167,12 @@
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn7);
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn8);
             this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn9);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn10);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn11);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn12);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn13);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn14);
+            this.superGridControl1.PrimaryGrid.Columns.Add(gridColumn15);
             this.superGridControl1.Size = new System.Drawing.Size(648, 281);
             this.superGridControl1.TabIndex = 6;
             this.superGridControl1.Text = "superGridControl1";
@@ -172,9 +194,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(39, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 16);
+            this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Guía de Remision";
+            this.label3.Text = "Factura";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
@@ -298,12 +320,50 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "TOTAL: $25300";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(572, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(12, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(377, 89);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 16);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Guía de Remision";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(590, 89);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 18;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(498, 88);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(69, 20);
+            this.textBox5.TabIndex = 17;
+            // 
             // frmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(800, 523);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.LabelX4);
             this.Controls.Add(this.label6);
@@ -350,5 +410,9 @@
         private System.Windows.Forms.Label label6;
         internal DevComponents.DotNetBar.LabelX LabelX4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

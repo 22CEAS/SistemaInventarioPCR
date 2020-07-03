@@ -16,5 +16,22 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        //private void btnCancelar_Click(object sender, EventArgs e)
+        //{
+        //    this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        //    this.Close();
+        //}
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnEditarLicencia_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,16 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void btnCambiarProducto_Click(object sender, EventArgs e)
+        {
+            using (frmProductoCambio frm = new frmProductoCambio())
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 }
