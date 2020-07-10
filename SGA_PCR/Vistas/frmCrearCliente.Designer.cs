@@ -183,7 +183,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(81, 62);
+            this.textBox3.Location = new System.Drawing.Point(61, 62);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(338, 20);
             this.textBox3.TabIndex = 85;
@@ -193,9 +193,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(20, 65);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 86;
-            this.label4.Text = "Dirección:";
+            this.label4.Text = "Email:";
             // 
             // textBox4
             // 
