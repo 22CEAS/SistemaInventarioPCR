@@ -23,7 +23,7 @@ namespace Modelo
 
         public Salida()
         {
-            this.Cliente = null;
+            this.Cliente = new Cliente();
             this.Detalles = new BindingList<SalidaDetalle>();
 
         }

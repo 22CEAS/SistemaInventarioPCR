@@ -21,7 +21,7 @@ namespace Modelo
 
         public Licencia()
         {
-            this.Modelo = null;
+            this.Modelo = new Modelo();
         }
 
         public Licencia(int idLicencia, string codigo, int idModelo, Modelo modelo, int idLC, string clave, DateTime fechaActivacion, string ubicacion, string observacion, string estado)

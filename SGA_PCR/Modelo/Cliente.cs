@@ -20,7 +20,7 @@ namespace Modelo
 
         public Cliente()
         {
-            this.Kam = null;
+            this.Kam = new Usuario();
         }
 
         public Cliente(int idCliente, int tipoDocumento, string nroDocumento, string nombre_razonSocial, string telefono, string email, Usuario kam, int estado)

@@ -19,7 +19,7 @@ namespace Modelo
 
         public SalidaDetalle()
         {
-            this.Equipo = null;
+            this.Equipo = new LC();
         }
 
         public SalidaDetalle(int idSalidaDet, int idSalida, LC equipo, string caracteristicas, string guiaSalida, string motivoNoRecojo, string observacion, int estado)

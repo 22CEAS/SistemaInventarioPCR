@@ -33,14 +33,14 @@ namespace Modelo
 
         public LC()
         {
-            this.Modelo = null;
-            this.Procesador = null;
-            this.Video = null;
+            this.Modelo = new Modelo();
+            this.Procesador = new Procesador();
+            this.Video = new Video();
             this.Discos = new BindingList<DiscoDuro>();
             this.Memorias = new BindingList<Memoria>();
-            this.Windows = null;
-            this.Office = null;
-            this.Antivirus = null;
+            this.Windows = new Licencia();
+            this.Office = new Licencia();
+            this.Antivirus = new Licencia();
 
         }
 

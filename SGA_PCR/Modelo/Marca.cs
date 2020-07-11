@@ -19,7 +19,7 @@ namespace Modelo
         {
             this.Modelos= new BindingList<Modelo>();
         }
-            public Marca(int idMarca, string nombreMarca, int idCategoria, BindingList<Modelo> modelos, int estado)
+        public Marca(int idMarca, string nombreMarca, int idCategoria, BindingList<Modelo> modelos, int estado)
         {
             this.IdMarca = idMarca;
             this.NombreMarca = nombreMarca;
