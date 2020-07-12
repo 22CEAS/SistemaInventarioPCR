@@ -247,19 +247,70 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_proveedor`(
 	IN _ruc NVARCHAR(11),
 	IN _razonSocial NVARCHAR(255),
+	IN _nombreComercial NVARCHAR(255),
 	IN _abreviacion NVARCHAR(11),
 	IN _direccion NVARCHAR(255),
 	IN _telefono NVARCHAR(20),
 	IN _fax NVARCHAR(20),
 	IN _email NVARCHAR(255),
 	IN _observacion NVARCHAR(255),
-	IN _usuario_ins NVARCHAR(100)
+	IN _nombreContacto NVARCHAR(255),
+	IN _telefonoContacto NVARCHAR(255),
+	IN _emailContacto NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idProveedor INT
 )
 BEGIN
-	INSERT INTO proveedor (ruc,razonSocial,abreviacion,direccion,telefono,fax,email,observacion,estado,usuario_ins) values
-	(_ruc,_razonSocial,_abreviacion,_direccion,_telefono,_fax,_email,_observacion,1,_usuario_ins);
+	INSERT INTO proveedor (ruc,razonSocial,nombreComercial,abreviacion,direccion,telefono,fax,email,observacion,nombreContacto,telefonoContacto,emailContacto,estado,usuario_ins) values
+	(_ruc,_razonSocial,_nombreComercial,_abreviacion,_direccion,_telefono,_fax,_email,_observacion,_nombreContacto,_telefonoContacto,_emailContacto,1,_usuario_ins);
+	COMMIT;
+    SET _idProveedor = last_insert_id();
 END
 $$ DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_proveedor`(
+	IN _idProveedor INT,
+	IN _ruc NVARCHAR(11),
+	IN _razonSocial NVARCHAR(255),
+	IN _nombreComercial NVARCHAR(255),
+	IN _abreviacion NVARCHAR(11),
+	IN _direccion NVARCHAR(255),
+	IN _telefono NVARCHAR(20),
+	IN _fax NVARCHAR(20),
+	IN _email NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+	IN _nombreContacto NVARCHAR(255),
+	IN _telefonoContacto NVARCHAR(255),
+	IN _emailContacto NVARCHAR(255),
+	IN _estado INT,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fec_mod=(SELECT now());
+	UPDATE proveedor
+	SET ruc=_ruc,
+		razonSocial=_razonSocial,
+		nombreComercial=_nombreComercial,
+		abreviacion=_abreviacion,
+		direccion=_direccion,
+		telefono=_telefono,
+		fax=_fax,
+		email=_email,
+		observacion=_observacion,
+		nombreContacto=_nombreContacto,
+		telefonoContacto=_telefonoContacto,
+		emailContacto=_emailContacto,
+		estado=_estado,
+		fec_mod=@fec_mod,
+		usuario_mod=_usuario_mod
+	WHERE idProveedor=_idProveedor;
+	COMMIT;
+END
+$$ DELIMITER ;
+
 
 
 DELIMITER $$

@@ -41,8 +41,8 @@ namespace Vistas
             this.nombreUsuario = nombreUsuario;
             Inicializado();
             estadoComponentes(TipoVista.Inicial);
-
         }
+
         public void Inicializado()
         {
 
@@ -134,7 +134,7 @@ namespace Vistas
                     break;
                 case TipoVista.Vista:
                     btnNuevo.Enabled = true;
-                    btnCancelar.Enabled = true;
+                    btnCancelar.Enabled = false;
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
@@ -142,7 +142,7 @@ namespace Vistas
                     cmbTamano.Enabled = false;
                     cmbTipo.Enabled = false;
                     chbActivo.Enabled = false;
-                    limpiarComponentes();
+                    //limpiarComponentes();
                     disco = new DiscoDuro();
                     break;
                 case TipoVista.Limpiar: //ya esta
@@ -265,8 +265,9 @@ namespace Vistas
                     disco.IdTamano== discoOld.IdTamano && disco.Tamano== discoOld.Tamano &&
                     disco.IdCapacidad== discoOld.IdCapacidad && disco.Capacidad == discoOld.Capacidad &&
                     disco.Estado == discoOld.Estado))
+                //if (disco == discoOld)
                 {
-                    MessageBox.Show("Son identicos", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //MessageBox.Show("Son identicos", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
                 }
 
@@ -278,6 +279,7 @@ namespace Vistas
                     disco.IdTamano == discoOld.IdTamano && disco.Tamano == discoOld.Tamano &&
                     disco.IdCapacidad == discoOld.IdCapacidad && disco.Capacidad == discoOld.Capacidad &&
                     disco.Estado != discoOld.Estado))
+                    //if(disco==discoOld)
                     {
                         idDisco = discoDA.ModificarDiscoDuro(disco, this.nombreUsuario,1);
                     }
@@ -333,6 +335,20 @@ namespace Vistas
 
         private void frmCrearDiscoDuro_FormClosed(object sender, FormClosedEventArgs e)
         {
+        }
+
+        private void dgvDiscoDuro_Click(object sender, EventArgs e)
+        {
+            estadoComponentes(TipoVista.Vista);
+            disco.IdDisco = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[0])).Value.ToString());
+            int idTipo = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+            int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+            int idTamano = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[7])).Value.ToString());
+            int activo = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[4])).Value.ToString());
+            cmbTipo.SelectedValue = idTipo;
+            cmbCapacidad.SelectedValue = idCapacidad;
+            cmbTamano.SelectedValue = idTamano;
+            chbActivo.Checked = (activo == 1) ? true : false;
         }
     }
 }

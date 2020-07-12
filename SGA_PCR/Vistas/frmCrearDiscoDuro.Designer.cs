@@ -167,6 +167,7 @@
             this.dgvDiscoDuro.Size = new System.Drawing.Size(450, 352);
             this.dgvDiscoDuro.TabIndex = 70;
             this.dgvDiscoDuro.Text = "Tabla Discos Duros";
+            this.dgvDiscoDuro.Click += new System.EventHandler(this.dgvDiscoDuro_Click);
             // 
             // btnEditar
             // 

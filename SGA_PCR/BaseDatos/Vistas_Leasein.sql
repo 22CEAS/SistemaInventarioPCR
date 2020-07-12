@@ -358,3 +358,20 @@ Select l.idLicencia as idLicencia,
 from licencia l, modelo mo, marca ma, categoria c
 where l.idModelo=mo.idModelo and ma.idMarca=mo.idMarca and c.idCategoria=ma.idCategoria;
 		
+/*Se mostrará todas los proveedor*/
+create view vista_proveedor_lista as		
+Select 	idProveedor as idProveedor,
+		ruc as ruc,
+		razonSocial as razonSocial,
+		nombreComercial as nombreComercial,
+		abreviacion as abreviacion,
+		direccion as direccion,
+		telefono as telefono,
+		fax as fax,
+		email as email,
+		observacion as observacion,
+		nombreContacto as estado,
+		telefonoContacto as estado,
+		emailContacto as estado,
+		estado as estado
+From proveedor;
