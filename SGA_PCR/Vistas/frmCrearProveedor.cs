@@ -326,36 +326,13 @@ namespace Vistas
             {
 
                 proveedor.Estado = (chbActivo.Checked) ? 1 : 0;
-
-                if ((proveedor.Ruc == proveedorOld.Ruc && proveedor.RazonSocial == proveedorOld.RazonSocial &&
-                    proveedor.NombreComercial == proveedorOld.NombreComercial && proveedor.Abreviacion == proveedorOld.Abreviacion &&
-                    proveedor.Direccion == proveedorOld.Direccion && proveedor.Telefono == proveedorOld.Telefono &&
-                    proveedor.Email == proveedorOld.Email && proveedor.NombreContacto == proveedorOld.NombreContacto &&
-                    proveedor.TelefonoContacto == proveedorOld.TelefonoContacto && proveedor.EmailContacto == proveedorOld.EmailContacto &&
-                    proveedor.Estado == proveedorOld.Estado))
-                {
-                    //MessageBox.Show("Son identicos", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    return;
-                }
+                
 
                 if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idProveedor;
                  
-                    if ((proveedor.Ruc == proveedorOld.Ruc && proveedor.RazonSocial == proveedorOld.RazonSocial &&
-                    proveedor.NombreComercial == proveedorOld.NombreComercial && proveedor.Abreviacion == proveedorOld.Abreviacion &&
-                    proveedor.Direccion == proveedorOld.Direccion && proveedor.Telefono == proveedorOld.Telefono &&
-                    proveedor.Email == proveedorOld.Email && proveedor.NombreContacto == proveedorOld.NombreContacto &&
-                    proveedor.TelefonoContacto == proveedorOld.TelefonoContacto && proveedor.EmailContacto == proveedorOld.EmailContacto &&
-                    proveedor.Estado != proveedorOld.Estado))
-                    //if(disco==discoOld)
-                    {
-                        idProveedor = proveedorDA.ModificarProveedor(proveedor, this.nombreUsuario, 1);
-                    }
-                    else
-                    {
-                        idProveedor = proveedorDA.ModificarProveedor(proveedor, this.nombreUsuario, 0);
-                    }
+                    idProveedor = proveedorDA.ModificarProveedor(proveedor, this.nombreUsuario);
 
                     if (idProveedor > 0)
                     {

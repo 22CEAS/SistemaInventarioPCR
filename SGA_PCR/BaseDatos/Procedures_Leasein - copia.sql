@@ -298,59 +298,6 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cliente_sucursal`(
-	IN _idCliente INT,
-	IN _nroDocumento NVARCHAR(100),
-	IN _nombreContacto NVARCHAR(100),
-	IN _direccion NVARCHAR(255),
-	IN _telefono NVARCHAR(20),
-	IN _email NVARCHAR(255),
-	IN _observacion NVARCHAR(255),
-	IN _usuario_ins NVARCHAR(100), 
-	OUT _idSucursal INT
-)
-BEGIN
-	SET @idSucursal=(SELECT IFNULL( MAX( idSucursal ) , 0 )+1 FROM cliente_sucursal);
-	INSERT INTO cliente_sucursal (idSucursal,idCliente,nroDocumento,nombreContacto,direccion,telefono,email,observacion,estado,usuario_ins) values
-	(@idSucursal,_idCliente,_nroDocumento,_nombreContacto,_direccion,_telefono,_email,_observacion,1,_usuario_ins);
-	COMMIT;
-    SET _idSucursal = @idSucursal;
-END
-$$ DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_cliente_sucursal`(
-	IN _idSucursal INT,
-	IN _nroDocumento NVARCHAR(100),
-	IN _nombreContacto NVARCHAR(100),
-	IN _direccion NVARCHAR(255),
-	IN _telefono NVARCHAR(20),
-	IN _email NVARCHAR(255),
-	IN _observacion NVARCHAR(255),
-	IN _estado INT,
-	IN _usuario_mod NVARCHAR(100)
-)
-BEGIN
-	SET @fec_mod=(SELECT now());
-	UPDATE cliente_sucursal
-	SET nroDocumento=_nroDocumento,
-		nombreContacto=_nombreContacto,
-		direccion=_direccion,
-		telefono=_telefono,
-		email=_email,
-		observacion=_observacion,
-		estado=_estado,
-		fec_mod=@fec_mod,
-		usuario_mod=_usuario_mod
-	WHERE idSucursal=_idSucursal;
-	COMMIT;
-END
-$$ DELIMITER ;
-
-
-
-DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_proveedor`(
 	IN _ruc NVARCHAR(11),
 	IN _razonSocial NVARCHAR(255),
@@ -368,11 +315,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_proveedor`(
 	OUT _idProveedor INT
 )
 BEGIN
-	SET @idProveedor=(SELECT IFNULL( MAX( idProveedor ) , 0 )+1 FROM proveedor);
-	INSERT INTO proveedor (idProveedor,ruc,razonSocial,nombreComercial,abreviacion,direccion,telefono,fax,email,observacion,nombreContacto,telefonoContacto,emailContacto,estado,usuario_ins) values
-	(@idProveedor,_ruc,_razonSocial,_nombreComercial,_abreviacion,_direccion,_telefono,_fax,_email,_observacion,_nombreContacto,_telefonoContacto,_emailContacto,1,_usuario_ins);
+	INSERT INTO proveedor (ruc,razonSocial,nombreComercial,abreviacion,direccion,telefono,fax,email,observacion,nombreContacto,telefonoContacto,emailContacto,estado,usuario_ins) values
+	(_ruc,_razonSocial,_nombreComercial,_abreviacion,_direccion,_telefono,_fax,_email,_observacion,_nombreContacto,_telefonoContacto,_emailContacto,1,_usuario_ins);
 	COMMIT;
-    SET _idProveedor = @idProveedor;
+    SET _idProveedor = last_insert_id();
 END
 $$ DELIMITER ;
 
@@ -432,6 +378,41 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_usuario`(
 BEGIN
 	INSERT INTO usuario (dni,nombre,usuario,password,perfil,estado,email,usuario_ins) values
 	(_dni,_nombre,_usuario,_password,_perfil,1,_email,_usuario_ins);
+END
+$$ DELIMITER ;
+
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cliente_sucursal`(
+	IN _idCliente INT,
+	IN _nroDocumento NVARCHAR(100),
+	IN _nombreContacto NVARCHAR(100),
+	IN _direccion NVARCHAR(255),
+	IN _telefono NVARCHAR(20),
+	IN _email NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
+	INSERT INTO cliente_sucursal (idCliente,nroDocumento,nombreContacto,direccion,telefono,email,observacion,estado,usuario_ins) values
+	(_idCliente,_nroDocumento,_nombreContacto,_direccion,_telefono,_email,_observacion,1,_usuario_ins);
+END
+$$ DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cliente_contacto`(
+	IN _nombre NVARCHAR(100),
+	IN _idSucursal INT,
+	IN _email NVARCHAR(255),
+	IN _telefono NVARCHAR(20),
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
+	INSERT INTO cliente_contacto (nombre,idSucursal,email,telefono,estado,usuario_ins) values
+	(_nombre,_idSucursal,_email,_telefono,1,_usuario_ins);
 END
 $$ DELIMITER ;
 

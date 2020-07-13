@@ -21,7 +21,7 @@ namespace Modelo
 
         public ClienteSucursal()
         {
-
+            observacion = "";
         }
 
         public ClienteSucursal(int idSucursal, int idCliente, string nroDocumento, string nombreContacto, string direccion, string telefono, string email, string observacion, int estado)

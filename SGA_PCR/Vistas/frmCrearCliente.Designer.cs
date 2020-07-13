@@ -28,250 +28,436 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrearCliente));
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.txtNroDocumento = new System.Windows.Forms.TextBox();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.dgvCliente = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.cmbKam = new System.Windows.Forms.ComboBox();
+            this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.chbActivo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // button4
+            // txtNroDocumento
             // 
-            this.button4.Location = new System.Drawing.Point(696, 282);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 82;
-            this.button4.Text = "Aceptar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.txtNroDocumento.Location = new System.Drawing.Point(181, 31);
+            this.txtNroDocumento.MaxLength = 11;
+            this.txtNroDocumento.Name = "txtNroDocumento";
+            this.txtNroDocumento.Size = new System.Drawing.Size(152, 20);
+            this.txtNroDocumento.TabIndex = 83;
+            this.txtNroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocumento_KeyPress);
             // 
-            // button3
+            // txtRazonSocial
             // 
-            this.button3.Location = new System.Drawing.Point(696, 233);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 81;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.txtRazonSocial.Location = new System.Drawing.Point(371, 31);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(400, 20);
+            this.txtRazonSocial.TabIndex = 84;
             // 
-            // button2
+            // txtEmail
             // 
-            this.button2.Location = new System.Drawing.Point(696, 129);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 80;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtEmail.Location = new System.Drawing.Point(66, 63);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(188, 20);
+            this.txtEmail.TabIndex = 85;
             // 
-            // button1
+            // txtTelefono
             // 
-            this.button1.Location = new System.Drawing.Point(696, 181);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 79;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtTelefono.Location = new System.Drawing.Point(340, 62);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(140, 20);
+            this.txtTelefono.TabIndex = 87;
             // 
-            // comboBox4
+            // btnImprimir
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(23, 30);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(100, 21);
-            this.comboBox4.TabIndex = 77;
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimir.AutoSize = true;
+            this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImprimir.Location = new System.Drawing.Point(701, 394);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 63);
+            this.btnImprimir.TabIndex = 97;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // label3
+            // btnCancelar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(368, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "Razon Social/Nombre:";
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(696, 323);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.TabIndex = 96;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label2
+            // btnEditar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(156, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 75;
-            this.label2.Text = "N° Documento:";
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.AutoSize = true;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditar.Location = new System.Drawing.Point(696, 175);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(80, 65);
+            this.btnEditar.TabIndex = 95;
+            this.btnEditar.Text = "Modificar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // label1
+            // btnNuevo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Tipo documento:";
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.AutoSize = true;
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(696, 108);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.TabIndex = 94;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // superGridControl3
+            // btnGrabar
             // 
-            this.superGridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrabar.AutoSize = true;
+            this.btnGrabar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.FlatAppearance.BorderSize = 0;
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGrabar.Location = new System.Drawing.Point(696, 254);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(75, 63);
+            this.btnGrabar.TabIndex = 93;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // dgvCliente
+            // 
+            this.dgvCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.superGridControl3.BackColor = System.Drawing.Color.White;
-            this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl3.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl3.Location = new System.Drawing.Point(23, 108);
-            this.superGridControl3.Name = "superGridControl3";
-            this.superGridControl3.PrimaryGrid.AllowRowHeaderResize = true;
-            this.superGridControl3.PrimaryGrid.AllowRowResize = true;
-            this.superGridControl3.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.Name = "Marca";
-            gridColumn1.Width = 110;
-            gridColumn2.FilterAutoScan = true;
-            gridColumn2.Name = "Modelo";
-            gridColumn2.Width = 110;
-            gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn3.Name = "Tipo";
-            gridColumn3.Width = 110;
-            gridColumn4.Name = "Capacidad";
-            gridColumn4.Width = 110;
-            gridColumn5.Name = "Hab./Desh.";
-            gridColumn5.Width = 30;
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn1);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn2);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn3);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn4);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn5);
-            this.superGridControl3.PrimaryGrid.DefaultRowHeight = 24;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.EnableColumnFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableRowFiltering = true;
-            this.superGridControl3.PrimaryGrid.Filter.Visible = true;
-            this.superGridControl3.PrimaryGrid.NullString = "<<null>>";
-            this.superGridControl3.PrimaryGrid.RowHeaderWidth = 45;
-            this.superGridControl3.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl3.Size = new System.Drawing.Size(631, 320);
-            this.superGridControl3.TabIndex = 70;
-            this.superGridControl3.Text = "superGridControl3";
+            this.dgvCliente.BackColor = System.Drawing.Color.White;
+            this.dgvCliente.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvCliente.ForeColor = System.Drawing.Color.Black;
+            this.dgvCliente.Location = new System.Drawing.Point(23, 108);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvCliente.PrimaryGrid.AllowRowResize = true;
+            this.dgvCliente.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn21.AllowEdit = false;
+            gridColumn21.DataPropertyName = "idCliente";
+            gridColumn21.MinimumWidth = 50;
+            gridColumn21.Name = "Id";
+            gridColumn21.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn21.Width = 50;
+            gridColumn22.AllowEdit = false;
+            gridColumn22.DataPropertyName = "nroDocumento";
+            gridColumn22.MinimumWidth = 100;
+            gridColumn22.Name = "Nro Documento";
+            gridColumn22.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn23.AllowEdit = false;
+            gridColumn23.DataPropertyName = "nombre_razonSocial";
+            gridColumn23.MinimumWidth = 250;
+            gridColumn23.Name = "Nombre";
+            gridColumn23.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn23.Width = 250;
+            gridColumn24.AllowEdit = false;
+            gridColumn24.DataPropertyName = "nombreKam";
+            gridColumn24.MinimumWidth = 150;
+            gridColumn24.Name = "Nombre KAM";
+            gridColumn24.Width = 150;
+            gridColumn25.AllowEdit = false;
+            gridColumn25.DataPropertyName = "estado";
+            gridColumn25.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn25.MinimumWidth = 100;
+            gridColumn25.Name = "Activo";
+            gridColumn26.AllowEdit = false;
+            gridColumn26.DataPropertyName = "tipoDocumento";
+            gridColumn26.FilterAutoScan = true;
+            gridColumn26.MinimumWidth = 140;
+            gridColumn26.Name = "Tipo Documento";
+            gridColumn26.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn26.Visible = false;
+            gridColumn26.Width = 140;
+            gridColumn27.AllowEdit = false;
+            gridColumn27.DataPropertyName = "telefono";
+            gridColumn27.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn27.MinimumWidth = 100;
+            gridColumn27.Name = "Telefono";
+            gridColumn27.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn27.Visible = false;
+            gridColumn28.AllowEdit = false;
+            gridColumn28.DataPropertyName = "email";
+            gridColumn28.Name = "Email";
+            gridColumn28.Visible = false;
+            gridColumn29.AllowEdit = false;
+            gridColumn29.DataPropertyName = "idKAM";
+            gridColumn29.Name = "Id Kam";
+            gridColumn29.Visible = false;
+            gridColumn30.DataPropertyName = "nombreTipoDocumento";
+            gridColumn30.Name = "Nombre Tipo Documento";
+            gridColumn30.Visible = false;
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn21);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn22);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn23);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn24);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn25);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn26);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn27);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn28);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn29);
+            this.dgvCliente.PrimaryGrid.Columns.Add(gridColumn30);
+            this.dgvCliente.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvCliente.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvCliente.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvCliente.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvCliente.PrimaryGrid.EnableFiltering = true;
+            this.dgvCliente.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvCliente.PrimaryGrid.Filter.Visible = true;
+            this.dgvCliente.PrimaryGrid.MultiSelect = false;
+            this.dgvCliente.PrimaryGrid.NoRowsText = "No hay ningun Sucursal Cliente, cree un sucursal";
+            this.dgvCliente.PrimaryGrid.NullString = "<<null>>";
+            this.dgvCliente.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvCliente.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvCliente.Size = new System.Drawing.Size(650, 350);
+            this.dgvCliente.TabIndex = 98;
+            this.dgvCliente.Text = "Tabla Sucursal Clientes";
+            this.dgvCliente.Click += new System.EventHandler(this.dgvCliente_Click);
             // 
-            // textBox1
+            // labelX1
             // 
-            this.textBox1.Location = new System.Drawing.Point(159, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 83;
+            this.labelX1.AutoSize = true;
             // 
-            // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(371, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(400, 20);
-            this.textBox2.TabIndex = 84;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(510, 63);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(40, 16);
+            this.labelX1.TabIndex = 100;
+            this.labelX1.Text = "KAM: ";
             // 
-            this.textBox3.Location = new System.Drawing.Point(61, 62);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(338, 20);
-            this.textBox3.TabIndex = 85;
+            // cmbKam
             // 
-            // label4
+            this.cmbKam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKam.FormattingEnabled = true;
+            this.cmbKam.Location = new System.Drawing.Point(556, 62);
+            this.cmbKam.Name = "cmbKam";
+            this.cmbKam.Size = new System.Drawing.Size(117, 21);
+            this.cmbKam.TabIndex = 99;
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 86;
-            this.label4.Text = "Email:";
+            // cmbTipoDocumento
             // 
-            // textBox4
+            this.cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoDocumento.FormattingEnabled = true;
+            this.cmbTipoDocumento.Location = new System.Drawing.Point(23, 31);
+            this.cmbTipoDocumento.Name = "cmbTipoDocumento";
+            this.cmbTipoDocumento.Size = new System.Drawing.Size(127, 21);
+            this.cmbTipoDocumento.TabIndex = 101;
             // 
-            this.textBox4.Location = new System.Drawing.Point(549, 62);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(140, 20);
-            this.textBox4.TabIndex = 87;
+            // labelX2
             // 
-            // label5
+            this.labelX2.AutoSize = true;
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(454, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
-            this.label5.TabIndex = 88;
-            this.label5.Text = "Telefóno/Celular:";
             // 
-            // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(715, 65);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(56, 17);
-            this.checkBox1.TabIndex = 89;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(279, 63);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(55, 16);
+            this.labelX2.TabIndex = 102;
+            this.labelX2.Text = "Telefono:";
+            // 
+            // labelX3
+            // 
+            this.labelX3.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
+            this.labelX3.Location = new System.Drawing.Point(23, 64);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(37, 16);
+            this.labelX3.TabIndex = 103;
+            this.labelX3.Text = "Email:";
+            // 
+            // labelX4
+            // 
+            this.labelX4.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
+            this.labelX4.Location = new System.Drawing.Point(371, 9);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(127, 16);
+            this.labelX4.TabIndex = 104;
+            this.labelX4.Text = "Razon Social/Nombre:";
+            // 
+            // labelX5
+            // 
+            this.labelX5.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.ForeColor = System.Drawing.Color.Black;
+            this.labelX5.Location = new System.Drawing.Point(181, 12);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(87, 16);
+            this.labelX5.TabIndex = 105;
+            this.labelX5.Text = "N° Documento:";
+            // 
+            // labelX6
+            // 
+            this.labelX6.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.ForeColor = System.Drawing.Color.Black;
+            this.labelX6.Location = new System.Drawing.Point(23, 12);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(95, 16);
+            this.labelX6.TabIndex = 106;
+            this.labelX6.Text = "Tipo documento:";
+            // 
+            // chbActivo
+            // 
+            this.chbActivo.AutoSize = true;
+            this.chbActivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbActivo.Checked = true;
+            this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbActivo.Location = new System.Drawing.Point(709, 66);
+            this.chbActivo.Name = "chbActivo";
+            this.chbActivo.Size = new System.Drawing.Size(62, 17);
+            this.chbActivo.TabIndex = 107;
+            this.chbActivo.Text = "Activo";
+            this.chbActivo.UseVisualStyleBackColor = true;
             // 
             // frmCrearCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.superGridControl3);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(800, 481);
+            this.Controls.Add(this.chbActivo);
+            this.Controls.Add(this.labelX6);
+            this.Controls.Add(this.labelX5);
+            this.Controls.Add(this.labelX4);
+            this.Controls.Add(this.labelX3);
+            this.Controls.Add(this.labelX2);
+            this.Controls.Add(this.cmbTipoDocumento);
+            this.Controls.Add(this.labelX1);
+            this.Controls.Add(this.cmbKam);
+            this.Controls.Add(this.dgvCliente);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtRazonSocial);
+            this.Controls.Add(this.txtNroDocumento);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCrearCliente";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Cliente";
-            this.Load += new System.EventHandler(this.frmCrearCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtNroDocumento;
+        private System.Windows.Forms.TextBox txtRazonSocial;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnGrabar;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvCliente;
+        internal DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.ComboBox cmbKam;
+        private System.Windows.Forms.ComboBox cmbTipoDocumento;
+        internal DevComponents.DotNetBar.LabelX labelX2;
+        internal DevComponents.DotNetBar.LabelX labelX3;
+        internal DevComponents.DotNetBar.LabelX labelX4;
+        internal DevComponents.DotNetBar.LabelX labelX5;
+        internal DevComponents.DotNetBar.LabelX labelX6;
+        private System.Windows.Forms.CheckBox chbActivo;
     }
 }

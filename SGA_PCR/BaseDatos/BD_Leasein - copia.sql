@@ -276,10 +276,10 @@ CREATE TABLE cliente(
 )ENGINE=INNODB;
 
 CREATE TABLE cliente_sucursal(
-		idSucursal INT NOT NULL PRIMARY KEY,
+		idSucursal INT AUTO_INCREMENT PRIMARY KEY,
 		idCliente INT NOT NULL,
-		nroDocumento NVARCHAR(100)NOT NULL,
-		nombreContacto NVARCHAR(100)NOT NULL,
+		nroDocumento NVARCHAR(100),
+		nombreContacto NVARCHAR(100),
 		direccion NVARCHAR(100) NOT NULL,
 		telefono NVARCHAR(20),
 		email NVARCHAR(255),

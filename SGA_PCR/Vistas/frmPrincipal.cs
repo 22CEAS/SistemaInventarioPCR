@@ -197,5 +197,12 @@ namespace Vistas
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnSucursal_Click(object sender, EventArgs e)
+        {
+            frmClienteSucursal frm = new frmClienteSucursal();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

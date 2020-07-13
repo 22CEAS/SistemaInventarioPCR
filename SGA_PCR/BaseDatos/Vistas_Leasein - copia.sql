@@ -404,18 +404,4 @@ Select idCliente as idCliente,
 from cliente , auxiliar 
 where tipoDocumento=idAuxiliar and cod_tabla='TIPO_DOCUMENTO';
 
-/*Se mostrará la tabla de sucursales de un cliente en el maestro de sucursales clientes*/
-create view vista_maestro_Sucursal_Cliente as
-Select 	cs.idSucursal as idSucursal,
-		cs.idCliente as idCliente,
-		c.nombre_razonSocial as nombreCliente,
-		cs.nroDocumento as nroDocumento,
-		cs.nombreContacto as nombreContacto,
-		cs.direccion as direccion,
-		cs.telefono as telefono,
-		cs.email as email,
-		cs.observacion as observacion,
-		cs.estado as estado
-from cliente_sucursal cs , cliente c 
-where cs.idCliente=c.idCliente;
 

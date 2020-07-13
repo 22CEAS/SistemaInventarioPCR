@@ -41,20 +41,6 @@
             this.btnCrearDisco = new DevComponents.DotNetBar.ButtonItem();
             this.btnCrearMemoria = new DevComponents.DotNetBar.ButtonItem();
             this.btnCrearTarjetaVideo = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar9 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnReportMantenimiento = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar7 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnReporteAlquileres = new DevComponents.DotNetBar.ButtonItem();
-            this.btnReporteCompras = new DevComponents.DotNetBar.ButtonItem();
-            this.ribbonBar6 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnStock = new DevComponents.DotNetBar.ButtonItem();
-            this.btnVencimientos = new DevComponents.DotNetBar.ButtonItem();
-            this.btnReportePendienteFacturar = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPendienteRecoger = new DevComponents.DotNetBar.ButtonItem();
-            this.btnPendienteReposicion = new DevComponents.DotNetBar.ButtonItem();
-            this.btnMemoriasDiscos = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar10 = new DevComponents.DotNetBar.RibbonBar();
             this.btnLevantarObservacion = new DevComponents.DotNetBar.ButtonItem();
@@ -69,6 +55,20 @@
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btnIngreso = new DevComponents.DotNetBar.ButtonItem();
             this.btnDevolucion = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar9 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnReportMantenimiento = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar7 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnReporteAlquileres = new DevComponents.DotNetBar.ButtonItem();
+            this.btnReporteCompras = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonBar6 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnStock = new DevComponents.DotNetBar.ButtonItem();
+            this.btnVencimientos = new DevComponents.DotNetBar.ButtonItem();
+            this.btnReportePendienteFacturar = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPendienteRecoger = new DevComponents.DotNetBar.ButtonItem();
+            this.btnPendienteReposicion = new DevComponents.DotNetBar.ButtonItem();
+            this.btnMemoriasDiscos = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.Maestros = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
@@ -78,10 +78,11 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSucursal = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
-            this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
+            this.ribbonPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -172,7 +173,7 @@
             this.Proveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Proveedor.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnProveedor});
-            this.Proveedor.Location = new System.Drawing.Point(410, 0);
+            this.Proveedor.Location = new System.Drawing.Point(461, 0);
             this.Proveedor.Name = "Proveedor";
             this.Proveedor.Size = new System.Drawing.Size(117, 95);
             this.Proveedor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -213,10 +214,11 @@
             this.ribbonBar4.Dock = System.Windows.Forms.DockStyle.Left;
             this.ribbonBar4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ribbonBar4.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnCrearCliente});
+            this.btnCrearCliente,
+            this.btnSucursal});
             this.ribbonBar4.Location = new System.Drawing.Point(281, 0);
             this.ribbonBar4.Name = "ribbonBar4";
-            this.ribbonBar4.Size = new System.Drawing.Size(129, 95);
+            this.ribbonBar4.Size = new System.Drawing.Size(180, 95);
             this.ribbonBar4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar4.TabIndex = 1;
             this.ribbonBar4.Text = "Cliente";
@@ -323,221 +325,6 @@
             this.btnCrearTarjetaVideo.SubItemsExpandWidth = 14;
             this.btnCrearTarjetaVideo.Text = "Tarjeta Video";
             this.btnCrearTarjetaVideo.Click += new System.EventHandler(this.btnCrearTarjetaVideo_Click);
-            // 
-            // ribbonPanel3
-            // 
-            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.ribbonBar9);
-            this.ribbonPanel3.Controls.Add(this.ribbonBar7);
-            this.ribbonPanel3.Controls.Add(this.ribbonBar6);
-            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 53);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(933, 98);
-            // 
-            // 
-            // 
-            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel3.TabIndex = 3;
-            this.ribbonPanel3.Visible = false;
-            // 
-            // ribbonBar9
-            // 
-            this.ribbonBar9.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar9.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar9.ContainerControlProcessDialogKey = true;
-            this.ribbonBar9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar9.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnReportMantenimiento});
-            this.ribbonBar9.Location = new System.Drawing.Point(751, 0);
-            this.ribbonBar9.Name = "ribbonBar9";
-            this.ribbonBar9.Size = new System.Drawing.Size(116, 95);
-            this.ribbonBar9.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar9.TabIndex = 2;
-            this.ribbonBar9.Text = "Mantenimiento";
-            // 
-            // 
-            // 
-            this.ribbonBar9.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar9.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btnReportMantenimiento
-            // 
-            this.btnReportMantenimiento.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnReportMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportMantenimiento.FontBold = true;
-            this.btnReportMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnReportMantenimiento.Image")));
-            this.btnReportMantenimiento.Name = "btnReportMantenimiento";
-            this.btnReportMantenimiento.SubItemsExpandWidth = 14;
-            this.btnReportMantenimiento.Text = "Reparación";
-            this.btnReportMantenimiento.Click += new System.EventHandler(this.btnReportMantenimiento_Click);
-            // 
-            // ribbonBar7
-            // 
-            this.ribbonBar7.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar7.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar7.ContainerControlProcessDialogKey = true;
-            this.ribbonBar7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbonBar7.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnReporteAlquileres,
-            this.btnReporteCompras});
-            this.ribbonBar7.Location = new System.Drawing.Point(568, 0);
-            this.ribbonBar7.Name = "ribbonBar7";
-            this.ribbonBar7.Size = new System.Drawing.Size(183, 95);
-            this.ribbonBar7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar7.TabIndex = 1;
-            this.ribbonBar7.Text = "Procesos";
-            // 
-            // 
-            // 
-            this.ribbonBar7.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar7.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btnReporteAlquileres
-            // 
-            this.btnReporteAlquileres.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnReporteAlquileres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporteAlquileres.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteAlquileres.Image")));
-            this.btnReporteAlquileres.Name = "btnReporteAlquileres";
-            this.btnReporteAlquileres.SubItemsExpandWidth = 14;
-            this.btnReporteAlquileres.Text = "Alquiler";
-            this.btnReporteAlquileres.Click += new System.EventHandler(this.btnReporteAlquileres_Click);
-            // 
-            // btnReporteCompras
-            // 
-            this.btnReporteCompras.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnReporteCompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporteCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteCompras.Image")));
-            this.btnReporteCompras.Name = "btnReporteCompras";
-            this.btnReporteCompras.SubItemsExpandWidth = 14;
-            this.btnReporteCompras.Text = "Compras";
-            this.btnReporteCompras.Click += new System.EventHandler(this.btnReporteCompras_Click);
-            // 
-            // ribbonBar6
-            // 
-            this.ribbonBar6.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar6.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar6.ContainerControlProcessDialogKey = true;
-            this.ribbonBar6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbonBar6.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnStock,
-            this.btnVencimientos,
-            this.btnReportePendienteFacturar,
-            this.btnPendienteRecoger,
-            this.btnPendienteReposicion,
-            this.btnMemoriasDiscos,
-            this.buttonItem3});
-            this.ribbonBar6.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar6.Name = "ribbonBar6";
-            this.ribbonBar6.Size = new System.Drawing.Size(565, 95);
-            this.ribbonBar6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar6.TabIndex = 0;
-            this.ribbonBar6.Text = "PCR";
-            // 
-            // 
-            // 
-            this.ribbonBar6.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar6.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // btnStock
-            // 
-            this.btnStock.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnStock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStock.FontBold = true;
-            this.btnStock.Image = ((System.Drawing.Image)(resources.GetObject("btnStock.Image")));
-            this.btnStock.Name = "btnStock";
-            this.btnStock.SubItemsExpandWidth = 14;
-            this.btnStock.Text = "Stocks";
-            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
-            // 
-            // btnVencimientos
-            // 
-            this.btnVencimientos.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnVencimientos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVencimientos.Image = ((System.Drawing.Image)(resources.GetObject("btnVencimientos.Image")));
-            this.btnVencimientos.Name = "btnVencimientos";
-            this.btnVencimientos.SubItemsExpandWidth = 14;
-            this.btnVencimientos.Text = "Vencimiento";
-            this.btnVencimientos.Click += new System.EventHandler(this.btnVencimientos_Click);
-            // 
-            // btnReportePendienteFacturar
-            // 
-            this.btnReportePendienteFacturar.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnReportePendienteFacturar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportePendienteFacturar.Image = ((System.Drawing.Image)(resources.GetObject("btnReportePendienteFacturar.Image")));
-            this.btnReportePendienteFacturar.Name = "btnReportePendienteFacturar";
-            this.btnReportePendienteFacturar.SubItemsExpandWidth = 14;
-            this.btnReportePendienteFacturar.Text = "Pendiente\r\nFacturar";
-            this.btnReportePendienteFacturar.Click += new System.EventHandler(this.btnReportePendienteFacturar_Click);
-            // 
-            // btnPendienteRecoger
-            // 
-            this.btnPendienteRecoger.Name = "btnPendienteRecoger";
-            this.btnPendienteRecoger.SubItemsExpandWidth = 14;
-            this.btnPendienteRecoger.Text = "Pendiente\r\nRecoger";
-            this.btnPendienteRecoger.Click += new System.EventHandler(this.btnPendienteRecoger_Click);
-            // 
-            // btnPendienteReposicion
-            // 
-            this.btnPendienteReposicion.Name = "btnPendienteReposicion";
-            this.btnPendienteReposicion.SubItemsExpandWidth = 14;
-            this.btnPendienteReposicion.Text = "Pendiente\r\nReposición";
-            this.btnPendienteReposicion.Click += new System.EventHandler(this.btnPendienteReposicion_Click);
-            // 
-            // btnMemoriasDiscos
-            // 
-            this.btnMemoriasDiscos.Name = "btnMemoriasDiscos";
-            this.btnMemoriasDiscos.SubItemsExpandWidth = 14;
-            this.btnMemoriasDiscos.Text = "Memorias /\r\n Discos";
-            this.btnMemoriasDiscos.Click += new System.EventHandler(this.btnMemoriasDiscos_Click);
-            // 
-            // buttonItem3
-            // 
-            this.buttonItem3.Name = "buttonItem3";
-            this.buttonItem3.SubItemsExpandWidth = 14;
-            this.buttonItem3.Text = "Laptops";
-            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click);
             // 
             // ribbonPanel2
             // 
@@ -809,6 +596,221 @@
             this.btnDevolucion.Text = "Devolución";
             this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel3.Controls.Add(this.ribbonBar9);
+            this.ribbonPanel3.Controls.Add(this.ribbonBar7);
+            this.ribbonPanel3.Controls.Add(this.ribbonBar6);
+            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel3.Size = new System.Drawing.Size(933, 98);
+            // 
+            // 
+            // 
+            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel3.TabIndex = 3;
+            this.ribbonPanel3.Visible = false;
+            // 
+            // ribbonBar9
+            // 
+            this.ribbonBar9.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar9.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar9.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar9.ContainerControlProcessDialogKey = true;
+            this.ribbonBar9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar9.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnReportMantenimiento});
+            this.ribbonBar9.Location = new System.Drawing.Point(751, 0);
+            this.ribbonBar9.Name = "ribbonBar9";
+            this.ribbonBar9.Size = new System.Drawing.Size(116, 95);
+            this.ribbonBar9.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar9.TabIndex = 2;
+            this.ribbonBar9.Text = "Mantenimiento";
+            // 
+            // 
+            // 
+            this.ribbonBar9.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar9.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnReportMantenimiento
+            // 
+            this.btnReportMantenimiento.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnReportMantenimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportMantenimiento.FontBold = true;
+            this.btnReportMantenimiento.Image = ((System.Drawing.Image)(resources.GetObject("btnReportMantenimiento.Image")));
+            this.btnReportMantenimiento.Name = "btnReportMantenimiento";
+            this.btnReportMantenimiento.SubItemsExpandWidth = 14;
+            this.btnReportMantenimiento.Text = "Reparación";
+            this.btnReportMantenimiento.Click += new System.EventHandler(this.btnReportMantenimiento_Click);
+            // 
+            // ribbonBar7
+            // 
+            this.ribbonBar7.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar7.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar7.ContainerControlProcessDialogKey = true;
+            this.ribbonBar7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonBar7.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnReporteAlquileres,
+            this.btnReporteCompras});
+            this.ribbonBar7.Location = new System.Drawing.Point(568, 0);
+            this.ribbonBar7.Name = "ribbonBar7";
+            this.ribbonBar7.Size = new System.Drawing.Size(183, 95);
+            this.ribbonBar7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar7.TabIndex = 1;
+            this.ribbonBar7.Text = "Procesos";
+            // 
+            // 
+            // 
+            this.ribbonBar7.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar7.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnReporteAlquileres
+            // 
+            this.btnReporteAlquileres.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnReporteAlquileres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteAlquileres.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteAlquileres.Image")));
+            this.btnReporteAlquileres.Name = "btnReporteAlquileres";
+            this.btnReporteAlquileres.SubItemsExpandWidth = 14;
+            this.btnReporteAlquileres.Text = "Alquiler";
+            this.btnReporteAlquileres.Click += new System.EventHandler(this.btnReporteAlquileres_Click);
+            // 
+            // btnReporteCompras
+            // 
+            this.btnReporteCompras.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnReporteCompras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteCompras.Image")));
+            this.btnReporteCompras.Name = "btnReporteCompras";
+            this.btnReporteCompras.SubItemsExpandWidth = 14;
+            this.btnReporteCompras.Text = "Compras";
+            this.btnReporteCompras.Click += new System.EventHandler(this.btnReporteCompras_Click);
+            // 
+            // ribbonBar6
+            // 
+            this.ribbonBar6.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar6.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar6.ContainerControlProcessDialogKey = true;
+            this.ribbonBar6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ribbonBar6.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnStock,
+            this.btnVencimientos,
+            this.btnReportePendienteFacturar,
+            this.btnPendienteRecoger,
+            this.btnPendienteReposicion,
+            this.btnMemoriasDiscos,
+            this.buttonItem3});
+            this.ribbonBar6.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar6.Name = "ribbonBar6";
+            this.ribbonBar6.Size = new System.Drawing.Size(565, 95);
+            this.ribbonBar6.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar6.TabIndex = 0;
+            this.ribbonBar6.Text = "PCR";
+            // 
+            // 
+            // 
+            this.ribbonBar6.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar6.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnStock
+            // 
+            this.btnStock.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnStock.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStock.FontBold = true;
+            this.btnStock.Image = ((System.Drawing.Image)(resources.GetObject("btnStock.Image")));
+            this.btnStock.Name = "btnStock";
+            this.btnStock.SubItemsExpandWidth = 14;
+            this.btnStock.Text = "Stocks";
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
+            // 
+            // btnVencimientos
+            // 
+            this.btnVencimientos.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnVencimientos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVencimientos.Image = ((System.Drawing.Image)(resources.GetObject("btnVencimientos.Image")));
+            this.btnVencimientos.Name = "btnVencimientos";
+            this.btnVencimientos.SubItemsExpandWidth = 14;
+            this.btnVencimientos.Text = "Vencimiento";
+            this.btnVencimientos.Click += new System.EventHandler(this.btnVencimientos_Click);
+            // 
+            // btnReportePendienteFacturar
+            // 
+            this.btnReportePendienteFacturar.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnReportePendienteFacturar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportePendienteFacturar.Image = ((System.Drawing.Image)(resources.GetObject("btnReportePendienteFacturar.Image")));
+            this.btnReportePendienteFacturar.Name = "btnReportePendienteFacturar";
+            this.btnReportePendienteFacturar.SubItemsExpandWidth = 14;
+            this.btnReportePendienteFacturar.Text = "Pendiente\r\nFacturar";
+            this.btnReportePendienteFacturar.Click += new System.EventHandler(this.btnReportePendienteFacturar_Click);
+            // 
+            // btnPendienteRecoger
+            // 
+            this.btnPendienteRecoger.Name = "btnPendienteRecoger";
+            this.btnPendienteRecoger.SubItemsExpandWidth = 14;
+            this.btnPendienteRecoger.Text = "Pendiente\r\nRecoger";
+            this.btnPendienteRecoger.Click += new System.EventHandler(this.btnPendienteRecoger_Click);
+            // 
+            // btnPendienteReposicion
+            // 
+            this.btnPendienteReposicion.Name = "btnPendienteReposicion";
+            this.btnPendienteReposicion.SubItemsExpandWidth = 14;
+            this.btnPendienteReposicion.Text = "Pendiente\r\nReposición";
+            this.btnPendienteReposicion.Click += new System.EventHandler(this.btnPendienteReposicion_Click);
+            // 
+            // btnMemoriasDiscos
+            // 
+            this.btnMemoriasDiscos.Name = "btnMemoriasDiscos";
+            this.btnMemoriasDiscos.SubItemsExpandWidth = 14;
+            this.btnMemoriasDiscos.Text = "Memorias /\r\n Discos";
+            this.btnMemoriasDiscos.Click += new System.EventHandler(this.btnMemoriasDiscos_Click);
+            // 
+            // buttonItem3
+            // 
+            this.buttonItem3.Name = "buttonItem3";
+            this.buttonItem3.SubItemsExpandWidth = 14;
+            this.buttonItem3.Text = "Laptops";
+            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click);
+            // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -880,6 +882,18 @@
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.Text = "buttonItem1";
             // 
+            // btnSucursal
+            // 
+            this.btnSucursal.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnSucursal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSucursal.FontBold = true;
+            this.btnSucursal.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursal.Image")));
+            this.btnSucursal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.btnSucursal.Name = "btnSucursal";
+            this.btnSucursal.SubItemsExpandWidth = 14;
+            this.btnSucursal.Text = "Sucursal";
+            this.btnSucursal.Click += new System.EventHandler(this.btnSucursal_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -896,8 +910,8 @@
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
             this.ribbonPanel1.ResumeLayout(false);
-            this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel2.ResumeLayout(false);
+            this.ribbonPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -951,6 +965,7 @@
         public DevComponents.DotNetBar.ButtonItem buttonItem3;
         public DevComponents.DotNetBar.ButtonItem btnPendienteRecoger;
         public DevComponents.DotNetBar.ButtonItem btnPendienteReposicion;
+        public DevComponents.DotNetBar.ButtonItem btnSucursal;
     }
 }
 

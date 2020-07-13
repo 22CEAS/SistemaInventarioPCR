@@ -65,6 +65,12 @@
     <Compile Include="frmCambioPieza.Designer.cs">
       <DependentUpon>frmCambioPieza.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClienteSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClienteSucursal.Designer.cs">
+      <DependentUpon>frmClienteSucursal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCuadroVencimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambioPieza.resx">
       <DependentUpon>frmCambioPieza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClienteSucursal.resx">
+      <DependentUpon>frmClienteSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearCliente.resx">
       <DependentUpon>frmCrearCliente.cs</DependentUpon>
