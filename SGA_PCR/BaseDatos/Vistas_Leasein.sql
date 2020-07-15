@@ -349,8 +349,11 @@ where idCategoria=11 and estado=1;
 /*Se mostrará todas las licencias*/
 create view vista_licencia_lista as
 Select l.idLicencia as idLicencia,
+				c.idCategoria as idCategoria,
 				c.nombre as categoria,
+				ma.idMarca as idMarca,
 				ma.nombre as marca,
+				mo.idModelo as idModelo,
 				mo.nombre as version,
 				l.idLC as idLC,
 				l.clave as clave,
@@ -418,4 +421,81 @@ Select 	cs.idSucursal as idSucursal,
 		cs.estado as estado
 from cliente_sucursal cs , cliente c 
 where cs.idCliente=c.idCliente;
+
+/*Se mostrará la tabla de laptops en el maestro de laptops*/
+create view vista_maestro_laptops as
+Select 	l.idLC as idLC,
+		ma.idMarca as idMarca,
+		ma.nombre as marca,
+		m.idModelo as idModelo,
+		m.nombre as nombreModelo,
+		l.codigo as codigo,
+		l.tamanoPantalla as tamanoPantalla,
+		l.idProcesador as idProcesador,
+		l.idVideo as idVideo,
+		l.partNumber as partNumber,
+		l.serieFabrica as serieFabrica,
+		l.garantia as garantia,
+		l.fecInicioSeguro as fecInicioSeguro,
+		l.fecFinSeguro as fecFinSeguro,
+		l.ubicacion as ubicacion,
+		l.observacion as observacion,
+		l.estado as estado
+From laptop_cpu l
+	inner join modelo m on m.idModelo = l.idModelo
+	inner join marca ma on m.idMarca = ma.idMarca ;
+	
+/*Se mostrará la tabla de laptops en el maestro de laptops*/
+create view vista_laptops_almacen_lista as
+SELECT lc.idLC as idLC,
+		lc.idMarca as idMarca,
+		lc.marca as marcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as nombreModeloLC,
+		lc.codigo as codigo,
+		lc.tamanoPantalla as tamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as tipoProcesador,
+		p.generacion as generacionProcesador,
+		v.idVideo as idVideo,
+		v.marca as marcaVideo,
+		v.nombreModelo as nombreModeloVideo,
+		v.capacidad as capacidadVideo,
+		v.tipo as tipoVideo,
+		lc.partNumber as partNumber,
+		lc.serieFabrica as serieFabrica,
+		lc.garantia as garantia,
+		lc.fecInicioSeguro as fecInicioSeguro,
+		lc.fecFinSeguro as fecFinSeguro,
+		lc.ubicacion as ubicacion,
+		lc.observacion as observacion,
+		lc.estado as estado
+FROM vista_maestro_laptops lc, vista_maestro_procesador p, vista_maestro_video v
+where lc.estado=1 and lc.idVideo=v.idVideo and lc.idProcesador=p.idProcesador and lc.ubicacion='ALMACEN'
+ORDER BY lc.idLC;
+	
+/*Se mostrará la tabla de discos relacinados a una laptop*/
+create view vista_laptops_discos as
+SELECT lc.idLC as idLC,
+		d.idDisco as idDisco,
+		d.tipo as tipoDisco,
+		d.tamano as tamanoDisco,
+		d.capacidad as capacidadDisco,
+		dlc.cantidad as cantidadDiscoLC
+FROM vista_maestro_laptops lc, vista_maestro_disco d, disco_lc dlc
+where lc.idLC=dlc.idLC and d.idDisco=dlc.idDisco 
+ORDER BY d.tipo;
+
+
+/*Se mostrará la tabla de discos relacinados a una laptop*/
+create view vista_laptops_memorias as
+SELECT lc.idLC as idLC,
+		m.idMemoria as idMemoria,
+		m.tipo as tipoMemoria,
+		m.capacidad as capacidadMemoria,
+		mlc.cantidad as cantidadMemoriaLC
+FROM vista_maestro_laptops lc, vista_maestro_memoria m,  memoria_lc mlc
+where lc.idLC=mlc.idLC and m.idMemoria=mlc.idMemoria
+ORDER BY m.tipo;
 

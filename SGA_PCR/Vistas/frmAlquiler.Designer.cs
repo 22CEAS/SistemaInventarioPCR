@@ -46,42 +46,47 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.LabelX4 = new DevComponents.DotNetBar.LabelX();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpFechaIngreso = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dtpFechaTraslado = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtNroDocumento = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblNroDias = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimeInput3 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dtpIniPlazo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNroAlquiler = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dateTimeInput4 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dtpFinPlazo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.btnEditarMemoria = new System.Windows.Forms.Button();
             this.btnEditarDisco = new System.Windows.Forms.Button();
-            this.superGridControl2 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.superGridControl4 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.dgvMemorias = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.dgvDisco = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.dgvLicencia = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.btnEditarLicencia = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.superGridControl5 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNroContrato = new System.Windows.Forms.TextBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput4)).BeginInit();
+            this.txtNroOC = new System.Windows.Forms.TextBox();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.dgvLaptopsSeleccionados = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaTraslado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpIniPlazo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFinPlazo)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelX4
@@ -130,56 +135,48 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Cliente:";
             // 
-            // dtpFechaIngreso
+            // dtpFechaTraslado
             // 
             // 
             // 
             // 
-            this.dtpFechaIngreso.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpFechaIngreso.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtpFechaIngreso.ButtonDropDown.Visible = true;
-            this.dtpFechaIngreso.IsPopupCalendarOpen = false;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(178, 141);
+            this.dtpFechaTraslado.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaTraslado.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpFechaTraslado.ButtonDropDown.Visible = true;
+            this.dtpFechaTraslado.IsPopupCalendarOpen = false;
+            this.dtpFechaTraslado.Location = new System.Drawing.Point(178, 141);
             // 
             // 
             // 
-            this.dtpFechaIngreso.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dtpFechaTraslado.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dtpFechaIngreso.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaTraslado.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.dtpFechaIngreso.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpFechaIngreso.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
-            this.dtpFechaIngreso.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtpFechaIngreso.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dtpFechaTraslado.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaTraslado.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
+            this.dtpFechaTraslado.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpFechaTraslado.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dtpFechaIngreso.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpFechaIngreso.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(100, 20);
-            this.dtpFechaIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFechaIngreso.TabIndex = 20;
+            this.dtpFechaTraslado.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaTraslado.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpFechaTraslado.Name = "dtpFechaTraslado";
+            this.dtpFechaTraslado.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaTraslado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpFechaTraslado.TabIndex = 20;
             // 
-            // textBox1
+            // txtNroDocumento
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(601, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 17;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(103, 65);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(361, 21);
-            this.comboBox1.TabIndex = 16;
+            this.txtNroDocumento.Location = new System.Drawing.Point(601, 66);
+            this.txtNroDocumento.Name = "txtNroDocumento";
+            this.txtNroDocumento.ReadOnly = true;
+            this.txtNroDocumento.Size = new System.Drawing.Size(146, 20);
+            this.txtNroDocumento.TabIndex = 17;
             // 
             // button2
             // 
@@ -199,15 +196,15 @@
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // lblNroDias
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(788, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 16);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "99 meses 9 días";
+            this.lblNroDias.AutoSize = true;
+            this.lblNroDias.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroDias.Location = new System.Drawing.Point(788, 32);
+            this.lblNroDias.Name = "lblNroDias";
+            this.lblNroDias.Size = new System.Drawing.Size(44, 16);
+            this.lblNroDias.TabIndex = 33;
+            this.lblNroDias.Text = "0 días";
             // 
             // label7
             // 
@@ -218,42 +215,42 @@
             this.label7.Size = new System.Drawing.Size(112, 16);
             this.label7.TabIndex = 35;
             this.label7.Text = "Plazo de Alquiler:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // dateTimeInput3
-            // 
+            // dtpIniPlazo
             // 
             // 
             // 
-            this.dateTimeInput3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput3.ButtonDropDown.Visible = true;
-            this.dateTimeInput3.IsPopupCalendarOpen = false;
-            this.dateTimeInput3.Location = new System.Drawing.Point(571, 28);
+            // 
+            this.dtpIniPlazo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpIniPlazo.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpIniPlazo.ButtonDropDown.Visible = true;
+            this.dtpIniPlazo.IsPopupCalendarOpen = false;
+            this.dtpIniPlazo.Location = new System.Drawing.Point(571, 28);
             // 
             // 
             // 
-            this.dateTimeInput3.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dtpIniPlazo.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput3.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpIniPlazo.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
-            this.dateTimeInput3.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput3.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dtpIniPlazo.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpIniPlazo.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
+            this.dtpIniPlazo.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpIniPlazo.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput3.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput3.Name = "dateTimeInput3";
-            this.dateTimeInput3.Size = new System.Drawing.Size(92, 20);
-            this.dateTimeInput3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput3.TabIndex = 34;
+            this.dtpIniPlazo.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpIniPlazo.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpIniPlazo.Name = "dtpIniPlazo";
+            this.dtpIniPlazo.Size = new System.Drawing.Size(92, 20);
+            this.dtpIniPlazo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpIniPlazo.TabIndex = 34;
+            this.dtpIniPlazo.ValueChanged += new System.EventHandler(this.dtpIniPlazo_ValueChanged);
             // 
             // label8
             // 
@@ -261,16 +258,17 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(45, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 16);
+            this.label8.Size = new System.Drawing.Size(73, 16);
             this.label8.TabIndex = 37;
-            this.label8.Text = "Pedido:";
+            this.label8.Text = "Alquiler N°:";
             // 
-            // textBox4
+            // txtNroAlquiler
             // 
-            this.textBox4.Location = new System.Drawing.Point(106, 30);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(106, 20);
-            this.textBox4.TabIndex = 36;
+            this.txtNroAlquiler.Location = new System.Drawing.Point(124, 30);
+            this.txtNroAlquiler.Name = "txtNroAlquiler";
+            this.txtNroAlquiler.ReadOnly = true;
+            this.txtNroAlquiler.Size = new System.Drawing.Size(106, 20);
+            this.txtNroAlquiler.TabIndex = 36;
             // 
             // label9
             // 
@@ -282,40 +280,40 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "-";
             // 
-            // dateTimeInput4
+            // dtpFinPlazo
             // 
             // 
             // 
             // 
-            this.dateTimeInput4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput4.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dateTimeInput4.ButtonDropDown.Visible = true;
-            this.dateTimeInput4.IsPopupCalendarOpen = false;
-            this.dateTimeInput4.Location = new System.Drawing.Point(687, 28);
+            this.dtpFinPlazo.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFinPlazo.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpFinPlazo.ButtonDropDown.Visible = true;
+            this.dtpFinPlazo.IsPopupCalendarOpen = false;
+            this.dtpFinPlazo.Location = new System.Drawing.Point(687, 28);
             // 
             // 
             // 
-            this.dateTimeInput4.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dtpFinPlazo.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput4.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFinPlazo.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.dateTimeInput4.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput4.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
-            this.dateTimeInput4.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dateTimeInput4.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dtpFinPlazo.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFinPlazo.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
+            this.dtpFinPlazo.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpFinPlazo.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dateTimeInput4.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dateTimeInput4.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dateTimeInput4.Name = "dateTimeInput4";
-            this.dateTimeInput4.Size = new System.Drawing.Size(92, 20);
-            this.dateTimeInput4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTimeInput4.TabIndex = 41;
+            this.dtpFinPlazo.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFinPlazo.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpFinPlazo.Name = "dtpFinPlazo";
+            this.dtpFinPlazo.Size = new System.Drawing.Size(92, 20);
+            this.dtpFinPlazo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpFinPlazo.TabIndex = 41;
             // 
             // label11
             // 
@@ -359,59 +357,104 @@
             this.btnEditarDisco.UseVisualStyleBackColor = true;
             this.btnEditarDisco.Click += new System.EventHandler(this.btnEditarDisco_Click);
             // 
-            // superGridControl2
+            // dgvMemorias
             // 
-            this.superGridControl2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.superGridControl2.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl2.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl2.Location = new System.Drawing.Point(606, 242);
-            this.superGridControl2.Name = "superGridControl2";
-            gridColumn1.Name = "Codigo";
-            gridColumn2.Name = "frecuencuia";
-            gridColumn3.Name = "Generación";
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn1);
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn2);
-            this.superGridControl2.PrimaryGrid.Columns.Add(gridColumn3);
-            this.superGridControl2.Size = new System.Drawing.Size(287, 99);
-            this.superGridControl2.TabIndex = 46;
-            this.superGridControl2.Text = "superGridControl2";
-            this.superGridControl2.Click += new System.EventHandler(this.superGridControl2_Click);
+            this.dgvMemorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.dgvMemorias.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvMemorias.ForeColor = System.Drawing.Color.Black;
+            this.dgvMemorias.Location = new System.Drawing.Point(592, 242);
+            this.dgvMemorias.Name = "dgvMemorias";
+            gridColumn1.AllowEdit = false;
+            gridColumn1.DataPropertyName = "TipoMemoria";
+            gridColumn1.Name = "Tipo";
+            gridColumn2.AllowEdit = false;
+            gridColumn2.DataPropertyName = "Capacidad";
+            gridColumn2.Name = "Capacidad";
+            gridColumn3.AllowEdit = false;
+            gridColumn3.DataPropertyName = "Cantidad";
+            gridColumn3.Name = "Cantidad";
+            gridColumn4.AllowEdit = false;
+            gridColumn4.DataPropertyName = "IdMemoria";
+            gridColumn4.Name = "idMemoria";
+            gridColumn4.Visible = false;
+            this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn3);
+            this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn4);
+            this.dgvMemorias.PrimaryGrid.MultiSelect = false;
+            this.dgvMemorias.PrimaryGrid.NoRowsText = "No hay ninguna Memoria asignada";
+            this.dgvMemorias.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvMemorias.Size = new System.Drawing.Size(300, 99);
+            this.dgvMemorias.TabIndex = 46;
+            this.dgvMemorias.Text = "Tabla Memoria";
             // 
-            // superGridControl3
+            // dgvDisco
             // 
-            this.superGridControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl3.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl3.Location = new System.Drawing.Point(606, 399);
-            this.superGridControl3.Name = "superGridControl3";
-            gridColumn4.Name = "Codigo";
-            gridColumn5.Name = "frecuencuia";
-            gridColumn6.Name = "Generación";
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn4);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn5);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn6);
-            this.superGridControl3.Size = new System.Drawing.Size(287, 99);
-            this.superGridControl3.TabIndex = 47;
-            this.superGridControl3.Text = "superGridControl3";
+            this.dgvDisco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.dgvDisco.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvDisco.ForeColor = System.Drawing.Color.Black;
+            this.dgvDisco.Location = new System.Drawing.Point(592, 399);
+            this.dgvDisco.Name = "dgvDisco";
+            gridColumn5.AllowEdit = false;
+            gridColumn5.DataPropertyName = "TipoDisco";
+            gridColumn5.Name = "Tipo";
+            gridColumn6.AllowEdit = false;
+            gridColumn6.DataPropertyName = "Capacidad";
+            gridColumn6.Name = "Capacidad";
+            gridColumn7.AllowEdit = false;
+            gridColumn7.DataPropertyName = "Cantidad";
+            gridColumn7.Name = "Cantidad";
+            gridColumn8.DataPropertyName = "IdDisco";
+            gridColumn8.Name = "idDisco";
+            gridColumn8.Visible = false;
+            gridColumn9.DataPropertyName = "Tamano";
+            gridColumn9.Name = "Tamano";
+            gridColumn9.Visible = false;
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn6);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn7);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn8);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn9);
+            this.dgvDisco.PrimaryGrid.MultiSelect = false;
+            this.dgvDisco.PrimaryGrid.NoRowsText = "No hay ningun disco asignada";
+            this.dgvDisco.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvDisco.Size = new System.Drawing.Size(300, 99);
+            this.dgvDisco.TabIndex = 47;
+            this.dgvDisco.Text = "Tabla Disco";
             // 
-            // superGridControl4
+            // dgvLicencia
             // 
-            this.superGridControl4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
-            this.superGridControl4.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl4.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl4.Location = new System.Drawing.Point(606, 558);
-            this.superGridControl4.Name = "superGridControl4";
-            gridColumn7.Name = "Codigo";
-            gridColumn8.Name = "frecuencuia";
-            gridColumn9.Name = "Generación";
-            gridColumn10.Name = "Contraseña";
-            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn7);
-            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn8);
-            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn9);
-            this.superGridControl4.PrimaryGrid.Columns.Add(gridColumn10);
-            this.superGridControl4.Size = new System.Drawing.Size(287, 99);
-            this.superGridControl4.TabIndex = 50;
-            this.superGridControl4.Text = "superGridControl4";
+            this.dgvLicencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.dgvLicencia.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvLicencia.ForeColor = System.Drawing.Color.Black;
+            this.dgvLicencia.Location = new System.Drawing.Point(592, 558);
+            this.dgvLicencia.Name = "dgvLicencia";
+            gridColumn10.AllowEdit = false;
+            gridColumn10.DataPropertyName = "Categoria";
+            gridColumn10.Name = "Categoría";
+            gridColumn11.AllowEdit = false;
+            gridColumn11.DataPropertyName = "Marca";
+            gridColumn11.Name = "Marca";
+            gridColumn12.AllowEdit = false;
+            gridColumn12.DataPropertyName = "Version";
+            gridColumn12.Name = "Versión";
+            gridColumn13.DataPropertyName = "Clave";
+            gridColumn13.Name = "Clave";
+            gridColumn14.AllowEdit = false;
+            gridColumn14.DataPropertyName = "IdLicencia";
+            gridColumn14.Name = "idLicencia";
+            gridColumn14.Visible = false;
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn13);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn14);
+            this.dgvLicencia.PrimaryGrid.MultiSelect = false;
+            this.dgvLicencia.PrimaryGrid.NoRowsText = "No hay ninguna licencia asignada";
+            this.dgvLicencia.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvLicencia.Size = new System.Drawing.Size(300, 120);
+            this.dgvLicencia.TabIndex = 50;
+            this.dgvLicencia.Text = "Tabla Licencias";
             // 
             // btnEditarLicencia
             // 
@@ -444,61 +487,6 @@
             this.label14.TabIndex = 51;
             this.label14.Text = "Productos seleccionados:";
             // 
-            // superGridControl5
-            // 
-            this.superGridControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.superGridControl5.BackColor = System.Drawing.Color.White;
-            this.superGridControl5.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl5.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl5.Location = new System.Drawing.Point(48, 242);
-            this.superGridControl5.Name = "superGridControl5";
-            this.superGridControl5.PrimaryGrid.AllowRowDelete = true;
-            this.superGridControl5.PrimaryGrid.AllowRowHeaderResize = true;
-            this.superGridControl5.PrimaryGrid.AllowRowInsert = true;
-            this.superGridControl5.PrimaryGrid.AllowRowResize = true;
-            this.superGridControl5.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn11.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn11.FillWeight = 60;
-            gridColumn11.Name = "Seleccionar";
-            gridColumn12.Name = "Código";
-            gridColumn12.Width = 110;
-            gridColumn13.Name = "Equipo";
-            gridColumn13.Width = 110;
-            gridColumn14.FilterAutoScan = true;
-            gridColumn14.Name = "Modelo";
-            gridColumn14.Width = 110;
-            gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn15.Name = "Marca";
-            gridColumn15.Width = 110;
-            gridColumn16.Name = "Pantalla";
-            gridColumn16.Width = 110;
-            gridColumn17.Name = "Procesador";
-            gridColumn18.Name = "Generación";
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn11);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn12);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn13);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn14);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn15);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn16);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn17);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn18);
-            this.superGridControl5.PrimaryGrid.DefaultRowHeight = 24;
-            this.superGridControl5.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl5.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl5.PrimaryGrid.EnableColumnFiltering = true;
-            this.superGridControl5.PrimaryGrid.EnableFiltering = true;
-            this.superGridControl5.PrimaryGrid.EnableRowFiltering = true;
-            this.superGridControl5.PrimaryGrid.Filter.Visible = true;
-            this.superGridControl5.PrimaryGrid.NullString = "<<null>>";
-            this.superGridControl5.PrimaryGrid.RowHeaderWidth = 45;
-            this.superGridControl5.PrimaryGrid.ShowInsertRow = true;
-            this.superGridControl5.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl5.Size = new System.Drawing.Size(517, 455);
-            this.superGridControl5.TabIndex = 52;
-            this.superGridControl5.Text = "superGridControl5";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -508,14 +496,6 @@
             this.label15.Size = new System.Drawing.Size(63, 16);
             this.label15.TabIndex = 54;
             this.label15.Text = "Sucursal:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(112, 102);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(352, 21);
-            this.comboBox2.TabIndex = 53;
             // 
             // labelX1
             // 
@@ -532,13 +512,12 @@
             this.labelX1.TabIndex = 56;
             this.labelX1.Text = "N° CONTRATO";
             // 
-            // textBox5
+            // txtNroContrato
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(620, 102);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(85, 20);
-            this.textBox5.TabIndex = 55;
+            this.txtNroContrato.Location = new System.Drawing.Point(620, 102);
+            this.txtNroContrato.Name = "txtNroContrato";
+            this.txtNroContrato.Size = new System.Drawing.Size(85, 20);
+            this.txtNroContrato.TabIndex = 55;
             // 
             // labelX2
             // 
@@ -555,58 +534,165 @@
             this.labelX2.TabIndex = 58;
             this.labelX2.Text = "N° OC";
             // 
-            // textBox6
+            // txtNroOC
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(781, 102);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(85, 20);
-            this.textBox6.TabIndex = 57;
+            this.txtNroOC.Location = new System.Drawing.Point(781, 102);
+            this.txtNroOC.Name = "txtNroOC";
+            this.txtNroOC.Size = new System.Drawing.Size(85, 20);
+            this.txtNroOC.TabIndex = 57;
+            // 
+            // cmbCliente
+            // 
+            this.cmbCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(112, 62);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(352, 21);
+            this.cmbCliente.TabIndex = 132;
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
+            // 
+            // dgvLaptopsSeleccionados
+            // 
+            this.dgvLaptopsSeleccionados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLaptopsSeleccionados.BackColor = System.Drawing.Color.White;
+            this.dgvLaptopsSeleccionados.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvLaptopsSeleccionados.ForeColor = System.Drawing.Color.Black;
+            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(46, 239);
+            this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";
+            this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowResize = true;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn15.AllowEdit = false;
+            gridColumn15.DataPropertyName = "Codigo";
+            gridColumn15.MinimumWidth = 100;
+            gridColumn15.Name = "Código";
+            gridColumn15.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn16.AllowEdit = false;
+            gridColumn16.DataPropertyName = "MarcaLC";
+            gridColumn16.MinimumWidth = 100;
+            gridColumn16.Name = "Marca";
+            gridColumn16.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn17.AllowEdit = false;
+            gridColumn17.DataPropertyName = "NombreModeloLC";
+            gridColumn17.MinimumWidth = 100;
+            gridColumn17.Name = "Modelo";
+            gridColumn18.AllowEdit = false;
+            gridColumn18.DataPropertyName = "TamanoPantalla";
+            gridColumn18.MinimumWidth = 60;
+            gridColumn18.Name = "Pantalla";
+            gridColumn18.Width = 60;
+            gridColumn19.AllowEdit = false;
+            gridColumn19.DataPropertyName = "TipoProcesador";
+            gridColumn19.MinimumWidth = 70;
+            gridColumn19.Name = "Procesador";
+            gridColumn19.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn19.Width = 70;
+            gridColumn20.AllowEdit = false;
+            gridColumn20.DataPropertyName = "GeneracionProcesador";
+            gridColumn20.MinimumWidth = 70;
+            gridColumn20.Name = "Generacion";
+            gridColumn20.Width = 70;
+            gridColumn21.AllowEdit = false;
+            gridColumn21.DataPropertyName = "NombreModeloVideo";
+            gridColumn21.Name = "Video";
+            gridColumn22.AllowEdit = false;
+            gridColumn22.DataPropertyName = "CapacidadVideo";
+            gridColumn22.MinimumWidth = 70;
+            gridColumn22.Name = "Capacidad";
+            gridColumn22.Width = 70;
+            gridColumn23.DataPropertyName = "IdLC";
+            gridColumn23.Name = "Id LC";
+            gridColumn23.Visible = false;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn15);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn16);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn17);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn18);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn19);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn20);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn21);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn22);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn23);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.EnableFiltering = true;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Filter.Visible = true;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.MultiSelect = false;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.NoRowsText = "No hay ninguna laptop seleccionada";
+            this.dgvLaptopsSeleccionados.PrimaryGrid.NullString = "<<null>>";
+            this.dgvLaptopsSeleccionados.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.UseAlternateColumnStyle = true;
+            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(490, 425);
+            this.dgvLaptopsSeleccionados.TabIndex = 134;
+            this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
+            this.dgvLaptopsSeleccionados.Click += new System.EventHandler(this.dgvLaptopsSeleccionados_Click);
+            // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbSucursal.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbSucursal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(112, 101);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(352, 21);
+            this.cmbSucursal.TabIndex = 135;
             // 
             // frmAlquiler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(936, 749);
+            this.Controls.Add(this.cmbSucursal);
+            this.Controls.Add(this.dgvLaptopsSeleccionados);
+            this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.labelX2);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtNroOC);
             this.Controls.Add(this.labelX1);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtNroContrato);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.superGridControl5);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.superGridControl4);
+            this.Controls.Add(this.dgvLicencia);
             this.Controls.Add(this.btnEditarLicencia);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.superGridControl3);
-            this.Controls.Add(this.superGridControl2);
+            this.Controls.Add(this.dgvDisco);
+            this.Controls.Add(this.dgvMemorias);
             this.Controls.Add(this.btnEditarDisco);
             this.Controls.Add(this.btnEditarMemoria);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dateTimeInput4);
+            this.Controls.Add(this.dtpFinPlazo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtNroAlquiler);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimeInput3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dtpIniPlazo);
+            this.Controls.Add(this.lblNroDias);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LabelX4);
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtpFechaIngreso);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dtpFechaTraslado);
+            this.Controls.Add(this.txtNroDocumento);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAlquiler";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler";
-            this.Load += new System.EventHandler(this.frmAlquiler_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaTraslado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpIniPlazo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFinPlazo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -618,34 +704,34 @@
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFechaIngreso;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFechaTraslado;
+        private System.Windows.Forms.TextBox txtNroDocumento;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblNroDias;
         private System.Windows.Forms.Label label7;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput3;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpIniPlazo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNroAlquiler;
         private System.Windows.Forms.Label label9;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput4;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFinPlazo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnEditarMemoria;
         private System.Windows.Forms.Button btnEditarDisco;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl2;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl3;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl4;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvMemorias;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvDisco;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLicencia;
         private System.Windows.Forms.Button btnEditarLicencia;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl5;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox2;
         internal DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNroContrato;
         internal DevComponents.DotNetBar.LabelX labelX2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNroOC;
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLaptopsSeleccionados;
+        private System.Windows.Forms.ComboBox cmbSucursal;
     }
 }

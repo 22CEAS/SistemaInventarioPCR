@@ -50,6 +50,7 @@ namespace Modelo
         public string Codigo { get => codigo; set => codigo = value; }
         public int IdTipo { get => idTipo; set => idTipo = value; }
         public Modelo Tipo { get => tipo; set => tipo = value; }
+        public string TipoDisco { get => Tipo.NombreModelo;}
         public int IdTamano { get => idTamano; set => idTamano = value; }
         public double Tamano { get => tamano; set => tamano = value; }
         public int IdCapacidad { get => idCapacidad; set => idCapacidad = value; }

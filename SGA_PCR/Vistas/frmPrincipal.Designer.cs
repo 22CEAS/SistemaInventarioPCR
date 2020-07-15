@@ -36,6 +36,7 @@
             this.btnProveedor = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
             this.btnCrearCliente = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSucursal = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.btnCrearProcesador = new DevComponents.DotNetBar.ButtonItem();
             this.btnCrearDisco = new DevComponents.DotNetBar.ButtonItem();
@@ -78,7 +79,6 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.btnSucursal = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
@@ -93,8 +93,8 @@
             // 
             this.ribbonControl1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl1.CaptionVisible = true;
-            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -156,6 +156,7 @@
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             // 
             // Proveedor
             // 
@@ -242,6 +243,18 @@
             this.btnCrearCliente.SubItemsExpandWidth = 14;
             this.btnCrearCliente.Text = "Cliente";
             this.btnCrearCliente.Click += new System.EventHandler(this.btnCrearCliente_Click);
+            // 
+            // btnSucursal
+            // 
+            this.btnSucursal.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnSucursal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSucursal.FontBold = true;
+            this.btnSucursal.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursal.Image")));
+            this.btnSucursal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
+            this.btnSucursal.Name = "btnSucursal";
+            this.btnSucursal.SubItemsExpandWidth = 14;
+            this.btnSucursal.Text = "Sucursal";
+            this.btnSucursal.Click += new System.EventHandler(this.btnSucursal_Click);
             // 
             // ribbonBar1
             // 
@@ -352,7 +365,6 @@
             // 
             this.ribbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel2.TabIndex = 2;
-            this.ribbonPanel2.Visible = false;
             // 
             // ribbonBar10
             // 
@@ -836,7 +848,6 @@
             // 
             // Maestros
             // 
-            this.Maestros.Checked = true;
             this.Maestros.FontBold = true;
             this.Maestros.Name = "Maestros";
             this.Maestros.Panel = this.ribbonPanel1;
@@ -844,6 +855,7 @@
             // 
             // ribbonTabItem2
             // 
+            this.ribbonTabItem2.Checked = true;
             this.ribbonTabItem2.FontBold = true;
             this.ribbonTabItem2.Name = "ribbonTabItem2";
             this.ribbonTabItem2.Panel = this.ribbonPanel2;
@@ -881,18 +893,6 @@
             // 
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.Text = "buttonItem1";
-            // 
-            // btnSucursal
-            // 
-            this.btnSucursal.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnSucursal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSucursal.FontBold = true;
-            this.btnSucursal.Image = ((System.Drawing.Image)(resources.GetObject("btnSucursal.Image")));
-            this.btnSucursal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.btnSucursal.Name = "btnSucursal";
-            this.btnSucursal.SubItemsExpandWidth = 14;
-            this.btnSucursal.Text = "Sucursal";
-            this.btnSucursal.Click += new System.EventHandler(this.btnSucursal_Click);
             // 
             // frmPrincipal
             // 

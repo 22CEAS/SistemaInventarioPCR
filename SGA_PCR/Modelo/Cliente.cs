@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,13 @@ namespace Modelo
         private string email;
         private Usuario kam;
         private int estado;
+        private BindingList<ClienteSucursal> sucursales;
 
 
         public Cliente()
         {
             this.Kam = new Usuario();
+            this.Sucursales = new BindingList<ClienteSucursal>();
         }
 
         public Cliente(int idCliente, int tipoDocumento, string nroDocumento, string nombre_razonSocial, string telefono, string email, Usuario kam, int estado)
@@ -43,5 +46,6 @@ namespace Modelo
         public string Email { get => email; set => email = value; }
         public Usuario Kam { get => kam; set => kam = value; }
         public int Estado { get => estado; set => estado = value; }
+        public BindingList<ClienteSucursal> Sucursales { get => sucursales; set => sucursales = value; }
     }
 }

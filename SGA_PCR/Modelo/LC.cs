@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,7 @@ namespace Modelo
         private Video video;
         private BindingList<DiscoDuro> discos;
         private BindingList<Memoria> memorias;
-        private Licencia windows;
-        private Licencia office;
-        private Licencia antivirus;
+        private BindingList<Licencia> licencias;
         private string partNumber;
         private string serieFabrica;
         private int garantia;
@@ -38,13 +37,11 @@ namespace Modelo
             this.Video = new Video();
             this.Discos = new BindingList<DiscoDuro>();
             this.Memorias = new BindingList<Memoria>();
-            this.Windows = new Licencia();
-            this.Office = new Licencia();
-            this.Antivirus = new Licencia();
+            this.Licencias = new BindingList<Licencia>();
 
         }
 
-        public LC(int idLC, string codigo, Modelo modelo, string descripcion, double tamanoPantalla, Procesador procesador, Video video, BindingList<DiscoDuro> discos, BindingList<Memoria> memorias, Licencia windows, Licencia office, Licencia antivirus, string partNumber, string serieFabrica, int garantia, DateTime fecInicioSeguro, DateTime fecFinSeguro, string ubicacion, string observacion, int estado)
+        public LC(int idLC, string codigo, Modelo modelo, string descripcion, double tamanoPantalla, Procesador procesador, Video video, BindingList<DiscoDuro> discos, BindingList<Memoria> memorias, BindingList<Licencia> licencias, string partNumber, string serieFabrica, int garantia, DateTime fecInicioSeguro, DateTime fecFinSeguro, string ubicacion, string observacion, int estado)
         {
             this.IdLC = idLC;
             this.Codigo = codigo;
@@ -55,9 +52,6 @@ namespace Modelo
             this.Video = video;
             this.Discos = discos;
             this.Memorias = memorias;
-            this.Windows = windows;
-            this.Office = office;
-            this.Antivirus = antivirus;
             this.PartNumber = partNumber;
             this.SerieFabrica = serieFabrica;
             this.Garantia = garantia;
@@ -77,9 +71,6 @@ namespace Modelo
         public Video Video { get => video; set => video = value; }
         public BindingList<DiscoDuro> Discos { get => discos; set => discos = value; }
         public BindingList<Memoria> Memorias { get => memorias; set => memorias = value; }
-        public Licencia Windows { get => windows; set => windows = value; }
-        public Licencia Office { get => office; set => office = value; }
-        public Licencia Antivirus { get => antivirus; set => antivirus = value; }
         public string PartNumber { get => partNumber; set => partNumber = value; }
         public string SerieFabrica { get => serieFabrica; set => serieFabrica = value; }
         public int Garantia { get => garantia; set => garantia = value; }
@@ -88,5 +79,57 @@ namespace Modelo
         public string Ubicacion { get => ubicacion; set => ubicacion = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public int Estado { get => estado; set => estado = value; }
+        public BindingList<Licencia> Licencias { get => licencias; set => licencias = value; }
+
+        public void SetDisco(DataTable data) 
+        {
+            int rec = 0;
+            while (rec < data.Rows.Count)
+            {
+                DiscoDuro disco = new DiscoDuro();
+                disco.IdDisco = Convert.ToInt32(data.Rows[rec]["idDisco"].ToString());
+                disco.Tipo.NombreModelo = data.Rows[rec]["tamanoDisco"].ToString();
+                disco.Tamano = Convert.ToDouble(data.Rows[rec]["idDisco"].ToString());
+                disco.Capacidad = Convert.ToInt32(data.Rows[rec]["capacidadDisco"].ToString());
+                disco.Cantidad = Convert.ToInt32(data.Rows[rec]["cantidadDiscoLC"].ToString());
+                this.Discos.Add(disco);
+                rec++;
+            }
+        }
+
+        public void SetMemoria(DataTable data)
+        {
+            int rec = 0;
+            while (rec < data.Rows.Count)
+            {
+                Memoria memoria = new Memoria();
+                memoria.IdMemoria = Convert.ToInt32(data.Rows[rec]["idMemoria"].ToString());
+                memoria.Modelo.NombreModelo = data.Rows[rec]["tipoMemoria"].ToString();
+                memoria.Capacidad = Convert.ToInt32(data.Rows[rec]["capacidadMemoria"].ToString());
+                memoria.Cantidad = Convert.ToInt32(data.Rows[rec]["cantidadMemoriaLC"].ToString());
+                this.Memorias.Add(memoria);
+                rec++;
+            }
+        }
+
+        public void SetLicencia(DataTable data)
+        {
+            int rec = 0;
+            while (rec < data.Rows.Count)
+            {
+                Licencia licencia = new Licencia();
+                licencia.IdLicencia = Convert.ToInt32(data.Rows[rec]["idLicencia"].ToString());
+                licencia.IdCategoria = Convert.ToInt32(data.Rows[rec]["idCategoria"].ToString());
+                licencia.Categoria = data.Rows[rec]["categoria"].ToString();
+                licencia.Modelo.IdMarca = Convert.ToInt32(data.Rows[rec]["idMarca"].ToString());
+                licencia.Modelo.NombreMarca = data.Rows[rec]["marca"].ToString();
+                licencia.Modelo.IdModelo = Convert.ToInt32(data.Rows[rec]["idModelo"].ToString());
+                licencia.Modelo.NombreModelo = data.Rows[rec]["version"].ToString();
+                licencia.Clave = data.Rows[rec]["clave"].ToString();
+                licencia.Ubicacion = data.Rows[rec]["ubicacion"].ToString();
+                this.Licencias.Add(licencia);
+                rec++;
+            }
+        }
     }
 }

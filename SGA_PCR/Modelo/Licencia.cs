@@ -11,11 +11,13 @@ namespace Modelo
         private int idLicencia;
         private string codigo;
         private int idModelo;
+        private int idCategoria;
+        private string categoria;
         private Modelo modelo;
         private int idLC;
         private string clave;
         private DateTime fechaActivacion;
-        private string Ubicacion;
+        private string ubicacion;
         private string observacion;
         private string estado;
 
@@ -33,7 +35,7 @@ namespace Modelo
             this.IdLC = idLC;
             this.Clave = clave;
             this.FechaActivacion = fechaActivacion;
-            Ubicacion1 = ubicacion;
+            this.Ubicacion = ubicacion;
             this.Observacion = observacion;
             this.Estado = estado;
         }
@@ -42,11 +44,15 @@ namespace Modelo
         public string Codigo { get => codigo; set => codigo = value; }
         public int IdModelo { get => idModelo; set => idModelo = value; }
         public Modelo Modelo { get => modelo; set => modelo = value; }
+        public string Marca { get => Modelo.NombreMarca; }
+        public string Version { get => Modelo.NombreModelo; }
         public int IdLC { get => idLC; set => idLC = value; }
         public string Clave { get => clave; set => clave = value; }
         public DateTime FechaActivacion { get => fechaActivacion; set => fechaActivacion = value; }
-        public string Ubicacion1 { get => Ubicacion; set => Ubicacion = value; }
+        public string Ubicacion { get => ubicacion; set => ubicacion = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public string Estado { get => estado; set => estado = value; }
+        public int IdCategoria { get => idCategoria; set => idCategoria = value; }
+        public string Categoria { get => categoria; set => categoria = value; }
     }
 }

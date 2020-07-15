@@ -50,6 +50,7 @@ namespace Vistas
             cmbCliente.ValueMember = "idCliente";
             cmbCliente.SelectedIndex = -1;
             dgvSucursalCliente.PrimaryGrid.DataSource = null;
+            dgvSucursalCliente.PrimaryGrid.AutoGenerateColumns = false;
 
         }
 
