@@ -1,3 +1,45 @@
+DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_capacidad`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_modelo`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_tamano`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_documento_tipo`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_kam_activos`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_almacen_lista`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_discos`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_memorias`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_lista`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_office_tipos`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_windows_tipos`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_cliente`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_disco`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_laptops`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_memoria`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_procesador`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_sucursal_cliente`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_video`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_capacidad`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_categoria`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_frecuencia`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_modelo`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_generacion`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_marca`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_velocidad`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_velocidad_maxima`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_productos_por_facturar`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_productos_por_recoger`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_proveedor_lista`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_lc_almacen`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_lc_cliente`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_libre`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_lc_almacen`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_lc_cliente`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_libre`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_stockdisponible_disco_libre`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_stockdisponible_memoria_libre`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_usuario_perfil`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_video_capacidad`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_video_marca`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_video_tipo`;
+
 /*En la tabla salida se comparara la fecha final de alquiler con el dia actual.*/
 create view vista_productos_por_recoger as
 	Select (Select c.nombre_razonSocial from cliente c where c.idCliente=s.idCliente) as cliente, 
@@ -82,12 +124,12 @@ From disco_duro d
 
 /*Se mostrará la lista de discos duros con stock mayor a 1*/
 create view vista_stockDisponible_disco_libre as
-Select 	d.idDisco as idDisco,
-		m.nombre as tipo,
-		d.tamano as tamano,
-		d.capacidad as capacidad,
-		d.cantidad as cantidad,
-		d.estado as estado
+Select 	d.idDisco as IdDisco,
+		m.nombre as TipoDisco,
+		d.tamano as Tamano,
+		d.capacidad as Capacidad,
+		d.cantidad as Cantidad,
+		d.estado as Estado
 From disco_duro d
 	inner join modelo m on m.idModelo = d.idModelo 
 where d.cantidad>0 and d.estado=1;
@@ -149,12 +191,12 @@ From memoria me
 
 /*Se mostrará la lista de memorias con stock mayor a 1*/
 create view vista_stockDisponible_memoria_libre as
-Select 	me.idMemoria as idMemoria,
+Select 	me.idMemoria as IdMemoria,
 		ma.nombre as categoria,
-		m.nombre as tipo,
+		m.nombre as TipoMemoria,
 		me.busFrecuencia as frecuencia,
-		me.capacidad as capacidad,
-		me.cantidad as cantidad,
+		me.capacidad as Capacidad,
+		me.cantidad as Cantidad,
 		me.estado as estado
 From memoria me
 	inner join modelo m on m.idModelo = me.idModelo
@@ -348,18 +390,50 @@ where idCategoria=11 and estado=1;
 
 /*Se mostrará todas las licencias*/
 create view vista_licencia_lista as
-Select l.idLicencia as idLicencia,
-				c.idCategoria as idCategoria,
-				c.nombre as categoria,
-				ma.idMarca as idMarca,
-				ma.nombre as marca,
-				mo.idModelo as idModelo,
-				mo.nombre as version,
-				l.idLC as idLC,
-				l.clave as clave,
-				l.ubicacion as ubicacion
+Select l.idLicencia as IdLicencia,
+				c.idCategoria as IdCategoria,
+				c.nombre as Categoria,
+				ma.idMarca as IdMarca,
+				ma.nombre as Marca,
+				mo.idModelo as IdModelo,
+				mo.nombre as Version,
+				l.idLC as IdLC,
+				l.clave as Clave,
+				l.ubicacion as Ubicacion
 from licencia l, modelo mo, marca ma, categoria c
 where l.idModelo=mo.idModelo and ma.idMarca=mo.idMarca and c.idCategoria=ma.idCategoria;
+
+
+/*Este es parecido al vista_licencia_lista, se usará para llamarlo junto a un where y colocar un idLC, pero la diferencia es que solo mostrará las que están actualmente a una laptop y activos, puede que haya licencias relacionadas a una laptop pero el estado este en 0, lo cual quiere decir que ya caduco, 1 es porque está activo*/
+create view vista_licencia_lc_lista as
+Select l.idLicencia as IdLicencia,
+				c.idCategoria as IdCategoria,
+				c.nombre as Categoria,
+				ma.idMarca as IdMarca,
+				ma.nombre as Marca,
+				mo.idModelo as IdModelo,
+				mo.nombre as Version,
+				l.idLC as IdLC,
+				l.clave as Clave,
+				l.ubicacion as Ubicacion
+from licencia l, modelo mo, marca ma, categoria c
+where l.idModelo=mo.idModelo and ma.idMarca=mo.idMarca and c.idCategoria=ma.idCategoria and l.estado=1;
+
+/*Se mostrará todas las licencias*/
+create view vista_stockDisponible_licencia_libre as
+Select l.idLicencia as IdLicencia,
+				c.idCategoria as IdCategoria,
+				c.nombre as Categoria,
+				ma.idMarca as IdMarca,
+				ma.nombre as Marca,
+				mo.idModelo as IdModelo,
+				mo.nombre as Version,
+				l.idLC as IdLC,
+				l.clave as Clave,
+				l.ubicacion as Ubicacion
+from licencia l, modelo mo, marca ma, categoria c
+where l.idModelo=mo.idModelo and ma.idMarca=mo.idMarca and c.idCategoria=ma.idCategoria and l.estado=2 and l.idLC is null;
+		
 		
 /*Se mostrará todas los proveedor*/
 create view vista_proveedor_lista as		
@@ -472,17 +546,17 @@ SELECT lc.idLC as idLC,
 		lc.observacion as observacion,
 		lc.estado as estado
 FROM vista_maestro_laptops lc, vista_maestro_procesador p, vista_maestro_video v
-where lc.estado=1 and lc.idVideo=v.idVideo and lc.idProcesador=p.idProcesador and lc.ubicacion='ALMACEN'
+where lc.estado=2 and lc.idVideo=v.idVideo and lc.idProcesador=p.idProcesador and lc.ubicacion='ALMACEN'
 ORDER BY lc.idLC;
 	
 /*Se mostrará la tabla de discos relacinados a una laptop*/
 create view vista_laptops_discos as
-SELECT lc.idLC as idLC,
-		d.idDisco as idDisco,
-		d.tipo as tipoDisco,
-		d.tamano as tamanoDisco,
-		d.capacidad as capacidadDisco,
-		dlc.cantidad as cantidadDiscoLC
+SELECT lc.idLC as IdLC,
+		d.idDisco as IdDisco,
+		d.tipo as TipoDisco,
+		d.tamano as Tamano,
+		d.capacidad as Capacidad,
+		dlc.cantidad as Cantidad
 FROM vista_maestro_laptops lc, vista_maestro_disco d, disco_lc dlc
 where lc.idLC=dlc.idLC and d.idDisco=dlc.idDisco 
 ORDER BY d.tipo;
@@ -491,10 +565,10 @@ ORDER BY d.tipo;
 /*Se mostrará la tabla de discos relacinados a una laptop*/
 create view vista_laptops_memorias as
 SELECT lc.idLC as idLC,
-		m.idMemoria as idMemoria,
-		m.tipo as tipoMemoria,
-		m.capacidad as capacidadMemoria,
-		mlc.cantidad as cantidadMemoriaLC
+		m.idMemoria as IdMemoria,
+		m.tipo as TipoMemoria,
+		m.capacidad as Capacidad,
+		mlc.cantidad as Cantidad
 FROM vista_maestro_laptops lc, vista_maestro_memoria m,  memoria_lc mlc
 where lc.idLC=mlc.idLC and m.idMemoria=mlc.idMemoria
 ORDER BY m.tipo;

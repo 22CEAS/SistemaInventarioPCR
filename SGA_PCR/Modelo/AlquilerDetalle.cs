@@ -20,9 +20,10 @@ namespace Modelo
         {
             this.Laptop = new LC();
             this.IdAlquilerDetalle = 0;
-            this.guiaSalida = "";
-            this.motivoNoRecojo = "";
-            this.observacion = "";
+            this.GuiaSalida = "";
+            this.MotivoNoRecojo = "";
+            this.Observacion = "";
+            this.Caracteristica = "";
         }
 
         public AlquilerDetalle(long idAlquilerDetalle, LC laptop, string caracteristica, string guiaSalida, string motivoNoRecojo, string observacion, int estado)

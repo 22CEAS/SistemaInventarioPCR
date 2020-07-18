@@ -54,7 +54,7 @@ namespace Modelo
         public string Codigo { get => codigo; set => codigo = value; }
         public int IdModelo { get => idModelo; set => idModelo = value; }
         public Modelo Modelo { get => modelo; set => modelo = value; }
-        public string TipoMemoria { get => Modelo.NombreModelo; }
+        public string TipoMemoria { get => Modelo.NombreModelo; set => Modelo.NombreModelo = value; }
         public int IdBusFrecuencia { get => idBusFrecuencia; set => idBusFrecuencia = value; }
         public double BusFrecuencia { get => busFrecuencia; set => busFrecuencia = value; }
         public int IdCapacidad { get => idCapacidad; set => idCapacidad = value; }

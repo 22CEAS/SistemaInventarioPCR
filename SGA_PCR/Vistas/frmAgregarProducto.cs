@@ -70,6 +70,8 @@ namespace Vistas
                     laptop.Procesador.Generacion = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 6))).Value.ToString());
                     laptop.Video.Modelo.NombreModelo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 7))).Value.ToString();
                     laptop.Video.Capacidad = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 8))).Value.ToString());
+                    laptop.Procesador.IdProcesador = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 10))).Value.ToString());
+                    laptop.Video.IdVideo = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 11))).Value.ToString());
                     laptops.Add(laptop);
                     flag = true;
                 }

@@ -28,94 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarLicencia));
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.dgvLicencia = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.SuspendLayout();
             // 
-            // superGridControl3
+            // btnCancelar
             // 
-            this.superGridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.superGridControl3.BackColor = System.Drawing.Color.White;
-            this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl3.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl3.Location = new System.Drawing.Point(33, 31);
-            this.superGridControl3.Name = "superGridControl3";
-            this.superGridControl3.PrimaryGrid.AllowRowHeaderResize = true;
-            this.superGridControl3.PrimaryGrid.AllowRowResize = true;
-            this.superGridControl3.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.Name = "Selec,";
-            gridColumn1.Width = 30;
-            gridColumn2.FilterAutoScan = true;
-            gridColumn2.Name = "Tipo";
-            gridColumn2.Width = 140;
-            gridColumn3.Name = "Nombre";
-            gridColumn3.Width = 140;
-            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(530, 249);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.TabIndex = 126;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrabar.AutoSize = true;
+            this.btnGrabar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.FlatAppearance.BorderSize = 0;
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGrabar.Location = new System.Drawing.Point(607, 251);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(75, 63);
+            this.btnGrabar.TabIndex = 125;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // dgvLicencia
+            // 
+            this.dgvLicencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.dgvLicencia.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvLicencia.ForeColor = System.Drawing.Color.Black;
+            this.dgvLicencia.Location = new System.Drawing.Point(22, 21);
+            this.dgvLicencia.Name = "dgvLicencia";
+            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn1.Name = "Seleccionar";
+            gridColumn1.Width = 70;
+            gridColumn2.AllowEdit = false;
+            gridColumn2.DataPropertyName = "Categoria";
+            gridColumn2.Name = "Categoría";
+            gridColumn2.Width = 130;
+            gridColumn3.AllowEdit = false;
+            gridColumn3.DataPropertyName = "Marca";
+            gridColumn3.Name = "Marca";
+            gridColumn3.Width = 130;
+            gridColumn4.AllowEdit = false;
+            gridColumn4.DataPropertyName = "Version";
             gridColumn4.Name = "Versión";
-            gridColumn4.Width = 140;
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn1);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn2);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn3);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn4);
-            this.superGridControl3.PrimaryGrid.DefaultRowHeight = 24;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.EnableColumnFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableRowFiltering = true;
-            this.superGridControl3.PrimaryGrid.Filter.Visible = true;
-            this.superGridControl3.PrimaryGrid.NullString = "<<null>>";
-            this.superGridControl3.PrimaryGrid.RowHeaderWidth = 45;
-            this.superGridControl3.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl3.Size = new System.Drawing.Size(496, 237);
-            this.superGridControl3.TabIndex = 72;
-            this.superGridControl3.Text = "superGridControl3";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(561, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 75;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(561, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 74;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            gridColumn4.Width = 130;
+            gridColumn5.DataPropertyName = "Clave";
+            gridColumn5.Name = "Clave";
+            gridColumn5.Width = 200;
+            gridColumn6.AllowEdit = false;
+            gridColumn6.DataPropertyName = "IdLicencia";
+            gridColumn6.Name = "idLicencia";
+            gridColumn6.Visible = false;
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn3);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn4);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn6);
+            this.dgvLicencia.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvLicencia.PrimaryGrid.EnableFiltering = true;
+            this.dgvLicencia.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvLicencia.PrimaryGrid.Filter.Visible = true;
+            this.dgvLicencia.PrimaryGrid.MultiSelect = false;
+            this.dgvLicencia.PrimaryGrid.NoRowsText = "No hay ninguna Licencia disponible";
+            this.dgvLicencia.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvLicencia.Size = new System.Drawing.Size(660, 222);
+            this.dgvLicencia.TabIndex = 127;
+            this.dgvLicencia.Text = "Tabla Licencias";
             // 
             // frmEditarLicencia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 297);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.superGridControl3);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(710, 323);
+            this.Controls.Add(this.dgvLicencia);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGrabar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmEditarLicencia";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Licencia";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGrabar;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLicencia;
     }
 }

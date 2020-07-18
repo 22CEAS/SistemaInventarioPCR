@@ -28,94 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarDisco));
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.dgvDisco = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.SuspendLayout();
             // 
-            // superGridControl3
+            // btnCancelar
             // 
-            this.superGridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.superGridControl3.BackColor = System.Drawing.Color.White;
-            this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl3.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl3.Location = new System.Drawing.Point(29, 21);
-            this.superGridControl3.Name = "superGridControl3";
-            this.superGridControl3.PrimaryGrid.AllowRowHeaderResize = true;
-            this.superGridControl3.PrimaryGrid.AllowRowResize = true;
-            this.superGridControl3.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.Name = "Selec,";
-            gridColumn1.Width = 30;
-            gridColumn2.FilterAutoScan = true;
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(381, 266);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.TabIndex = 124;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrabar.AutoSize = true;
+            this.btnGrabar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.FlatAppearance.BorderSize = 0;
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGrabar.Location = new System.Drawing.Point(458, 268);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(75, 63);
+            this.btnGrabar.TabIndex = 123;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // dgvDisco
+            // 
+            this.dgvDisco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
+            this.dgvDisco.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvDisco.ForeColor = System.Drawing.Color.Black;
+            this.dgvDisco.Location = new System.Drawing.Point(12, 37);
+            this.dgvDisco.Name = "dgvDisco";
+            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn1.Name = "Seleccionar";
+            gridColumn1.Width = 70;
+            gridColumn2.AllowEdit = false;
+            gridColumn2.DataPropertyName = "TipoDisco";
             gridColumn2.Name = "Tipo";
-            gridColumn2.Width = 140;
-            gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn3.Name = "Tamaño";
-            gridColumn3.Width = 140;
-            gridColumn4.Name = "Capacidad";
-            gridColumn4.Width = 140;
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn1);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn2);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn3);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn4);
-            this.superGridControl3.PrimaryGrid.DefaultRowHeight = 24;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.EnableColumnFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableRowFiltering = true;
-            this.superGridControl3.PrimaryGrid.Filter.Visible = true;
-            this.superGridControl3.PrimaryGrid.NullString = "<<null>>";
-            this.superGridControl3.PrimaryGrid.RowHeaderWidth = 45;
-            this.superGridControl3.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl3.Size = new System.Drawing.Size(496, 211);
-            this.superGridControl3.TabIndex = 71;
-            this.superGridControl3.Text = "superGridControl3";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(559, 74);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 73;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(559, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 72;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            gridColumn2.Width = 150;
+            gridColumn3.AllowEdit = false;
+            gridColumn3.DataPropertyName = "Capacidad";
+            gridColumn3.Name = "Capacidad";
+            gridColumn3.Width = 150;
+            gridColumn4.AllowEdit = false;
+            gridColumn4.DataPropertyName = "Cantidad";
+            gridColumn4.Name = "Cantidad";
+            gridColumn4.Width = 150;
+            gridColumn5.DataPropertyName = "IdDisco";
+            gridColumn5.Name = "idDisco";
+            gridColumn5.Visible = false;
+            gridColumn6.DataPropertyName = "Tamano";
+            gridColumn6.Name = "Tamano";
+            gridColumn6.Visible = false;
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn3);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn4);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn6);
+            this.dgvDisco.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvDisco.PrimaryGrid.EnableFiltering = true;
+            this.dgvDisco.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvDisco.PrimaryGrid.Filter.Visible = true;
+            this.dgvDisco.PrimaryGrid.MultiSelect = false;
+            this.dgvDisco.PrimaryGrid.NoRowsText = "No hay ningun Disco disponible";
+            this.dgvDisco.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvDisco.Size = new System.Drawing.Size(521, 214);
+            this.dgvDisco.TabIndex = 125;
+            this.dgvDisco.Text = "Tabla Disco";
             // 
             // frmEditarDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 259);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.superGridControl3);
+            this.ClientSize = new System.Drawing.Size(558, 334);
+            this.Controls.Add(this.dgvDisco);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnGrabar);
             this.Name = "frmEditarDisco";
             this.Text = "Editar Disco Duro";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnGrabar;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvDisco;
     }
 }

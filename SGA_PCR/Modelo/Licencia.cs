@@ -44,8 +44,8 @@ namespace Modelo
         public string Codigo { get => codigo; set => codigo = value; }
         public int IdModelo { get => idModelo; set => idModelo = value; }
         public Modelo Modelo { get => modelo; set => modelo = value; }
-        public string Marca { get => Modelo.NombreMarca; }
-        public string Version { get => Modelo.NombreModelo; }
+        public string Marca { get => Modelo.NombreMarca; set => Modelo.NombreMarca = value; }
+        public string Version { get => Modelo.NombreModelo; set => Modelo.NombreModelo = value; }
         public int IdLC { get => idLC; set => idLC = value; }
         public string Clave { get => clave; set => clave = value; }
         public DateTime FechaActivacion { get => fechaActivacion; set => fechaActivacion = value; }

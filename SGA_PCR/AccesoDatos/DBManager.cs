@@ -191,6 +191,24 @@ namespace AccesoDatos
                 adaptador.Dispose();
             }
         }
-
+        public bool EjecutarNonQuery(string sql)
+        {
+            try
+            {
+                conexion = new MySqlConnection(cadena);
+                conexion.Open();
+                cmd = new MySqlCommand(sql, conexion);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return false;
+            }
+            finally
+            {
+            }
+        }
     }
 }

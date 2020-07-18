@@ -38,6 +38,8 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgregarProducto));
             this.dgvLaptops = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -104,6 +106,12 @@
             gridColumn10.DataPropertyName = "idLC";
             gridColumn10.Name = "Id LC";
             gridColumn10.Visible = false;
+            gridColumn11.DataPropertyName = "idVideo";
+            gridColumn11.Name = "IdVideo";
+            gridColumn11.Visible = false;
+            gridColumn12.DataPropertyName = "idProcesador";
+            gridColumn12.Name = "IdProcesador";
+            gridColumn12.Visible = false;
             this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn1);
             this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn2);
             this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn3);
@@ -114,6 +122,8 @@
             this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn8);
             this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn9);
             this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvLaptops.PrimaryGrid.Columns.Add(gridColumn12);
             this.dgvLaptops.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvLaptops.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvLaptops.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;

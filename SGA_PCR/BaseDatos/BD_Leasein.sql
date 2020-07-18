@@ -386,9 +386,12 @@ CREATE TABLE pedido(
 )ENGINE=INNODB;
 
 CREATE TABLE salida(
-		idSalida INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+		idSalida INT NOT NULL PRIMARY KEY,
 		idCliente INT NOT NULL,
 		idSucursal INT NOT NULL,
+		rucDni NVARCHAR(100),
+		nroContrato NVARCHAR(100),
+		nroOC NVARCHAR(100),
 		idPedido INT ,
 		fecSalida DATETIME NOT NULL,
 		fecIniContrato DATETIME NOT NULL,
@@ -400,13 +403,11 @@ CREATE TABLE salida(
 		usuario_ins NVARCHAR(100),
 		usuario_mod NVARCHAR(100),
 		FOREIGN KEY (idSucursal)
-    REFERENCES cliente_sucursal(idSucursal),
-		FOREIGN KEY (idPedido)
-    REFERENCES pedido(idPedido)
+    REFERENCES cliente_sucursal(idSucursal)
 )ENGINE=INNODB;
 
 CREATE TABLE salida_det(
-		idSalidaDet INT AUTO_INCREMENT PRIMARY KEY,
+		idSalidaDet INT NOT NULL PRIMARY KEY,
 		idSalida INT NOT NULL,
 		idLC INT NOT NULL,
 		idProcesador INT,

@@ -1,3 +1,40 @@
+DROP PROCEDURE IF EXISTS `bd_leasein`.`actualizar_laptop_memoria`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cambio`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cambio_det`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_categoria`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cliente`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cliente_sucursal`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cuota`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_devolucion`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_devolucion_det`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_LC`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_duro`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_factura`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_ingreso`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_ingreso_det`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_laptop_cpu`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_licencia`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_marca`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria_LC`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_modelo`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_observacionDeudas`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_orden_compra`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_pedido`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_procesador`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_proveedor`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_requerimiento_compra`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_salida`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_salida_det`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_usuario`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_video`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`mostrar_componente_modelos`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`update_cliente`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`update_cliente_sucursal`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`update_disco_duro`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`update_proveedor`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`update_seguro_laptop_cpu`;
+
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_categoria`(
 	IN _nombre NVARCHAR(80),
@@ -203,12 +240,29 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria_LC`(
 	IN _usuario_ins NVARCHAR(100)
 )
 BEGIN
-	INSERT INTO memoria_LC (idMemoria,idLC,cantidad,usuario_ins) values
-	(_idMemoria,_idLC,_cantidad,_usuario_ins);
+	UPDATE memoria SET cantidad=cantidad-_cantidad WHERE idMemoria=_idMemoria; 
+	INSERT INTO memoria_lc (idMemoria, idLC, cantidad, usuario_ins) VALUES (_idMemoria, _idLC, _cantidad, _usuario_ins) ; 
 END
 $$ DELIMITER ;
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_memoria_LC`(
+	IN _idLC INT
+)
+BEGIN
+	DELETE FROM memoria_LC where idLC=_idLC; 
+END
+$$ DELIMITER ;
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_memoria_cantidad`(
+	IN _idMemoria INT,
+	IN _cantidad INT
+)
+BEGIN
+	UPDATE memoria SET cantidad=cantidad+_cantidad WHERE idMemoria=_idMemoria; 
+END
+$$ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC`(
@@ -218,11 +272,29 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC`(
 	IN _usuario_ins NVARCHAR(100)
 )
 BEGIN
-	INSERT INTO disco_LC (idDisco,idLC,cantidad,usuario_ins) values
-	(_idMemoria,_idLC,_cantidad,_usuario_ins);
+	UPDATE disco_duro SET cantidad=cantidad-_cantidad WHERE idDisco=_idDisco; 
+	INSERT INTO disco_LC (idDisco,idLC,cantidad,usuario_ins) values	(_idDisco,_idLC,_cantidad,_usuario_ins);
 END
 $$ DELIMITER ;
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_disco_LC`(
+	IN _idLC INT
+)
+BEGIN
+	DELETE FROM disco_LC where idLC=_idLC; 
+END
+$$ DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_disco_cantidad`(
+	IN _idDisco INT,
+	IN _cantidad INT
+)
+BEGIN
+	UPDATE disco_duro SET cantidad=cantidad+_cantidad WHERE idDisco=_idDisco; 
+END
+$$ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia`(
@@ -241,6 +313,57 @@ BEGIN
 END
 $$ DELIMITER ;
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia_LC`(
+	IN _idLicencia INT,
+	IN _idLC INT,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fechaActivacion=(SELECT now());
+	UPDATE licencia 
+	SET idLC=_idLC,
+		estado=1,
+		fechaActivacion=@fechaActivacion,
+		usuario_mod=_usuario_mod
+	WHERE idLicencia=_idLicencia; 
+	
+END
+$$ DELIMITER ;
+
+
+/*Esta procedimiento se hace solamente cuando se ha equivocado en escoger una licencia y todavía no lo has usado*/
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_licencia_LC`(
+	IN _idLicencia INT,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE licencia 
+	SET idLC=NULL,
+		estado=2,
+		fec_mod=@fechaModificacion,
+		usuario_mod=_usuario_mod
+	WHERE idLicencia=_idLicencia; 
+END
+$$ DELIMITER ;
+
+/*Esta procedimiento se hace cuando una licencia ya vence y tienen que cambiar de licencia, entonces esa licencia queda en estado 0 porque ya esta inutilizable*/
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_licencia_LC`(
+	IN _idLicencia INT,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE licencia 
+	SET estado=0,
+		fec_mod=@fechaModificacion,
+		usuario_mod=_usuario_mod
+	WHERE idLicencia=_idLicencia; 
+END
+$$ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cliente`(
@@ -534,20 +657,27 @@ $$ DELIMITER ;
 
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_salida`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_pre_salida`(
 	IN _idCliente INT,
 	IN _idSucursal INT,
+	IN _rucDni NVARCHAR(100),
+	IN _nroContrato NVARCHAR(100),
+	IN _nroOC NVARCHAR(100),
 	IN _idPedido INT,
 	IN _fecSalida DATETIME,
 	IN _fecIniContrato DATETIME,
 	IN _fecFinContrato DATETIME,
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100)
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idSalida INT
 )
 BEGIN
-	INSERT INTO salida (idCliente,idSucursal,idPedido,fecSalida,fecIniContrato,fecFinContrato,observacion,estado,usuario_ins) values
-	(_idCliente,_idSucursal,_idPedido,_fecSalida,_fecIniContrato,_fecFinContrato,_observacion,_estado,_usuario_ins);
+	SET @_idSalida=(SELECT IFNULL( MAX( idSalida ) , 0 )+1 FROM salida);
+	INSERT INTO salida (idSalida,idCliente,idSucursal,rucDni,nroContrato,nroOC,idPedido,fecSalida,fecIniContrato,fecFinContrato,observacion,estado,usuario_ins) values
+	(@_idSalida,_idCliente,_idSucursal,_rucDni,_nroContrato,_nroOC,_idPedido,_fecSalida,_fecIniContrato,_fecFinContrato,_observacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idSalida = @_idSalida;
 END
 $$ DELIMITER ;
 
@@ -573,11 +703,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_salida_det`(
 	IN _guiaSalida NVARCHAR(255),
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100)
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idSalidaDet INT
 )
 BEGIN
-	INSERT INTO salida_det (idSalida,idLC,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,guiaSalida,observacion,estado,usuario_ins) values
-	(_idSalida,_idLC,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_guiaSalida,_observacion,_estado,_usuario_ins);
+	SET @idSalidaDet=(SELECT IFNULL( MAX( idSalidaDet ) , 0 )+1 FROM salida_det);
+	INSERT INTO salida_det (idSalidaDet,idSalida,idLC,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,guiaSalida,observacion,estado,usuario_ins) values
+	(@idSalidaDet,_idSalida,_idLC,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_guiaSalida,_observacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idSalidaDet = @idSalidaDet;
 END
 $$ DELIMITER ;
 
@@ -733,3 +867,49 @@ BEGIN
 END
 $$ DELIMITER ;
 
+/*este procedure no se usará pero quedará provisional para saber como se hace, nada más)*/
+DROP PROCEDURE IF EXISTS `update_laptop_memoria`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_laptop_memoria`(
+	IN	_idLC int,
+    IN  _idMemoria int,
+    IN  _cantidad int,
+    IN _usuario_ins VARCHAR(100)
+)
+BEGIN
+
+
+		IF EXISTS(Select Cantidad from vista_laptops_memorias where idLC=_idLC and idMemoria=_idMemoria) THEN
+			SET @cantidad=(Select * from vista_laptops_memorias where idLC=_idLC and idMemoria=_idMemoria);
+			UPDATE memoria SET cantidad=cantidad+@cantidad WHERE idMemoria=_idMemoria; 
+			DELETE FROM memoria_lc where idLC=_idLC and idMemoria=_idMemoria; 
+			UPDATE memoria SET cantidad=cantidad-_cantidad WHERE idMemoria=_idMemoria; 
+			INSERT INTO memoria_lc (idMemoria, idLC, cantidad, usuario_ins) VALUES (_idMemoria, _idLC, _cantidad, _usuario_ins) ; 
+		ELSE 
+			UPDATE memoria SET cantidad=cantidad-_cantidad WHERE idMemoria=_idMemoria; 
+			INSERT INTO memoria_lc (idMemoria, idLC, cantidad, usuario_ins) VALUES (_idMemoria, _idLC, _cantidad, _usuario_ins) ; 
+		END IF;
+    COMMIT;
+END
+$$
+DELIMITER ;
+
+
+
+/*Esta procedimiento se hace solamente cuando se ha equivocado en escoger una licencia y todavía no lo has usado*/
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_laptop_disponibilidad`(
+	IN _idLC INT,
+	IN _ubicacion NVARCHAR(250),
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE laptop_cpu 
+	SET estado=6,
+		fec_mod=@fechaModificacion,
+		usuario_mod=_usuario_mod
+	WHERE idLC=_idLC; 
+END
+$$ 
+DELIMITER ;

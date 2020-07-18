@@ -87,11 +87,11 @@ namespace Modelo
             while (rec < data.Rows.Count)
             {
                 DiscoDuro disco = new DiscoDuro();
-                disco.IdDisco = Convert.ToInt32(data.Rows[rec]["idDisco"].ToString());
-                disco.Tipo.NombreModelo = data.Rows[rec]["tamanoDisco"].ToString();
-                disco.Tamano = Convert.ToDouble(data.Rows[rec]["idDisco"].ToString());
-                disco.Capacidad = Convert.ToInt32(data.Rows[rec]["capacidadDisco"].ToString());
-                disco.Cantidad = Convert.ToInt32(data.Rows[rec]["cantidadDiscoLC"].ToString());
+                disco.IdDisco = Convert.ToInt32(data.Rows[rec]["IdDisco"].ToString());
+                disco.Tipo.NombreModelo = data.Rows[rec]["TipoDisco"].ToString();
+                disco.Tamano = Convert.ToDouble(data.Rows[rec]["Tamano"].ToString());
+                disco.Capacidad = Convert.ToInt32(data.Rows[rec]["Capacidad"].ToString());
+                disco.Cantidad = Convert.ToInt32(data.Rows[rec]["Cantidad"].ToString());
                 this.Discos.Add(disco);
                 rec++;
             }
@@ -103,10 +103,10 @@ namespace Modelo
             while (rec < data.Rows.Count)
             {
                 Memoria memoria = new Memoria();
-                memoria.IdMemoria = Convert.ToInt32(data.Rows[rec]["idMemoria"].ToString());
-                memoria.Modelo.NombreModelo = data.Rows[rec]["tipoMemoria"].ToString();
-                memoria.Capacidad = Convert.ToInt32(data.Rows[rec]["capacidadMemoria"].ToString());
-                memoria.Cantidad = Convert.ToInt32(data.Rows[rec]["cantidadMemoriaLC"].ToString());
+                memoria.IdMemoria = Convert.ToInt32(data.Rows[rec]["IdMemoria"].ToString());
+                memoria.Modelo.NombreModelo = data.Rows[rec]["TipoMemoria"].ToString();
+                memoria.Capacidad = Convert.ToInt32(data.Rows[rec]["Capacidad"].ToString());
+                memoria.Cantidad = Convert.ToInt32(data.Rows[rec]["Cantidad"].ToString());
                 this.Memorias.Add(memoria);
                 rec++;
             }
@@ -118,15 +118,15 @@ namespace Modelo
             while (rec < data.Rows.Count)
             {
                 Licencia licencia = new Licencia();
-                licencia.IdLicencia = Convert.ToInt32(data.Rows[rec]["idLicencia"].ToString());
-                licencia.IdCategoria = Convert.ToInt32(data.Rows[rec]["idCategoria"].ToString());
-                licencia.Categoria = data.Rows[rec]["categoria"].ToString();
-                licencia.Modelo.IdMarca = Convert.ToInt32(data.Rows[rec]["idMarca"].ToString());
-                licencia.Modelo.NombreMarca = data.Rows[rec]["marca"].ToString();
-                licencia.Modelo.IdModelo = Convert.ToInt32(data.Rows[rec]["idModelo"].ToString());
-                licencia.Modelo.NombreModelo = data.Rows[rec]["version"].ToString();
-                licencia.Clave = data.Rows[rec]["clave"].ToString();
-                licencia.Ubicacion = data.Rows[rec]["ubicacion"].ToString();
+                licencia.IdLicencia = Convert.ToInt32(data.Rows[rec]["IdLicencia"].ToString());
+                licencia.IdCategoria = Convert.ToInt32(data.Rows[rec]["IdCategoria"].ToString());
+                licencia.Categoria = data.Rows[rec]["Categoria"].ToString();
+                licencia.Modelo.IdMarca = Convert.ToInt32(data.Rows[rec]["IdMarca"].ToString());
+                licencia.Modelo.NombreMarca = data.Rows[rec]["Marca"].ToString();
+                licencia.Modelo.IdModelo = Convert.ToInt32(data.Rows[rec]["IdModelo"].ToString());
+                licencia.Modelo.NombreModelo = data.Rows[rec]["Version"].ToString();
+                licencia.Clave = data.Rows[rec]["Clave"].ToString();
+                licencia.Ubicacion = data.Rows[rec]["Ubicacion"].ToString();
                 this.Licencias.Add(licencia);
                 rec++;
             }

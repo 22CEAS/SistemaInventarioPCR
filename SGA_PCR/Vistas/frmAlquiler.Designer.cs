@@ -51,6 +51,7 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlquiler));
             this.LabelX4 = new DevComponents.DotNetBar.LabelX();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -73,7 +74,7 @@
             this.dgvMemorias = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.dgvDisco = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.dgvLicencia = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.btnEditarLicencia = new System.Windows.Forms.Button();
+            this.btnEliminarLicencia = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -84,6 +85,17 @@
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.dgvLaptopsSeleccionados = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            this.btnGuardarMemoria = new System.Windows.Forms.Button();
+            this.btnAgregarMemoria = new System.Windows.Forms.Button();
+            this.btnAgregarDisco = new System.Windows.Forms.Button();
+            this.btnGuardarDisco = new System.Windows.Forms.Button();
+            this.btnAgregarLicencia = new System.Windows.Forms.Button();
+            this.btnCaducidadLicencia = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaTraslado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpIniPlazo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFinPlazo)).BeginInit();
@@ -180,7 +192,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(704, 685);
+            this.button2.Location = new System.Drawing.Point(704, 714);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 31;
@@ -189,7 +201,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(818, 685);
+            this.button1.Location = new System.Drawing.Point(818, 714);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 30;
@@ -338,7 +350,7 @@
             // btnEditarMemoria
             // 
             this.btnEditarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarMemoria.Location = new System.Drawing.Point(824, 211);
+            this.btnEditarMemoria.Location = new System.Drawing.Point(908, 278);
             this.btnEditarMemoria.Name = "btnEditarMemoria";
             this.btnEditarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnEditarMemoria.TabIndex = 44;
@@ -349,7 +361,7 @@
             // btnEditarDisco
             // 
             this.btnEditarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarDisco.Location = new System.Drawing.Point(824, 368);
+            this.btnEditarDisco.Location = new System.Drawing.Point(908, 436);
             this.btnEditarDisco.Name = "btnEditarDisco";
             this.btnEditarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnEditarDisco.TabIndex = 45;
@@ -372,6 +384,7 @@
             gridColumn2.Name = "Capacidad";
             gridColumn3.AllowEdit = false;
             gridColumn3.DataPropertyName = "Cantidad";
+            gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
             gridColumn3.Name = "Cantidad";
             gridColumn4.AllowEdit = false;
             gridColumn4.DataPropertyName = "IdMemoria";
@@ -387,6 +400,7 @@
             this.dgvMemorias.Size = new System.Drawing.Size(300, 99);
             this.dgvMemorias.TabIndex = 46;
             this.dgvMemorias.Text = "Tabla Memoria";
+            this.dgvMemorias.DoubleClick += new System.EventHandler(this.dgvMemorias_DoubleClick);
             // 
             // dgvDisco
             // 
@@ -405,7 +419,7 @@
             gridColumn7.DataPropertyName = "Cantidad";
             gridColumn7.Name = "Cantidad";
             gridColumn8.DataPropertyName = "IdDisco";
-            gridColumn8.Name = "idDisco";
+            gridColumn8.Name = "IdDisco";
             gridColumn8.Visible = false;
             gridColumn9.DataPropertyName = "Tamano";
             gridColumn9.Name = "Tamano";
@@ -421,6 +435,7 @@
             this.dgvDisco.Size = new System.Drawing.Size(300, 99);
             this.dgvDisco.TabIndex = 47;
             this.dgvDisco.Text = "Tabla Disco";
+            this.dgvDisco.DoubleClick += new System.EventHandler(this.dgvDisco_DoubleClick);
             // 
             // dgvLicencia
             // 
@@ -456,16 +471,16 @@
             this.dgvLicencia.TabIndex = 50;
             this.dgvLicencia.Text = "Tabla Licencias";
             // 
-            // btnEditarLicencia
+            // btnEliminarLicencia
             // 
-            this.btnEditarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarLicencia.Location = new System.Drawing.Point(824, 527);
-            this.btnEditarLicencia.Name = "btnEditarLicencia";
-            this.btnEditarLicencia.Size = new System.Drawing.Size(69, 25);
-            this.btnEditarLicencia.TabIndex = 49;
-            this.btnEditarLicencia.Text = "Editar";
-            this.btnEditarLicencia.UseVisualStyleBackColor = true;
-            this.btnEditarLicencia.Click += new System.EventHandler(this.btnEditarLicencia_Click);
+            this.btnEliminarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarLicencia.Location = new System.Drawing.Point(908, 605);
+            this.btnEliminarLicencia.Name = "btnEliminarLicencia";
+            this.btnEliminarLicencia.Size = new System.Drawing.Size(69, 25);
+            this.btnEliminarLicencia.TabIndex = 49;
+            this.btnEliminarLicencia.Text = "Eliminar";
+            this.btnEliminarLicencia.UseVisualStyleBackColor = true;
+            this.btnEliminarLicencia.Click += new System.EventHandler(this.btnEliminarLicencia_Click);
             // 
             // label13
             // 
@@ -629,7 +644,7 @@
             this.dgvLaptopsSeleccionados.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvLaptopsSeleccionados.PrimaryGrid.ShowRowHeaders = false;
             this.dgvLaptopsSeleccionados.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(490, 425);
+            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(503, 425);
             this.dgvLaptopsSeleccionados.TabIndex = 134;
             this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
             this.dgvLaptopsSeleccionados.Click += new System.EventHandler(this.dgvLaptopsSeleccionados_Click);
@@ -645,11 +660,184 @@
             this.cmbSucursal.Size = new System.Drawing.Size(352, 21);
             this.cmbSucursal.TabIndex = 135;
             // 
+            // btnGuardarMemoria
+            // 
+            this.btnGuardarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarMemoria.Location = new System.Drawing.Point(908, 315);
+            this.btnGuardarMemoria.Name = "btnGuardarMemoria";
+            this.btnGuardarMemoria.Size = new System.Drawing.Size(69, 25);
+            this.btnGuardarMemoria.TabIndex = 136;
+            this.btnGuardarMemoria.Text = "Guardar";
+            this.btnGuardarMemoria.UseVisualStyleBackColor = true;
+            this.btnGuardarMemoria.Click += new System.EventHandler(this.btnGuardarMemoria_Click);
+            // 
+            // btnAgregarMemoria
+            // 
+            this.btnAgregarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarMemoria.Location = new System.Drawing.Point(908, 242);
+            this.btnAgregarMemoria.Name = "btnAgregarMemoria";
+            this.btnAgregarMemoria.Size = new System.Drawing.Size(69, 25);
+            this.btnAgregarMemoria.TabIndex = 137;
+            this.btnAgregarMemoria.Text = "Agregar";
+            this.btnAgregarMemoria.UseVisualStyleBackColor = true;
+            this.btnAgregarMemoria.Click += new System.EventHandler(this.btnAgregarMemoria_Click);
+            // 
+            // btnAgregarDisco
+            // 
+            this.btnAgregarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarDisco.Location = new System.Drawing.Point(908, 399);
+            this.btnAgregarDisco.Name = "btnAgregarDisco";
+            this.btnAgregarDisco.Size = new System.Drawing.Size(69, 25);
+            this.btnAgregarDisco.TabIndex = 139;
+            this.btnAgregarDisco.Text = "Agregar";
+            this.btnAgregarDisco.UseVisualStyleBackColor = true;
+            this.btnAgregarDisco.Click += new System.EventHandler(this.btnAgregarDisco_Click);
+            // 
+            // btnGuardarDisco
+            // 
+            this.btnGuardarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarDisco.Location = new System.Drawing.Point(908, 472);
+            this.btnGuardarDisco.Name = "btnGuardarDisco";
+            this.btnGuardarDisco.Size = new System.Drawing.Size(69, 25);
+            this.btnGuardarDisco.TabIndex = 138;
+            this.btnGuardarDisco.Text = "Guardar";
+            this.btnGuardarDisco.UseVisualStyleBackColor = true;
+            this.btnGuardarDisco.Click += new System.EventHandler(this.btnGuardarDisco_Click);
+            // 
+            // btnAgregarLicencia
+            // 
+            this.btnAgregarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarLicencia.Location = new System.Drawing.Point(908, 569);
+            this.btnAgregarLicencia.Name = "btnAgregarLicencia";
+            this.btnAgregarLicencia.Size = new System.Drawing.Size(69, 25);
+            this.btnAgregarLicencia.TabIndex = 141;
+            this.btnAgregarLicencia.Text = "Agregar";
+            this.btnAgregarLicencia.UseVisualStyleBackColor = true;
+            this.btnAgregarLicencia.Click += new System.EventHandler(this.btnAgregarLicencia_Click);
+            // 
+            // btnCaducidadLicencia
+            // 
+            this.btnCaducidadLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCaducidadLicencia.Location = new System.Drawing.Point(908, 642);
+            this.btnCaducidadLicencia.Name = "btnCaducidadLicencia";
+            this.btnCaducidadLicencia.Size = new System.Drawing.Size(69, 25);
+            this.btnCaducidadLicencia.TabIndex = 140;
+            this.btnCaducidadLicencia.Text = "Caducidad";
+            this.btnCaducidadLicencia.UseVisualStyleBackColor = true;
+            this.btnCaducidadLicencia.Click += new System.EventHandler(this.btnCaducidadLicencia_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimir.AutoSize = true;
+            this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImprimir.Location = new System.Drawing.Point(389, 678);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 63);
+            this.btnImprimir.TabIndex = 146;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(294, 676);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.TabIndex = 145;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.AutoSize = true;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditar.Location = new System.Drawing.Point(127, 674);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(80, 65);
+            this.btnEditar.TabIndex = 144;
+            this.btnEditar.Text = "Modificar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.AutoSize = true;
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(46, 676);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.TabIndex = 143;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrabar.AutoSize = true;
+            this.btnGrabar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.FlatAppearance.BorderSize = 0;
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGrabar.Location = new System.Drawing.Point(213, 676);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(75, 63);
+            this.btnGrabar.TabIndex = 142;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
             // frmAlquiler
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(936, 749);
+            this.ClientSize = new System.Drawing.Size(1357, 749);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.btnAgregarLicencia);
+            this.Controls.Add(this.btnCaducidadLicencia);
+            this.Controls.Add(this.btnAgregarDisco);
+            this.Controls.Add(this.btnGuardarDisco);
+            this.Controls.Add(this.btnAgregarMemoria);
+            this.Controls.Add(this.btnGuardarMemoria);
             this.Controls.Add(this.cmbSucursal);
             this.Controls.Add(this.dgvLaptopsSeleccionados);
             this.Controls.Add(this.cmbCliente);
@@ -660,7 +848,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.dgvLicencia);
-            this.Controls.Add(this.btnEditarLicencia);
+            this.Controls.Add(this.btnEliminarLicencia);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dgvDisco);
             this.Controls.Add(this.dgvMemorias);
@@ -722,7 +910,7 @@
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvMemorias;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvDisco;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLicencia;
-        private System.Windows.Forms.Button btnEditarLicencia;
+        private System.Windows.Forms.Button btnEliminarLicencia;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -733,5 +921,16 @@
         private System.Windows.Forms.ComboBox cmbCliente;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLaptopsSeleccionados;
         private System.Windows.Forms.ComboBox cmbSucursal;
+        private System.Windows.Forms.Button btnGuardarMemoria;
+        private System.Windows.Forms.Button btnAgregarMemoria;
+        private System.Windows.Forms.Button btnAgregarDisco;
+        private System.Windows.Forms.Button btnGuardarDisco;
+        private System.Windows.Forms.Button btnAgregarLicencia;
+        private System.Windows.Forms.Button btnCaducidadLicencia;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnGrabar;
     }
 }
