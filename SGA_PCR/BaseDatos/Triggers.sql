@@ -26,3 +26,17 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+DROP TRIGGER IF EXISTS `after_alquiler_detalle_delete`;
+DELIMITER $$
+
+CREATE TRIGGER after_alquiler_detalle_delete
+AFTER DELETE
+ON salida_det FOR EACH ROW
+BEGIN
+
+	UPDATE laptop_cpu SET estado = 2 , ubicacion='ALMACEN' where idLC=old.idLC;
+
+END$$    
+
+DELIMITER ;

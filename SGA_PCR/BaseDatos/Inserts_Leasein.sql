@@ -13,7 +13,7 @@ COMMIT;
 BEGIN;
 LOCK TABLES `bd_leasein`.`estados` WRITE;
 DELETE FROM `bd_leasein`.`estados`;
-INSERT INTO `bd_leasein`.`estados` (`idEstado`,`nombreEstado`,`descripcion`) VALUES (0, 'Desactivo', NULL),(1, 'Activo', NULL),(2, 'Disponible', NULL),(3, 'Dañado', NULL),(4, 'Alquilado', NULL),(5, 'Vendido', NULL);
+INSERT INTO `bd_leasein`.`estados` (`idEstado`,`nombreEstado`,`descripcion`) VALUES (0, 'DESACTIVO', NULL),(1, 'ACTIVO', NULL),(2, 'DISPONIBLE', NULL),(3, 'DAÑADO', NULL),(4, 'ALQUILADO', NULL),(5, 'VENDIDO', NULL),(6, 'PRE-ALQUILER', NULL),(7, 'FINALIZADO', NULL);
 UNLOCK TABLES;
 COMMIT;
 BEGIN;

@@ -326,7 +326,7 @@ namespace AccesoDatos
             return error;
         }
 
-        public bool InsertarPreAlquiler(Alquiler alquiler, string usuario)
+        public int InsertarPreAlquiler(Alquiler alquiler, string usuario)
         {
 
             bool error = false;
@@ -372,14 +372,16 @@ namespace AccesoDatos
                 {
                     foreach (AlquilerDetalle det in alquiler.Detalles)
                     {
-                        parametrosEntrada = new MySqlParameter[3];
+                        parametrosEntrada = new MySqlParameter[4];
                         parametrosEntrada[0] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
-                        parametrosEntrada[1] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
-                        parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                        parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                        parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
+                        parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
 
                         parametrosEntrada[0].Value = det.Laptop.IdLC;
-                        parametrosEntrada[1].Value = alquiler.IdSucursal;
-                        parametrosEntrada[2].Value = usuario;
+                        parametrosEntrada[1].Value = alquiler.Estado;
+                        parametrosEntrada[2].Value = alquiler.IdSucursal;
+                        parametrosEntrada[3].Value = usuario;
 
                         objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
 
@@ -387,7 +389,7 @@ namespace AccesoDatos
 
                 }
             }
-            return error;
+            return alquiler.IdAlquiler;
         }
 
 
@@ -486,7 +488,7 @@ namespace AccesoDatos
                 parametrosEntrada[15].Value = det.Caracteristica;
                 parametrosEntrada[16].Value = det.GuiaSalida;
                 parametrosEntrada[17].Value = det.Observacion;
-                parametrosEntrada[18].Value = 6;
+                parametrosEntrada[18].Value = alquiler.Estado;
                 parametrosEntrada[19].Value = usuario;
 
                 string[] datosSalida = new string[1];
@@ -561,6 +563,117 @@ namespace AccesoDatos
 
             return alquilerDevuelto;
         }
+
+
+
+        public bool ModificarAlquiler(Alquiler alquiler, string usuario)
+        {
+
+            bool error = false;
+
+            parametrosEntrada = new MySqlParameter[13];
+            parametrosEntrada[0] = new MySqlParameter("@_idCliente", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_idSucursal", MySqlDbType.Int32);
+            parametrosEntrada[2] = new MySqlParameter("@_rucDni", MySqlDbType.VarChar, 100);
+            parametrosEntrada[3] = new MySqlParameter("@_nroContrato", MySqlDbType.VarChar, 100);
+            parametrosEntrada[4] = new MySqlParameter("@_nroOC", MySqlDbType.VarChar, 100);
+            parametrosEntrada[5] = new MySqlParameter("@_idPedido", MySqlDbType.Int32);
+            parametrosEntrada[6] = new MySqlParameter("@_fecSalida", MySqlDbType.DateTime);
+            parametrosEntrada[7] = new MySqlParameter("@_fecIniContrato", MySqlDbType.DateTime);
+            parametrosEntrada[8] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
+            parametrosEntrada[9] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
+            parametrosEntrada[10] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+            parametrosEntrada[11] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+            parametrosEntrada[12] = new MySqlParameter("@_idSalida", MySqlDbType.VarChar, 100);
+
+            parametrosEntrada[0].Value = alquiler.IdCliente;
+            parametrosEntrada[1].Value = alquiler.IdSucursal;
+            parametrosEntrada[2].Value = alquiler.RucDni;
+            parametrosEntrada[3].Value = alquiler.NroContrato;
+            parametrosEntrada[4].Value = alquiler.NroOC;
+            parametrosEntrada[5].Value = 0;
+            parametrosEntrada[6].Value = alquiler.FechaSalida;
+            parametrosEntrada[7].Value = alquiler.FechaIniContrato;
+            parametrosEntrada[8].Value = alquiler.FechaFinContrato;
+            parametrosEntrada[9].Value = alquiler.Observacion;
+            parametrosEntrada[10].Value = alquiler.Estado;
+            parametrosEntrada[11].Value = usuario;
+            parametrosEntrada[12].Value = alquiler.IdAlquiler;
+
+            bool okey=objManager.EjecutarProcedure(parametrosEntrada, "update_salida");
+
+            if (okey)
+            {
+
+                parametrosEntrada = new MySqlParameter[1];
+                parametrosEntrada[0] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
+
+                parametrosEntrada[0].Value = alquiler.IdAlquiler;
+
+                okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_salida_detalle");
+
+                if (okey)
+                {
+                    okey=InsertarDetallePreAlquiler(alquiler, usuario);
+                    if (okey)
+                    {
+                        foreach (AlquilerDetalle det in alquiler.Detalles)
+                        {
+                            parametrosEntrada = new MySqlParameter[4];
+                            parametrosEntrada[0] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                            parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                            parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
+                            parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+
+                            parametrosEntrada[0].Value = det.Laptop.IdLC;
+                            parametrosEntrada[1].Value = alquiler.Estado;
+                            parametrosEntrada[2].Value = alquiler.IdSucursal;
+                            parametrosEntrada[3].Value = usuario;
+
+                            objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
+
+                        }
+                    }
+                }
+            }
+            return error;
+        }
+
+
+
+        public LC LlenarDetalleDeUnaLaptop(int idLC)
+        {
+            LC laptop = new LC();
+            MySqlDataReader reader;
+            string sql = "";
+
+            sql = "Select * From vista_laptops_almacen_lista_sin_filtro where idLC=" + idLC + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            while (reader.Read())
+            {
+                laptop.IdLC = reader.GetInt32("idLC");
+                laptop.Codigo = reader.GetString("codigo");
+                laptop.Modelo.NombreMarca = reader.GetString("marcaLC");
+                laptop.Modelo.NombreModelo = reader.GetString("nombreModeloLC");
+                laptop.TamanoPantalla = reader.GetDouble("tamanoPantalla");
+                laptop.Procesador.Modelo.NombreModelo = reader.GetString("tipoProcesador");
+                laptop.Procesador.Generacion = reader.GetInt32("generacionProcesador");
+                laptop.Video.Modelo.NombreModelo = reader.GetString("nombreModeloVideo");
+                laptop.Video.Capacidad = reader.GetInt32("capacidadVideo");
+                laptop.Procesador.IdProcesador = reader.GetInt32("idProcesador");
+                laptop.Video.IdVideo = reader.GetInt32("idVideo");
+                
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+            
+            return laptop;
+        }
+
 
     }
 }

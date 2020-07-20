@@ -69,8 +69,8 @@ create view vista_productos_por_facturar as
 			DATEDIFF(CURDATE(),s.fecIniContrato) as diasVencidos,
 			(Select c.nombreKam from cliente c where c.idCliente=s.idCliente) as KAM 
 	From salida s inner join salida_det d on s.idSalida=d.idSalida inner join laptop_cpu lc on lc.idLC=d.idLC
-	where s.estado="Atendido" 
-		and d.estado="Activo" 
+	where s.estado=4
+		and d.estado=4 
 		and Not(lc.ubicacion="Almacen") 
 		and	d.idLC not in (Select codigoLC from cuota)
 
@@ -90,8 +90,8 @@ create view vista_productos_por_facturar as
 			inner join salida_det d on s.idSalida=d.idSalida 
 			inner join laptop_cpu lc on lc.idLC=d.idLC
 			inner join cuota cu on d.idLC=cu.codigoLC
-	where s.estado="Atendido" 
-		and d.estado="Activo" 
+	where s.estado=4
+		and d.estado=4 
 		and Not(lc.ubicacion="Almacen") 
 		and cu.fecFinPago<CURDATE() 
 	order by cliente,codigoEquipo;
@@ -376,9 +376,10 @@ where idMarca=7 and estado=1;
 		
 /*Se mostrará las marcas de los procesadores*/
 create view vista_procesador_marca as
-Select idMarca, nombre
-from marca
-where idCategoria=9 and estado=1;
+Select mo.idModelo, mo.nombre
+from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
+where m.idCategoria=9 and m.estado=1 ;
+
 
 		
 /*Se mostrará las marcas de las tarjetas de videos*/
@@ -585,3 +586,33 @@ Select a.idSalida as idAlquiler,
 			 e.nombreEstado as estado
 From salida a inner join cliente c on a.idCliente=c.idCliente 
 				inner join estados e on a.estado=e.idEstado;
+
+/*Se mostrará los alquileres realizado*/
+create view vista_laptops_almacen_lista_sin_filtro as
+SELECT lc.idLC as idLC,
+		lc.idMarca as idMarca,
+		lc.marca as marcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as nombreModeloLC,
+		lc.codigo as codigo,
+		lc.tamanoPantalla as tamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as tipoProcesador,
+		p.generacion as generacionProcesador,
+		v.idVideo as idVideo,
+		v.marca as marcaVideo,
+		v.nombreModelo as nombreModeloVideo,
+		v.capacidad as capacidadVideo,
+		v.tipo as tipoVideo,
+		lc.partNumber as partNumber,
+		lc.serieFabrica as serieFabrica,
+		lc.garantia as garantia,
+		lc.fecInicioSeguro as fecInicioSeguro,
+		lc.fecFinSeguro as fecFinSeguro,
+		lc.ubicacion as ubicacion,
+		lc.observacion as observacion,
+		lc.estado as estado
+FROM vista_maestro_laptops lc, vista_maestro_procesador p, vista_maestro_video v
+where lc.idVideo=v.idVideo and lc.idProcesador=p.idProcesador
+ORDER BY lc.idLC ;

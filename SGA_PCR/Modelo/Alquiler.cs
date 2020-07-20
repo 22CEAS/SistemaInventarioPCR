@@ -28,8 +28,11 @@ namespace Modelo
             this.IdAlquiler = 0;
             this.IdCliente = 0;
             this.IdSucursal = 0;
+            this.Estado = 6;
             this.NroOC = "";
             this.NroContrato = "";
+            this.Observacion = "";
+            this.RucDni = "";
             UsuarioRegistro = new Usuario();
             Detalles = new BindingList<AlquilerDetalle>();
         }

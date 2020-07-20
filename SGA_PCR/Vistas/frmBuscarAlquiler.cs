@@ -85,7 +85,8 @@ namespace Vistas
         {
 
             String sql = "\0";
-            
+            DateTime fecha_proceso;
+
 
             if (rbtnFiltros.Checked)
             {
@@ -93,7 +94,13 @@ namespace Vistas
                 String sqlFec = ""; String sqlKam = ""; String sqlCli = ""; String sqlEst = "";
                 if (chbFecProceso.Checked)
                 {
-                    sqlFec = " AND Cast(v.fechaProceso as DATE) = '" + dtpFecProceso.Value.ToShortDateString() + "'";
+
+                    fecha_proceso = dtpFecProceso.Value;
+                    String dia = fecha_proceso.Day.ToString();
+                    String mes = fecha_proceso.Month.ToString();
+                    String anho = fecha_proceso.Year.ToString();
+
+                    sqlFec = " AND Cast(v.fechaProceso as DATE) = '" + anho + "-" + mes + "-" + dia + "'";
                     sql = sql + sqlFec;
                 }
                 if (chbCliente.Checked)
@@ -126,7 +133,7 @@ namespace Vistas
                 }
                 catch
                 {
-                    MessageBox.Show("El numero de alquiler no es valido", "◄ AVISO | LUCET S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El numero de alquiler no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -160,7 +167,7 @@ namespace Vistas
             }
             catch
             {
-                MessageBox.Show("No se ha seleccionado ningun alquiler", "◄ AVISO | LUCET S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha seleccionado ningun alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             Cursor.Current = Cursors.Default;
         }

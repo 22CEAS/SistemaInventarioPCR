@@ -99,7 +99,7 @@
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
             this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionar.Location = new System.Drawing.Point(761, 207);
+            this.btnSeleccionar.Location = new System.Drawing.Point(755, 207);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(111, 67);
             this.btnSeleccionar.TabIndex = 54;
@@ -119,7 +119,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(761, 70);
+            this.btnBuscar.Location = new System.Drawing.Point(755, 70);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(93, 60);
             this.btnBuscar.TabIndex = 53;
@@ -263,8 +263,10 @@
             this.dgvAlquiler.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvAlquiler.PrimaryGrid.AllowRowResize = true;
             this.dgvAlquiler.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn1.AllowEdit = false;
             gridColumn1.DataPropertyName = "idAlquiler";
             gridColumn1.Name = "ID ALQUILER";
+            gridColumn2.AllowEdit = false;
             gridColumn2.DataPropertyName = "nombreCliente";
             gridColumn2.Name = "CLIENTE";
             gridColumn2.Width = 210;
@@ -276,6 +278,7 @@
             gridColumn3.Width = 200;
             gridColumn4.AllowEdit = false;
             gridColumn4.DataPropertyName = "fechaProceso";
+            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimePickerEditControl);
             gridColumn4.MinimumWidth = 100;
             gridColumn4.Name = "FECHA PROCESO";
             gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
@@ -306,15 +309,15 @@
             this.dgvAlquiler.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvAlquiler.PrimaryGrid.ShowRowHeaders = false;
             this.dgvAlquiler.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvAlquiler.Size = new System.Drawing.Size(725, 409);
+            this.dgvAlquiler.Size = new System.Drawing.Size(725, 266);
             this.dgvAlquiler.TabIndex = 135;
             this.dgvAlquiler.Text = "Tabla Laptops";
             // 
             // frmBuscarAlquiler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 749);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(882, 606);
             this.Controls.Add(this.dgvAlquiler);
             this.Controls.Add(this.panelNumOP);
             this.Controls.Add(this.rbtnFiltros);
@@ -322,7 +325,12 @@
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.panelFiltros);
             this.Controls.Add(this.rbtnNumAlquiler);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmBuscarAlquiler";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBuscarAlquiler";
             this.panelNumOP.ResumeLayout(false);
             this.panelNumOP.PerformLayout();

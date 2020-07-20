@@ -708,8 +708,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_salida_det`(
 )
 BEGIN
 	SET @idSalidaDet=(SELECT IFNULL( MAX( idSalidaDet ) , 0 )+1 FROM salida_det);
-	INSERT INTO salida_det (idSalidaDet,idSalida,idLC,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,guiaSalida,observacion,estado,usuario_ins) values
-	(@idSalidaDet,_idSalida,_idLC,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_guiaSalida,_observacion,_estado,_usuario_ins);
+	INSERT INTO salida_det (idSalidaDet,idSalida,idLC,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,guiaSalida,motivoNoRecojo,observacion,estado,usuario_ins) values
+	(@idSalidaDet,_idSalida,_idLC,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_guiaSalida,"",_observacion,_estado,_usuario_ins);
 	COMMIT;
     SET _idSalidaDet = @idSalidaDet;
 END
@@ -900,16 +900,66 @@ DELIMITER ;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_laptop_disponibilidad`(
 	IN _idLC INT,
+	IN _estado INT,
 	IN _ubicacion NVARCHAR(250),
 	IN _usuario_mod NVARCHAR(100)
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
 	UPDATE laptop_cpu 
-	SET estado=6,
+	SET estado=_estado,
+		ubicacion=_ubicacion,
 		fec_mod=@fechaModificacion,
 		usuario_mod=_usuario_mod
 	WHERE idLC=_idLC; 
+END
+$$ 
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_salida_detalle`(
+	IN _idSalida INT
+)
+BEGIN
+	DELETE FROM salida_det where idSalida=_idSalida; 
+END
+$$
+DELIMITER ;
+
+/*Esta procedimiento se hace solamente cuando se ha equivocado en escoger una licencia y todavía no lo has usado*/
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida`(
+	IN _idCliente INT,
+	IN _idSucursal INT,
+	IN _rucDni NVARCHAR(100),
+	IN _nroContrato NVARCHAR(100),
+	IN _nroOC NVARCHAR(100),
+	IN _idPedido INT,
+	IN _fecSalida DATETIME,
+	IN _fecIniContrato DATETIME,
+	IN _fecFinContrato DATETIME,
+	IN _observacion NVARCHAR(255),
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+	IN _idSalida INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE salida 
+	SET idCliente=_idCliente,
+		idSucursal=_idSucursal,
+		rucDni=_rucDni,
+		nroContrato=_nroContrato,
+		nroOC=_nroOC,
+		idPedido=_idPedido,
+		fecSalida=_fecSalida,
+		fecIniContrato=_fecIniContrato,
+		fecFinContrato=_fecFinContrato,
+		observacion=_observacion,
+		estado=_estado,
+		fec_mod=@fechaModificacion,
+		usuario_mod=_usuario_mod
+	WHERE idSalida=_idSalida; 
 END
 $$ 
 DELIMITER ;
