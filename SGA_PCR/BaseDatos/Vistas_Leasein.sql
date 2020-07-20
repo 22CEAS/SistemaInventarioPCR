@@ -573,3 +573,15 @@ FROM vista_maestro_laptops lc, vista_maestro_memoria m,  memoria_lc mlc
 where lc.idLC=mlc.idLC and m.idMemoria=mlc.idMemoria
 ORDER BY m.tipo;
 
+
+/*Se mostrará los alquileres realizado*/
+create view vista_lista_alquileres as
+Select a.idSalida as idAlquiler,
+			 a.idCliente as idCliente,
+			 a.usuario_ins as nombreKam,
+			 a.estado as idEstado,
+			 c.nombre_razonSocial as nombreCliente,
+			 cast(a.fec_ins as date) as fechaProceso,
+			 e.nombreEstado as estado
+From salida a inner join cliente c on a.idCliente=c.idCliente 
+				inner join estados e on a.estado=e.idEstado;

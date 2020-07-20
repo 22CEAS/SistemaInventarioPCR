@@ -327,7 +327,7 @@ namespace Vistas
             if (aux != null)
             {
 
-                artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
                 
                 int indice = 0;
                 foreach(AlquilerDetalle detalle in alquiler.Detalles)
@@ -361,7 +361,7 @@ namespace Vistas
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
 
                     int indice = 0;
                     foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -420,7 +420,7 @@ namespace Vistas
                 bool error;
                 if (dgvMemorias.PrimaryGrid.Rows.Count > 0)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
 
                     int indice = 0;
                     foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -462,7 +462,7 @@ namespace Vistas
                 bool error;
                 if (dgvMemorias.PrimaryGrid.Rows.Count > 0)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
 
                     int indice = 0;
                     foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -510,7 +510,7 @@ namespace Vistas
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
 
                     int indice = 0;
                     foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -567,7 +567,7 @@ namespace Vistas
                 bool error;
                 if (dgvDisco.PrimaryGrid.Rows.Count > 0)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
 
                     int indice = 0;
                     foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -616,7 +616,7 @@ namespace Vistas
                 bool error;
                 if (dgvDisco.PrimaryGrid.Rows.Count > 0)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
 
                     int indice = 0;
                     foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -656,7 +656,7 @@ namespace Vistas
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
 
                     int indice = 0;
                     foreach (AlquilerDetalle detalle in alquiler.Detalles)
@@ -718,7 +718,7 @@ namespace Vistas
                 bool error;
                 if (dgvLicencia.PrimaryGrid.Rows.Count > 0)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
                     int licTempId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[4])).Value.ToString());
 
                     error = alquilerDA.ActualizarLaptopLicencia(artTemp.IdLC, licTempId, this.nombreUsuario, 0);
@@ -765,7 +765,7 @@ namespace Vistas
                 bool error;
                 if (dgvLicencia.PrimaryGrid.Rows.Count > 0)
                 {
-                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    artTemp.IdLC = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[10])).Value.ToString());
                     int licTempId  = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[4])).Value.ToString());
 
                     error = alquilerDA.ActualizarLaptopLicencia(artTemp.IdLC, licTempId, this.nombreUsuario,1);
@@ -1049,6 +1049,48 @@ namespace Vistas
             finally
             {
                 GC.Collect();
+            }
+        }
+
+        public void LlenarDatosAlquiler()
+        {
+            cmbCliente.SelectedValue = alquiler.IdCliente;
+            cmbSucursal.SelectedValue = alquiler.IdSucursal;
+            txtNroDocumento.Text = alquiler.RucDni;
+            dtpFechaTraslado.Value = alquiler.FechaSalida;
+            dtpIniPlazo.Value = alquiler.FechaIniContrato;
+            dtpFinPlazo.Value = alquiler.FechaFinContrato;
+            txtNroContrato.Text = alquiler.NroContrato;
+            txtNroOC.Text = alquiler.NroOC;
+            txtNroAlquiler.Text = alquiler.IdAlquiler.ToString();
+
+            for (int i=0;i<alquiler.Detalles.Count;i++)
+            {
+                tablaDisco = alquilerDA.ListarLaptopDisco(alquiler.Detalles[i].Laptop.IdLC);
+                tablaMemoria = alquilerDA.ListarLaptopMemoria(alquiler.Detalles[i].Laptop.IdLC);
+                tablaLicencia = alquilerDA.ListarLaptopLicencia(alquiler.Detalles[i].Laptop.IdLC);
+
+                alquiler.Detalles[i].Laptop.SetDisco(tablaDisco);
+                alquiler.Detalles[i].Laptop.SetMemoria(tablaMemoria);
+                alquiler.Detalles[i].Laptop.SetLicencia(tablaLicencia);
+            }
+            
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            estadoComponentes(TipoVista.Vista);
+            frmBuscarAlquiler frmBP = new frmBuscarAlquiler(this.idUsuario);
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+                alquiler = frmBP.ObjSeleccionado;
+                txtNroAlquiler.Text = alquiler.IdAlquiler.ToString();
+                LlenarDatosAlquiler();
+            }
+            else
+            {
+                estadoComponentes(TipoVista.Inicial);
             }
         }
     }

@@ -62,6 +62,12 @@
     <Compile Include="frmAgregarProducto.Designer.cs">
       <DependentUpon>frmAgregarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarAlquiler.Designer.cs">
+      <DependentUpon>frmBuscarAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCambioPieza.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlquiler.resx">
       <DependentUpon>frmAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarAlquiler.resx">
+      <DependentUpon>frmBuscarAlquiler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCambio.resx">
       <DependentUpon>frmCambio.cs</DependentUpon>

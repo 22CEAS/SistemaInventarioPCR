@@ -49,6 +49,16 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * from vista_licencia_lc_lista where idLC=" + idLC+" ;");
         }
 
+        public DataTable ListarEstados()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM estados ; ");
+        }
+
+        public DataTable ListarAlquiler(string sql)
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_lista_alquileres v " + sql + " ;");
+        }
+
         public bool ActualizarLaptopMemoria(int idLC, BindingList<Memoria> memorias, string usuario)
         {
             string sql = "SET autocommit=0;";
@@ -495,6 +505,61 @@ namespace AccesoDatos
                 }
             }
             return error;
+        }
+
+
+        public Alquiler LlamarAlquilerModificable(int idAlquiler)
+        {
+            Alquiler alquilerDevuelto = new Alquiler();
+            MySqlDataReader reader;
+            string sql = "";
+
+            sql = "Select * From salida where idSalida=" + idAlquiler + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            while (reader.Read())
+            {
+                alquilerDevuelto.IdAlquiler = reader.GetInt32("idSalida");
+                alquilerDevuelto.IdCliente = reader.GetInt32("idCliente");
+                alquilerDevuelto.IdSucursal = reader.GetInt32("idSucursal");
+                alquilerDevuelto.RucDni = reader.GetString("rucDni");
+                alquilerDevuelto.NroContrato = reader.GetString("nroContrato");
+                alquilerDevuelto.NroOC = reader.GetString("nroOC");
+                alquilerDevuelto.FechaSalida = reader.GetDateTime("fecSalida");
+                alquilerDevuelto.FechaIniContrato = reader.GetDateTime("fecIniContrato");
+                alquilerDevuelto.FechaFinContrato = reader.GetDateTime("fecFinContrato");
+                alquilerDevuelto.Observacion = reader.GetString("observacion");
+                alquilerDevuelto.Estado = reader.GetInt32("estado");
+                alquilerDevuelto.UsuarioRegistro.Nombre = reader.GetString("usuario_ins");
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+
+            sql = "Select * From salida_det where idSalida=" + idAlquiler + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            while (reader.Read())
+            {
+                AlquilerDetalle det = new AlquilerDetalle();
+                det.IdAlquilerDetalle = reader.GetInt32("idSalidaDet");
+                det.Laptop.IdLC = reader.GetInt32("idLC");
+                det.Caracteristica = reader.GetString("caracteristicas");
+                det.GuiaSalida = reader.GetString("guiaSalida");
+                det.MotivoNoRecojo = reader.GetString("motivoNoRecojo");
+                det.Observacion = reader.GetString("observacion");
+                det.Estado = reader.GetInt32("estado");
+                alquilerDevuelto.Detalles.Add(det);
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+
+            return alquilerDevuelto;
         }
 
     }
