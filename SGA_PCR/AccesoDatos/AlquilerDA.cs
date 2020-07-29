@@ -143,8 +143,33 @@ namespace AccesoDatos
             objManager.conexion.Close(); objManager.conexion.Dispose(); objManager.cmd.Dispose();
             return true;
         }
+        
+        public int ValidarCantidadLaptopMemoria(int idLC, BindingList<Memoria> memorias)
+        {
+            foreach(Memoria mem in memorias)
+            {
+                int sumaCant = 0;
+                string sql = "";
 
+                sql = "Select me.cantidad as Cantidad From memoria me where me.idMemoria=" + mem.IdMemoria + " ;";
+                MySqlDataReader reader;
+                reader = objManager.MostrarInformacion(sql);
+                while (reader.Read())
+                {
+                    sumaCant += reader.GetInt32("Cantidad");
+                }
 
+                sql = "Select mlc.cantidad as Cantidad From memoria_lc mlc where mlc.IdMemoria=" + mem.IdMemoria + " and mlc.idLC=" + idLC+ " ;";
+                reader = objManager.MostrarInformacion(sql);
+                while (reader.Read())
+                {
+                    sumaCant += reader.GetInt32("Cantidad");
+                }
+                if (mem.Cantidad > sumaCant) return -1;
+            }
+            return 0;
+        }
+        
         public bool InsertarLaptopMemoriasPrimeraVez(int idLC, BindingList<Memoria> memorias, string usuario)
         {
 
@@ -167,7 +192,6 @@ namespace AccesoDatos
             }
             return error;
         }
-
 
         public bool ActualizarLaptopDisco(int idLC, BindingList<DiscoDuro> discos, string usuario)
         {
@@ -254,6 +278,32 @@ namespace AccesoDatos
             return true;
         }
 
+        public int ValidarCantidadLaptopDiscos(int idLC, BindingList<DiscoDuro> discos)
+        {
+            foreach (DiscoDuro dis in discos)
+            {
+                int sumaCant = 0;
+                string sql = "";
+
+                sql = "Select dis.cantidad as Cantidad From disco_duro dis where dis.idDisco=" + dis.IdDisco + " ;";
+                MySqlDataReader reader;
+                reader = objManager.MostrarInformacion(sql);
+                while (reader.Read())
+                {
+                    sumaCant += reader.GetInt32("Cantidad");
+                }
+
+                sql = "Select dlc.cantidad as Cantidad From disco_lc dlc where dlc.idDisco=" + dis.IdDisco + " and dlc.idLC=" + idLC + " ;";
+                reader = objManager.MostrarInformacion(sql);
+                while (reader.Read())
+                {
+                    sumaCant += reader.GetInt32("Cantidad");
+                }
+                if (dis.Cantidad > sumaCant) return -1;
+            }
+            return 0;
+        }
+
         public bool InsertarLaptopDiscosPrimeraVez(int idLC, BindingList<DiscoDuro> discos, string usuario)
         {
 
@@ -297,6 +347,7 @@ namespace AccesoDatos
             }
             return error;
         }
+
         public bool ActualizarLaptopLicencia(int idLC, int idLicencia, string usuario,int flag)
         {
             bool error = false;
@@ -391,7 +442,6 @@ namespace AccesoDatos
             }
             return alquiler.IdAlquiler;
         }
-
 
         public bool InsertarDetallePreAlquiler(Alquiler alquiler, string usuario)
         {
@@ -508,8 +558,7 @@ namespace AccesoDatos
             }
             return error;
         }
-
-
+              
         public Alquiler LlamarAlquilerModificable(int idAlquiler)
         {
             Alquiler alquilerDevuelto = new Alquiler();
@@ -564,8 +613,6 @@ namespace AccesoDatos
             return alquilerDevuelto;
         }
 
-
-
         public bool ModificarAlquiler(Alquiler alquiler, string usuario)
         {
 
@@ -584,7 +631,7 @@ namespace AccesoDatos
             parametrosEntrada[9] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
             parametrosEntrada[10] = new MySqlParameter("@_estado", MySqlDbType.Int32);
             parametrosEntrada[11] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
-            parametrosEntrada[12] = new MySqlParameter("@_idSalida", MySqlDbType.VarChar, 100);
+            parametrosEntrada[12] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
 
             parametrosEntrada[0].Value = alquiler.IdCliente;
             parametrosEntrada[1].Value = alquiler.IdSucursal;
@@ -639,8 +686,6 @@ namespace AccesoDatos
             return error;
         }
 
-
-
         public LC LlenarDetalleDeUnaLaptop(int idLC)
         {
             LC laptop = new LC();
@@ -672,6 +717,58 @@ namespace AccesoDatos
 
             
             return laptop;
+        }
+
+        public bool AnularAlquiler(Alquiler alquiler, string usuario)
+        {
+
+            bool error = false;
+
+            parametrosEntrada = new MySqlParameter[4];
+            parametrosEntrada[0] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
+            parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+            parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+            parametrosEntrada[3] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
+
+            parametrosEntrada[9].Value = alquiler.Observacion;
+            parametrosEntrada[10].Value = alquiler.Estado; //0
+            parametrosEntrada[11].Value = usuario;
+            parametrosEntrada[12].Value = alquiler.IdAlquiler;
+
+            bool okey = objManager.EjecutarProcedure(parametrosEntrada, "anular_salida");
+
+            if (okey)
+            {
+                foreach (AlquilerDetalle det in alquiler.Detalles)
+                {
+                    parametrosEntrada = new MySqlParameter[4];
+                    parametrosEntrada[0] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                    parametrosEntrada[1] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                    parametrosEntrada[2] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 250);
+                    parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+
+                    parametrosEntrada[0].Value = det.Laptop.IdLC;
+                    parametrosEntrada[1].Value = 2;
+                    parametrosEntrada[2].Value = "ALMACEN";
+                    parametrosEntrada[3].Value = usuario;
+
+                    objManager.EjecutarProcedure(parametrosEntrada, "update_laptop_disponibilidad");
+
+
+                    parametrosEntrada = new MySqlParameter[3];
+                    parametrosEntrada[0] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                    parametrosEntrada[1] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                    parametrosEntrada[2] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+
+                    parametrosEntrada[0].Value = 0;
+                    parametrosEntrada[1].Value = usuario;
+                    parametrosEntrada[2].Value = det.IdAlquilerDetalle;
+
+                    objManager.EjecutarProcedure(parametrosEntrada, "anular_salida_detalle");
+
+                }
+            }
+            return error;
         }
 
 

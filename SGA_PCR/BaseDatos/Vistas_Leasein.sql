@@ -533,11 +533,11 @@ SELECT lc.idLC as idLC,
 		p.marca as marcaProcesador,
 		p.tipo as tipoProcesador,
 		p.generacion as generacionProcesador,
-		v.idVideo as idVideo,
-		v.marca as marcaVideo,
-		v.nombreModelo as nombreModeloVideo,
-		v.capacidad as capacidadVideo,
-		v.tipo as tipoVideo,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as nombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as capacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo,
 		lc.partNumber as partNumber,
 		lc.serieFabrica as serieFabrica,
 		lc.garantia as garantia,
@@ -546,8 +546,10 @@ SELECT lc.idLC as idLC,
 		lc.ubicacion as ubicacion,
 		lc.observacion as observacion,
 		lc.estado as estado
-FROM vista_maestro_laptops lc, vista_maestro_procesador p, vista_maestro_video v
-where lc.estado=2 and lc.idVideo=v.idVideo and lc.idProcesador=p.idProcesador and lc.ubicacion='ALMACEN'
+FROM vista_maestro_laptops lc 
+		left join  vista_maestro_procesador p on lc.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on lc.idVideo=v.idVideo 
+where lc.estado=2 and lc.ubicacion='ALMACEN'
 ORDER BY lc.idLC;
 	
 /*Se mostrará la tabla de discos relacinados a una laptop*/
@@ -600,11 +602,11 @@ SELECT lc.idLC as idLC,
 		p.marca as marcaProcesador,
 		p.tipo as tipoProcesador,
 		p.generacion as generacionProcesador,
-		v.idVideo as idVideo,
-		v.marca as marcaVideo,
-		v.nombreModelo as nombreModeloVideo,
-		v.capacidad as capacidadVideo,
-		v.tipo as tipoVideo,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as nombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as capacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo,
 		lc.partNumber as partNumber,
 		lc.serieFabrica as serieFabrica,
 		lc.garantia as garantia,
@@ -613,6 +615,47 @@ SELECT lc.idLC as idLC,
 		lc.ubicacion as ubicacion,
 		lc.observacion as observacion,
 		lc.estado as estado
-FROM vista_maestro_laptops lc, vista_maestro_procesador p, vista_maestro_video v
-where lc.idVideo=v.idVideo and lc.idProcesador=p.idProcesador
+FROM vista_maestro_laptops lc 
+		left join  vista_maestro_procesador p on lc.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on lc.idVideo=v.idVideo 
 ORDER BY lc.idLC ;
+
+/*Se mostrará todas las laptops que pertenezcan a un cliente cuando se le filtre por idCliente y que además estén en estado alquilado*/
+create view vista_laptops_detalle_alquiler_cliente_estado_alquilado as
+Select d.idSalidaDet as IdSalidaDetalle,
+		s.idSucursal as IdSucursal,
+		d.idLC as IdLC,
+		s.idCliente as IdCliente,
+		lc.idMarca as idMarca,
+		lc.marca as MarcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as NombreModeloLC,
+		lc.codigo as Codigo,
+		lc.tamanoPantalla as TamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as TipoProcesador,
+		p.generacion as GeneracionProcesador,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on d.idVideo=v.idVideo 
+where d.fueDevuelto=0 and d.estado=4
+ORDER BY lc.idLC ;
+
+
+create view vista_lista_devoluciones as
+Select a.idDevolucion as IdDevolucion,
+			 a.idCliente as IdCliente,
+			 a.usuario_ins as NombreKam,
+			 a.estado as IdEstado,
+			 c.nombre_razonSocial as NombreCliente,
+			 cast(a.fec_ins as date) as FechaProceso,
+			 e.nombreEstado as Estado
+From devolucion a inner join cliente c on a.idCliente=c.idCliente 
+				inner join estados e on a.estado=e.idEstado;

@@ -40,3 +40,18 @@ BEGIN
 END$$    
 
 DELIMITER ;
+
+DROP TRIGGER IF EXISTS `after_devolucion_detalle_delete`;
+DELIMITER $$
+
+CREATE TRIGGER after_devolucion_detalle_delete
+AFTER DELETE
+ON devolucion_det FOR EACH ROW
+BEGIN
+
+	UPDATE salida_det SET fueDevuelto = 0 where idSalidaDet=old.idSalidaDet;
+	UPDATE laptop_cpu SET estado = 4 , ubicacion=old.idSucursal where idLC=old.idLC;
+
+END$$    
+
+DELIMITER ;

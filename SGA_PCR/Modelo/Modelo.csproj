@@ -46,6 +46,8 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteSucursal.cs" />
+    <Compile Include="Devolucion.cs" />
+    <Compile Include="DevolucionDetalle.cs" />
     <Compile Include="DiscoDuro.cs" />
     <Compile Include="LC.cs" />
     <Compile Include="Licencia.cs" />

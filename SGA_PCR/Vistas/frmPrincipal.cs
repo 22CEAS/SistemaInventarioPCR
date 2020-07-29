@@ -20,7 +20,7 @@ namespace Vistas
         private void btnIngreso_Click(object sender, EventArgs e)
         {
             //btnIngreso.Enabled = false;
-            frmIngreso frm = new frmIngreso();
+            frmProcesoIngreso frm = new frmProcesoIngreso();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -28,7 +28,7 @@ namespace Vistas
         private void btnCrearProcesador_Click(object sender, EventArgs e)
         {
             //btnCrearProcesador.Enabled = false;
-            frmCrearProcesador frm = new frmCrearProcesador();
+            frmArchivoCrearProcesador frm = new frmArchivoCrearProcesador();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -36,7 +36,7 @@ namespace Vistas
         private void btnCrearMemoria_Click(object sender, EventArgs e)
         {
             //btnCrearMemoria.Enabled = false;
-            frmCrearMemoria frm = new frmCrearMemoria();
+            frmArchivoCrearMemoria frm = new frmArchivoCrearMemoria();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -44,7 +44,7 @@ namespace Vistas
         private void btnCrearDisco_Click(object sender, EventArgs e)
         {
             //btnCrearDisco.Enabled = false;
-            frmCrearDiscoDuro frm = new frmCrearDiscoDuro();
+            frmArchivoCrearDiscoDuro frm = new frmArchivoCrearDiscoDuro();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -52,7 +52,7 @@ namespace Vistas
         private void btnCrearTarjetaVideo_Click(object sender, EventArgs e)
         {
             //btnCrearTarjetaVideo.Enabled = false;
-            frmCrearTarjetaVideo frm = new frmCrearTarjetaVideo();
+            frmArchivoCrearTarjetaVideo frm = new frmArchivoCrearTarjetaVideo();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -60,7 +60,7 @@ namespace Vistas
         private void btnCrearCliente_Click(object sender, EventArgs e)
         {
             //btnCrearCliente.Enabled = false;
-            frmCrearCliente frm = new frmCrearCliente();
+            frmArchivoCrearCliente frm = new frmArchivoCrearCliente();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -68,7 +68,7 @@ namespace Vistas
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             //btnProveedor.Enabled = false;
-            frmCrearProveedor frm = new frmCrearProveedor();
+            frmArchivoCrearProveedor frm = new frmArchivoCrearProveedor();
             frm.MdiParent = this;
             frm.Show();
 
@@ -77,7 +77,7 @@ namespace Vistas
         private void btnDevolucion_Click(object sender, EventArgs e)
         {
             //btnDevolucion.Enabled = false;
-            frmDevolucion frm = new frmDevolucion();
+            frmProcesoDevolucion frm = new frmProcesoDevolucion();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -85,7 +85,7 @@ namespace Vistas
         private void btnAlquiler_Click(object sender, EventArgs e)
         {
             //btnAlquiler.Enabled = false;
-            frmAlquiler frm = new frmAlquiler();
+            frmProcesoAlquiler frm = new frmProcesoAlquiler();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -93,7 +93,7 @@ namespace Vistas
         private void btnCambio_Click(object sender, EventArgs e)
         {
             //btnCambio.Enabled = false;
-            frmCambio frm = new frmCambio();
+            frmProcesoCambio frm = new frmProcesoCambio();
             frm.MdiParent = this;
             frm.Show();
 
@@ -101,14 +101,14 @@ namespace Vistas
 
         private void btnCambioComponente_Click(object sender, EventArgs e)
         {
-            frmCambioPieza frm = new frmCambioPieza();
+            frmProcesoCambioPieza frm = new frmProcesoCambioPieza();
             frm.MdiParent = this;
             frm.Show();
         }
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
-            frmMantenimiento frm = new frmMantenimiento();
+            frmProcesoMantenimiento frm = new frmProcesoMantenimiento();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -122,14 +122,14 @@ namespace Vistas
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            frmInventario frm = new frmInventario();
+            frmReporteInventario frm = new frmReporteInventario();
             frm.MdiParent = this;
             frm.Show();
         }
 
         private void btnVencimientos_Click(object sender, EventArgs e)
         {
-            frmCuadroVencimiento frm = new frmCuadroVencimiento();
+            frmReporteCuadroVencimiento frm = new frmReporteCuadroVencimiento();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -150,7 +150,7 @@ namespace Vistas
 
         private void btnLevantarObservacion_Click(object sender, EventArgs e)
         {
-            frmLevantamientoObservaciones frm = new frmLevantamientoObservaciones();
+            frmProcesoLevantamientoObservaciones frm = new frmProcesoLevantamientoObservaciones();
             frm.MdiParent = this;
             frm.Show();
 
@@ -200,7 +200,7 @@ namespace Vistas
 
         private void btnSucursal_Click(object sender, EventArgs e)
         {
-            frmClienteSucursal frm = new frmClienteSucursal();
+            frmArchivoClienteSucursal frm = new frmArchivoClienteSucursal();
             frm.MdiParent = this;
             frm.Show();
         }

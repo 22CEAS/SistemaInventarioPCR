@@ -708,8 +708,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_salida_det`(
 )
 BEGIN
 	SET @idSalidaDet=(SELECT IFNULL( MAX( idSalidaDet ) , 0 )+1 FROM salida_det);
-	INSERT INTO salida_det (idSalidaDet,idSalida,idLC,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,guiaSalida,motivoNoRecojo,observacion,estado,usuario_ins) values
-	(@idSalidaDet,_idSalida,_idLC,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_guiaSalida,"",_observacion,_estado,_usuario_ins);
+	INSERT INTO salida_det (idSalidaDet,idSalida,idLC,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,guiaSalida,motivoNoRecojo,observacion,estado,fueDevuelto,usuario_ins) values
+	(@idSalidaDet,_idSalida,_idLC,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_guiaSalida,"",_observacion,_estado,0,_usuario_ins);
 	COMMIT;
     SET _idSalidaDet = @idSalidaDet;
 END
@@ -796,39 +796,52 @@ BEGIN
 END
 $$ DELIMITER ;
 
-
-
+DROP PROCEDURE IF EXISTS `insert_devolucion`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_devolucion`(
 	IN _idCliente INT,
-	IN _guiaDevolucion NVARCHAR(20),
+	IN _rucDni NVARCHAR(11),
+	IN _guiaDevolucion NVARCHAR(50),
 	IN _fechaDevolucion DATETIME,
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100)
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idDevolucion INT
 )
 BEGIN
-	INSERT INTO devolucion (idCliente,guiaDevolucion,fechaDevolucion,observacion,estado,usuario_ins) values
-	(_idCliente,_guiaDevolucion,_fechaDevolucion,_observacion,_estado,_usuario_ins);
+	SET @_idDevolucion=(SELECT IFNULL( MAX(idDevolucion) , 0 )+1 FROM devolucion);
+	INSERT INTO devolucion (idDevolucion,idCliente,rucDni,guiaDevolucion,fechaDevolucion,observacion,estado,usuario_ins) values
+	(@_idDevolucion,_idCliente,_rucDni,_guiaDevolucion,_fechaDevolucion,_observacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idDevolucion = @_idDevolucion;
 END
 $$ DELIMITER ;
-
-
 
 DROP PROCEDURE IF EXISTS `insert_devolucion_det`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_devolucion_det`(
 	IN _idDevolucion INT,
 	IN _idLC INT,
+	IN _codigoLC NVARCHAR(255),
+	IN _marcaLC NVARCHAR(255),
+	IN _modeloLC NVARCHAR(255),
+	IN _pagaraCliente INT,
+	IN _danoLC INT,
 	IN _caracteristicas NVARCHAR(255),
     IN _estadoLC TINYINT,
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100)
+	IN _usuario_ins NVARCHAR(100),
+	IN _idSalidaDet INT,
+	IN _idSucursal INT,
+	OUT _idDevolucionDet INT
 )
 BEGIN
-	INSERT INTO devolucion_det (idDevolucion,idLC,caracteristicas,estadoLC,observacion,estado,usuario_ins) values
-	(_idDevolucion,_idLC,_caracteristicas,_estadoLC,_observacion,_estado,_usuario_ins);
+	SET @idDevolucionDet=(SELECT IFNULL( MAX( idDevolucionDet ) , 0 )+1 FROM devolucion_det);
+	INSERT INTO devolucion_det (idDevolucionDet,idDevolucion,idLC,codigoLC,marcaLC,modeloLC,pagaraCliente,danoLC,caracteristicas,estadoLC,observacion,estado,usuario_ins,idSalidaDet,idSucursal) values
+	(@idDevolucionDet,_idDevolucion,_idLC,_codigoLC,_marcaLC,_modeloLC,_pagaraCliente,_danoLC,_caracteristicas,_estadoLC,_observacion,_estado,_usuario_ins,_idSalidaDet,_idSucursal);
+	COMMIT;
+    SET _idDevolucionDet = @idDevolucionDet;
 END
 $$ DELIMITER ;
 
@@ -963,3 +976,135 @@ BEGIN
 END
 $$ 
 DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `update_devolucion`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_devolucion`(
+	IN _idCliente INT,
+	IN _rucDni NVARCHAR(11),
+	IN _guiaDevolucion NVARCHAR(50),
+	IN _fechaDevolucion DATETIME,
+	IN _observacion NVARCHAR(255),
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idDevolucion INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE devolucion 
+	SET idCliente=_idCliente,
+	rucDni=_rucDni,
+	guiaDevolucion=_guiaDevolucion,
+	fechaDevolucion=_fechaDevolucion,
+	observacion=_observacion,
+	estado=_estado,
+	usuario_mod=_usuario_mod
+	where idDevolucion=_idDevolucion;
+END
+$$ DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_devolucion_detalle`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_devolucion_detalle`(
+	IN _idDevolucion INT
+)
+BEGIN
+	DELETE FROM devolucion_det where idDevolucion=_idDevolucion; 
+END
+$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida_det_devuelto`(
+	IN _idSalidaDet INT,
+    IN _fueDevuelto TINYINT,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE salida_det
+	SET fueDevuelto=_fueDevuelto,
+		fec_mod=@fechaModificacion,
+		usuario_mod=_usuario_mod
+	WHERE idSalidaDet=_idSalidaDet; 
+END
+$$ 
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion`(
+	IN _observacion INT,
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+    IN _idDevolucion TINYINT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE devolucion
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idDevolucion=_idDevolucion; 
+END
+$$ 
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion_detalle`(
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+    IN _idDevolucionDet TINYINT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE devolucion_det
+	SET fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idDevolucionDet=_idDevolucionDet; 
+END
+$$ 
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_salida`(
+	IN _observacion INT,
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+    IN _idSalida TINYINT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE salida
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idSalida=_idSalida; 
+END
+$$ 
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_salida_detalle`(
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+    IN _idSalidaDet TINYINT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE salida_det
+	SET fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idSalidaDet=_idSalidaDet; 
+END
+$$ 
+DELIMITER ;
+

@@ -428,6 +428,7 @@ CREATE TABLE salida_det(
 		motivoNoRecojo NVARCHAR(255),
 		observacion NVARCHAR(255),
 		estado TINYINT NOT NULL,
+		fueDevuelto TINYINT NOT NULL,
 		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
 		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
 		usuario_ins NVARCHAR(100),
@@ -518,9 +519,10 @@ CREATE TABLE cambio_det(
 )ENGINE=INNODB;
 
 CREATE TABLE devolucion(
-		idDevolucion INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+		idDevolucion INT NOT NULL PRIMARY KEY,
 		idCliente INT NOT NULL,
-		guiaDevolucion NVARCHAR(20) NOT NULL,
+		rucDni NVARCHAR(11) NOT NULL,
+		guiaDevolucion NVARCHAR(50) NOT NULL,
 		fechaDevolucion DATETIME NOT NULL,
 		observacion NVARCHAR(255),
 		estado TINYINT NOT NULL,
@@ -533,9 +535,16 @@ CREATE TABLE devolucion(
 )ENGINE=INNODB;
 
 CREATE TABLE devolucion_det(
-		idDevolucionDet INT AUTO_INCREMENT PRIMARY KEY,
+		idDevolucionDet INT PRIMARY KEY,
 		idDevolucion INT NOT NULL,
+		idSalidaDet INT NOT NULL,
+		idSucursal INT NOT NULL,
 		idLC INT NOT NULL,
+		codigoLC NVARCHAR(255),
+		marcaLC NVARCHAR(255),
+		modeloLC NVARCHAR(255),
+		pagaraCliente INT NOT NULL,
+		danoLC INT NOT NULL,
 		caracteristicas NVARCHAR(255),
 		estadoLC TINYINT NOT NULL,
 		observacion NVARCHAR(255),
