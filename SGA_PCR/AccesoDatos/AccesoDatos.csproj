@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlquilerDA.cs" />
+    <Compile Include="CambioDA.cs" />
     <Compile Include="ClienteDA.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="DevolucionDA.cs" />

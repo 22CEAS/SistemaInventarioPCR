@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class frmProcesoEvaluarEquipo : Form
+    public partial class frmProcesoDevolucionEvaluarEquipo : Form
     {
         String observacion;
         int cobrado;
         int dano;
-        public frmProcesoEvaluarEquipo(int cobrado, int dano, string observacion)
+        public frmProcesoDevolucionEvaluarEquipo(int cobrado, int dano, string observacion)
         {
             InitializeComponent();
             if(cobrado == 1)

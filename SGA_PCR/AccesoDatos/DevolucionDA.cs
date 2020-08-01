@@ -95,9 +95,35 @@ namespace AccesoDatos
                         parametrosEntrada[2].Value = usuario;
 
                         objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_devuelto");
+
+
+                        if (det.Cobrar == 1)
+                        {
+                            parametrosEntrada = new MySqlParameter[8];
+                            parametrosEntrada[0] = new MySqlParameter("@_idCliente", MySqlDbType.Int32);
+                            parametrosEntrada[1] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                            parametrosEntrada[2] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+                            parametrosEntrada[3] = new MySqlParameter("@_idDevolucion", MySqlDbType.Int32);
+                            parametrosEntrada[4] = new MySqlParameter("@_observacionDeuda", MySqlDbType.VarChar, 255);
+                            parametrosEntrada[5] = new MySqlParameter("@_KAM", MySqlDbType.VarChar, 255);
+                            parametrosEntrada[6] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                            parametrosEntrada[7] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
+
+                            parametrosEntrada[0].Value = devolucion.IdCliente;
+                            parametrosEntrada[1].Value = det.IdLC;
+                            parametrosEntrada[2].Value = det.IdSalidaDetalle;
+                            parametrosEntrada[3].Value = devolucion.IdDevolucion;
+                            parametrosEntrada[4].Value = det.Observacion;
+                            parametrosEntrada[5].Value = usuario;
+                            parametrosEntrada[6].Value = 1;
+                            parametrosEntrada[7].Value = usuario;
+
+                            objManager.EjecutarProcedure(parametrosEntrada, "insert_observacion_deudas");
+                        }
                     }
 
                 }
+
             }
             return devolucion.IdDevolucion;
         }
@@ -282,6 +308,31 @@ namespace AccesoDatos
                             parametrosEntrada[2].Value = usuario;
 
                             objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_devuelto");
+
+
+                            if (det.Cobrar == 1)
+                            {
+                                parametrosEntrada = new MySqlParameter[8];
+                                parametrosEntrada[0] = new MySqlParameter("@_idCliente", MySqlDbType.Int32);
+                                parametrosEntrada[1] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                                parametrosEntrada[2] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+                                parametrosEntrada[3] = new MySqlParameter("@_idDevolucion", MySqlDbType.Int32);
+                                parametrosEntrada[4] = new MySqlParameter("@_observacionDeuda", MySqlDbType.VarChar, 255);
+                                parametrosEntrada[5] = new MySqlParameter("@_KAM", MySqlDbType.VarChar, 255);
+                                parametrosEntrada[6] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                                parametrosEntrada[7] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
+
+                                parametrosEntrada[0].Value = devolucion.IdCliente;
+                                parametrosEntrada[1].Value = det.IdLC;
+                                parametrosEntrada[2].Value = det.IdSalidaDetalle;
+                                parametrosEntrada[3].Value = devolucion.IdDevolucion;
+                                parametrosEntrada[4].Value = det.Observacion;
+                                parametrosEntrada[5].Value = usuario;
+                                parametrosEntrada[6].Value = 1;
+                                parametrosEntrada[7].Value = usuario;
+
+                                objManager.EjecutarProcedure(parametrosEntrada, "insert_observacion_deudas");
+                            }
                         }
 
                     }
@@ -350,6 +401,13 @@ namespace AccesoDatos
 
                     objManager.EjecutarProcedure(parametrosEntrada, "anular_devolucion_detalle");
                 }
+
+                parametrosEntrada = new MySqlParameter[1];
+                parametrosEntrada[0] = new MySqlParameter("@_idDevolucion", MySqlDbType.Int32);
+
+                parametrosEntrada[0].Value = devolucion.IdDevolucion;
+
+                objManager.EjecutarProcedure(parametrosEntrada, "anular_devolucion_observacion_deudas");
             }
             return error;
         }

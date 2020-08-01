@@ -645,7 +645,7 @@ From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
 		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
 		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
 		left join vista_maestro_video v on d.idVideo=v.idVideo 
-where d.fueDevuelto=0 and d.estado=4
+where d.fueDevuelto=0 and (d.estado=4 or d.estado=9)
 ORDER BY lc.idLC ;
 
 
@@ -659,3 +659,30 @@ Select a.idDevolucion as IdDevolucion,
 			 e.nombreEstado as Estado
 From devolucion a inner join cliente c on a.idCliente=c.idCliente 
 				inner join estados e on a.estado=e.idEstado;
+				
+				
+create view vista_lista_cambios as
+Select a.idCambio as IdCambio,
+			 a.idCliente as IdCliente,
+			 a.usuario_ins as NombreKam,
+			 a.estado as IdEstado,
+			 c.nombre_razonSocial as NombreCliente,
+			 cast(a.fec_ins as date) as FechaProceso,
+			 e.nombreEstado as Estado
+From cambio a inner join cliente c on a.idCliente=c.idCliente 
+				inner join estados e on a.estado=e.idEstado;
+
+create view vista_datos_laptop_por_cambiar as
+SELECT d.idLC as IdLCAntiguo,
+		s.idSalida as IdSalida ,
+		d.idSalidaDet as IdSalidaDet ,
+		l.codigo as CodigoLCAntiguo,
+		s.idCliente as IdCliente,
+		s.idSucursal as IdSucursal,
+		c.nombre_razonSocial as NombreCliente,
+		s.rucDni as RucDni
+FROM salida_det d 
+		INNER JOIN salida s on d.idSalida=s.idSalida 
+		INNER JOIN laptop_cpu l on d.idLC=l.idLC 
+		INNER JOIN cliente c on s.idCliente=c.IdCliente
+where d.estado=4 and fueDevuelto=0;

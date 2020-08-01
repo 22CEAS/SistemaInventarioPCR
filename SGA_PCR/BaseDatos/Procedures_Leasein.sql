@@ -760,41 +760,37 @@ $$ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cambio`(
+	IN _idLCAntiguo INT,
+	IN _codigoLCAntiguo NVARCHAR(80),
+	IN _estadoLCAntiguo INT,
 	IN _idCliente INT,
-	IN _guiaSalidaCambio NVARCHAR(20),
-	IN _guiaIngresoCambio NVARCHAR(20),
+	IN _nombreCliente NVARCHAR(255),
+	IN _rucDni NVARCHAR(11),
+	IN _guiaCambio NVARCHAR(50),
 	IN _fechaCambio DATETIME,
 	IN _ticketTecnico NVARCHAR(255),
+	IN _idLCNuevo INT,
+	IN _codigoLCNuevo NVARCHAR(80),
+	IN _fueDevuelto TINYINT,
+	IN _pagaraCliente TINYINT,
+	IN _danoLC TINYINT,
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100)
+	IN _usuario_ins NVARCHAR(100), 
+	IN _idSalida INT,
+	IN _idSalidaDet INT,
+	IN _idSucursal INT,
+	OUT _idCambio INT
 )
 BEGIN
-	INSERT INTO cambio (idCliente,guiaSalidaCambio,guiaIngresoCambio,fechaCambio,ticketTecnico,observacion,estado,usuario_ins) values
-	(_idCliente,_guiaSalidaCambio,_guiaIngresoCambio,_fechaCambio,_ticketTecnico,_observacion,_estado,_usuario_ins);
+	SET @idCambio=(SELECT IFNULL( MAX(idCambio) , 0 )+1 FROM cambio);
+	INSERT INTO cambio (idCambio,idSalida,idSalidaDet,idLCAntiguo,codigoLCAntiguo,estadoLCAntiguo,idCliente,idSucursal,nombreCliente,rucDni,guiaCambio,fechaCambio,ticketTecnico,idLCNuevo, codigoLCNuevo,fueDevuelto,pagaraCliente,danoLC,observacion,estado,usuario_ins) values
+	(@idCambio,_idSalida,_idSalidaDet,_idLCAntiguo,_codigoLCAntiguo,_estadoLCAntiguo,_idCliente,_idSucursal,_nombreCliente,_rucDni,_guiaCambio,_fechaCambio,_ticketTecnico,_idLCNuevo, _codigoLCNuevo,_fueDevuelto,_pagaraCliente,_danoLC,_observacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idCambio = @idCambio;
 END
 $$ DELIMITER ;
 
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cambio_det`(
-	IN _idCambio INT,
-	IN _codigoLCIngreso NVARCHAR(80),
-	IN _caracteristicasIngreso NVARCHAR(255),
-    IN _fueDevuelto TINYINT,
-    IN _estadoLCIngreso TINYINT,
-	IN _codigoLCSalida NVARCHAR(80),
-	IN _caracteristicasSalida NVARCHAR(255),
-	IN _observacion NVARCHAR(255),
-    IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100)
-)
-BEGIN
-	INSERT INTO cambio_det (idCambio,codigoLCIngreso,caracteristicasIngreso,fueDevuelto,estadoLCIngreso,codigoLCSalida,caracteristicasSalida,observacion,estado,usuario_ins) values
-	(_idCambio,_codigoLCIngreso,_caracteristicasIngreso,_fueDevuelto,_estadoLCIngreso,_codigoLCSalida,_caracteristicasSalida,_observacion,_estado,_usuario_ins);
-END
-$$ DELIMITER ;
 
 DROP PROCEDURE IF EXISTS `insert_devolucion`;
 DELIMITER $$
@@ -847,22 +843,44 @@ $$ DELIMITER ;
 
 
 
-DROP PROCEDURE IF EXISTS `insert_observacionDeudas`;
+DROP PROCEDURE IF EXISTS `insert_observacion_deudas`;
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_observacionDeudas`(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_observacion_deudas`(
 	IN _idCliente INT,
 	IN _idLC INT,
-	IN _observacionDeuda NVARCHAR(20),
-	IN _estadoObservacion TINYINT,
+	IN _idSalidaDet INT,
+	IN _idDevolucion INT,
+	IN _observacionDeuda NVARCHAR(255),
 	IN _KAM NVARCHAR(255),
-	IN _guiaLevantamiento NVARCHAR(255),
-	IN _observacionLevantamiento NVARCHAR(255),
     IN _estado TINYINT,
 	IN _usuario_ins NVARCHAR(100)
 )
 BEGIN
-	INSERT INTO observacionDeudas (idCliente,idLC,observacionDeuda,estadoObservacion,KAM,guiaLevantamiento,observacionLevantamiento,estado,usuario_ins) values
-	(_idCliente,_idLC,_observacionDeuda,_estadoObservacion,_KAM,_guiaLevantamiento,_observacionLevantamiento,_estado,_usuario_ins);
+	SET @idObservacionDeudas=(SELECT IFNULL( MAX( idObservacionDeudas ) , 0 )+1 FROM observacion_deudas);
+	INSERT INTO observacion_deudas (idObservacionDeudas,idCliente,idLC,idSalidaDet,idDevolucion,observacionDeuda,KAM,estado,usuario_ins) values
+	(@idObservacionDeudas,_idCliente,_idLC,_idSalidaDet,_idDevolucion,_observacionDeuda,_KAM,_estado,_usuario_ins);
+	COMMIT;
+END
+$$ DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_observacion_deudas_cambio`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_observacion_deudas_cambio`(
+	IN _idCliente INT,
+	IN _idLC INT,
+	IN _idSalidaDet INT,
+	IN _idCambio INT,
+	IN _observacionDeuda NVARCHAR(255),
+	IN _KAM NVARCHAR(255),
+    IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
+	SET @idObservacionDeudas=(SELECT IFNULL( MAX( idObservacionDeudas ) , 0 )+1 FROM observacion_deudas);
+	INSERT INTO observacion_deudas (idObservacionDeudas,idCliente,idLC,idSalidaDet,idCambio,observacionDeuda,KAM,estado,usuario_ins) values
+	(@idObservacionDeudas,_idCliente,_idLC,_idSalidaDet,_idCambio,_observacionDeuda,_KAM,_estado,_usuario_ins);
+	COMMIT;
 END
 $$ DELIMITER ;
 
@@ -938,6 +956,30 @@ BEGIN
 END
 $$
 DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_salida_detalle_idDetalle`(
+	IN _idCambio INT
+)
+BEGIN
+	DELETE FROM salida_det where caracteristicas=_idCambio; 
+END
+$$
+DELIMITER ;
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_observacion_deudas_cambio`(
+	IN _idCambio INT
+)
+BEGIN
+	DELETE FROM observacion_deudas where idCambio=_idCambio; 
+END
+$$
+DELIMITER ;
+
+
 
 /*Esta procedimiento se hace solamente cuando se ha equivocado en escoger una licencia y todavía no lo has usado*/
 DELIMITER $$
@@ -1034,6 +1076,23 @@ $$
 DELIMITER ;
 
 DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida_det_estado_cambiado`(
+	IN _idSalidaDet INT,
+    IN _estadoDet TINYINT,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE salida_det
+	SET estado=_estadoDet,
+		fec_mod=@fechaModificacion,
+		usuario_mod=_usuario_mod
+	WHERE idSalidaDet=_idSalidaDet; 
+END
+$$ 
+DELIMITER ;
+
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion`(
 	IN _observacion INT,
     IN _estado TINYINT,
@@ -1108,3 +1167,86 @@ END
 $$ 
 DELIMITER ;
 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion_observacion_deudas`(
+    IN _idDevolucion TINYINT
+)
+BEGIN
+	DELETE FROM observacion_deudas where idDevolucion=_idDevolucion;
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `update_cambio`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_cambio`(
+	IN _idLCAntiguo INT,
+	IN _codigoLCAntiguo NVARCHAR(80),
+	IN _estadoLCAntiguo INT,
+	IN _idCliente INT,
+	IN _nombreCliente NVARCHAR(255),
+	IN _rucDni NVARCHAR(11),
+	IN _guiaCambio NVARCHAR(50),
+	IN _fechaCambio DATETIME,
+	IN _ticketTecnico NVARCHAR(255),
+	IN _idLCNuevo INT,
+	IN _codigoLCNuevo NVARCHAR(80),
+	IN _fueDevuelto TINYINT,
+	IN _pagaraCliente TINYINT,
+	IN _danoLC TINYINT,
+	IN _observacion NVARCHAR(255),
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idSalida INT,
+	IN _idSalidaDet INT,
+	IN _idSucursal INT,
+	IN _idCambio INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE cambio 
+	SET idSalida=_idSalida,
+	idSalidaDet=_idSalidaDet,
+	idLCAntiguo=_idLCAntiguo,
+	codigoLCAntiguo=_codigoLCAntiguo,
+	estadoLCAntiguo=_estadoLCAntiguo,
+	idCliente=_idCliente,
+	idSucursal=_idSucursal,
+	nombreCliente=_nombreCliente,
+	rucDni=_rucDni,
+	guiaCambio=_guiaCambio,
+	fechaCambio=_fechaCambio,
+	ticketTecnico=_ticketTecnico,
+	idLCNuevo=_idLCNuevo, 
+	codigoLCNuevo=_codigoLCNuevo,
+	fueDevuelto=_fueDevuelto,
+	pagaraCliente=_pagaraCliente,
+	danoLC=_danoLC,
+	observacion=_observacion,
+	estado=_estado,
+	usuario_mod=_usuario_mod
+	where idCambio=_idCambio;
+END
+$$ DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_cambio`(
+	IN _observacion INT,
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+    IN _idCambio TINYINT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE cambio
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idCambio=_idCambio; 
+END
+$$ 
+DELIMITER ;

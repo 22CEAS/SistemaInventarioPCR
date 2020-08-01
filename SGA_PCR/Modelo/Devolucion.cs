@@ -26,7 +26,7 @@ namespace Modelo
             this.GuiaDevolucion = "";
             this.Observacion = "";
             this.RucDni = "";
-            this.Estado = 0;
+            this.Estado = 1;
             this.Detalles = new BindingList<DevolucionDetalle>();
         }
 

@@ -481,12 +481,24 @@ CREATE TABLE cuota(
 
 
 CREATE TABLE cambio(
-		idCambio INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+		idCambio INT NOT NULL PRIMARY KEY,
+		idSalida INT NOT NULL,
+		idSalidaDet INT NOT NULL,
+		idLCAntiguo INT NOT NULL,
+		codigoLCAntiguo NVARCHAR(80) NOT NULL,
+		estadoLCAntiguo INT NOT NULL,
 		idCliente INT NOT NULL,
-		guiaSalidaCambio NVARCHAR(20) NOT NULL,
-		guiaIngresoCambio NVARCHAR(20) NOT NULL,
+		idSucursal INT NOT NULL,
+		nombreCliente NVARCHAR(255) NOT NULL,
+		rucDni NVARCHAR(11) NOT NULL,
+		guiaCambio NVARCHAR(50) NOT NULL,
 		fechaCambio DATETIME NOT NULL,
 		ticketTecnico NVARCHAR(255),
+		idLCNuevo INT NOT NULL,
+		codigoLCNuevo NVARCHAR(80) NOT NULL,
+		fueDevuelto TINYINT NOT NULL,
+		pagaraCliente TINYINT NOT NULL,
+		danoLC TINYINT NOT NULL,
 		observacion NVARCHAR(255),
 		estado TINYINT NOT NULL,
 		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -497,26 +509,6 @@ CREATE TABLE cambio(
     REFERENCES cliente(idCliente)
 )ENGINE=INNODB;
 
-
-
-CREATE TABLE cambio_det(
-		idCambioDet INT AUTO_INCREMENT PRIMARY KEY,
-		idCambio INT NOT NULL,
-		codigoLCIngreso NVARCHAR(80) NOT NULL,
-		caracteristicasIngreso NVARCHAR(255) NOT NULL ,
-		fueDevuelto TINYINT NOT NULL,
-		estadoLCIngreso TINYINT NOT NULL,
-		codigoLCSalida NVARCHAR(80) NOT NULL,
-		caracteristicasSalida NVARCHAR(255) NOT NULL,
-		observacion NVARCHAR(255),
-		estado TINYINT NOT NULL,
-		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
-		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
-		usuario_ins NVARCHAR(100),
-		usuario_mod NVARCHAR(100),
-		FOREIGN KEY (idCambio)
-    REFERENCES cambio(idCambio)
-)ENGINE=INNODB;
 
 CREATE TABLE devolucion(
 		idDevolucion INT NOT NULL PRIMARY KEY,
@@ -535,7 +527,7 @@ CREATE TABLE devolucion(
 )ENGINE=INNODB;
 
 CREATE TABLE devolucion_det(
-		idDevolucionDet INT PRIMARY KEY,
+		idDevolucionDet INT NOT NULL PRIMARY KEY,
 		idDevolucion INT NOT NULL,
 		idSalidaDet INT NOT NULL,
 		idSucursal INT NOT NULL,
@@ -560,12 +552,14 @@ CREATE TABLE devolucion_det(
 )ENGINE=INNODB;
 
 
-CREATE TABLE observacionDeudas(
-		idObservacion INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+CREATE TABLE observacion_deudas(
+		idObservacionDeudas INT  NOT NULL PRIMARY KEY,
 		idCliente INT NOT NULL,
 		idLC INT NOT NULL,
+		idSalidaDet INT,
+		idDevolucion INT,
+		idCambio INT,
 		observacionDeuda NVARCHAR(255),
-		estadoObservacion TINYINT NOT NULL,
 		KAM NVARCHAR(255),
 		guiaLevantamiento NVARCHAR(255),
 		observacionLevantamiento NVARCHAR(255),

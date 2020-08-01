@@ -51,6 +51,7 @@ BEGIN
 
 	UPDATE salida_det SET fueDevuelto = 0 where idSalidaDet=old.idSalidaDet;
 	UPDATE laptop_cpu SET estado = 4 , ubicacion=old.idSucursal where idLC=old.idLC;
+	DELETE FROM observacion_deudas where idDevolucion=old.idDevolucion;
 
 END$$    
 

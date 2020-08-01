@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Alquiler.cs" />
     <Compile Include="AlquilerDetalle.cs" />
+    <Compile Include="Cambio.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteSucursal.cs" />

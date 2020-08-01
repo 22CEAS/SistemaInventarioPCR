@@ -13,52 +13,48 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class frmProcesoAlquilerAgregarProducto : Form
+    public partial class frmProcesoCambioAgregarProducto : Form
     {
         public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular }
         DataTable tablaLaptops;
         LC laptop;
-        BindingList<LC> laptops;
         AlquilerDA alquilerDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
 
-        public frmProcesoAlquilerAgregarProducto()
+        public frmProcesoCambioAgregarProducto()
         {
             InitializeComponent();
             Inicializado();
-            //estadoComponentes(TipoVista.Inicial);
         }
 
-        public frmProcesoAlquilerAgregarProducto(int idUsuario, string nombreUsuario)
+        public frmProcesoCambioAgregarProducto(int idUsuario, string nombreUsuario)
         {
             InitializeComponent();
             this.idUsuario = idUsuario;
             this.nombreUsuario = nombreUsuario;
             Inicializado();
-            //estadoComponentes(TipoVista.Inicial);
         }
 
         public void Inicializado()
         {
 
             alquilerDA = new AlquilerDA();
-            //laptop = new LC();
-            laptops = new BindingList<LC>();
+
             tablaLaptops = alquilerDA.ListarLaptopsAlmacenSinMemoriaDisco();
 
             dgvLaptops.PrimaryGrid.AutoGenerateColumns = false;
             dgvLaptops.PrimaryGrid.DataSource = tablaLaptops; ;
         }
 
-        public bool llenarListaLaptops()
+        public int llenarListaLaptops()
         {
-            bool flag = false;
+            int flag = 0;
             int filas = tablaLaptops.Rows.Count;
             for (int i = 0; i < filas; i++)
             {
-                if(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value != null)
+                if (((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value != null)
                 {
                     if (Convert.ToBoolean(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
                     {
@@ -74,20 +70,25 @@ namespace Vistas
                         laptop.Video.Modelo.NombreModelo = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 7))).Value.ToString();
                         laptop.Video.Capacidad = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 8))).Value.ToString());
                         laptop.Procesador.IdProcesador = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 11))).Value.ToString());
-                        laptops.Add(laptop);
-                        flag = true;
+                        flag++;
                     }
                 }
             }
             return flag;
         }
-        public BindingList<LC> LAPTOPS { get => laptops; set => laptops = value; }
+        public LC LAPTOP { get => laptop; set => laptop = value; }
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            if (llenarListaLaptops())//Si entra es porque se ha seleccionado almenos solo
+            int cant = llenarListaLaptops();
+            if (cant == 1)//Si entra es porque se ha seleccionado almenos solo
             {
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
                 this.Close();
+            }
+            else
+            {
+                if (cant == 0) MessageBox.Show("Tiene que seleccionar una laptop", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cant > 0) MessageBox.Show("No puedes seleccionar más de una laptop", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

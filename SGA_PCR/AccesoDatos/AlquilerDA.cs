@@ -730,10 +730,10 @@ namespace AccesoDatos
             parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
             parametrosEntrada[3] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
 
-            parametrosEntrada[9].Value = alquiler.Observacion;
-            parametrosEntrada[10].Value = alquiler.Estado; //0
-            parametrosEntrada[11].Value = usuario;
-            parametrosEntrada[12].Value = alquiler.IdAlquiler;
+            parametrosEntrada[0].Value = alquiler.Observacion;
+            parametrosEntrada[1].Value = alquiler.Estado; //0
+            parametrosEntrada[2].Value = usuario;
+            parametrosEntrada[3].Value = alquiler.IdAlquiler;
 
             bool okey = objManager.EjecutarProcedure(parametrosEntrada, "anular_salida");
 
@@ -772,5 +772,137 @@ namespace AccesoDatos
         }
 
 
+
+        public LC LlenarDetalleDeUnaLaptopDesdeMismoAlquilerDetalle(AlquilerDetalle detalle)
+        {
+            LC laptop = new LC();
+            MySqlDataReader reader;
+            string sql = "";
+
+            sql = "Select * From vista_laptops_almacen_lista_sin_filtro where idLC=" + detalle.Laptop.IdLC + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            while (reader.Read())
+            {
+                laptop.IdLC = reader.GetInt32("idLC");
+                laptop.Codigo = reader.GetString("codigo");
+                laptop.Modelo.NombreMarca = reader.GetString("marcaLC");
+                laptop.Modelo.NombreModelo = reader.GetString("nombreModeloLC");
+                laptop.TamanoPantalla = reader.GetDouble("tamanoPantalla");
+                laptop.Procesador.Modelo.NombreModelo = reader.GetString("tipoProcesador");
+                laptop.Procesador.Generacion = reader.GetInt32("generacionProcesador");
+                laptop.Video.Modelo.NombreModelo = reader.GetString("nombreModeloVideo");
+                laptop.Video.Capacidad = reader.GetInt32("capacidadVideo");
+                laptop.Procesador.IdProcesador = reader.GetInt32("idProcesador");
+                laptop.Video.IdVideo = reader.GetInt32("idVideo");
+
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+            sql = "";
+
+            sql = "Select * from salida_det WHERE idSalidaDet=" + detalle.IdAlquilerDetalle + " ;";
+            reader = objManager.MostrarInformacion(sql);
+
+            while (reader.Read())
+            {
+                DiscoDuro disco1 = new DiscoDuro();
+                disco1.IdDisco= reader.GetInt32("idDisco1");
+                disco1.Cantidad = reader.GetInt32("cantidadDisco1");
+                DiscoDuro disco2 = new DiscoDuro();
+                disco2.IdDisco = reader.GetInt32("idDisco2");
+                disco2.Cantidad = reader.GetInt32("cantidadDisco2");
+                if(disco1.IdDisco!=0) laptop.Discos.Add(disco1);
+                if (disco2.IdDisco != 0) laptop.Discos.Add(disco2);
+
+                Memoria memoria1 = new Memoria();
+                memoria1.IdMemoria = reader.GetInt32("idMemoria1");
+                memoria1.Cantidad = reader.GetInt32("cantidadDisco1");
+                Memoria memoria2 = new Memoria();
+                memoria2.IdMemoria = reader.GetInt32("idMemoria2");
+                memoria2.Cantidad = reader.GetInt32("cantidadDisco2");
+                if (memoria1.IdMemoria != 0) laptop.Memorias.Add(memoria1);
+                if (memoria2.IdMemoria != 0) laptop.Memorias.Add(memoria2);
+
+
+                Licencia windows = new Licencia();
+                Licencia office = new Licencia();
+                Licencia antivirus = new Licencia();
+
+                windows.IdLicencia = reader.GetInt32("idWindows");
+                office.IdLicencia = reader.GetInt32("idOffice");
+                antivirus.IdLicencia = reader.GetInt32("idAntivirus");
+                if (windows.IdLicencia != 0) laptop.Licencias.Add(windows);
+                if (office.IdLicencia != 0) laptop.Licencias.Add(office);
+                if (antivirus.IdLicencia != 0) laptop.Licencias.Add(antivirus);
+
+            }
+
+            objManager.conexion.Close();
+            objManager.conexion.Dispose();
+            objManager.cmd.Dispose();
+
+            for (int i=0;i<laptop.Discos.Count;i++)
+            {
+                sql = "";
+
+                sql = "Select * From vista_maestro_disco d where d.idDisco=" + laptop.Discos[i].IdDisco + " ;";
+                reader = objManager.MostrarInformacion(sql);
+                while (reader.Read())
+                {
+                    laptop.Discos[i].Tipo.NombreModelo = reader.GetString("tipo");
+                    laptop.Discos[i].Tamano = reader.GetDouble("tamano");
+                    laptop.Discos[i].Capacidad = reader.GetInt32("capacidad");
+                }
+                objManager.conexion.Close();
+                objManager.conexion.Dispose();
+                objManager.cmd.Dispose();
+            }
+
+            for (int i = 0; i < laptop.Memorias.Count; i++)
+            {
+                sql = "";
+
+                sql = "Select * From vista_maestro_memoria m where m.idMemoria=" + laptop.Memorias[i].IdMemoria + " ;";
+                reader = objManager.MostrarInformacion(sql);
+                while (reader.Read())
+                {
+                    laptop.Memorias[i].Modelo.NombreModelo = reader.GetString("tipo");
+                    laptop.Memorias[i].Capacidad = reader.GetInt32("capacidad");
+                }
+                objManager.conexion.Close();
+                objManager.conexion.Dispose();
+                objManager.cmd.Dispose();
+            }
+
+            for (int i = 0; i < laptop.Licencias.Count; i++)
+            {
+                sql = "";
+
+                sql = "Select * From vista_licencia_lista l where l.IdLicencia=" + laptop.Licencias[i].IdLicencia + " ;";
+                reader = objManager.MostrarInformacion(sql);
+                while (reader.Read())
+                {
+                    laptop.Licencias[i].IdCategoria = reader.GetInt32("IdCategoria");
+                    laptop.Licencias[i].Categoria = reader.GetString("Categoria");
+                    laptop.Licencias[i].Modelo.IdMarca = reader.GetInt32("IdMarca");
+                    laptop.Licencias[i].Modelo.NombreMarca = reader.GetString("Marca");
+                    laptop.Licencias[i].Modelo.IdModelo = reader.GetInt32("IdModelo");
+                    laptop.Licencias[i].Modelo.NombreModelo = reader.GetString("Version");
+                    laptop.Licencias[i].Clave = reader.GetString("Clave");
+                    laptop.Licencias[i].Ubicacion = reader.GetString("Ubicacion");
+                }
+                objManager.conexion.Close();
+                objManager.conexion.Dispose();
+                objManager.cmd.Dispose();
+            }
+
+
+
+            return laptop;
+        }
     }
 }

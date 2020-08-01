@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Vistas
 {
@@ -102,6 +103,7 @@ namespace Vistas
                     btnObservacion.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnBuscar.Enabled = true;
+                    btnAnular.Enabled = false;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = false;
@@ -118,6 +120,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = true;
                     btnObservacion.Enabled = true;
                     btnNuevo.Enabled = false;
+                    btnAnular.Enabled = false;
                     btnBuscar.Enabled = false;
                     btnCancelar.Enabled = true;
                     btnImprimir.Enabled = false;
@@ -136,6 +139,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = false;
                     btnObservacion.Enabled = false;
                     btnNuevo.Enabled = true;
+                    btnAnular.Enabled = true;
                     btnBuscar.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = true;
@@ -154,6 +158,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = true;
                     btnObservacion.Enabled = true;
                     btnNuevo.Enabled = false;
+                    btnAnular.Enabled = false;
                     btnBuscar.Enabled = false;
                     btnCancelar.Enabled = true;
                     btnImprimir.Enabled = false;
@@ -171,6 +176,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = false;
                     btnObservacion.Enabled = false;
                     btnNuevo.Enabled = true;
+                    btnAnular.Enabled = true;
                     btnBuscar.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = true;
@@ -188,6 +194,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = false;
                     btnObservacion.Enabled = false;
                     btnNuevo.Enabled = true;
+                    btnAnular.Enabled = false;
                     btnBuscar.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = false;
@@ -221,12 +228,14 @@ namespace Vistas
                     btnAgregarProducto.Enabled = false;
                     btnObservacion.Enabled = false;
                     btnNuevo.Enabled = true;
+                    btnBuscar.Enabled = true;
+                    btnAnular.Enabled = false;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
-                    btnEditar.Enabled = true;
-                    limpiarComponentes();
-                    devolucion = new Devolucion();
+                    btnEditar.Enabled = false;
+                    //limpiarComponentes();
+                    //devolucion = new Devolucion();
                     break;
             }
         }
@@ -259,13 +268,13 @@ namespace Vistas
 
         }
 
-        public void LlenarDatosAlquiler()
+        public void LlenarDatosDevolucion()
         {
             txtNroDevolucion.Text = devolucion.IdDevolucion.ToString();
-            cmbCliente.SelectedValue = devolucion.IdCliente;
             txtNroDocumento.Text = devolucion.RucDni;
             txtNroGuia.Text = devolucion.GuiaDevolucion.ToString();
             dtpFechaIngreso.Value = devolucion.FechaDevolucion;
+            cmbCliente.SelectedValue = devolucion.IdCliente;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -292,7 +301,8 @@ namespace Vistas
             {
                 devolucion = frmBP.ObjSeleccionado;
                 txtNroDevolucion.Text = devolucion.IdDevolucion.ToString();
-                LlenarDatosAlquiler();
+                LlenarDatosDevolucion();
+                devolucion = frmBP.ObjSeleccionado;
                 dgvLaptopsSeleccionados.PrimaryGrid.DataSource = devolucion.Detalles;
             }
             else
@@ -409,7 +419,7 @@ namespace Vistas
                 int cobrar = devolucion.Detalles[indice].Cobrar;
                 int dano = devolucion.Detalles[indice].Danado;
                 string observacion = devolucion.Detalles[indice].Observacion;
-                using (frmProcesoEvaluarEquipo frm = new frmProcesoEvaluarEquipo(cobrar, dano, observacion))
+                using (frmProcesoDevolucionEvaluarEquipo frm = new frmProcesoDevolucionEvaluarEquipo(cobrar, dano, observacion))
                 {
                     if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
@@ -450,5 +460,193 @@ namespace Vistas
             }
 
         }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+
+            Cursor.Current = Cursors.WaitCursor;
+            if (devolucion.Estado == 0)
+            {
+                MessageBox.Show("Esta devolucion ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (MessageBox.Show("Estas seguro que desea Anular este alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    devolucion.Estado = 0;
+                    devolucionDA.AnularDevolucion(devolucion, this.nombreUsuario);
+                    MessageBox.Show("Se anulo la Devolución N° :" + devolucion.IdDevolucion);
+                    estadoComponentes(TipoVista.Anular);
+                }
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Estas seguro que desea Imprimir la Devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                try
+                {
+
+                    SaveFileDialog fichero = new SaveFileDialog();
+                    //fichero.Filter = "Excel (*.xls)|*.xls";
+                    fichero.Filter = "Excel(*.xlsx) | *.xlsx";
+                    fichero.FileName = "Devolucion_" + devolucion.IdDevolucion.ToString();
+                    if (fichero.ShowDialog() == DialogResult.OK)
+                    {
+                        Excel.Application aplicacion;
+                        Excel.Workbook libros_trabajo;
+                        Excel.Worksheet hoja_pre_alquiler;
+
+                        aplicacion = new Excel.Application();
+                        libros_trabajo = (Excel.Workbook)aplicacion.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+
+                        hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
+                        hoja_pre_alquiler.Name = "Devolución";
+                        string cabecera = "Reporte de Devolución";
+                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, dgvLaptopsSeleccionados, cabecera);
+
+
+                        ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
+
+                        //libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                        libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlOpenXMLWorkbook);
+                        libros_trabajo.Close(true);
+                        releaseObject(libros_trabajo);
+                        aplicacion.Quit();
+                        releaseObject(aplicacion);
+                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+
+
+        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, SuperGridControl grd, string nombreCabecera)
+        {
+            Excel.Range rango;
+            int i = 0;
+            //Recorremos el DataGridView rellenando la hoja de trabajo
+            foreach (DevolucionDetalle det in devolucion.Detalles)
+            {
+                //int k = grd.Columns.Count + 64;
+                int k = 6 + 64;
+                char columF = (char)k;
+                int fila2 = i + 8;
+                string filaBorde = fila2.ToString();
+                char columI = 'A';
+                //Ponemos borde a las celdas
+                rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                rango.Style.Font.Bold = false;
+
+                hoja_trabajo.Cells[i + 8, 1] = "LAPTOP " + det.CodigoLC;
+                hoja_trabajo.Cells[i + 8, 2] = det.MarcaLC;
+                hoja_trabajo.Cells[i + 8, 3] = det.ModeloLC;
+                hoja_trabajo.Cells[i + 8, 4] = det.Observacion;
+                hoja_trabajo.Cells[i + 8, 5] = (det.Danado==1) ? "Equipo Dañado" : "Equipo Sin Daño";
+                hoja_trabajo.Cells[i + 8, 6] = (det.Cobrar == 1) ? "Pagará Cliente" : "No Pagará Cliente";
+                i++;
+            }
+            montaCabeceras(1, ref hoja_trabajo, grd, nombreCabecera);
+        }
+
+        private void montaCabeceras(int fila, ref Excel.Worksheet hoja, SuperGridControl grd, string nombreCabecera)
+        {
+            try
+            {
+                Excel.Range rango;
+
+                //** Montamos el título en la línea 1 **
+                hoja.Cells[fila, 1] = nombreCabecera;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 6]].Merge();
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 6]].Interior.Color = Color.Silver;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 6]].Style.Font.Bold = true;
+                //Centramos los textos
+                rango = hoja.Rows[fila];
+                rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                //worksheet.Range[worksheet.Cells[rowNum, columnNum], worksheet.Cells[rowNum, columnNum]].Merge();
+                int indice;
+
+                hoja.Cells[fila + 2, 1] = "Devolución N°";
+                hoja.Cells[fila + 2, 2] = txtNroDevolucion.Text;
+
+                hoja.Cells[fila + 3, 1] = "Cliente°";
+                indice = cmbCliente.SelectedIndex;
+                hoja.Cells[fila + 3, 2] = tablaCliente.Rows[indice]["nombre_razonSocial"].ToString();
+                hoja.Cells[fila + 4, 1] = "RUC";
+                hoja.Cells[fila + 4, 2] = txtNroDocumento.Text;
+
+                hoja.Cells[fila + 3, 5] = "Fecha Ingreso";
+                hoja.Cells[fila + 3, 6] = dtpFechaIngreso.Value.ToShortDateString();
+                hoja.Cells[fila + 4, 5] = "Guia de Remisión";
+                hoja.Cells[fila + 4, 6] = txtNroGuia.Text;
+
+                hoja.Cells[fila + 6, 1] = "Equipo";
+                hoja.Cells[fila + 6, 2] = "Marca";
+                hoja.Cells[fila + 6, 3] = "Modelo";
+                hoja.Cells[fila + 6, 4] = "Observación";
+                hoja.Cells[fila + 6, 5] = "Cobrar a Cliente";
+                hoja.Cells[fila + 6, 6] = "Daño en el Equipo";
+
+                //int i = grd.Columns.Count + 64;
+                int i = 6 + 64;
+                char columF = (char)i;
+                int fila2 = fila + 6;
+                string filaBorde = fila2.ToString();
+                char columI = 'A';
+                //Ponemos borde a las celdas
+                rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                rango.Interior.Color = Color.Silver;
+                rango.Style.Font.Bold = true;
+                //Centramos los textos
+                rango = hoja.Rows[fila2];
+                rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                //for (int j = 0; j < grd.Columns.Count; j++)
+                for (int j = 0; j < 6; j++)
+                {
+                    rango = hoja.Columns[j + 1];
+                    rango.ColumnWidth = 20;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error de redondeo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+
     }
 }

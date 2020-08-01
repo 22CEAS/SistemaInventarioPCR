@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class frmProcesoEvaluarEquipo
+    partial class frmProcesoDevolucionEvaluarEquipo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoEvaluarEquipo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoDevolucionEvaluarEquipo));
             this.rbtnDanoSi = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtnDanoNo = new System.Windows.Forms.RadioButton();

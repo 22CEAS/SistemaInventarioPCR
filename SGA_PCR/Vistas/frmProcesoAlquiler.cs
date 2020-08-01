@@ -141,6 +141,7 @@ namespace Vistas
                     btnAgregarGuia.Enabled = false;
                     btnNuevo.Enabled = true;
                     btnBuscar.Enabled = true;
+                    btnAnular.Enabled = false;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = false;
                     btnGrabarPreAlquiler.Enabled = false;
@@ -173,6 +174,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = true;
                     btnAgregarGuia.Enabled = false;
                     btnNuevo.Enabled = false;
+                    btnAnular.Enabled = false;
                     btnBuscar.Enabled = false;
                     btnCancelar.Enabled = true;
                     btnImprimir.Enabled = false;
@@ -206,6 +208,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
                     btnNuevo.Enabled = true;
+                    btnAnular.Enabled = true;
                     btnBuscar.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = true;
@@ -240,6 +243,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = true;
                     btnAgregarGuia.Enabled = true;
                     btnNuevo.Enabled = false;
+                    btnAnular.Enabled = false;
                     btnBuscar.Enabled = false;
                     btnCancelar.Enabled = true;
                     btnImprimir.Enabled = false;
@@ -273,6 +277,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
                     btnNuevo.Enabled = true;
+                    btnAnular.Enabled = true;
                     btnBuscar.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = true;
@@ -306,6 +311,7 @@ namespace Vistas
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
                     btnNuevo.Enabled = true;
+                    btnAnular.Enabled = false;
                     btnBuscar.Enabled = true;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = false;
@@ -371,12 +377,14 @@ namespace Vistas
                     btnAgregarProducto.Enabled = false;
                     btnAgregarGuia.Enabled = false;
                     btnNuevo.Enabled = true;
+                    btnBuscar.Enabled = true;
+                    btnAnular.Enabled = false;
                     btnCancelar.Enabled = false;
                     btnImprimir.Enabled = true;
                     btnGrabarPreAlquiler.Enabled = false;
-                    btnEditar.Enabled = true;
-                    limpiarComponentes();
-                    alquiler = new Alquiler();
+                    btnEditar.Enabled = false;
+                    //limpiarComponentes();
+                    //alquiler = new Alquiler();
                     break;
             }
         }
@@ -1348,6 +1356,10 @@ namespace Vistas
                 }
                 else
                 {
+                    for (int i = 0; i < alquiler.Detalles.Count; i++)
+                    {
+                        alquiler.Detalles[i].Laptop = alquilerDA.LlenarDetalleDeUnaLaptopDesdeMismoAlquilerDetalle(alquiler.Detalles[i]);
+                    }
 
                 }
                 txtNroAlquiler.Text = alquiler.IdAlquiler.ToString();
@@ -1415,9 +1427,9 @@ namespace Vistas
         private void btnEditar_Click(object sender, EventArgs e)
         {
 
-            if (alquiler.Estado == 7)
+            if (alquiler.Estado == 7 || alquiler.Estado == 0)//en teoría 7 debería ser finalizado
             {
-                MessageBox.Show("Este alquiler ya no se puede modificar\n porque esta en estado Finalizado: ", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Este alquiler ya no se puede modificar", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -1457,6 +1469,33 @@ namespace Vistas
                 }
             }
 
+        }
+
+        private void btnAnular_Click(object sender, EventArgs e)
+        {
+
+            Cursor.Current = Cursors.WaitCursor;
+            if (alquiler.Estado == 0)
+            {
+                MessageBox.Show("Este alquiler ya se encuentra en estado Anulado", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if (alquiler.Estado == 8 || alquiler.Estado == 9)//los estados de aqui todavía están por definir
+            {
+                MessageBox.Show("Este alquiler no se puede anular", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                if (MessageBox.Show("Estas seguro que desea Anular este alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    alquiler.Estado = 0;
+                    alquilerDA.AnularAlquiler(alquiler,this.nombreUsuario);
+                    MessageBox.Show("Se anulo el Alquiler N° :" + alquiler.IdAlquiler, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    estadoComponentes(TipoVista.Anular);
+                }
+            }
+            Cursor.Current = Cursors.Default;
         }
     }
 }

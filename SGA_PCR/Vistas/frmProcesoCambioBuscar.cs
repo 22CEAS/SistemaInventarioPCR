@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using DevComponents.DotNetBar.SuperGrid;
 using Modelo;
 using System;
 using System.Collections.Generic;
@@ -6,25 +7,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using DevComponents.DotNetBar.SuperGrid;
 
 namespace Vistas
 {
-    public partial class frmProcesoAlquilerBuscar : Form
+    public partial class frmProcesoCambioBuscar : Form
     {
-        private Alquiler objSeleccionado;
-        private AlquilerDA alquilerDA;
+        private Cambio objSeleccionado;
+        private CambioDA cambioDA;
         private ClienteDA clienteDA;
         private DataTable tablaKam;
         private DataTable tablaCliente;
         private DataTable tablaEstados;
-        private DataTable tablaAlquiler;
+        private DataTable tablaCambio;
 
-        public frmProcesoAlquilerBuscar(int idUsuario)
+        public frmProcesoCambioBuscar(int idUsuario)
         {
             InitializeComponent();
 
@@ -39,7 +39,7 @@ namespace Vistas
 
         private void inicializarFiltros(int idUsuario)
         {
-            alquilerDA = new AlquilerDA();
+            cambioDA = new CambioDA();
             clienteDA = new ClienteDA();
 
             dtpFecProceso.Value = DateTime.Now;
@@ -54,16 +54,16 @@ namespace Vistas
             cmbKam.DataSource = tablaKam;
             cmbKam.DisplayMember = "nombre";
             cmbKam.ValueMember = "idUsuario";
-            cmbKam.SelectedIndex = 0; 
+            cmbKam.SelectedIndex = 0;
 
-            tablaEstados = alquilerDA.ListarEstados();
+            tablaEstados = cambioDA.ListarEstados();
             cmbEstado.DataSource = tablaEstados;
             cmbEstado.DisplayMember = "nombreEstado";
             cmbEstado.ValueMember = "idEstado";
             cmbEstado.SelectedIndex = 0;
 
-            if (rbtnNumAlquiler.Checked) txtNumAlquiler.Enabled = true;
-            else txtNumAlquiler.Enabled = false;
+            if (rbtnNumCambio.Checked) txtNumCambio.Enabled = true;
+            else txtNumCambio.Enabled = false;
             if (chbEstado.Checked) cmbEstado.Enabled = true;
             else cmbEstado.Enabled = false;
             if (chbKam.Checked) cmbKam.Enabled = true;
@@ -72,13 +72,12 @@ namespace Vistas
             else cmbCliente.Enabled = false;
             if (chbFecProceso.Checked) dtpFecProceso.Enabled = true;
             else dtpFecProceso.Enabled = false;
-
-            dgvAlquiler.PrimaryGrid.AutoGenerateColumns = false;
+            dgvCambio.PrimaryGrid.AutoGenerateColumns = false;
         }
 
-        public Alquiler ObjSeleccionado { get => objSeleccionado; set => objSeleccionado = value; }
+        public Cambio ObjSeleccionado { get => objSeleccionado; set => objSeleccionado = value; }
 
-        public frmProcesoAlquilerBuscar()
+        public frmProcesoCambioBuscar()
         {
             InitializeComponent();
         }
@@ -91,7 +90,7 @@ namespace Vistas
 
             if (rbtnFiltros.Checked)
             {
-                sql = "Where v.idAlquiler is not null ";
+                sql = "Where v.idCambio is not null ";
                 String sqlFec = ""; String sqlKam = ""; String sqlCli = ""; String sqlEst = "";
                 if (chbFecProceso.Checked)
                 {
@@ -114,8 +113,8 @@ namespace Vistas
                 {
                     int i = cmbKam.SelectedIndex;
                     string nombreKam = tablaKam.Rows[i]["nombre"].ToString();
-                   
-                    sqlKam = " AND v.nombreKam = '" + nombreKam +"'";
+
+                    sqlKam = " AND v.nombreKam = '" + nombreKam + "'";
                     sql = sql + sqlKam;
                 }
                 if (chbEstado.Checked)
@@ -125,57 +124,60 @@ namespace Vistas
                     sql = sql + sqlEst;
                 }
             }
-            else if (rbtnNumAlquiler.Checked)
+            else if (rbtnNumCambio.Checked)
             {
                 try
                 {
                     sql = "\0";
-                    sql = "Where v.idAlquiler = " + Int32.Parse(txtNumAlquiler.Text);
+                    sql = "Where v.idCambio = " + Int32.Parse(txtNumCambio.Text);
                 }
                 catch
                 {
-                    MessageBox.Show("El numero de alquiler no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El numero de Cambio no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
 
-            tablaAlquiler = alquilerDA.ListarAlquiler(sql);
-            dgvAlquiler.PrimaryGrid.DataSource = tablaAlquiler;
+            tablaCambio = cambioDA.ListarCambio(sql);
+            dgvCambio.PrimaryGrid.DataSource = tablaCambio;
 
         }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
             Cursor.Current = Cursors.WaitCursor;
-            dgvAlquiler.PrimaryGrid.DataSource = null;
-            dgvAlquiler.PrimaryGrid.Rows.Clear();
+            dgvCambio.PrimaryGrid.DataSource = null;
+            dgvCambio.PrimaryGrid.Rows.Clear();
             cargarDataGridView();
             Cursor.Current = Cursors.Default;
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                int i = dgvAlquiler.PrimaryGrid.ActiveRow.Index;
-                int idAlquiler = int.Parse(((GridCell)(((GridRow)dgvAlquiler.PrimaryGrid.ActiveRow)[0])).Value.ToString());
-                int idEstado = int.Parse(((GridCell)(((GridRow)dgvAlquiler.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                int i = dgvCambio.PrimaryGrid.ActiveRow.Index;
+                int idCambio = int.Parse(((GridCell)(((GridRow)dgvCambio.PrimaryGrid.ActiveRow)[0])).Value.ToString());
+                int idEstado = int.Parse(((GridCell)(((GridRow)dgvCambio.PrimaryGrid.ActiveRow)[5])).Value.ToString());
                 if (!(i == -1))
                 {
-                    objSeleccionado = alquilerDA.LlamarAlquilerModificable(idAlquiler);
+                    objSeleccionado = cambioDA.LlamarCambioModificable(idCambio);
                     this.DialogResult = DialogResult.OK;
                 }
             }
             catch
             {
-                MessageBox.Show("No se ha seleccionado ningun alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha seleccionado ningun Cambio", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             Cursor.Current = Cursors.Default;
         }
 
-
-        private void txtNumAlquiler_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNumCambio_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             //Para obligar a que sólo se introduzcan números
             if (Char.IsDigit(e.KeyChar))
             {
@@ -191,20 +193,21 @@ namespace Vistas
                 //el resto de teclas pulsadas se desactivan
                 e.Handled = true;
             }
+
         }
 
-        private void rbtnNumAlquiler_CheckedChanged(object sender, EventArgs e)
+        private void rbtnNumCambio_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbtnNumAlquiler.Checked)
+            if (rbtnNumCambio.Checked)
             {
                 panelNumOP.Enabled = true;
-                txtNumAlquiler.Enabled = true;
+                txtNumCambio.Enabled = true;
             }
             else
             {
                 panelNumOP.Enabled = false;
-                txtNumAlquiler.Enabled = false;
-                txtNumAlquiler.Text = "";
+                txtNumCambio.Enabled = false;
+                txtNumCambio.Text = "";
             }
         }
 
@@ -259,6 +262,5 @@ namespace Vistas
             else cmbEstado.Enabled = false;
 
         }
-
     }
 }

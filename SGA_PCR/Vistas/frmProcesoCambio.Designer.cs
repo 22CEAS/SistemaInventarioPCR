@@ -28,88 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoCambio));
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.btnCambiarProducto = new System.Windows.Forms.Button();
-            this.LabelX4 = new DevComponents.DotNetBar.LabelX();
-            this.label5 = new System.Windows.Forms.Label();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpFechaIngreso = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dgvEquipos = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.dtpFechaCambio = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtGuiaRemision = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCodigoLaptop = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
+            this.txtNroTicket = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNroCambio = new System.Windows.Forms.TextBox();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtRucDni = new System.Windows.Forms.TextBox();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.btnAnular = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.dgvLaptopsSeleccionados = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
+            this.chbEquipoDanado = new System.Windows.Forms.CheckBox();
+            this.chbEquipoDevuelto = new System.Windows.Forms.CheckBox();
+            this.chbPagaraCliente = new System.Windows.Forms.CheckBox();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaCambio)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCambiarProducto
-            // 
-            this.btnCambiarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarProducto.Location = new System.Drawing.Point(616, 253);
-            this.btnCambiarProducto.Name = "btnCambiarProducto";
-            this.btnCambiarProducto.Size = new System.Drawing.Size(75, 41);
-            this.btnCambiarProducto.TabIndex = 57;
-            this.btnCambiarProducto.Text = "Cambiar";
-            this.btnCambiarProducto.UseVisualStyleBackColor = true;
-            this.btnCambiarProducto.Click += new System.EventHandler(this.btnCambiarProducto_Click);
-            // 
-            // LabelX4
-            // 
-            this.LabelX4.AutoSize = true;
-            // 
-            // 
-            // 
-            this.LabelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LabelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelX4.ForeColor = System.Drawing.Color.Black;
-            this.LabelX4.Location = new System.Drawing.Point(406, 84);
-            this.LabelX4.Name = "LabelX4";
-            this.LabelX4.Size = new System.Drawing.Size(42, 16);
-            this.LabelX4.TabIndex = 51;
-            this.LabelX4.Text = "Código";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(117, 159);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 16);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "-";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(270, 136);
+            this.label4.Location = new System.Drawing.Point(219, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 16);
+            this.label4.Size = new System.Drawing.Size(96, 16);
             this.label4.TabIndex = 48;
-            this.label4.Text = "Fecha de Ingreso";
+            this.label4.Text = "Fecha Cambio";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 136);
+            this.label3.Location = new System.Drawing.Point(22, 133);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 16);
             this.label3.TabIndex = 47;
@@ -119,228 +95,508 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 84);
+            this.label1.Location = new System.Drawing.Point(219, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 46;
             this.label1.Text = "Cliente";
             // 
-            // dtpFechaIngreso
+            // dtpFechaCambio
             // 
             // 
             // 
             // 
-            this.dtpFechaIngreso.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpFechaIngreso.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
-            this.dtpFechaIngreso.ButtonDropDown.Visible = true;
-            this.dtpFechaIngreso.IsPopupCalendarOpen = false;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(273, 159);
+            this.dtpFechaCambio.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaCambio.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
+            this.dtpFechaCambio.ButtonDropDown.Visible = true;
+            this.dtpFechaCambio.IsPopupCalendarOpen = false;
+            this.dtpFechaCambio.Location = new System.Drawing.Point(222, 152);
             // 
             // 
             // 
-            this.dtpFechaIngreso.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this.dtpFechaCambio.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dtpFechaIngreso.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaCambio.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this.dtpFechaIngreso.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpFechaIngreso.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
-            this.dtpFechaIngreso.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtpFechaIngreso.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this.dtpFechaCambio.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaCambio.MonthCalendar.DisplayMonth = new System.DateTime(2020, 5, 1, 0, 0, 0, 0);
+            this.dtpFechaCambio.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtpFechaCambio.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this.dtpFechaIngreso.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.dtpFechaIngreso.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(141, 20);
-            this.dtpFechaIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFechaIngreso.TabIndex = 44;
+            this.dtpFechaCambio.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.dtpFechaCambio.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dtpFechaCambio.Name = "dtpFechaCambio";
+            this.dtpFechaCambio.Size = new System.Drawing.Size(141, 20);
+            this.dtpFechaCambio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.dtpFechaCambio.TabIndex = 44;
             // 
-            // textBox3
+            // txtGuiaRemision
             // 
-            this.textBox3.Location = new System.Drawing.Point(135, 158);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 43;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(43, 157);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(69, 20);
-            this.textBox2.TabIndex = 42;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(406, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 41;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(44, 103);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(339, 21);
-            this.comboBox1.TabIndex = 40;
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(616, 322);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 41);
-            this.button2.TabIndex = 58;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // dgvEquipos
-            // 
-            this.dgvEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEquipos.BackColor = System.Drawing.Color.White;
-            this.dgvEquipos.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvEquipos.ForeColor = System.Drawing.Color.Black;
-            this.dgvEquipos.Location = new System.Drawing.Point(42, 205);
-            this.dgvEquipos.Name = "dgvEquipos";
-            this.dgvEquipos.PrimaryGrid.AllowRowDelete = true;
-            this.dgvEquipos.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvEquipos.PrimaryGrid.AllowRowInsert = true;
-            this.dgvEquipos.PrimaryGrid.AllowRowResize = true;
-            this.dgvEquipos.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.Name = "Codigo";
-            gridColumn1.Width = 110;
-            gridColumn2.FilterAutoScan = true;
-            gridColumn2.Name = "Equipo";
-            gridColumn2.Width = 110;
-            gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn3.Name = "Modelo";
-            gridColumn3.Width = 110;
-            gridColumn4.Name = "Marca";
-            gridColumn4.Width = 110;
-            gridColumn5.Name = "Pantalla";
-            gridColumn5.Width = 110;
-            gridColumn6.Name = "Procesador";
-            gridColumn7.Name = "Generacion";
-            gridColumn8.Name = "Disco";
-            gridColumn9.Name = "TipoDisco";
-            gridColumn10.Name = "Memoria";
-            gridColumn11.Name = "Observación";
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn10);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn11);
-            this.dgvEquipos.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvEquipos.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvEquipos.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvEquipos.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvEquipos.PrimaryGrid.EnableFiltering = true;
-            this.dgvEquipos.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvEquipos.PrimaryGrid.Filter.Visible = true;
-            this.dgvEquipos.PrimaryGrid.NullString = "<<null>>";
-            this.dgvEquipos.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvEquipos.PrimaryGrid.ShowInsertRow = true;
-            this.dgvEquipos.PrimaryGrid.ShowRowGridIndex = true;
-            this.dgvEquipos.Size = new System.Drawing.Size(537, 402);
-            this.dgvEquipos.TabIndex = 71;
-            this.dgvEquipos.Text = "superGridControl3";
+            this.txtGuiaRemision.Location = new System.Drawing.Point(25, 152);
+            this.txtGuiaRemision.Name = "txtGuiaRemision";
+            this.txtGuiaRemision.Size = new System.Drawing.Size(148, 20);
+            this.txtGuiaRemision.TabIndex = 43;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(41, 23);
+            this.label8.Location = new System.Drawing.Point(23, 73);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 16);
+            this.label8.Size = new System.Drawing.Size(153, 16);
             this.label8.TabIndex = 79;
-            this.label8.Text = "Código a Buscar";
+            this.label8.Text = "Código Laptop a Buscar";
             // 
-            // textBox5
+            // txtCodigoLaptop
             // 
-            this.textBox5.Location = new System.Drawing.Point(43, 44);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 20);
-            this.textBox5.TabIndex = 78;
+            this.txtCodigoLaptop.Location = new System.Drawing.Point(25, 94);
+            this.txtCodigoLaptop.Name = "txtCodigoLaptop";
+            this.txtCodigoLaptop.Size = new System.Drawing.Size(148, 20);
+            this.txtCodigoLaptop.TabIndex = 78;
+            this.txtCodigoLaptop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoLaptop_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(469, 138);
+            this.label9.Location = new System.Drawing.Point(379, 131);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(114, 16);
             this.label9.TabIndex = 81;
             this.label9.Text = "N° Ticket Técnico";
             // 
-            // textBox6
+            // txtNroTicket
             // 
-            this.textBox6.Location = new System.Drawing.Point(471, 159);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(110, 20);
-            this.textBox6.TabIndex = 80;
+            this.txtNroTicket.Location = new System.Drawing.Point(381, 152);
+            this.txtNroTicket.Name = "txtNroTicket";
+            this.txtNroTicket.Size = new System.Drawing.Size(110, 20);
+            this.txtNroTicket.TabIndex = 80;
             // 
-            // frmCambio
+            // btnBuscar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 661);
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBuscar.AutoSize = true;
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBuscar.Location = new System.Drawing.Point(233, 6);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(59, 56);
+            this.btnBuscar.TabIndex = 153;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(23, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 16);
+            this.label2.TabIndex = 152;
+            this.label2.Text = "Cambio N°:";
+            // 
+            // txtNroCambio
+            // 
+            this.txtNroCambio.Location = new System.Drawing.Point(104, 26);
+            this.txtNroCambio.Name = "txtNroCambio";
+            this.txtNroCambio.ReadOnly = true;
+            this.txtNroCambio.Size = new System.Drawing.Size(123, 20);
+            this.txtNroCambio.TabIndex = 151;
+            // 
+            // labelX1
+            // 
+            this.labelX1.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(543, 73);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(64, 16);
+            this.labelX1.TabIndex = 155;
+            this.labelX1.Text = "RUC / DNI:";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(222, 94);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(269, 20);
+            this.txtCliente.TabIndex = 156;
+            // 
+            // txtRucDni
+            // 
+            this.txtRucDni.Location = new System.Drawing.Point(543, 94);
+            this.txtRucDni.Name = "txtRucDni";
+            this.txtRucDni.ReadOnly = true;
+            this.txtRucDni.Size = new System.Drawing.Size(124, 20);
+            this.txtRucDni.TabIndex = 157;
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarProducto.Location = new System.Drawing.Point(543, 147);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
+            this.btnAgregarProducto.TabIndex = 166;
+            this.btnAgregarProducto.Text = "Agregar Producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            // 
+            // btnAnular
+            // 
+            this.btnAnular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnular.AutoSize = true;
+            this.btnAnular.BackColor = System.Drawing.Color.Transparent;
+            this.btnAnular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnular.FlatAppearance.BorderSize = 0;
+            this.btnAnular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
+            this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAnular.Location = new System.Drawing.Point(288, 506);
+            this.btnAnular.Name = "btnAnular";
+            this.btnAnular.Size = new System.Drawing.Size(60, 66);
+            this.btnAnular.TabIndex = 174;
+            this.btnAnular.Text = "Anular";
+            this.btnAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAnular.UseVisualStyleBackColor = false;
+            this.btnAnular.Click += new System.EventHandler(this.btnAnular_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimir.AutoSize = true;
+            this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImprimir.Location = new System.Drawing.Point(440, 506);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 66);
+            this.btnImprimir.TabIndex = 173;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(354, 507);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.TabIndex = 172;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.AutoSize = true;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditar.Location = new System.Drawing.Point(129, 506);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(80, 65);
+            this.btnEditar.TabIndex = 171;
+            this.btnEditar.Text = "Modificar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.AutoSize = true;
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(61, 508);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.TabIndex = 170;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrabar.AutoSize = true;
+            this.btnGrabar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.FlatAppearance.BorderSize = 0;
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGrabar.Location = new System.Drawing.Point(202, 508);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(94, 64);
+            this.btnGrabar.TabIndex = 169;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
+            // dgvLaptopsSeleccionados
+            // 
+            this.dgvLaptopsSeleccionados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLaptopsSeleccionados.BackColor = System.Drawing.Color.White;
+            this.dgvLaptopsSeleccionados.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvLaptopsSeleccionados.ForeColor = System.Drawing.Color.Black;
+            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(25, 200);
+            this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";
+            this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowResize = true;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn10.AllowEdit = false;
+            gridColumn10.DataPropertyName = "Codigo";
+            gridColumn10.MinimumWidth = 100;
+            gridColumn10.Name = "Código";
+            gridColumn10.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn11.AllowEdit = false;
+            gridColumn11.DataPropertyName = "MarcaLC";
+            gridColumn11.MinimumWidth = 100;
+            gridColumn11.Name = "Marca";
+            gridColumn11.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn12.AllowEdit = false;
+            gridColumn12.DataPropertyName = "NombreModeloLC";
+            gridColumn12.MinimumWidth = 100;
+            gridColumn12.Name = "Modelo";
+            gridColumn13.AllowEdit = false;
+            gridColumn13.DataPropertyName = "TamanoPantalla";
+            gridColumn13.MinimumWidth = 60;
+            gridColumn13.Name = "Pantalla";
+            gridColumn13.Width = 60;
+            gridColumn14.AllowEdit = false;
+            gridColumn14.DataPropertyName = "TipoProcesador";
+            gridColumn14.MinimumWidth = 70;
+            gridColumn14.Name = "Procesador";
+            gridColumn14.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn14.Width = 70;
+            gridColumn15.AllowEdit = false;
+            gridColumn15.DataPropertyName = "GeneracionProcesador";
+            gridColumn15.MinimumWidth = 70;
+            gridColumn15.Name = "Generacion";
+            gridColumn15.Width = 70;
+            gridColumn16.AllowEdit = false;
+            gridColumn16.DataPropertyName = "NombreModeloVideo";
+            gridColumn16.Name = "Video";
+            gridColumn17.AllowEdit = false;
+            gridColumn17.DataPropertyName = "CapacidadVideo";
+            gridColumn17.MinimumWidth = 70;
+            gridColumn17.Name = "Capacidad";
+            gridColumn17.Width = 70;
+            gridColumn18.DataPropertyName = "IdLC";
+            gridColumn18.Name = "Id LC";
+            gridColumn18.Visible = false;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn13);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn14);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn15);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn16);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn17);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.Columns.Add(gridColumn18);
+            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.MultiSelect = false;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.NoRowsText = "No hay ninguna laptop seleccionada";
+            this.dgvLaptopsSeleccionados.PrimaryGrid.NullString = "<<null>>";
+            this.dgvLaptopsSeleccionados.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvLaptopsSeleccionados.PrimaryGrid.UseAlternateColumnStyle = true;
+            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(670, 79);
+            this.dgvLaptopsSeleccionados.TabIndex = 168;
+            this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
+            this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Location = new System.Drawing.Point(23, 84);
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(648, 87);
+            this.txtObservacion.TabIndex = 175;
+            // 
+            // chbEquipoDanado
+            // 
+            this.chbEquipoDanado.AutoSize = true;
+            this.chbEquipoDanado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbEquipoDanado.Location = new System.Drawing.Point(177, 31);
+            this.chbEquipoDanado.Name = "chbEquipoDanado";
+            this.chbEquipoDanado.Size = new System.Drawing.Size(130, 21);
+            this.chbEquipoDanado.TabIndex = 176;
+            this.chbEquipoDanado.Text = "Equipo Dañado";
+            this.chbEquipoDanado.UseVisualStyleBackColor = true;
+            // 
+            // chbEquipoDevuelto
+            // 
+            this.chbEquipoDevuelto.AutoSize = true;
+            this.chbEquipoDevuelto.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbEquipoDevuelto.Location = new System.Drawing.Point(36, 31);
+            this.chbEquipoDevuelto.Name = "chbEquipoDevuelto";
+            this.chbEquipoDevuelto.Size = new System.Drawing.Size(135, 21);
+            this.chbEquipoDevuelto.TabIndex = 177;
+            this.chbEquipoDevuelto.Text = "Equipo Devuelto";
+            this.chbEquipoDevuelto.UseVisualStyleBackColor = true;
+            // 
+            // chbPagaraCliente
+            // 
+            this.chbPagaraCliente.AutoSize = true;
+            this.chbPagaraCliente.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbPagaraCliente.Location = new System.Drawing.Point(314, 31);
+            this.chbPagaraCliente.Name = "chbPagaraCliente";
+            this.chbPagaraCliente.Size = new System.Drawing.Size(125, 21);
+            this.chbPagaraCliente.TabIndex = 178;
+            this.chbPagaraCliente.Text = "Pagará Cliente";
+            this.chbPagaraCliente.UseVisualStyleBackColor = true;
+            // 
+            // labelX2
+            // 
+            this.labelX2.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(36, 58);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(96, 20);
+            this.labelX2.TabIndex = 179;
+            this.labelX2.Text = "Observación";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtObservacion);
+            this.groupBox1.Controls.Add(this.labelX2);
+            this.groupBox1.Controls.Add(this.chbEquipoDanado);
+            this.groupBox1.Controls.Add(this.chbPagaraCliente);
+            this.groupBox1.Controls.Add(this.chbEquipoDevuelto);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(25, 304);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(693, 190);
+            this.groupBox1.TabIndex = 180;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Observaciones del Cambio";
+            // 
+            // frmProcesoCambio
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(749, 583);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnAnular);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.dgvLaptopsSeleccionados);
+            this.Controls.Add(this.btnAgregarProducto);
+            this.Controls.Add(this.txtRucDni);
+            this.Controls.Add(this.txtCliente);
+            this.Controls.Add(this.labelX1);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNroCambio);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtNroTicket);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.dgvEquipos);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnCambiarProducto);
-            this.Controls.Add(this.LabelX4);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtCodigoLaptop);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtpFechaIngreso);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Name = "frmCambio";
+            this.Controls.Add(this.dtpFechaCambio);
+            this.Controls.Add(this.txtGuiaRemision);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmProcesoCambio";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCambio";
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFechaCambio)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCambiarProducto;
-        internal DevComponents.DotNetBar.LabelX LabelX4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFechaIngreso;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvEquipos;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dtpFechaCambio;
+        private System.Windows.Forms.TextBox txtGuiaRemision;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCodigoLaptop;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNroTicket;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNroCambio;
+        internal DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.TextBox txtRucDni;
+        private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.Button btnAnular;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnGrabar;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLaptopsSeleccionados;
+        private System.Windows.Forms.TextBox txtObservacion;
+        private System.Windows.Forms.CheckBox chbEquipoDanado;
+        private System.Windows.Forms.CheckBox chbEquipoDevuelto;
+        private System.Windows.Forms.CheckBox chbPagaraCliente;
+        internal DevComponents.DotNetBar.LabelX labelX2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -60,15 +60,18 @@ namespace Vistas
             {
                 if (((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value != null)
                 {
-                    detalle = new DevolucionDetalle();
-                    detalle.IdLC = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 9))).Value.ToString());
-                    detalle.CodigoLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                    detalle.MarcaLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 2))).Value.ToString();
-                    detalle.ModeloLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 3))).Value.ToString();
-                    detalle.IdSalidaDetalle = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i,12))).Value.ToString());
-                    detalle.IdSucursal = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 13))).Value.ToString());
-                    detalles.Add(detalle);
-                    flag = true;
+                    if (Convert.ToBoolean(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        detalle = new DevolucionDetalle();
+                        detalle.IdLC = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 9))).Value.ToString());
+                        detalle.CodigoLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                        detalle.MarcaLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 2))).Value.ToString();
+                        detalle.ModeloLC = ((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 3))).Value.ToString();
+                        detalle.IdSalidaDetalle = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 12))).Value.ToString());
+                        detalle.IdSucursal = int.Parse(((GridCell)(dgvLaptops.PrimaryGrid.GetCell(i, 13))).Value.ToString());
+                        detalles.Add(detalle);
+                        flag = true;
+                    }
                 }
             }
             return flag;

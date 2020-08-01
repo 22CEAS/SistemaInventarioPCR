@@ -72,7 +72,7 @@ namespace Vistas
             else cmbCliente.Enabled = false;
             if (chbFecProceso.Checked) dtpFecProceso.Enabled = true;
             else dtpFecProceso.Enabled = false;
-
+            dgvDevolucion.PrimaryGrid.AutoGenerateColumns = false;
         }
 
         public Devolucion ObjSeleccionado { get => objSeleccionado; set => objSeleccionado = value; }
