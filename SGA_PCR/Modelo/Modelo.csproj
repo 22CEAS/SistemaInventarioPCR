@@ -50,6 +50,8 @@
     <Compile Include="Devolucion.cs" />
     <Compile Include="DevolucionDetalle.cs" />
     <Compile Include="DiscoDuro.cs" />
+    <Compile Include="Ingreso.cs" />
+    <Compile Include="IngresoDetalle.cs" />
     <Compile Include="LC.cs" />
     <Compile Include="Licencia.cs" />
     <Compile Include="Marca.cs" />

@@ -131,5 +131,19 @@ namespace Modelo
                 rec++;
             }
         }
+
+
+        public int IdMarca { get => Modelo.IdMarca; set => Modelo.IdMarca = value; }
+        public string MarcaLC { get => Modelo.NombreMarca; set => Modelo.NombreMarca = value; }
+        public int IdModelo { get => Modelo.IdModelo; set => Modelo.IdModelo = value; }
+        public string NombreModeloLC { get => Modelo.NombreModelo; set => Modelo.NombreModelo = value; }
+        public int IdProcesador { get => Procesador.IdProcesador; set => Procesador.IdProcesador = value; }
+        public string TipoProcesador { get => Procesador.Modelo.NombreModelo; set => Procesador.Modelo.NombreModelo = value; }
+        public int GeneracionProcesador { get => Procesador.Generacion; set => Procesador.Generacion = value; }
+        public int IdVideo { get => Video.IdVideo; set => Video.IdVideo = value; }
+        public string NombreModeloVideo { get => Video.Modelo.NombreModelo; set => Video.Modelo.NombreModelo = value; }
+        public int CapacidadVideo { get => Video.Capacidad; set => Video.Capacidad = value; }
+
+
     }
 }

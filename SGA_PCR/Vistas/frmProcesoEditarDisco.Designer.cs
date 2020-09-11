@@ -124,15 +124,21 @@
             this.dgvDisco.TabIndex = 125;
             this.dgvDisco.Text = "Tabla Disco";
             // 
-            // frmEditarDisco
+            // frmProcesoEditarDisco
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(558, 334);
             this.Controls.Add(this.dgvDisco);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
-            this.Name = "frmEditarDisco";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmProcesoEditarDisco";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Disco Duro";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -101,7 +101,7 @@ namespace Vistas
 
         private void btnCambioComponente_Click(object sender, EventArgs e)
         {
-            frmProcesoCambioPieza frm = new frmProcesoCambioPieza();
+            frmProcesoCambioComponentes frm = new frmProcesoCambioComponentes();
             frm.MdiParent = this;
             frm.Show();
         }

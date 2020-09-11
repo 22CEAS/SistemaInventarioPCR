@@ -80,11 +80,11 @@
     <Compile Include="frmProcesoCambioBuscar.Designer.cs">
       <DependentUpon>frmProcesoCambioBuscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProcesoCambioPieza.cs">
+    <Compile Include="frmProcesoCambioComponentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProcesoCambioPieza.Designer.cs">
-      <DependentUpon>frmProcesoCambioPieza.cs</DependentUpon>
+    <Compile Include="frmProcesoCambioComponentes.Designer.cs">
+      <DependentUpon>frmProcesoCambioComponentes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmArchivoClienteSucursal.cs">
       <SubType>Form</SubType>
@@ -103,6 +103,24 @@
     </Compile>
     <Compile Include="frmProcesoDevolucionBuscar.Designer.cs">
       <DependentUpon>frmProcesoDevolucionBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoIngresoDisco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoIngresoDisco.Designer.cs">
+      <DependentUpon>frmProcesoIngresoDisco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoIngresoLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoIngresoLicencia.Designer.cs">
+      <DependentUpon>frmProcesoIngresoLicencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoIngresoMemoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoIngresoMemoria.Designer.cs">
+      <DependentUpon>frmProcesoIngresoMemoria.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReporteCuadroVencimiento.cs">
       <SubType>Form</SubType>
@@ -200,11 +218,11 @@
     <Compile Include="frmReporteInventario.Designer.cs">
       <DependentUpon>frmReporteInventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProcesoLaptopCpu.cs">
+    <Compile Include="frmProcesoIngresoLaptopCpu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProcesoLaptopCpu.Designer.cs">
-      <DependentUpon>frmProcesoLaptopCpu.cs</DependentUpon>
+    <Compile Include="frmProcesoIngresoLaptopCpu.Designer.cs">
+      <DependentUpon>frmProcesoIngresoLaptopCpu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProcesoLevantamientoObservaciones.cs">
       <SubType>Form</SubType>
@@ -310,8 +328,8 @@
     <EmbeddedResource Include="frmProcesoCambioBuscar.resx">
       <DependentUpon>frmProcesoCambioBuscar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProcesoCambioPieza.resx">
-      <DependentUpon>frmProcesoCambioPieza.cs</DependentUpon>
+    <EmbeddedResource Include="frmProcesoCambioComponentes.resx">
+      <DependentUpon>frmProcesoCambioComponentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoClienteSucursal.resx">
       <DependentUpon>frmArchivoClienteSucursal.cs</DependentUpon>
@@ -340,6 +358,15 @@
     <EmbeddedResource Include="frmProcesoDevolucionBuscar.resx">
       <DependentUpon>frmProcesoDevolucionBuscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoIngresoDisco.resx">
+      <DependentUpon>frmProcesoIngresoDisco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoIngresoLicencia.resx">
+      <DependentUpon>frmProcesoIngresoLicencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoIngresoMemoria.resx">
+      <DependentUpon>frmProcesoIngresoMemoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteCuadroVencimiento.resx">
       <DependentUpon>frmReporteCuadroVencimiento.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,8 +391,8 @@
     <EmbeddedResource Include="frmReporteInventario.resx">
       <DependentUpon>frmReporteInventario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProcesoLaptopCpu.resx">
-      <DependentUpon>frmProcesoLaptopCpu.cs</DependentUpon>
+    <EmbeddedResource Include="frmProcesoIngresoLaptopCpu.resx">
+      <DependentUpon>frmProcesoIngresoLaptopCpu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoLevantamientoObservaciones.resx">
       <DependentUpon>frmProcesoLevantamientoObservaciones.cs</DependentUpon>

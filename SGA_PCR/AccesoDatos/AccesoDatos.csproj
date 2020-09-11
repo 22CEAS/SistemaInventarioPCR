@@ -66,6 +66,8 @@
     <Compile Include="DBManager.cs" />
     <Compile Include="DevolucionDA.cs" />
     <Compile Include="DiscoDuroDA.cs" />
+    <Compile Include="IngresoDA.cs" />
+    <Compile Include="LaptopDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorDA.cs" />
   </ItemGroup>

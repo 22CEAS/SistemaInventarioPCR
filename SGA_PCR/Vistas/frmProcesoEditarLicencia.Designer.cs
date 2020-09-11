@@ -125,17 +125,18 @@
             this.dgvLicencia.TabIndex = 127;
             this.dgvLicencia.Text = "Tabla Licencias";
             // 
-            // frmEditarLicencia
+            // frmProcesoEditarLicencia
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(710, 323);
             this.Controls.Add(this.dgvLicencia);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmEditarLicencia";
+            this.Name = "frmProcesoEditarLicencia";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

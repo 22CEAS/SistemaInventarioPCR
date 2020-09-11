@@ -28,193 +28,361 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoCrearTarjetaVideo));
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.superGridControl3 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.chbActivo = new System.Windows.Forms.CheckBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.cmbModelo = new System.Windows.Forms.ComboBox();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.dgvVideo = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.cmbCapacidad = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // button4
+            // labelX3
             // 
-            this.button4.Location = new System.Drawing.Point(696, 283);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 69;
-            this.button4.Text = "Aceptar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.labelX3.AutoSize = true;
             // 
-            // button3
             // 
-            this.button3.Location = new System.Drawing.Point(600, 283);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 68;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
+            this.labelX3.Location = new System.Drawing.Point(25, 183);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(30, 16);
+            this.labelX3.TabIndex = 117;
+            this.labelX3.Text = "Tipo:";
             // 
-            this.button2.Location = new System.Drawing.Point(499, 283);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 67;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
+            // labelX2
             // 
-            // button1
+            this.labelX2.AutoSize = true;
             // 
-            this.button1.Location = new System.Drawing.Point(398, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 66;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "Capacidad:";
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.ForeColor = System.Drawing.Color.Black;
+            this.labelX2.Location = new System.Drawing.Point(25, 105);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(47, 16);
+            this.labelX2.TabIndex = 116;
+            this.labelX2.Text = "Modelo:";
             // 
-            // comboBox4
+            // labelX1
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(32, 229);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(178, 21);
-            this.comboBox4.TabIndex = 64;
+            this.labelX1.AutoSize = true;
             // 
-            // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 63;
-            this.label3.Text = "Tipo:";
             // 
-            // label2
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.ForeColor = System.Drawing.Color.Black;
+            this.labelX1.Location = new System.Drawing.Point(25, 26);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(41, 16);
+            this.labelX1.TabIndex = 115;
+            this.labelX1.Text = "Marca:";
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Modelo:";
+            // chbActivo
             // 
-            // label1
+            this.chbActivo.AutoSize = true;
+            this.chbActivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbActivo.Checked = true;
+            this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbActivo.Location = new System.Drawing.Point(25, 358);
+            this.chbActivo.Name = "chbActivo";
+            this.chbActivo.Size = new System.Drawing.Size(62, 17);
+            this.chbActivo.TabIndex = 114;
+            this.chbActivo.Text = "Activo";
+            this.chbActivo.UseVisualStyleBackColor = true;
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 61;
-            this.label1.Text = "Marca:";
+            // btnImprimir
             // 
-            // comboBox3
+            this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimir.AutoSize = true;
+            this.btnImprimir.BackColor = System.Drawing.Color.Transparent;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnImprimir.Location = new System.Drawing.Point(635, 316);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(75, 63);
+            this.btnImprimir.TabIndex = 113;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnImprimir.UseVisualStyleBackColor = false;
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(32, 167);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(178, 21);
-            this.comboBox3.TabIndex = 60;
+            // btnCancelar
             // 
-            // comboBox2
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.AutoSize = true;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancelar.Location = new System.Drawing.Point(630, 245);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.TabIndex = 112;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(32, 103);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(178, 21);
-            this.comboBox2.TabIndex = 59;
+            // btnEditar
             // 
-            // comboBox1
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.AutoSize = true;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditar.Location = new System.Drawing.Point(630, 97);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(80, 65);
+            this.btnEditar.TabIndex = 111;
+            this.btnEditar.Text = "Modificar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(32, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
-            this.comboBox1.TabIndex = 58;
+            // btnNuevo
             // 
-            // superGridControl3
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevo.AutoSize = true;
+            this.btnNuevo.BackColor = System.Drawing.Color.Transparent;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNuevo.Location = new System.Drawing.Point(630, 30);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 63);
+            this.btnNuevo.TabIndex = 110;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             // 
-            this.superGridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            // btnGrabar
+            // 
+            this.btnGrabar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGrabar.AutoSize = true;
+            this.btnGrabar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.FlatAppearance.BorderSize = 0;
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
+            this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnGrabar.Location = new System.Drawing.Point(630, 176);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(75, 63);
+            this.btnGrabar.TabIndex = 109;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbTipo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(25, 205);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(117, 21);
+            this.cmbTipo.TabIndex = 108;
+            // 
+            // cmbModelo
+            // 
+            this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModelo.FormattingEnabled = true;
+            this.cmbModelo.Location = new System.Drawing.Point(25, 127);
+            this.cmbModelo.Name = "cmbModelo";
+            this.cmbModelo.Size = new System.Drawing.Size(117, 21);
+            this.cmbModelo.TabIndex = 107;
+            // 
+            // cmbMarca
+            // 
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(25, 48);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(117, 21);
+            this.cmbMarca.TabIndex = 106;
+            // 
+            // dgvVideo
+            // 
+            this.dgvVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.superGridControl3.BackColor = System.Drawing.Color.White;
-            this.superGridControl3.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl3.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl3.Location = new System.Drawing.Point(254, 23);
-            this.superGridControl3.Name = "superGridControl3";
-            this.superGridControl3.PrimaryGrid.AllowRowHeaderResize = true;
-            this.superGridControl3.PrimaryGrid.AllowRowResize = true;
-            this.superGridControl3.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn6.Name = "Marca";
-            gridColumn6.Width = 110;
-            gridColumn7.FilterAutoScan = true;
-            gridColumn7.Name = "Modelo";
-            gridColumn7.Width = 110;
-            gridColumn8.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn8.Name = "Tipo";
-            gridColumn8.Width = 110;
-            gridColumn9.Name = "Capacidad";
-            gridColumn9.Width = 110;
-            gridColumn10.Name = "Hab./Desh.";
-            gridColumn10.Width = 30;
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn6);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn7);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn8);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn9);
-            this.superGridControl3.PrimaryGrid.Columns.Add(gridColumn10);
-            this.superGridControl3.PrimaryGrid.DefaultRowHeight = 24;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl3.PrimaryGrid.EnableColumnFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableFiltering = true;
-            this.superGridControl3.PrimaryGrid.EnableRowFiltering = true;
-            this.superGridControl3.PrimaryGrid.Filter.Visible = true;
-            this.superGridControl3.PrimaryGrid.NullString = "<<null>>";
-            this.superGridControl3.PrimaryGrid.RowHeaderWidth = 45;
-            this.superGridControl3.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl3.Size = new System.Drawing.Size(517, 234);
-            this.superGridControl3.TabIndex = 57;
-            this.superGridControl3.Text = "superGridControl3";
+            this.dgvVideo.BackColor = System.Drawing.Color.White;
+            this.dgvVideo.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvVideo.ForeColor = System.Drawing.Color.Black;
+            this.dgvVideo.Location = new System.Drawing.Point(163, 27);
+            this.dgvVideo.Name = "dgvVideo";
+            this.dgvVideo.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvVideo.PrimaryGrid.AllowRowResize = true;
+            this.dgvVideo.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn1.AllowEdit = false;
+            gridColumn1.DataPropertyName = "idMemoria";
+            gridColumn1.MinimumWidth = 50;
+            gridColumn1.Name = "Id";
+            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn1.Width = 50;
+            gridColumn2.DataPropertyName = "marca";
+            gridColumn2.Name = "Marca";
+            gridColumn3.AllowEdit = false;
+            gridColumn3.DataPropertyName = "modelo";
+            gridColumn3.FilterAutoScan = true;
+            gridColumn3.MinimumWidth = 100;
+            gridColumn3.Name = "Modelo";
+            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn4.AllowEdit = false;
+            gridColumn4.DataPropertyName = "tipo";
+            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn4.MinimumWidth = 100;
+            gridColumn4.Name = "Tipo";
+            gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn5.AllowEdit = false;
+            gridColumn5.DataPropertyName = "capacidad";
+            gridColumn5.MinimumWidth = 100;
+            gridColumn5.Name = "Capacidad";
+            gridColumn5.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn6.AllowEdit = false;
+            gridColumn6.DataPropertyName = "estado";
+            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn6.MinimumWidth = 100;
+            gridColumn6.Name = "Activo";
+            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn7.AllowEdit = false;
+            gridColumn7.DataPropertyName = "idModelo";
+            gridColumn7.MinimumWidth = 100;
+            gridColumn7.Name = "idModelo";
+            gridColumn7.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn7.Visible = false;
+            gridColumn8.DataPropertyName = "idMarca";
+            gridColumn8.Name = "idMarca";
+            gridColumn8.Visible = false;
+            gridColumn9.AllowEdit = false;
+            gridColumn9.DataPropertyName = "idTipo";
+            gridColumn9.MinimumWidth = 100;
+            gridColumn9.Name = "idTipo";
+            gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn9.Visible = false;
+            gridColumn10.AllowEdit = false;
+            gridColumn10.DataPropertyName = "idCapacidad";
+            gridColumn10.MinimumWidth = 100;
+            gridColumn10.Name = "idCapacidad";
+            gridColumn10.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn10.Visible = false;
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn3);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn4);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn6);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn7);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn8);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn9);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgvVideo.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvVideo.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvVideo.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvVideo.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvVideo.PrimaryGrid.EnableFiltering = true;
+            this.dgvVideo.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvVideo.PrimaryGrid.Filter.Visible = true;
+            this.dgvVideo.PrimaryGrid.MultiSelect = false;
+            this.dgvVideo.PrimaryGrid.NoRowsText = "No hay ninguna tarjeta de video, cree una tarjeta de video";
+            this.dgvVideo.PrimaryGrid.NullString = "<<null>>";
+            this.dgvVideo.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvVideo.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvVideo.Size = new System.Drawing.Size(450, 352);
+            this.dgvVideo.TabIndex = 105;
+            this.dgvVideo.Text = "Tabla Video";
             // 
-            // FormCrearTarjetaVideo
+            // labelX4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 329);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.superGridControl3);
-            this.Name = "FormCrearTarjetaVideo";
+            this.labelX4.AutoSize = true;
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.ForeColor = System.Drawing.Color.Black;
+            this.labelX4.Location = new System.Drawing.Point(25, 278);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(66, 16);
+            this.labelX4.TabIndex = 119;
+            this.labelX4.Text = "Capacidad:";
+            // 
+            // cmbCapacidad
+            // 
+            this.cmbCapacidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbCapacidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCapacidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbCapacidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCapacidad.FormattingEnabled = true;
+            this.cmbCapacidad.Location = new System.Drawing.Point(25, 300);
+            this.cmbCapacidad.Name = "cmbCapacidad";
+            this.cmbCapacidad.Size = new System.Drawing.Size(117, 21);
+            this.cmbCapacidad.TabIndex = 118;
+            // 
+            // frmArchivoCrearTarjetaVideo
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(738, 414);
+            this.Controls.Add(this.labelX4);
+            this.Controls.Add(this.cmbCapacidad);
+            this.Controls.Add(this.labelX3);
+            this.Controls.Add(this.labelX2);
+            this.Controls.Add(this.labelX1);
+            this.Controls.Add(this.chbActivo);
+            this.Controls.Add(this.btnImprimir);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.cmbTipo);
+            this.Controls.Add(this.cmbModelo);
+            this.Controls.Add(this.cmbMarca);
+            this.Controls.Add(this.dgvVideo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmArchivoCrearTarjetaVideo";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Tarjeta Video";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -223,18 +391,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl3;
+        internal DevComponents.DotNetBar.LabelX labelX3;
+        internal DevComponents.DotNetBar.LabelX labelX2;
+        internal DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.CheckBox chbActivo;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.ComboBox cmbModelo;
+        private System.Windows.Forms.ComboBox cmbMarca;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvVideo;
+        internal DevComponents.DotNetBar.LabelX labelX4;
+        private System.Windows.Forms.ComboBox cmbCapacidad;
     }
 }

@@ -42,18 +42,18 @@ DROP VIEW IF EXISTS `bd_leasein`.`vista_video_tipo`;
 
 /*En la tabla salida se comparara la fecha final de alquiler con el dia actual.*/
 create view vista_productos_por_recoger as
-	Select (Select c.nombre_razonSocial from cliente c where c.idCliente=s.idCliente) as cliente, 
-			s.fecIniContrato as fecIniPlazoAlquiler,
-			s.fecFinContrato as fecFinPlazoAlquiler,
-			lc.codigo as codigoEquipo,
-			d.guiaSalida as guia,
-			DATEDIFF(CURDATE(),s.fecFinContrato) as diasAtrasoRecojo,
-			d.motivoNoRecojo as motivoNoRecojo,
-			(Select c.nombreKam from cliente c where c.idCliente=s.idCliente) as KAM 
-	From salida s inner join salida_det d on s.idSalida=d.idSalida inner join laptop_cpu lc on lc.idLC=d.idLC
-	where s.estado="Atendido" and d.estado="Activo" and Not(lc.ubicacion="Almacen") and s.fecFinContrato<CURDATE()
-	order by cliente,codigoEquipo;
-	
+Select (Select c.nombre_razonSocial from cliente c where c.idCliente=s.idCliente) as cliente, 
+		s.fecIniContrato as fecIniPlazoAlquiler,
+		s.fecFinContrato as fecFinPlazoAlquiler,
+		lc.codigo as codigoEquipo,
+		d.guiaSalida as guia,
+		DATEDIFF(CURDATE(),s.fecFinContrato) as diasAtrasoRecojo,
+		d.motivoNoRecojo as motivoNoRecojo,
+		(Select c.nombreKam from cliente c where c.idCliente=s.idCliente) as KAM 
+From salida s inner join salida_det d on s.idSalida=d.idSalida inner join laptop_cpu lc on lc.idLC=d.idLC
+where s.estado=4 and ((d.estado=4  and s.fecFinContrato<CURDATE()) or d.estado=9) and d.fueDevuelto=0
+order by cliente,codigoEquipo;
+
  
 /*En la tabla de cuota se va a poner la ultima factura que se tenga de este producto, si se ingresa una nueva, se elimina esta fila y se inserta la nueva factura aqui. Si no hay ninguna factura en cuota significa que a ese producto nunca se ha facturado.*/
 
@@ -297,6 +297,14 @@ create view vista_licencia_windows_tipos as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="LICENCIA_WINDOWS_TIPO" and activo=1;
+
+
+create view vista_maestro_licencias as
+SELECT c.idCategoria as IdCategoria , c.nombre as Categoria, m.idMarca as IdMarca, m.nombre as Tipo, mo.idModelo as IdModelo, mo.nombre as Version
+FROM categoria c 
+INNER JOIN marca m on m.idCategoria=c.idCategoria 
+INNER JOIN modelo mo on m.idMarca=mo.idMarca 
+WHERE c.subCategoria='LICENCIAS';
 
 		
 /*Se mostrará las capacidades de la memoria*/
@@ -686,3 +694,21 @@ FROM salida_det d
 		INNER JOIN laptop_cpu l on d.idLC=l.idLC 
 		INNER JOIN cliente c on s.idCliente=c.IdCliente
 where d.estado=4 and fueDevuelto=0;
+
+
+create view vista_laptops_marca as
+Select m.idMarca, m.nombre
+from marca m 
+where m.idCategoria=1 and m.estado=1 ;
+
+
+create view vista_laptops_modelo as
+Select m.idMarca, mo.idModelo, mo.nombre
+from marca m INNER JOIN modelo mo on m.idMarca=mo.IdMarca
+where m.idCategoria=1 and m.estado=1 ;
+
+
+create view vista_ingreso_tipo as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="INGRESO_TIPO" and activo=1;

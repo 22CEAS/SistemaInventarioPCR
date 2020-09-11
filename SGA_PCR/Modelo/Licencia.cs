@@ -15,6 +15,7 @@ namespace Modelo
         private string categoria;
         private Modelo modelo;
         private int idLC;
+        private int cantidad;
         private string clave;
         private DateTime fechaActivacion;
         private string ubicacion;
@@ -54,5 +55,6 @@ namespace Modelo
         public string Estado { get => estado; set => estado = value; }
         public int IdCategoria { get => idCategoria; set => idCategoria = value; }
         public string Categoria { get => categoria; set => categoria = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
     }
 }
