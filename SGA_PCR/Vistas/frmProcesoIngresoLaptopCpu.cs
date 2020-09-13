@@ -41,9 +41,16 @@ namespace Vistas
             InitializeComponent();
             Inicializado();
         }
+
+        public frmProcesoIngresoLaptopCpu(IngresoDetalle detalleTraido)
+        {
+            InitializeComponent();
+            Inicializado();
+            ObtenerListaLaptops(detalleTraido);
+        }
+
         public void Inicializado()
         {
-
             ingresoDA = new IngresoDA();
             laptop = new LC();
             detalle = new IngresoDetalle();
@@ -90,6 +97,7 @@ namespace Vistas
             //cmbDestino.DataSource = tablaDestino;
             //cmbDestino.DisplayMember = "nombre";
             //cmbDestino.ValueMember = "idDestino";
+
         }
 
 
@@ -108,6 +116,126 @@ namespace Vistas
 
         }
 
+        public void ObtenerListaLaptops(IngresoDetalle detalleTraido)
+        {
+
+            tabControl1.SelectedTab = tabProcesador;
+            tabControl1.SelectedTab = tabMemoria;
+            tabControl1.SelectedTab = tabVideo;
+            tabControl1.SelectedTab = tabDiscoDuro;
+            tabControl1.SelectedTab = tabLicencia;
+            tabControl1.SelectedTab = tabClavesLicencias;
+            tabControl1.SelectedTab = tabDetalle;
+
+            cmbMarca.SelectedValue = detalleTraido.LaptopIdMarca;
+            cmbModelo.SelectedValue = detalleTraido.LaptopIdModelo;
+            laptop = detalleTraido.Laptop;
+            chbGarantia.Checked= (laptop.Garantia == 1) ? true : false;
+            txtPantalla.Text = laptop.TamanoPantalla.ToString();
+            txtPartNumber.Text = laptop.PartNumber.ToString();
+            txtPrecio.Text = detalleTraido.Precio.ToString();
+            txtCantidad.Text = detalleTraido.Cantidad.ToString();
+
+            foreach (String serie in detalleTraido.Series)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgvSerieFabrica.Rows[0].Clone();
+                row.Cells[1].Value = serie;
+                dgvSerieFabrica.Rows.Add(row);
+            }
+
+            foreach (String clave in detalleTraido.Windows)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgvWindows.Rows[0].Clone();
+                row.Cells[1].Value = clave;
+                dgvWindows.Rows.Add(row);
+            }
+
+            foreach (String clave in detalleTraido.Office)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgvOffice.Rows[0].Clone();
+                row.Cells[1].Value = clave;
+                dgvOffice.Rows.Add(row);
+            }
+
+            foreach (String clave in detalleTraido.Antivirus)
+            {
+                DataGridViewRow row = (DataGridViewRow)dgvAntivirus.Rows[0].Clone();
+                row.Cells[1].Value = clave;
+                dgvAntivirus.Rows.Add(row);
+            }
+
+            tablaLicencia.Columns.Add("Seleccionar", typeof(bool));
+            for (int i = 0; i < tablaLicencia.Rows.Count; i++)
+            {
+                tablaLicencia.Rows[i]["Seleccionar"] = false;
+            }
+            foreach (Licencia licencia in laptop.Licencias)
+            {
+                for (int i = 0; i < tablaLicencia.Rows.Count; i++)
+                {
+                    if (licencia.IdModelo == int.Parse(tablaLicencia.Rows[i]["IdModelo"].ToString()))
+                        tablaLicencia.Rows[i]["Seleccionar"] = true;
+                }
+            }
+            dgvLicencia.PrimaryGrid.DataSource = tablaLicencia;
+
+
+            tablaMemoria.Columns.Add("Seleccionar", typeof(bool));
+            for (int i = 0; i < tablaMemoria.Rows.Count; i++)
+            {
+                tablaMemoria.Rows[i]["Seleccionar"] = false;
+            }
+            foreach (Memoria memoria in laptop.Memorias)
+            {
+                for (int i = 0; i < tablaMemoria.Rows.Count; i++)
+                {
+                    if (memoria.IdMemoria == int.Parse(tablaMemoria.Rows[i]["IdMemoria"].ToString()))
+                        tablaMemoria.Rows[i]["Seleccionar"] = true;
+                }
+            }
+            dgvMemoria.PrimaryGrid.DataSource = tablaMemoria;
+
+
+
+            tablaDisco.Columns.Add("Seleccionar", typeof(bool));
+            for (int i = 0; i < tablaDisco.Rows.Count; i++)
+            {
+                tablaDisco.Rows[i]["Seleccionar"] = false;
+            }
+            foreach (DiscoDuro disco in laptop.Discos)
+            {
+                for (int i = 0; i < tablaDisco.Rows.Count; i++)
+                {
+                    if (disco.IdDisco == int.Parse(tablaDisco.Rows[i]["IdDisco"].ToString()))
+                        tablaDisco.Rows[i]["Seleccionar"] = true;
+                }
+            }
+            dgvDiscoDuro.PrimaryGrid.DataSource = tablaDisco;
+
+
+            tablaVideo.Columns.Add("Seleccionar", typeof(bool));
+            for(int i=0;i< tablaVideo.Rows.Count; i++)
+            {
+                if (laptop.Video.IdVideo == int.Parse(tablaVideo.Rows[i]["IdVideo"].ToString()))
+                    tablaVideo.Rows[i]["Seleccionar"] = true;
+                else
+                    tablaVideo.Rows[i]["Seleccionar"] = false;
+            }
+            dgvVideo.PrimaryGrid.DataSource = tablaVideo;
+
+
+            tablaProcesador.Columns.Add("Seleccionar", typeof(bool));
+            for (int i = 0; i < tablaProcesador.Rows.Count; i++)
+            {
+                if (laptop.Procesador.IdProcesador == int.Parse(tablaProcesador.Rows[i]["IdProcesador"].ToString()))
+                    tablaProcesador.Rows[i]["Seleccionar"] = true;
+                else
+                    tablaProcesador.Rows[i]["Seleccionar"] = false;
+            }
+            dgvProcesador.PrimaryGrid.DataSource = tablaProcesador;
+
+
+        }
         public bool llenarListaLaptops()
         {
             bool flag = false;
@@ -121,13 +249,19 @@ namespace Vistas
             laptop.Modelo.IdModelo = Convert.ToInt32(cmbModelo.SelectedValue.ToString());
             laptop.Modelo.NombreModelo = tablaModelo.Rows[j]["nombre"].ToString();
             laptop.TamanoPantalla = Double.Parse(txtPantalla.Text);
-            laptop.PartNumber = txtPantalla.Text;
+            laptop.PartNumber = txtPartNumber.Text;
             laptop.Garantia = (chbGarantia.Checked) ? 1 : 0;
             detalle.Laptop = laptop;
             detalle.Precio = Double.Parse(txtPrecio.Text);
             detalle.Cantidad = Convert.ToInt32(txtCantidad.Text);
             detalle.Series=null;
+            detalle.Windows = null;
+            detalle.Office = null;
+            detalle.Antivirus = null;
             BindingList<String> series = new BindingList<String>();
+            BindingList<String> windows = new BindingList<String>();
+            BindingList<String> offices = new BindingList<String>();
+            BindingList<String> antivirus = new BindingList<String>();
 
             for (int i = 0; i < dgvSerieFabrica.Rows.Count; i++)
             {
@@ -142,7 +276,46 @@ namespace Vistas
             }
             detalle.Series = series;
 
-            
+            for (int i = 0; i < dgvWindows.Rows.Count; i++)
+            {
+                if (!dgvWindows.Rows[i].IsNewRow)
+                {
+                    if (dgvWindows.Rows[i].Cells[1].Value != null)
+                    {
+                        String window = dgvWindows.Rows[i].Cells[1].Value.ToString();
+                        windows.Add(window);
+                    }
+                }
+            }
+            detalle.Windows = windows;
+
+            for (int i = 0; i < dgvOffice.Rows.Count; i++)
+            {
+                if (!dgvOffice.Rows[i].IsNewRow)
+                {
+                    if (dgvOffice.Rows[i].Cells[1].Value != null)
+                    {
+                        String office = dgvOffice.Rows[i].Cells[1].Value.ToString();
+                        offices.Add(office);
+                    }
+                }
+            }
+            detalle.Office = offices;
+
+            for (int i = 0; i < dgvAntivirus.Rows.Count; i++)
+            {
+                if (!dgvAntivirus.Rows[i].IsNewRow)
+                {
+                    if (dgvAntivirus.Rows[i].Cells[1].Value != null)
+                    {
+                        String antiviru = dgvAntivirus.Rows[i].Cells[1].Value.ToString();
+                        antivirus.Add(antiviru);
+                    }
+                }
+            }
+            detalle.Antivirus = antivirus;
+
+
             int filas = tablaProcesador.Rows.Count;
             for (int i = 0; i < filas; i++)
             {
@@ -222,6 +395,7 @@ namespace Vistas
                     {
                         licencia = new Licencia();
                         licencia.IdCategoria = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 4))).Value.ToString());
+                        licencia.IdModelo = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 6))).Value.ToString());
                         licencia.Categoria = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString();
                         laptop.Licencias.Add(licencia);
                         flag = true;
@@ -241,6 +415,7 @@ namespace Vistas
             tabControl1.SelectedTab = tabVideo;
             tabControl1.SelectedTab = tabDiscoDuro;
             tabControl1.SelectedTab = tabLicencia;
+            tabControl1.SelectedTab = tabClavesLicencias;
             tabControl1.SelectedTab = tabDetalle;
 
             //==============================================================================================
@@ -258,12 +433,8 @@ namespace Vistas
             }
             if (cantVideos > 1)
             {
-                MessageBox.Show("Solo seleccione una tarjeta de video");
-                return false;
-            }
-            else if (cantVideos == 0)
-            {
-                MessageBox.Show("Debe seleccionar una tarjeta de video");
+                MessageBox.Show("Solo seleccione una tarjeta de video", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabVideo;
                 return false;
             }
 
@@ -282,12 +453,13 @@ namespace Vistas
             }
             if (cantProcesadores > 1)
             {
-                MessageBox.Show("Solo seleccione un procesador");
+                MessageBox.Show("Solo seleccione un procesador", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabProcesador;
                 return false;
             }
             else if (cantProcesadores == 0)
             {
-                MessageBox.Show("Debe seleccionar un procesador");
+                MessageBox.Show("Debe seleccionar un procesador", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return false;
             }
 
@@ -306,12 +478,14 @@ namespace Vistas
             }
             if (cantDiscos > 2)
             {
-                MessageBox.Show("Solo puede seleccionar 2 discos");
+                MessageBox.Show("Solo puede seleccionar 2 discos", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabDiscoDuro;
                 return false;
             }
             else if (cantDiscos == 0)
             {
-                MessageBox.Show("Debe seleccionar almenos un disco duro");
+                MessageBox.Show("Debe seleccionar almenos un disco duro", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabDiscoDuro;
                 return false;
             }
 
@@ -330,12 +504,14 @@ namespace Vistas
             }
             if (cantMemorias > 4)
             {
-                MessageBox.Show("Solo puede seleccionar 4 memorias");
+                MessageBox.Show("Solo puede seleccionar 4 memorias", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabMemoria;
                 return false;
             }
             else if (cantMemorias == 0)
             {
-                MessageBox.Show("Debe seleccionar almenos una memoria");
+                MessageBox.Show("Debe seleccionar almenos una memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabMemoria;
                 return false;
             }
 
@@ -345,6 +521,7 @@ namespace Vistas
             int cantWindows = 0;
             int cantOffice = 0;
             int cantAntivirus = 0;
+
             for (int i = 0; i < filas; i++)
             {
                 if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value != null)
@@ -368,29 +545,137 @@ namespace Vistas
             }
             if (cantWindows > 1)
             {
-                MessageBox.Show("Solo puede seleccionar una licencia windows");
+                MessageBox.Show("Solo puede seleccionar una licencia windows", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabLicencia;
                 return false;
             }
             
             if (cantOffice > 1)
             {
-                MessageBox.Show("Solo puede seleccionar una licencia office");
+                MessageBox.Show("Solo puede seleccionar una licencia office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabLicencia;
                 return false;
             }
 
             if (cantAntivirus > 1)
             {
-                MessageBox.Show("Solo puede seleccionar una licencia de Antivirus");
+                MessageBox.Show("Solo puede seleccionar una licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabLicencia;
                 return false;
             }
 
-            
+            int aux;
+            int filasDgv;
             //==============================================================================================
+
+            if (cantWindows == 1)
+            {
+                for (int i = 0; i < dgvWindows.Rows.Count; i++)
+                {
+                    if (dgvWindows.Rows[i].Cells[1].Value == null)
+                    {
+                        if (!dgvWindows.Rows[i].IsNewRow)
+                        {
+                            dgvWindows.Rows.Remove(dgvWindows.Rows[i]);
+                            i = -1;
+                        }
+                    }
+                }
+                aux = int.Parse(txtCantidad.Text);
+                filasDgv = dgvWindows.Rows.Count - 1;
+
+                if (filasDgv < aux)
+                {
+                    MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para la licencia de Windows", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    tabControl1.SelectedTab = tabClavesLicencias;
+                    return false;
+                }
+                else if (filasDgv > aux)
+                {
+                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    tabControl1.SelectedTab = tabClavesLicencias;
+                    return false;
+                }
+
+            }
+
+
+            //==============================================================================================
+
+
+            if (cantOffice == 1)
+            {
+                for (int i = 0; i < dgvOffice.Rows.Count; i++)
+                {
+                    if (dgvOffice.Rows[i].Cells[1].Value == null)
+                    {
+                        if (!dgvOffice.Rows[i].IsNewRow)
+                        {
+                            dgvOffice.Rows.Remove(dgvOffice.Rows[i]);
+                            i = -1;
+                        }
+                    }
+                }
+                aux = int.Parse(txtCantidad.Text);
+                filasDgv = dgvOffice.Rows.Count - 1;
+
+                if (filasDgv < aux)
+                {
+                    MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para la licencia de Office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    tabControl1.SelectedTab = tabClavesLicencias;
+                    return false;
+                }
+                else if (filasDgv > aux)
+                {
+                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    tabControl1.SelectedTab = tabClavesLicencias;
+                    return false;
+                }
+            }
+
+
+            //==============================================================================================
+
+
+            if (cantAntivirus == 1)
+            {
+
+                for (int i = 0; i < dgvAntivirus.Rows.Count; i++)
+                {
+                    if (dgvAntivirus.Rows[i].Cells[1].Value == null)
+                    {
+                        if (!dgvAntivirus.Rows[i].IsNewRow)
+                        {
+                            dgvAntivirus.Rows.Remove(dgvAntivirus.Rows[i]);
+                            i = -1;
+                        }
+                    }
+                }
+                aux = int.Parse(txtCantidad.Text);
+                filasDgv = dgvAntivirus.Rows.Count - 1;
+
+                if (filasDgv < aux)
+                {
+                    MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para la licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    tabControl1.SelectedTab = tabClavesLicencias;
+                    return false;
+                }
+                else if (filasDgv > aux)
+                {
+                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    tabControl1.SelectedTab = tabClavesLicencias;
+                    return false;
+                }
+            }
+
+            //==============================================================================================
+
             string partNumber = txtPartNumber.Text;
             partNumber = partNumber.Trim();
             if (!(partNumber.Length > 0))
             {
-                MessageBox.Show("Ingrese un part number");
+                MessageBox.Show("Ingrese un part number", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
 
@@ -399,7 +684,8 @@ namespace Vistas
             pantalla = pantalla.Trim();
             if (!(pantalla.Length > 0))
             {
-                MessageBox.Show("Ingrese un tamaño de pantalla válida");
+                MessageBox.Show("Ingrese un tamaño de pantalla válida", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
 
@@ -408,7 +694,8 @@ namespace Vistas
             precio = precio.Trim();
             if (!(precio.Length > 0))
             {
-                MessageBox.Show("Ingrese un precio válido");
+                MessageBox.Show("Ingrese un precio válido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
             //==============================================================================================
@@ -424,17 +711,20 @@ namespace Vistas
                     }
                 }
             }
-            int aux = int.Parse(txtCantidad.Text);
-            int filasDgv = dgvSerieFabrica.Rows.Count - 1;
+
+            aux = int.Parse(txtCantidad.Text);
+            filasDgv = dgvSerieFabrica.Rows.Count - 1;
             
             if (filasDgv < aux)
             {
-                MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas");
+                MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
             else if (filasDgv > aux)
             {
-                MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más");
+                MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
             //==============================================================================================
@@ -512,8 +802,58 @@ namespace Vistas
        {
             if (dgvSerieFabrica.CurrentRow == null)
                 return;
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta serie", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                dgvSerieFabrica.Rows.Remove(dgvSerieFabrica.CurrentRow);
+            }
+        }
 
-            dgvSerieFabrica.Rows.Remove(dgvSerieFabrica.CurrentRow);
+        private void dgvWindows_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvWindows.CurrentRow == null)
+                return;
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta clave de windows", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                dgvWindows.Rows.Remove(dgvWindows.CurrentRow);
+            }
+
+        }
+
+        private void dgvWindows_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgvWindows.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void dgvOffice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvOffice.CurrentRow == null)
+                return;
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta clave de office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                dgvOffice.Rows.Remove(dgvOffice.CurrentRow);
+            }
+
+        }
+
+        private void dgvOffice_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgvOffice.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void dgvAntivirus_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvAntivirus.CurrentRow == null)
+                return;
+            if (MessageBox.Show("Estas seguro deseas Eliminar esta clave de antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                dgvAntivirus.Rows.Remove(dgvAntivirus.CurrentRow);
+            }
+
+        }
+
+        private void dgvAntivirus_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgvAntivirus.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

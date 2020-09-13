@@ -20,6 +20,7 @@ namespace Modelo
         private string ubicacion;
         private string observacion;
         private int estado;
+        private bool seleccionado;
 
         public Video()
         {
@@ -58,5 +59,6 @@ namespace Modelo
         public string Ubicacion { get => ubicacion; set => ubicacion = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public int Estado { get => estado; set => estado = value; }
+        public bool Seleccionado { get => seleccionado; set => seleccionado = value; }
     }
 }

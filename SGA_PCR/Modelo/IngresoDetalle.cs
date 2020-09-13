@@ -12,6 +12,9 @@ namespace Modelo
         private long idIngresoDetalle;
         private LC laptop;
         private BindingList<String> series;
+        private BindingList<String> windows;
+        private BindingList<String> office;
+        private BindingList<String> antivirus;
         private int cantidad;
         private double precio;
         private string caracteristica;
@@ -21,12 +24,18 @@ namespace Modelo
         public IngresoDetalle()
         {
             this.Series = new BindingList<string>();
+            this.Windows = new BindingList<string>();
+            this.Office = new BindingList<string>();
+            this.Antivirus = new BindingList<string>();
             this.Laptop = new LC();
         }
 
         public long IdIngresoDetalle { get => idIngresoDetalle; set => idIngresoDetalle = value; }
         public LC Laptop { get => laptop; set => laptop = value; }
         public BindingList<String> Series { get => series; set => series = value; }
+        public BindingList<string> Windows { get => windows; set => windows = value; }
+        public BindingList<string> Office { get => office; set => office = value; }
+        public BindingList<string> Antivirus { get => antivirus; set => antivirus = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public double Precio { get => precio; set => precio = value; }
         public string Caracteristica { get => caracteristica; set => caracteristica = value; }
@@ -44,6 +53,5 @@ namespace Modelo
         public string LaptopNombreModeloVideo { get => Laptop.NombreModeloVideo; set => Laptop.NombreModeloVideo = value; }
         public int LaptopCapacidadVideo { get => Laptop.CapacidadVideo; set => Laptop.CapacidadVideo = value; }
         public double LaptopTamanoPantalla { get => Laptop.TamanoPantalla; set => Laptop.TamanoPantalla = value; }
-
     }
 }

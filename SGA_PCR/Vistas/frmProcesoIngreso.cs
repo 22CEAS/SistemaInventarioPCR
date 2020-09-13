@@ -439,10 +439,12 @@ namespace Vistas
                     {
                         Licencia licTemp = new Licencia();
                         licTemp.IdModelo = licenciaTraido.IdModelo;
-                        bool exists = ingreso.Licencias.Any(x => x.IdModelo.Equals(licTemp.IdModelo));
+                        //bool exists = ingreso.Licencias.Any(x => x.IdModelo.Equals(licTemp.IdModelo));
+                        bool exists = false;
                         if (!(exists))
                         {
 
+                            licTemp.IdLicencia = ingreso.Licencias.Count + 1;
                             licTemp.Categoria = licenciaTraido.Categoria;
                             licTemp.IdModelo = licenciaTraido.IdModelo;
                             licTemp.Marca = licenciaTraido.Marca;
@@ -462,22 +464,30 @@ namespace Vistas
         {
             if (MessageBox.Show("Estas seguro deseas Eliminar esta licencia", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
+                int detTempId;
                 if (dgvLicencia.PrimaryGrid.Rows.Count > 0)
                 {
-                    int licModeloTempId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+                    detTempId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[7])).Value.ToString());
 
                     int indiceLC = 0;
                     foreach (Licencia licencia in ingreso.Licencias)
                     {
-                        if (licencia.IdModelo == licModeloTempId)
+                        if (licencia.IdLicencia == detTempId)
                         {
                             break;
                         }
                         indiceLC++;
                     }
                     ingreso.Licencias.RemoveAt(indiceLC);
+
+                    for (int i = 0; i < ingreso.Detalles.Count; i++)
+                    {
+                        ingreso.Licencias[i].IdLicencia = i + 1;
+                    }
+
                     dgvLicencia.PrimaryGrid.DataSource = ingreso.Licencias;
                 }
+
             }
         }
 
@@ -696,7 +706,7 @@ namespace Vistas
         private void dgvLicencia_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
         {
             int i = dgvLicencia.PrimaryGrid.ActiveRow.Index;
-            int licenciaModeloId;
+            int licenciaId;
             int aux;
             int cantidadLicencia;
             string myStr;
@@ -723,11 +733,11 @@ namespace Vistas
                 ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value = clave;
 
 
-                licenciaModeloId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+                licenciaId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[7])).Value.ToString());
 
                 for (int j = 0; j < ingreso.Discos.Count; j++)
                 {
-                    if (licenciaModeloId == ingreso.Licencias[j].IdModelo)
+                    if (licenciaId == ingreso.Licencias[j].IdLicencia)
                     {
                         ingreso.Licencias[j].Cantidad = cantidadLicencia;
                         ingreso.Licencias[j].Clave = clave;
@@ -735,6 +745,59 @@ namespace Vistas
                 }
             }
 
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            int detTempId;
+            IngresoDetalle det = new IngresoDetalle();
+            int indiceLC = 0;
+
+            if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
+            {
+                detTempId = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+
+                foreach (IngresoDetalle detalle in ingreso.Detalles)
+                {
+                    if (detalle.IdIngresoDetalle == detTempId)
+                        break;
+                    indiceLC++;
+                }
+            }
+
+            using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(ingreso.Detalles[indiceLC]))
+            {
+                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (dgvLaptopsSeleccionados.PrimaryGrid.Rows.Count > 0)
+                    {
+                        detTempId = int.Parse(((GridCell)(((GridRow)dgvLaptopsSeleccionados.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+
+                        int indiceLC2 = 0;
+                        foreach (IngresoDetalle detalle in ingreso.Detalles)
+                        {
+                            if (detalle.IdIngresoDetalle == detTempId)
+                            {
+                                break;
+                            }
+                            indiceLC2++;
+                        }
+
+                        ingreso.Detalles.RemoveAt(indiceLC2);
+                        for (int i = 0; i < ingreso.Detalles.Count; i++)
+                        {
+                            ingreso.Detalles[i].IdIngresoDetalle = i + 1;
+                        }
+
+                        dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                    }
+
+                    det = frm.DETALLE;
+                    det.IdIngresoDetalle = ingreso.Detalles.Count + 1;
+                    ingreso.Detalles.Add(det);
+                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                }
+            }
         }
     }
 }

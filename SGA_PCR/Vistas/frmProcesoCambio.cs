@@ -449,6 +449,16 @@ namespace Vistas
                 return;
             }
 
+            string observacion = txtObservacion.Text;
+            observacion = observacion.Trim();
+
+            if (observacion.Length == 0)
+            {
+                MessageBox.Show("No se puede grabar un Cambio si no\nexiste una observacion.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return;
+            }
+
             if (cambio.LaptopNuevo == null)
             {
                 MessageBox.Show("No se puede grabar un Cambio si no\nexiste una laptop con la que hacer el cambio.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
