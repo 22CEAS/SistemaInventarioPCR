@@ -38,6 +38,7 @@ namespace Modelo
             this.Discos = new BindingList<DiscoDuro>();
             this.Memorias = new BindingList<Memoria>();
             this.Licencias = new BindingList<Licencia>();
+            this.Observacion = "";
 
         }
 

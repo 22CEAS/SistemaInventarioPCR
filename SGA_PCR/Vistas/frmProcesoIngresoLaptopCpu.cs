@@ -361,6 +361,7 @@ namespace Vistas
                         memoria.IdMemoria = int.Parse(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 5))).Value.ToString());
                         memoria.IdModelo = int.Parse(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 6))).Value.ToString());
                         memoria.Modelo.NombreModelo = ((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                        memoria.Cantidad = 1;
                         laptop.Memorias.Add(memoria);
                         flag = true;
                     }
@@ -379,6 +380,7 @@ namespace Vistas
                         disco.IdDisco = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 5))).Value.ToString());
                         disco.IdTipo = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 6))).Value.ToString());
                         disco.TipoDisco = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                        disco.Cantidad = 1;
                         laptop.Discos.Add(disco);
                         flag = true;
                     }

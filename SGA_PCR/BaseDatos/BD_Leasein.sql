@@ -140,7 +140,9 @@ CREATE TABLE disco_duro(
 )ENGINE=INNODB;
 
 CREATE TABLE laptop_cpu(
-	idLC INT AUTO_INCREMENT PRIMARY KEY,
+	idLC INT  NOT NULL PRIMARY KEY,
+	idIngreso INT,
+	idIngresoDet INT,
 	codigo NVARCHAR(80) NOT NULL,
 	idModelo INT NOT NULL,
 	descripcion NVARCHAR(255) NOT NULL, -- VA A JALAR DE UNA TABLA
@@ -199,7 +201,10 @@ CREATE TABLE disco_LC(
 )ENGINE=INNODB;
 
 CREATE TABLE licencia(
-	  idLicencia INT AUTO_INCREMENT PRIMARY KEY,
+	  idLicencia INT  NOT NULL PRIMARY KEY,
+		idIngreso INT,
+		idIngresoDet INT,
+		idIngresoDetAccesorios INT,
     codigo NVARCHAR(80) NOT NULL,
 		idModelo INT NOT NULL,
 		idLC INT,
@@ -319,59 +324,6 @@ CREATE TABLE orden_compra(
     REFERENCES requerimiento_compra(idRO),
 		FOREIGN KEY (idProveedor)
     REFERENCES proveedor(idProveedor)
-)ENGINE=INNODB;
-
-
-CREATE TABLE ingreso(
-	idIngreso INT AUTO_INCREMENT PRIMARY KEY,
-	fecIngresa DATETIME NOT NULL,
-	idOC INT NOT NULL,
-	facturaIngreso NVARCHAR(255),
-	guiaIngreso NVARCHAR(255),
-	idProveedor INT NOT NULL,
-	total DOUBLE NOT NULL,
-	observacion NVARCHAR(255),
-	estado TINYINT NOT NULL,
-	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
-	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
-	usuario_ins NVARCHAR(100),
-	usuario_mod NVARCHAR(100),
-	FOREIGN KEY (idOC)
-	REFERENCES orden_compra(idOC),
-	FOREIGN KEY (idProveedor)
-	REFERENCES proveedor(idProveedor)
-)ENGINE=INNODB;
-
-
-CREATE TABLE ingreso_det(
-	idIngresoDet INT AUTO_INCREMENT PRIMARY KEY,
-	idIngreso INT NOT NULL,
-	idLC INT,
-	idProcesador INT,
-	idVideo INT,
-	idDisco1 INT,
-	cantidadDisco1 INT,
-	idDisco2 INT,
-	cantidadDisco2 INT,
-	idMemoria1 INT,
-	cantidadMemoria1 INT,
-	idMemoria2 INT,
-	cantidadMemoria2 INT,
-	idWindows INT,
-	idOffice INT,
-	idAntivirus INT,
-	caracteristicas  NVARCHAR(255),
-	subTotal DOUBLE NOT NULL,
-	observacion NVARCHAR(255),
-	estado TINYINT NOT NULL,
-	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
-	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
-	usuario_ins NVARCHAR(100),
-	usuario_mod NVARCHAR(100),
-	FOREIGN KEY (idIngreso)
-	REFERENCES ingreso(idIngreso),
-	FOREIGN KEY (idLC)
-	REFERENCES laptop_cpu(idLC)
 )ENGINE=INNODB;
 
 CREATE TABLE pedido(
@@ -574,4 +526,82 @@ CREATE TABLE observacion_deudas(
     REFERENCES laptop_cpu(idLC)
 )ENGINE=INNODB;
 
+CREATE TABLE ingreso(
+	idIngreso INT  NOT NULL PRIMARY KEY,
+	idOC INT NULL,
+	idTipoIngreso INT NOT NULL,
+	tipoIngreso NVARCHAR(255),
+	idProveedor INT NOT NULL,
+	razonSocial NVARCHAR(255),
+	ruc NVARCHAR(11),
+	facturaIngreso NVARCHAR(255),
+	guiaIngreso NVARCHAR(255),
+	fecIngresa DATETIME NOT NULL,
+	total DOUBLE NOT NULL,
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(100),
+	usuario_mod NVARCHAR(100),
+	FOREIGN KEY (idProveedor)
+	REFERENCES proveedor(idProveedor)
+)ENGINE=INNODB;
 
+
+CREATE TABLE ingreso_det(
+	idIngresoDet INT  NOT NULL PRIMARY KEY,
+	idIngreso INT NOT NULL,
+	idMarcaLC INT,
+	idModeloLC INT,
+	partNumber NVARCHAR(255),
+	pantalla DOUBLE,
+	garantia TINYINT,
+	cantidad INT,
+	subTotal DOUBLE NOT NULL,
+	idProcesador INT,
+	idVideo INT,
+	idDisco1 INT,
+	cantidadDisco1 INT,
+	idDisco2 INT,
+	cantidadDisco2 INT,
+	idMemoria1 INT,
+	cantidadMemoria1 INT,
+	idMemoria2 INT,
+	cantidadMemoria2 INT,
+	idMemoria3 INT,
+	cantidadMemoria3 INT,
+	idModeloWindows INT,
+	idModeloOffice INT,
+	idModeloAntivirus INT,
+	caracteristicas  NVARCHAR(255),
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(100),
+	usuario_mod NVARCHAR(100),
+	FOREIGN KEY (idIngreso)
+	REFERENCES ingreso(idIngreso)
+)ENGINE=INNODB;
+
+
+CREATE TABLE ingreso_det_accesorios(
+	idIngresoDetAccesorios INT  NOT NULL PRIMARY KEY,
+	idIngreso INT NOT NULL,
+	idCategoria INT,
+	idModeloLicencia INT,
+	clave  NVARCHAR(255),
+	idDisco INT,
+	idMemoria INT,
+	cantidad INT,
+	subTotal DOUBLE NOT NULL,
+	observacion NVARCHAR(255),
+	estado TINYINT NOT NULL,
+	fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+	fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+	usuario_ins NVARCHAR(100),
+	usuario_mod NVARCHAR(100),
+	FOREIGN KEY (idIngreso)
+	REFERENCES ingreso(idIngreso)
+)ENGINE=INNODB;

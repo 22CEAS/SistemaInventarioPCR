@@ -46,7 +46,7 @@ namespace Vistas
             dgvLicencia.PrimaryGrid.DataSource = tablaLicencias; ;
         }
 
-        public bool llenarListaMemorias()
+        public bool llenarListaLicencias()
         {
             bool flag = false;
             int filas = tablaLicencias.Rows.Count;
@@ -54,15 +54,18 @@ namespace Vistas
             {
                 if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value != null)
                 {
-                    licencia = new Licencia();
-                    licencia.IdCategoria = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 4))).Value.ToString());
-                    licencia.Categoria = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                    licencia.Marca = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 2))).Value.ToString();
-                    licencia.Version = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 3))).Value.ToString();
-                    licencia.IdModelo = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 6))).Value.ToString());
-                    licencia.Cantidad = 1;
-                    licencias.Add(licencia);
-                    flag = true;
+                    if (Convert.ToBoolean(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        licencia = new Licencia();
+                        licencia.IdCategoria = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 4))).Value.ToString());
+                        licencia.Categoria = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                        licencia.Marca = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 2))).Value.ToString();
+                        licencia.Version = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 3))).Value.ToString();
+                        licencia.IdModelo = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 6))).Value.ToString());
+                        licencia.Cantidad = 1;
+                        licencias.Add(licencia);
+                        flag = true;
+                    }
                 }
             }
             return flag;
@@ -72,7 +75,7 @@ namespace Vistas
         {
             if (MessageBox.Show("Estas seguro deseas Agregar estas licencias", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                if (llenarListaMemorias())//Si entra es porque se ha seleccionado almenos solo
+                if (llenarListaLicencias())//Si entra es porque se ha seleccionado almenos solo
                 {
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     this.Close();

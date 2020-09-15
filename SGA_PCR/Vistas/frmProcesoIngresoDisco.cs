@@ -54,13 +54,16 @@ namespace Vistas
             {
                 if (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value != null)
                 {
-                    disco = new DiscoDuro();
-                    disco.IdDisco = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 5))).Value.ToString());
-                    disco.TipoDisco = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                    disco.Capacidad = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                    disco.Cantidad = 1;
-                    discos.Add(disco);
-                    flag = true;
+                    if (Convert.ToBoolean(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        disco = new DiscoDuro();
+                        disco.IdDisco = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 5))).Value.ToString());
+                        disco.TipoDisco = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                        disco.Capacidad = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+                        disco.Cantidad = 1;
+                        discos.Add(disco);
+                        flag = true;
+                    }
                 }
             }
             return flag;

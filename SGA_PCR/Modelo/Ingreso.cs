@@ -11,12 +11,14 @@ namespace Modelo
     {
         private int idIngreso;
         private int idTipoIngreso;//Compra o arrendamiento
+        private string tipoIngreso;
         private int idProveedor;
         private string ruc;
         private string razonSocial;
         private string factura;
         private string guia;
         private DateTime fechaIngreso;
+        private Double total;
         private string observacion;
         private int estado;
         private Usuario usuarioRegistro;
@@ -27,6 +29,8 @@ namespace Modelo
 
         public Ingreso()
         {
+            Observacion = "";
+            Estado = 1;
             Memorias = new BindingList<Memoria>();
             Detalles = new BindingList<IngresoDetalle>();
             Licencias = new BindingList<Licencia>();
@@ -35,6 +39,7 @@ namespace Modelo
 
         public int IdIngreso { get => idIngreso; set => idIngreso = value; }
         public int IdTipoIngreso { get => idTipoIngreso; set => idTipoIngreso = value; }
+        public string TipoIngreso { get => tipoIngreso; set => tipoIngreso = value; }
         public int IdProveedor { get => idProveedor; set => idProveedor = value; }
         public string Ruc { get => ruc; set => ruc = value; }
         public string RazonSocial { get => razonSocial; set => razonSocial = value; }
@@ -48,5 +53,6 @@ namespace Modelo
         public BindingList<Memoria> Memorias { get => memorias; set => memorias = value; }
         public BindingList<Licencia> Licencias { get => licencias; set => licencias = value; }
         public BindingList<DiscoDuro> Discos { get => discos; set => discos = value; }
+        public double Total { get => total; set => total = value; }
     }
 }

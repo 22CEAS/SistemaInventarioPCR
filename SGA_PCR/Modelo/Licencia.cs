@@ -18,6 +18,7 @@ namespace Modelo
         private int cantidad;
         private string clave;
         private DateTime fechaActivacion;
+        private Double precio;
         private string ubicacion;
         private string observacion;
         private string estado;
@@ -25,6 +26,7 @@ namespace Modelo
         public Licencia()
         {
             this.Modelo = new Modelo();
+            this.Observacion = "";
         }
 
         public Licencia(int idLicencia, string codigo, int idModelo, Modelo modelo, int idLC, string clave, DateTime fechaActivacion, string ubicacion, string observacion, string estado)
@@ -56,5 +58,6 @@ namespace Modelo
         public int IdCategoria { get => idCategoria; set => idCategoria = value; }
         public string Categoria { get => categoria; set => categoria = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
+        public double Precio { get => precio; set => precio = value; }
     }
 }

@@ -193,8 +193,10 @@ $$ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_laptop_cpu`(
+	IN _idIngreso INT,
+	IN _idIngresoDet INT,
 	IN _idModelo INT,
-	IN _descripcion DOUBLE,
+	IN _descripcion NVARCHAR(250),
 	IN _tamanoPantalla DOUBLE,
 	IN _idProcesador INT,
 	IN _idVideo INT,
@@ -210,12 +212,43 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_laptop_cpu`(
 )
 BEGIN
 	SET @codigo=(SELECT CONCAT("PCR-LAP",IFNULL( MAX( idLC ) , 0 )+1) from laptop_cpu);
-	INSERT INTO laptop_cpu (codigo,idModelo,descripcion,tamanoPantalla,idProcesador,idVideo,partNumber,serieFabrica,garantia,fecInicioSeguro,fecFinSeguro,ubicacion,observacion,estado,usuario_ins) values
-	(@codigo,_idModelo,_descripcion,_tamanoPantalla,_idProcesador,_idVideo,_partNumber,_serieFabrica,_garantia,_fecInicioSeguro,_fecFinSeguro,_ubicacion,_observacion,2,_usuario_ins);
+	SET @_idLC=(SELECT IFNULL( MAX( idLC ) , 0 )+1 FROM laptop_cpu);
+	INSERT INTO laptop_cpu (idLC,codigo,idIngreso,idIngresoDet,idModelo,descripcion,tamanoPantalla,idProcesador,idVideo,partNumber,serieFabrica,garantia,fecInicioSeguro,fecFinSeguro,ubicacion,observacion,estado,usuario_ins) values
+	(@_idLC,@codigo,_idIngreso,_idIngresoDet,_idModelo,_descripcion,_tamanoPantalla,_idProcesador,_idVideo,_partNumber,_serieFabrica,_garantia,_fecInicioSeguro,_fecFinSeguro,_ubicacion,_observacion,2,_usuario_ins);
 	COMMIT;
-    SET _idLC = last_insert_id();
+    SET _idLC = @_idLC;
 END
-$$ DELIMITER ;
+$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria_LC_ingreso`(
+	IN _idMemoria INT,
+	IN _idLC INT,
+	IN _cantidad INT,
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
+	INSERT INTO memoria_lc (idMemoria, idLC, cantidad, usuario_ins) VALUES (_idMemoria, _idLC, _cantidad, _usuario_ins) ; 
+END
+$$
+DELIMITER ;
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC_ingreso`(
+	IN _idDisco INT,
+	IN _idLC INT,
+	IN _cantidad INT,
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
+	INSERT INTO disco_LC (idDisco,idLC,cantidad,usuario_ins) values	(_idDisco,_idLC,_cantidad,_usuario_ins);
+END
+$$
+DELIMITER ;
+
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_seguro_laptop_cpu`(
@@ -307,9 +340,50 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia`(
 	IN _usuario_ins NVARCHAR(100)
 )
 BEGIN
-	SET @codigo=(SELECT CONCAT("LIC-",MAX(idLicencia)+1) from licencia);
-	INSERT INTO licencia (codigo,idModelo,idLC,clave,fechaActivacion,ubicacion,observacion,estado,usuario_ins) values
-	(@codigo,_idModelo,_idLC,_clave,_fechaActivacion,_ubicacion,_observacion,2,_usuario_ins);
+	SET @_codigo=(SELECT CONCAT("LIC-",IFNULL( MAX(idLicencia) , 0 )+1) from licencia);
+	SET @_idLicencia=(SELECT IFNULL( MAX(idLicencia) , 0 )+1 FROM licencia);
+	INSERT INTO licencia (idLicencia,codigo,idModelo,idLC,clave,fechaActivacion,ubicacion,observacion,estado,usuario_ins) values
+	(@_idLicencia,@_codigo,_idModelo,_idLC,_clave,_fechaActivacion,_ubicacion,_observacion,2,_usuario_ins);
+END
+$$ DELIMITER ;
+	
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia_det`(
+	IN _idIngreso INT,
+	IN _idIngresoDet INT,
+	IN _idModelo INT,
+	IN _idLC INT,
+	IN _clave NVARCHAR(80), 
+	IN _fechaActivacion DATETIME, 
+	IN _ubicacion NVARCHAR(80),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
+	SET @_codigo=(SELECT CONCAT("LIC-",IFNULL( MAX(idLicencia) , 0 )+1) from licencia);
+	SET @_idLicencia=(SELECT IFNULL( MAX(idLicencia) , 0 )+1 FROM licencia);
+	INSERT INTO licencia (idLicencia,codigo,idIngreso,idIngresoDet,idModelo,idLC,clave,fechaActivacion,ubicacion,observacion,estado,usuario_ins) values
+	(@_idLicencia,@_codigo,_idIngreso,_idIngresoDet,_idModelo,_idLC,_clave,_fechaActivacion,_ubicacion,_observacion,1,_usuario_ins);
+END
+$$ DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_licencia_det_accesorios`(
+	IN _idIngreso INT,
+	IN _idIngresoDetAccesorios INT,
+	IN _idModelo INT,
+	IN _idLC INT,
+	IN _clave NVARCHAR(80), 
+	IN _fechaActivacion DATETIME, 
+	IN _ubicacion NVARCHAR(80),
+	IN _observacion NVARCHAR(255),
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
+	SET @_codigo=(SELECT CONCAT("LIC-",IFNULL( MAX(idLicencia) , 0 )+1) from licencia);
+	SET @_idLicencia=(SELECT IFNULL( MAX(idLicencia) , 0 )+1 FROM licencia);
+	INSERT INTO licencia (idLicencia,codigo,idIngreso,idIngresoDetAccesorios,idModelo,idLC,clave,fechaActivacion,ubicacion,observacion,estado,usuario_ins) values
+	(@_idLicencia,@_codigo,_idIngreso,_idIngresoDetAccesorios,_idModelo,_idLC,_clave,_fechaActivacion,_ubicacion,_observacion,2,_usuario_ins);
 END
 $$ DELIMITER ;
 
@@ -585,59 +659,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_orden_compra`(
 BEGIN
 	INSERT INTO orden_compra (idRO,idProveedor,observacion,estado,usuario_ins) values
 	(_idRO,_idProveedor,_observacion,_estado,_usuario_ins);
-END
-$$ DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso`(
-	IN _idOC INT,
-	IN _fecIngresa DATETIME,
-	IN _facturaIngreso NVARCHAR(255),
-	IN _guiaIngreso NVARCHAR(255),
-	IN _idProveedor INT,
-	IN _total DOUBLE,
-	IN _observacion NVARCHAR(255),
-    IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100), 
-	OUT _idIngreso INT
-)
-BEGIN
-	INSERT INTO ingreso (idOC,idProveedor,fecIngresa,facturaIngreso,guiaIngreso,total,observacion,estado,usuario_ins) values
-	(_idOC,_idProveedor,_fecIngresa,_facturaIngreso,_guiaIngreso,_total,_observacion,_estado,_usuario_ins);
-	COMMIT;
-    SET _idIngreso = last_insert_id();
-END
-$$ DELIMITER ;
-
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det`(
-	IN _idIngreso INT,
-	IN _idLC INT,
-	IN _idProcesador INT,
-	IN _idVideo INT,
-	IN _idDisco1 INT,
-	IN _cantidadDisco1 INT,
-	IN _idDisco2 INT,
-	IN _cantidadDisco2 INT,
-	IN _idMemoria1 INT,
-	IN _cantidadMemoria1 INT,
-	IN _idMemoria2 INT,
-	IN _cantidadMemoria2 INT,
-	IN _idWindows INT,
-	IN _idOffice INT,
-	IN _idAntivirus INT,
-	IN _caracteristicas NVARCHAR(255),
-	IN _subTotal DOUBLE,
-	IN _observacion NVARCHAR(255),
-    IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100)
-)
-BEGIN
-	INSERT INTO ingreso_det (idIngreso,idLC,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,subTotal,observacion,estado,usuario_ins) values
-	(_idIngreso,_idLC,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_subTotal,_observacion,_estado,_usuario_ins);
 END
 $$ DELIMITER ;
 
@@ -1247,6 +1268,105 @@ BEGIN
 		estado=_estado,
 		usuario_mod=_usuario_mod
 	WHERE idCambio=_idCambio; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso`(
+	IN _idOC INT,
+	IN _idTipoIngreso INT,
+	IN _tipoIngreso NVARCHAR(255),
+	IN _idProveedor INT,
+	IN _razonSocial NVARCHAR(255),
+	IN _ruc NVARCHAR(11),
+	IN _facturaIngreso NVARCHAR(255),
+	IN _guiaIngreso NVARCHAR(255),
+	IN _fecIngresa DATETIME,
+	IN _total DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idIngreso INT
+)
+BEGIN
+	SET @_idIngreso=(SELECT IFNULL( MAX(idIngreso) , 0 )+1 FROM ingreso);
+	INSERT INTO ingreso (idIngreso,idOC,idTipoIngreso,tipoIngreso,idProveedor,razonSocial,ruc,facturaIngreso,guiaIngreso,fecIngresa,total,observacion,estado,usuario_ins) values
+	(@_idIngreso,_idOC,_idTipoIngreso,_tipoIngreso,_idProveedor,_razonSocial,_ruc,_facturaIngreso,_guiaIngreso,_fecIngresa,_total,_observacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idIngreso = @_idIngreso;
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_ingreso_det`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det`(
+	IN _idIngreso INT,
+	IN _idMarcaLC INT,
+	IN _idModeloLC INT,
+	IN _partNumber NVARCHAR(255),
+	IN _pantalla DOUBLE,
+	IN _garantia TINYINT,
+	IN _cantidad INT,
+	IN _subTotal DOUBLE,
+	IN _idProcesador INT,
+	IN _idVideo INT,
+	IN _idDisco1 INT,
+	IN _cantidadDisco1 INT,
+	IN _idDisco2 INT,
+	IN _cantidadDisco2 INT,
+	IN _idMemoria1 INT,
+	IN _cantidadMemoria1 INT,
+	IN _idMemoria2 INT,
+	IN _cantidadMemoria2 INT,
+	IN _idMemoria3 INT,
+	IN _cantidadMemoria3 INT,
+	IN _idModeloWindows INT,
+	IN _idModeloOffice INT,
+	IN _idModeloAntivirus INT,
+	IN _caracteristicas NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idIngresoDet INT
+)
+BEGIN
+	SET @_idIngresoDet=(SELECT IFNULL( MAX(idIngresoDet) , 0 )+1 FROM ingreso_det);
+	INSERT INTO ingreso_det (idIngresoDet,idIngreso,idMarcaLC,idModeloLC,partNumber,pantalla,garantia,cantidad,subTotal,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idMemoria3,cantidadMemoria3,idModeloWindows,idModeloOffice,idModeloAntivirus,caracteristicas,observacion,estado,usuario_ins) values
+	(@_idIngresoDet,_idIngreso,_idMarcaLC,_idModeloLC,_partNumber,_pantalla,_garantia,_cantidad,_subTotal,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idMemoria3,_cantidadMemoria3,_idModeloWindows,_idModeloOffice,_idModeloAntivirus,_caracteristicas,_observacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idIngresoDet = @_idIngresoDet;
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_ingreso_det_accesorios`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso_det_accesorios`(
+	IN _idIngreso INT,
+	IN _idCategoria INT,
+	IN _idModeloLicencia INT,
+	IN _clave NVARCHAR(255),
+	IN _idDisco INT,
+	IN _idMemoria INT,
+	IN _cantidad INT,
+	IN _subTotal DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idIngresoDetAccesorios INT
+)
+BEGIN
+	SET @_idIngresoDetAccesorios=(SELECT IFNULL( MAX(idIngresoDetAccesorios) , 0 )+1 FROM ingreso_det_accesorios);
+	INSERT INTO ingreso_det_accesorios (idIngresoDetAccesorios,idIngreso,idCategoria,idModeloLicencia,clave,idDisco,idMemoria,cantidad,subTotal,observacion,estado,usuario_ins) values
+	(@_idIngresoDetAccesorios,_idIngreso,_idCategoria,_idModeloLicencia,_clave,_idDisco,_idMemoria,_cantidad,_subTotal,_observacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idIngresoDetAccesorios = @_idIngresoDetAccesorios;
 END
 $$ 
 DELIMITER ;

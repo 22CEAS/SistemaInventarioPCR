@@ -23,11 +23,14 @@ namespace Modelo
 
         public IngresoDetalle()
         {
+            this.Observacion = "";
+            this.Caracteristica = "";
             this.Series = new BindingList<string>();
             this.Windows = new BindingList<string>();
             this.Office = new BindingList<string>();
             this.Antivirus = new BindingList<string>();
             this.Laptop = new LC();
+            this.Estado = 1;
         }
 
         public long IdIngresoDetalle { get => idIngresoDetalle; set => idIngresoDetalle = value; }

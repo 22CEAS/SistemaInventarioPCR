@@ -555,8 +555,8 @@ namespace Vistas
                 hoja_trabajo.Cells[i + 8, 2] = det.MarcaLC;
                 hoja_trabajo.Cells[i + 8, 3] = det.ModeloLC;
                 hoja_trabajo.Cells[i + 8, 4] = det.Observacion;
-                hoja_trabajo.Cells[i + 8, 5] = (det.Danado==1) ? "Equipo Dañado" : "Equipo Sin Daño";
-                hoja_trabajo.Cells[i + 8, 6] = (det.Cobrar == 1) ? "Pagará Cliente" : "No Pagará Cliente";
+                hoja_trabajo.Cells[i + 8, 5] = (det.Cobrar == 1) ? "Pagará Cliente" : "No Pagará Cliente"; 
+                hoja_trabajo.Cells[i + 8, 6] = (det.Danado == 1) ? "Equipo Dañado" : "Equipo Sin Daño";
                 i++;
             }
             montaCabeceras(1, ref hoja_trabajo, grd, nombreCabecera);

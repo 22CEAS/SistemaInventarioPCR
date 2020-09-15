@@ -19,6 +19,7 @@ namespace Modelo
         private int idTipo;
         private string tipo;
         private int cantidad;
+        private Double precio;
         private string ubicacion;
         private string observacion;
         private int estado;
@@ -65,5 +66,6 @@ namespace Modelo
         public string Ubicacion { get => ubicacion; set => ubicacion = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public int Estado { get => estado; set => estado = value; }
+        public double Precio { get => precio; set => precio = value; }
     }
 }

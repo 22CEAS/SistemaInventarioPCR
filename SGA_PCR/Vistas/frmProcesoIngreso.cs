@@ -76,18 +76,84 @@ namespace Vistas
 
             ingreso.IdProveedor = Convert.ToInt32(cmbProveedor.SelectedValue.ToString());
             ingreso.IdTipoIngreso = Convert.ToInt32(cmbTipoIngreso.SelectedValue.ToString());
+
             int i = cmbProveedor.SelectedIndex;
             if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
             {
                 ingreso.Ruc = tablaProveedor.Rows[i]["ruc"].ToString();
                 ingreso.RazonSocial = tablaProveedor.Rows[i]["razonSocial"].ToString();
             }
+
+            i = cmbTipoIngreso.SelectedIndex;
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                ingreso.TipoIngreso = tablaIngresoTipo.Rows[i]["descripcion"].ToString();
+            }
+
             ingreso.FechaIngreso = dtpFechaIngreso.Value;
             ingreso.Factura = txtFactura.Text;
             ingreso.Guia = txtGuia.Text;
 
         }
 
+        public bool ValidarDatos()
+        {
+
+            if (ingreso.Detalles.Count == 0 && ingreso.Discos.Count == 0 && ingreso.Memorias.Count == 0 && ingreso.Licencias.Count == 0)
+            {
+                MessageBox.Show("No se puede grabar un Ingreso si no\nexisten laptops, memorias, disco o licencias seleccionadas.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return true;
+            }
+
+            if (ingreso.Factura.Length==0)
+            {
+                MessageBox.Show("No se puede grabar un Ingreso si\nel número de factura está vacia.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return true;
+            }
+
+            for (int i = 0; i < ingreso.Discos.Count; i++)
+            {
+                if (ingreso.Discos[i].Precio == 0.00)
+                {
+                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de los Discos es 0", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+
+
+            for (int i = 0; i < ingreso.Memorias.Count; i++)
+            {
+                if (ingreso.Memorias[i].Precio == 0.00)
+                {
+                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de las Memorias es 0", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+
+
+            for (int i = 0; i < ingreso.Licencias.Count; i++)
+            {
+                if (ingreso.Licencias[i].Precio == 0.00)
+                {
+                    MessageBox.Show("No se puede grabar un Ingreso si uno de los precios de las Licencias es 0", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return true;
+                }
+                if (ingreso.Licencias[i].Clave.Length==0)
+                {
+                    MessageBox.Show("No se puede grabar un Ingreso si una de las claves de las Licencias está vacía.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+
+            return false;
+
+        }
 
         public void estadoComponentes(TipoVista estado)
         {
@@ -162,9 +228,6 @@ namespace Vistas
                     btnImprimir.Enabled = true;
                     btnEditar.Enabled = true;
                     btnGrabar.Enabled = false;
-                    //limpiarComponentes();
-                    //alquiler = new Alquiler();
-                    //limpiarComponentes();
                     break;
                 case TipoVista.Modificar:
                     cmbProveedor.Enabled = true;
@@ -187,8 +250,6 @@ namespace Vistas
                     btnImprimir.Enabled = false;
                     btnEditar.Enabled = false;
                     btnGrabar.Enabled = true;
-                    //limpiarComponentes();
-                    //alquiler = new Alquiler();
                     break;
                 case TipoVista.Vista:
                     cmbProveedor.Enabled = false;
@@ -342,6 +403,7 @@ namespace Vistas
                             memTemp.TipoMemoria = memoriaTraido.TipoMemoria;
                             memTemp.Capacidad = memoriaTraido.Capacidad;
                             memTemp.Cantidad = 1;
+                            memTemp.Precio = 0.00;
                             ingreso.Memorias.Add(memTemp);
                         }
                     }
@@ -394,6 +456,7 @@ namespace Vistas
                             disTemp.TipoDisco = discoTraido.TipoDisco;
                             disTemp.Capacidad = discoTraido.Capacidad;
                             disTemp.Cantidad = 1;
+                            disTemp.Precio = 0.00;
                             ingreso.Discos.Add(disTemp);
                         }
                     }
@@ -451,6 +514,7 @@ namespace Vistas
                             licTemp.Version = licenciaTraido.Version;
                             licTemp.Clave = licenciaTraido.Clave;
                             licTemp.Cantidad = licenciaTraido.Cantidad;
+                            licTemp.Precio = 0.00;
 
                             ingreso.Licencias.Add(licTemp);
                         }
@@ -480,7 +544,7 @@ namespace Vistas
                     }
                     ingreso.Licencias.RemoveAt(indiceLC);
 
-                    for (int i = 0; i < ingreso.Detalles.Count; i++)
+                    for (int i = 0; i < ingreso.Licencias.Count; i++)
                     {
                         ingreso.Licencias[i].IdLicencia = i + 1;
                     }
@@ -505,7 +569,7 @@ namespace Vistas
             }
         }
 
-        public void LlenarDatosAlquiler()
+        public void LlenarDatosIngreso()
         {
             cmbProveedor.SelectedValue = ingreso.IdProveedor;
             cmbTipoIngreso.SelectedValue = ingreso.IdTipoIngreso;
@@ -540,7 +604,7 @@ namespace Vistas
 
                 }
                 txtNroIngreso.Text = ingreso.IdIngreso.ToString();
-                LlenarDatosAlquiler();
+                LlenarDatosIngreso();
                 dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
             }
             else
@@ -639,14 +703,51 @@ namespace Vistas
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            string numIngreso = txtNroIngreso.Text;
+            ObtenerDatosIngreso();
+            if (ValidarDatos())
+            {
+                return;
+            }
+
+            if (numIngreso.Length == 0)
+            {
+                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    int idIngreso = ingresoDA.InsertarIngreso(ingreso, this.nombreUsuario);
+
+                    if (idIngreso == -1)
+                    {
+                        MessageBox.Show("Hubo error en Registrar el Ingreso, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                        return;
+                    }
+                    MessageBox.Show("Se guradó el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    ingreso.IdIngreso = idIngreso;
+                    txtNroIngreso.Text = idIngreso.ToString();
+                    estadoComponentes(TipoVista.Guardar);
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                {
+                    //ingresoDA.ModificarIngreso(ingreso, this.nombreUsuario);
+                    MessageBox.Show("Se Modifico el Ingreso N° :" + txtNroIngreso.Text + " con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    estadoComponentes(TipoVista.Guardar);
+                }
+            }
+
 
         }
-        
+
         private void dgvMemorias_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
         {
             int i = dgvMemorias.PrimaryGrid.ActiveRow.Index;
             int memoriaId;
             int aux;
+            double auxDouble;
+            double precio;
             int cantidadMemoria;
             string myStr;
             if (!(i == -1))
@@ -663,11 +764,27 @@ namespace Vistas
                 cantidadMemoria= myStr.Length > 0 ? int.Parse(myStr) : 1;
                 ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value = cantidadMemoria;
 
+                myStr = ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[4])).Value.ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    auxDouble = double.Parse(myStr);
+                    if (auxDouble < 0) myStr = "0.00";
+                }
+                else myStr = "0";
+                precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
+                ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[4])).Value = precio;
+
                 memoriaId = int.Parse(((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[3])).Value.ToString());
 
                 for (int j = 0; j < ingreso.Memorias.Count; j++)
                 {
-                    if (memoriaId == ingreso.Memorias[j].IdMemoria) ingreso.Memorias[j].Cantidad = cantidadMemoria;
+                    if (memoriaId == ingreso.Memorias[j].IdMemoria)
+                    {
+                        ingreso.Memorias[j].Cantidad = cantidadMemoria;
+                        ingreso.Memorias[j].Precio = precio;
+                    }
                 }
             }
 
@@ -678,6 +795,8 @@ namespace Vistas
             int i = dgvDisco.PrimaryGrid.ActiveRow.Index;
             int discoId;
             int aux;
+            double auxDouble;
+            double precio;
             int cantidadDisco;
             string myStr;
             if (!(i == -1))
@@ -694,21 +813,42 @@ namespace Vistas
                 cantidadDisco = myStr.Length > 0 ? int.Parse(myStr) : 1;
                 ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value = cantidadDisco;
 
+
+                myStr = ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[5])).Value.ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    auxDouble = double.Parse(myStr);
+                    if (auxDouble < 0) myStr = "0.00";
+                }
+                else myStr = "0";
+                precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
+                ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[5])).Value = precio;
+
+
                 discoId = int.Parse(((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[3])).Value.ToString());
 
                 for (int j = 0; j < ingreso.Discos.Count; j++)
                 {
-                    if (discoId == ingreso.Discos[j].IdDisco) ingreso.Discos[j].Cantidad = cantidadDisco;
+                    if (discoId == ingreso.Discos[j].IdDisco)
+                    {
+                        ingreso.Discos[j].Cantidad = cantidadDisco;
+                        ingreso.Discos[j].Precio = precio;
+                    }
                 }
             }
 
         }
+
         private void dgvLicencia_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
         {
             int i = dgvLicencia.PrimaryGrid.ActiveRow.Index;
             int licenciaId;
             int aux;
             int cantidadLicencia;
+            double auxDouble;
+            double precio;
             string myStr;
             string clave="";
             if (!(i == -1))
@@ -725,12 +865,26 @@ namespace Vistas
                 cantidadLicencia = myStr.Length > 0 ? int.Parse(myStr) : 1;
                 ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[4])).Value = cantidadLicencia;
 
+
                 if (((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value != null)
                 {
                     clave = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value.ToString();
                     clave = clave.Trim();
                 }
                 ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value = clave;
+
+
+                myStr = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[8])).Value.ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    auxDouble = double.Parse(myStr);
+                    if (auxDouble < 0) myStr = "0.00";
+                }
+                else myStr = "0";
+                precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
+                ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[8])).Value = precio;
 
 
                 licenciaId = int.Parse(((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[7])).Value.ToString());
@@ -741,6 +895,7 @@ namespace Vistas
                     {
                         ingreso.Licencias[j].Cantidad = cantidadLicencia;
                         ingreso.Licencias[j].Clave = clave;
+                        ingreso.Licencias[j].Precio = precio;
                     } 
                 }
             }

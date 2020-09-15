@@ -115,6 +115,7 @@ COMMIT;
 BEGIN;
 LOCK TABLES `bd_leasein`.`proveedor` WRITE;
 DELETE FROM `bd_leasein`.`proveedor`;
+INSERT INTO `bd_leasein`.`proveedor` (`idProveedor`,`ruc`,`razonSocial`,`nombreComercial`,`abreviacion`,`direccion`,`telefono`,`fax`,`email`,`observacion`,`nombreContacto`,`telefonoContacto`,`emailContacto`,`estado`,`fec_ins`,`fec_mod`,`usuario_ins`,`usuario_mod`) VALUES (1, '20601329255', 'PROVEEDOR 1', 'PROVEEDOR 1', 'PROV1', '123456', '123456', '', 'corre@gmail.com', '', 'Carlos', '123456', 'corre@gmail.com', 1, '2020-09-09 20:21:19', '2020-09-09 20:21:19', 'CEAS', NULL),(2, '20601329245', 'PROVEEDOR 2', 'PROVEEDOR 2', 'PROV2', 'Direccion', '12365646444', '', 'correo@gmail.com', '', 'PROVEEDOR 2', '12365646444', 'correo@gmail.com', 1, '2020-09-10 13:36:18', '2020-09-10 13:36:18', 'CEAS', NULL);
 UNLOCK TABLES;
 COMMIT;
 BEGIN;

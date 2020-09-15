@@ -29,6 +29,7 @@ namespace Modelo
             this.Cantidad = 0;
             this.estado = 1;
             this.Ubicacion = "ALMACEN";
+            this.IdVideo = 0;
         }
 
         public Video(int idVideo, string codigo, int idModelo, Modelo modelo, int idCapacidad, int capacidad, int idTipo, string tipo, int cantidad, string ubicacion, string observacion, int estado)
