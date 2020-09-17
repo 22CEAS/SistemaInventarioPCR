@@ -313,10 +313,11 @@
             this.dgvAlquiler.TabIndex = 135;
             this.dgvAlquiler.Text = "Tabla Alquiler";
             // 
-            // frmBuscarAlquiler
+            // frmProcesoAlquilerBuscar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(882, 606);
             this.Controls.Add(this.dgvAlquiler);
             this.Controls.Add(this.panelNumOP);
@@ -327,11 +328,11 @@
             this.Controls.Add(this.rbtnNumAlquiler);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmBuscarAlquiler";
+            this.Name = "frmProcesoAlquilerBuscar";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBuscarAlquiler";
+            this.Text = "Buscar Alquiler";
             this.panelNumOP.ResumeLayout(false);
             this.panelNumOP.PerformLayout();
             this.panelFiltros.ResumeLayout(false);

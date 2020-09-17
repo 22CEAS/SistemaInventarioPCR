@@ -227,10 +227,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria_LC_ingreso`(
 	IN _idMemoria INT,
 	IN _idLC INT,
 	IN _cantidad INT,
+	IN _idIngreso INT,
 	IN _usuario_ins NVARCHAR(100)
 )
 BEGIN
-	INSERT INTO memoria_lc (idMemoria, idLC, cantidad, usuario_ins) VALUES (_idMemoria, _idLC, _cantidad, _usuario_ins) ; 
+	INSERT INTO memoria_lc (idMemoria, idLC, cantidad,idIngreso, usuario_ins) VALUES (_idMemoria, _idLC, _cantidad,_idIngreso, _usuario_ins) ; 
 END
 $$
 DELIMITER ;
@@ -241,10 +242,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC_ingreso`(
 	IN _idDisco INT,
 	IN _idLC INT,
 	IN _cantidad INT,
+	IN _idIngreso INT,
 	IN _usuario_ins NVARCHAR(100)
 )
 BEGIN
-	INSERT INTO disco_LC (idDisco,idLC,cantidad,usuario_ins) values	(_idDisco,_idLC,_cantidad,_usuario_ins);
+	INSERT INTO disco_LC (idDisco,idLC,cantidad,idIngreso,usuario_ins) values	(_idDisco,_idLC,_cantidad,_idIngreso,_usuario_ins);
 END
 $$
 DELIMITER ;
@@ -1060,6 +1062,7 @@ BEGIN
 	rucDni=_rucDni,
 	guiaDevolucion=_guiaDevolucion,
 	fechaDevolucion=_fechaDevolucion,
+	fec_mod=@fechaModificacion,
 	observacion=_observacion,
 	estado=_estado,
 	usuario_mod=_usuario_mod
@@ -1115,7 +1118,7 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion`(
-	IN _observacion INT,
+	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
     IN _idDevolucion TINYINT
@@ -1153,7 +1156,7 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_salida`(
-	IN _observacion INT,
+	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
     IN _idSalida TINYINT
@@ -1247,6 +1250,7 @@ BEGIN
 	danoLC=_danoLC,
 	observacion=_observacion,
 	estado=_estado,
+	fec_mod=@fechaModificacion,
 	usuario_mod=_usuario_mod
 	where idCambio=_idCambio;
 END
@@ -1255,7 +1259,7 @@ $$ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_cambio`(
-	IN _observacion INT,
+	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
     IN _idCambio TINYINT
@@ -1285,6 +1289,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso`(
 	IN _facturaIngreso NVARCHAR(255),
 	IN _guiaIngreso NVARCHAR(255),
 	IN _fecIngresa DATETIME,
+	IN _idTipoMoneda INT,
+	IN _tipoMoneda NVARCHAR(255),
+	IN _montoCambio DOUBLE ,
 	IN _total DOUBLE,
 	IN _observacion NVARCHAR(255),
 	IN _estado TINYINT,
@@ -1293,8 +1300,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_ingreso`(
 )
 BEGIN
 	SET @_idIngreso=(SELECT IFNULL( MAX(idIngreso) , 0 )+1 FROM ingreso);
-	INSERT INTO ingreso (idIngreso,idOC,idTipoIngreso,tipoIngreso,idProveedor,razonSocial,ruc,facturaIngreso,guiaIngreso,fecIngresa,total,observacion,estado,usuario_ins) values
-	(@_idIngreso,_idOC,_idTipoIngreso,_tipoIngreso,_idProveedor,_razonSocial,_ruc,_facturaIngreso,_guiaIngreso,_fecIngresa,_total,_observacion,_estado,_usuario_ins);
+	INSERT INTO ingreso (idIngreso,idOC,idTipoIngreso,tipoIngreso,idProveedor,razonSocial,ruc,facturaIngreso,guiaIngreso,fecIngresa,idTipoMoneda,tipoMoneda,montoCambio,total,observacion,estado,usuario_ins) values
+	(@_idIngreso,_idOC,_idTipoIngreso,_tipoIngreso,_idProveedor,_razonSocial,_ruc,_facturaIngreso,_guiaIngreso,_fecIngresa,_idTipoMoneda,_tipoMoneda,_montoCambio,_total,_observacion,_estado,_usuario_ins);
 	COMMIT;
     SET _idIngreso = @_idIngreso;
 END
@@ -1369,4 +1376,188 @@ BEGIN
     SET _idIngresoDetAccesorios = @_idIngresoDetAccesorios;
 END
 $$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_licencia_LC_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_licencia_LC_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM licencia where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS `delete_disco_LC_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_disco_LC_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM disco_LC where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS `delete_memoria_LC_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_memoria_LC_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM memoria_LC where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_LC_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_LC_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM laptop_cpu where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_det_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM ingreso_det where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_det_accesorios_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_det_accesorios_ingreso`(
+	IN _idIngreso INT
+)
+BEGIN
+	DELETE FROM ingreso_det_accesorios where idIngreso=_idIngreso; 
+END
+$$ 
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `update_memoria_cantidad_menos`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_memoria_cantidad_menos`(
+	IN _idMemoria INT,
+	IN _cantidad INT
+)
+BEGIN
+	UPDATE memoria SET cantidad=cantidad-_cantidad WHERE idMemoria=_idMemoria; 
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `update_disco_cantidad_menos`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_disco_cantidad_menos`(
+	IN _idDisco INT,
+	IN _cantidad INT
+)
+BEGIN
+	UPDATE disco_duro SET cantidad=cantidad-_cantidad WHERE idDisco=_idDisco; 
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `update_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_ingreso`(
+	IN _idOC INT,
+	IN _idTipoIngreso INT,
+	IN _tipoIngreso NVARCHAR(255),
+	IN _idProveedor INT,
+	IN _razonSocial NVARCHAR(255),
+	IN _ruc NVARCHAR(11),
+	IN _facturaIngreso NVARCHAR(255),
+	IN _guiaIngreso NVARCHAR(255),
+	IN _fecIngresa DATETIME,
+	IN _idTipoMoneda INT,
+	IN _tipoMoneda NVARCHAR(255),
+	IN _montoCambio DOUBLE ,
+	IN _total DOUBLE,
+	IN _observacion NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idIngreso INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso 
+	SET idOC=_idOC,
+	idTipoIngreso=_idTipoIngreso,
+	tipoIngreso=_tipoIngreso,
+	idProveedor=_idProveedor,
+	razonSocial=_razonSocial,
+	ruc=_ruc,
+	facturaIngreso=_facturaIngreso,
+	fecIngresa=_fecIngresa,
+	idTipoMoneda=_idTipoMoneda,
+	tipoMoneda=_tipoMoneda,
+	montoCambio=_montoCambio,
+	total=_total,
+	observacion=_observacion,
+	estado=_estado,
+	fec_mod=@fechaModificacion,
+	usuario_mod=_usuario_mod
+	where idIngreso=_idIngreso;
+END
+$$
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS `anular_ingreso`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_ingreso`(
+	IN _observacion NVARCHAR(100),
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+    IN _idIngreso TINYINT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso_det
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+	
+	SET @fechaModificacion=(SELECT now());
+	UPDATE ingreso_det_accesorios
+	SET observacion=_observacion,
+		fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idIngreso=_idIngreso; 
+END
+$$
 DELIMITER ;

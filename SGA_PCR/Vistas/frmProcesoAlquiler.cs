@@ -1243,12 +1243,12 @@ namespace Vistas
                 hoja.Cells[fila + 4, 2] = txtNroDocumento.Text;
                 
                 hoja.Cells[fila + 2, 5] = "Fecha Traslado";
-                hoja.Cells[fila + 2, 6] = dtpFechaTraslado.Value.ToShortDateString();
+                hoja.Cells[fila + 2, 6] = dtpFechaTraslado.Value.ToString("yyyy/MM/dd");
                 hoja.Cells[fila + 3, 5] = "Fecha Inicio Contrato";
-                hoja.Cells[fila + 3, 6] = dtpIniPlazo.Value.ToShortDateString();
+                hoja.Cells[fila + 3, 6] = dtpIniPlazo.Value.ToString("yyyy/MM/dd");
                 hoja.Cells[fila + 4, 5] = "Fecha Fin Contrato";
-                hoja.Cells[fila + 4, 6] = dtpFinPlazo.Value.ToShortDateString();
-                
+                hoja.Cells[fila + 4, 6] = dtpFinPlazo.Value.ToString("yyyy/MM/dd");
+
                 hoja.Cells[fila + 2, 8] = "N° Contrato";
                 hoja.Cells[fila + 2, 9] = txtNroContrato.Text;
                 hoja.Cells[fila + 3, 8] = "N° OC";

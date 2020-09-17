@@ -590,7 +590,7 @@ namespace Vistas
                 hoja.Cells[fila + 4, 2] = txtNroDocumento.Text;
 
                 hoja.Cells[fila + 3, 5] = "Fecha Ingreso";
-                hoja.Cells[fila + 3, 6] = dtpFechaIngreso.Value.ToShortDateString();
+                hoja.Cells[fila + 3, 6] = dtpFechaIngreso.Value.ToString("yyyy/MM/dd");
                 hoja.Cells[fila + 4, 5] = "Guia de Remisión";
                 hoja.Cells[fila + 4, 6] = txtNroGuia.Text;
 

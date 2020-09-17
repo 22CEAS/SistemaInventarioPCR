@@ -104,6 +104,12 @@
     <Compile Include="frmProcesoDevolucionBuscar.Designer.cs">
       <DependentUpon>frmProcesoDevolucionBuscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoIngresoBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoIngresoBuscar.Designer.cs">
+      <DependentUpon>frmProcesoIngresoBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoIngresoDisco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoDevolucionBuscar.resx">
       <DependentUpon>frmProcesoDevolucionBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoIngresoBuscar.resx">
+      <DependentUpon>frmProcesoIngresoBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoIngresoDisco.resx">
       <DependentUpon>frmProcesoIngresoDisco.cs</DependentUpon>

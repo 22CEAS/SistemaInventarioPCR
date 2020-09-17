@@ -625,7 +625,7 @@ namespace Vistas
                 hoja.Cells[fila + 4, 2] = txtCodigoLaptop.Text;
 
                 hoja.Cells[fila + 2, 5] = "Fecha Cambio";
-                hoja.Cells[fila + 2, 6] = dtpFechaCambio.Value.ToShortDateString();
+                hoja.Cells[fila + 2, 6] = dtpFechaCambio.Value.ToString("yyyy/MM/dd");
                 hoja.Cells[fila + 3, 5] = "Ticket Técnico";
                 hoja.Cells[fila + 3, 6] = txtNroTicket.Text;
                 hoja.Cells[fila + 4, 5] = "Guia Cambio";

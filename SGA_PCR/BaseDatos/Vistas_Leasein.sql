@@ -712,3 +712,104 @@ create view vista_ingreso_tipo as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="INGRESO_TIPO" and activo=1;
+
+
+create view vista_moneda_tipo as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="MONEDA_TIPO" and activo=1;
+
+
+/*Se mostrará los alquileres realizado*/
+create view vista_lista_ingresos as
+Select a.idIngreso as idIngreso,
+			 a.idProveedor as idProveedor,
+			 a.usuario_ins as nombreKam,
+			 a.estado as idEstado,
+			 c.razonSocial as razonSocial,
+			 cast(a.fec_ins as date) as fechaProceso,
+			 e.nombreEstado as estado
+From ingreso a inner join proveedor c on a.idProveedor=c.idProveedor 
+				inner join estados e on a.estado=e.idEstado ;
+
+
+/*Se mostrará los alquileres realizado*/
+create view vista_licencia_ingresos as
+Select l.idLicencia as IdLicencia,
+				c.idCategoria as IdCategoria,
+				c.nombre as Categoria,
+				ma.idMarca as IdMarca,
+				ma.nombre as Marca,
+				mo.idModelo as IdModelo,
+				mo.nombre as Version,
+				l.idLC as IdLaptop,
+				l.clave as Clave,
+				l.ubicacion as Ubicacion,
+				l.idIngreso as idIngreso,
+				l.idIngresoDet as idIngresoDet,
+				l.idIngresoDetAccesorios as idIngresoDetAccesorios,
+				l.idLC as idLC
+from licencia l, modelo mo, marca ma, categoria c
+where l.idModelo=mo.idModelo and ma.idMarca=mo.idMarca and c.idCategoria=ma.idCategoria ;
+
+
+
+create view vista_ingresos_detalles_modificable as
+SELECT
+	d.*,
+	ma.nombre AS nombreMarca,
+	mo.nombre AS nombreModelo,
+	vp.tipo AS tipoProcesador,
+	vp.generacion AS generacionProcesador,
+	IFNULL( vv.nombreModelo, '' ) AS modeloVideo,
+	IFNULL( vv.capacidad, '' ) AS capacidadVideo,
+	IFNULL( vd1.capacidad, 0 ) AS CapacidadDisco1,
+	IFNULL( vd1.tipo, '' ) AS TipoDisco1,
+	IFNULL( vd2.capacidad, 0 ) AS CapacidadDisco2,
+	IFNULL( vd2.tipo, '' ) AS TipoDisco2,
+	IFNULL( m1.capacidad, 0 ) AS CapacidadMemoria1,
+	IFNULL( m1.tipo, '' ) AS TipoMemoria1,
+	IFNULL( m2.capacidad, 0 ) AS CapacidadMemoria2,
+	IFNULL( m2.tipo, '' ) AS TipoMemoria2,
+	IFNULL( m3.capacidad, 0 ) AS CapacidadMemoria3,
+	IFNULL( m3.tipo, '' ) AS TipoMemoria3,
+	IFNULL( l1.Version, '' ) AS ModeloWindows,
+	IFNULL( l1.Categoria, '' ) AS CategoriaWindows,
+	IFNULL( l2.Version, '' ) AS ModeloOffice,
+	IFNULL( l2.Categoria, '' ) AS CategoriaOffice,
+	IFNULL( l3.Version, '' ) AS ModeloAntivirus,
+	IFNULL( l3.Categoria, '' ) AS CategoriaAntivirus 
+FROM
+	ingreso_det d
+	INNER JOIN marca ma ON d.idMarcaLC = ma.idMarca
+	INNER JOIN modelo mo ON d.idModeloLC = mo.idModelo
+	INNER JOIN vista_maestro_procesador vp ON d.idProcesador = vp.idProcesador
+	LEFT JOIN vista_maestro_video vv ON d.idVideo = vv.idVideo
+	LEFT JOIN vista_maestro_disco vd1 ON d.idDisco1 = vd1.idDisco
+	LEFT JOIN vista_maestro_disco vd2 ON d.idDisco2 = vd2.idDisco
+	LEFT JOIN vista_maestro_memoria m1 ON d.idMemoria1 = m1.idMemoria
+	LEFT JOIN vista_maestro_memoria m2 ON d.idMemoria2 = m2.idMemoria
+	LEFT JOIN vista_maestro_memoria m3 ON d.idMemoria3 = m3.idMemoria
+	LEFT JOIN vista_maestro_licencias l1 ON d.idModeloWindows = l1.IdModelo
+	LEFT JOIN vista_maestro_licencias l2 ON d.idModeloOffice = l2.IdModelo
+	LEFT JOIN vista_maestro_licencias l3 ON d.idModeloAntivirus = l3.IdModelo ;
+	
+	
+	
+create view vista_ingresos_detalles_accesorios_modificable as
+SELECT
+	da.*,
+	IFNULL( d.capacidad, '' ) AS CapacidadDisco,
+	IFNULL( d.tipo, '' ) AS TipoDisco,
+	IFNULL( d.tamano, '' ) AS TamanoDisco,
+	IFNULL( m.capacidad, '' ) AS CapacidadMemoria,
+	IFNULL( m.tipo, '' ) AS TipoMemoria,
+	IFNULL( l.Categoria, '' ) AS Categoria,
+	IFNULL( l.IdCategoria, '' ) AS IdCategoriaLicencia,
+	IFNULL( l.Tipo, '' ) AS Marca,
+	IFNULL( l.Version, '' ) AS Version 
+FROM
+	ingreso_det_accesorios da
+	LEFT JOIN vista_maestro_disco d ON da.idDisco = d.idDisco
+	LEFT JOIN vista_maestro_memoria m ON da.idMemoria = m.idMemoria
+	LEFT JOIN vista_maestro_licencias l ON da.idModeloLicencia = l.IdModelo 

@@ -91,6 +91,10 @@
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnVisualizar = new System.Windows.Forms.Button();
             this.dgvLaptopsSeleccionados = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbMonedaTipo = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMontoCambio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +131,7 @@
             this.dtpFechaIngreso.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.dtpFechaIngreso.ButtonDropDown.Visible = true;
             this.dtpFechaIngreso.IsPopupCalendarOpen = false;
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(630, 112);
+            this.dtpFechaIngreso.Location = new System.Drawing.Point(880, 65);
             // 
             // 
             // 
@@ -177,7 +181,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(511, 115);
+            this.label4.Location = new System.Drawing.Point(761, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 16);
             this.label4.TabIndex = 10;
@@ -247,7 +251,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(264, 1);
+            this.btnBuscar.Location = new System.Drawing.Point(234, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 56);
             this.btnBuscar.TabIndex = 150;
@@ -505,7 +509,7 @@
             this.btnAnular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAnular.Location = new System.Drawing.Point(306, 660);
+            this.btnAnular.Location = new System.Drawing.Point(280, 659);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(60, 66);
             this.btnAnular.TabIndex = 180;
@@ -525,7 +529,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(458, 660);
+            this.btnImprimir.Location = new System.Drawing.Point(432, 659);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 66);
             this.btnImprimir.TabIndex = 179;
@@ -544,7 +548,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(372, 661);
+            this.btnCancelar.Location = new System.Drawing.Point(346, 660);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 178;
@@ -563,7 +567,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(147, 660);
+            this.btnEditar.Location = new System.Drawing.Point(121, 659);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 177;
@@ -583,7 +587,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(79, 662);
+            this.btnNuevo.Location = new System.Drawing.Point(53, 661);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 176;
@@ -603,7 +607,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(220, 662);
+            this.btnGrabar.Location = new System.Drawing.Point(194, 661);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
             this.btnGrabar.TabIndex = 175;
@@ -698,12 +702,53 @@
             this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
             this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(555, 118);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 16);
+            this.label9.TabIndex = 183;
+            this.label9.Text = "Moneda";
+            // 
+            // cmbMonedaTipo
+            // 
+            this.cmbMonedaTipo.FormattingEnabled = true;
+            this.cmbMonedaTipo.Location = new System.Drawing.Point(619, 116);
+            this.cmbMonedaTipo.Name = "cmbMonedaTipo";
+            this.cmbMonedaTipo.Size = new System.Drawing.Size(119, 21);
+            this.cmbMonedaTipo.TabIndex = 182;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(764, 118);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 16);
+            this.label10.TabIndex = 185;
+            this.label10.Text = "Tipo Cambio";
+            // 
+            // txtMontoCambio
+            // 
+            this.txtMontoCambio.Location = new System.Drawing.Point(869, 115);
+            this.txtMontoCambio.Name = "txtMontoCambio";
+            this.txtMontoCambio.Size = new System.Drawing.Size(119, 20);
+            this.txtMontoCambio.TabIndex = 184;
+            this.txtMontoCambio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMontoCambio_KeyDown);
+            this.txtMontoCambio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoCambio_KeyPress);
+            // 
             // frmProcesoIngreso
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1056, 749);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtMontoCambio);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cmbMonedaTipo);
             this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnImprimir);
@@ -746,7 +791,7 @@
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " Ingreso";
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -790,5 +835,9 @@
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnVisualizar;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvLaptopsSeleccionados;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbMonedaTipo;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtMontoCambio;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Vistas
 {
-    partial class frmProcesoDevolucionBuscar
+    partial class frmProcesoIngresoBuscar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoDevolucionBuscar));
-            this.dgvDevolucion = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoIngresoBuscar));
+            this.dgvIngreso = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.panelNumOP = new System.Windows.Forms.GroupBox();
-            this.txtNumAlquiler = new System.Windows.Forms.TextBox();
+            this.txtNumIngreso = new System.Windows.Forms.TextBox();
             this.rbtnFiltros = new System.Windows.Forms.RadioButton();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panelFiltros = new System.Windows.Forms.GroupBox();
-            this.cmbKam = new System.Windows.Forms.ComboBox();
-            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.cmbUsuario = new System.Windows.Forms.ComboBox();
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.chbEstado = new System.Windows.Forms.CheckBox();
-            this.chbCliente = new System.Windows.Forms.CheckBox();
-            this.chbKam = new System.Windows.Forms.CheckBox();
+            this.chbProveedor = new System.Windows.Forms.CheckBox();
+            this.chbUsuario = new System.Windows.Forms.CheckBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.chbFecProceso = new System.Windows.Forms.CheckBox();
             this.dtpFecProceso = new System.Windows.Forms.DateTimePicker();
@@ -55,94 +55,94 @@
             this.panelFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvDevolucion
+            // dgvIngreso
             // 
-            this.dgvDevolucion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDevolucion.BackColor = System.Drawing.Color.White;
-            this.dgvDevolucion.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvDevolucion.ForeColor = System.Drawing.Color.Black;
-            this.dgvDevolucion.Location = new System.Drawing.Point(14, 312);
-            this.dgvDevolucion.Name = "dgvDevolucion";
-            this.dgvDevolucion.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvDevolucion.PrimaryGrid.AllowRowResize = true;
-            this.dgvDevolucion.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "IdDevolucion";
-            gridColumn1.Name = "ID DEVOLUCIÓN";
-            gridColumn2.AllowEdit = false;
-            gridColumn2.DataPropertyName = "NombreCliente";
-            gridColumn2.Name = "CLIENTE";
-            gridColumn2.Width = 210;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.DataPropertyName = "NombreKam";
-            gridColumn3.MinimumWidth = 100;
-            gridColumn3.Name = "KAM";
-            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.Width = 200;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.DataPropertyName = "FechaProceso";
-            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimePickerEditControl);
-            gridColumn4.MinimumWidth = 100;
-            gridColumn4.Name = "FECHA PROCESO";
-            gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn4.Width = 115;
-            gridColumn5.AllowEdit = false;
-            gridColumn5.DataPropertyName = "Estado";
-            gridColumn5.MinimumWidth = 100;
-            gridColumn5.Name = "ESTADO";
-            gridColumn6.DataPropertyName = "IdEstado";
-            gridColumn6.Name = "idEstado";
-            gridColumn6.Visible = false;
-            this.dgvDevolucion.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvDevolucion.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvDevolucion.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvDevolucion.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvDevolucion.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvDevolucion.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvDevolucion.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvDevolucion.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvDevolucion.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvDevolucion.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvDevolucion.PrimaryGrid.EnableFiltering = true;
-            this.dgvDevolucion.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvDevolucion.PrimaryGrid.Filter.Visible = true;
-            this.dgvDevolucion.PrimaryGrid.MultiSelect = false;
-            this.dgvDevolucion.PrimaryGrid.NoRowsText = "No hay ninguna devolución";
-            this.dgvDevolucion.PrimaryGrid.NullString = "<<null>>";
-            this.dgvDevolucion.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvDevolucion.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvDevolucion.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvDevolucion.Size = new System.Drawing.Size(725, 266);
-            this.dgvDevolucion.TabIndex = 142;
-            this.dgvDevolucion.Text = "Tabla Devoluciones";
+            this.dgvIngreso.BackColor = System.Drawing.Color.White;
+            this.dgvIngreso.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvIngreso.ForeColor = System.Drawing.Color.Black;
+            this.dgvIngreso.Location = new System.Drawing.Point(18, 295);
+            this.dgvIngreso.Name = "dgvIngreso";
+            this.dgvIngreso.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvIngreso.PrimaryGrid.AllowRowResize = true;
+            this.dgvIngreso.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn7.AllowEdit = false;
+            gridColumn7.DataPropertyName = "idIngreso";
+            gridColumn7.Name = "ID INGRESO";
+            gridColumn8.AllowEdit = false;
+            gridColumn8.DataPropertyName = "razonSocial";
+            gridColumn8.Name = "PROVEEDOR";
+            gridColumn8.Width = 210;
+            gridColumn9.AllowEdit = false;
+            gridColumn9.DataPropertyName = "nombreKam";
+            gridColumn9.MinimumWidth = 100;
+            gridColumn9.Name = "USUARIO";
+            gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn9.Width = 200;
+            gridColumn10.AllowEdit = false;
+            gridColumn10.DataPropertyName = "fechaProceso";
+            gridColumn10.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimePickerEditControl);
+            gridColumn10.MinimumWidth = 100;
+            gridColumn10.Name = "FECHA PROCESO";
+            gridColumn10.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn10.Width = 115;
+            gridColumn11.AllowEdit = false;
+            gridColumn11.DataPropertyName = "estado";
+            gridColumn11.MinimumWidth = 100;
+            gridColumn11.Name = "ESTADO";
+            gridColumn12.DataPropertyName = "idEstado";
+            gridColumn12.Name = "idEstado";
+            gridColumn12.Visible = false;
+            this.dgvIngreso.PrimaryGrid.Columns.Add(gridColumn7);
+            this.dgvIngreso.PrimaryGrid.Columns.Add(gridColumn8);
+            this.dgvIngreso.PrimaryGrid.Columns.Add(gridColumn9);
+            this.dgvIngreso.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgvIngreso.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvIngreso.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgvIngreso.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvIngreso.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvIngreso.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvIngreso.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvIngreso.PrimaryGrid.EnableFiltering = true;
+            this.dgvIngreso.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvIngreso.PrimaryGrid.Filter.Visible = true;
+            this.dgvIngreso.PrimaryGrid.MultiSelect = false;
+            this.dgvIngreso.PrimaryGrid.NoRowsText = "No hay ningun ingreso";
+            this.dgvIngreso.PrimaryGrid.NullString = "<<null>>";
+            this.dgvIngreso.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvIngreso.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvIngreso.PrimaryGrid.UseAlternateColumnStyle = true;
+            this.dgvIngreso.Size = new System.Drawing.Size(725, 266);
+            this.dgvIngreso.TabIndex = 142;
+            this.dgvIngreso.Text = "Tabla Ingreso";
             // 
             // panelNumOP
             // 
-            this.panelNumOP.Controls.Add(this.txtNumAlquiler);
-            this.panelNumOP.Location = new System.Drawing.Point(17, 241);
+            this.panelNumOP.Controls.Add(this.txtNumIngreso);
+            this.panelNumOP.Location = new System.Drawing.Point(21, 224);
             this.panelNumOP.Name = "panelNumOP";
             this.panelNumOP.Size = new System.Drawing.Size(722, 41);
             this.panelNumOP.TabIndex = 141;
             this.panelNumOP.TabStop = false;
             // 
-            // txtNumAlquiler
+            // txtNumIngreso
             // 
-            this.txtNumAlquiler.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumAlquiler.Location = new System.Drawing.Point(13, 13);
-            this.txtNumAlquiler.MaxLength = 5;
-            this.txtNumAlquiler.Name = "txtNumAlquiler";
-            this.txtNumAlquiler.Size = new System.Drawing.Size(172, 22);
-            this.txtNumAlquiler.TabIndex = 12;
-            this.txtNumAlquiler.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumAlquiler_KeyPress);
+            this.txtNumIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumIngreso.Location = new System.Drawing.Point(13, 13);
+            this.txtNumIngreso.MaxLength = 5;
+            this.txtNumIngreso.Name = "txtNumIngreso";
+            this.txtNumIngreso.Size = new System.Drawing.Size(172, 22);
+            this.txtNumIngreso.TabIndex = 12;
+            this.txtNumIngreso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumIngreso_KeyPress);
             // 
             // rbtnFiltros
             // 
             this.rbtnFiltros.AutoSize = true;
             this.rbtnFiltros.Checked = true;
             this.rbtnFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnFiltros.Location = new System.Drawing.Point(23, 29);
+            this.rbtnFiltros.Location = new System.Drawing.Point(27, 12);
             this.rbtnFiltros.Name = "rbtnFiltros";
             this.rbtnFiltros.Size = new System.Drawing.Size(102, 20);
             this.rbtnFiltros.TabIndex = 140;
@@ -162,7 +162,7 @@
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
             this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionar.Location = new System.Drawing.Point(757, 224);
+            this.btnSeleccionar.Location = new System.Drawing.Point(761, 207);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(111, 67);
             this.btnSeleccionar.TabIndex = 139;
@@ -182,7 +182,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(757, 87);
+            this.btnBuscar.Location = new System.Drawing.Point(761, 70);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(93, 60);
             this.btnBuscar.TabIndex = 138;
@@ -193,49 +193,49 @@
             // 
             // panelFiltros
             // 
-            this.panelFiltros.Controls.Add(this.cmbKam);
-            this.panelFiltros.Controls.Add(this.cmbCliente);
+            this.panelFiltros.Controls.Add(this.cmbUsuario);
+            this.panelFiltros.Controls.Add(this.cmbProveedor);
             this.panelFiltros.Controls.Add(this.chbEstado);
-            this.panelFiltros.Controls.Add(this.chbCliente);
-            this.panelFiltros.Controls.Add(this.chbKam);
+            this.panelFiltros.Controls.Add(this.chbProveedor);
+            this.panelFiltros.Controls.Add(this.chbUsuario);
             this.panelFiltros.Controls.Add(this.cmbEstado);
             this.panelFiltros.Controls.Add(this.chbFecProceso);
             this.panelFiltros.Controls.Add(this.dtpFecProceso);
-            this.panelFiltros.Location = new System.Drawing.Point(17, 46);
+            this.panelFiltros.Location = new System.Drawing.Point(21, 29);
             this.panelFiltros.Name = "panelFiltros";
             this.panelFiltros.Size = new System.Drawing.Size(722, 149);
             this.panelFiltros.TabIndex = 136;
             this.panelFiltros.TabStop = false;
             // 
-            // cmbKam
+            // cmbUsuario
             // 
-            this.cmbKam.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbKam.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbKam.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbKam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbKam.FormattingEnabled = true;
-            this.cmbKam.Location = new System.Drawing.Point(97, 37);
-            this.cmbKam.Name = "cmbKam";
-            this.cmbKam.Size = new System.Drawing.Size(274, 24);
-            this.cmbKam.TabIndex = 134;
+            this.cmbUsuario.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbUsuario.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUsuario.FormattingEnabled = true;
+            this.cmbUsuario.Location = new System.Drawing.Point(110, 37);
+            this.cmbUsuario.Name = "cmbUsuario";
+            this.cmbUsuario.Size = new System.Drawing.Size(274, 24);
+            this.cmbUsuario.TabIndex = 134;
             // 
-            // cmbCliente
+            // cmbProveedor
             // 
-            this.cmbCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(97, 104);
-            this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(274, 24);
-            this.cmbCliente.TabIndex = 133;
+            this.cmbProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(110, 104);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(274, 24);
+            this.cmbProveedor.TabIndex = 133;
             // 
             // chbEstado
             // 
             this.chbEstado.AutoSize = true;
             this.chbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbEstado.Location = new System.Drawing.Point(394, 104);
+            this.chbEstado.Location = new System.Drawing.Point(407, 104);
             this.chbEstado.Name = "chbEstado";
             this.chbEstado.Size = new System.Drawing.Size(84, 20);
             this.chbEstado.TabIndex = 47;
@@ -243,29 +243,29 @@
             this.chbEstado.UseVisualStyleBackColor = true;
             this.chbEstado.CheckedChanged += new System.EventHandler(this.chbEstado_CheckedChanged);
             // 
-            // chbCliente
+            // chbProveedor
             // 
-            this.chbCliente.AutoSize = true;
-            this.chbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbCliente.Location = new System.Drawing.Point(6, 104);
-            this.chbCliente.Name = "chbCliente";
-            this.chbCliente.Size = new System.Drawing.Size(75, 20);
-            this.chbCliente.TabIndex = 46;
-            this.chbCliente.Text = "Cliente";
-            this.chbCliente.UseVisualStyleBackColor = true;
-            this.chbCliente.CheckedChanged += new System.EventHandler(this.chbCliente_CheckedChanged);
+            this.chbProveedor.AutoSize = true;
+            this.chbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbProveedor.Location = new System.Drawing.Point(6, 104);
+            this.chbProveedor.Name = "chbProveedor";
+            this.chbProveedor.Size = new System.Drawing.Size(100, 20);
+            this.chbProveedor.TabIndex = 46;
+            this.chbProveedor.Text = "Proveedor";
+            this.chbProveedor.UseVisualStyleBackColor = true;
+            this.chbProveedor.CheckedChanged += new System.EventHandler(this.chbCliente_CheckedChanged);
             // 
-            // chbKam
+            // chbUsuario
             // 
-            this.chbKam.AutoSize = true;
-            this.chbKam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbKam.Location = new System.Drawing.Point(10, 41);
-            this.chbKam.Name = "chbKam";
-            this.chbKam.Size = new System.Drawing.Size(58, 20);
-            this.chbKam.TabIndex = 45;
-            this.chbKam.Text = "KAM";
-            this.chbKam.UseVisualStyleBackColor = true;
-            this.chbKam.CheckedChanged += new System.EventHandler(this.chbKam_CheckedChanged);
+            this.chbUsuario.AutoSize = true;
+            this.chbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbUsuario.Location = new System.Drawing.Point(10, 41);
+            this.chbUsuario.Name = "chbUsuario";
+            this.chbUsuario.Size = new System.Drawing.Size(81, 20);
+            this.chbUsuario.TabIndex = 45;
+            this.chbUsuario.Text = "Usuario";
+            this.chbUsuario.UseVisualStyleBackColor = true;
+            this.chbUsuario.CheckedChanged += new System.EventHandler(this.chbKam_CheckedChanged);
             // 
             // cmbEstado
             // 
@@ -273,7 +273,7 @@
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(499, 102);
+            this.cmbEstado.Location = new System.Drawing.Point(512, 102);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(182, 24);
             this.cmbEstado.TabIndex = 9;
@@ -282,7 +282,7 @@
             // 
             this.chbFecProceso.AutoSize = true;
             this.chbFecProceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbFecProceso.Location = new System.Drawing.Point(393, 43);
+            this.chbFecProceso.Location = new System.Drawing.Point(406, 43);
             this.chbFecProceso.Name = "chbFecProceso";
             this.chbFecProceso.Size = new System.Drawing.Size(119, 20);
             this.chbFecProceso.TabIndex = 44;
@@ -296,7 +296,7 @@
             this.dtpFecProceso.CustomFormat = "dd-MM-yyyy";
             this.dtpFecProceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecProceso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFecProceso.Location = new System.Drawing.Point(518, 43);
+            this.dtpFecProceso.Location = new System.Drawing.Point(531, 43);
             this.dtpFecProceso.Name = "dtpFecProceso";
             this.dtpFecProceso.Size = new System.Drawing.Size(163, 22);
             this.dtpFecProceso.TabIndex = 8;
@@ -305,21 +305,21 @@
             // 
             this.rbtnNumAlquiler.AutoSize = true;
             this.rbtnNumAlquiler.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnNumAlquiler.Location = new System.Drawing.Point(19, 221);
+            this.rbtnNumAlquiler.Location = new System.Drawing.Point(23, 204);
             this.rbtnNumAlquiler.Name = "rbtnNumAlquiler";
-            this.rbtnNumAlquiler.Size = new System.Drawing.Size(139, 20);
+            this.rbtnNumAlquiler.Size = new System.Drawing.Size(114, 20);
             this.rbtnNumAlquiler.TabIndex = 137;
-            this.rbtnNumAlquiler.Text = "Num Devolución";
+            this.rbtnNumAlquiler.Text = "Num Alquiler";
             this.rbtnNumAlquiler.UseVisualStyleBackColor = true;
             this.rbtnNumAlquiler.CheckedChanged += new System.EventHandler(this.rbtnNumAlquiler_CheckedChanged);
             // 
-            // frmProcesoDevolucionBuscar
+            // frmProcesoIngresoBuscar
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(882, 606);
-            this.Controls.Add(this.dgvDevolucion);
+            this.Controls.Add(this.dgvIngreso);
             this.Controls.Add(this.panelNumOP);
             this.Controls.Add(this.rbtnFiltros);
             this.Controls.Add(this.btnSeleccionar);
@@ -328,11 +328,11 @@
             this.Controls.Add(this.rbtnNumAlquiler);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmProcesoDevolucionBuscar";
+            this.Name = "frmProcesoIngresoBuscar";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Buscar Devolución";
+            this.Text = "Ingreso Buscar";
             this.panelNumOP.ResumeLayout(false);
             this.panelNumOP.PerformLayout();
             this.panelFiltros.ResumeLayout(false);
@@ -344,18 +344,18 @@
 
         #endregion
 
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvDevolucion;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvIngreso;
         private System.Windows.Forms.GroupBox panelNumOP;
-        private System.Windows.Forms.TextBox txtNumAlquiler;
+        private System.Windows.Forms.TextBox txtNumIngreso;
         private System.Windows.Forms.RadioButton rbtnFiltros;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox panelFiltros;
-        private System.Windows.Forms.ComboBox cmbKam;
-        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.ComboBox cmbUsuario;
+        private System.Windows.Forms.ComboBox cmbProveedor;
         private System.Windows.Forms.CheckBox chbEstado;
-        private System.Windows.Forms.CheckBox chbCliente;
-        private System.Windows.Forms.CheckBox chbKam;
+        private System.Windows.Forms.CheckBox chbProveedor;
+        private System.Windows.Forms.CheckBox chbUsuario;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.CheckBox chbFecProceso;
         private System.Windows.Forms.DateTimePicker dtpFecProceso;
