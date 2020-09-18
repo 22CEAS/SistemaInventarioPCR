@@ -435,16 +435,30 @@ namespace Vistas
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            IngresoDetalle detalle = new IngresoDetalle();
-            using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu())
+            try
             {
-                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                IngresoDetalle detalle = new IngresoDetalle();
+                using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu())
                 {
-                    detalle = frm.DETALLE;
-                    detalle.IdIngresoDetalle = ingreso.Detalles.Count + 1;
-                    ingreso.Detalles.Add(detalle);
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        BindingList<IngresoDetalle> auxiliares = new BindingList<IngresoDetalle>();
+                        foreach (IngresoDetalle aux in ingreso.Detalles)
+                        {
+                            auxiliares.Add(aux);
+                        }
+                        detalle = frm.DETALLE;
+                        detalle.IdIngresoDetalle = ingreso.Detalles.Count + 1;
+                        auxiliares.Add(detalle);
+                        ingreso.Detalles = auxiliares;
+                        //ingreso.Detalles.Add(detalle);
+                        dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                    }
                 }
+            }
+            catch
+            {
+
             }
 
         }
@@ -466,20 +480,26 @@ namespace Vistas
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    BindingList<Memoria> auxiliares = new BindingList<Memoria>();
+                    foreach (Memoria aux in ingreso.Memorias)
+                    {
+                        auxiliares.Add(aux);
+                    }
                     foreach (Memoria memoriaTraido in frm.MEMORIAS)
                     {
                         Memoria memTemp = new Memoria();
                         memTemp.IdMemoria = memoriaTraido.IdMemoria;
-                        bool exists = ingreso.Memorias.Any(x => x.IdMemoria.Equals(memTemp.IdMemoria));
+                        bool exists = auxiliares.Any(x => x.IdMemoria.Equals(memTemp.IdMemoria));
                         if (!(exists))
                         {
                             memTemp.TipoMemoria = memoriaTraido.TipoMemoria;
                             memTemp.Capacidad = memoriaTraido.Capacidad;
                             memTemp.Cantidad = 1;
                             memTemp.Precio = 0.00;
-                            ingreso.Memorias.Add(memTemp);
+                            auxiliares.Add(memTemp);
                         }
                     }
+                    ingreso.Memorias = auxiliares;
                     dgvMemorias.PrimaryGrid.DataSource = ingreso.Memorias;
                 }
             }
@@ -520,20 +540,27 @@ namespace Vistas
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    BindingList<DiscoDuro> auxiliares = new BindingList<DiscoDuro>();
+                    foreach (DiscoDuro aux in ingreso.Discos)
+                    {
+                        auxiliares.Add(aux);
+                    }
+
                     foreach (DiscoDuro discoTraido in frm.DISCOS)
                     {
                         DiscoDuro disTemp = new DiscoDuro();
                         disTemp.IdDisco = discoTraido.IdDisco;
-                        bool exists = ingreso.Discos.Any(x => x.IdDisco.Equals(disTemp.IdDisco));
+                        bool exists = auxiliares.Any(x => x.IdDisco.Equals(disTemp.IdDisco));
                         if (!(exists))
                         {
                             disTemp.TipoDisco = discoTraido.TipoDisco;
                             disTemp.Capacidad = discoTraido.Capacidad;
                             disTemp.Cantidad = 1;
                             disTemp.Precio = 0.00;
-                            ingreso.Discos.Add(disTemp);
+                            auxiliares.Add(disTemp);
                         }
                     }
+                    ingreso.Discos = auxiliares;
                     dgvDisco.PrimaryGrid.DataSource = ingreso.Discos;
                 }
             }
@@ -569,34 +596,49 @@ namespace Vistas
 
         private void btnAgregarLicencia_Click(object sender, EventArgs e)
         {
-            using (frmProcesoIngresoLicencia frm = new frmProcesoIngresoLicencia())
+            try
             {
-                if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                using (frmProcesoIngresoLicencia frm = new frmProcesoIngresoLicencia())
                 {
-                    foreach (Licencia licenciaTraido in frm.LICENCIAS)
+                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        Licencia licTemp = new Licencia();
-                        licTemp.IdModelo = licenciaTraido.IdModelo;
-                        //bool exists = ingreso.Licencias.Any(x => x.IdModelo.Equals(licTemp.IdModelo));
-                        bool exists = false;
-                        if (!(exists))
+                        BindingList<Licencia> auxiliares = new BindingList<Licencia>();
+                        foreach (Licencia aux in ingreso.Licencias)
                         {
-
-                            licTemp.IdLicencia = ingreso.Licencias.Count + 1;
-                            licTemp.Categoria = licenciaTraido.Categoria;
-                            licTemp.IdModelo = licenciaTraido.IdModelo;
-                            licTemp.Marca = licenciaTraido.Marca;
-                            licTemp.Version = licenciaTraido.Version;
-                            licTemp.Clave = licenciaTraido.Clave;
-                            licTemp.Cantidad = licenciaTraido.Cantidad;
-                            licTemp.Precio = 0.00;
-
-                            ingreso.Licencias.Add(licTemp);
+                            auxiliares.Add(aux);
                         }
+
+                        foreach (Licencia licenciaTraido in frm.LICENCIAS)
+                        {
+                            Licencia licTemp = new Licencia();
+                            licTemp.IdModelo = licenciaTraido.IdModelo;
+                            //bool exists = ingreso.Licencias.Any(x => x.IdModelo.Equals(licTemp.IdModelo));
+                            bool exists = false;
+                            if (!(exists))
+                            {
+
+                                licTemp.IdLicencia = ingreso.Licencias.Count + 1;
+                                licTemp.Categoria = licenciaTraido.Categoria;
+                                licTemp.IdModelo = licenciaTraido.IdModelo;
+                                licTemp.Marca = licenciaTraido.Marca;
+                                licTemp.Version = licenciaTraido.Version;
+                                licTemp.Clave = licenciaTraido.Clave;
+                                licTemp.Cantidad = licenciaTraido.Cantidad;
+                                licTemp.Precio = 0.00;
+
+                                auxiliares.Add(licTemp);
+                            }
+                        }
+                        ingreso.Licencias = auxiliares;
+                        dgvLicencia.PrimaryGrid.DataSource = ingreso.Licencias;
                     }
-                    dgvLicencia.PrimaryGrid.DataSource = ingreso.Licencias;
                 }
             }
+            catch
+            {
+
+            }
+            
         }
 
         private void dgvLicencia_DoubleClick(object sender, EventArgs e)
@@ -1406,6 +1448,7 @@ namespace Vistas
         {
             try
             {
+
                 int i = dgvLicencia.PrimaryGrid.ActiveRow.Index;
                 int licenciaId;
                 int aux;
@@ -1459,6 +1502,7 @@ namespace Vistas
                             ingreso.Licencias[j].Cantidad = cantidadLicencia;
                             ingreso.Licencias[j].Clave = clave;
                             ingreso.Licencias[j].Precio = precio;
+                            break;
                         }
                     }
                 }
@@ -1561,6 +1605,11 @@ namespace Vistas
             //if (paste || copy)permitir = false;
             //else permitir = true;
         }
-        
+
+        private void dgvLaptopsSeleccionados_SortChanged(object sender, GridEventArgs e)
+        {
+            //MessageBox.Show("Entro aqui");
+            //int aux = ingreso.Detalles.Count;
+        }
     }
 }

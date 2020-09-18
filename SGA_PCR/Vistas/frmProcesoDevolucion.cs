@@ -380,16 +380,23 @@ namespace Vistas
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    BindingList<DevolucionDetalle> auxiliares = new BindingList<DevolucionDetalle>();
+                    foreach (DevolucionDetalle aux in devolucion.Detalles)
+                    {
+                        auxiliares.Add(aux);
+                    }
+
                     foreach (DevolucionDetalle detalleTraido in frm.DETALLES)
                     {
                         DevolucionDetalle dp = new DevolucionDetalle();
                         dp.IdLC = detalleTraido.IdLC;
-                        bool exists = devolucion.Detalles.Any(x => x.IdLC.Equals(dp.IdLC));
+                        bool exists = auxiliares.Any(x => x.IdLC.Equals(dp.IdLC));
                         if (!(exists))
                         {
-                            devolucion.Detalles.Add(detalleTraido);
+                            auxiliares.Add(detalleTraido);
                         }
                     }
+                    devolucion.Detalles = auxiliares;
                 }
             }
 

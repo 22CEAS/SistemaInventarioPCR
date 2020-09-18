@@ -66,14 +66,17 @@ namespace Vistas
                 {
                     if (((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 0))).Value != null)
                     {
-                        disco = new DiscoDuro();
-                        disco.IdDisco = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 4))).Value.ToString());
-                        disco.TipoDisco = ((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                        disco.Capacidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                        disco.Cantidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 3))).Value.ToString());
-                        discos.Add(disco);
-                        cantidadDiscos++;
-                        flag = true;
+                        if (Convert.ToBoolean(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                        {
+                            disco = new DiscoDuro();
+                            disco.IdDisco = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 4))).Value.ToString());
+                            disco.TipoDisco = ((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                            disco.Capacidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 2))).Value.ToString());
+                            disco.Cantidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+                            discos.Add(disco);
+                            cantidadDiscos++;
+                            flag = true;
+                        }
                     }
                 }
             }

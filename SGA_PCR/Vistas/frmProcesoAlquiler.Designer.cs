@@ -335,7 +335,7 @@
             // btnEditarMemoria
             // 
             this.btnEditarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarMemoria.Location = new System.Drawing.Point(908, 278);
+            this.btnEditarMemoria.Location = new System.Drawing.Point(931, 278);
             this.btnEditarMemoria.Name = "btnEditarMemoria";
             this.btnEditarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnEditarMemoria.TabIndex = 44;
@@ -346,7 +346,7 @@
             // btnEditarDisco
             // 
             this.btnEditarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarDisco.Location = new System.Drawing.Point(908, 436);
+            this.btnEditarDisco.Location = new System.Drawing.Point(931, 436);
             this.btnEditarDisco.Name = "btnEditarDisco";
             this.btnEditarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnEditarDisco.TabIndex = 45;
@@ -362,15 +362,21 @@
             this.dgvMemorias.Location = new System.Drawing.Point(592, 242);
             this.dgvMemorias.Name = "dgvMemorias";
             gridColumn1.AllowEdit = false;
+            gridColumn1.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn1.DataPropertyName = "TipoMemoria";
             gridColumn1.Name = "Tipo";
+            gridColumn1.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn2.AllowEdit = false;
+            gridColumn2.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn2.DataPropertyName = "Capacidad";
             gridColumn2.Name = "Capacidad";
+            gridColumn2.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn3.AllowEdit = false;
+            gridColumn3.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn3.DataPropertyName = "Cantidad";
             gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
             gridColumn3.Name = "Cantidad";
+            gridColumn3.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn4.AllowEdit = false;
             gridColumn4.DataPropertyName = "IdMemoria";
             gridColumn4.Name = "idMemoria";
@@ -382,9 +388,10 @@
             this.dgvMemorias.PrimaryGrid.MultiSelect = false;
             this.dgvMemorias.PrimaryGrid.NoRowsText = "No hay ninguna Memoria asignada";
             this.dgvMemorias.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvMemorias.Size = new System.Drawing.Size(300, 99);
+            this.dgvMemorias.Size = new System.Drawing.Size(317, 99);
             this.dgvMemorias.TabIndex = 46;
             this.dgvMemorias.Text = "Tabla Memoria";
+            this.dgvMemorias.CellValueChanged += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellValueChangedEventArgs>(this.dgvMemorias_CellValueChanged);
             this.dgvMemorias.DoubleClick += new System.EventHandler(this.dgvMemorias_DoubleClick);
             // 
             // dgvDisco
@@ -395,14 +402,21 @@
             this.dgvDisco.Location = new System.Drawing.Point(592, 399);
             this.dgvDisco.Name = "dgvDisco";
             gridColumn5.AllowEdit = false;
+            gridColumn5.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn5.DataPropertyName = "TipoDisco";
             gridColumn5.Name = "Tipo";
+            gridColumn5.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn6.AllowEdit = false;
+            gridColumn6.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn6.DataPropertyName = "Capacidad";
             gridColumn6.Name = "Capacidad";
+            gridColumn6.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn7.AllowEdit = false;
+            gridColumn7.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn7.DataPropertyName = "Cantidad";
+            gridColumn7.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
             gridColumn7.Name = "Cantidad";
+            gridColumn7.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn8.DataPropertyName = "IdDisco";
             gridColumn8.Name = "IdDisco";
             gridColumn8.Visible = false;
@@ -417,9 +431,10 @@
             this.dgvDisco.PrimaryGrid.MultiSelect = false;
             this.dgvDisco.PrimaryGrid.NoRowsText = "No hay ningun disco asignada";
             this.dgvDisco.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvDisco.Size = new System.Drawing.Size(300, 99);
+            this.dgvDisco.Size = new System.Drawing.Size(317, 99);
             this.dgvDisco.TabIndex = 47;
             this.dgvDisco.Text = "Tabla Disco";
+            this.dgvDisco.CellValueChanged += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellValueChangedEventArgs>(this.dgvDisco_CellValueChanged);
             this.dgvDisco.DoubleClick += new System.EventHandler(this.dgvDisco_DoubleClick);
             // 
             // dgvLicencia
@@ -430,16 +445,24 @@
             this.dgvLicencia.Location = new System.Drawing.Point(592, 558);
             this.dgvLicencia.Name = "dgvLicencia";
             gridColumn10.AllowEdit = false;
+            gridColumn10.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn10.DataPropertyName = "Categoria";
             gridColumn10.Name = "Categoría";
+            gridColumn10.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn11.AllowEdit = false;
+            gridColumn11.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn11.DataPropertyName = "Marca";
             gridColumn11.Name = "Marca";
+            gridColumn11.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn12.AllowEdit = false;
+            gridColumn12.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn12.DataPropertyName = "Version";
             gridColumn12.Name = "Versión";
+            gridColumn12.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
+            gridColumn13.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn13.DataPropertyName = "Clave";
             gridColumn13.Name = "Clave";
+            gridColumn13.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn14.AllowEdit = false;
             gridColumn14.DataPropertyName = "IdLicencia";
             gridColumn14.Name = "idLicencia";
@@ -452,14 +475,14 @@
             this.dgvLicencia.PrimaryGrid.MultiSelect = false;
             this.dgvLicencia.PrimaryGrid.NoRowsText = "No hay ninguna licencia asignada";
             this.dgvLicencia.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvLicencia.Size = new System.Drawing.Size(300, 120);
+            this.dgvLicencia.Size = new System.Drawing.Size(317, 120);
             this.dgvLicencia.TabIndex = 50;
             this.dgvLicencia.Text = "Tabla Licencias";
             // 
             // btnEliminarLicencia
             // 
             this.btnEliminarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarLicencia.Location = new System.Drawing.Point(908, 605);
+            this.btnEliminarLicencia.Location = new System.Drawing.Point(931, 597);
             this.btnEliminarLicencia.Name = "btnEliminarLicencia";
             this.btnEliminarLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnEliminarLicencia.TabIndex = 49;
@@ -656,7 +679,7 @@
             // btnGuardarMemoria
             // 
             this.btnGuardarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarMemoria.Location = new System.Drawing.Point(908, 315);
+            this.btnGuardarMemoria.Location = new System.Drawing.Point(931, 315);
             this.btnGuardarMemoria.Name = "btnGuardarMemoria";
             this.btnGuardarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnGuardarMemoria.TabIndex = 136;
@@ -667,7 +690,7 @@
             // btnAgregarMemoria
             // 
             this.btnAgregarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarMemoria.Location = new System.Drawing.Point(908, 242);
+            this.btnAgregarMemoria.Location = new System.Drawing.Point(931, 242);
             this.btnAgregarMemoria.Name = "btnAgregarMemoria";
             this.btnAgregarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarMemoria.TabIndex = 137;
@@ -678,7 +701,7 @@
             // btnAgregarDisco
             // 
             this.btnAgregarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarDisco.Location = new System.Drawing.Point(908, 399);
+            this.btnAgregarDisco.Location = new System.Drawing.Point(931, 399);
             this.btnAgregarDisco.Name = "btnAgregarDisco";
             this.btnAgregarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarDisco.TabIndex = 139;
@@ -689,7 +712,7 @@
             // btnGuardarDisco
             // 
             this.btnGuardarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardarDisco.Location = new System.Drawing.Point(908, 472);
+            this.btnGuardarDisco.Location = new System.Drawing.Point(931, 472);
             this.btnGuardarDisco.Name = "btnGuardarDisco";
             this.btnGuardarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnGuardarDisco.TabIndex = 138;
@@ -700,7 +723,7 @@
             // btnAgregarLicencia
             // 
             this.btnAgregarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarLicencia.Location = new System.Drawing.Point(908, 569);
+            this.btnAgregarLicencia.Location = new System.Drawing.Point(931, 561);
             this.btnAgregarLicencia.Name = "btnAgregarLicencia";
             this.btnAgregarLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarLicencia.TabIndex = 141;
@@ -711,7 +734,7 @@
             // btnCaducidadLicencia
             // 
             this.btnCaducidadLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCaducidadLicencia.Location = new System.Drawing.Point(908, 642);
+            this.btnCaducidadLicencia.Location = new System.Drawing.Point(931, 634);
             this.btnCaducidadLicencia.Name = "btnCaducidadLicencia";
             this.btnCaducidadLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnCaducidadLicencia.TabIndex = 140;

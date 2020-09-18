@@ -59,13 +59,16 @@ namespace Vistas
             {
                 if (((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 0))).Value != null)
                 {
-                    memoria = new Memoria();
-                    memoria.IdMemoria = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString());
-                    memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                    memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                    memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 3))).Value.ToString()); 
-                    memorias.Add(memoria);
-                    flag = true;
+                    if (Convert.ToBoolean(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        memoria = new Memoria();
+                        memoria.IdMemoria = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString());
+                        memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                        memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
+                        memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+                        memorias.Add(memoria);
+                        flag = true;
+                    }
                 }
             }
             return flag;

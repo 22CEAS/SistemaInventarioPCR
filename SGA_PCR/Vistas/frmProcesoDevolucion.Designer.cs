@@ -411,6 +411,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(681, 674);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnObservacion);

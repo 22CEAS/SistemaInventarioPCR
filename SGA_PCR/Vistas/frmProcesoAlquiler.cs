@@ -434,12 +434,17 @@ namespace Vistas
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
+                    BindingList<AlquilerDetalle> auxiliares = new BindingList<AlquilerDetalle>();
+                    foreach (AlquilerDetalle aux in alquiler.Detalles)
+                    {
+                        auxiliares.Add(aux);
+                    }
                     foreach (LC laptopTraido in frm.LAPTOPS)
                     {
                         AlquilerDetalle dp = new AlquilerDetalle();
                         artTemp = new LC();
                         artTemp.IdLC = laptopTraido.IdLC;
-                        bool exists = alquiler.Detalles.Any(x => x.Laptop.IdLC.Equals(artTemp.IdLC));
+                        bool exists = auxiliares.Any(x => x.Laptop.IdLC.Equals(artTemp.IdLC));
                         if (!(exists))
                         {
                             tablaDisco = alquilerDA.ListarLaptopDisco(artTemp.IdLC);
@@ -450,11 +455,11 @@ namespace Vistas
                             laptopTraido.SetLicencia(tablaLicencia);
 
                             dp.Laptop = laptopTraido;
-                            alquiler.Detalles.Add(dp);
+                            auxiliares.Add(dp);
                         }
                     }
-                    
 
+                    alquiler.Detalles = auxiliares;
                 }
             }
 
@@ -1496,6 +1501,53 @@ namespace Vistas
                 }
             }
             Cursor.Current = Cursors.Default;
+        }
+
+        private void dgvMemorias_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
+        {
+            int i = dgvMemorias.PrimaryGrid.ActiveRow.Index;
+            int aux;
+            int cantidadMemoria;
+            string myStr;
+            if (!(i == -1))
+            {
+                myStr = ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    aux = int.Parse(myStr);
+                    if (aux < 0) myStr = "1";
+                }
+                else myStr = "1";
+                cantidadMemoria = myStr.Length > 0 ? int.Parse(myStr) : 1;
+                ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value = cantidadMemoria;
+            }
+        }
+
+        private void dgvDisco_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
+        {
+
+            int i = dgvDisco.PrimaryGrid.ActiveRow.Index;
+            int aux;
+            int cantidadDisco;
+            string myStr;
+            if (!(i == -1))
+            {
+                myStr = ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    aux = int.Parse(myStr);
+                    if (aux < 0) myStr = "1";
+                }
+                else myStr = "1";
+                cantidadDisco = myStr.Length > 0 ? int.Parse(myStr) : 1;
+                ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value = cantidadDisco;
+
+            }
+
         }
     }
 }

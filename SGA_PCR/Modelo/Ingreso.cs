@@ -41,6 +41,11 @@ namespace Modelo
             Discos = new BindingList<DiscoDuro>();
         }
 
+
+        public Ingreso(BindingList<IngresoDetalle> det)
+        {
+            this.Detalles = det;
+        }
         public int IdIngreso { get => idIngreso; set => idIngreso = value; }
         public int IdTipoIngreso { get => idTipoIngreso; set => idTipoIngreso = value; }
         public string TipoIngreso { get => tipoIngreso; set => tipoIngreso = value; }

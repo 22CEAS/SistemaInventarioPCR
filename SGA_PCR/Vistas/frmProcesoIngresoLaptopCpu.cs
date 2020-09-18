@@ -467,6 +467,7 @@ namespace Vistas
             else if (cantProcesadores == 0)
             {
                 MessageBox.Show("Debe seleccionar un procesador", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                tabControl1.SelectedTab = tabProcesador;
                 return false;
             }
 

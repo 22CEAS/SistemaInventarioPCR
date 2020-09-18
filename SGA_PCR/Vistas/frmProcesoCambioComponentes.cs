@@ -479,5 +479,49 @@ namespace Vistas
             laptop = laptopDA.DatosLaptopDisponibleSinMemoriaSinDisco(codigo);
             LlenarDatosLaptop();
         }
+
+        private void dgvMemorias_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
+        {
+            int i = dgvMemorias.PrimaryGrid.ActiveRow.Index;
+            int aux;
+            int cantidadMemoria;
+            string myStr;
+            if (!(i == -1))
+            {
+                myStr = ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    aux = int.Parse(myStr);
+                    if (aux < 0) myStr = "1";
+                }
+                else myStr = "1";
+                cantidadMemoria = myStr.Length > 0 ? int.Parse(myStr) : 1;
+                ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value = cantidadMemoria;
+            }
+        }
+
+        private void dgvDisco_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
+        {
+            int i = dgvDisco.PrimaryGrid.ActiveRow.Index;
+            int aux;
+            int cantidadDisco;
+            string myStr;
+            if (!(i == -1))
+            {
+                myStr = ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                myStr = myStr.TrimStart('0');
+
+                if (myStr.Length > 0)
+                {
+                    aux = int.Parse(myStr);
+                    if (aux < 0) myStr = "1";
+                }
+                else myStr = "1";
+                cantidadDisco = myStr.Length > 0 ? int.Parse(myStr) : 1;
+                ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value = cantidadDisco;
+            }
+        }
     }
 }

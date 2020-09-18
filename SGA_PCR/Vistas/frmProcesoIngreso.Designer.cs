@@ -190,7 +190,7 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(523, 200);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(468, 203);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(75, 41);
             this.btnAgregarProducto.TabIndex = 12;
@@ -217,7 +217,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(348, 466);
+            this.label2.Location = new System.Drawing.Point(260, 382);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 24);
             this.label2.TabIndex = 16;
@@ -251,7 +251,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(234, 0);
+            this.btnBuscar.Location = new System.Drawing.Point(252, 0);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 56);
             this.btnBuscar.TabIndex = 150;
@@ -299,7 +299,7 @@
             // btnAgregarLicencia
             // 
             this.btnAgregarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarLicencia.Location = new System.Drawing.Point(975, 524);
+            this.btnAgregarLicencia.Location = new System.Drawing.Point(669, 509);
             this.btnAgregarLicencia.Name = "btnAgregarLicencia";
             this.btnAgregarLicencia.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarLicencia.TabIndex = 166;
@@ -310,7 +310,7 @@
             // btnAgregarDisco
             // 
             this.btnAgregarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarDisco.Location = new System.Drawing.Point(975, 354);
+            this.btnAgregarDisco.Location = new System.Drawing.Point(993, 354);
             this.btnAgregarDisco.Name = "btnAgregarDisco";
             this.btnAgregarDisco.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarDisco.TabIndex = 165;
@@ -321,7 +321,7 @@
             // btnAgregarMemoria
             // 
             this.btnAgregarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarMemoria.Location = new System.Drawing.Point(975, 197);
+            this.btnAgregarMemoria.Location = new System.Drawing.Point(994, 193);
             this.btnAgregarMemoria.Name = "btnAgregarMemoria";
             this.btnAgregarMemoria.Size = new System.Drawing.Size(69, 25);
             this.btnAgregarMemoria.TabIndex = 163;
@@ -334,7 +334,7 @@
             this.dgvLicencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.dgvLicencia.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvLicencia.ForeColor = System.Drawing.Color.Black;
-            this.dgvLicencia.Location = new System.Drawing.Point(630, 513);
+            this.dgvLicencia.Location = new System.Drawing.Point(12, 509);
             this.dgvLicencia.Name = "dgvLicencia";
             gridColumn1.AllowEdit = false;
             gridColumn1.DataPropertyName = "Categoria";
@@ -345,11 +345,15 @@
             gridColumn3.AllowEdit = false;
             gridColumn3.DataPropertyName = "Version";
             gridColumn3.Name = "Versión";
+            gridColumn4.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn4.DataPropertyName = "Clave";
             gridColumn4.Name = "Clave";
+            gridColumn4.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
+            gridColumn5.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn5.DataPropertyName = "Cantidad";
             gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
             gridColumn5.Name = "Cantidad";
+            gridColumn5.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn6.AllowEdit = false;
             gridColumn6.DataPropertyName = "IdCategoría";
             gridColumn6.Name = "idCategoría";
@@ -360,9 +364,11 @@
             gridColumn8.DataPropertyName = "IdLicencia";
             gridColumn8.Name = "IdLicencia";
             gridColumn8.Visible = false;
+            gridColumn9.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn9.DataPropertyName = "Precio";
             gridColumn9.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
             gridColumn9.Name = "Precio";
+            gridColumn9.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn1);
             this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn2);
             this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn3);
@@ -375,7 +381,7 @@
             this.dgvLicencia.PrimaryGrid.MultiSelect = false;
             this.dgvLicencia.PrimaryGrid.NoRowsText = "No hay ninguna licencia asignada";
             this.dgvLicencia.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvLicencia.Size = new System.Drawing.Size(323, 140);
+            this.dgvLicencia.Size = new System.Drawing.Size(636, 140);
             this.dgvLicencia.TabIndex = 161;
             this.dgvLicencia.Text = "Tabla Licencias";
             this.dgvLicencia.CellValueChanged += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellValueChangedEventArgs>(this.dgvLicencia_CellValueChanged);
@@ -384,10 +390,10 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(646, 486);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(29, 490);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 16);
+            this.label13.Size = new System.Drawing.Size(70, 16);
             this.label13.TabIndex = 160;
             this.label13.Text = "Licencia:";
             // 
@@ -396,7 +402,7 @@
             this.dgvDisco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.dgvDisco.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvDisco.ForeColor = System.Drawing.Color.Black;
-            this.dgvDisco.Location = new System.Drawing.Point(630, 354);
+            this.dgvDisco.Location = new System.Drawing.Point(570, 354);
             this.dgvDisco.Name = "dgvDisco";
             gridColumn10.AllowEdit = false;
             gridColumn10.DataPropertyName = "TipoDisco";
@@ -404,18 +410,22 @@
             gridColumn11.AllowEdit = false;
             gridColumn11.DataPropertyName = "Capacidad";
             gridColumn11.Name = "Capacidad";
+            gridColumn12.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn12.DataPropertyName = "Cantidad";
             gridColumn12.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
             gridColumn12.Name = "Cantidad";
+            gridColumn12.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn13.DataPropertyName = "IdDisco";
             gridColumn13.Name = "IdDisco";
             gridColumn13.Visible = false;
             gridColumn14.DataPropertyName = "Tamano";
             gridColumn14.Name = "Tamano";
             gridColumn14.Visible = false;
+            gridColumn15.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn15.DataPropertyName = "Precio";
             gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
             gridColumn15.Name = "Precio";
+            gridColumn15.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn10);
             this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn11);
             this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn12);
@@ -425,7 +435,7 @@
             this.dgvDisco.PrimaryGrid.MultiSelect = false;
             this.dgvDisco.PrimaryGrid.NoRowsText = "No hay ningun disco asignada";
             this.dgvDisco.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvDisco.Size = new System.Drawing.Size(323, 117);
+            this.dgvDisco.Size = new System.Drawing.Size(418, 125);
             this.dgvDisco.TabIndex = 159;
             this.dgvDisco.Text = "Tabla Disco";
             this.dgvDisco.CellValueChanged += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellValueChangedEventArgs>(this.dgvDisco_CellValueChanged);
@@ -436,7 +446,7 @@
             this.dgvMemorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.dgvMemorias.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvMemorias.ForeColor = System.Drawing.Color.Black;
-            this.dgvMemorias.Location = new System.Drawing.Point(630, 197);
+            this.dgvMemorias.Location = new System.Drawing.Point(570, 193);
             this.dgvMemorias.Name = "dgvMemorias";
             gridColumn16.AllowEdit = false;
             gridColumn16.DataPropertyName = "TipoMemoria";
@@ -444,16 +454,20 @@
             gridColumn17.AllowEdit = false;
             gridColumn17.DataPropertyName = "Capacidad";
             gridColumn17.Name = "Capacidad";
+            gridColumn18.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn18.DataPropertyName = "Cantidad";
             gridColumn18.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
             gridColumn18.Name = "Cantidad";
+            gridColumn18.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             gridColumn19.AllowEdit = false;
             gridColumn19.DataPropertyName = "IdMemoria";
             gridColumn19.Name = "idMemoria";
             gridColumn19.Visible = false;
+            gridColumn20.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn20.DataPropertyName = "Precio";
             gridColumn20.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
             gridColumn20.Name = "Precio";
+            gridColumn20.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
             this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn16);
             this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn17);
             this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn18);
@@ -462,7 +476,7 @@
             this.dgvMemorias.PrimaryGrid.MultiSelect = false;
             this.dgvMemorias.PrimaryGrid.NoRowsText = "No hay ninguna Memoria asignada";
             this.dgvMemorias.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvMemorias.Size = new System.Drawing.Size(323, 113);
+            this.dgvMemorias.Size = new System.Drawing.Size(418, 130);
             this.dgvMemorias.TabIndex = 158;
             this.dgvMemorias.Text = "Tabla Memoria";
             this.dgvMemorias.CellValueChanged += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridCellValueChangedEventArgs>(this.dgvMemorias_CellValueChanged);
@@ -471,30 +485,30 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(646, 327);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(584, 335);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 16);
+            this.label12.Size = new System.Drawing.Size(89, 16);
             this.label12.TabIndex = 155;
             this.label12.Text = "Disco Duro:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(646, 175);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(614, 174);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 16);
+            this.label11.Size = new System.Drawing.Size(72, 16);
             this.label11.TabIndex = 154;
             this.label11.Text = "Memoria:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 178);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(31, 164);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 16);
+            this.label6.Size = new System.Drawing.Size(68, 16);
             this.label6.TabIndex = 167;
             this.label6.Text = "Laptops:";
             // 
@@ -509,7 +523,7 @@
             this.btnAnular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnular.Image = ((System.Drawing.Image)(resources.GetObject("btnAnular.Image")));
             this.btnAnular.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAnular.Location = new System.Drawing.Point(280, 659);
+            this.btnAnular.Location = new System.Drawing.Point(239, 665);
             this.btnAnular.Name = "btnAnular";
             this.btnAnular.Size = new System.Drawing.Size(60, 66);
             this.btnAnular.TabIndex = 180;
@@ -529,7 +543,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(432, 659);
+            this.btnImprimir.Location = new System.Drawing.Point(391, 665);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 66);
             this.btnImprimir.TabIndex = 179;
@@ -548,7 +562,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(346, 660);
+            this.btnCancelar.Location = new System.Drawing.Point(305, 666);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 178;
@@ -567,7 +581,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(121, 659);
+            this.btnEditar.Location = new System.Drawing.Point(80, 665);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 177;
@@ -587,7 +601,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(53, 661);
+            this.btnNuevo.Location = new System.Drawing.Point(12, 667);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 176;
@@ -607,7 +621,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(194, 661);
+            this.btnGrabar.Location = new System.Drawing.Point(153, 667);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
             this.btnGrabar.TabIndex = 175;
@@ -627,7 +641,7 @@
             this.btnVisualizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnVisualizar.Image")));
             this.btnVisualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnVisualizar.Location = new System.Drawing.Point(523, 256);
+            this.btnVisualizar.Location = new System.Drawing.Point(453, 260);
             this.btnVisualizar.Name = "btnVisualizar";
             this.btnVisualizar.Size = new System.Drawing.Size(100, 63);
             this.btnVisualizar.TabIndex = 181;
@@ -644,7 +658,7 @@
             this.dgvLaptopsSeleccionados.BackColor = System.Drawing.Color.White;
             this.dgvLaptopsSeleccionados.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvLaptopsSeleccionados.ForeColor = System.Drawing.Color.Black;
-            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(41, 200);
+            this.dgvLaptopsSeleccionados.Location = new System.Drawing.Point(12, 183);
             this.dgvLaptopsSeleccionados.Name = "dgvLaptopsSeleccionados";
             this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvLaptopsSeleccionados.PrimaryGrid.AllowRowResize = true;
@@ -697,9 +711,10 @@
             this.dgvLaptopsSeleccionados.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvLaptopsSeleccionados.PrimaryGrid.ShowRowHeaders = false;
             this.dgvLaptopsSeleccionados.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(476, 433);
+            this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(450, 291);
             this.dgvLaptopsSeleccionados.TabIndex = 153;
             this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
+            this.dgvLaptopsSeleccionados.SortChanged += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEventArgs>(this.dgvLaptopsSeleccionados_SortChanged);
             this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
             // 
             // label9
@@ -744,12 +759,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1056, 749);
+            this.ClientSize = new System.Drawing.Size(1074, 749);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtMontoCambio);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbMonedaTipo);
-            this.Controls.Add(this.btnVisualizar);
             this.Controls.Add(this.btnAnular);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnCancelar);
@@ -784,6 +798,7 @@
             this.Controls.Add(this.txtFactura);
             this.Controls.Add(this.txtRUC);
             this.Controls.Add(this.cmbProveedor);
+            this.Controls.Add(this.btnVisualizar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

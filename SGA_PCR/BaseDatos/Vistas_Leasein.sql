@@ -812,4 +812,4 @@ FROM
 	ingreso_det_accesorios da
 	LEFT JOIN vista_maestro_disco d ON da.idDisco = d.idDisco
 	LEFT JOIN vista_maestro_memoria m ON da.idMemoria = m.idMemoria
-	LEFT JOIN vista_maestro_licencias l ON da.idModeloLicencia = l.IdModelo 
+	LEFT JOIN vista_maestro_licencias l ON da.idModeloLicencia = l.IdModelo ;
