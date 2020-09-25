@@ -58,6 +58,53 @@ order by cliente,codigoEquipo;
 /*En la tabla de cuota se va a poner la ultima factura que se tenga de este producto, si se ingresa una nueva, se elimina esta fila y se inserta la nueva factura aqui. Si no hay ninguna factura en cuota significa que a ese producto nunca se ha facturado.*/
 
 create view vista_productos_por_facturar as
+SELECT
+	( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
+	s.fecIniContrato AS fecIniPlazoAlquiler,
+	s.fecFinContrato AS fecFinPlazoAlquiler,
+	"" AS factura,
+	"" AS fecInicioFactura,
+	"" AS fecFinFactura,
+	lc.codigo AS codigoEquipo,
+	d.guiaSalida AS guia,
+	DATEDIFF( CURDATE(), s.fecIniContrato ) AS diasVencidos,
+	( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida
+	INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC 
+WHERE
+	s.estado = 4 
+	AND CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c ) 
+	AND NOT(s.fecIniContrato = CURDATE())
+
+UNION
+
+SELECT
+	( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
+	s.fecIniContrato AS fecIniPlazoAlquiler,
+	s.fecFinContrato AS fecFinPlazoAlquiler,
+	cu.numFactura AS factura,
+	cu.fecInicioPago AS fecInicioFactura,
+	cu.fecFinPago AS fecFinFactura,
+	lc.codigo AS codigoEquipo,
+	d.guiaSalida AS guia,
+	DATEDIFF( CURDATE(), cu.fecFinPago ) AS diasVencidos,
+	( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida
+	INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC
+	INNER JOIN cuota cu ON CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+WHERE
+	s.estado = 4 
+	AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
+	AND cu.fecFinPago < CURDATE() 
+ORDER BY
+	cliente,
+	codigoEquipo;
+	
+create view vista_productos_por_facturar_bk as
 	Select (Select c.nombre_razonSocial from cliente c where c.idCliente=s.idCliente) as cliente, 
 			s.fecIniContrato as fecIniPlazoAlquiler,
 			s.fecFinContrato as fecFinPlazoAlquiler,
@@ -813,3 +860,75 @@ FROM
 	LEFT JOIN vista_maestro_disco d ON da.idDisco = d.idDisco
 	LEFT JOIN vista_maestro_memoria m ON da.idMemoria = m.idMemoria
 	LEFT JOIN vista_maestro_licencias l ON da.idModeloLicencia = l.IdModelo ;
+	
+	
+	
+DROP view IF EXISTS `vista_factura_CV_BK1`;
+create view vista_factura_CV_BK1 as
+SELECT
+	CONCAT( s.rucDni, '-', l.codigo ) AS concatCodActCV,
+	CONCAT( s.rucDni, '-', d.observacion ) AS concatCodAntCV,
+	l.codigo,
+	d.observacion AS CodigoAntiguo,
+	cl.nombre_razonSocial,
+	s.fecIniContrato,
+	s.fecFinContrato,
+	IFNULL(c.fecInicioPago, '31/12/1999' ) AS fecInicioPago,
+	IFNULL(c.fecFinPago, '31/12/1999' ) AS fecFinPago,
+	IFNULL(c.numFactura, '' ) AS numFactura
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida
+	LEFT JOIN laptop_cpu l ON d.idLC = l.idLC
+	LEFT JOIN cuota c ON d.idLC = c.IdLC
+	LEFT JOIN cliente cl ON s.rucDni = cl.nroDocumento 
+WHERE
+	d.fueDevuelto = 0 
+	OR d.idLC IN ( SELECT o.idLC FROM observacion_deudas o WHERE o.estado = 1 ) ;	
+	
+DROP view IF EXISTS `vista_factura_CV_BK2`;
+create view vista_factura_CV_BK2 as
+SELECT
+	CONCAT( s.rucDni, '-', l.codigo ) AS concatCodActCV,
+	CONCAT( s.rucDni, '-', d.observacion ) AS concatCodAntCV,
+	l.codigo,
+	d.observacion AS CodigoAntiguo,
+	cl.nombre_razonSocial,
+	s.fecIniContrato,
+	s.fecFinContrato,
+	IFNULL(c.fecInicioPago, '31/12/1999' ) AS fecInicioPago,
+	IFNULL(c.fecFinPago, '31/12/1999' ) AS fecFinPago,
+	IFNULL(c.numFactura, '' ) AS numFactura,
+	IFNULL(c.guiaSalida, d.guiaSalida ) AS guiaSalida
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida
+	LEFT JOIN laptop_cpu l ON d.idLC = l.idLC
+	LEFT JOIN cuota c ON d.idLC = c.IdLC and d.idSalida=c.idSalida 
+	LEFT JOIN cliente cl ON s.rucDni = cl.nroDocumento 
+WHERE 
+	d.fueDevuelto = 0 
+	OR d.idLC IN ( SELECT o.idLC FROM observacion_deudas o WHERE o.estado = 1 ) ;
+	
+
+
+DROP view IF EXISTS `vista_factura_CV`;
+create view vista_factura_CV as
+SELECT
+	CONCAT( s.rucDni, '-', l.codigo ) AS concatCodActCV,
+	CONCAT( s.rucDni, '-', d.observacion ) AS concatCodAntCV,
+	l.codigo,
+	d.observacion AS CodigoAntiguo,
+	cl.nombre_razonSocial,
+	s.fecIniContrato,
+	s.fecFinContrato,
+	IFNULL(c.fecInicioPago, '31/12/1999' ) AS fecInicioPago,
+	IFNULL(c.fecFinPago, '31/12/1999' ) AS fecFinPago,
+	IFNULL(c.numFactura, '' ) AS numFactura,
+	IFNULL(c.guiaSalida, d.guiaSalida ) AS guiaSalida
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida
+	LEFT JOIN laptop_cpu l ON d.idLC = l.idLC
+	LEFT JOIN cuota c ON d.idLC = c.IdLC and d.idSalida=c.idSalida 
+	LEFT JOIN cliente cl ON s.rucDni = cl.nroDocumento ;

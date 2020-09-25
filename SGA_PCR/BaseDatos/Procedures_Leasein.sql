@@ -739,48 +739,6 @@ END
 $$ DELIMITER ;
 
 
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_factura`(
-	IN _idSalida INT,
-	IN _numFactura NVARCHAR(20),
-	IN _fecIniPago DATETIME,
-	IN _fecFinPago DATETIME,
-	IN _fecEmisiom DATETIME,
-	IN _ruc NVARCHAR(11),
-	IN _codigoLC NVARCHAR(80),
-	IN _guiaSalida NVARCHAR(255),
-	IN _observacion NVARCHAR(255),
-    IN _estado TINYINT,
-	IN _usuario_ins NVARCHAR(100)
-)
-BEGIN
-	INSERT INTO factura (idSalida,numFactura,fecIniPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,observacion,estado,usuario_ins) values
-	(_idSalida,_numFactura,_fecIniPago,_fecFinPago,_fecEmisiom,_ruc,_codigoLC,_guiaSalida,_observacion,_estado,_usuario_ins);
-END
-$$ DELIMITER ;
-
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cuota`(
-	IN _idFactura INT,
-	IN _idSalida INT,
-	IN _numFactura NVARCHAR(20),
-	IN _fecIniPago DATETIME,
-	IN _fecFinPago DATETIME,
-	IN _fecEmisiom DATETIME,
-	IN _ruc NVARCHAR(11),
-	IN _codigoLC NVARCHAR(80),
-	IN _guiaSalida NVARCHAR(255),
-	IN _observacion NVARCHAR(255),
-    IN _estado TINYINT
-)
-BEGIN
-	INSERT INTO cuota (idFactura,idSalida,numFactura,fecIniPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,observacion,estado) values
-	(_idFactura,_idSalida,_numFactura,_fecIniPago,_fecFinPago,_fecEmisiom,_ruc,_codigoLC,_guiaSalida,_observacion,_estado);
-END
-$$ DELIMITER ;
-
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cambio`(
 	IN _idLCAntiguo INT,
@@ -1558,6 +1516,72 @@ BEGIN
 		estado=_estado,
 		usuario_mod=_usuario_mod
 	WHERE idIngreso=_idIngreso; 
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_factura`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_factura`(
+	IN _idSalida INT,
+	IN _numFactura NVARCHAR(20),
+	IN _fecIniPago DATETIME,
+	IN _fecFinPago DATETIME,
+	IN _fecEmisiom DATETIME,
+	IN _ruc NVARCHAR(11),
+	IN _codigoLC NVARCHAR(80),
+	IN _guiaSalida NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+    IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100),
+	OUT _idFactura INT
+)
+BEGIN
+	SET @_idFactura=(SELECT IFNULL( MAX(idFactura) , 0 )+1 FROM factura);
+	INSERT INTO factura (idFactura,idSalida,numFactura,fecIniPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,observacion,estado,usuario_ins) values
+	(@_idFactura,_idSalida,_numFactura,_fecIniPago,_fecFinPago,_fecEmisiom,_ruc,_codigoLC,_guiaSalida,_observacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idFactura = @_idFactura;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_cuota`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cuota`(
+	IN _idFactura INT,
+	IN _idSalida INT,
+	IN _idLC INT,
+	IN _numFactura NVARCHAR(20),
+	IN _fecInicioPago DATETIME,
+	IN _fecFinPago DATETIME,
+	IN _fecEmisiom DATETIME,
+	IN _ruc NVARCHAR(11),
+	IN _codigoLC NVARCHAR(80),
+	IN _guiaSalida NVARCHAR(255),
+	IN _observacion NVARCHAR(255),
+    IN _estado TINYINT
+)
+BEGIN
+	INSERT INTO cuota (idFactura,idSalida,idLC,numFactura,fecInicioPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,observacion,estado) values
+	(_idFactura,_idSalida,_idLC,_numFactura,_fecInicioPago,_fecFinPago,_fecEmisiom,_ruc,_codigoLC,_guiaSalida,_observacion,_estado);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `delete_cuota`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_cuota`(
+	IN _idSalida INT,
+	IN _idLC INT
+)
+BEGIN
+	DELETE FROM cuota where idSalida=_idSalida and idLC=_idLC; 
+	COMMIT;
 END
 $$
 DELIMITER ;

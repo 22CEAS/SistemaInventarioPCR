@@ -47,16 +47,18 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.btnSubirFactura = new System.Windows.Forms.Button();
-            this.dgvEquipos = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgvFacturas = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.btnGrabar = new System.Windows.Forms.Button();
+            this.btnValidar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSubirFactura
             // 
             this.btnSubirFactura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirFactura.Location = new System.Drawing.Point(517, 29);
+            this.btnSubirFactura.Location = new System.Drawing.Point(956, 12);
             this.btnSubirFactura.Name = "btnSubirFactura";
             this.btnSubirFactura.Size = new System.Drawing.Size(75, 41);
             this.btnSubirFactura.TabIndex = 58;
@@ -64,122 +66,165 @@
             this.btnSubirFactura.UseVisualStyleBackColor = true;
             this.btnSubirFactura.Click += new System.EventHandler(this.btnSubirFactura_Click);
             // 
-            // dgvEquipos
+            // dgvFacturas
             // 
-            this.dgvEquipos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvFacturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEquipos.BackColor = System.Drawing.Color.White;
-            this.dgvEquipos.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvEquipos.ForeColor = System.Drawing.Color.Black;
-            this.dgvEquipos.Location = new System.Drawing.Point(50, 109);
-            this.dgvEquipos.Name = "dgvEquipos";
-            this.dgvEquipos.PrimaryGrid.AllowRowDelete = true;
-            this.dgvEquipos.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvEquipos.PrimaryGrid.AllowRowInsert = true;
-            this.dgvEquipos.PrimaryGrid.AllowRowResize = true;
-            this.dgvEquipos.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.Name = "Número";
+            this.dgvFacturas.BackColor = System.Drawing.Color.White;
+            this.dgvFacturas.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvFacturas.ForeColor = System.Drawing.Color.Black;
+            this.dgvFacturas.Location = new System.Drawing.Point(51, 76);
+            this.dgvFacturas.Name = "dgvFacturas";
+            this.dgvFacturas.PrimaryGrid.AllowEdit = false;
+            this.dgvFacturas.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvFacturas.PrimaryGrid.AllowRowResize = true;
+            this.dgvFacturas.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn1.DataPropertyName = "FechaPago";
+            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimeInputEditControl);
+            gridColumn1.Name = "Fecha Pago";
             gridColumn1.Width = 110;
+            gridColumn2.DataPropertyName = "TipoPago";
             gridColumn2.FilterAutoScan = true;
-            gridColumn2.Name = "TipoDocumento";
+            gridColumn2.Name = "Tipo Pago";
             gridColumn2.Width = 110;
-            gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);
-            gridColumn3.Name = "NroDocumento";
+            gridColumn3.DataPropertyName = "CodigoLC";
+            gridColumn3.Name = "Codigo Laptops";
             gridColumn3.Width = 110;
-            gridColumn4.Name = "FechaInicioPeriodoFactura";
+            gridColumn4.DataPropertyName = "FechaIniPago";
+            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimeInputEditControl);
+            gridColumn4.Name = "Fecha Inicio Periodo Factura";
             gridColumn4.Width = 130;
-            gridColumn5.Name = "FechaFinPeriodoFactura";
+            gridColumn5.DataPropertyName = "FechaFinPago";
+            gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimeInputEditControl);
+            gridColumn5.Name = "Fecha Fin Periodo Factura";
             gridColumn5.Width = 130;
-            gridColumn6.Name = "Cliente";
-            gridColumn7.Name = "Código Laptop";
-            gridColumn8.Name = "KAM";
-            gridColumn9.Name = "FormaPago";
-            gridColumn10.Name = "TipoVenta";
-            gridColumn11.Name = "Moneda";
-            gridColumn12.Name = "TipoCambio";
-            gridColumn13.Name = "NroOC";
-            gridColumn14.Name = "NroDocRef";
-            gridColumn15.Name = "Observación";
-            gridColumn16.Name = "TotalNeto";
-            gridColumn17.Name = "TotalIGV";
-            gridColumn18.Name = "Total";
-            gridColumn19.Name = "Pagado";
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn10);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn11);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn12);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn13);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn14);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn15);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn16);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn17);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn18);
-            this.dgvEquipos.PrimaryGrid.Columns.Add(gridColumn19);
-            this.dgvEquipos.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvEquipos.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvEquipos.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvEquipos.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvEquipos.PrimaryGrid.EnableFiltering = true;
-            this.dgvEquipos.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvEquipos.PrimaryGrid.Filter.Visible = true;
-            this.dgvEquipos.PrimaryGrid.NullString = "<<null>>";
-            this.dgvEquipos.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvEquipos.PrimaryGrid.ShowInsertRow = true;
-            this.dgvEquipos.PrimaryGrid.ShowRowGridIndex = true;
-            this.dgvEquipos.Size = new System.Drawing.Size(1009, 306);
-            this.dgvEquipos.TabIndex = 72;
-            this.dgvEquipos.Text = "superGridControl3";
+            gridColumn6.DataPropertyName = "RucDni";
+            gridColumn6.Name = "Nro Cliente";
+            gridColumn7.DataPropertyName = "RazonSocial";
+            gridColumn7.Name = "Cliente";
+            gridColumn8.DataPropertyName = "NumeroOC";
+            gridColumn8.Name = "Numero OC";
+            gridColumn9.DataPropertyName = "NumeroDocRef";
+            gridColumn9.Name = "Numero Doc Ref";
+            gridColumn10.DataPropertyName = "NumeroFactura";
+            gridColumn10.Name = "Numero Factura";
+            gridColumn11.DataPropertyName = "TotalSoles";
+            gridColumn11.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn11.Name = "Total Soles";
+            gridColumn12.DataPropertyName = "TotalDolares";
+            gridColumn12.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn12.Name = "Total Dolares";
+            gridColumn13.DataPropertyName = "TipoCambio";
+            gridColumn13.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn13.Name = "Tipo Cambio";
+            gridColumn14.DataPropertyName = "VentaSoles";
+            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn14.Name = "Venta Soles";
+            gridColumn15.DataPropertyName = "CostoSoles";
+            gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn15.Name = "Costo Soles";
+            gridColumn16.DataPropertyName = "CostoDolares";
+            gridColumn16.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn16.Name = "Costo Dolares";
+            gridColumn17.DataPropertyName = "CostoTotalSolesSinIGV";
+            gridColumn17.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn17.Name = "Costo Total Soles Sin IGV";
+            gridColumn18.DataPropertyName = "UtilidadSoles";
+            gridColumn18.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn18.Name = "Utilidad Soles";
+            gridColumn19.DataPropertyName = "UtilidadDolares";
+            gridColumn19.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn19.Name = "Utilidad Dolares";
+            gridColumn20.DataPropertyName = "UtilidadTotalSolesSinIGV";
+            gridColumn20.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn20.Name = "Utilidad Total Soles Sin IGV";
+            gridColumn21.DataPropertyName = "ObservacionXLevantar";
+            gridColumn21.Name = "Observacion A Levantar";
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn3);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn4);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn6);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn7);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn8);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn9);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn13);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn14);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn15);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn16);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn17);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn18);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn19);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn20);
+            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn21);
+            this.dgvFacturas.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvFacturas.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvFacturas.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvFacturas.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvFacturas.PrimaryGrid.EnableFiltering = true;
+            this.dgvFacturas.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvFacturas.PrimaryGrid.Filter.Visible = true;
+            this.dgvFacturas.PrimaryGrid.MultiSelect = false;
+            this.dgvFacturas.PrimaryGrid.NullString = "<<null>>";
+            this.dgvFacturas.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvFacturas.PrimaryGrid.ShowRowGridIndex = true;
+            this.dgvFacturas.Size = new System.Drawing.Size(1212, 417);
+            this.dgvFacturas.TabIndex = 72;
+            this.dgvFacturas.Text = "Tabla Facturas";
             // 
-            // button1
+            // btnGrabar
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(623, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 41);
-            this.button1.TabIndex = 73;
-            this.button1.Text = "Grabar Factura";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.Location = new System.Drawing.Point(1055, 12);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(75, 41);
+            this.btnGrabar.TabIndex = 73;
+            this.btnGrabar.Text = "Grabar Factura";
+            this.btnGrabar.UseVisualStyleBackColor = true;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // label1
+            // btnValidar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
-            this.label1.TabIndex = 74;
-            this.label1.Text = "Facturas Sisgeco";
+            this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnValidar.Location = new System.Drawing.Point(1159, 12);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.Size = new System.Drawing.Size(75, 41);
+            this.btnValidar.TabIndex = 74;
+            this.btnValidar.Text = "Validar Factura";
+            this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // frmProcesoSubirFacturas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1112, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dgvEquipos);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1315, 533);
+            this.Controls.Add(this.btnValidar);
+            this.Controls.Add(this.btnGrabar);
+            this.Controls.Add(this.dgvFacturas);
             this.Controls.Add(this.btnSubirFactura);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmProcesoSubirFacturas";
-            this.Text = "frmProcesoSubirFacturas";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Facturas Sisgeco";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnSubirFactura;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvEquipos;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvFacturas;
+        private System.Windows.Forms.Button btnGrabar;
+        private System.Windows.Forms.Button btnValidar;
     }
 }

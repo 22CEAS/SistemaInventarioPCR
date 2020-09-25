@@ -50,6 +50,7 @@
     <Compile Include="Devolucion.cs" />
     <Compile Include="DevolucionDetalle.cs" />
     <Compile Include="DiscoDuro.cs" />
+    <Compile Include="Factura.cs" />
     <Compile Include="Ingreso.cs" />
     <Compile Include="IngresoDetalle.cs" />
     <Compile Include="LC.cs" />

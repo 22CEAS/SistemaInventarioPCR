@@ -394,45 +394,6 @@ CREATE TABLE salida_det(
 )ENGINE=INNODB;
 
 
-CREATE TABLE factura(
-		idFactura INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-		idSalida INT NOT NULL,
-		numFactura NVARCHAR(20) NOT NULL,
-		fecIniPago DATETIME NOT NULL,
-		fecFinPago DATETIME NOT NULL,
-		fecEmisiom DATETIME NOT NULL,
-		ruc NVARCHAR(11) NOT NULL,
-		codigoLC NVARCHAR(80) NOT NULL,
-		guiaSalida NVARCHAR(255),
-		observacion NVARCHAR(255),
-		estado TINYINT NOT NULL,
-		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
-		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
-		usuario_ins NVARCHAR(100),
-		usuario_mod NVARCHAR(100),
-		FOREIGN KEY (idSalida)
-    REFERENCES salida(idSalida)
-)ENGINE=INNODB;
-
-
-CREATE TABLE cuota(
-		idCuota INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-		idFactura INT NOT NULL,
-		idSalida INT NOT NULL,
-		numFactura NVARCHAR(20) NOT NULL,
-		fecInicioPago DATETIME NOT NULL,
-		fecFinPago DATETIME NOT NULL,
-		fecEmisiom DATETIME NOT NULL,
-		ruc NVARCHAR(11) NOT NULL,
-		codigoLC NVARCHAR(80) NOT NULL,
-		guiaSalida NVARCHAR(255),
-		observacion NVARCHAR(255),
-		estado TINYINT NOT NULL,
-		FOREIGN KEY (idSalida)
-		REFERENCES salida(idSalida)
-)ENGINE=INNODB;
-
-
 
 CREATE TABLE cambio(
 		idCambio INT NOT NULL PRIMARY KEY,
@@ -609,4 +570,43 @@ CREATE TABLE ingreso_det_accesorios(
 	usuario_mod NVARCHAR(100),
 	FOREIGN KEY (idIngreso)
 	REFERENCES ingreso(idIngreso)
+)ENGINE=INNODB;
+
+CREATE TABLE factura(
+		idFactura INT  NOT NULL PRIMARY KEY,
+		idSalida INT NOT NULL,
+		numFactura NVARCHAR(20) NOT NULL,
+		fecIniPago DATETIME NOT NULL,
+		fecFinPago DATETIME NOT NULL,
+		fecEmisiom DATETIME NOT NULL,
+		ruc NVARCHAR(11) NOT NULL,
+		codigoLC NVARCHAR(80) NOT NULL,
+		guiaSalida NVARCHAR(255),
+		observacion NVARCHAR(255),
+		estado TINYINT NOT NULL,
+		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+		usuario_ins NVARCHAR(100),
+		usuario_mod NVARCHAR(100),
+		FOREIGN KEY (idSalida)
+    REFERENCES salida(idSalida)
+)ENGINE=INNODB;
+
+DROP TABLE IF EXISTS `cuota`;
+CREATE TABLE cuota(
+		idFactura INT  NOT NULL,
+		idSalida INT  NOT NULL,
+		idLC INT  NOT NULL,
+		numFactura NVARCHAR(20) NOT NULL,
+		fecInicioPago DATETIME NOT NULL,
+		fecFinPago DATETIME NOT NULL,
+		fecEmisiom DATETIME NOT NULL,
+		ruc NVARCHAR(11) NOT NULL,
+		codigoLC NVARCHAR(80) NOT NULL,
+		guiaSalida NVARCHAR(255),
+		observacion NVARCHAR(255),
+		estado TINYINT NOT NULL,
+		PRIMARY KEY (`idFactura`,`idSalida`,`idLC`),
+		FOREIGN KEY (idSalida)
+		REFERENCES salida(idSalida)
 )ENGINE=INNODB;

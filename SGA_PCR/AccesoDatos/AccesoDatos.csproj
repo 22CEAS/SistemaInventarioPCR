@@ -66,6 +66,7 @@
     <Compile Include="DBManager.cs" />
     <Compile Include="DevolucionDA.cs" />
     <Compile Include="DiscoDuroDA.cs" />
+    <Compile Include="FacturaDA.cs" />
     <Compile Include="IngresoDA.cs" />
     <Compile Include="LaptopDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1073,7 +1073,7 @@ namespace Vistas
                 {
                     //ObtenerDatosPedido();
                     alquilerDA.ModificarAlquiler(alquiler, this.nombreUsuario);
-                    MessageBox.Show("Se Modifico el Alquiler N° :" + txtNroAlquiler.Text + " con exito", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Se Modifico el Alquiler N° :" + txtNroAlquiler.Text + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     estadoComponentes(TipoVista.Guardar);
                 }
             }

@@ -316,11 +316,11 @@ namespace Vistas
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     cambio.LaptopNuevo = frm.LAPTOP;
+                    BindingList<Cambio> cambios = new BindingList<Cambio>();
+                    cambios.Add(cambio);
+                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = cambios;
                 }
             }
-            BindingList<Cambio> cambios = new BindingList<Cambio>();
-            cambios.Add(cambio);
-            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = cambios;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
