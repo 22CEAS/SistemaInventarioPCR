@@ -10,6 +10,8 @@ namespace Modelo
     {
         private long idAlquilerDetalle;
         private LC laptop;
+        private DateTime fechaIniContrato;
+        private DateTime fechaFinContrato;
         private string caracteristica;
         private string guiaSalida;
         private string motivoNoRecojo;
@@ -44,6 +46,8 @@ namespace Modelo
         public string MotivoNoRecojo { get => motivoNoRecojo; set => motivoNoRecojo = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public int Estado { get => estado; set => estado = value; }
+        public DateTime FechaIniContrato { get => fechaIniContrato; set => fechaIniContrato = value; }
+        public DateTime FechaFinContrato { get => fechaFinContrato; set => fechaFinContrato = value; }
 
 
         public int IdLC { get => laptop.IdLC;}
@@ -59,6 +63,5 @@ namespace Modelo
         public int IdVideo { get => laptop.Video.IdVideo; }
         public string NombreModeloVideo { get => laptop.Video.Modelo.NombreModelo; }
         public int CapacidadVideo { get => laptop.Video.Capacidad; }
-
     }
 }

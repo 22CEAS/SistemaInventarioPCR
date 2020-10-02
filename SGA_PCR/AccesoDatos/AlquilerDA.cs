@@ -449,7 +449,7 @@ namespace AccesoDatos
             bool error = false;
             foreach (AlquilerDetalle det in alquiler.Detalles)
             {
-                parametrosEntrada = new MySqlParameter[21];
+                parametrosEntrada = new MySqlParameter[23];
                 parametrosEntrada[0] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_idProcesador", MySqlDbType.Int32);
@@ -470,7 +470,9 @@ namespace AccesoDatos
                 parametrosEntrada[17] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
                 parametrosEntrada[18] = new MySqlParameter("@_estado", MySqlDbType.Int32);
                 parametrosEntrada[19] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
-                parametrosEntrada[20] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+                parametrosEntrada[20] = new MySqlParameter("@_fecIniContrato", MySqlDbType.DateTime);
+                parametrosEntrada[21] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
+                parametrosEntrada[22] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
 
                 int idDisco1 =0; int cantDisco1 = 0; int idDisco2 = 0; int cantDisco2 = 0;
                 int idMemoria1 = 0; int cantMemoria1 = 0; int idMemoria2 = 0; int cantMemoria2 = 0;
@@ -540,10 +542,12 @@ namespace AccesoDatos
                 parametrosEntrada[17].Value = det.Observacion;
                 parametrosEntrada[18].Value = alquiler.Estado;
                 parametrosEntrada[19].Value = usuario;
+                parametrosEntrada[20].Value = alquiler.FechaIniContrato;
+                parametrosEntrada[21].Value = alquiler.FechaFinContrato;
 
                 string[] datosSalida = new string[1];
                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_salida_det",
-                    20, 21, out datosSalida, 1);
+                    22, 23, out datosSalida, 1);
 
                 if (datosSalida != null)
                 {
@@ -602,6 +606,8 @@ namespace AccesoDatos
                 det.MotivoNoRecojo = reader.GetString("motivoNoRecojo");
                 det.Observacion = reader.GetString("observacion");
                 det.Estado = reader.GetInt32("estado");
+                det.FechaIniContrato = reader.GetDateTime("fecIniContrato");
+                det.FechaFinContrato = reader.GetDateTime("fecFinContrato");
                 alquilerDevuelto.Detalles.Add(det);
             }
 
@@ -771,8 +777,6 @@ namespace AccesoDatos
             return error;
         }
 
-
-
         public LC LlenarDetalleDeUnaLaptopDesdeMismoAlquilerDetalle(AlquilerDetalle detalle)
         {
             LC laptop = new LC();
@@ -904,5 +908,6 @@ namespace AccesoDatos
 
             return laptop;
         }
+
     }
 }

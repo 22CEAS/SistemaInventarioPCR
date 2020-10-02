@@ -71,6 +71,8 @@
     <Compile Include="LaptopDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorDA.cs" />
+    <Compile Include="RenovacionDA.cs" />
+    <Compile Include="ReporteDA.cs" />
     <Compile Include="UsuarioDA.cs" />
   </ItemGroup>
   <ItemGroup>

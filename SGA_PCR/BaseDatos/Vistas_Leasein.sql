@@ -729,6 +729,8 @@ From cambio a inner join cliente c on a.idCliente=c.idCliente
 
 create view vista_datos_laptop_por_cambiar as
 SELECT d.idLC as IdLCAntiguo,
+		d.fecIniContrato as fecIniContrato,
+		d.fecFinContrato as fecFinContrato,
 		s.idSalida as IdSalida ,
 		d.idSalidaDet as IdSalidaDet ,
 		l.codigo as CodigoLCAntiguo,
@@ -932,3 +934,72 @@ FROM
 	LEFT JOIN laptop_cpu l ON d.idLC = l.idLC
 	LEFT JOIN cuota c ON d.idLC = c.IdLC and d.idSalida=c.idSalida 
 	LEFT JOIN cliente cl ON s.rucDni = cl.nroDocumento ;
+	
+	
+	
+/*Se mostrará todas las laptops que pertenezcan a un cliente cuando se le filtre por idCliente y que además estén en estado alquilado*/
+create view vista_laptops_detalle_alquiler_plazo_alquiler as
+Select d.idSalidaDet as IdSalidaDetalle,
+		s.idSucursal as IdSucursal,
+		d.idLC as IdLC,
+		d.fecIniContrato as fecIniContrato,
+		d.fecFinContrato as fecFinContrato,
+		s.idCliente as IdCliente,
+		lc.idMarca as idMarca,
+		lc.marca as MarcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as NombreModeloLC,
+		lc.codigo as Codigo,
+		lc.tamanoPantalla as TamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as TipoProcesador,
+		p.generacion as GeneracionProcesador,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on d.idVideo=v.idVideo 
+where d.fueDevuelto=0 and d.estado=4
+ORDER BY lc.idLC ;
+
+
+
+create view vista_laptops_por_vencer as
+Select d.idSalidaDet as IdSalidaDetalle,
+		s.idSucursal as IdSucursal,
+		d.idLC as IdLC,
+		d.fecIniContrato as fecIniContrato,
+		d.fecFinContrato as fecFinContrato,
+		s.idCliente as IdCliente,
+		sc.nombreCliente as Cliente,
+		sc.nombreContacto as Contacto,
+		sc.direccion as DireccionCliente,
+		sc.telefono as TelefonoContacto,
+		lc.idMarca as idMarca,
+		lc.marca as MarcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as NombreModeloLC,
+		lc.codigo as Codigo,
+		lc.tamanoPantalla as TamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as TipoProcesador,
+		p.generacion as GeneracionProcesador,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		LEFT JOIN vista_maestro_sucursal_cliente sc on s.idSucursal=sc.idSucursal
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on d.idVideo=v.idVideo 
+where d.fueDevuelto=0 and d.estado=4
+and  (DATEDIFF( d.fecFinContrato , CURDATE())<7 and DATEDIFF( d.fecFinContrato , CURDATE())>0  )
+ORDER BY lc.idLC ;

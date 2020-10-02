@@ -37,7 +37,7 @@ namespace AccesoDatos
         public bool InsertarAlquilerDetalle(Cambio cambio, string usuario)
         {
             bool error = false;
-            parametrosEntrada = new MySqlParameter[21];
+            parametrosEntrada = new MySqlParameter[23];
             parametrosEntrada[0] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
             parametrosEntrada[2] = new MySqlParameter("@_idProcesador", MySqlDbType.Int32);
@@ -58,7 +58,9 @@ namespace AccesoDatos
             parametrosEntrada[17] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
             parametrosEntrada[18] = new MySqlParameter("@_estado", MySqlDbType.Int32);
             parametrosEntrada[19] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
-            parametrosEntrada[20] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+            parametrosEntrada[20] = new MySqlParameter("@_fecIniContrato", MySqlDbType.Datetime);
+            parametrosEntrada[21] = new MySqlParameter("@_fecFinContrato", MySqlDbType.Datetime);
+            parametrosEntrada[22] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
 
             parametrosEntrada[0].Value = cambio.IdSalida;
             parametrosEntrada[1].Value = cambio.LaptopNuevo.IdLC;
@@ -80,10 +82,12 @@ namespace AccesoDatos
             parametrosEntrada[17].Value = cambio.CodigoLCAntiguo;
             parametrosEntrada[18].Value = 4;
             parametrosEntrada[19].Value = usuario;
+            parametrosEntrada[20].Value = cambio.FechaIniContrato;
+            parametrosEntrada[21].Value = cambio.FechaFinContrato;
 
             string[] datosSalida = new string[1];
             objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_salida_det",
-                20, 21, out datosSalida, 1);
+                22, 23, out datosSalida, 1);
 
             if (datosSalida != null)
             {
@@ -115,7 +119,7 @@ namespace AccesoDatos
 
             bool error = false;
 
-            parametrosEntrada = new MySqlParameter[21];
+            parametrosEntrada = new MySqlParameter[23];
             parametrosEntrada[0] = new MySqlParameter("@_idLCAntiguo", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_codigoLCAntiguo", MySqlDbType.VarChar, 80);
             parametrosEntrada[2] = new MySqlParameter("@_estadoLCAntiguo", MySqlDbType.Int32);
@@ -136,7 +140,9 @@ namespace AccesoDatos
             parametrosEntrada[17] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
             parametrosEntrada[18] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
             parametrosEntrada[19] = new MySqlParameter("@_idSucursal", MySqlDbType.Int32);
-            parametrosEntrada[20] = new MySqlParameter("@_idCambio", MySqlDbType.Int32);
+            parametrosEntrada[20] = new MySqlParameter("@_fecIniContrato", MySqlDbType.DateTime);
+            parametrosEntrada[21] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
+            parametrosEntrada[22] = new MySqlParameter("@_idCambio", MySqlDbType.Int32);
 
             parametrosEntrada[0].Value = cambio.IdLCAntiguo;
             parametrosEntrada[1].Value = cambio.CodigoLCAntiguo;
@@ -158,11 +164,13 @@ namespace AccesoDatos
             parametrosEntrada[17].Value = cambio.IdSalida;
             parametrosEntrada[18].Value = cambio.IdSalidaDet;
             parametrosEntrada[19].Value = cambio.IdSucursal;
+            parametrosEntrada[20].Value = cambio.FechaIniContrato;
+            parametrosEntrada[21].Value = cambio.FechaFinContrato;
 
             string[] datosSalida = new string[1];
 
             objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_cambio",
-                20, 21, out datosSalida, 1);
+                22, 23, out datosSalida, 1);
 
             if (datosSalida != null)
             {
@@ -289,6 +297,8 @@ namespace AccesoDatos
                 cambio.DanoLC = reader.GetInt32("danoLC");
                 cambio.Observacion = reader.GetString("observacion");
                 cambio.Estado = reader.GetInt32("estado");
+                cambio.FechaIniContrato = reader.GetDateTime("fecIniContrato");
+                cambio.FechaFinContrato = reader.GetDateTime("fecFinContrato");
             }
 
             objManager.conexion.Close();  objManager.conexion.Dispose(); objManager.cmd.Dispose();
@@ -400,7 +410,7 @@ namespace AccesoDatos
             objManager.EjecutarProcedure(parametrosEntrada, "delete_observacion_deudas_cambio");
 
             
-            parametrosEntrada = new MySqlParameter[21];
+            parametrosEntrada = new MySqlParameter[23];
             parametrosEntrada[0] = new MySqlParameter("@_idLCAntiguo", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_codigoLCAntiguo", MySqlDbType.VarChar, 80);
             parametrosEntrada[2] = new MySqlParameter("@_estadoLCAntiguo", MySqlDbType.Int32);
@@ -422,6 +432,8 @@ namespace AccesoDatos
             parametrosEntrada[18] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
             parametrosEntrada[19] = new MySqlParameter("@_idSucursal", MySqlDbType.Int32);
             parametrosEntrada[20] = new MySqlParameter("@_idCambio", MySqlDbType.Int32);
+            parametrosEntrada[21] = new MySqlParameter("@_fecIniContrato", MySqlDbType.DateTime);
+            parametrosEntrada[22] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
 
             parametrosEntrada[0].Value = cambio.IdLCAntiguo;
             parametrosEntrada[1].Value = cambio.CodigoLCAntiguo;
@@ -444,6 +456,8 @@ namespace AccesoDatos
             parametrosEntrada[18].Value = cambio.IdSalidaDet;
             parametrosEntrada[19].Value = cambio.IdSucursal;
             parametrosEntrada[20].Value = cambio.IdCambio;
+            parametrosEntrada[21].Value = cambio.FechaIniContrato;
+            parametrosEntrada[22].Value = cambio.FechaFinContrato;
 
             bool okey = objManager.EjecutarProcedure(parametrosEntrada, "update_cambio");
 

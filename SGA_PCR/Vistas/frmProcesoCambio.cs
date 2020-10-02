@@ -700,6 +700,8 @@ namespace Vistas
                 cambio.IdSalida = Convert.ToInt32(tablaDatosLaptop.Rows[0]["IdSalida"].ToString());
                 cambio.IdSalidaDet = Convert.ToInt32(tablaDatosLaptop.Rows[0]["IdSalidaDet"].ToString());
                 cambio.IdSucursal = Convert.ToInt32(tablaDatosLaptop.Rows[0]["IdSucursal"].ToString());
+                cambio.FechaIniContrato = Convert.ToDateTime(tablaDatosLaptop.Rows[0]["fecIniContrato"].ToString());
+                cambio.FechaFinContrato = Convert.ToDateTime(tablaDatosLaptop.Rows[0]["fecFinContrato"].ToString());
 
                 txtCliente.Text = cambio.NombreCliente;
                 txtRucDni.Text = cambio.RucDni;
@@ -719,6 +721,8 @@ namespace Vistas
                         cambio.IdSalida = cambioOld.IdSalida;
                         cambio.IdSalidaDet = cambioOld.IdSalidaDet;
                         cambio.IdSucursal = cambioOld.IdSucursal;
+                        cambio.FechaIniContrato = cambioOld.FechaIniContrato;
+                        cambio.FechaFinContrato = cambioOld.FechaFinContrato;
 
                         txtCliente.Text = cambio.NombreCliente;
                         txtRucDni.Text = cambio.RucDni;

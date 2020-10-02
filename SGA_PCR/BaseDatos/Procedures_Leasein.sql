@@ -727,12 +727,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_salida_det`(
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
 	IN _usuario_ins NVARCHAR(100), 
+	IN _fecIniContrato DATETIME,
+	IN _fecFinContrato DATETIME,
 	OUT _idSalidaDet INT
 )
 BEGIN
 	SET @idSalidaDet=(SELECT IFNULL( MAX( idSalidaDet ) , 0 )+1 FROM salida_det);
-	INSERT INTO salida_det (idSalidaDet,idSalida,idLC,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,guiaSalida,motivoNoRecojo,observacion,estado,fueDevuelto,usuario_ins) values
-	(@idSalidaDet,_idSalida,_idLC,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_guiaSalida,"",_observacion,_estado,0,_usuario_ins);
+	INSERT INTO salida_det (idSalidaDet,idSalida,idLC,fecIniContrato,fecFinContrato,idProcesador,idVideo,idDisco1,cantidadDisco1,idDisco2,cantidadDisco2,idMemoria1,cantidadMemoria1,idMemoria2,cantidadMemoria2,idWindows,idOffice,idAntivirus,caracteristicas,guiaSalida,motivoNoRecojo,observacion,estado,fueDevuelto,usuario_ins) values
+	(@idSalidaDet,_idSalida,_idLC,_fecIniContrato,_fecFinContrato,_idProcesador,_idVideo,_idDisco1,_cantidadDisco1,_idDisco2,_cantidadDisco2,_idMemoria1,_cantidadMemoria1,_idMemoria2,_cantidadMemoria2,_idWindows,_idOffice,_idAntivirus,_caracteristicas,_guiaSalida,"",_observacion,_estado,0,_usuario_ins);
 	COMMIT;
     SET _idSalidaDet = @idSalidaDet;
 END
@@ -761,12 +763,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cambio`(
 	IN _idSalida INT,
 	IN _idSalidaDet INT,
 	IN _idSucursal INT,
+	IN _fecIniContrato DATETIME,
+	IN _fecFinContrato DATETIME,
 	OUT _idCambio INT
 )
 BEGIN
 	SET @idCambio=(SELECT IFNULL( MAX(idCambio) , 0 )+1 FROM cambio);
-	INSERT INTO cambio (idCambio,idSalida,idSalidaDet,idLCAntiguo,codigoLCAntiguo,estadoLCAntiguo,idCliente,idSucursal,nombreCliente,rucDni,guiaCambio,fechaCambio,ticketTecnico,idLCNuevo, codigoLCNuevo,fueDevuelto,pagaraCliente,danoLC,observacion,estado,usuario_ins) values
-	(@idCambio,_idSalida,_idSalidaDet,_idLCAntiguo,_codigoLCAntiguo,_estadoLCAntiguo,_idCliente,_idSucursal,_nombreCliente,_rucDni,_guiaCambio,_fechaCambio,_ticketTecnico,_idLCNuevo, _codigoLCNuevo,_fueDevuelto,_pagaraCliente,_danoLC,_observacion,_estado,_usuario_ins);
+	INSERT INTO cambio (idCambio,idSalida,idSalidaDet,idLCAntiguo,codigoLCAntiguo,estadoLCAntiguo,idCliente,idSucursal,nombreCliente,rucDni,guiaCambio,fechaCambio,ticketTecnico,idLCNuevo, codigoLCNuevo,fueDevuelto,pagaraCliente,danoLC,observacion,estado,usuario_ins,fecIniContrato,fecFinContrato) values
+	(@idCambio,_idSalida,_idSalidaDet,_idLCAntiguo,_codigoLCAntiguo,_estadoLCAntiguo,_idCliente,_idSucursal,_nombreCliente,_rucDni,_guiaCambio,_fechaCambio,_ticketTecnico,_idLCNuevo, _codigoLCNuevo,_fueDevuelto,_pagaraCliente,_danoLC,_observacion,_estado,_usuario_ins,_fecIniContrato,_fecFinContrato);
 	COMMIT;
     SET _idCambio = @idCambio;
 END
@@ -1184,7 +1188,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `update_cambio`(
 	IN _idSalida INT,
 	IN _idSalidaDet INT,
 	IN _idSucursal INT,
-	IN _idCambio INT
+	IN _idCambio INT,
+	IN _fecIniContrato DATETIME,
+	IN _fecFinContrato DATETIME
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
@@ -1209,7 +1215,9 @@ BEGIN
 	observacion=_observacion,
 	estado=_estado,
 	fec_mod=@fechaModificacion,
-	usuario_mod=_usuario_mod
+	usuario_mod=_usuario_mod,
+	fecIniContrato=_fecIniContrato,
+	fecFinContrato=_fecFinContrato
 	where idCambio=_idCambio;
 END
 $$ DELIMITER ;
@@ -1584,4 +1592,22 @@ BEGIN
 	COMMIT;
 END
 $$
+
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida_det_fechaFinalPlazo`(
+	IN _idSalidaDet INT,
+	IN _fecFinContrato DATETIME,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE salida_det 
+	SET fecFinContrato=_fecFinContrato,
+		fec_mod=@fechaModificacion,
+		usuario_mod=_usuario_mod
+	WHERE idSalidaDet=_idSalidaDet; 
+END
+$$ 
 DELIMITER ;

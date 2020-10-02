@@ -20,6 +20,8 @@ namespace Modelo
         private string rucDni;
         private string guiaCambio;
         private DateTime fechaCambio;
+        private DateTime fechaIniContrato;
+        private DateTime fechaFinContrato;
         private string ticketTecnico;
         private LC laptopNuevo;
         private int fueDevuelto;
@@ -57,6 +59,8 @@ namespace Modelo
             this.DanoLC = c.DanoLC;
             this.Observacion = c.Observacion;
             this.Estado = c.Estado;
+            this.FechaIniContrato = c.FechaIniContrato;
+            this.FechaFinContrato = c.FechaFinContrato;
         }
 
         public Cambio(int idCambio, int idSalida, int idSalidaDet, int idLCAntiguo, string codigoLCAntiguo, int estadoLCAntiguo, int idCliente, int idSucursal, string nombreCliente, string rucDni, string guiaCambio, DateTime fechaCambio, string ticketTecnico, LC laptopNuevo, int fueDevuelto, int pagaraCliente, int danoLC, string observacion, int estado)
@@ -116,5 +120,7 @@ namespace Modelo
         public int DanoLC { get => danoLC; set => danoLC = value; }
         public string Observacion { get => observacion; set => observacion = value; }
         public int Estado { get => estado; set => estado = value; }
+        public DateTime FechaIniContrato { get => fechaIniContrato; set => fechaIniContrato = value; }
+        public DateTime FechaFinContrato { get => fechaFinContrato; set => fechaFinContrato = value; }
     }
 }

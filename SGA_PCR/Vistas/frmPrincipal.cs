@@ -204,5 +204,19 @@ namespace Vistas
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnRenovacion_Click(object sender, EventArgs e)
+        {
+            frmProcesoRenovacion frm = new frmProcesoRenovacion();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void buttonItem2_Click(object sender, EventArgs e)
+        {
+            frmReporteAlquileresPorVencer frm = new frmReporteAlquileresPorVencer();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
