@@ -28,6 +28,16 @@ namespace Modelo
         private string ubicacion;
         private string observacion;
         private int estado;
+        private string estadoNombre;
+        private string cliente;
+        private string disco1;
+        private string capacidadDisco1;
+        private string disco2;
+        private string capacidadDisco2;
+        private string capacidadMemoria;
+        private string licenciaWindows;
+        private string licenciaAntivirus;
+        private string licenciaOffice;
 
 
         public LC()
@@ -144,7 +154,15 @@ namespace Modelo
         public int IdVideo { get => Video.IdVideo; set => Video.IdVideo = value; }
         public string NombreModeloVideo { get => Video.Modelo.NombreModelo; set => Video.Modelo.NombreModelo = value; }
         public int CapacidadVideo { get => Video.Capacidad; set => Video.Capacidad = value; }
-
-
+        public string EstadoNombre { get => estadoNombre; set => estadoNombre = value; }
+        public string Cliente { get => cliente; set => cliente = value; }
+        public string Disco1 { get => disco1; set => disco1 = value; }
+        public string CapacidadDisco1 { get => capacidadDisco1; set => capacidadDisco1 = value; }
+        public string Disco2 { get => disco2; set => disco2 = value; }
+        public string CapacidadDisco2 { get => capacidadDisco2; set => capacidadDisco2 = value; }
+        public string CapacidadMemoria { get => capacidadMemoria; set => capacidadMemoria = value; }
+        public string LicenciaWindows { get => licenciaWindows; set => licenciaWindows = value; }
+        public string LicenciaAntivirus { get => licenciaAntivirus; set => licenciaAntivirus = value; }
+        public string LicenciaOffice { get => licenciaOffice; set => licenciaOffice = value; }
     }
 }

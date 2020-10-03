@@ -85,7 +85,7 @@ namespace AccesoDatos
             return 1;
         }
 
-        public int InsertarFactura(Factura factura, string usuario)
+        public int InsertarFactura(Factura factura, string usuario, int idLCAct, int idLCAnt, string codigoActCV)
         {
 
             MySqlDataReader reader;
@@ -157,9 +157,18 @@ namespace AccesoDatos
             parametrosEntrada[1] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
 
             parametrosEntrada[0].Value = factura.IdSalida;
-            parametrosEntrada[1].Value = factura.IdLC;
+            parametrosEntrada[1].Value = idLCAct;
 
             bool okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_cuota");
+
+            parametrosEntrada = new MySqlParameter[2];
+            parametrosEntrada[0] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+
+            parametrosEntrada[0].Value = factura.IdSalida;
+            parametrosEntrada[1].Value = idLCAnt;
+
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_cuota");
 
 
             parametrosEntrada = new MySqlParameter[12];
@@ -178,13 +187,13 @@ namespace AccesoDatos
 
             parametrosEntrada[0].Value = factura.IdFactura;
             parametrosEntrada[1].Value = factura.IdSalida;
-            parametrosEntrada[2].Value = factura.IdLC;
+            parametrosEntrada[2].Value = idLCAct;
             parametrosEntrada[3].Value = factura.NumeroFactura;
             parametrosEntrada[4].Value = factura.FechaIniPago;
             parametrosEntrada[5].Value = factura.FechaFinPago;
             parametrosEntrada[6].Value = factura.FechaPago;
             parametrosEntrada[7].Value = factura.RucDni;
-            parametrosEntrada[8].Value = factura.CodigoLC;
+            parametrosEntrada[8].Value = codigoActCV;
             parametrosEntrada[9].Value = factura.NumeroDocRef;
             parametrosEntrada[10].Value = "";
             parametrosEntrada[11].Value = 1;

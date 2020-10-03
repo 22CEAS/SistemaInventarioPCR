@@ -23,5 +23,33 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_por_vencer ;");
         }
+
+        public DataTable ListarLaptopsPorFacturar()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_productos_por_facturar ;");
+        }
+
+        public DataTable ListarLaptopsPorRecoger()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_productos_por_recoger ;");
+        }
+
+        public DataTable ListarLaptopsInventario()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_inventario_laptops ;");
+        }
+
+        public DataTable ListarLaptopDisco(int idLC)
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_laptops_discos where idLC=" + idLC + " ;");
+        }
+        public DataTable ListarLaptopMemoria(int idLC)
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_laptops_memorias where idLC=" + idLC + " ;");
+        }
+        public DataTable ListarLaptopLicencia(int idLC)
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_licencia_lc_lista where idLC=" + idLC + " ;");
+        }
     }
 }

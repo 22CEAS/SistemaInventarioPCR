@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvPrueba = new DevExpress.XtraGrid.GridControl();
+            this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,18 +48,18 @@
             this.IdProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdSalidaDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdSucursal = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvPrueba
+            // dgvLaptops
             // 
-            this.dgvPrueba.Location = new System.Drawing.Point(21, 50);
-            this.dgvPrueba.MainView = this.vista;
-            this.dgvPrueba.Name = "dgvPrueba";
-            this.dgvPrueba.Size = new System.Drawing.Size(1245, 321);
-            this.dgvPrueba.TabIndex = 131;
-            this.dgvPrueba.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvLaptops.Location = new System.Drawing.Point(21, 50);
+            this.dgvLaptops.MainView = this.vista;
+            this.dgvLaptops.Name = "dgvLaptops";
+            this.dgvLaptops.Size = new System.Drawing.Size(1245, 321);
+            this.dgvLaptops.TabIndex = 131;
+            this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
             // 
             // vista
@@ -94,7 +94,7 @@
             this.IdProcesador,
             this.IdSalidaDetalle,
             this.IdSucursal});
-            this.vista.GridControl = this.dgvPrueba;
+            this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
@@ -284,7 +284,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1302, 450);
-            this.Controls.Add(this.dgvPrueba);
+            this.Controls.Add(this.dgvLaptops);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmReporteAlquileresPorVencer";
@@ -292,7 +292,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Equipos Por Vencer";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             this.ResumeLayout(false);
 
@@ -300,7 +300,7 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl dgvPrueba;
+        private DevExpress.XtraGrid.GridControl dgvLaptops;
         private DevExpress.XtraGrid.Views.Grid.GridView vista;
         private DevExpress.XtraGrid.Columns.GridColumn Codigo;
         private DevExpress.XtraGrid.Columns.GridColumn Marca;

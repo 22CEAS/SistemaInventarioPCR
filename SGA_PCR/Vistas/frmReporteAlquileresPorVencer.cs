@@ -41,7 +41,7 @@ namespace Vistas
             reporteDA = new ReporteDA();
             tablaLaptops = reporteDA.ListarLaptopsPorVencer();
 
-            dgvPrueba.DataSource = tablaLaptops;
+            dgvLaptops.DataSource = tablaLaptops;
             vista.OptionsBehavior.AutoPopulateColumns = false;
             vista.OptionsSelection.MultiSelect = true;
         }

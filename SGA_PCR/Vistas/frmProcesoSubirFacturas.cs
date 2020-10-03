@@ -64,30 +64,35 @@ namespace Vistas
                     int iRow = 2;
                     while (!string.IsNullOrEmpty(sl.GetCellValueAsString(iRow, 1)))
                     {
-                        Factura fact = new Factura();
-                        fact.FechaPago = sl.GetCellValueAsDateTime(iRow, 1);
-                        fact.TipoPago = sl.GetCellValueAsString(iRow, 2);
-                        fact.CodigoLC = sl.GetCellValueAsString(iRow, 3);
-                        fact.FechaIniPago = sl.GetCellValueAsDateTime(iRow, 4);
-                        fact.FechaFinPago = sl.GetCellValueAsDateTime(iRow, 5);
-                        fact.RucDni = sl.GetCellValueAsString(iRow, 6);
-                        fact.RazonSocial = sl.GetCellValueAsString(iRow, 7);
-                        fact.NumeroOC = sl.GetCellValueAsString(iRow, 8);
-                        fact.NumeroDocRef = sl.GetCellValueAsString(iRow, 9);
-                        fact.NumeroFactura = sl.GetCellValueAsString(iRow, 10);
-                        fact.TotalSoles = sl.GetCellValueAsDouble(iRow, 11);
-                        fact.TotalDolares = sl.GetCellValueAsDouble(iRow, 12);
-                        fact.TipoCambio = sl.GetCellValueAsDouble(iRow, 13);
-                        fact.VentaSoles = sl.GetCellValueAsDouble(iRow, 14);
-                        fact.CostoSoles = sl.GetCellValueAsDouble(iRow, 15);
-                        fact.CostoDolares = sl.GetCellValueAsDouble(iRow, 16);
-                        fact.CostoTotalSolesSinIGV = sl.GetCellValueAsDouble(iRow, 17);
-                        fact.UtilidadSoles = sl.GetCellValueAsDouble(iRow, 18);
-                        fact.UtilidadDolares = sl.GetCellValueAsDouble(iRow, 19);
-                        fact.UtilidadTotalSolesSinIGV = sl.GetCellValueAsDouble(iRow, 20);
+                        string tipoPago= sl.GetCellValueAsString(iRow, 2);
+                        if ((tipoPago == "RENOVACION") || (tipoPago == "ALQUILER"))
+                        {
+                            Factura fact = new Factura();
+                            fact.FechaPago = sl.GetCellValueAsDateTime(iRow, 1);
+                            fact.TipoPago = sl.GetCellValueAsString(iRow, 2);
+                            fact.CodigoLC = sl.GetCellValueAsString(iRow, 3);
+                            fact.FechaIniPago = sl.GetCellValueAsDateTime(iRow, 4);
+                            fact.FechaFinPago = sl.GetCellValueAsDateTime(iRow, 5);
+                            fact.RucDni = sl.GetCellValueAsString(iRow, 6);
+                            fact.RazonSocial = sl.GetCellValueAsString(iRow, 7);
+                            fact.NumeroOC = sl.GetCellValueAsString(iRow, 8);
+                            fact.NumeroDocRef = sl.GetCellValueAsString(iRow, 9);
+                            fact.NumeroFactura = sl.GetCellValueAsString(iRow, 10);
+                            fact.TotalSoles = sl.GetCellValueAsDouble(iRow, 11);
+                            fact.TotalDolares = sl.GetCellValueAsDouble(iRow, 12);
+                            fact.TipoCambio = sl.GetCellValueAsDouble(iRow, 13);
+                            fact.VentaSoles = sl.GetCellValueAsDouble(iRow, 14);
+                            fact.CostoSoles = sl.GetCellValueAsDouble(iRow, 15);
+                            fact.CostoDolares = sl.GetCellValueAsDouble(iRow, 16);
+                            fact.CostoTotalSolesSinIGV = sl.GetCellValueAsDouble(iRow, 17);
+                            fact.UtilidadSoles = sl.GetCellValueAsDouble(iRow, 18);
+                            fact.UtilidadDolares = sl.GetCellValueAsDouble(iRow, 19);
+                            fact.UtilidadTotalSolesSinIGV = sl.GetCellValueAsDouble(iRow, 20);
 
-                        facturas.Add(fact);
-                        iRow++;
+                            facturas.Add(fact);
+                            iRow++;
+                        }
+                        
                     }
                     dgvFacturas.PrimaryGrid.DataSource = facturas;
 
@@ -119,93 +124,233 @@ namespace Vistas
             cuadroVencimiento = facturaDA.ListarCV();
             foreach (Factura f in facturas)
             {
-                String concatCodActCV = "", concatCodAntCV = "", facturaCV = "", guiaSalidaCV = ""; 
+                String concatCodActCV = "", facturaCV = "", guiaSalidaCV = "";
                 DateTime fecFinFacCV;
+                DateTime fecIniContrato, fecFinContrato;
+                String concatCodAntCV = "", facturaAntCV = "", guiaSalidaAntCV = "";
+                String codigoActCV = "";
+                DateTime fecFinFacAntCV;
+                int idLcAntigua=0, idLcActual=0;
                 String concatCodSis = f.RucDni + "-" + f.CodigoLC;
                 for (int i = 0; i < cuadroVencimiento.Rows.Count; i++)
                 {
                     concatCodActCV = cuadroVencimiento.Rows[i]["concatCodActCV"].ToString();
-                    concatCodAntCV = cuadroVencimiento.Rows[i]["concatCodAntCV"].ToString();
+                    codigoActCV = cuadroVencimiento.Rows[i]["codigo"].ToString();
                     facturaCV = cuadroVencimiento.Rows[i]["numFactura"].ToString();
+                    guiaSalidaCV = cuadroVencimiento.Rows[i]["guiaActual"].ToString();
                     fecFinFacCV = DateTime.Parse(cuadroVencimiento.Rows[i]["fecFinPago"].ToString());
-                    guiaSalidaCV = cuadroVencimiento.Rows[i]["guiaSalida"].ToString();
+                    idLcActual = int.Parse(cuadroVencimiento.Rows[i]["IdLCActual"].ToString());
+                    fecIniContrato = DateTime.Parse(cuadroVencimiento.Rows[i]["fecIniContrato"].ToString());
+                    fecFinContrato = DateTime.Parse(cuadroVencimiento.Rows[i]["fecFinContrato"].ToString());
 
-                    if (((concatCodSis == concatCodActCV) || (concatCodSis == concatCodAntCV)) && f.NumeroDocRef== guiaSalidaCV)
+                    concatCodAntCV = cuadroVencimiento.Rows[i]["concatCodAntCV"].ToString();
+                    facturaAntCV = cuadroVencimiento.Rows[i]["numFacturaAntigua"].ToString();
+                    guiaSalidaAntCV = cuadroVencimiento.Rows[i]["guiaAntigua"].ToString();
+                    fecFinFacAntCV = DateTime.Parse(cuadroVencimiento.Rows[i]["fecFinPagoAntigua"].ToString());
+                    string aux = cuadroVencimiento.Rows[i]["IdLCAntigua"].ToString();
+                    idLcAntigua = aux.Length==0?0:int.Parse(cuadroVencimiento.Rows[i]["IdLCAntigua"].ToString());
+
+                    if ((concatCodSis == concatCodActCV && f.NumeroDocRef == guiaSalidaCV) || (concatCodSis == concatCodAntCV && f.NumeroDocRef == guiaSalidaAntCV))
                     {
-                        if (facturaCV != f.NumeroFactura)
+                        if (f.FechaIniPago < f.FechaFinPago)
                         {
-                            if ((f.TipoPago == "RENOVACION") || (f.TipoPago == "ALQUILER"))
+                            if (f.FechaFinPago<=fecFinContrato)
                             {
-                                if (f.FechaIniPago > fecFinFacCV)
+
+                                if (guiaSalidaAntCV.Length == 0)//no ha habido cambio
                                 {
-                                    if (f.FechaIniPago < f.FechaFinPago)
+                                    if (facturaCV != f.NumeroFactura)
                                     {
-                                        if (fecFinFacCV.ToString() == "31/12/1999 00:00:00")
+                                        if (fecFinFacCV < f.FechaIniPago)
                                         {
-                                            if(flag==2)//2 es grabar
+                                            if (fecFinFacCV.ToString() == "31/12/1999 00:00:00")//es su primer ingreso
                                             {
-                                                facturaDA.InsertarFactura(f, this.nombreUsuario);
-                                                f.ObservacionXLevantar = "Se grabo correctamente la factura";
+                                                TimeSpan tSpan = f.FechaIniPago - fecIniContrato;
+                                                int numDiasTrans = tSpan.Days;
+                                                if (numDiasTrans != 0)
+                                                {
+                                                    f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias entre la fecha Inicio del Plazo de Alquiler y la fecha inicial de la factura.";
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    if (flag == 2)//2 es grabar
+                                                    {
+                                                        facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                        f.ObservacionXLevantar = "Se grabo correctamente la factura";
+                                                    }
+                                                    else
+                                                    {
+                                                        f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior";
+                                                    }
+
+                                                    break;
+                                                }
                                             }
-                                            else
+                                            else//verifica que las fechas sean consecutivas
                                             {
-                                                f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior";
+                                                TimeSpan tSpan = f.FechaIniPago - fecFinFacCV;
+                                                int numDiasTrans = tSpan.Days;
+                                                if (numDiasTrans != 1)
+                                                {
+                                                    f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias.";
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    if (flag == 2)//2 es grabar
+                                                    {
+                                                        facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                        f.ObservacionXLevantar = "Se grabo correctamente la factura";
+                                                    }
+                                                    else
+                                                    {
+                                                        f.ObservacionXLevantar = "Todo Bien";
+                                                    }
+
+                                                    break;
+                                                }
                                             }
-                                            
-                                            break;
                                         }
                                         else
                                         {
-                                            TimeSpan tSpan = f.FechaIniPago - fecFinFacCV;
+                                            f.ObservacionXLevantar = "Error en la fechas, la fecha final de la ultima factura pagada es mayor o igual a la fecha inicio de esta nueva factura";
+                                            break;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        f.ObservacionXLevantar = "Esta factura ya esta registrada";
+                                        break;
+                                    }
+                                }
+                                else //esto es en el caso de que si ha habido un cambio
+                                {
+                                    if (facturaCV.Length == 0)//no se ha grabado nada con la laptop actual
+                                    {
+                                        if (facturaAntCV.Length == 0)//no se grabo nada con la laptop antigua
+                                        {
+                                            TimeSpan tSpan = f.FechaIniPago - fecIniContrato;
                                             int numDiasTrans = tSpan.Days;
-                                            if (numDiasTrans != 1)
+                                            if (numDiasTrans != 0)
                                             {
-                                                f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias.";
+                                                f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias entre la fecha Inicio del Plazo de Alquiler y la fecha inicial de la factura.";
                                                 break;
                                             }
                                             else
                                             {
                                                 if (flag == 2)//2 es grabar
                                                 {
-                                                    facturaDA.InsertarFactura(f, this.nombreUsuario);
+                                                    facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                     f.ObservacionXLevantar = "Se grabo correctamente la factura";
                                                 }
                                                 else
                                                 {
-                                                    f.ObservacionXLevantar = "Todo Bien";
+                                                    f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior";
                                                 }
-                                                
+
                                                 break;
                                             }
                                         }
+                                        else //si se grabo nada con la laptop antigua
+                                        {
+                                            if (facturaAntCV != f.NumeroFactura)
+                                            {
+                                                if (fecFinFacAntCV < f.FechaIniPago)
+                                                {
+                                                    TimeSpan tSpan = f.FechaIniPago - fecFinFacAntCV;
+                                                    int numDiasTrans = tSpan.Days;
+                                                    if (numDiasTrans != 1)
+                                                    {
+                                                        f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias.";
+                                                        break;
+                                                    }
+                                                    else
+                                                    {
+                                                        if (flag == 2)//2 es grabar
+                                                        {
+                                                            facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                            f.ObservacionXLevantar = "Se grabo correctamente la factura";
+                                                        }
+                                                        else
+                                                        {
+                                                            f.ObservacionXLevantar = "Todo Bien";
+                                                        }
+
+                                                        break;
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    f.ObservacionXLevantar = "Error en la fechas, la fecha final de la ultima factura pagada es mayor o igual a la fecha inicio de esta nueva factura";
+                                                    break;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                f.ObservacionXLevantar = "Esta factura ya esta registrada";
+                                                break;
+                                            }
+                                        }
+
                                     }
-                                    else
+                                    else //si se grabo con la la laptop actual
                                     {
-                                        f.ObservacionXLevantar = "Error en las fechas, la fecha final de la factura de Sisgeco es menor o igual a la fecha inicial de la factura de Sisgeco";
-                                        break;
+                                        if (facturaCV != f.NumeroFactura)
+                                        {
+                                            if (fecFinFacCV < f.FechaIniPago)
+                                            {
+                                                TimeSpan tSpan = f.FechaIniPago - fecFinFacCV;
+                                                int numDiasTrans = tSpan.Days;
+                                                if (numDiasTrans != 1)
+                                                {
+                                                    f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias.";
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    if (flag == 2)//2 es grabar
+                                                    {
+                                                        facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                        f.ObservacionXLevantar = "Se grabo correctamente la factura";
+                                                    }
+                                                    else
+                                                    {
+                                                        f.ObservacionXLevantar = "Todo Bien";
+                                                    }
+
+                                                    break;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                f.ObservacionXLevantar = "Error en la fechas, la fecha final de la ultima factura pagada es mayor o igual a la fecha inicio de esta nueva factura";
+                                                break;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            f.ObservacionXLevantar = "Esta factura ya esta registrada";
+                                            break;
+                                        }
                                     }
-                                }
-                                else
-                                {
-                                    f.ObservacionXLevantar = "Error en la fechas, la fecha final de la ultima factura pagada es mayor o igual a la fecha inicio de esta nueva factura";
-                                    break;
                                 }
                             }
                             else
                             {
-                                f.ObservacionXLevantar = "Esta factura no es del tipo Renovacion o Alquiler";
+                                f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. La fecha final de la factura es mayor a la fecha final del Plazo de Alquiler";
                                 break;
                             }
                         }
                         else
                         {
-                            f.ObservacionXLevantar = "Esta factura ya esta registrada";
+                            f.ObservacionXLevantar = "Error en las fechas, la fecha final de la factura de Sisgeco es menor o igual a la fecha inicial de la factura de Sisgeco";
                             break;
                         }
                     }
                 }
+                dgvFacturas.PrimaryGrid.DataSource = facturas;
             }
-            dgvFacturas.PrimaryGrid.DataSource = facturas;
         }
 
         private void btnValidar_Click(object sender, EventArgs e)
