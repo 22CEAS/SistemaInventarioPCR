@@ -1595,6 +1595,7 @@ $$
 
 
 
+DROP PROCEDURE IF EXISTS `update_salida_det_fechaFinalPlazo`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida_det_fechaFinalPlazo`(
 	IN _idSalidaDet INT,
@@ -1611,3 +1612,85 @@ BEGIN
 END
 $$ 
 DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_reparacion`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_reparacion`(
+	IN _idLC INT,
+	IN _codigoLC NVARCHAR(80),
+	IN _fechaReparacion DATETIME,
+	IN _estadoLCAct INT,
+	IN _estadoLCAnt INT,
+	IN _observacionActual NVARCHAR(1000),
+	IN _observacionReparacion NVARCHAR(1000),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idReparacion INT
+)
+BEGIN
+	SET @_idReparacion=(SELECT IFNULL( MAX(idReparacion) , 0 )+1 FROM reparacion);
+	INSERT INTO reparacion (idReparacion,idLC,codigoLC,fechaReparacion,estadoLCAct,estadoLCAnt,observacionActual,observacionReparacion,estado,usuario_ins) values
+	(@_idReparacion,_idLC,_codigoLC,_fechaReparacion,_estadoLCAct,_estadoLCAnt,_observacionActual,_observacionReparacion,_estado,_usuario_ins);
+	COMMIT;
+    SET _idReparacion = @_idReparacion;
+END
+$$
+DELIMITER ;
+
+
+
+
+
+DROP PROCEDURE IF EXISTS `update_reparacion`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_reparacion`(
+	IN _idLC INT,
+	IN _codigoLC NVARCHAR(80),
+	IN _fechaReparacion DATETIME,
+	IN _estadoLCAct INT,
+	IN _estadoLCAnt INT,
+	IN _observacionActual NVARCHAR(1000),
+	IN _observacionReparacion NVARCHAR(1000),
+	IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idReparacion INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE reparacion 
+	SET idLC=_idLC,
+	codigoLC=_codigoLC,
+	fechaReparacion=_fechaReparacion,
+	estadoLCAct=_estadoLCAct,
+	estadoLCAnt=_estadoLCAnt,
+	observacionActual=_observacionActual,
+	observacionReparacion=_observacionReparacion,
+	estado=_estado,
+	fec_mod=@fechaModificacion,
+	usuario_mod=_usuario_mod
+	where idReparacion=_idReparacion;
+END
+$$
+DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS `anular_reparacion`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_reparacion`(
+    IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100),
+    IN _idReparacion TINYINT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE reparacion
+	SET fec_mod=@fechaModificacion,
+		estado=_estado,
+		usuario_mod=_usuario_mod
+	WHERE idReparacion=_idReparacion; 
+END
+$$ 
+DELIMITER ;
+

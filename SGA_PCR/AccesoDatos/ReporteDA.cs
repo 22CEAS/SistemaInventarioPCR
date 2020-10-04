@@ -51,5 +51,18 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("Select * from vista_licencia_lc_lista where idLC=" + idLC + " ;");
         }
+
+        public DataTable ListarMemorias()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_inventario_memoria;");
+        }
+        public DataTable ListarDiscos()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_inventario_discos;");
+        }
+        public DataTable ListarLicencias()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_stockDisponible_licencia_libre;");
+        }
     }
 }

@@ -1232,3 +1232,60 @@ FROM vista_maestro_laptops lc
 		left join  vista_maestro_procesador p on lc.idProcesador=p.idProcesador 
 		left join vista_maestro_video v on lc.idVideo=v.idVideo 
 ORDER BY lc.idLC;
+
+
+
+DROP view IF EXISTS `vista_inventario_memoria`;
+create view vista_inventario_memoria as
+Select 	me.idMemoria as IdMemoria,
+		ma.nombre as categoria,
+		m.nombre as TipoMemoria,
+		me.busFrecuencia as frecuencia,
+		me.capacidad as Capacidad,
+		me.cantidad as Cantidad,
+		me.estado as estado
+From memoria me
+	inner join modelo m on m.idModelo = me.idModelo
+	inner join marca ma on m.idMarca = ma.idMarca;
+
+
+DROP view IF EXISTS `vista_inventario_discos`;
+create view vista_inventario_discos as
+Select 	d.idDisco as IdDisco,
+		m.nombre as TipoDisco,
+		d.tamano as Tamano,
+		d.capacidad as Capacidad,
+		d.cantidad as Cantidad,
+		d.estado as Estado
+From disco_duro d
+	inner join modelo m on m.idModelo = d.idModelo ;
+
+
+DROP view IF EXISTS `vista_laptops_danados`;
+create view vista_laptops_danados as
+SELECT  lc.codigo as codigo,
+		lc.idLC as idLC,
+		lc.marca as marcaLC,
+		lc.nombreModelo as nombreModeloLC,
+		lc.observacion as observacion,
+		lc.estado as idEstado,
+		(select nombreEstado from estados e where e.idEstado=lc.estado) as nombreEstado
+FROM vista_maestro_laptops lc 
+where lc.estado=3 and lc.ubicacion='ALMACEN'
+ORDER BY lc.idLC;
+
+
+
+DROP view IF EXISTS `vista_lista_reparaciones`;
+create view vista_lista_reparaciones as
+Select r.idReparacion as IdReparacion,
+			 r.idLC as IdLC,
+			 r.usuario_ins as NombreResponsable,
+			 r.estado as IdEstado,
+			 r.codigoLC as CodigoLC,
+			 cast(r.fec_ins as date) as FechaProceso,
+			 e.nombreEstado as Estado
+From reparacion r 
+				inner join estados e on r.estado=e.idEstado 
+
+

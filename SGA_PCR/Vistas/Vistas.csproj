@@ -153,6 +153,12 @@
     <Compile Include="frmProcesoRenovacionAgregarProducto.Designer.cs">
       <DependentUpon>frmProcesoRenovacionAgregarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoReparacionBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoReparacionBuscar.Designer.cs">
+      <DependentUpon>frmProcesoReparacionBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteAlquileresPorVencer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,12 @@
     <Compile Include="frmProcesoIngreso.Designer.cs">
       <DependentUpon>frmProcesoIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteDisco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteDisco.Designer.cs">
+      <DependentUpon>frmReporteDisco.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteInventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,11 +285,11 @@
     <Compile Include="frmLogueo.Designer.cs">
       <DependentUpon>frmLogueo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProcesoMantenimiento.cs">
+    <Compile Include="frmProcesoReparacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProcesoMantenimiento.Designer.cs">
-      <DependentUpon>frmProcesoMantenimiento.cs</DependentUpon>
+    <Compile Include="frmProcesoReparacion.Designer.cs">
+      <DependentUpon>frmProcesoReparacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -315,11 +327,11 @@
     <Compile Include="frmReporteMantenimiento.Designer.cs">
       <DependentUpon>frmReporteMantenimiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteMemoriaDisco.cs">
+    <Compile Include="frmReporteMemoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReporteMemoriaDisco.Designer.cs">
-      <DependentUpon>frmReporteMemoriaDisco.cs</DependentUpon>
+    <Compile Include="frmReporteMemoria.Designer.cs">
+      <DependentUpon>frmReporteMemoria.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportePendienteFacturar.cs">
       <SubType>Form</SubType>
@@ -413,6 +425,9 @@
     <EmbeddedResource Include="frmProcesoRenovacionAgregarProducto.resx">
       <DependentUpon>frmProcesoRenovacionAgregarProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoReparacionBuscar.resx">
+      <DependentUpon>frmProcesoReparacionBuscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteAlquileresPorVencer.resx">
       <DependentUpon>frmReporteAlquileresPorVencer.cs</DependentUpon>
     </EmbeddedResource>
@@ -437,6 +452,9 @@
     <EmbeddedResource Include="frmProcesoIngreso.resx">
       <DependentUpon>frmProcesoIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteDisco.resx">
+      <DependentUpon>frmReporteDisco.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteInventario.resx">
       <DependentUpon>frmReporteInventario.cs</DependentUpon>
     </EmbeddedResource>
@@ -449,8 +467,8 @@
     <EmbeddedResource Include="frmLogueo.resx">
       <DependentUpon>frmLogueo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProcesoMantenimiento.resx">
-      <DependentUpon>frmProcesoMantenimiento.cs</DependentUpon>
+    <EmbeddedResource Include="frmProcesoReparacion.resx">
+      <DependentUpon>frmProcesoReparacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -470,8 +488,8 @@
     <EmbeddedResource Include="frmReporteMantenimiento.resx">
       <DependentUpon>frmReporteMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteMemoriaDisco.resx">
-      <DependentUpon>frmReporteMemoriaDisco.cs</DependentUpon>
+    <EmbeddedResource Include="frmReporteMemoria.resx">
+      <DependentUpon>frmReporteMemoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportePendienteFacturar.resx">
       <DependentUpon>frmReportePendienteFacturar.cs</DependentUpon>

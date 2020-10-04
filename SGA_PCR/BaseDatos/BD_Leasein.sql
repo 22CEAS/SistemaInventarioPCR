@@ -614,3 +614,24 @@ CREATE TABLE cuota(
 		FOREIGN KEY (idSalida)
 		REFERENCES salida(idSalida)
 )ENGINE=INNODB;
+
+
+DROP TABLE IF EXISTS `reparacion`;
+CREATE TABLE reparacion(
+		idReparacion INT NOT NULL PRIMARY KEY,
+		idLC INT NOT NULL,
+		codigoLC NVARCHAR(80) NOT NULL,
+		fechaReparacion DATETIME NOT NULL,
+		estadoLCAct TINYINT NOT NULL,
+		estadoLCAnt TINYINT NOT NULL,
+		observacionActual NVARCHAR(1000),
+		observacionReparacion NVARCHAR(1000),
+		estado TINYINT NOT NULL,
+		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
+		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
+		usuario_ins NVARCHAR(100),
+		usuario_mod NVARCHAR(100),
+		FOREIGN KEY (idLC)
+    REFERENCES laptop_cpu(idLC)
+)ENGINE=INNODB;
+

@@ -108,7 +108,7 @@ namespace Vistas
 
         private void btnMantenimiento_Click(object sender, EventArgs e)
         {
-            frmProcesoMantenimiento frm = new frmProcesoMantenimiento();
+            frmProcesoReparacion frm = new frmProcesoReparacion();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -170,9 +170,9 @@ namespace Vistas
             frm.Show();
         }
 
-        private void btnMemoriasDiscos_Click(object sender, EventArgs e)
+        private void btnMemorias_Click(object sender, EventArgs e)
         {
-            frmReporteMemoriaDisco frm = new frmReporteMemoriaDisco();
+            frmReporteMemoria frm = new frmReporteMemoria();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -215,6 +215,13 @@ namespace Vistas
         private void buttonItem2_Click(object sender, EventArgs e)
         {
             frmReporteAlquileresPorVencer frm = new frmReporteAlquileresPorVencer();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnDiscos_Click(object sender, EventArgs e)
+        {
+            frmReporteDisco frm = new frmReporteDisco();
             frm.MdiParent = this;
             frm.Show();
         }

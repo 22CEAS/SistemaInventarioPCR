@@ -397,6 +397,7 @@ namespace Vistas
             dtpFechaTraslado.Value = DateTime.Now;
             dtpIniPlazo.Value = DateTime.Now;
             dtpFinPlazo.Value = DateTime.Now;
+            cmbCliente.SelectedIndex = 0;
             dgvDisco.PrimaryGrid.DataSource = null;
             dgvMemorias.PrimaryGrid.DataSource = null;
             dgvLicencia.PrimaryGrid.DataSource = null;
@@ -1023,6 +1024,18 @@ namespace Vistas
         {
             Cursor.Current = Cursors.WaitCursor;
             string numAlquiler = txtNroAlquiler.Text;
+            if (cmbCliente.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar un Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+            if (cmbSucursal.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar un Alquiler si no\nha seleccionado una sucursal correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
             ObtenerDatosAlquiler();
             if (alquiler.Detalles.Count == 0)
             {
@@ -1035,7 +1048,6 @@ namespace Vistas
             {
                 if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Pre-Alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    ObtenerDatosAlquiler();
                     int idAlquiler = alquilerDA.InsertarPreAlquiler(alquiler, this.nombreUsuario);
 
                     if (idAlquiler==0)

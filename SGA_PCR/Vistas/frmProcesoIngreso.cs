@@ -425,6 +425,7 @@ namespace Vistas
             txtGuia.Text = "";
             txtFactura.Text = "";
             txtMontoCambio.Text = "";
+            cmbProveedor.SelectedIndex = 0;
             dtpFechaIngreso.Value = DateTime.Now;
             dgvDisco.PrimaryGrid.DataSource = null;
             dgvMemorias.PrimaryGrid.DataSource = null;
@@ -1295,6 +1296,12 @@ namespace Vistas
         {
             Cursor.Current = Cursors.WaitCursor;
             string numIngreso = txtNroIngreso.Text;
+            if (cmbProveedor.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar un Ingreso si no\nha seleccionado un proveedor correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
             ObtenerDatosIngreso();
             if (ValidarDatos())
             {

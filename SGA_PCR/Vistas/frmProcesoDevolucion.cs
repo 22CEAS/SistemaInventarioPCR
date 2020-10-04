@@ -244,6 +244,7 @@ namespace Vistas
         {
             txtNroDevolucion.Text = "";
             txtNroGuia.Text = "";
+            cmbCliente.SelectedIndex = 0;
             dtpFechaIngreso.Value = DateTime.Now;
             dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
         }
@@ -324,6 +325,14 @@ namespace Vistas
 
             Cursor.Current = Cursors.WaitCursor;
             string numDevolucion = txtNroDevolucion.Text;
+
+            if (cmbCliente.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar una Devolucion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+
             ObtenerDatosDevolucion();
 
             if (devolucion.Detalles.Count == 0)
@@ -339,13 +348,11 @@ namespace Vistas
                             MessageBoxIcon.Error);
                 return;
             }
-
-            ObtenerDatosDevolucion();
+            
             if (numDevolucion.Length == 0)
             {
                 if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    ObtenerDatosDevolucion();
                     int idDevolucion=0;
                     idDevolucion = devolucionDA.InsertarDevolucion(devolucion, this.nombreUsuario);
 
@@ -376,6 +383,12 @@ namespace Vistas
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
+            if (cmbCliente.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
             using (frmProcesoDevolucionAgregarProducto frm = new frmProcesoDevolucionAgregarProducto(devolucion.IdCliente))
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)

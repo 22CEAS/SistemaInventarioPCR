@@ -311,6 +311,17 @@ namespace Vistas
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
+
+            string cliente = txtCliente.Text;
+            cliente = cliente.Trim();
+
+            if (cliente.Length == 0)
+            {
+                MessageBox.Show("No se puede agregar productos si no\nexiste un cliente relacionado.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return;
+            }
+
             using (frmProcesoCambioAgregarProducto frm = new frmProcesoCambioAgregarProducto())
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)

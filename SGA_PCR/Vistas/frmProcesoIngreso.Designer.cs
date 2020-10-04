@@ -117,9 +117,9 @@
             // 
             // txtFactura
             // 
-            this.txtFactura.Location = new System.Drawing.Point(98, 112);
+            this.txtFactura.Location = new System.Drawing.Point(72, 111);
             this.txtFactura.Name = "txtFactura";
-            this.txtFactura.Size = new System.Drawing.Size(119, 20);
+            this.txtFactura.Size = new System.Drawing.Size(138, 20);
             this.txtFactura.TabIndex = 3;
             // 
             // dtpFechaIngreso
@@ -171,7 +171,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 115);
+            this.label3.Location = new System.Drawing.Point(13, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 16);
             this.label3.TabIndex = 9;
@@ -251,7 +251,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBuscar.Location = new System.Drawing.Point(252, 0);
+            this.btnBuscar.Location = new System.Drawing.Point(230, 4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 56);
             this.btnBuscar.TabIndex = 150;
@@ -264,7 +264,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(38, 21);
+            this.label5.Location = new System.Drawing.Point(16, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 16);
             this.label5.TabIndex = 149;
@@ -272,7 +272,7 @@
             // 
             // txtNroIngreso
             // 
-            this.txtNroIngreso.Location = new System.Drawing.Point(117, 20);
+            this.txtNroIngreso.Location = new System.Drawing.Point(95, 24);
             this.txtNroIngreso.Name = "txtNroIngreso";
             this.txtNroIngreso.ReadOnly = true;
             this.txtNroIngreso.Size = new System.Drawing.Size(106, 20);
@@ -282,7 +282,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 70);
+            this.label7.Location = new System.Drawing.Point(12, 69);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 16);
             this.label7.TabIndex = 152;
@@ -290,10 +290,12 @@
             // 
             // cmbTipoIngreso
             // 
+            this.cmbTipoIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbTipoIngreso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoIngreso.FormattingEnabled = true;
-            this.cmbTipoIngreso.Location = new System.Drawing.Point(98, 70);
+            this.cmbTipoIngreso.Location = new System.Drawing.Point(72, 69);
             this.cmbTipoIngreso.Name = "cmbTipoIngreso";
-            this.cmbTipoIngreso.Size = new System.Drawing.Size(119, 21);
+            this.cmbTipoIngreso.Size = new System.Drawing.Size(138, 21);
             this.cmbTipoIngreso.TabIndex = 151;
             // 
             // btnAgregarLicencia
@@ -729,6 +731,8 @@
             // 
             // cmbMonedaTipo
             // 
+            this.cmbMonedaTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbMonedaTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonedaTipo.FormattingEnabled = true;
             this.cmbMonedaTipo.Location = new System.Drawing.Point(619, 116);
             this.cmbMonedaTipo.Name = "cmbMonedaTipo";

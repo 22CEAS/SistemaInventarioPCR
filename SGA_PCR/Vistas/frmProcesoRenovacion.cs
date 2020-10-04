@@ -196,6 +196,7 @@ namespace Vistas
         public void limpiarComponentes()
         {
             txtReferencia.Text = "";
+            cmbCliente.SelectedIndex = 0;
             dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
         }
 
@@ -233,9 +234,17 @@ namespace Vistas
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
+
+            if (cmbCliente.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar una Renovacion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+
             ObtenerDatosRenovacion();
 
-            foreach(Renovacion rev in renovaciones)
+            foreach (Renovacion rev in renovaciones)
             {
                 if (rev.FechaIniContrato > rev.FechaFinContrato)
                 {
@@ -293,6 +302,12 @@ namespace Vistas
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
+            if (cmbCliente.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede agregar productos\n si no se ha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
             using (frmProcesoRenovacionAgregarProducto frm = new frmProcesoRenovacionAgregarProducto(IdCliente))
             {
                 if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
