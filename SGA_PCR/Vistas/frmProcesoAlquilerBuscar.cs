@@ -106,12 +106,24 @@ namespace Vistas
                 }
                 if (chbCliente.Checked)
                 {
+                    if (cmbCliente.SelectedValue == null)
+                    {
+                        MessageBox.Show("No se puede buscar un Alquiler si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                        return;
+                    }
                     int idCliente = Convert.ToInt32(cmbCliente.SelectedValue.ToString());
                     sqlCli = " AND v.idCliente = " + idCliente;
                     sql = sql + sqlCli;
                 }
                 if (chbKam.Checked)
                 {
+                    if (cmbKam.SelectedValue == null)
+                    {
+                        MessageBox.Show("No se puede buscar un Alquiler si no\nha seleccionado un KAM correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                        return;
+                    }
                     int i = cmbKam.SelectedIndex;
                     string nombreKam = tablaKam.Rows[i]["nombre"].ToString();
                    

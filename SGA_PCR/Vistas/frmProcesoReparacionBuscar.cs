@@ -103,14 +103,27 @@ namespace Vistas
                 }
                 if (chbCodigoLC.Checked)
                 {
+                    if (cmbCodigoLC.SelectedValue == null)
+                    {
+                        MessageBox.Show("No se puede buscar una Reparacion si no\nha seleccionado un codigo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                        return;
+                    }
+
                     int idLC = Convert.ToInt32(cmbCodigoLC.SelectedValue.ToString());
                     sqlCli = " AND v.idLC = " + idLC;
                     sql = sql + sqlCli;
                 }
                 if (chbResponsable.Checked)
                 {
+                    if (cmbResponsable.SelectedValue == null)
+                    {
+                        MessageBox.Show("No se puede buscar una Reparacion si no\nha seleccionado un responsable correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                        return;
+                    }
                     int i = cmbResponsable.SelectedIndex;
-                    string nombreResponsable = tablaResponsable.Rows[i]["nombre"].ToString();
+                    string nombreResponsable = tablaResponsable.Rows[i]["usuario"].ToString();
 
                     sqlKam = " AND v.nombreResponsable = '" + nombreResponsable + "'";
                     sql = sql + sqlKam;
@@ -127,7 +140,7 @@ namespace Vistas
                 try
                 {
                     sql = "\0";
-                    sql = "Where v.idCambio = " + Int32.Parse(txtNumCambio.Text);
+                    sql = "Where v.idReparacion = " + Int32.Parse(txtNumCambio.Text);
                 }
                 catch
                 {
@@ -245,13 +258,13 @@ namespace Vistas
         }
         private void chbKam_CheckedChanged(object sender, EventArgs e)
         {
-            if (chbResponsable.Checked) chbResponsable.Enabled = true;
-            else chbResponsable.Enabled = false;
+            if (chbResponsable.Checked) cmbResponsable.Enabled = true;
+            else cmbResponsable.Enabled = false;
         }
         private void chbCodigoLC_CheckedChanged(object sender, EventArgs e)
         {
-            if (chbCodigoLC.Checked) chbCodigoLC.Enabled = true;
-            else chbCodigoLC.Enabled = false;
+            if (chbCodigoLC.Checked) cmbCodigoLC.Enabled = true;
+            else cmbCodigoLC.Enabled = false;
 
         }
         private void chbEstado_CheckedChanged(object sender, EventArgs e)

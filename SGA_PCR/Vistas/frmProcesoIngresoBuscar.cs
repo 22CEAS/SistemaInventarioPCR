@@ -108,12 +108,25 @@ namespace Vistas
                 }
                 if (chbProveedor.Checked)
                 {
+                    if (cmbProveedor.SelectedValue == null)
+                    {
+                        MessageBox.Show("No se puede buscar un Ingreso si no\nha seleccionado un proveedor correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                        return;
+                    }
+
                     int idProveedor = Convert.ToInt32(cmbProveedor.SelectedValue.ToString());
                     sqlCli = " AND v.idProveedor = " + idProveedor;
                     sql = sql + sqlCli;
                 }
                 if (chbUsuario.Checked)
                 {
+                    if (cmbUsuario.SelectedValue == null)
+                    {
+                        MessageBox.Show("No se puede buscar un Ingreso si no\nha seleccionado un usuario correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                                       MessageBoxIcon.Error);
+                        return;
+                    }
                     int i = cmbUsuario.SelectedIndex;
                     string nombreKam = tablaUsuario.Rows[i]["usuario"].ToString();
 

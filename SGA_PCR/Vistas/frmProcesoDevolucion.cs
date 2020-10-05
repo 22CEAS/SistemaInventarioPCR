@@ -492,7 +492,7 @@ namespace Vistas
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Anular este alquiler", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("Estas seguro que desea Anular esta devolucion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     devolucion.Estado = 0;
                     devolucionDA.AnularDevolucion(devolucion, this.nombreUsuario);

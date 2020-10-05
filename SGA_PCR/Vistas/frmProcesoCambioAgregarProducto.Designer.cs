@@ -184,6 +184,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(798, 304);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
@@ -194,7 +195,7 @@
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmProductoCambio";
+            this.Text = "Productos";
             this.ResumeLayout(false);
             this.PerformLayout();
 

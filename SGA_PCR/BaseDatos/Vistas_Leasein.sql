@@ -1289,3 +1289,22 @@ From reparacion r
 				inner join estados e on r.estado=e.idEstado 
 
 
+DROP view IF EXISTS `vista_lista_observaciones`;
+create view vista_lista_observaciones as
+Select o.idObservacionDeudas as IdObservacion,
+			o.idCliente as IdCliente,
+			(Select c.nombre_razonSocial From cliente c Where c.idCliente=o.idCliente) as Cliente,
+			(Select c.nroDocumento From cliente c Where c.idCliente=o.idCliente) as RUC,
+			o.idLC as IdLC,
+			(Select lc.codigo From laptop_cpu lc Where lc.idLC=o.IdLC) as CodigoLC,
+			IFNULL(o.idDevolucion, 0) AS IdDevolucion,
+			IFNULL(o.idCambio, 0) AS IdCambio,
+			o.observacionDeuda as ObservacionDeuda,
+			o.guiaLevantamiento as GuiaLevantamiento,
+			o.observacionLevantamiento as ObservacionLevantamiento,
+			o.fechaLevantamiento as FechaLevantamiento,
+			o.estado as IdEstado,
+			(Select e.nombreEstado From estados e where e.idEstado=o.estado) as Estado
+From observacion_deudas o ;
+
+

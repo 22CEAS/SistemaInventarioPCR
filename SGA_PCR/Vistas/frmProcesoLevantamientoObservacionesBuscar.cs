@@ -14,17 +14,15 @@ using System.Windows.Forms;
 
 namespace Vistas
 {
-    public partial class frmProcesoDevolucionBuscar : Form
+    public partial class frmProcesoLevantamientoObservacionesBuscar : Form
     {
-        private Devolucion objSeleccionado;
-        private DevolucionDA devolucionDA;
+        private Observacion objSeleccionado;
+        private ObservacionDA observacionDA;
         private ClienteDA clienteDA;
-        private DataTable tablaKam;
         private DataTable tablaCliente;
-        private DataTable tablaEstados;
-        private DataTable tablaDevolucion;
+        private DataTable tablaObservacion;
 
-        public frmProcesoDevolucionBuscar(int idUsuario)
+        public frmProcesoLevantamientoObservacionesBuscar(int idUsuario)
         {
             InitializeComponent();
 
@@ -39,7 +37,7 @@ namespace Vistas
 
         private void inicializarFiltros(int idUsuario)
         {
-            devolucionDA = new DevolucionDA();
+            observacionDA = new ObservacionDA();
             clienteDA = new ClienteDA();
 
             dtpFecProceso.Value = DateTime.Now;
@@ -49,38 +47,24 @@ namespace Vistas
             cmbCliente.DisplayMember = "nombre_razonSocial";
             cmbCliente.ValueMember = "idCliente";
             cmbCliente.SelectedIndex = 0;
+            
 
-            tablaKam = clienteDA.ListarKams();
-            cmbKam.DataSource = tablaKam;
-            cmbKam.DisplayMember = "nombre";
-            cmbKam.ValueMember = "idUsuario";
-            cmbKam.SelectedIndex = 0;
-
-            tablaEstados = devolucionDA.ListarEstados();
-            cmbEstado.DataSource = tablaEstados;
-            cmbEstado.DisplayMember = "nombreEstado";
-            cmbEstado.ValueMember = "idEstado";
-            cmbEstado.SelectedIndex = 0;
-
-            if (rbtnNumAlquiler.Checked) txtNumAlquiler.Enabled = true;
-            else txtNumAlquiler.Enabled = false;
-            if (chbEstado.Checked) cmbEstado.Enabled = true;
-            else cmbEstado.Enabled = false;
-            if (chbKam.Checked) cmbKam.Enabled = true;
-            else cmbKam.Enabled = false;
+            if (rbtnNumLevantamiento.Checked) txtNumCambio.Enabled = true;
+            else txtNumCambio.Enabled = false;
             if (chbCliente.Checked) cmbCliente.Enabled = true;
             else cmbCliente.Enabled = false;
             if (chbFecProceso.Checked) dtpFecProceso.Enabled = true;
             else dtpFecProceso.Enabled = false;
-            dgvDevolucion.PrimaryGrid.AutoGenerateColumns = false;
+            dgvLevantamiento.PrimaryGrid.AutoGenerateColumns = false;
         }
 
-        public Devolucion ObjSeleccionado { get => objSeleccionado; set => objSeleccionado = value; }
+        public Observacion ObjSeleccionado { get => objSeleccionado; set => objSeleccionado = value; }
 
-        public frmProcesoDevolucionBuscar()
+        public frmProcesoLevantamientoObservacionesBuscar()
         {
             InitializeComponent();
         }
+
         private void cargarDataGridView()
         {
 
@@ -90,7 +74,7 @@ namespace Vistas
 
             if (rbtnFiltros.Checked)
             {
-                sql = "Where v.idDevolucion is not null ";
+                sql = "Where v.IdObservacion is not null and v.IdEstado=11 ";
                 String sqlFec = ""; String sqlKam = ""; String sqlCli = ""; String sqlEst = "";
                 if (chbFecProceso.Checked)
                 {
@@ -100,14 +84,14 @@ namespace Vistas
                     String mes = fecha_proceso.Month.ToString();
                     String anho = fecha_proceso.Year.ToString();
 
-                    sqlFec = " AND Cast(v.fechaProceso as DATE) = '" + anho + "-" + mes + "-" + dia + "'";
+                    sqlFec = " AND Cast(v.FechaLevantamiento as DATE) = '" + anho + "-" + mes + "-" + dia + "'";
                     sql = sql + sqlFec;
                 }
                 if (chbCliente.Checked)
                 {
                     if (cmbCliente.SelectedValue == null)
                     {
-                        MessageBox.Show("No se puede buscar una Devolucion si no\nha seleccionado un Cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                        MessageBox.Show("No se puede buscar un Levantamiento de Observacion si no\nha seleccionado un Cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
                                        MessageBoxIcon.Error);
                         return;
                     }
@@ -115,43 +99,23 @@ namespace Vistas
                     sqlCli = " AND v.idCliente = " + idCliente;
                     sql = sql + sqlCli;
                 }
-                if (chbKam.Checked)
-                {
-                    if (cmbKam.SelectedValue == null)
-                    {
-                        MessageBox.Show("No se puede buscar una Devolucion si no\nha seleccionado un KAM correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
-                                       MessageBoxIcon.Error);
-                        return;
-                    }
-                    int i = cmbKam.SelectedIndex;
-                    string nombreKam = tablaKam.Rows[i]["nombre"].ToString();
-
-                    sqlKam = " AND v.nombreKam = '" + nombreKam + "'";
-                    sql = sql + sqlKam;
-                }
-                if (chbEstado.Checked)
-                {
-                    int idEstado = Convert.ToInt32(cmbEstado.SelectedValue.ToString());
-                    sqlEst = " AND v.idEstado = " + idEstado;
-                    sql = sql + sqlEst;
-                }
             }
-            else if (rbtnNumAlquiler.Checked)
+            else if (rbtnNumLevantamiento.Checked)
             {
                 try
                 {
                     sql = "\0";
-                    sql = "Where v.idDevolucion = " + Int32.Parse(txtNumAlquiler.Text);
+                    sql = "Where v.IdObservacion = " + Int32.Parse(txtNumCambio.Text);
                 }
                 catch
                 {
-                    MessageBox.Show("El numero de devolución no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El numero de Levantamiento no es valido", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
 
-            tablaDevolucion = devolucionDA.ListarDevolucion(sql);
-            dgvDevolucion.PrimaryGrid.DataSource = tablaDevolucion;
+            tablaObservacion = observacionDA.ListarObservacionesABuscar(sql);
+            dgvLevantamiento.PrimaryGrid.DataSource = tablaObservacion;
 
         }
 
@@ -159,8 +123,8 @@ namespace Vistas
         {
 
             Cursor.Current = Cursors.WaitCursor;
-            dgvDevolucion.PrimaryGrid.DataSource = null;
-            dgvDevolucion.PrimaryGrid.Rows.Clear();
+            dgvLevantamiento.PrimaryGrid.DataSource = null;
+            dgvLevantamiento.PrimaryGrid.Rows.Clear();
             cargarDataGridView();
             Cursor.Current = Cursors.Default;
         }
@@ -171,23 +135,22 @@ namespace Vistas
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-                int i = dgvDevolucion.PrimaryGrid.ActiveRow.Index;
-                int idDevolucion = int.Parse(((GridCell)(((GridRow)dgvDevolucion.PrimaryGrid.ActiveRow)[0])).Value.ToString());
-                int idEstado = int.Parse(((GridCell)(((GridRow)dgvDevolucion.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                int i = dgvLevantamiento.PrimaryGrid.ActiveRow.Index;
+                int idObservacion = int.Parse(((GridCell)(((GridRow)dgvLevantamiento.PrimaryGrid.ActiveRow)[0])).Value.ToString());
                 if (!(i == -1))
                 {
-                    objSeleccionado = devolucionDA.LlamarDevolucionModificable(idDevolucion);
+                    objSeleccionado = observacionDA.LlamarObservacionModificable(idObservacion);
                     this.DialogResult = DialogResult.OK;
                 }
             }
             catch
             {
-                MessageBox.Show("No se ha seleccionado ninguna devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha seleccionado ningun Cambio", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             Cursor.Current = Cursors.Default;
         }
 
-        private void txtNumAlquiler_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtNumCambio_KeyPress(object sender, KeyPressEventArgs e)
         {
 
             //Para obligar a que sólo se introduzcan números
@@ -208,18 +171,18 @@ namespace Vistas
 
         }
 
-        private void rbtnNumAlquiler_CheckedChanged(object sender, EventArgs e)
+        private void rbtnNumCambio_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbtnNumAlquiler.Checked)
+            if (rbtnNumLevantamiento.Checked)
             {
                 panelNumOP.Enabled = true;
-                txtNumAlquiler.Enabled = true;
+                txtNumCambio.Enabled = true;
             }
             else
             {
                 panelNumOP.Enabled = false;
-                txtNumAlquiler.Enabled = false;
-                txtNumAlquiler.Text = "";
+                txtNumCambio.Enabled = false;
+                txtNumCambio.Text = "";
             }
         }
 
@@ -229,24 +192,16 @@ namespace Vistas
             if (rbtnFiltros.Checked)
             {
                 panelFiltros.Enabled = true;//cmbEstado.Enabled = true;
-                if (chbEstado.Checked) cmbEstado.Enabled = true;
-                else cmbEstado.Enabled = false;
                 if (chbCliente.Checked) cmbCliente.Enabled = true;
                 else cmbCliente.Enabled = false;
-                if (chbKam.Checked) cmbKam.Enabled = true;
-                else cmbKam.Enabled = false;
                 if (chbFecProceso.Checked) dtpFecProceso.Enabled = true;
                 else dtpFecProceso.Enabled = false;
             }
             else
             {
                 panelFiltros.Enabled = false;//cmbEstado.Enabled = false;
-                if (chbEstado.Checked) cmbEstado.Enabled = true;
-                else cmbEstado.Enabled = false;
                 if (chbCliente.Checked) cmbCliente.Enabled = true;
                 else cmbCliente.Enabled = false;
-                if (chbKam.Checked) cmbKam.Enabled = true;
-                else cmbKam.Enabled = false;
                 if (chbFecProceso.Checked) dtpFecProceso.Enabled = true;
                 else dtpFecProceso.Enabled = false;
             }
@@ -257,21 +212,10 @@ namespace Vistas
             if (chbFecProceso.Checked) dtpFecProceso.Enabled = true;
             else dtpFecProceso.Enabled = false;
         }
-        private void chbKam_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbKam.Checked) cmbKam.Enabled = true;
-            else cmbKam.Enabled = false;
-        }
         private void chbCliente_CheckedChanged(object sender, EventArgs e)
         {
             if (chbCliente.Checked) cmbCliente.Enabled = true;
             else cmbCliente.Enabled = false;
-
-        }
-        private void chbEstado_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbEstado.Checked) cmbEstado.Enabled = true;
-            else cmbEstado.Enabled = false;
 
         }
     }

@@ -148,6 +148,7 @@
             this.rbtnFiltros.TabStop = true;
             this.rbtnFiltros.Text = "Buscar Por";
             this.rbtnFiltros.UseVisualStyleBackColor = true;
+            this.rbtnFiltros.CheckedChanged += new System.EventHandler(this.rbtnFiltros_CheckedChanged);
             // 
             // btnSeleccionar
             // 
@@ -239,6 +240,7 @@
             this.chbEstado.TabIndex = 47;
             this.chbEstado.Text = "Estados";
             this.chbEstado.UseVisualStyleBackColor = true;
+            this.chbEstado.CheckedChanged += new System.EventHandler(this.chbEstado_CheckedChanged);
             // 
             // chbCodigoLC
             // 
@@ -250,6 +252,7 @@
             this.chbCodigoLC.TabIndex = 46;
             this.chbCodigoLC.Text = "CodigoLC";
             this.chbCodigoLC.UseVisualStyleBackColor = true;
+            this.chbCodigoLC.CheckedChanged += new System.EventHandler(this.chbCodigoLC_CheckedChanged);
             // 
             // chbResponsable
             // 
@@ -261,6 +264,7 @@
             this.chbResponsable.TabIndex = 45;
             this.chbResponsable.Text = "Responsable";
             this.chbResponsable.UseVisualStyleBackColor = true;
+            this.chbResponsable.CheckedChanged += new System.EventHandler(this.chbKam_CheckedChanged);
             // 
             // cmbEstado
             // 
@@ -283,6 +287,7 @@
             this.chbFecProceso.TabIndex = 44;
             this.chbFecProceso.Text = "Fec. Proceso";
             this.chbFecProceso.UseVisualStyleBackColor = true;
+            this.chbFecProceso.CheckedChanged += new System.EventHandler(this.chbFecProceso_CheckedChanged);
             // 
             // dtpFecProceso
             // 
@@ -305,6 +310,7 @@
             this.rbtnNumReparacion.TabIndex = 151;
             this.rbtnNumReparacion.Text = "Num Reparacion";
             this.rbtnNumReparacion.UseVisualStyleBackColor = true;
+            this.rbtnNumReparacion.CheckedChanged += new System.EventHandler(this.rbtnNumReparacion_CheckedChanged);
             // 
             // frmProcesoReparacionBuscar
             // 

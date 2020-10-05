@@ -69,6 +69,7 @@
     <Compile Include="FacturaDA.cs" />
     <Compile Include="IngresoDA.cs" />
     <Compile Include="LaptopDA.cs" />
+    <Compile Include="ObservacionDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorDA.cs" />
     <Compile Include="RenovacionDA.cs" />

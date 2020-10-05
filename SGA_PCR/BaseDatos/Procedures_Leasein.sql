@@ -1640,8 +1640,6 @@ DELIMITER ;
 
 
 
-
-
 DROP PROCEDURE IF EXISTS `update_reparacion`;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_reparacion`(
@@ -1693,4 +1691,31 @@ BEGIN
 END
 $$ 
 DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS `update_observacion`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_observacion`(
+	IN _guiaLevantamiento NVARCHAR(80),
+	IN _observacionLevantamiento NVARCHAR(1000),
+	IN _fechaLevantamiento DATETIME,
+	IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idObservacionDeudas INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE observacion_deudas 
+	SET guiaLevantamiento=_guiaLevantamiento,
+	observacionLevantamiento=_observacionLevantamiento,
+	fechaLevantamiento=_fechaLevantamiento,
+	estado=_estado,
+	fec_mod=@fechaModificacion,
+	usuario_mod=_usuario_mod
+	where idObservacionDeudas=_idObservacionDeudas;
+END
+$$
+DELIMITER ;
+
 

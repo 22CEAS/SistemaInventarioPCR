@@ -141,6 +141,18 @@
     <Compile Include="frmProcesoIngresoMemoria.Designer.cs">
       <DependentUpon>frmProcesoIngresoMemoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoLevantamientoObservacionesAgregarObservacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoLevantamientoObservacionesAgregarObservacion.Designer.cs">
+      <DependentUpon>frmProcesoLevantamientoObservacionesAgregarObservacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoLevantamientoObservacionesBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoLevantamientoObservacionesBuscar.Designer.cs">
+      <DependentUpon>frmProcesoLevantamientoObservacionesBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoRenovacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +430,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoIngresoMemoria.resx">
       <DependentUpon>frmProcesoIngresoMemoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoLevantamientoObservacionesAgregarObservacion.resx">
+      <DependentUpon>frmProcesoLevantamientoObservacionesAgregarObservacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoLevantamientoObservacionesBuscar.resx">
+      <DependentUpon>frmProcesoLevantamientoObservacionesBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoRenovacion.resx">
       <DependentUpon>frmProcesoRenovacion.cs</DependentUpon>
