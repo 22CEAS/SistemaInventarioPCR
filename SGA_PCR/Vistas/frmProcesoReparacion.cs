@@ -369,7 +369,157 @@ namespace Vistas
         private void btnImprimir_Click(object sender, EventArgs e)
         {
 
+            if (MessageBox.Show("Estas seguro que desea Imprimir la Reparacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                try
+                {
+
+                    SaveFileDialog fichero = new SaveFileDialog();
+                    //fichero.Filter = "Excel (*.xls)|*.xls";
+                    fichero.Filter = "Excel(*.xlsx) | *.xlsx";
+                    fichero.FileName = "Reparacion_" + reparacion.IdReparacion.ToString();
+                    if (fichero.ShowDialog() == DialogResult.OK)
+                    {
+                        Excel.Application aplicacion;
+                        Excel.Workbook libros_trabajo;
+                        Excel.Worksheet hoja_pre_alquiler;
+
+                        aplicacion = new Excel.Application();
+                        libros_trabajo = (Excel.Workbook)aplicacion.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+
+                        hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
+                        hoja_pre_alquiler.Name = "Reparacion";
+                        string cabecera = "Reporte de Reparacion";
+                        ExportarDataGridViewExcel(ref hoja_pre_alquiler,  cabecera);
+
+
+                        ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
+
+                        //libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                        libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlOpenXMLWorkbook);
+                        libros_trabajo.Close(true);
+                        releaseObject(libros_trabajo);
+                        aplicacion.Quit();
+                        releaseObject(aplicacion);
+                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                Cursor.Current = Cursors.Default;
+            }
         }
+
+        public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, string nombreCabecera)
+        {
+            Excel.Range rango;
+            int i = 0;
+            //Recorremos el DataGridView rellenando la hoja de trabajo
+
+            int k = 5 + 64;
+            char columF = (char)k;
+            int fila2 = i + 8;
+            string filaBorde = fila2.ToString();
+            char columI = 'A';
+            //Ponemos borde a las celdas
+            rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+            rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+            rango.Style.Font.Bold = false;
+
+            hoja_trabajo.Cells[8, 1] = reparacion.ObservacionActual;
+
+            fila2 = i + 11;
+
+            rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+            rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+            rango.Style.Font.Bold = false;
+
+            hoja_trabajo.Cells[11, 2] = reparacion.ObservacionReparacion;
+
+            montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
+        }
+
+        private void montaCabeceras(int fila, ref Excel.Worksheet hoja,  string nombreCabecera)
+        {
+            try
+            {
+                Excel.Range rango;
+
+                //** Montamos el título en la línea 1 **
+                hoja.Cells[fila, 1] = nombreCabecera;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 5]].Merge();
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 5]].Interior.Color = Color.Silver;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, 5]].Style.Font.Bold = true;
+                //Centramos los textos
+                rango = hoja.Rows[fila];
+                rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                //worksheet.Range[worksheet.Cells[rowNum, columnNum], worksheet.Cells[rowNum, columnNum]].Merge();
+                //int indice;
+
+                string estado="";
+                int i = cmbEstado.SelectedIndex;
+                if (i >= 0)
+                {
+                    estado = tablaEstados.Rows[i]["nombreEstado"].ToString();
+                }
+
+
+                hoja.Cells[fila + 2, 1] = "Reparacion N°";
+                hoja.Cells[fila + 2, 2] = txtNroReparacion.Text;
+
+                hoja.Cells[fila + 3, 1] = "Codigo LC";
+                hoja.Cells[fila + 3, 2] = reparacion.CodigoLC;
+
+                hoja.Cells[fila + 2, 4] = "Fecha Reparacion";
+                hoja.Cells[fila + 2, 5] = dtpFecReparacion.Value.ToString("yyyy/MM/dd");
+
+                hoja.Cells[fila + 3, 4] = "Estado";
+                hoja.Cells[fila + 3, 5] = estado;
+
+
+
+                hoja.Cells[fila + 6, 1] = "Observación Actual del Equipo";
+                hoja.Range[hoja.Cells[fila + 7, 1], hoja.Cells[fila + 7, 5]].Merge();
+                hoja.Cells[fila + 9, 1] = "Descripcion de la Reparacion";
+                hoja.Range[hoja.Cells[fila + 10, 1], hoja.Cells[fila + 10, 5]].Merge();
+
+
+                hoja.Range[hoja.Cells[fila + 6, 1], hoja.Cells[fila + 6, 5]].Merge();
+                hoja.Range[hoja.Cells[fila + 6, 1], hoja.Cells[fila + 6, 5]].Style.Font.Bold = true;
+
+                hoja.Range[hoja.Cells[fila + 9, 1], hoja.Cells[fila + 9, 5]].Merge();
+                hoja.Range[hoja.Cells[fila + 9, 1], hoja.Cells[fila + 9, 5]].Style.Font.Bold = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error de redondeo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show("Error mientras liberaba objecto " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {

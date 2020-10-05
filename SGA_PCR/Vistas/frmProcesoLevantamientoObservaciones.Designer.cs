@@ -49,12 +49,11 @@
             this.txtNroGuia = new System.Windows.Forms.TextBox();
             this.txtObservacionDeuda = new DevExpress.XtraEditors.MemoEdit();
             this.txtObservacionLevantamiento = new DevExpress.XtraEditors.MemoEdit();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservacionDeuda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservacionLevantamiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAnular
@@ -333,10 +332,10 @@
             // 
             // txtObservacionDeuda
             // 
-            this.txtObservacionDeuda.Location = new System.Drawing.Point(24, 194);
+            this.txtObservacionDeuda.Location = new System.Drawing.Point(24, 219);
             this.txtObservacionDeuda.Name = "txtObservacionDeuda";
             this.txtObservacionDeuda.Properties.ReadOnly = true;
-            this.txtObservacionDeuda.Size = new System.Drawing.Size(528, 192);
+            this.txtObservacionDeuda.Size = new System.Drawing.Size(528, 167);
             this.txtObservacionDeuda.TabIndex = 191;
             // 
             // txtObservacionLevantamiento
@@ -346,17 +345,25 @@
             this.txtObservacionLevantamiento.Size = new System.Drawing.Size(528, 192);
             this.txtObservacionLevantamiento.TabIndex = 192;
             // 
-            // dateEdit1
+            // label2
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(464, 26);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(100, 20);
-            this.dateEdit1.TabIndex = 193;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(21, 200);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 16);
+            this.label2.TabIndex = 194;
+            this.label2.Text = "Observación Deuda";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(21, 408);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(201, 16);
+            this.label5.TabIndex = 195;
+            this.label5.Text = "Observacion Levantamiento";
             // 
             // frmProcesoLevantamientoObservaciones
             // 
@@ -364,7 +371,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(681, 674);
-            this.Controls.Add(this.dateEdit1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtObservacionLevantamiento);
             this.Controls.Add(this.txtObservacionDeuda);
             this.Controls.Add(this.btnAnular);
@@ -395,8 +403,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservacionDeuda.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservacionLevantamiento.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,6 +430,7 @@
         private System.Windows.Forms.TextBox txtNroGuia;
         private DevExpress.XtraEditors.MemoEdit txtObservacionDeuda;
         private DevExpress.XtraEditors.MemoEdit txtObservacionLevantamiento;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
     }
 }

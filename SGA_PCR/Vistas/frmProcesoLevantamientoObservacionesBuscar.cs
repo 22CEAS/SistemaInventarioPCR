@@ -145,7 +145,7 @@ namespace Vistas
             }
             catch
             {
-                MessageBox.Show("No se ha seleccionado ningun Cambio", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha seleccionado ningun Levantamiento de Observacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             Cursor.Current = Cursors.Default;
         }
