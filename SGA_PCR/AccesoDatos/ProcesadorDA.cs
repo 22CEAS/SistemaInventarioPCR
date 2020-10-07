@@ -119,8 +119,6 @@ namespace AccesoDatos
                 objManager.conexion.Dispose();
                 objManager.cmd.Dispose();
 
-                parametrosEntrada = new MySqlParameter[8];
-
                 parametrosEntrada = new MySqlParameter[10];
                 parametrosEntrada[0] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idGeneracion", MySqlDbType.Int32);

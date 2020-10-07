@@ -160,8 +160,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria`(
 	IN _busFrecuencia DOUBLE,
 	IN _idCapacidad INT,
 	IN _capacidad DOUBLE,
-	IN _idTipo INT,
-	IN _tipo NVARCHAR(20),
 	IN _cantidad INT,
 	IN _ubicacion NVARCHAR(80),
 	IN _observacion NVARCHAR(255),
@@ -170,12 +168,42 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria`(
 )
 BEGIN
 	SET @codigo=(SELECT CONCAT("MEM-",MAX(idMemoria)+1) from memoria);
-	INSERT INTO memoria (codigo,idModelo,idBusFrecuencia,busFrecuencia,idCapacidad,capacidad,idTipo,tipo,cantidad,ubicacion,observacion,estado,usuario_ins) values
-	(@codigo,_idModelo,_idBusFrecuencia,_busFrecuencia,_idCapacidad,_capacidad,_idTipo,_tipo,_cantidad,_ubicacion,_observacion,1,_usuario_ins);
+	INSERT INTO memoria (codigo,idModelo,idBusFrecuencia,busFrecuencia,idCapacidad,capacidad,cantidad,ubicacion,observacion,estado,usuario_ins) values
+	(@codigo,_idModelo,_idBusFrecuencia,_busFrecuencia,_idCapacidad,_capacidad,_cantidad,_ubicacion,_observacion,1,_usuario_ins);
 	COMMIT;
     SET _idMemoria = last_insert_id();
 END
-$$ DELIMITER ;
+$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_memoria`(
+	IN _idModelo INT,
+	IN _idBusFrecuencia INT,
+	IN _busFrecuencia DOUBLE,
+	IN _idCapacidad INT,
+	IN _capacidad DOUBLE,
+	IN _estado INT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idMemoria INT
+)
+BEGIN
+	SET @fec_mod=(SELECT now());
+	UPDATE memoria
+	SET idModelo=_idModelo,
+		idBusFrecuencia=_idBusFrecuencia,
+		busFrecuencia=_busFrecuencia,
+		idCapacidad=_idCapacidad,
+		capacidad=_capacidad,
+		estado=_estado,
+		fec_mod=@fec_mod,
+		usuario_mod=_usuario_mod
+	WHERE idMemoria=_idMemoria;
+	COMMIT;
+END
+$$
+DELIMITER ;
+
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_duro`(

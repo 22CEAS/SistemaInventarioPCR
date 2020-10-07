@@ -61,7 +61,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(20, 234);
+            this.labelX3.Location = new System.Drawing.Point(22, 221);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(66, 16);
             this.labelX3.TabIndex = 104;
@@ -76,7 +76,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(20, 144);
+            this.labelX2.Location = new System.Drawing.Point(22, 131);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(68, 16);
             this.labelX2.TabIndex = 103;
@@ -91,7 +91,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(20, 55);
+            this.labelX1.Location = new System.Drawing.Point(22, 42);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(30, 16);
             this.labelX1.TabIndex = 102;
@@ -104,7 +104,7 @@
             this.chbActivo.Checked = true;
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(20, 325);
+            this.chbActivo.Location = new System.Drawing.Point(22, 312);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 101;
@@ -129,6 +129,7 @@
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnCancelar
             // 
@@ -147,6 +148,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -165,6 +167,7 @@
             this.btnEditar.Text = "Modificar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -184,6 +187,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGrabar
             // 
@@ -203,6 +207,7 @@
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // cmbCapacidad
             // 
@@ -211,7 +216,7 @@
             this.cmbCapacidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbCapacidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCapacidad.FormattingEnabled = true;
-            this.cmbCapacidad.Location = new System.Drawing.Point(20, 256);
+            this.cmbCapacidad.Location = new System.Drawing.Point(22, 243);
             this.cmbCapacidad.Name = "cmbCapacidad";
             this.cmbCapacidad.Size = new System.Drawing.Size(117, 21);
             this.cmbCapacidad.TabIndex = 95;
@@ -220,7 +225,7 @@
             // 
             this.cmbFrecuencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFrecuencia.FormattingEnabled = true;
-            this.cmbFrecuencia.Location = new System.Drawing.Point(20, 166);
+            this.cmbFrecuencia.Location = new System.Drawing.Point(22, 153);
             this.cmbFrecuencia.Name = "cmbFrecuencia";
             this.cmbFrecuencia.Size = new System.Drawing.Size(117, 21);
             this.cmbFrecuencia.TabIndex = 94;
@@ -229,7 +234,7 @@
             // 
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(20, 77);
+            this.cmbTipo.Location = new System.Drawing.Point(22, 64);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(117, 21);
             this.cmbTipo.TabIndex = 93;
@@ -317,6 +322,7 @@
             this.dgvMemoria.Size = new System.Drawing.Size(450, 352);
             this.dgvMemoria.TabIndex = 92;
             this.dgvMemoria.Text = "Tabla Memoria";
+            this.dgvMemoria.Click += new System.EventHandler(this.dgvMemoria_Click);
             // 
             // frmArchivoCrearMemoria
             // 
