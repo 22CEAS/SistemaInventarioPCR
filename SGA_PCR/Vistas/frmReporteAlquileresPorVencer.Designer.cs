@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteAlquileresPorVencer));
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,21 +44,17 @@
             this.Capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdLC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdVideo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdSalidaDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdSucursal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvLaptops
             // 
-            this.dgvLaptops.Location = new System.Drawing.Point(21, 50);
+            this.dgvLaptops.Location = new System.Drawing.Point(21, 97);
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1245, 321);
+            this.dgvLaptops.Size = new System.Drawing.Size(1245, 274);
             this.dgvLaptops.TabIndex = 131;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -88,12 +85,7 @@
             this.Video,
             this.Capacidad,
             this.fecIniContrato,
-            this.fecFinContrato,
-            this.IdLC,
-            this.IdVideo,
-            this.IdProcesador,
-            this.IdSalidaDetalle,
-            this.IdSucursal});
+            this.fecFinContrato});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsView.ShowAutoFilterRow = true;
@@ -248,42 +240,33 @@
             this.fecFinContrato.VisibleIndex = 12;
             this.fecFinContrato.Width = 100;
             // 
-            // IdLC
+            // btnExportar
             // 
-            this.IdLC.Caption = "IdLC";
-            this.IdLC.FieldName = "IdLC";
-            this.IdLC.Name = "IdLC";
-            // 
-            // IdVideo
-            // 
-            this.IdVideo.Caption = "IdVideo";
-            this.IdVideo.FieldName = "IdVideo";
-            this.IdVideo.Name = "IdVideo";
-            // 
-            // IdProcesador
-            // 
-            this.IdProcesador.Caption = "IdProcesador";
-            this.IdProcesador.FieldName = "IdProcesador";
-            this.IdProcesador.Name = "IdProcesador";
-            // 
-            // IdSalidaDetalle
-            // 
-            this.IdSalidaDetalle.Caption = "IdSalidaDetalle";
-            this.IdSalidaDetalle.FieldName = "IdSalidaDetalle";
-            this.IdSalidaDetalle.Name = "IdSalidaDetalle";
-            // 
-            // IdSucursal
-            // 
-            this.IdSucursal.Caption = "IdSucursal";
-            this.IdSucursal.FieldName = "IdSucursal";
-            this.IdSucursal.Name = "IdSucursal";
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.AutoSize = true;
+            this.btnExportar.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExportar.Location = new System.Drawing.Point(1180, 12);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(75, 63);
+            this.btnExportar.TabIndex = 135;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // frmReporteAlquileresPorVencer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1302, 450);
+            this.ClientSize = new System.Drawing.Size(1302, 398);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -295,6 +278,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -312,13 +296,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn Capacidad;
         private DevExpress.XtraGrid.Columns.GridColumn fecIniContrato;
         private DevExpress.XtraGrid.Columns.GridColumn fecFinContrato;
-        private DevExpress.XtraGrid.Columns.GridColumn IdLC;
-        private DevExpress.XtraGrid.Columns.GridColumn IdVideo;
-        private DevExpress.XtraGrid.Columns.GridColumn IdProcesador;
-        private DevExpress.XtraGrid.Columns.GridColumn IdSalidaDetalle;
-        private DevExpress.XtraGrid.Columns.GridColumn IdSucursal;
         private DevExpress.XtraGrid.Columns.GridColumn Cliente;
         private DevExpress.XtraGrid.Columns.GridColumn Contacto;
         private DevExpress.XtraGrid.Columns.GridColumn Direccion;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

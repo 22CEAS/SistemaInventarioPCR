@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteDisco));
             this.dgvDiscos = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.TipoDisco = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -35,13 +36,14 @@
             this.Capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cantidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDiscos
             // 
-            this.dgvDiscos.Location = new System.Drawing.Point(46, 111);
+            this.dgvDiscos.Location = new System.Drawing.Point(12, 81);
             this.dgvDiscos.MainView = this.vista;
             this.dgvDiscos.Name = "dgvDiscos";
             this.dgvDiscos.Size = new System.Drawing.Size(521, 308);
@@ -132,12 +134,33 @@
             this.Estado.VisibleIndex = 4;
             this.Estado.Width = 100;
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.AutoSize = true;
+            this.btnExportar.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnExportar.Location = new System.Drawing.Point(458, 12);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(75, 63);
+            this.btnExportar.TabIndex = 138;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // frmReporteDisco
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(627, 467);
+            this.ClientSize = new System.Drawing.Size(559, 412);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvDiscos);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -149,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,5 +185,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Capacidad;
         private DevExpress.XtraGrid.Columns.GridColumn Cantidad;
         private DevExpress.XtraGrid.Columns.GridColumn Estado;
+        private System.Windows.Forms.Button btnExportar;
     }
 }

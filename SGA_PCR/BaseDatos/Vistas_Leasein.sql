@@ -163,6 +163,41 @@ create view vista_productos_por_facturar as
 
 
 
+DROP VIEW IF EXISTS vista_facturas_por_vencer;
+create view vista_facturas_por_vencer as
+SELECT
+	( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
+	d.fecIniContrato AS fecIniPlazoAlquiler,
+	d.fecFinContrato AS fecFinPlazoAlquiler,
+	cu.numFactura AS factura,
+	cu.fecInicioPago AS fecInicioFactura,
+	cu.fecFinPago AS fecFinFactura,
+	lc.codigo AS codigoEquipo,
+	d.guiaSalida AS guia,
+	DATEDIFF( cu.fecFinPago, CURDATE() ) AS diasAntesVencer,
+	( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida
+	INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC,
+	cuota cu 
+WHERE
+	d.estado = 4 
+	AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
+	AND DATEDIFF( cu.fecFinPago, CURDATE() ) <=7 AND DATEDIFF( cu.fecFinPago, CURDATE() ) >=0 
+	AND
+	CASE
+		WHEN d.caracteristicas = '' THEN
+			CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) ELSE CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+			OR ( SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) FROM cambio ca WHERE ca.IdCambio = d.caracteristicas ) = CONCAT( cu.idLC, '-', cu.idSalida ) 
+		END 
+ORDER BY
+	cliente,
+	codigoEquipo;
+
+
+
+
 create view vista_productos_por_facturar_bk1 as
 SELECT
 	( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
@@ -1278,15 +1313,20 @@ ORDER BY lc.idLC;
 
 DROP view IF EXISTS `vista_lista_reparaciones`;
 create view vista_lista_reparaciones as
-Select r.idReparacion as IdReparacion,
-			 r.idLC as IdLC,
-			 r.usuario_ins as NombreResponsable,
-			 r.estado as IdEstado,
-			 r.codigoLC as CodigoLC,
-			 cast(r.fec_ins as date) as FechaProceso,
-			 e.nombreEstado as Estado
-From reparacion r 
-				inner join estados e on r.estado=e.idEstado 
+SELECT r.idReparacion AS IdReparacion,
+			 r.idLC AS IdLC,
+			 r.usuario_ins AS NombreResponsable,
+			(SELECT u.nombre FROM usuario u WHERE u.usuario=r.usuario_ins) AS Responsable,
+			 r.estado AS IdEstado,
+			 r.codigoLC AS CodigoLC,
+			 CAST(r.fec_ins AS DATE) AS FechaProceso,
+			(SELECT e.nombreEstado FROM estados e WHERE e.IdEstado=r.estado) AS Estado,
+			CAST(fechaReparacion as DATE) AS FechaReparacion,
+			(SELECT e.nombreEstado FROM estados e WHERE e.IdEstado=r.estadoLCAnt) AS EstadoAntesReparacion,
+			(SELECT e.nombreEstado FROM estados e WHERE e.IdEstado=r.estadoLCAct) AS EstadoLuegoReparacion,
+			r.observacionActual AS DescripcionComoSeEncontro,
+			r.observacionReparacion AS DescripcionReparacion
+FROM reparacion r ;
 
 
 DROP view IF EXISTS `vista_lista_observaciones`;
