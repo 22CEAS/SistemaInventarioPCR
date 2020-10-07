@@ -95,6 +95,42 @@ BEGIN
 END
 $$ DELIMITER ;
 
+
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_procesador`(
+	IN _idModelo INT,
+	IN _idGeneracion INT,
+	IN _generacion INT,
+	IN _idVelocidad INT,
+	IN _velocidad NVARCHAR(20),
+	IN _idVelocidadMax INT,
+	IN _velocidadMax DOUBLE,
+	IN _estado INT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idProcesador INT
+)
+BEGIN
+	SET @fec_mod=(SELECT now());
+	UPDATE procesador
+	SET idModelo=_idModelo,
+		idGeneracion=_idGeneracion,
+		generacion=_generacion,
+		idVelocidad=_idVelocidad,
+		velocidad=_velocidad,
+		idVelocidadMax=_idVelocidadMax,
+		velocidadMax=_velocidadMax,
+		estado=_estado,
+		fec_mod=@fec_mod,
+		usuario_mod=_usuario_mod
+	WHERE idProcesador=_idProcesador;
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+
+
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_video`(
 	IN _idModelo INT,
