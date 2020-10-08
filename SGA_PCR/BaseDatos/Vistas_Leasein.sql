@@ -1,289 +1,3 @@
-DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_capacidad`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_modelo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_disco_tamano`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_documento_tipo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_kam_activos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_almacen_lista`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_discos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_laptops_memorias`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_lista`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_office_tipos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_licencia_windows_tipos`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_cliente`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_disco`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_laptops`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_memoria`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_procesador`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_sucursal_cliente`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_maestro_video`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_capacidad`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_categoria`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_frecuencia`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_memoria_modelo`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_generacion`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_marca`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_velocidad`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_procesador_velocidad_maxima`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_productos_por_facturar`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_productos_por_recoger`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_proveedor_lista`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_lc_almacen`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_lc_cliente`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_disco_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_lc_almacen`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_lc_cliente`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stock_memoria_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stockdisponible_disco_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_stockdisponible_memoria_libre`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_usuario_perfil`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_video_capacidad`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_video_marca`;
-DROP VIEW IF EXISTS `bd_leasein`.`vista_video_tipo`;
-
-
-/*En la tabla salida se comparara la fecha final de alquiler con el dia actual.*/
-create view vista_productos_por_recoger as
-Select d.idSalidaDet as IdSalidaDetalle,
-		s.idSucursal as IdSucursal,
-		d.idLC as IdLC,
-		d.fecIniContrato as fecIniContrato,
-		d.fecFinContrato as fecFinContrato,
-		s.idCliente as IdCliente,
-		sc.nombreCliente as Cliente,
-		sc.nombreContacto as Contacto,
-		sc.direccion as DireccionCliente,
-		sc.telefono as TelefonoContacto,
-		lc.idMarca as idMarca,
-		lc.marca as MarcaLC,
-		lc.idModelo as idModelo,
-		lc.nombreModelo as NombreModeloLC,
-		lc.codigo as Codigo,
-		lc.tamanoPantalla as TamanoPantalla,
-		p.idProcesador as idProcesador,
-		p.marca as marcaProcesador,
-		p.tipo as TipoProcesador,
-		p.generacion as GeneracionProcesador,
-		if(v.idVideo is null,0,v.idVideo) as idVideo,
-		if(v.marca is null,'',v.marca) as marcaVideo,
-		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
-		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
-		if(v.tipo is null,'',v.tipo) as tipoVideo,
-		DATEDIFF(CURDATE(),d.fecFinContrato) as diasAtrasoRecojo,
-		d.guiaSalida as guia,
-		d.motivoNoRecojo as motivoNoRecojo,
-		(Select c.nombreKam from cliente c where c.idCliente=s.idCliente) as KAM,
-		d.estado
-From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
-		LEFT JOIN vista_maestro_sucursal_cliente sc on s.idSucursal=sc.idSucursal
-		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
-		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
-		left join vista_maestro_video v on d.idVideo=v.idVideo 
-where d.fueDevuelto=0 
-and ((d.estado=4 and  (DATEDIFF( d.fecFinContrato , CURDATE())<0)) 
-		or d.estado=9)
-ORDER BY lc.idLC ;
-
-
-
-/*En la tabla salida se comparara la fecha final de alquiler con el dia actual.*/
-create view vista_productos_por_recoger_bk1 as
-Select (Select c.nombre_razonSocial from cliente c where c.idCliente=s.idCliente) as cliente, 
-		s.fecIniContrato as fecIniPlazoAlquiler,
-		s.fecFinContrato as fecFinPlazoAlquiler,
-		lc.codigo as codigoEquipo,
-		d.guiaSalida as guia,
-		DATEDIFF(CURDATE(),s.fecFinContrato) as diasAtrasoRecojo,
-		d.motivoNoRecojo as motivoNoRecojo,
-		(Select c.nombreKam from cliente c where c.idCliente=s.idCliente) as KAM 
-From salida s inner join salida_det d on s.idSalida=d.idSalida inner join laptop_cpu lc on lc.idLC=d.idLC
-where s.estado=4 and ((d.estado=4  and s.fecFinContrato<CURDATE()) or d.estado=9) and d.fueDevuelto=0
-order by cliente,codigoEquipo;
-
- 
-/*En la tabla de cuota se va a poner la ultima factura que se tenga de este producto, si se ingresa una nueva, se elimina esta fila y se inserta la nueva factura aqui. Si no hay ninguna factura en cuota significa que a ese producto nunca se ha facturado.*/
-DROP VIEW IF EXISTS vista_productos_por_facturar;
-create view vista_productos_por_facturar as
-	SELECT
-		( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
-		d.fecIniContrato AS fecIniPlazoAlquiler,
-		d.fecFinContrato AS fecFinPlazoAlquiler,
-		"" AS factura,
-		"" AS fecInicioFactura,
-		"" AS fecFinFactura,
-		lc.codigo AS codigoEquipo,
-		d.guiaSalida AS guia,
-		DATEDIFF( CURDATE(), s.fecIniContrato ) AS diasVencidos,
-		( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
-	FROM
-		salida s
-		INNER JOIN salida_det d ON s.idSalida = d.idSalida
-		INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC 
-	WHERE
-		d.estado = 4 
-		AND
-			CASE WHEN d.caracteristicas='' THEN
-				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c)
-			ELSE
-				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c) and
-				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c )
-			END
-		
-	UNION
-
-	SELECT
-		( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
-		d.fecIniContrato AS fecIniPlazoAlquiler,
-		d.fecFinContrato AS fecFinPlazoAlquiler,
-		cu.numFactura AS factura,
-		cu.fecInicioPago AS fecInicioFactura,
-		cu.fecFinPago AS fecFinFactura,
-		lc.codigo AS codigoEquipo,
-		d.guiaSalida AS guia,
-		DATEDIFF( CURDATE(), cu.fecFinPago ) AS diasVencidos,
-		( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
-	FROM
-		salida s
-		INNER JOIN salida_det d ON s.idSalida = d.idSalida
-		INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC,
-		cuota cu 
-	WHERE
-		d.estado = 4 
-		AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
-		AND cu.fecFinPago < CURDATE() 
-		AND
-			CASE WHEN d.caracteristicas='' THEN
-				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
-			ELSE
-				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) or
-				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
-			END
-	ORDER BY
-		cliente,
-		codigoEquipo;
-
-
-
-DROP VIEW IF EXISTS vista_facturas_por_vencer;
-create view vista_facturas_por_vencer as
-SELECT
-	( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
-	d.fecIniContrato AS fecIniPlazoAlquiler,
-	d.fecFinContrato AS fecFinPlazoAlquiler,
-	cu.numFactura AS factura,
-	cu.fecInicioPago AS fecInicioFactura,
-	cu.fecFinPago AS fecFinFactura,
-	lc.codigo AS codigoEquipo,
-	d.guiaSalida AS guia,
-	DATEDIFF( cu.fecFinPago, CURDATE() ) AS diasAntesVencer,
-	( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
-FROM
-	salida s
-	INNER JOIN salida_det d ON s.idSalida = d.idSalida
-	INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC,
-	cuota cu 
-WHERE
-	d.estado = 4 
-	AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
-	AND DATEDIFF( cu.fecFinPago, CURDATE() ) <=7 AND DATEDIFF( cu.fecFinPago, CURDATE() ) >=0 
-	AND
-	CASE
-		WHEN d.caracteristicas = '' THEN
-			CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) ELSE CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
-			OR ( SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) FROM cambio ca WHERE ca.IdCambio = d.caracteristicas ) = CONCAT( cu.idLC, '-', cu.idSalida ) 
-		END 
-ORDER BY
-	cliente,
-	codigoEquipo;
-
-
-
-
-create view vista_productos_por_facturar_bk1 as
-SELECT
-	( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
-	s.fecIniContrato AS fecIniPlazoAlquiler,
-	s.fecFinContrato AS fecFinPlazoAlquiler,
-	"" AS factura,
-	"" AS fecInicioFactura,
-	"" AS fecFinFactura,
-	lc.codigo AS codigoEquipo,
-	d.guiaSalida AS guia,
-	DATEDIFF( CURDATE(), s.fecIniContrato ) AS diasVencidos,
-	( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
-FROM
-	salida s
-	INNER JOIN salida_det d ON s.idSalida = d.idSalida
-	INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC 
-WHERE
-	s.estado = 4 
-	AND CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c ) 
-	AND NOT(s.fecIniContrato = CURDATE())
-
-UNION
-
-SELECT
-	( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
-	s.fecIniContrato AS fecIniPlazoAlquiler,
-	s.fecFinContrato AS fecFinPlazoAlquiler,
-	cu.numFactura AS factura,
-	cu.fecInicioPago AS fecInicioFactura,
-	cu.fecFinPago AS fecFinFactura,
-	lc.codigo AS codigoEquipo,
-	d.guiaSalida AS guia,
-	DATEDIFF( CURDATE(), cu.fecFinPago ) AS diasVencidos,
-	( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
-FROM
-	salida s
-	INNER JOIN salida_det d ON s.idSalida = d.idSalida
-	INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC
-	INNER JOIN cuota cu ON CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
-WHERE
-	s.estado = 4 
-	AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
-	AND cu.fecFinPago < CURDATE() 
-ORDER BY
-	cliente,
-	codigoEquipo;
-	
-create view vista_productos_por_facturar_bk as
-	Select (Select c.nombre_razonSocial from cliente c where c.idCliente=s.idCliente) as cliente, 
-			s.fecIniContrato as fecIniPlazoAlquiler,
-			s.fecFinContrato as fecFinPlazoAlquiler,
-			"" as factura,
-			"" as fecInicioFactura,
-			"" as fecFinFactura,
-			lc.codigo as codigoEquipo,
-			d.guiaSalida as guia,
-			DATEDIFF(CURDATE(),s.fecIniContrato) as diasVencidos,
-			(Select c.nombreKam from cliente c where c.idCliente=s.idCliente) as KAM 
-	From salida s inner join salida_det d on s.idSalida=d.idSalida inner join laptop_cpu lc on lc.idLC=d.idLC
-	where s.estado=4
-		and d.estado=4 
-		and Not(lc.ubicacion="Almacen") 
-		and	d.idLC not in (Select codigoLC from cuota)
-
-	UNION
-
-	Select (Select c.nombre_razonSocial from cliente c where c.idCliente=s.idCliente) as cliente, 
-			s.fecIniContrato as fecIniPlazoAlquiler,
-			s.fecFinContrato as fecFinPlazoAlquiler,
-			cu.numFactura as factura,
-			cu.fecInicioPago as fecInicioFactura,
-			cu.fecFinPago as fecFinFactura,
-			lc.codigo as codigoEquipo,
-			d.guiaSalida as guia,
-			DATEDIFF(CURDATE(),cu.fecFinPago) as diasVencidos,
-			(Select c.nombreKam from cliente c where c.idCliente=s.idCliente) as KAM 
-	From salida s 
-			inner join salida_det d on s.idSalida=d.idSalida 
-			inner join laptop_cpu lc on lc.idLC=d.idLC
-			inner join cuota cu on d.idLC=cu.codigoLC
-	where s.estado=4
-		and d.estado=4 
-		and Not(lc.ubicacion="Almacen") 
-		and cu.fecFinPago<CURDATE() 
-	order by cliente,codigoEquipo;
-
 
 /*Se mostrará la tabla de discos duros en el maestro de discos*/
 create view vista_maestro_disco as
@@ -691,6 +405,7 @@ Select idCliente as idCliente,
 from cliente , auxiliar 
 where tipoDocumento=idAuxiliar and cod_tabla='TIPO_DOCUMENTO';
 
+
 /*Se mostrará la tabla de sucursales de un cliente en el maestro de sucursales clientes*/
 create view vista_maestro_Sucursal_Cliente as
 Select 	cs.idSucursal as idSucursal,
@@ -705,6 +420,7 @@ Select 	cs.idSucursal as idSucursal,
 		cs.estado as estado
 from cliente_sucursal cs , cliente c 
 where cs.idCliente=c.idCliente;
+
 
 /*Se mostrará la tabla de laptops en el maestro de laptops*/
 create view vista_maestro_laptops as
@@ -728,6 +444,149 @@ Select 	l.idLC as idLC,
 From laptop_cpu l
 	inner join modelo m on m.idModelo = l.idModelo
 	inner join marca ma on m.idMarca = ma.idMarca ;
+	
+
+/*En la tabla salida se comparara la fecha final de alquiler con el dia actual.*/
+create view vista_productos_por_recoger as
+Select d.idSalidaDet as IdSalidaDetalle,
+		s.idSucursal as IdSucursal,
+		d.idLC as IdLC,
+		d.fecIniContrato as fecIniContrato,
+		d.fecFinContrato as fecFinContrato,
+		s.idCliente as IdCliente,
+		sc.nombreCliente as Cliente,
+		sc.nombreContacto as Contacto,
+		sc.direccion as DireccionCliente,
+		sc.telefono as TelefonoContacto,
+		lc.idMarca as idMarca,
+		lc.marca as MarcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as NombreModeloLC,
+		lc.codigo as Codigo,
+		lc.tamanoPantalla as TamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as TipoProcesador,
+		p.generacion as GeneracionProcesador,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo,
+		DATEDIFF(CURDATE(),d.fecFinContrato) as diasAtrasoRecojo,
+		d.guiaSalida as guia,
+		d.motivoNoRecojo as motivoNoRecojo,
+		(Select c.nombreKam from cliente c where c.idCliente=s.idCliente) as KAM,
+		d.estado
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		LEFT JOIN vista_maestro_sucursal_cliente sc on s.idSucursal=sc.idSucursal
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on d.idVideo=v.idVideo 
+where d.fueDevuelto=0 
+and ((d.estado=4 and  (DATEDIFF( d.fecFinContrato , CURDATE())<0)) 
+		or d.estado=9)
+ORDER BY lc.idLC ;
+
+
+ 
+/*En la tabla de cuota se va a poner la ultima factura que se tenga de este producto, si se ingresa una nueva, se elimina esta fila y se inserta la nueva factura aqui. Si no hay ninguna factura en cuota significa que a ese producto nunca se ha facturado.*/
+DROP VIEW IF EXISTS vista_productos_por_facturar;
+create view vista_productos_por_facturar as
+	SELECT
+		( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
+		d.fecIniContrato AS fecIniPlazoAlquiler,
+		d.fecFinContrato AS fecFinPlazoAlquiler,
+		"" AS factura,
+		"" AS fecInicioFactura,
+		"" AS fecFinFactura,
+		lc.codigo AS codigoEquipo,
+		d.guiaSalida AS guia,
+		DATEDIFF( CURDATE(), s.fecIniContrato ) AS diasVencidos,
+		( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
+	FROM
+		salida s
+		INNER JOIN salida_det d ON s.idSalida = d.idSalida
+		INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC 
+	WHERE
+		d.estado = 4 
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c)
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c) and
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c )
+			END
+		
+	UNION
+
+	SELECT
+		( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
+		d.fecIniContrato AS fecIniPlazoAlquiler,
+		d.fecFinContrato AS fecFinPlazoAlquiler,
+		cu.numFactura AS factura,
+		cu.fecInicioPago AS fecInicioFactura,
+		cu.fecFinPago AS fecFinFactura,
+		lc.codigo AS codigoEquipo,
+		d.guiaSalida AS guia,
+		DATEDIFF( CURDATE(), cu.fecFinPago ) AS diasVencidos,
+		( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
+	FROM
+		salida s
+		INNER JOIN salida_det d ON s.idSalida = d.idSalida
+		INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC,
+		cuota cu 
+	WHERE
+		d.estado = 4 
+		AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
+		AND cu.fecFinPago < CURDATE() 
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) or
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
+			END
+	ORDER BY
+		cliente,
+		codigoEquipo;
+
+
+
+DROP VIEW IF EXISTS vista_facturas_por_vencer;
+create view vista_facturas_por_vencer as
+SELECT
+	( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
+	d.fecIniContrato AS fecIniPlazoAlquiler,
+	d.fecFinContrato AS fecFinPlazoAlquiler,
+	cu.numFactura AS factura,
+	cu.fecInicioPago AS fecInicioFactura,
+	cu.fecFinPago AS fecFinFactura,
+	lc.codigo AS codigoEquipo,
+	d.guiaSalida AS guia,
+	DATEDIFF( cu.fecFinPago, CURDATE() ) AS diasAntesVencer,
+	( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
+FROM
+	salida s
+	INNER JOIN salida_det d ON s.idSalida = d.idSalida
+	INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC,
+	cuota cu 
+WHERE
+	d.estado = 4 
+	AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
+	AND DATEDIFF( cu.fecFinPago, CURDATE() ) <=7 AND DATEDIFF( cu.fecFinPago, CURDATE() ) >=0 
+	AND
+	CASE
+		WHEN d.caracteristicas = '' THEN
+			CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) ELSE CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+			OR ( SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) FROM cambio ca WHERE ca.IdCambio = d.caracteristicas ) = CONCAT( cu.idLC, '-', cu.idSalida ) 
+		END 
+ORDER BY
+	cliente,
+	codigoEquipo;
+
+
+
 	
 /*Se mostrará la tabla de laptops en el maestro de laptops*/
 create view vista_laptops_almacen_lista as
@@ -1018,78 +877,6 @@ FROM
 	LEFT JOIN vista_maestro_licencias l ON da.idModeloLicencia = l.IdModelo ;
 	
 	
-	
-DROP view IF EXISTS `vista_factura_CV_BK1`;
-create view vista_factura_CV_BK1 as
-SELECT
-	CONCAT( s.rucDni, '-', l.codigo ) AS concatCodActCV,
-	CONCAT( s.rucDni, '-', d.observacion ) AS concatCodAntCV,
-	l.codigo,
-	d.observacion AS CodigoAntiguo,
-	cl.nombre_razonSocial,
-	s.fecIniContrato,
-	s.fecFinContrato,
-	IFNULL(c.fecInicioPago, '31/12/1999' ) AS fecInicioPago,
-	IFNULL(c.fecFinPago, '31/12/1999' ) AS fecFinPago,
-	IFNULL(c.numFactura, '' ) AS numFactura
-FROM
-	salida s
-	INNER JOIN salida_det d ON s.idSalida = d.idSalida
-	LEFT JOIN laptop_cpu l ON d.idLC = l.idLC
-	LEFT JOIN cuota c ON d.idLC = c.IdLC
-	LEFT JOIN cliente cl ON s.rucDni = cl.nroDocumento 
-WHERE
-	d.fueDevuelto = 0 
-	OR d.idLC IN ( SELECT o.idLC FROM observacion_deudas o WHERE o.estado = 1 ) ;	
-	
-DROP view IF EXISTS `vista_factura_CV_BK2`;
-create view vista_factura_CV_BK2 as
-SELECT
-	CONCAT( s.rucDni, '-', l.codigo ) AS concatCodActCV,
-	CONCAT( s.rucDni, '-', d.observacion ) AS concatCodAntCV,
-	l.codigo,
-	d.observacion AS CodigoAntiguo,
-	cl.nombre_razonSocial,
-	s.fecIniContrato,
-	s.fecFinContrato,
-	IFNULL(c.fecInicioPago, '31/12/1999' ) AS fecInicioPago,
-	IFNULL(c.fecFinPago, '31/12/1999' ) AS fecFinPago,
-	IFNULL(c.numFactura, '' ) AS numFactura,
-	IFNULL(c.guiaSalida, d.guiaSalida ) AS guiaSalida
-FROM
-	salida s
-	INNER JOIN salida_det d ON s.idSalida = d.idSalida
-	LEFT JOIN laptop_cpu l ON d.idLC = l.idLC
-	LEFT JOIN cuota c ON d.idLC = c.IdLC and d.idSalida=c.idSalida 
-	LEFT JOIN cliente cl ON s.rucDni = cl.nroDocumento 
-WHERE 
-	d.fueDevuelto = 0 
-	OR d.idLC IN ( SELECT o.idLC FROM observacion_deudas o WHERE o.estado = 1 ) ;
-	
-
-
-DROP view IF EXISTS `vista_factura_CV_BK3`;
-create view vista_factura_CV as
-SELECT
-	CONCAT( s.rucDni, '-', l.codigo ) AS concatCodActCV,
-	CONCAT( s.rucDni, '-', d.observacion ) AS concatCodAntCV,
-	l.codigo,
-	d.observacion AS CodigoAntiguo,
-	cl.nombre_razonSocial,
-	s.fecIniContrato,
-	s.fecFinContrato,
-	IFNULL(c.fecInicioPago, '31/12/1999' ) AS fecInicioPago,
-	IFNULL(c.fecFinPago, '31/12/1999' ) AS fecFinPago,
-	IFNULL(c.numFactura, '' ) AS numFactura,
-	IFNULL(c.guiaSalida, d.guiaSalida ) AS guiaSalida
-FROM
-	salida s
-	INNER JOIN salida_det d ON s.idSalida = d.idSalida
-	LEFT JOIN laptop_cpu l ON d.idLC = l.idLC
-	LEFT JOIN cuota c ON d.idLC = c.IdLC and d.idSalida=c.idSalida 
-	LEFT JOIN cliente cl ON s.rucDni = cl.nroDocumento ;
-
-
 DROP view IF EXISTS `vista_factura_CV`;
 create view vista_factura_CV as
 SELECT
@@ -1207,7 +994,6 @@ From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
 		left join vista_maestro_video v on d.idVideo=v.idVideo 
 where d.fueDevuelto=0 and d.estado=4
 ORDER BY lc.idLC ;
-
 
 
 create view vista_laptops_por_vencer as

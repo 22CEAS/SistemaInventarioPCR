@@ -41,11 +41,11 @@
             this.btnStock = new DevComponents.DotNetBar.ButtonItem();
             this.btnVencimientos = new DevComponents.DotNetBar.ButtonItem();
             this.btnReportePendienteFacturar = new DevComponents.DotNetBar.ButtonItem();
-            this.btnReporteLaptop = new DevComponents.DotNetBar.ButtonItem();
             this.btnPendienteRecoger = new DevComponents.DotNetBar.ButtonItem();
             this.btnPendienteReposicion = new DevComponents.DotNetBar.ButtonItem();
-            this.btnMemorias = new DevComponents.DotNetBar.ButtonItem();
             this.btnLaptopVencer = new DevComponents.DotNetBar.ButtonItem();
+            this.btnReporteLaptop = new DevComponents.DotNetBar.ButtonItem();
+            this.btnMemorias = new DevComponents.DotNetBar.ButtonItem();
             this.btnDiscos = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar10 = new DevComponents.DotNetBar.RibbonBar();
@@ -82,10 +82,13 @@
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -323,16 +326,6 @@
             this.btnReportePendienteFacturar.Text = "Pendiente\r\nFacturar";
             this.btnReportePendienteFacturar.Click += new System.EventHandler(this.btnReportePendienteFacturar_Click);
             // 
-            // btnReporteLaptop
-            // 
-            this.btnReporteLaptop.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnReporteLaptop.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporteLaptop.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteLaptop.Image")));
-            this.btnReporteLaptop.Name = "btnReporteLaptop";
-            this.btnReporteLaptop.SubItemsExpandWidth = 14;
-            this.btnReporteLaptop.Text = "Inventario\r\nLaptops";
-            this.btnReporteLaptop.Click += new System.EventHandler(this.buttonItem3_Click);
-            // 
             // btnPendienteRecoger
             // 
             this.btnPendienteRecoger.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
@@ -353,6 +346,26 @@
             this.btnPendienteReposicion.Text = "Observaciones\r\nDeudas";
             this.btnPendienteReposicion.Click += new System.EventHandler(this.btnPendienteReposicion_Click);
             // 
+            // btnLaptopVencer
+            // 
+            this.btnLaptopVencer.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnLaptopVencer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLaptopVencer.Image = ((System.Drawing.Image)(resources.GetObject("btnLaptopVencer.Image")));
+            this.btnLaptopVencer.Name = "btnLaptopVencer";
+            this.btnLaptopVencer.SubItemsExpandWidth = 14;
+            this.btnLaptopVencer.Text = "Laptops\r\nPor\r\nVencer";
+            this.btnLaptopVencer.Click += new System.EventHandler(this.btnLaptopVencer_Click);
+            // 
+            // btnReporteLaptop
+            // 
+            this.btnReporteLaptop.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnReporteLaptop.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteLaptop.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteLaptop.Image")));
+            this.btnReporteLaptop.Name = "btnReporteLaptop";
+            this.btnReporteLaptop.SubItemsExpandWidth = 14;
+            this.btnReporteLaptop.Text = "Inventario\r\nLaptops";
+            this.btnReporteLaptop.Click += new System.EventHandler(this.btnReporteLaptop_Click);
+            // 
             // btnMemorias
             // 
             this.btnMemorias.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
@@ -362,16 +375,6 @@
             this.btnMemorias.SubItemsExpandWidth = 14;
             this.btnMemorias.Text = "Memorias";
             this.btnMemorias.Click += new System.EventHandler(this.btnMemorias_Click);
-            // 
-            // btnLaptopVencer
-            // 
-            this.btnLaptopVencer.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnLaptopVencer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLaptopVencer.Image = ((System.Drawing.Image)(resources.GetObject("btnLaptopVencer.Image")));
-            this.btnLaptopVencer.Name = "btnLaptopVencer";
-            this.btnLaptopVencer.SubItemsExpandWidth = 14;
-            this.btnLaptopVencer.Text = "Laptops\r\nPor\r\nVencer";
-            this.btnLaptopVencer.Click += new System.EventHandler(this.buttonItem2_Click);
             // 
             // btnDiscos
             // 
@@ -943,11 +946,28 @@
             this.buttonItem1.Name = "buttonItem1";
             this.buttonItem1.Text = "buttonItem1";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblUsuario});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(933, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(90, 17);
+            this.lblUsuario.Text = "Usuario Activo: ";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 450);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -961,7 +981,10 @@
             this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1018,6 +1041,8 @@
         public DevComponents.DotNetBar.ButtonItem btnRenovacion;
         public DevComponents.DotNetBar.ButtonItem btnDiscos;
         public DevComponents.DotNetBar.ButtonItem btnLaptopVencer;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblUsuario;
     }
 }
 

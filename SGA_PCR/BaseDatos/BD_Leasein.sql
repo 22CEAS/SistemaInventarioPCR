@@ -483,7 +483,7 @@ CREATE TABLE observacion_deudas(
 		KAM NVARCHAR(255),
 		guiaLevantamiento NVARCHAR(255) NOT NULL UNIQUE,
 		observacionLevantamiento NVARCHAR(1000),
-		fechaLevantamiento DATETIME NOT NULL,
+		fechaLevantamiento DATETIME NULL,
 		estado TINYINT NOT NULL,
 		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
 		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
