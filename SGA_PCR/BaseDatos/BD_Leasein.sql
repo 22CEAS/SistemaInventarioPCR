@@ -3,6 +3,38 @@ CREATE DATABASE bd_leasein;
 
 use bd_leasein;
 
+DROP TABLE IF EXISTS `bd_leasein`.`auxiliar`;
+DROP TABLE IF EXISTS `bd_leasein`.`cambio`;
+DROP TABLE IF EXISTS `bd_leasein`.`categoria`;
+DROP TABLE IF EXISTS `bd_leasein`.`cliente`;
+DROP TABLE IF EXISTS `bd_leasein`.`cliente_sucursal`;
+DROP TABLE IF EXISTS `bd_leasein`.`cuota`;
+DROP TABLE IF EXISTS `bd_leasein`.`devolucion`;
+DROP TABLE IF EXISTS `bd_leasein`.`devolucion_det`;
+DROP TABLE IF EXISTS `bd_leasein`.`disco_duro`;
+DROP TABLE IF EXISTS `bd_leasein`.`disco_lc`;
+DROP TABLE IF EXISTS `bd_leasein`.`estados`;
+DROP TABLE IF EXISTS `bd_leasein`.`factura`;
+DROP TABLE IF EXISTS `bd_leasein`.`ingreso`;
+DROP TABLE IF EXISTS `bd_leasein`.`ingreso_det`;
+DROP TABLE IF EXISTS `bd_leasein`.`ingreso_det_accesorios`;
+DROP TABLE IF EXISTS `bd_leasein`.`laptop_cpu`;
+DROP TABLE IF EXISTS `bd_leasein`.`licencia`;
+DROP TABLE IF EXISTS `bd_leasein`.`marca`;
+DROP TABLE IF EXISTS `bd_leasein`.`memoria`;
+DROP TABLE IF EXISTS `bd_leasein`.`memoria_lc`;
+DROP TABLE IF EXISTS `bd_leasein`.`modelo`;
+DROP TABLE IF EXISTS `bd_leasein`.`observacion_deudas`;
+DROP TABLE IF EXISTS `bd_leasein`.`orden_compra`;
+DROP TABLE IF EXISTS `bd_leasein`.`pedido`;
+DROP TABLE IF EXISTS `bd_leasein`.`procesador`;
+DROP TABLE IF EXISTS `bd_leasein`.`proveedor`;
+DROP TABLE IF EXISTS `bd_leasein`.`reparacion`;
+DROP TABLE IF EXISTS `bd_leasein`.`requerimiento_compra`;
+DROP TABLE IF EXISTS `bd_leasein`.`salida`;
+DROP TABLE IF EXISTS `bd_leasein`.`salida_det`;
+DROP TABLE IF EXISTS `bd_leasein`.`usuario`;
+DROP TABLE IF EXISTS `bd_leasein`.`video`;
 
 CREATE TABLE `auxiliar` (
   `idAuxiliar` int(11) NOT NULL,

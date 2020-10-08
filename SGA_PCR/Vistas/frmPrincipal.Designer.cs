@@ -974,7 +974,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
-            this.Text = "Sistema de Gestion de Inventario - LEASEIN";
+            this.Text = "Software APOLO - LEASEIN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
