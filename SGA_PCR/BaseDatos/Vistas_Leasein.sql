@@ -555,6 +555,19 @@ create view vista_video_capacidad as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="VIDEO_CAPACIDAD" and activo=1;
+
+/*Se mostrará los modelos de los videos*/
+create view vista_video_modelo as
+SELECT
+	ma.idMarca as IdMarca,
+	ma.nombre as NombreMarca,
+	mo.idModelo as IdModelo,
+	mo.nombre as NombreModelo
+FROM
+	modelo mo
+	INNER JOIN marca ma ON mo.idMarca = ma.idMarca 
+WHERE
+	ma.idCategoria = 11;
 		
 /*Se mostrará los modelos de los discos SSD, HHD*/
 create view vista_disco_modelo as

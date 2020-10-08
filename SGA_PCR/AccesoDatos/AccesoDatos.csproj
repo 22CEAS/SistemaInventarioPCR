@@ -78,6 +78,7 @@
     <Compile Include="ReparacionDA.cs" />
     <Compile Include="ReporteDA.cs" />
     <Compile Include="UsuarioDA.cs" />
+    <Compile Include="VideoDA.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">

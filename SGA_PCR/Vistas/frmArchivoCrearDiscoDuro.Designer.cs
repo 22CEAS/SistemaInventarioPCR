@@ -66,6 +66,7 @@
             // 
             // cmbTamano
             // 
+            this.cmbTamano.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTamano.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTamano.FormattingEnabled = true;
             this.cmbTamano.Location = new System.Drawing.Point(25, 171);
@@ -75,6 +76,7 @@
             // 
             // cmbTipo
             // 
+            this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(25, 82);
@@ -273,6 +275,7 @@
             this.chbActivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chbActivo.Checked = true;
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbActivo.Location = new System.Drawing.Point(25, 330);
             this.chbActivo.Name = "chbActivo";
@@ -326,7 +329,7 @@
             this.labelX3.TabIndex = 91;
             this.labelX3.Text = "Capacidad:";
             // 
-            // frmCrearDiscoDuro
+            // frmArchivoCrearDiscoDuro
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -349,7 +352,7 @@
             this.MaximumSize = new System.Drawing.Size(754, 453);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(754, 453);
-            this.Name = "frmCrearDiscoDuro";
+            this.Name = "frmArchivoCrearDiscoDuro";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -134,10 +134,10 @@ DELIMITER ;
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_video`(
 	IN _idModelo INT,
-	IN _idCapacidad INT,
-	IN _capacidad DOUBLE,
 	IN _idTipo INT,
 	IN _tipo NVARCHAR(20),
+	IN _idCapacidad INT,
+	IN _capacidad DOUBLE,
 	IN _cantidad INT,
 	IN _ubicacion NVARCHAR(80),
 	IN _observacion NVARCHAR(255),
@@ -146,12 +146,43 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_video`(
 )
 BEGIN
 	SET @codigo=(SELECT CONCAT("VID-",MAX(idVideo)+1) from video);
-	INSERT INTO video (codigo,idModelo,idCapacidad,capacidad,idTipo,tipo,cantidad,ubicacion,observacion,estado,usuario_ins) values
-	(@codigo,_idModelo,_idCapacidad,_capacidad,_idTipo,_tipo,_cantidad,_ubicacion,_observacion,1,_usuario_ins);
+	INSERT INTO video (codigo,idModelo,idTipo,tipo,idCapacidad,capacidad,cantidad,ubicacion,observacion,estado,usuario_ins) values
+	(@codigo,_idModelo,_idTipo,_tipo,_idCapacidad,_capacidad,_cantidad,_ubicacion,_observacion,1,_usuario_ins);
 	COMMIT;
     SET _idVideo = last_insert_id();
 END
-$$ DELIMITER ;
+$$ 
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_video`(
+	IN _idVideo INT,
+	IN _idModelo INT,
+	IN _idTipo INT,
+	IN _tipo NVARCHAR(20),
+	IN _idCapacidad INT,
+	IN _capacidad DOUBLE,
+	IN _estado INT,
+	IN _usuario_mod NVARCHAR(100)
+)
+BEGIN
+	SET @fec_mod=(SELECT now());
+	UPDATE video
+	SET idModelo=_idModelo,
+		idTipo=_idTipo,
+		tipo=_tipo,
+		idCapacidad=_idCapacidad,
+		capacidad=_capacidad,
+		estado=_estado,
+		fec_mod=@fec_mod,
+		usuario_mod=_usuario_mod
+	WHERE idVideo=_idVideo;
+	COMMIT;
+END
+$$ 
+DELIMITER ;
+
+
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria`(

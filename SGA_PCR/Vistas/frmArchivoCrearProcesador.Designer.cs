@@ -107,6 +107,7 @@
             this.chbActivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chbActivo.Checked = true;
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbActivo.Location = new System.Drawing.Point(12, 331);
             this.chbActivo.Name = "chbActivo";
@@ -227,6 +228,7 @@
             // 
             // cmbGeneracion
             // 
+            this.cmbGeneracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbGeneracion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGeneracion.FormattingEnabled = true;
             this.cmbGeneracion.Location = new System.Drawing.Point(12, 139);
@@ -236,6 +238,7 @@
             // 
             // cmbTipo
             // 
+            this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(12, 50);

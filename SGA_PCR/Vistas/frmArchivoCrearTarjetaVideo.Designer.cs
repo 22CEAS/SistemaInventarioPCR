@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoCrearTarjetaVideo));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -107,6 +107,7 @@
             this.chbActivo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chbActivo.Checked = true;
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbActivo.Location = new System.Drawing.Point(25, 358);
             this.chbActivo.Name = "chbActivo";
@@ -126,13 +127,14 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(635, 316);
+            this.btnImprimir.Location = new System.Drawing.Point(791, 316);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 113;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnCancelar
             // 
@@ -144,13 +146,14 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(630, 245);
+            this.btnCancelar.Location = new System.Drawing.Point(786, 245);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 112;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -162,13 +165,14 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(630, 97);
+            this.btnEditar.Location = new System.Drawing.Point(786, 97);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 111;
             this.btnEditar.Text = "Modificar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -181,13 +185,14 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(630, 30);
+            this.btnNuevo.Location = new System.Drawing.Point(786, 30);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 110;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGrabar
             // 
@@ -200,13 +205,14 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(630, 176);
+            this.btnGrabar.Location = new System.Drawing.Point(786, 176);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 109;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // cmbTipo
             // 
@@ -217,26 +223,29 @@
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(25, 205);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(117, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(163, 21);
             this.cmbTipo.TabIndex = 108;
             // 
             // cmbModelo
             // 
+            this.cmbModelo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModelo.FormattingEnabled = true;
             this.cmbModelo.Location = new System.Drawing.Point(25, 127);
             this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(117, 21);
+            this.cmbModelo.Size = new System.Drawing.Size(163, 21);
             this.cmbModelo.TabIndex = 107;
             // 
             // cmbMarca
             // 
+            this.cmbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(25, 48);
             this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(117, 21);
+            this.cmbMarca.Size = new System.Drawing.Size(163, 21);
             this.cmbMarca.TabIndex = 106;
+            this.cmbMarca.SelectedIndexChanged += new System.EventHandler(this.cmbMarca_SelectedIndexChanged);
             // 
             // dgvVideo
             // 
@@ -246,73 +255,73 @@
             this.dgvVideo.BackColor = System.Drawing.Color.White;
             this.dgvVideo.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvVideo.ForeColor = System.Drawing.Color.Black;
-            this.dgvVideo.Location = new System.Drawing.Point(163, 27);
+            this.dgvVideo.Location = new System.Drawing.Point(219, 27);
             this.dgvVideo.Name = "dgvVideo";
             this.dgvVideo.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvVideo.PrimaryGrid.AllowRowResize = true;
             this.dgvVideo.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "idMemoria";
-            gridColumn1.MinimumWidth = 50;
-            gridColumn1.Name = "Id";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn1.Width = 50;
-            gridColumn2.DataPropertyName = "marca";
-            gridColumn2.Name = "Marca";
-            gridColumn3.AllowEdit = false;
-            gridColumn3.DataPropertyName = "modelo";
-            gridColumn3.FilterAutoScan = true;
-            gridColumn3.MinimumWidth = 100;
-            gridColumn3.Name = "Modelo";
-            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.DataPropertyName = "tipo";
-            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn4.MinimumWidth = 100;
-            gridColumn4.Name = "Tipo";
-            gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn5.AllowEdit = false;
-            gridColumn5.DataPropertyName = "capacidad";
-            gridColumn5.MinimumWidth = 100;
-            gridColumn5.Name = "Capacidad";
-            gridColumn5.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn6.AllowEdit = false;
-            gridColumn6.DataPropertyName = "estado";
-            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn6.MinimumWidth = 100;
-            gridColumn6.Name = "Activo";
-            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn7.AllowEdit = false;
-            gridColumn7.DataPropertyName = "idModelo";
-            gridColumn7.MinimumWidth = 100;
-            gridColumn7.Name = "idModelo";
-            gridColumn7.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn7.Visible = false;
-            gridColumn8.DataPropertyName = "idMarca";
-            gridColumn8.Name = "idMarca";
-            gridColumn8.Visible = false;
-            gridColumn9.AllowEdit = false;
-            gridColumn9.DataPropertyName = "idTipo";
-            gridColumn9.MinimumWidth = 100;
-            gridColumn9.Name = "idTipo";
-            gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn9.Visible = false;
-            gridColumn10.AllowEdit = false;
-            gridColumn10.DataPropertyName = "idCapacidad";
-            gridColumn10.MinimumWidth = 100;
-            gridColumn10.Name = "idCapacidad";
-            gridColumn10.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn10.Visible = false;
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn10);
+            gridColumn11.AllowEdit = false;
+            gridColumn11.DataPropertyName = "idVideo";
+            gridColumn11.MinimumWidth = 50;
+            gridColumn11.Name = "Id";
+            gridColumn11.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn11.Width = 50;
+            gridColumn12.DataPropertyName = "marca";
+            gridColumn12.Name = "Marca";
+            gridColumn13.AllowEdit = false;
+            gridColumn13.DataPropertyName = "nombreModelo";
+            gridColumn13.FilterAutoScan = true;
+            gridColumn13.MinimumWidth = 100;
+            gridColumn13.Name = "Modelo";
+            gridColumn13.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn14.AllowEdit = false;
+            gridColumn14.DataPropertyName = "tipo";
+            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn14.MinimumWidth = 100;
+            gridColumn14.Name = "Tipo";
+            gridColumn14.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn15.AllowEdit = false;
+            gridColumn15.DataPropertyName = "capacidad";
+            gridColumn15.MinimumWidth = 100;
+            gridColumn15.Name = "Capacidad";
+            gridColumn15.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn16.AllowEdit = false;
+            gridColumn16.DataPropertyName = "estado";
+            gridColumn16.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn16.MinimumWidth = 100;
+            gridColumn16.Name = "Activo";
+            gridColumn16.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn17.AllowEdit = false;
+            gridColumn17.DataPropertyName = "idModelo";
+            gridColumn17.MinimumWidth = 100;
+            gridColumn17.Name = "idModelo";
+            gridColumn17.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn17.Visible = false;
+            gridColumn18.DataPropertyName = "idMarca";
+            gridColumn18.Name = "idMarca";
+            gridColumn18.Visible = false;
+            gridColumn19.AllowEdit = false;
+            gridColumn19.DataPropertyName = "idTipo";
+            gridColumn19.MinimumWidth = 100;
+            gridColumn19.Name = "idTipo";
+            gridColumn19.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn19.Visible = false;
+            gridColumn20.AllowEdit = false;
+            gridColumn20.DataPropertyName = "idCapacidad";
+            gridColumn20.MinimumWidth = 100;
+            gridColumn20.Name = "idCapacidad";
+            gridColumn20.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn20.Visible = false;
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn13);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn14);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn15);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn16);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn17);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn18);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn19);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn20);
             this.dgvVideo.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvVideo.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvVideo.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -325,9 +334,10 @@
             this.dgvVideo.PrimaryGrid.NullString = "<<null>>";
             this.dgvVideo.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvVideo.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvVideo.Size = new System.Drawing.Size(450, 352);
+            this.dgvVideo.Size = new System.Drawing.Size(550, 352);
             this.dgvVideo.TabIndex = 105;
             this.dgvVideo.Text = "Tabla Video";
+            this.dgvVideo.Click += new System.EventHandler(this.dgvVideo_Click);
             // 
             // labelX4
             // 
@@ -353,7 +363,7 @@
             this.cmbCapacidad.FormattingEnabled = true;
             this.cmbCapacidad.Location = new System.Drawing.Point(25, 300);
             this.cmbCapacidad.Name = "cmbCapacidad";
-            this.cmbCapacidad.Size = new System.Drawing.Size(117, 21);
+            this.cmbCapacidad.Size = new System.Drawing.Size(163, 21);
             this.cmbCapacidad.TabIndex = 118;
             // 
             // frmArchivoCrearTarjetaVideo
@@ -361,7 +371,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(738, 414);
+            this.ClientSize = new System.Drawing.Size(894, 414);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.cmbCapacidad);
             this.Controls.Add(this.labelX3);
