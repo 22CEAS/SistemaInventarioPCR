@@ -6,14 +6,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace AccesoDatos
 {
     public class DBManager
     {
+        //string conex = "User Id=custom;password=h1808;server=" + servidor + ";database=" + basedatos + ";Convert Zero Datetime=True;persist security info=True;use procedure bodies=False;Connection Timeout=9000000 ; pooling=true; Max Pool Size=900000";
+
         //public static string cadena = "server=quilla.lab.inf.pucp.edu.pe; user=inf282g2; password=UInag9; database=inf282g2; SslMode=None";
-        public static string cadena = "server=localhost; user=root; password=; database=bd_leasein; SslMode=None;Connect Timeout=300000";
+
+        //public static string cadena = "server=localhost; user=root; password=; database=bd_leasein; SslMode=None;Connect Timeout=300000";
+
         //public static MySqlConnection conexion = null;
+
+        public static string servidor = ConfigurationManager.AppSettings["ServidorMySql"].ToString();
+        public static string basedatos = ConfigurationManager.AppSettings["BaseDatosMySql"].ToString();
+        
+        public static string cadena = "server="+ servidor + "; user=root; password=; database="+ basedatos + "; SslMode=None;Connect Timeout=300000";
         public MySqlConnection conexion = null;
         public MySqlCommand cmd = null;
         private MySqlDataAdapter adaptador = null;
