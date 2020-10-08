@@ -1,4 +1,4 @@
-﻿namespace Vistas
+﻿namespace Apolo
 {
     partial class frmLogueo
     {
@@ -67,9 +67,9 @@
             this.lblHeader.Location = new System.Drawing.Point(65, 21);
             this.lblHeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(369, 25);
+            this.lblHeader.Size = new System.Drawing.Size(293, 25);
             this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "Sistema de Inventario - User Login";
+            this.lblHeader.Text = "Sistema Apolo - User Login";
             // 
             // btnVerContraseña
             // 

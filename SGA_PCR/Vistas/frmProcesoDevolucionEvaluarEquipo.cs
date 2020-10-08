@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vistas
+namespace Apolo
 {
     public partial class frmProcesoDevolucionEvaluarEquipo : Form
     {

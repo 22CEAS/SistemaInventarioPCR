@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csproj", "{1B8F0BCB-D50A-4B5B-BFDC-905DDA968D19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apolo", "Vistas\Apolo.csproj", "{1B8F0BCB-D50A-4B5B-BFDC-905DDA968D19}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{374DB1ED-EE2D-416D-A254-1A4DC182F1AE}"
 EndProject

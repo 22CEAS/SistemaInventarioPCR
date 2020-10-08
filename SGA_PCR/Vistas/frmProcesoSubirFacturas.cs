@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using SpreadsheetLight;
 using AccesoDatos;
 
-namespace Vistas
+namespace Apolo
 {
     public partial class frmProcesoSubirFacturas : Form
     {

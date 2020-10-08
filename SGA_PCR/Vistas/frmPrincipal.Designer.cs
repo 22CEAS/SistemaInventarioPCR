@@ -1,4 +1,4 @@
-﻿namespace Vistas
+﻿namespace Apolo
 {
     partial class frmPrincipal
     {
@@ -930,7 +930,7 @@
             // labelItem1
             // 
             this.labelItem1.Name = "labelItem1";
-            this.labelItem1.Text = "LEASEIN";
+            this.labelItem1.Text = "APOLO";
             // 
             // qatCustomizeItem1
             // 

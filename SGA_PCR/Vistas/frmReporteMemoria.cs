@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Vistas
+namespace Apolo
 {
     public partial class frmReporteMemoria : Form
     {

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DevComponents.DotNetBar.SuperGrid;
 
-namespace Vistas
+namespace Apolo
 {
     public partial class frmProcesoIngresoBuscar : Form
     {

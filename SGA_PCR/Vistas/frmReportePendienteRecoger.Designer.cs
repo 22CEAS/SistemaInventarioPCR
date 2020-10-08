@@ -1,4 +1,4 @@
-﻿namespace Vistas
+﻿namespace Apolo
 {
     partial class frmReportePendienteRecoger
     {
