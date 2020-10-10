@@ -13,7 +13,7 @@ namespace Modelo
         private int idTipo;
         private Modelo tipo;
         private int idTamano;
-        private double tamano;
+        private string tamano;
         private int idCapacidad;
         private int capacidad;
         private int cantidad;
@@ -31,7 +31,7 @@ namespace Modelo
             this.Ubicacion = "ALMACEN";
         }
 
-        public DiscoDuro(int idDisco, string codigo, int idTipo, Modelo tipo, int idTamano, double tamano, int idCapacidad, int capacidad, int cantidad, string ubicacion, string observacion, int estado)
+        public DiscoDuro(int idDisco, string codigo, int idTipo, Modelo tipo, int idTamano, string tamano, int idCapacidad, int capacidad, int cantidad, string ubicacion, string observacion, int estado)
         {
             this.IdDisco = idDisco;
             this.Codigo = codigo;
@@ -53,7 +53,7 @@ namespace Modelo
         public Modelo Tipo { get => tipo; set => tipo = value; }
         public string TipoDisco { get => Tipo.NombreModelo; set => Tipo.NombreModelo = value; }
         public int IdTamano { get => idTamano; set => idTamano = value; }
-        public double Tamano { get => tamano; set => tamano = value; }
+        public string Tamano { get => tamano; set => tamano = value; }
         public int IdCapacidad { get => idCapacidad; set => idCapacidad = value; }
         public int Capacidad { get => capacidad; set => capacidad = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }

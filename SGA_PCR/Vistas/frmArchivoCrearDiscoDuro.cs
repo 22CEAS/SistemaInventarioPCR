@@ -216,7 +216,7 @@ namespace Apolo
                 discoOld.Tipo.IdModelo = idTipo;
                 discoOld.Tipo.NombreModelo = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[1])).Value.ToString();
                 discoOld.IdTamano = idTamano;
-                discoOld.Tamano = Double.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[2])).Value.ToString());
+                discoOld.Tamano = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[2])).Value.ToString();
                 discoOld.IdCapacidad = idCapacidad;
                 discoOld.Capacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[3])).Value.ToString());
                 discoOld.Estado = activo;
@@ -316,7 +316,7 @@ namespace Apolo
 
             indice = cmbTamano.SelectedIndex;
             disco.IdTamano = int.Parse(cmbTamano.SelectedValue.ToString());
-            disco.Tamano = Convert.ToDouble(tablaTamano.Rows[indice]["descripcion"].ToString());
+            disco.Tamano = tablaTamano.Rows[indice]["descripcion"].ToString();
 
             indice = cmbCapacidad.SelectedIndex;
             disco.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());

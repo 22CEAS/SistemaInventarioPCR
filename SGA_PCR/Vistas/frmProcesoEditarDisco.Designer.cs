@@ -50,7 +50,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(381, 266);
+            this.btnCancelar.Location = new System.Drawing.Point(506, 266);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 124;
@@ -70,7 +70,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(458, 268);
+            this.btnGrabar.Location = new System.Drawing.Point(583, 268);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 123;
@@ -84,7 +84,7 @@
             this.dgvDisco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(242)))));
             this.dgvDisco.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvDisco.ForeColor = System.Drawing.Color.Black;
-            this.dgvDisco.Location = new System.Drawing.Point(12, 37);
+            this.dgvDisco.Location = new System.Drawing.Point(32, 35);
             this.dgvDisco.Name = "dgvDisco";
             gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
             gridColumn1.Name = "Seleccionar";
@@ -106,7 +106,6 @@
             gridColumn5.Visible = false;
             gridColumn6.DataPropertyName = "Tamano";
             gridColumn6.Name = "Tamano";
-            gridColumn6.Visible = false;
             this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn1);
             this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn2);
             this.dgvDisco.PrimaryGrid.Columns.Add(gridColumn3);
@@ -120,7 +119,7 @@
             this.dgvDisco.PrimaryGrid.MultiSelect = false;
             this.dgvDisco.PrimaryGrid.NoRowsText = "No hay ningun Disco disponible";
             this.dgvDisco.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvDisco.Size = new System.Drawing.Size(521, 214);
+            this.dgvDisco.Size = new System.Drawing.Size(626, 214);
             this.dgvDisco.TabIndex = 125;
             this.dgvDisco.Text = "Tabla Disco";
             // 
@@ -129,7 +128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(558, 334);
+            this.ClientSize = new System.Drawing.Size(683, 334);
             this.Controls.Add(this.dgvDisco);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);

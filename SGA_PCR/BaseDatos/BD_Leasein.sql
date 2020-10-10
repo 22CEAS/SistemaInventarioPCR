@@ -156,7 +156,7 @@ CREATE TABLE disco_duro(
     codigo NVARCHAR(80) NOT NULL,
 		idModelo INT NOT NULL,
 		idTamano INT NOT NULL,
-		tamano DOUBLE NOT NULL, -- VA A JALAR DE UNA TABLA
+		tamano NVARCHAR(80) NOT NULL, -- VA A JALAR DE UNA TABLA
 		idCapacidad INT NOT NULL,
 		capacidad DOUBLE NOT NULL, -- VA A JALAR DE UNA TABLA
 		cantidad INT NOT NULL,

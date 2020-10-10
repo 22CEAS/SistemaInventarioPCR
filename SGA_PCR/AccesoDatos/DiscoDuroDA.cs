@@ -53,7 +53,7 @@ namespace AccesoDatos
                 parametrosEntrada = new MySqlParameter[10];
                 parametrosEntrada[0] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idTamano", MySqlDbType.Int32);
-                parametrosEntrada[2] = new MySqlParameter("@_tamano", MySqlDbType.Double);
+                parametrosEntrada[2] = new MySqlParameter("@_tamano", MySqlDbType.VarChar, 80);
                 parametrosEntrada[3] = new MySqlParameter("@_idCapacidad", MySqlDbType.Int32);
                 parametrosEntrada[4] = new MySqlParameter("@_capacidad", MySqlDbType.Double);
                 parametrosEntrada[5] = new MySqlParameter("@_cantidad", MySqlDbType.Int32);
@@ -117,7 +117,7 @@ namespace AccesoDatos
                 parametrosEntrada[0] = new MySqlParameter("@_idDisco", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
                 parametrosEntrada[2] = new MySqlParameter("@_idTamano", MySqlDbType.Int32);
-                parametrosEntrada[3] = new MySqlParameter("@_tamano", MySqlDbType.Double);
+                parametrosEntrada[3] = new MySqlParameter("@_tamano", MySqlDbType.VarChar, 80);
                 parametrosEntrada[4] = new MySqlParameter("@_idCapacidad", MySqlDbType.Int32);
                 parametrosEntrada[5] = new MySqlParameter("@_capacidad", MySqlDbType.Double);
                 parametrosEntrada[6] = new MySqlParameter("@_estado", MySqlDbType.Int32);

@@ -858,7 +858,7 @@ namespace AccesoDatos
                 while (reader.Read())
                 {
                     laptop.Discos[i].Tipo.NombreModelo = reader.GetString("tipo");
-                    laptop.Discos[i].Tamano = reader.GetDouble("tamano");
+                    laptop.Discos[i].Tamano = reader.GetString("tamano");
                     laptop.Discos[i].Capacidad = reader.GetInt32("capacidad");
                 }
                 objManager.conexion.Close();

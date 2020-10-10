@@ -100,11 +100,13 @@
             // 
             // cmbProveedor
             // 
+            this.cmbProveedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbProveedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbProveedor.FormattingEnabled = true;
             this.cmbProveedor.Location = new System.Drawing.Point(309, 68);
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(223, 21);
-            this.cmbProveedor.TabIndex = 0;
+            this.cmbProveedor.TabIndex = 2;
             this.cmbProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbProveedor_SelectedIndexChanged);
             // 
             // txtRUC
@@ -113,14 +115,14 @@
             this.txtRUC.Location = new System.Drawing.Point(602, 69);
             this.txtRUC.Name = "txtRUC";
             this.txtRUC.Size = new System.Drawing.Size(136, 20);
-            this.txtRUC.TabIndex = 1;
+            this.txtRUC.TabIndex = 3;
             // 
             // txtFactura
             // 
             this.txtFactura.Location = new System.Drawing.Point(72, 111);
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.Size = new System.Drawing.Size(138, 20);
-            this.txtFactura.TabIndex = 3;
+            this.txtFactura.TabIndex = 5;
             // 
             // dtpFechaIngreso
             // 
@@ -155,7 +157,7 @@
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(108, 20);
             this.dtpFechaIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFechaIngreso.TabIndex = 5;
+            this.dtpFechaIngreso.TabIndex = 4;
             // 
             // label1
             // 
@@ -193,7 +195,7 @@
             this.btnAgregarProducto.Location = new System.Drawing.Point(468, 203);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(75, 41);
-            this.btnAgregarProducto.TabIndex = 12;
+            this.btnAgregarProducto.TabIndex = 9;
             this.btnAgregarProducto.Text = "Agregar Laptops";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
@@ -238,7 +240,7 @@
             this.txtGuia.Location = new System.Drawing.Point(352, 112);
             this.txtGuia.Name = "txtGuia";
             this.txtGuia.Size = new System.Drawing.Size(133, 20);
-            this.txtGuia.TabIndex = 18;
+            this.txtGuia.TabIndex = 6;
             // 
             // btnBuscar
             // 
@@ -276,7 +278,7 @@
             this.txtNroIngreso.Name = "txtNroIngreso";
             this.txtNroIngreso.ReadOnly = true;
             this.txtNroIngreso.Size = new System.Drawing.Size(106, 20);
-            this.txtNroIngreso.TabIndex = 148;
+            this.txtNroIngreso.TabIndex = 0;
             // 
             // label7
             // 
@@ -296,7 +298,7 @@
             this.cmbTipoIngreso.Location = new System.Drawing.Point(72, 69);
             this.cmbTipoIngreso.Name = "cmbTipoIngreso";
             this.cmbTipoIngreso.Size = new System.Drawing.Size(138, 21);
-            this.cmbTipoIngreso.TabIndex = 151;
+            this.cmbTipoIngreso.TabIndex = 1;
             // 
             // btnAgregarLicencia
             // 
@@ -304,7 +306,7 @@
             this.btnAgregarLicencia.Location = new System.Drawing.Point(669, 509);
             this.btnAgregarLicencia.Name = "btnAgregarLicencia";
             this.btnAgregarLicencia.Size = new System.Drawing.Size(69, 25);
-            this.btnAgregarLicencia.TabIndex = 166;
+            this.btnAgregarLicencia.TabIndex = 12;
             this.btnAgregarLicencia.Text = "Agregar";
             this.btnAgregarLicencia.UseVisualStyleBackColor = true;
             this.btnAgregarLicencia.Click += new System.EventHandler(this.btnAgregarLicencia_Click);
@@ -315,7 +317,7 @@
             this.btnAgregarDisco.Location = new System.Drawing.Point(993, 354);
             this.btnAgregarDisco.Name = "btnAgregarDisco";
             this.btnAgregarDisco.Size = new System.Drawing.Size(69, 25);
-            this.btnAgregarDisco.TabIndex = 165;
+            this.btnAgregarDisco.TabIndex = 11;
             this.btnAgregarDisco.Text = "Agregar";
             this.btnAgregarDisco.UseVisualStyleBackColor = true;
             this.btnAgregarDisco.Click += new System.EventHandler(this.btnAgregarDisco_Click);
@@ -326,7 +328,7 @@
             this.btnAgregarMemoria.Location = new System.Drawing.Point(994, 193);
             this.btnAgregarMemoria.Name = "btnAgregarMemoria";
             this.btnAgregarMemoria.Size = new System.Drawing.Size(69, 25);
-            this.btnAgregarMemoria.TabIndex = 163;
+            this.btnAgregarMemoria.TabIndex = 10;
             this.btnAgregarMemoria.Text = "Agregar";
             this.btnAgregarMemoria.UseVisualStyleBackColor = true;
             this.btnAgregarMemoria.Click += new System.EventHandler(this.btnAgregarMemoria_Click);
@@ -567,7 +569,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(305, 666);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
-            this.btnCancelar.TabIndex = 178;
+            this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -626,7 +628,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(153, 667);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
-            this.btnGrabar.TabIndex = 175;
+            this.btnGrabar.TabIndex = 13;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGrabar.UseVisualStyleBackColor = false;
@@ -737,7 +739,7 @@
             this.cmbMonedaTipo.Location = new System.Drawing.Point(619, 116);
             this.cmbMonedaTipo.Name = "cmbMonedaTipo";
             this.cmbMonedaTipo.Size = new System.Drawing.Size(119, 21);
-            this.cmbMonedaTipo.TabIndex = 182;
+            this.cmbMonedaTipo.TabIndex = 7;
             // 
             // label10
             // 
@@ -754,7 +756,7 @@
             this.txtMontoCambio.Location = new System.Drawing.Point(869, 115);
             this.txtMontoCambio.Name = "txtMontoCambio";
             this.txtMontoCambio.Size = new System.Drawing.Size(119, 20);
-            this.txtMontoCambio.TabIndex = 184;
+            this.txtMontoCambio.TabIndex = 8;
             this.txtMontoCambio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMontoCambio_KeyDown);
             this.txtMontoCambio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoCambio_KeyPress);
             // 

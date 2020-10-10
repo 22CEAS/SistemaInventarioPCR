@@ -287,7 +287,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_duro`(
 	IN _idModelo INT,
 	IN _idTamano INT,
-	IN _tamano DOUBLE,
+	IN _tamano  NVARCHAR(80),
 	IN _idCapacidad INT,
 	IN _capacidad DOUBLE,
 	IN _cantidad INT,
@@ -310,7 +310,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `update_disco_duro`(
 	IN _idDisco INT,
 	IN _idModelo INT,
 	IN _idTamano INT,
-	IN _tamano DOUBLE,
+	IN _tamano  NVARCHAR(80),
 	IN _idCapacidad INT,
 	IN _capacidad DOUBLE,
 	IN _estado INT,

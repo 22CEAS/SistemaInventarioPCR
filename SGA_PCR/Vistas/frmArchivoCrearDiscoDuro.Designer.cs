@@ -113,7 +113,6 @@
             gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn3.AllowEdit = false;
             gridColumn3.DataPropertyName = "tamano";
-            gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
             gridColumn3.MinimumWidth = 100;
             gridColumn3.Name = "Tamaño";
             gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;

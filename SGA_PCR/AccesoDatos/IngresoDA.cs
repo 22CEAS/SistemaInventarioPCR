@@ -1004,7 +1004,7 @@ namespace AccesoDatos
                     discoIndependiente.Cantidad = reader.GetInt32("cantidad");
                     discoIndependiente.Precio = reader.GetDouble("subTotal");
                     discoIndependiente.TipoDisco = reader.GetString("TipoDisco");
-                    discoIndependiente.Tamano = reader.GetDouble("TamanoDisco");
+                    discoIndependiente.Tamano = reader.GetString("TamanoDisco");
                     discoIndependiente.Capacidad = reader.GetInt32("CapacidadDisco");
                     ingresoDevuelto.Discos.Add(discoIndependiente);
                 }

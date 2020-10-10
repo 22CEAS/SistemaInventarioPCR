@@ -1343,16 +1343,17 @@ namespace Apolo
             txtNroOC.Text = alquiler.NroOC;
             txtNroAlquiler.Text = alquiler.IdAlquiler.ToString();
 
-            for (int i=0;i<alquiler.Detalles.Count;i++)
-            {
-                tablaDisco = alquilerDA.ListarLaptopDisco(alquiler.Detalles[i].Laptop.IdLC);
-                tablaMemoria = alquilerDA.ListarLaptopMemoria(alquiler.Detalles[i].Laptop.IdLC);
-                tablaLicencia = alquilerDA.ListarLaptopLicencia(alquiler.Detalles[i].Laptop.IdLC);
+            if(alquiler.Estado!=0)
+                for (int i=0;i<alquiler.Detalles.Count;i++)
+                {
+                    tablaDisco = alquilerDA.ListarLaptopDisco(alquiler.Detalles[i].Laptop.IdLC);
+                    tablaMemoria = alquilerDA.ListarLaptopMemoria(alquiler.Detalles[i].Laptop.IdLC);
+                    tablaLicencia = alquilerDA.ListarLaptopLicencia(alquiler.Detalles[i].Laptop.IdLC);
 
-                alquiler.Detalles[i].Laptop.SetDisco(tablaDisco);
-                alquiler.Detalles[i].Laptop.SetMemoria(tablaMemoria);
-                alquiler.Detalles[i].Laptop.SetLicencia(tablaLicencia);
-            }
+                    alquiler.Detalles[i].Laptop.SetDisco(tablaDisco);
+                    alquiler.Detalles[i].Laptop.SetMemoria(tablaMemoria);
+                    alquiler.Detalles[i].Laptop.SetLicencia(tablaLicencia);
+                }
             
 
         }

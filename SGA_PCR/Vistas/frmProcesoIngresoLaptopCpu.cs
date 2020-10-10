@@ -33,6 +33,8 @@ namespace Apolo
         Memoria memoria;
         Licencia licencia;
 
+        Boolean permitir = true;
+
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
@@ -862,6 +864,42 @@ namespace Apolo
         private void dgvAntivirus_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             dgvAntivirus.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void txtPantalla_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = solonumeros1(Convert.ToInt32(e.KeyChar));
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = solonumeros2(Convert.ToInt32(e.KeyChar));
+        }
+        public bool solonumeros1(int code)
+        {
+            bool resultado;
+            if (code == 46 && txtPantalla.Text.Contains("."))//se evalua si es punto y si es punto se rebiza si ya existe en el textbox
+                resultado = true;
+            else if ((((code >= 48) && (code <= 57)) || (code == 8) || code == 46)) //se evaluan las teclas validas
+                resultado = false;
+            else if (!permitir)
+                resultado = permitir;
+            else
+                resultado = true;
+            return resultado;
+        }
+        public bool solonumeros2(int code)
+        {
+            bool resultado;
+            if (code == 46 && txtPrecio.Text.Contains("."))//se evalua si es punto y si es punto se rebiza si ya existe en el textbox
+                resultado = true;
+            else if ((((code >= 48) && (code <= 57)) || (code == 8) || code == 46)) //se evaluan las teclas validas
+                resultado = false;
+            else if (!permitir)
+                resultado = permitir;
+            else
+                resultado = true;
+            return resultado;
         }
     }
 }

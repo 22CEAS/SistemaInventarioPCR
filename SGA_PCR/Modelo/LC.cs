@@ -100,7 +100,7 @@ namespace Modelo
                 DiscoDuro disco = new DiscoDuro();
                 disco.IdDisco = Convert.ToInt32(data.Rows[rec]["IdDisco"].ToString());
                 disco.Tipo.NombreModelo = data.Rows[rec]["TipoDisco"].ToString();
-                disco.Tamano = Convert.ToDouble(data.Rows[rec]["Tamano"].ToString());
+                disco.Tamano = data.Rows[rec]["Tamano"].ToString();
                 disco.Capacidad = Convert.ToInt32(data.Rows[rec]["Capacidad"].ToString());
                 disco.Cantidad = Convert.ToInt32(data.Rows[rec]["Cantidad"].ToString());
                 this.Discos.Add(disco);
