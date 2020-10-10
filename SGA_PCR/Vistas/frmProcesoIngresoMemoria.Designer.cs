@@ -37,6 +37,7 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoIngresoMemoria));
             this.dgvMemoria = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -62,7 +63,7 @@
             gridColumn2.DataPropertyName = "tipo";
             gridColumn2.FilterAutoScan = true;
             gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Tipo";
+            gridColumn2.Name = "Modelo";
             gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn2.Width = 120;
             gridColumn3.AllowEdit = false;
@@ -110,6 +111,8 @@
             gridColumn9.Name = "idFrecuencia";
             gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn9.Visible = false;
+            gridColumn10.DataPropertyName = "tipo2";
+            gridColumn10.Name = "Tipo";
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn1);
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn2);
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn3);
@@ -119,6 +122,7 @@
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn7);
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn8);
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn9);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn10);
             this.dgvMemoria.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -131,7 +135,7 @@
             this.dgvMemoria.PrimaryGrid.NullString = "<<null>>";
             this.dgvMemoria.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvMemoria.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvMemoria.Size = new System.Drawing.Size(461, 247);
+            this.dgvMemoria.Size = new System.Drawing.Size(568, 247);
             this.dgvMemoria.TabIndex = 94;
             this.dgvMemoria.Text = "Tabla Memoria";
             // 
@@ -145,7 +149,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(357, 293);
+            this.btnCancelar.Location = new System.Drawing.Point(464, 293);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 124;
@@ -165,7 +169,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(434, 295);
+            this.btnGrabar.Location = new System.Drawing.Point(541, 295);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 123;
@@ -179,7 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(566, 370);
+            this.ClientSize = new System.Drawing.Size(673, 370);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.dgvMemoria);

@@ -66,6 +66,7 @@ namespace Apolo
                         memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString();
                         memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
                         memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+                        memoria.Tipo = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 5))).Value.ToString();
                         memorias.Add(memoria);
                         flag = true;
                     }

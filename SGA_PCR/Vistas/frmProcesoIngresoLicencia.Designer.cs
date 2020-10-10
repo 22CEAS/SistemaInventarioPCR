@@ -65,17 +65,16 @@
             gridColumn2.Width = 120;
             gridColumn3.AllowEdit = false;
             gridColumn3.DataPropertyName = "Tipo";
-            gridColumn3.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
             gridColumn3.MinimumWidth = 100;
             gridColumn3.Name = "Tipo";
             gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn3.Width = 120;
             gridColumn4.AllowEdit = false;
             gridColumn4.DataPropertyName = "Version";
-            gridColumn4.MinimumWidth = 100;
+            gridColumn4.MinimumWidth = 180;
             gridColumn4.Name = "Versión";
             gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn4.Width = 120;
+            gridColumn4.Width = 180;
             gridColumn5.AllowEdit = false;
             gridColumn5.DataPropertyName = "IdCategoria";
             gridColumn5.MinimumWidth = 50;
@@ -114,7 +113,7 @@
             this.dgvLicencia.PrimaryGrid.NullString = "<<null>>";
             this.dgvLicencia.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvLicencia.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvLicencia.Size = new System.Drawing.Size(470, 260);
+            this.dgvLicencia.Size = new System.Drawing.Size(527, 260);
             this.dgvLicencia.TabIndex = 125;
             this.dgvLicencia.Text = "Tabla Licencia";
             // 
@@ -128,7 +127,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(338, 295);
+            this.btnCancelar.Location = new System.Drawing.Point(397, 295);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 127;
@@ -148,7 +147,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(424, 297);
+            this.btnGrabar.Location = new System.Drawing.Point(483, 297);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 126;
@@ -162,7 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(566, 370);
+            this.ClientSize = new System.Drawing.Size(625, 370);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.dgvLicencia);

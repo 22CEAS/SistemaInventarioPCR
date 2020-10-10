@@ -59,6 +59,7 @@ namespace Apolo
                         disco = new DiscoDuro();
                         disco.IdDisco = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 5))).Value.ToString());
                         disco.TipoDisco = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                        disco.Tamano = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 2))).Value.ToString();
                         disco.Capacidad = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 3))).Value.ToString());
                         disco.Cantidad = 1;
                         discos.Add(disco);

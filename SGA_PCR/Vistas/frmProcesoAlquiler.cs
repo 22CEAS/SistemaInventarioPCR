@@ -567,6 +567,7 @@ namespace Apolo
                             {
                                 memTemp.TipoMemoria = memoriaTraido.TipoMemoria;
                                 memTemp.Capacidad = memoriaTraido.Capacidad;
+                                memTemp.Tipo = memoriaTraido.Tipo;
                                 memTemp.Cantidad = 1;
                                 alquiler.Detalles[indice].Laptop.Memorias.Add(memTemp);
                             }
@@ -623,6 +624,7 @@ namespace Apolo
                         Memoria memoria = new Memoria();
                         memoria.IdMemoria = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 3))).Value.ToString());
                         memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 0))).Value.ToString();
+                        memoria.Tipo = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString();
                         memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString());
                         memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
                         memorias.Add(memoria);
@@ -675,6 +677,7 @@ namespace Apolo
                         if (memoriaID != memoria.IdMemoria)
                         {
                             memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 0))).Value.ToString();
+                            memoria.Tipo = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString();
                             memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString());
                             memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
                             memorias.Add(memoria);

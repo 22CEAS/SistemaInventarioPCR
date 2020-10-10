@@ -77,8 +77,8 @@
             this.vista.Appearance.Row.Options.UseFont = true;
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.TipoMemoria,
             this.Modelo,
+            this.TipoMemoria,
             this.Capacidad,
             this.Frecuencia,
             this.Cantidad,
@@ -90,13 +90,13 @@
             // TipoMemoria
             // 
             this.TipoMemoria.Caption = "TipoMemoria";
-            this.TipoMemoria.FieldName = "categoria";
+            this.TipoMemoria.FieldName = "Tipo2";
             this.TipoMemoria.MaxWidth = 100;
             this.TipoMemoria.MinWidth = 100;
             this.TipoMemoria.Name = "TipoMemoria";
             this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoMemoria.Visible = true;
-            this.TipoMemoria.VisibleIndex = 0;
+            this.TipoMemoria.VisibleIndex = 1;
             this.TipoMemoria.Width = 100;
             // 
             // Modelo
@@ -108,7 +108,7 @@
             this.Modelo.Name = "Modelo";
             this.Modelo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 1;
+            this.Modelo.VisibleIndex = 0;
             this.Modelo.Width = 100;
             // 
             // Capacidad

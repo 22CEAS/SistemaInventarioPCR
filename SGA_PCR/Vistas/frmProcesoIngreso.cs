@@ -494,6 +494,7 @@ namespace Apolo
                         if (!(exists))
                         {
                             memTemp.TipoMemoria = memoriaTraido.TipoMemoria;
+                            memTemp.Tipo = memoriaTraido.Tipo;
                             memTemp.Capacidad = memoriaTraido.Capacidad;
                             memTemp.Cantidad = 1;
                             memTemp.Precio = 0.00;
@@ -523,9 +524,10 @@ namespace Apolo
                         if (memoriaID != memoria.IdMemoria)
                         {
                             memoria.TipoMemoria = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 0))).Value.ToString();
+                            memoria.Tipo = ((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString();
                             memoria.Capacidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 1))).Value.ToString());
                             memoria.Cantidad = int.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 2))).Value.ToString());
-                            memoria.Precio = Double.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 4))).Value.ToString());
+                            memoria.Precio = Double.Parse(((GridCell)(dgvMemorias.PrimaryGrid.GetCell(i, 5))).Value.ToString());
                             memorias.Add(memoria);
                         }
                     }
@@ -556,6 +558,7 @@ namespace Apolo
                         {
                             disTemp.TipoDisco = discoTraido.TipoDisco;
                             disTemp.Capacidad = discoTraido.Capacidad;
+                            disTemp.Tamano = discoTraido.Tamano;
                             disTemp.Cantidad = 1;
                             disTemp.Precio = 0.00;
                             auxiliares.Add(disTemp);
@@ -583,6 +586,7 @@ namespace Apolo
                         if (discoID != disco.IdDisco)
                         {
                             disco.TipoDisco = ((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 0))).Value.ToString();
+                            disco.Tamano = ((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 4))).Value.ToString();
                             disco.Capacidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 1))).Value.ToString());
                             disco.Cantidad = int.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 2))).Value.ToString());
                             disco.Precio = Double.Parse(((GridCell)(dgvDisco.PrimaryGrid.GetCell(i, 5))).Value.ToString());
@@ -1022,7 +1026,7 @@ namespace Apolo
             foreach (Memoria det in ingreso.Memorias)
             {
                 //int k = grd.Columns.Count + 64;
-                int k = 4 + 64;
+                int k = 5 + 64;
                 char columF = (char)k;
                 int fila2 = i + filaMemoria;
                 string filaBorde = fila2.ToString();
@@ -1033,9 +1037,10 @@ namespace Apolo
                 rango.Style.Font.Bold = false;
 
                 hoja_trabajo.Cells[i + filaMemoria, 1] = det.TipoMemoria;
-                hoja_trabajo.Cells[i + filaMemoria, 2] = det.Capacidad;
-                hoja_trabajo.Cells[i + filaMemoria, 3] = det.Cantidad;
-                hoja_trabajo.Cells[i + filaMemoria, 4] = det.Precio.ToString();
+                hoja_trabajo.Cells[i + filaMemoria, 2] = det.Tipo;
+                hoja_trabajo.Cells[i + filaMemoria, 3] = det.Capacidad;
+                hoja_trabajo.Cells[i + filaMemoria, 4] = det.Cantidad;
+                hoja_trabajo.Cells[i + filaMemoria, 5] = det.Precio.ToString();
 
                 i++;
             }
@@ -1044,7 +1049,7 @@ namespace Apolo
             foreach (DiscoDuro det in ingreso.Discos)
             {
                 //int k = grd.Columns.Count + 64;
-                int k = 4 + 64;
+                int k = 5 + 64;
                 char columF = (char)k;
                 int fila2 = i + filaDisco;
                 string filaBorde = fila2.ToString();
@@ -1055,9 +1060,10 @@ namespace Apolo
                 rango.Style.Font.Bold = false;
 
                 hoja_trabajo.Cells[i + filaDisco, 1] = det.TipoDisco;
-                hoja_trabajo.Cells[i + filaDisco, 2] = det.Capacidad;
-                hoja_trabajo.Cells[i + filaDisco, 3] = det.Cantidad;
-                hoja_trabajo.Cells[i + filaDisco, 4] = det.Precio.ToString();
+                hoja_trabajo.Cells[i + filaDisco, 2] = det.Tamano;
+                hoja_trabajo.Cells[i + filaDisco, 3] = det.Capacidad;
+                hoja_trabajo.Cells[i + filaDisco, 4] = det.Cantidad;
+                hoja_trabajo.Cells[i + filaDisco, 5] = det.Precio.ToString();
 
                 i++;
             }
@@ -1120,17 +1126,19 @@ namespace Apolo
                 hoja.Cells[fila + 4, 1] = "Tipo Ingreso";
                 hoja.Cells[fila + 4, 2] = ingreso.TipoIngreso;
 
-                hoja.Cells[fila + 2, 5] = "Fecha Ingreso";
-                hoja.Cells[fila + 2, 6] = ingreso.FechaIngreso.ToString("yyyy/MM/dd");
-                hoja.Cells[fila + 3, 5] = "Tipo Moneda";
-                hoja.Cells[fila + 3, 6] = ingreso.MonedaTipo;
-                hoja.Cells[fila + 4, 5] = "Monto Cambio";
-                hoja.Cells[fila + 4, 6] = (ingreso.MontoCambio==0)? "": ingreso.MontoCambio.ToString();
+                hoja.Cells[fila + 2, 5] = "Tipo Moneda";
+                hoja.Cells[fila + 2, 6] = ingreso.MonedaTipo;
+                hoja.Cells[fila + 3, 5] = "Monto Cambio";
+                hoja.Cells[fila + 3, 6] = (ingreso.MontoCambio == 0) ? "" : ingreso.MontoCambio.ToString();
+                hoja.Cells[fila + 4, 5] = "Monto Total";
+                hoja.Cells[fila + 4, 6] = ingreso.Total.ToString();
 
-                hoja.Cells[fila + 2, 8] = "N° Factura";
-                hoja.Cells[fila + 2, 9] = txtFactura.Text;
-                hoja.Cells[fila + 3, 8] = "N° Guia";
-                hoja.Cells[fila + 3, 9] = txtGuia.Text;
+                hoja.Cells[fila + 2, 8] = "Fecha Ingreso";
+                hoja.Cells[fila + 2, 9] = ingreso.FechaIngreso.ToString("yyyy/MM/dd");
+                hoja.Cells[fila + 3, 8] = "N° Factura";
+                hoja.Cells[fila + 3, 9] = txtFactura.Text;
+                hoja.Cells[fila + 4, 8] = "N° Guia";
+                hoja.Cells[fila + 4, 9] = txtGuia.Text;
 
 
                 if (ingreso.Detalles.Count > 0)
@@ -1177,13 +1185,14 @@ namespace Apolo
                 if (ingreso.Memorias.Count > 0)
                 {
                     hoja.Cells[filaMemoria - 2, 1] = "Memorias";
-                    hoja.Cells[filaMemoria - 1, 1] = "Tipo";
-                    hoja.Cells[filaMemoria - 1, 2] = "Capacidad";
-                    hoja.Cells[filaMemoria - 1, 3] = "Cantidad";
-                    hoja.Cells[filaMemoria - 1, 4] = "Precio";
+                    hoja.Cells[filaMemoria - 1, 1] = "Modelo";
+                    hoja.Cells[filaMemoria - 1, 2] = "Tipo";
+                    hoja.Cells[filaMemoria - 1, 3] = "Capacidad";
+                    hoja.Cells[filaMemoria - 1, 4] = "Cantidad";
+                    hoja.Cells[filaMemoria - 1, 5] = "Precio";
 
                     //int i = grd.Columns.Count + 64;
-                    int i = 4 + 64;
+                    int i = 5 + 64;
                     char columF = (char)i;
                     int fila2 = filaMemoria - 1;
                     string filaBorde = fila2.ToString();
@@ -1197,7 +1206,7 @@ namespace Apolo
                     rango = hoja.Rows[fila2];
                     rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
                     
-                    for (int j = 0; j < 4; j++)
+                    for (int j = 0; j < 5; j++)
                     {
                         rango = hoja.Columns[j + 1];
                         rango.ColumnWidth = 13;
@@ -1208,12 +1217,13 @@ namespace Apolo
                 {
                     hoja.Cells[filaDisco - 2, 1] = "Discos";
                     hoja.Cells[filaDisco - 1, 1] = "Tipo";
-                    hoja.Cells[filaDisco - 1, 2] = "Capacidad";
-                    hoja.Cells[filaDisco - 1, 3] = "Cantidad";
-                    hoja.Cells[filaDisco - 1, 4] = "Precio";
+                    hoja.Cells[filaDisco - 1, 2] = "Tamaño";
+                    hoja.Cells[filaDisco - 1, 3] = "Capacidad";
+                    hoja.Cells[filaDisco - 1, 4] = "Cantidad";
+                    hoja.Cells[filaDisco - 1, 5] = "Precio";
 
                     //int i = grd.Columns.Count + 64;
-                    int i = 4 + 64;
+                    int i = 5 + 64;
                     char columF = (char)i;
                     int fila2 = filaDisco - 1;
                     string filaBorde = fila2.ToString();
@@ -1227,7 +1237,7 @@ namespace Apolo
                     rango = hoja.Rows[fila2];
                     rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-                    for (int j = 0; j < 4; j++)
+                    for (int j = 0; j < 5; j++)
                     {
                         rango = hoja.Columns[j + 1];
                         rango.ColumnWidth = 13;
@@ -1374,7 +1384,7 @@ namespace Apolo
                 cantidadMemoria= myStr.Length > 0 ? int.Parse(myStr) : 1;
                 ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[2])).Value = cantidadMemoria;
 
-                myStr = ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[4])).Value.ToString();
+                myStr = ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[5])).Value.ToString();
                 myStr = myStr.TrimStart('0');
 
                 if (myStr.Length > 0)
@@ -1384,7 +1394,7 @@ namespace Apolo
                 }
                 else myStr = "0";
                 precio = myStr.Length > 0 ? double.Parse(myStr) : 0.00;
-                ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[4])).Value = precio;
+                ((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[5])).Value = precio;
 
                 memoriaId = int.Parse(((GridCell)(((GridRow)dgvMemorias.PrimaryGrid.ActiveRow)[3])).Value.ToString());
 

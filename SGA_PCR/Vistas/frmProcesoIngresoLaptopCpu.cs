@@ -366,6 +366,7 @@ namespace Apolo
                         memoria.IdModelo = int.Parse(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 6))).Value.ToString());
                         memoria.Capacidad = int.Parse(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 3))).Value.ToString());
                         memoria.Modelo.NombreModelo = ((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 1))).Value.ToString();
+                        memoria.Tipo = ((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 9))).Value.ToString();
                         memoria.Cantidad = 1;
                         laptop.Memorias.Add(memoria);
                         flag = true;
@@ -385,6 +386,7 @@ namespace Apolo
                         disco.IdDisco = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 5))).Value.ToString());
                         disco.IdTipo = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 6))).Value.ToString());
                         disco.Capacidad = int.Parse(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+                        disco.Tamano = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 2))).Value.ToString();
                         disco.TipoDisco = ((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 1))).Value.ToString();
                         disco.Cantidad = 1;
                         laptop.Discos.Add(disco);

@@ -116,6 +116,7 @@ namespace Modelo
                 Memoria memoria = new Memoria();
                 memoria.IdMemoria = Convert.ToInt32(data.Rows[rec]["IdMemoria"].ToString());
                 memoria.Modelo.NombreModelo = data.Rows[rec]["TipoMemoria"].ToString();
+                memoria.Tipo = data.Rows[rec]["Tipo2"].ToString();
                 memoria.Capacidad = Convert.ToInt32(data.Rows[rec]["Capacidad"].ToString());
                 memoria.Cantidad = Convert.ToInt32(data.Rows[rec]["Cantidad"].ToString());
                 this.Memorias.Add(memoria);

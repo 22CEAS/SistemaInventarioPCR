@@ -114,8 +114,8 @@ namespace Apolo
                 rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
                 rango.Style.Font.Bold = false;
 
-                hoja_trabajo.Cells[fila2, 1] = vista.GetRowCellValue(j, "categoria").ToString();
-                hoja_trabajo.Cells[fila2, 2] = vista.GetRowCellValue(j, "TipoMemoria").ToString();
+                hoja_trabajo.Cells[fila2, 1] = vista.GetRowCellValue(j, "TipoMemoria").ToString();
+                hoja_trabajo.Cells[fila2, 2] = vista.GetRowCellValue(j, "Tipo2").ToString();
                 hoja_trabajo.Cells[fila2, 3] = vista.GetRowCellValue(j, "Capacidad").ToString();
                 hoja_trabajo.Cells[fila2, 4] = vista.GetRowCellValue(j, "frecuencia").ToString();
                 hoja_trabajo.Cells[fila2, 5] = vista.GetRowCellValue(j, "Cantidad").ToString();
@@ -143,7 +143,7 @@ namespace Apolo
 
                 //worksheet.Range[worksheet.Cells[rowNum, columnNum], worksheet.Cells[rowNum, columnNum]].Merge();
 
-                hoja.Cells[fila + 2, 1] = "Categoría";
+                hoja.Cells[fila + 2, 1] = "Modelo";
                 hoja.Cells[fila + 2, 2] = "Tipo Memoria";
                 hoja.Cells[fila + 2, 3] = "Capacidad";
                 hoja.Cells[fila + 2, 4] = "Frecuencia";

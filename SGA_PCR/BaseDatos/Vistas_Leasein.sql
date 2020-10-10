@@ -138,6 +138,8 @@ Select 	me.idMemoria as idMemoria,
 		ma.nombre as categoria,
 		m.idModelo as idTipo,
 		m.nombre as tipo,
+		me.idTipo as idTipo2,
+		me.tipo as tipo2,
 		me.idBusFrecuencia as idBusFrecuencia,
 		me.busFrecuencia as frecuencia,
 		me.idCapacidad as idCapacidad,
@@ -155,6 +157,7 @@ Select 	me.idMemoria as idMemoria,
 		me.busFrecuencia as frecuencia,
 		me.capacidad as capacidad,
 		me.cantidad as cantidad,
+		me.tipo as Tipo2,
 		me.estado as estado
 From memoria me
 	inner join modelo m on m.idModelo = me.idModelo
@@ -168,6 +171,7 @@ Select 	me.idMemoria as IdMemoria,
 		me.busFrecuencia as frecuencia,
 		me.capacidad as Capacidad,
 		me.cantidad as Cantidad,
+		me.tipo as Tipo2,
 		me.estado as estado
 From memoria me
 	inner join modelo m on m.idModelo = me.idModelo
@@ -182,6 +186,7 @@ Select mlc.idMemoria,
 		m.nombre as tipo,
 		me.busFrecuencia as frecuencia,
 		me.capacidad as capacidad,
+		me.tipo as Tipo2,
 		sum(mlc.cantidad) as Cantidad
 From memoria_LC mlc, laptop_cpu lc,
 	memoria me
@@ -197,6 +202,7 @@ Select mlc.idMemoria,
 		m.nombre as tipo,
 		me.busFrecuencia as frecuencia,
 		me.capacidad as capacidad,
+		me.tipo as Tipo2,
 		sum(mlc.cantidad) as Cantidad
 From memoria_LC mlc, laptop_cpu lc,
 	memoria me
@@ -707,6 +713,7 @@ create view vista_laptops_memorias as
 SELECT lc.idLC as idLC,
 		m.idMemoria as IdMemoria,
 		m.tipo as TipoMemoria,
+		m.tipo2 as Tipo2,
 		m.capacidad as Capacidad,
 		mlc.cantidad as Cantidad
 FROM vista_maestro_laptops lc, vista_maestro_memoria m,  memoria_lc mlc
@@ -896,14 +903,19 @@ SELECT
 	IFNULL( vv.capacidad, '' ) AS capacidadVideo,
 	IFNULL( vd1.capacidad, 0 ) AS CapacidadDisco1,
 	IFNULL( vd1.tipo, '' ) AS TipoDisco1,
+	IFNULL( vd1.tamano, '' ) AS TamanoDisco1,
 	IFNULL( vd2.capacidad, 0 ) AS CapacidadDisco2,
 	IFNULL( vd2.tipo, '' ) AS TipoDisco2,
+	IFNULL( vd2.tamano, '' ) AS TamanoDisco2,
 	IFNULL( m1.capacidad, 0 ) AS CapacidadMemoria1,
 	IFNULL( m1.tipo, '' ) AS TipoMemoria1,
+	IFNULL( m1.tipo2, '' ) AS Tipo2Memoria1,
 	IFNULL( m2.capacidad, 0 ) AS CapacidadMemoria2,
 	IFNULL( m2.tipo, '' ) AS TipoMemoria2,
+	IFNULL( m2.tipo2, '' ) AS Tipo2Memoria2,
 	IFNULL( m3.capacidad, 0 ) AS CapacidadMemoria3,
 	IFNULL( m3.tipo, '' ) AS TipoMemoria3,
+	IFNULL( m3.tipo2, '' ) AS Tipo2Memoria3,
 	IFNULL( l1.Version, '' ) AS ModeloWindows,
 	IFNULL( l1.Categoria, '' ) AS CategoriaWindows,
 	IFNULL( l2.Version, '' ) AS ModeloOffice,
@@ -935,6 +947,7 @@ SELECT
 	IFNULL( d.tamano, '' ) AS TamanoDisco,
 	IFNULL( m.capacidad, '' ) AS CapacidadMemoria,
 	IFNULL( m.tipo, '' ) AS TipoMemoria,
+	IFNULL( m.tipo2, '' ) AS Tipo2,
 	IFNULL( l.Categoria, '' ) AS Categoria,
 	IFNULL( l.IdCategoria, '' ) AS IdCategoriaLicencia,
 	IFNULL( l.Tipo, '' ) AS Marca,
@@ -1146,6 +1159,7 @@ Select 	me.idMemoria as IdMemoria,
 		me.busFrecuencia as frecuencia,
 		me.capacidad as Capacidad,
 		me.cantidad as Cantidad,
+		me.tipo as Tipo2,
 		me.estado as estado
 From memoria me
 	inner join modelo m on m.idModelo = me.idModelo

@@ -853,6 +853,7 @@ namespace AccesoDatos
                     disco.Cantidad = reader.GetInt32("cantidadDisco1");
                     disco.Capacidad = reader.GetInt32("CapacidadDisco1");
                     disco.TipoDisco = reader.GetString("TipoDisco1");
+                    disco.Tamano = reader.GetString("TamanoDisco1");
                     det.Laptop.Discos.Add(disco);
                 }
                 if (reader.GetInt32("idDisco2") != 0)
@@ -862,6 +863,7 @@ namespace AccesoDatos
                     disco.Cantidad = reader.GetInt32("cantidadDisco2");
                     disco.Capacidad = reader.GetInt32("CapacidadDisco2");
                     disco.TipoDisco = reader.GetString("TipoDisco2");
+                    disco.Tamano = reader.GetString("TamanoDisco2");
                     det.Laptop.Discos.Add(disco);
                 }
                 if (reader.GetInt32("idMemoria1") != 0)
@@ -871,6 +873,7 @@ namespace AccesoDatos
                     memoria.Cantidad = reader.GetInt32("cantidadMemoria1");
                     memoria.Capacidad= reader.GetInt32("CapacidadMemoria1");
                     memoria.TipoMemoria = reader.GetString("TipoMemoria1");
+                    memoria.Tipo = reader.GetString("Tipo2Memoria1");
                     det.Laptop.Memorias.Add(memoria);
                 }
                 if (reader.GetInt32("idMemoria2") != 0)
@@ -880,6 +883,7 @@ namespace AccesoDatos
                     memoria.Cantidad = reader.GetInt32("cantidadMemoria2");
                     memoria.Capacidad = reader.GetInt32("CapacidadMemoria2");
                     memoria.TipoMemoria = reader.GetString("TipoMemoria2");
+                    memoria.Tipo = reader.GetString("Tipo2Memoria2");
                     det.Laptop.Memorias.Add(memoria);
                 }
                 if (reader.GetInt32("idMemoria3") != 0)
@@ -889,6 +893,7 @@ namespace AccesoDatos
                     memoria.Cantidad = reader.GetInt32("cantidadMemoria3");
                     memoria.Capacidad = reader.GetInt32("CapacidadMemoria3");
                     memoria.TipoMemoria = reader.GetString("TipoMemoria3");
+                    memoria.Tipo = reader.GetString("Tipo2Memoria3");
                     det.Laptop.Memorias.Add(memoria);
                 }
 
@@ -1014,6 +1019,7 @@ namespace AccesoDatos
                     memoriaIndependiente.Cantidad = reader.GetInt32("cantidad");
                     memoriaIndependiente.Precio = reader.GetDouble("subTotal");
                     memoriaIndependiente.TipoMemoria = reader.GetString("TipoMemoria");
+                    memoriaIndependiente.Tipo = reader.GetString("Tipo2");
                     memoriaIndependiente.Capacidad = reader.GetInt32("CapacidadMemoria");
                     ingresoDevuelto.Memorias.Add(memoriaIndependiente);
                 }

@@ -62,6 +62,7 @@ namespace Modelo
         public int Capacidad { get => capacidad; set => capacidad = value; }
         public int IdTipo { get => idTipo; set => idTipo = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+        public string Tipo2 { get => tipo; set => tipo = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
         public string Ubicacion { get => ubicacion; set => ubicacion = value; }
         public string Observacion { get => observacion; set => observacion = value; }

@@ -33,6 +33,7 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoEditarMemoria));
             this.label14 = new System.Windows.Forms.Label();
             this.dgvMemorias = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
@@ -62,7 +63,7 @@
             gridColumn1.Width = 70;
             gridColumn2.AllowEdit = false;
             gridColumn2.DataPropertyName = "TipoMemoria";
-            gridColumn2.Name = "Tipo";
+            gridColumn2.Name = "Modelo";
             gridColumn2.Width = 150;
             gridColumn3.AllowEdit = false;
             gridColumn3.DataPropertyName = "Capacidad";
@@ -77,11 +78,15 @@
             gridColumn5.DataPropertyName = "IdMemoria";
             gridColumn5.Name = "idMemoria";
             gridColumn5.Visible = false;
+            gridColumn6.AllowEdit = false;
+            gridColumn6.DataPropertyName = "Tipo2";
+            gridColumn6.Name = "Tipo";
             this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn1);
             this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn2);
             this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn3);
             this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn4);
             this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvMemorias.PrimaryGrid.Columns.Add(gridColumn6);
             this.dgvMemorias.PrimaryGrid.EnableColumnFiltering = true;
             this.dgvMemorias.PrimaryGrid.EnableFiltering = true;
             this.dgvMemorias.PrimaryGrid.EnableRowFiltering = true;
@@ -89,7 +94,7 @@
             this.dgvMemorias.PrimaryGrid.MultiSelect = false;
             this.dgvMemorias.PrimaryGrid.NoRowsText = "No hay ninguna Memoria disponible";
             this.dgvMemorias.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvMemorias.Size = new System.Drawing.Size(520, 222);
+            this.dgvMemorias.Size = new System.Drawing.Size(624, 222);
             this.dgvMemorias.TabIndex = 53;
             this.dgvMemorias.Text = "Tabla Memoria";
             // 
@@ -103,7 +108,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(391, 267);
+            this.btnCancelar.Location = new System.Drawing.Point(505, 267);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 122;
@@ -123,7 +128,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(468, 269);
+            this.btnGrabar.Location = new System.Drawing.Point(582, 269);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 121;
@@ -137,7 +142,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(562, 344);
+            this.ClientSize = new System.Drawing.Size(676, 344);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.dgvMemorias);
