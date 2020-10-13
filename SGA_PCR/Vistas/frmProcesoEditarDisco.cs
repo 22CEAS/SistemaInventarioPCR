@@ -24,6 +24,7 @@ namespace Apolo
         private string nombreUsuario = "CEAS";
         private int cantidadDiscos;
         private int maxCantidadDiscos;
+        private int stock = 0;
 
         public frmProcesoEditarDisco(int cantidadDiscos, int maxCantidadDiscos)
         {
@@ -34,6 +35,16 @@ namespace Apolo
             //estadoComponentes(TipoVista.Inicial);
         }
 
+
+        public frmProcesoEditarDisco(int cantidadDiscos, int maxCantidadDiscos,int descripcion)
+        {
+            this.cantidadDiscos = cantidadDiscos;
+            this.maxCantidadDiscos = maxCantidadDiscos;
+            this.stock=descripcion;
+            InitializeComponent();
+            Inicializado();
+            //estadoComponentes(TipoVista.Inicial);
+        }
         public frmProcesoEditarDisco(int idUsuario, string nombreUsuario)
         {
             InitializeComponent();
@@ -49,7 +60,10 @@ namespace Apolo
             alquilerDA = new AlquilerDA();
             //laptop = new LC();
             discos = new BindingList<DiscoDuro>();
-            tablaDiscos = alquilerDA.ListarDiscosConStock();
+            if(stock==0)
+                tablaDiscos = alquilerDA.ListarDiscosConStock();
+            else
+                tablaDiscos = alquilerDA.ListarDiscosConSinStock();
 
             dgvDisco.PrimaryGrid.AutoGenerateColumns = false;
             dgvDisco.PrimaryGrid.DataSource = tablaDiscos; ;

@@ -82,6 +82,7 @@
             this.KAM});
             this.vista.GridControl = this.dgvFacturas;
             this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Cliente

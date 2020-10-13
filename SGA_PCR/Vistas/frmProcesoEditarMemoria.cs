@@ -22,6 +22,7 @@ namespace Apolo
         AlquilerDA alquilerDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
+        private int stock = 0;
 
         public frmProcesoEditarMemoria()
         {
@@ -39,13 +40,26 @@ namespace Apolo
             //estadoComponentes(TipoVista.Inicial);
         }
 
+
+        public frmProcesoEditarMemoria(int idUsuario, string nombreUsuario, int descripcion)
+        {
+            InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
+            this.stock = descripcion;
+            Inicializado();
+        }
+
         public void Inicializado()
         {
 
             alquilerDA = new AlquilerDA();
             //laptop = new LC();
             memorias = new BindingList<Memoria>();
-            tablaMemorias = alquilerDA.ListarMemoriasConStock();
+            if(stock==0)
+                tablaMemorias = alquilerDA.ListarMemoriasConStock();
+            else
+                tablaMemorias = alquilerDA.ListarMemoriasConSinStock();
 
             dgvMemorias.PrimaryGrid.AutoGenerateColumns = false;
             dgvMemorias.PrimaryGrid.DataSource = tablaMemorias; ;

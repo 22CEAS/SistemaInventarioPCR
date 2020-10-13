@@ -28,9 +28,17 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("Select * from vista_stockDisponible_memoria_libre;");
         }
+        public DataTable ListarMemoriasConSinStock()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_ConSinstockDisponible_memoria_libre;");
+        }
         public DataTable ListarDiscosConStock()
         {
             return objManager.MostrarTablaDatos("Select * from vista_stockDisponible_disco_libre;");
+        }
+        public DataTable ListarDiscosConSinStock()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_ConSinstockDisponible_disco_libre;");
         }
         public DataTable ListarLicenciasConStock()
         {

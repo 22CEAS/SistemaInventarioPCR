@@ -32,8 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvMemorias = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TipoMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Modelo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TipoMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Frecuencia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cantidad = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -85,19 +85,8 @@
             this.Estado});
             this.vista.GridControl = this.dgvMemorias;
             this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
-            // 
-            // TipoMemoria
-            // 
-            this.TipoMemoria.Caption = "TipoMemoria";
-            this.TipoMemoria.FieldName = "Tipo2";
-            this.TipoMemoria.MaxWidth = 100;
-            this.TipoMemoria.MinWidth = 100;
-            this.TipoMemoria.Name = "TipoMemoria";
-            this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.TipoMemoria.Visible = true;
-            this.TipoMemoria.VisibleIndex = 1;
-            this.TipoMemoria.Width = 100;
             // 
             // Modelo
             // 
@@ -110,6 +99,18 @@
             this.Modelo.Visible = true;
             this.Modelo.VisibleIndex = 0;
             this.Modelo.Width = 100;
+            // 
+            // TipoMemoria
+            // 
+            this.TipoMemoria.Caption = "TipoMemoria";
+            this.TipoMemoria.FieldName = "Tipo2";
+            this.TipoMemoria.MaxWidth = 100;
+            this.TipoMemoria.MinWidth = 100;
+            this.TipoMemoria.Name = "TipoMemoria";
+            this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TipoMemoria.Visible = true;
+            this.TipoMemoria.VisibleIndex = 1;
+            this.TipoMemoria.Width = 100;
             // 
             // Capacidad
             // 

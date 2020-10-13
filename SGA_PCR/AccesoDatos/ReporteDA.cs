@@ -80,5 +80,10 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * from vista_lista_reparaciones v ;");
         }
 
+        public DataTable ListarLicenciasCompletas()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_licencia_lista;");
+        }
+
     }
 }

@@ -586,5 +586,45 @@ namespace Apolo
                 f2.Show();
             }
         }
+
+        private void btnCambioDescripcion_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmProcesoCambioDescripcion")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmProcesoCambioDescripcion f2 = new frmProcesoCambioDescripcion();
+                f2.MdiParent = this;
+                f2.Show();
+            }
+        }
+
+        private void btnLicencias_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmReporteLicencia")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmReporteLicencia f2 = new frmReporteLicencia();
+                f2.MdiParent = this;
+                f2.Show();
+            }
+        }
     }
 }

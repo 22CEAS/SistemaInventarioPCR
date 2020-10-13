@@ -92,6 +92,7 @@
             this.KAM});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Cliente

@@ -47,13 +47,9 @@
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SerieFabrica = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,9 +70,7 @@
             this.dgvLaptops.Size = new System.Drawing.Size(1145, 356);
             this.dgvLaptops.TabIndex = 132;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vista,
-            this.gridView1,
-            this.gridView2});
+            this.vista});
             // 
             // vista
             // 
@@ -109,6 +103,7 @@
             this.SerieFabrica});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // CodigoLC
@@ -276,16 +271,6 @@
             this.SerieFabrica.VisibleIndex = 14;
             this.SerieFabrica.Width = 150;
             // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.dgvLaptops;
-            this.gridView1.Name = "gridView1";
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.dgvLaptops;
-            this.gridView2.Name = "gridView2";
-            // 
             // btnExportar
             // 
             this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -324,8 +309,6 @@
             this.Text = "Inventario Laptops";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,8 +333,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Cliente;
         private DevExpress.XtraGrid.Columns.GridColumn Ubicacion;
         private DevExpress.XtraGrid.Columns.GridColumn SerieFabrica;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.Button btnExportar;
     }
 }

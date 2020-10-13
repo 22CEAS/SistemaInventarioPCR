@@ -105,6 +105,12 @@
     <Compile Include="frmArchivoClienteSucursal.Designer.cs">
       <DependentUpon>frmArchivoClienteSucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProcesoCambioDescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoCambioDescripcion.Designer.cs">
+      <DependentUpon>frmProcesoCambioDescripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoDevolucionAgregarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,12 @@
     <Compile Include="frmReporteCompras.Designer.cs">
       <DependentUpon>frmReporteCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteLicencia.Designer.cs">
+      <DependentUpon>frmReporteLicencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoCrearTarjetaVideo.resx">
       <DependentUpon>frmArchivoCrearTarjetaVideo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoCambioDescripcion.resx">
+      <DependentUpon>frmProcesoCambioDescripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoDevolucionAgregarProducto.resx">
       <DependentUpon>frmProcesoDevolucionAgregarProducto.cs</DependentUpon>
@@ -502,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteCompras.resx">
       <DependentUpon>frmReporteCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteLicencia.resx">
+      <DependentUpon>frmReporteLicencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteMantenimiento.resx">
       <DependentUpon>frmReporteMantenimiento.cs</DependentUpon>

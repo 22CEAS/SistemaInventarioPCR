@@ -67,6 +67,8 @@ DROP VIEW IF EXISTS `bd_leasein`.`vista_video_capacidad`;
 DROP VIEW IF EXISTS `bd_leasein`.`vista_video_marca`;
 DROP VIEW IF EXISTS `bd_leasein`.`vista_video_modelo`;
 DROP VIEW IF EXISTS `bd_leasein`.`vista_video_tipo`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_ConSinstockDisponible_memoria_libre`;
+DROP VIEW IF EXISTS `bd_leasein`.`vista_ConSinstockDisponible_disco_libre`;
 
 /*Se mostrará la tabla de discos duros en el maestro de discos*/
 create view vista_maestro_disco as
@@ -104,6 +106,16 @@ Select 	d.idDisco as IdDisco,
 From disco_duro d
 	inner join modelo m on m.idModelo = d.idModelo 
 where d.cantidad>0 and d.estado=1;
+
+create view vista_ConSinstockDisponible_disco_libre as
+Select 	d.idDisco as IdDisco,
+		m.nombre as TipoDisco,
+		d.tamano as Tamano,
+		d.capacidad as Capacidad,
+		d.cantidad as Cantidad,
+		d.estado as Estado
+From disco_duro d
+	inner join modelo m on m.idModelo = d.idModelo ;
 
 /*Se mostrará el stock de discos duros en almacen relacionados a una laptop_cpu*/
 create view vista_stock_disco_LC_almacen as
@@ -177,6 +189,19 @@ From memoria me
 	inner join modelo m on m.idModelo = me.idModelo
 	inner join marca ma on m.idMarca = ma.idMarca 
 where me.cantidad>0 and me.estado=1;
+
+create view vista_ConSinstockDisponible_memoria_libre as
+Select 	me.idMemoria as IdMemoria,
+		ma.nombre as categoria,
+		m.nombre as TipoMemoria,
+		me.busFrecuencia as frecuencia,
+		me.capacidad as Capacidad,
+		me.cantidad as Cantidad,
+		me.tipo as Tipo2,
+		me.estado as estado
+From memoria me
+	inner join modelo m on m.idModelo = me.idModelo
+	inner join marca ma on m.idMarca = ma.idMarca;
 	
 
 /*Se mostrará el stock de memorias en almacen relacionados a una laptop_cpu*/
@@ -396,9 +421,12 @@ Select l.idLicencia as IdLicencia,
 				ma.nombre as Marca,
 				mo.idModelo as IdModelo,
 				mo.nombre as Version,
-				l.idLC as IdLC,
 				l.clave as Clave,
-				l.ubicacion as Ubicacion
+				if(l.idLC is null,"",l.idLC) as IdLC,
+				if(l.idLC is null,"",(select codigo from laptop_cpu lc where lc.idLC=l.idLC)) as CodigoLC,
+				l.codigo as CodigoLicencia,
+				l.ubicacion as Ubicacion,
+				(select nombreEstado from estados e where e.idEstado=l.estado) as NombreEstado
 from licencia l, modelo mo, marca ma, categoria c
 where l.idModelo=mo.idModelo and ma.idMarca=mo.idMarca and c.idCategoria=ma.idCategoria;
 

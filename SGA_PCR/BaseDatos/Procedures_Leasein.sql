@@ -28,6 +28,7 @@ DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_cuota`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_devolucion`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_devolucion_det`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_LC`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_LC_SinAfectarCantidad`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_LC_ingreso`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_disco_duro`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_factura`;
@@ -41,6 +42,7 @@ DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_licencia_det`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_licencia_det_accesorios`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_marca`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria_LC`;
+DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria_LC_SinAfectarCantidad`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria_LC_ingreso`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_memoria`;
 DROP PROCEDURE IF EXISTS `bd_leasein`.`insert_modelo`;
@@ -428,6 +430,19 @@ BEGIN
 END
 $$ DELIMITER ;
 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_memoria_LC_SinAfectarCantidad`(
+	IN _idMemoria INT,
+	IN _idLC INT,
+	IN _cantidad INT,
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
+	INSERT INTO memoria_lc (idMemoria, idLC, cantidad, usuario_ins) VALUES (_idMemoria, _idLC, _cantidad, _usuario_ins) ; 
+END
+$$ DELIMITER ;
+
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_memoria_LC`(
 	IN _idLC INT
@@ -456,6 +471,18 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC`(
 )
 BEGIN
 	UPDATE disco_duro SET cantidad=cantidad-_cantidad WHERE idDisco=_idDisco; 
+	INSERT INTO disco_LC (idDisco,idLC,cantidad,usuario_ins) values	(_idDisco,_idLC,_cantidad,_usuario_ins);
+END
+$$ DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_disco_LC_SinAfectarCantidad`(
+	IN _idDisco INT,
+	IN _idLC INT,
+	IN _cantidad INT,
+	IN _usuario_ins NVARCHAR(100)
+)
+BEGIN
 	INSERT INTO disco_LC (idDisco,idLC,cantidad,usuario_ins) values	(_idDisco,_idLC,_cantidad,_usuario_ins);
 END
 $$ DELIMITER ;

@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportePendienteReposicion));
             this.dgvObservaciones = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,8 +42,6 @@
             this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvObservaciones
@@ -56,9 +52,7 @@
             this.dgvObservaciones.Size = new System.Drawing.Size(1018, 260);
             this.dgvObservaciones.TabIndex = 133;
             this.dgvObservaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.vista,
-            this.gridView1,
-            this.gridView2});
+            this.vista});
             // 
             // vista
             // 
@@ -84,17 +78,8 @@
             this.Estado});
             this.vista.GridControl = this.dgvObservaciones;
             this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.dgvObservaciones;
-            this.gridView1.Name = "gridView1";
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.dgvObservaciones;
-            this.gridView2.Name = "gridView2";
             // 
             // Cliente
             // 
@@ -227,8 +212,6 @@
             this.Text = "Reporte Observaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgvObservaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,8 +228,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn ObservacionLevantamiento;
         private DevExpress.XtraGrid.Columns.GridColumn FechaLevantamiento;
         private DevExpress.XtraGrid.Columns.GridColumn Estado;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.Button btnExportar;
     }
 }

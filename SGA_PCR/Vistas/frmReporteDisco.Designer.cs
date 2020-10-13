@@ -72,6 +72,7 @@
             this.Estado});
             this.vista.GridControl = this.dgvDiscos;
             this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // TipoDisco

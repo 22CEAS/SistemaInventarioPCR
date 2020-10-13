@@ -125,6 +125,7 @@
             this.IdSucursal});
             this.vista.GridControl = this.dgvPrueba;
             this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsSelection.MultiSelect = true;
             this.vista.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.vista.OptionsView.ShowAutoFilterRow = true;
