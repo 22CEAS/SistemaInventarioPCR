@@ -19,6 +19,11 @@ namespace AccesoDatos
             objManager = new DBManager();
         }
 
+        public DataTable ListarCuadroVencimiento()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_cuadro_vencimiento ;");
+        }
+
         public DataTable ListarLaptopsPorVencer()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_laptops_por_vencer ;");
@@ -48,14 +53,28 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("Select * from vista_laptops_discos where idLC=" + idLC + " ;");
         }
+
+        public DataTable ListarLaptopDisco()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_laptops_discos ;");
+        }
         public DataTable ListarLaptopMemoria(int idLC)
         {
             return objManager.MostrarTablaDatos("Select * from vista_laptops_memorias where idLC=" + idLC + " ;");
+        }
+        public DataTable ListarLaptopMemoria()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_laptops_memorias ;");
         }
         public DataTable ListarLaptopLicencia(int idLC)
         {
             return objManager.MostrarTablaDatos("Select * from vista_licencia_lc_lista where idLC=" + idLC + " ;");
         }
+        public DataTable ListarLaptopLicencia()
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_licencia_lc_lista ;");
+        }
+
 
         public DataTable ListarMemorias()
         {

@@ -486,6 +486,10 @@ namespace Apolo
         {
             if (dtpFinPlazo.Value < dtpIniPlazo.Value) dtpFinPlazo.Value = dtpIniPlazo.Value;
             dtpFinPlazo.MinDate = dtpIniPlazo.Value;
+
+            TimeSpan tSpan = dtpFinPlazo.Value - dtpIniPlazo.Value;
+            int numDiasTrans = tSpan.Days + 1;
+            lblNroDias.Text = numDiasTrans.ToString() + " días";
         }
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -1564,6 +1568,13 @@ namespace Apolo
 
             }
 
+        }
+
+        private void dtpFinPlazo_ValueChanged(object sender, EventArgs e)
+        {
+            TimeSpan tSpan = dtpFinPlazo.Value - dtpIniPlazo.Value;
+            int numDiasTrans = tSpan.Days+1;
+            lblNroDias.Text = numDiasTrans.ToString()+" días";
         }
     }
 }

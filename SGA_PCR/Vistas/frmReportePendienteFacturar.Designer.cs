@@ -42,6 +42,12 @@
             this.DíasVencidos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
+            this.TotalSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PendienteFacturarSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PendienteFacturarDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -79,6 +85,12 @@
             this.CódigoLC,
             this.Guía,
             this.DíasVencidos,
+            this.TotalSoles,
+            this.TotalDolares,
+            this.CostoSoles,
+            this.CostoDolares,
+            this.PendienteFacturarSoles,
+            this.PendienteFacturarDolares,
             this.KAM});
             this.vista.GridControl = this.dgvFacturas;
             this.vista.Name = "vista";
@@ -203,7 +215,7 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 9;
+            this.KAM.VisibleIndex = 15;
             this.KAM.Width = 200;
             // 
             // btnExportar
@@ -225,6 +237,78 @@
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // TotalSoles
+            // 
+            this.TotalSoles.Caption = "TotalSoles";
+            this.TotalSoles.FieldName = "TotalSoles";
+            this.TotalSoles.MaxWidth = 100;
+            this.TotalSoles.MinWidth = 100;
+            this.TotalSoles.Name = "TotalSoles";
+            this.TotalSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.TotalSoles.Visible = true;
+            this.TotalSoles.VisibleIndex = 9;
+            this.TotalSoles.Width = 100;
+            // 
+            // TotalDolares
+            // 
+            this.TotalDolares.Caption = "TotalDolares";
+            this.TotalDolares.FieldName = "TotalDolares";
+            this.TotalDolares.MaxWidth = 100;
+            this.TotalDolares.MinWidth = 100;
+            this.TotalDolares.Name = "TotalDolares";
+            this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.TotalDolares.Visible = true;
+            this.TotalDolares.VisibleIndex = 10;
+            this.TotalDolares.Width = 100;
+            // 
+            // CostoSoles
+            // 
+            this.CostoSoles.Caption = "CostoSoles";
+            this.CostoSoles.FieldName = "CostoSoles";
+            this.CostoSoles.MaxWidth = 100;
+            this.CostoSoles.MinWidth = 100;
+            this.CostoSoles.Name = "CostoSoles";
+            this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.CostoSoles.Visible = true;
+            this.CostoSoles.VisibleIndex = 11;
+            this.CostoSoles.Width = 100;
+            // 
+            // CostoDolares
+            // 
+            this.CostoDolares.Caption = "CostoDolares";
+            this.CostoDolares.FieldName = "CostoDolares";
+            this.CostoDolares.MaxWidth = 100;
+            this.CostoDolares.MinWidth = 100;
+            this.CostoDolares.Name = "CostoDolares";
+            this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.CostoDolares.Visible = true;
+            this.CostoDolares.VisibleIndex = 12;
+            this.CostoDolares.Width = 100;
+            // 
+            // PendienteFacturarSoles
+            // 
+            this.PendienteFacturarSoles.Caption = "PendienteFacturarSoles";
+            this.PendienteFacturarSoles.FieldName = "PendienteFacturarSoles";
+            this.PendienteFacturarSoles.MaxWidth = 100;
+            this.PendienteFacturarSoles.MinWidth = 100;
+            this.PendienteFacturarSoles.Name = "PendienteFacturarSoles";
+            this.PendienteFacturarSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.PendienteFacturarSoles.Visible = true;
+            this.PendienteFacturarSoles.VisibleIndex = 13;
+            this.PendienteFacturarSoles.Width = 100;
+            // 
+            // PendienteFacturarDolares
+            // 
+            this.PendienteFacturarDolares.Caption = "PendienteFacturarDolares";
+            this.PendienteFacturarDolares.FieldName = "PendienteFacturarDolares";
+            this.PendienteFacturarDolares.MaxWidth = 100;
+            this.PendienteFacturarDolares.MinWidth = 100;
+            this.PendienteFacturarDolares.Name = "PendienteFacturarDolares";
+            this.PendienteFacturarDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.PendienteFacturarDolares.Visible = true;
+            this.PendienteFacturarDolares.VisibleIndex = 14;
+            this.PendienteFacturarDolares.Width = 100;
             // 
             // frmReportePendienteFacturar
             // 
@@ -262,5 +346,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn FechaInicioFactura;
         private DevExpress.XtraGrid.Columns.GridColumn FechaFinFactura;
         private System.Windows.Forms.Button btnExportar;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalDolares;
+        private DevExpress.XtraGrid.Columns.GridColumn CostoSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
+        private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarDolares;
     }
 }

@@ -101,7 +101,8 @@ namespace Apolo
             Excel.Range rango;
 
             //Recorremos el DataGridView rellenando la hoja de trabajo
-            int filas = tablaDiscos.Rows.Count;
+            //int filas = tablaDiscos.Rows.Count;
+            int filas = vista.RowCount;
             for (int j = 0; j < filas; j++)
             {
                 int k = vista.Columns.Count + 64;

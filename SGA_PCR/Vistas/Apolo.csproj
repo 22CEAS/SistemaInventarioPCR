@@ -183,11 +183,17 @@
     <Compile Include="frmReporteAlquileresPorVencer.Designer.cs">
       <DependentUpon>frmReporteAlquileresPorVencer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteCuadroVencimiento.cs">
+    <Compile Include="frmReporteCV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReporteCuadroVencimiento.Designer.cs">
-      <DependentUpon>frmReporteCuadroVencimiento.cs</DependentUpon>
+    <Compile Include="frmReporteCV.Designer.cs">
+      <DependentUpon>frmReporteCV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteFacturasPorVencer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteFacturasPorVencer.Designer.cs">
+      <DependentUpon>frmReporteFacturasPorVencer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProcesoEditarDisco.cs">
       <SubType>Form</SubType>
@@ -464,8 +470,11 @@
     <EmbeddedResource Include="frmReporteAlquileresPorVencer.resx">
       <DependentUpon>frmReporteAlquileresPorVencer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteCuadroVencimiento.resx">
-      <DependentUpon>frmReporteCuadroVencimiento.cs</DependentUpon>
+    <EmbeddedResource Include="frmReporteCV.resx">
+      <DependentUpon>frmReporteCV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteFacturasPorVencer.resx">
+      <DependentUpon>frmReporteFacturasPorVencer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoDevolucion.resx">
       <DependentUpon>frmProcesoDevolucion.cs</DependentUpon>

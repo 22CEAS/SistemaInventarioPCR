@@ -100,7 +100,8 @@ namespace Apolo
             Excel.Range rango;
 
             //Recorremos el DataGridView rellenando la hoja de trabajo
-            int filas = tablaLaptops.Rows.Count;
+            //int filas = tablaLaptops.Rows.Count;
+            int filas = vista.RowCount;
             for (int j = 0; j < filas; j++)
             {
                 int k = vista.Columns.Count + 64;
@@ -149,7 +150,15 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 7] = vista.GetRowCellValue(j, "codigoEquipo").ToString();
                 hoja_trabajo.Cells[fila2, 8] = vista.GetRowCellValue(j, "guia").ToString();
                 hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "diasVencidos").ToString();
-                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "KAM").ToString();
+
+                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "TotalSoles").ToString();
+                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "TotalDolares").ToString();
+                hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "CostoSoles").ToString();
+                hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "CostoDolares").ToString();
+                hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "PendienteFacturarSoles").ToString();
+                hoja_trabajo.Cells[fila2, 15] = vista.GetRowCellValue(j, "PendienteFacturarDolares").ToString();
+
+                hoja_trabajo.Cells[fila2, 16] = vista.GetRowCellValue(j, "KAM").ToString();
 
             }
             montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
@@ -181,7 +190,13 @@ namespace Apolo
                 hoja.Cells[fila + 2, 7] = "Codigo LC";
                 hoja.Cells[fila + 2, 8] = "Guia";
                 hoja.Cells[fila + 2, 9] = "Días Vencidos";
-                hoja.Cells[fila + 2, 10] = "KAM";
+                hoja.Cells[fila + 2, 10] = "Total Soles";
+                hoja.Cells[fila + 2, 11] = "Total Dolares";
+                hoja.Cells[fila + 2, 12] = "Costo Soles";
+                hoja.Cells[fila + 2, 13] = "Costo Dolares";
+                hoja.Cells[fila + 2, 14] = "Pendiente Facturar Soles";
+                hoja.Cells[fila + 2, 15] = "Pendiente Facturar Dolares";
+                hoja.Cells[fila + 2, 16] = "KAM";
 
 
                 int i = vista.Columns.Count + 64;

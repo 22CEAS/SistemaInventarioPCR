@@ -46,6 +46,12 @@ namespace Apolo
             tablaLaptops = reporteDA.ListarLaptopsInventario();
 
             BindingList<LC> laptops = new BindingList<LC>();
+            tablaDisco = reporteDA.ListarLaptopDisco();
+            tablaMemoria = reporteDA.ListarLaptopMemoria();
+            tablaLicencia = reporteDA.ListarLaptopLicencia();
+            DataView viewDisco = new DataView(tablaDisco);
+            DataView viewMemoria = new DataView(tablaMemoria);
+            DataView viewLicencia = new DataView(tablaLicencia);
             int rec = 0;
             while (rec < tablaLaptops.Rows.Count)
             {
@@ -61,14 +67,19 @@ namespace Apolo
                 laptop.Cliente = tablaLaptops.Rows[rec]["cliente"].ToString();
                 laptop.Ubicacion = tablaLaptops.Rows[rec]["ubicacion"].ToString();
                 laptop.SerieFabrica = tablaLaptops.Rows[rec]["serieFabrica"].ToString();
-                tablaDisco = reporteDA.ListarLaptopDisco(laptop.IdLC);
-                tablaMemoria = reporteDA.ListarLaptopMemoria(laptop.IdLC);
-                tablaLicencia = reporteDA.ListarLaptopLicencia(laptop.IdLC);
-                laptop.SetDisco(tablaDisco);
-                laptop.SetMemoria(tablaMemoria);
-                laptop.SetLicencia(tablaLicencia);
-
-
+                //tablaDisco = reporteDA.ListarLaptopDisco(laptop.IdLC);
+                //tablaMemoria = reporteDA.ListarLaptopMemoria(laptop.IdLC);
+                //tablaLicencia = reporteDA.ListarLaptopLicencia(laptop.IdLC);
+                //laptop.SetDisco(tablaDisco);
+                //laptop.SetMemoria(tablaMemoria);
+                //laptop.SetLicencia(tablaLicencia);
+                viewDisco.RowFilter = "idLC = "+ laptop.IdLC.ToString();
+                viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();
+                viewLicencia.RowFilter = "idLC = " + laptop.IdLC.ToString();
+                laptop.SetDisco(viewDisco);
+                laptop.SetMemoria(viewMemoria);
+                laptop.SetLicencia(viewLicencia);
+                
                 string tipoDisco1 = ""; int capDisco1 = 0; string tipoDisco2 = ""; int capDisco2 = 0;
                 if (laptop.Discos.Count > 0)
                 {
@@ -184,7 +195,8 @@ namespace Apolo
             Excel.Range rango;
 
             //Recorremos el DataGridView rellenando la hoja de trabajo
-            int filas = tablaLaptops.Rows.Count;
+            //int filas = tablaLaptops.Rows.Count;
+            int filas = vista.RowCount;
             for (int j = 0; j < filas; j++)
             {
                 int k = vista.Columns.Count + 64;

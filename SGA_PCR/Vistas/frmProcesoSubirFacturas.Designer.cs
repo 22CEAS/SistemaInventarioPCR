@@ -28,37 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.btnSubirFactura = new System.Windows.Forms.Button();
-            this.dgvFacturas = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.btnValidar = new System.Windows.Forms.Button();
+            this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
+            this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.FechaPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TipoPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaIniPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaFinPago = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RucDni = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.RazonSocial = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NumeroOC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NumeroDocRef = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NumeroFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TipoCambio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.VentaSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CostoTotalSolesSinIGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UtilidadSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UtilidadDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.UtilidadTotalSolesSinIGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ObservacionXLevantar = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubirFactura
             // 
             this.btnSubirFactura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirFactura.Location = new System.Drawing.Point(956, 12);
+            this.btnSubirFactura.Location = new System.Drawing.Point(1021, 12);
             this.btnSubirFactura.Name = "btnSubirFactura";
             this.btnSubirFactura.Size = new System.Drawing.Size(75, 41);
             this.btnSubirFactura.TabIndex = 58;
@@ -66,121 +69,10 @@
             this.btnSubirFactura.UseVisualStyleBackColor = true;
             this.btnSubirFactura.Click += new System.EventHandler(this.btnSubirFactura_Click);
             // 
-            // dgvFacturas
-            // 
-            this.dgvFacturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvFacturas.BackColor = System.Drawing.Color.White;
-            this.dgvFacturas.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvFacturas.ForeColor = System.Drawing.Color.Black;
-            this.dgvFacturas.Location = new System.Drawing.Point(51, 76);
-            this.dgvFacturas.Name = "dgvFacturas";
-            this.dgvFacturas.PrimaryGrid.AllowEdit = false;
-            this.dgvFacturas.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvFacturas.PrimaryGrid.AllowRowResize = true;
-            this.dgvFacturas.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.DataPropertyName = "FechaPago";
-            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimeInputEditControl);
-            gridColumn1.Name = "Fecha Pago";
-            gridColumn1.Width = 110;
-            gridColumn2.DataPropertyName = "TipoPago";
-            gridColumn2.FilterAutoScan = true;
-            gridColumn2.Name = "Tipo Pago";
-            gridColumn2.Width = 110;
-            gridColumn3.DataPropertyName = "CodigoLC";
-            gridColumn3.Name = "Codigo Laptops";
-            gridColumn3.Width = 110;
-            gridColumn4.DataPropertyName = "FechaIniPago";
-            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimeInputEditControl);
-            gridColumn4.Name = "Fecha Inicio Periodo Factura";
-            gridColumn4.Width = 130;
-            gridColumn5.DataPropertyName = "FechaFinPago";
-            gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimeInputEditControl);
-            gridColumn5.Name = "Fecha Fin Periodo Factura";
-            gridColumn5.Width = 130;
-            gridColumn6.DataPropertyName = "RucDni";
-            gridColumn6.Name = "Nro Cliente";
-            gridColumn7.DataPropertyName = "RazonSocial";
-            gridColumn7.Name = "Cliente";
-            gridColumn8.DataPropertyName = "NumeroOC";
-            gridColumn8.Name = "Numero OC";
-            gridColumn9.DataPropertyName = "NumeroDocRef";
-            gridColumn9.Name = "Numero Doc Ref";
-            gridColumn10.DataPropertyName = "NumeroFactura";
-            gridColumn10.Name = "Numero Factura";
-            gridColumn11.DataPropertyName = "TotalSoles";
-            gridColumn11.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn11.Name = "Total Soles";
-            gridColumn12.DataPropertyName = "TotalDolares";
-            gridColumn12.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn12.Name = "Total Dolares";
-            gridColumn13.DataPropertyName = "TipoCambio";
-            gridColumn13.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn13.Name = "Tipo Cambio";
-            gridColumn14.DataPropertyName = "VentaSoles";
-            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn14.Name = "Venta Soles";
-            gridColumn15.DataPropertyName = "CostoSoles";
-            gridColumn15.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn15.Name = "Costo Soles";
-            gridColumn16.DataPropertyName = "CostoDolares";
-            gridColumn16.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn16.Name = "Costo Dolares";
-            gridColumn17.DataPropertyName = "CostoTotalSolesSinIGV";
-            gridColumn17.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn17.Name = "Costo Total Soles Sin IGV";
-            gridColumn18.DataPropertyName = "UtilidadSoles";
-            gridColumn18.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn18.Name = "Utilidad Soles";
-            gridColumn19.DataPropertyName = "UtilidadDolares";
-            gridColumn19.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn19.Name = "Utilidad Dolares";
-            gridColumn20.DataPropertyName = "UtilidadTotalSolesSinIGV";
-            gridColumn20.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn20.Name = "Utilidad Total Soles Sin IGV";
-            gridColumn21.DataPropertyName = "ObservacionXLevantar";
-            gridColumn21.Name = "Observacion A Levantar";
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn10);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn11);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn12);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn13);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn14);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn15);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn16);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn17);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn18);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn19);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn20);
-            this.dgvFacturas.PrimaryGrid.Columns.Add(gridColumn21);
-            this.dgvFacturas.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvFacturas.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvFacturas.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvFacturas.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvFacturas.PrimaryGrid.EnableFiltering = true;
-            this.dgvFacturas.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvFacturas.PrimaryGrid.Filter.Visible = true;
-            this.dgvFacturas.PrimaryGrid.MultiSelect = false;
-            this.dgvFacturas.PrimaryGrid.NullString = "<<null>>";
-            this.dgvFacturas.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvFacturas.PrimaryGrid.ShowRowGridIndex = true;
-            this.dgvFacturas.Size = new System.Drawing.Size(1212, 417);
-            this.dgvFacturas.TabIndex = 72;
-            this.dgvFacturas.Text = "Tabla Facturas";
-            // 
             // btnGrabar
             // 
             this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGrabar.Location = new System.Drawing.Point(1055, 12);
+            this.btnGrabar.Location = new System.Drawing.Point(1120, 12);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 41);
             this.btnGrabar.TabIndex = 73;
@@ -191,7 +83,7 @@
             // btnValidar
             // 
             this.btnValidar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnValidar.Location = new System.Drawing.Point(1159, 12);
+            this.btnValidar.Location = new System.Drawing.Point(1224, 12);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(75, 41);
             this.btnValidar.TabIndex = 74;
@@ -199,15 +91,296 @@
             this.btnValidar.UseVisualStyleBackColor = true;
             this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
+            // dgvLaptops
+            // 
+            this.dgvLaptops.Location = new System.Drawing.Point(12, 69);
+            this.dgvLaptops.MainView = this.vista;
+            this.dgvLaptops.Name = "dgvLaptops";
+            this.dgvLaptops.Size = new System.Drawing.Size(1291, 452);
+            this.dgvLaptops.TabIndex = 137;
+            this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vista});
+            // 
+            // vista
+            // 
+            this.vista.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vista.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vista.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vista.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vista.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vista.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vista.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vista.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vista.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vista.Appearance.Row.Options.UseFont = true;
+            this.vista.Appearance.Row.Options.UseForeColor = true;
+            this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.FechaPago,
+            this.TipoPago,
+            this.CodigoLC,
+            this.FechaIniPago,
+            this.FechaFinPago,
+            this.RucDni,
+            this.RazonSocial,
+            this.NumeroOC,
+            this.NumeroDocRef,
+            this.NumeroFactura,
+            this.TotalSoles,
+            this.TotalDolares,
+            this.TipoCambio,
+            this.VentaSoles,
+            this.CostoSoles,
+            this.CostoDolares,
+            this.CostoTotalSolesSinIGV,
+            this.UtilidadSoles,
+            this.UtilidadDolares,
+            this.UtilidadTotalSolesSinIGV,
+            this.ObservacionXLevantar});
+            this.vista.GridControl = this.dgvLaptops;
+            this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ShowAutoFilterRow = true;
+            // 
+            // FechaPago
+            // 
+            this.FechaPago.Caption = "FechaPago";
+            this.FechaPago.FieldName = "FechaPago";
+            this.FechaPago.MinWidth = 100;
+            this.FechaPago.Name = "FechaPago";
+            this.FechaPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.FechaPago.Visible = true;
+            this.FechaPago.VisibleIndex = 0;
+            this.FechaPago.Width = 100;
+            // 
+            // TipoPago
+            // 
+            this.TipoPago.Caption = "TipoPago";
+            this.TipoPago.FieldName = "TipoPago";
+            this.TipoPago.MinWidth = 100;
+            this.TipoPago.Name = "TipoPago";
+            this.TipoPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TipoPago.Visible = true;
+            this.TipoPago.VisibleIndex = 1;
+            this.TipoPago.Width = 100;
+            // 
+            // CodigoLC
+            // 
+            this.CodigoLC.Caption = "CodigoLC";
+            this.CodigoLC.FieldName = "CodigoLC";
+            this.CodigoLC.MinWidth = 100;
+            this.CodigoLC.Name = "CodigoLC";
+            this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CodigoLC.Visible = true;
+            this.CodigoLC.VisibleIndex = 2;
+            this.CodigoLC.Width = 100;
+            // 
+            // FechaIniPago
+            // 
+            this.FechaIniPago.Caption = "FechaIniPago";
+            this.FechaIniPago.FieldName = "FechaIniPago";
+            this.FechaIniPago.MinWidth = 100;
+            this.FechaIniPago.Name = "FechaIniPago";
+            this.FechaIniPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.FechaIniPago.Visible = true;
+            this.FechaIniPago.VisibleIndex = 3;
+            this.FechaIniPago.Width = 100;
+            // 
+            // FechaFinPago
+            // 
+            this.FechaFinPago.Caption = "FechaFinPago";
+            this.FechaFinPago.FieldName = "FechaFinPago";
+            this.FechaFinPago.MinWidth = 100;
+            this.FechaFinPago.Name = "FechaFinPago";
+            this.FechaFinPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.FechaFinPago.Visible = true;
+            this.FechaFinPago.VisibleIndex = 4;
+            this.FechaFinPago.Width = 100;
+            // 
+            // RucDni
+            // 
+            this.RucDni.Caption = "RucDni";
+            this.RucDni.FieldName = "RucDni";
+            this.RucDni.MinWidth = 100;
+            this.RucDni.Name = "RucDni";
+            this.RucDni.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.RucDni.Visible = true;
+            this.RucDni.VisibleIndex = 5;
+            this.RucDni.Width = 100;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.Caption = "RazonSocial";
+            this.RazonSocial.FieldName = "RazonSocial";
+            this.RazonSocial.MinWidth = 100;
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.RazonSocial.Visible = true;
+            this.RazonSocial.VisibleIndex = 6;
+            this.RazonSocial.Width = 100;
+            // 
+            // NumeroOC
+            // 
+            this.NumeroOC.Caption = "NumeroOC";
+            this.NumeroOC.FieldName = "NumeroOC";
+            this.NumeroOC.MinWidth = 100;
+            this.NumeroOC.Name = "NumeroOC";
+            this.NumeroOC.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NumeroOC.Visible = true;
+            this.NumeroOC.VisibleIndex = 7;
+            this.NumeroOC.Width = 100;
+            // 
+            // NumeroDocRef
+            // 
+            this.NumeroDocRef.Caption = "NumeroDocRef";
+            this.NumeroDocRef.FieldName = "NumeroDocRef";
+            this.NumeroDocRef.MinWidth = 100;
+            this.NumeroDocRef.Name = "NumeroDocRef";
+            this.NumeroDocRef.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NumeroDocRef.Visible = true;
+            this.NumeroDocRef.VisibleIndex = 8;
+            this.NumeroDocRef.Width = 100;
+            // 
+            // NumeroFactura
+            // 
+            this.NumeroFactura.Caption = "NumeroFactura";
+            this.NumeroFactura.FieldName = "NumeroFactura";
+            this.NumeroFactura.MinWidth = 100;
+            this.NumeroFactura.Name = "NumeroFactura";
+            this.NumeroFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NumeroFactura.Visible = true;
+            this.NumeroFactura.VisibleIndex = 9;
+            this.NumeroFactura.Width = 100;
+            // 
+            // TotalSoles
+            // 
+            this.TotalSoles.Caption = "TotalSoles";
+            this.TotalSoles.FieldName = "TotalSoles";
+            this.TotalSoles.MinWidth = 100;
+            this.TotalSoles.Name = "TotalSoles";
+            this.TotalSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TotalSoles.Visible = true;
+            this.TotalSoles.VisibleIndex = 10;
+            this.TotalSoles.Width = 100;
+            // 
+            // TotalDolares
+            // 
+            this.TotalDolares.Caption = "TotalDolares";
+            this.TotalDolares.FieldName = "TotalDolares";
+            this.TotalDolares.MinWidth = 100;
+            this.TotalDolares.Name = "TotalDolares";
+            this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TotalDolares.Visible = true;
+            this.TotalDolares.VisibleIndex = 11;
+            this.TotalDolares.Width = 100;
+            // 
+            // TipoCambio
+            // 
+            this.TipoCambio.Caption = "TipoCambio";
+            this.TipoCambio.FieldName = "TipoCambio";
+            this.TipoCambio.MinWidth = 100;
+            this.TipoCambio.Name = "TipoCambio";
+            this.TipoCambio.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TipoCambio.Visible = true;
+            this.TipoCambio.VisibleIndex = 12;
+            this.TipoCambio.Width = 100;
+            // 
+            // VentaSoles
+            // 
+            this.VentaSoles.Caption = "VentaSoles";
+            this.VentaSoles.FieldName = "VentaSoles";
+            this.VentaSoles.MinWidth = 100;
+            this.VentaSoles.Name = "VentaSoles";
+            this.VentaSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.VentaSoles.Visible = true;
+            this.VentaSoles.VisibleIndex = 13;
+            this.VentaSoles.Width = 100;
+            // 
+            // CostoSoles
+            // 
+            this.CostoSoles.Caption = "CostoSoles";
+            this.CostoSoles.FieldName = "CostoSoles";
+            this.CostoSoles.MinWidth = 100;
+            this.CostoSoles.Name = "CostoSoles";
+            this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CostoSoles.Visible = true;
+            this.CostoSoles.VisibleIndex = 14;
+            this.CostoSoles.Width = 100;
+            // 
+            // CostoDolares
+            // 
+            this.CostoDolares.Caption = "CostoDolares";
+            this.CostoDolares.FieldName = "CostoDolares";
+            this.CostoDolares.MinWidth = 100;
+            this.CostoDolares.Name = "CostoDolares";
+            this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CostoDolares.Visible = true;
+            this.CostoDolares.VisibleIndex = 15;
+            this.CostoDolares.Width = 100;
+            // 
+            // CostoTotalSolesSinIGV
+            // 
+            this.CostoTotalSolesSinIGV.Caption = "CostoTotalSolesSinIGV";
+            this.CostoTotalSolesSinIGV.FieldName = "CostoTotalSolesSinIGV";
+            this.CostoTotalSolesSinIGV.MinWidth = 100;
+            this.CostoTotalSolesSinIGV.Name = "CostoTotalSolesSinIGV";
+            this.CostoTotalSolesSinIGV.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CostoTotalSolesSinIGV.Visible = true;
+            this.CostoTotalSolesSinIGV.VisibleIndex = 16;
+            this.CostoTotalSolesSinIGV.Width = 100;
+            // 
+            // UtilidadSoles
+            // 
+            this.UtilidadSoles.Caption = "UtilidadSoles";
+            this.UtilidadSoles.FieldName = "UtilidadSoles";
+            this.UtilidadSoles.MinWidth = 100;
+            this.UtilidadSoles.Name = "UtilidadSoles";
+            this.UtilidadSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.UtilidadSoles.Visible = true;
+            this.UtilidadSoles.VisibleIndex = 17;
+            this.UtilidadSoles.Width = 100;
+            // 
+            // UtilidadDolares
+            // 
+            this.UtilidadDolares.Caption = "UtilidadDolares";
+            this.UtilidadDolares.FieldName = "UtilidadDolares";
+            this.UtilidadDolares.MinWidth = 100;
+            this.UtilidadDolares.Name = "UtilidadDolares";
+            this.UtilidadDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.UtilidadDolares.Visible = true;
+            this.UtilidadDolares.VisibleIndex = 18;
+            this.UtilidadDolares.Width = 100;
+            // 
+            // UtilidadTotalSolesSinIGV
+            // 
+            this.UtilidadTotalSolesSinIGV.Caption = "UtilidadTotalSolesSinIGV";
+            this.UtilidadTotalSolesSinIGV.FieldName = "UtilidadTotalSolesSinIGV";
+            this.UtilidadTotalSolesSinIGV.MinWidth = 100;
+            this.UtilidadTotalSolesSinIGV.Name = "UtilidadTotalSolesSinIGV";
+            this.UtilidadTotalSolesSinIGV.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.UtilidadTotalSolesSinIGV.Visible = true;
+            this.UtilidadTotalSolesSinIGV.VisibleIndex = 19;
+            this.UtilidadTotalSolesSinIGV.Width = 100;
+            // 
+            // ObservacionXLevantar
+            // 
+            this.ObservacionXLevantar.Caption = "ObservacionXLevantar";
+            this.ObservacionXLevantar.FieldName = "ObservacionXLevantar";
+            this.ObservacionXLevantar.MinWidth = 300;
+            this.ObservacionXLevantar.Name = "ObservacionXLevantar";
+            this.ObservacionXLevantar.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.ObservacionXLevantar.Visible = true;
+            this.ObservacionXLevantar.VisibleIndex = 20;
+            this.ObservacionXLevantar.Width = 300;
+            // 
             // frmProcesoSubirFacturas
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1315, 533);
+            this.Controls.Add(this.dgvLaptops);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.dgvFacturas);
             this.Controls.Add(this.btnSubirFactura);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -216,6 +389,8 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturas Sisgeco";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,8 +398,30 @@
         #endregion
 
         private System.Windows.Forms.Button btnSubirFactura;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvFacturas;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Button btnValidar;
+        private DevExpress.XtraGrid.GridControl dgvLaptops;
+        private DevExpress.XtraGrid.Views.Grid.GridView vista;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaPago;
+        private DevExpress.XtraGrid.Columns.GridColumn TipoPago;
+        private DevExpress.XtraGrid.Columns.GridColumn CodigoLC;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaIniPago;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaFinPago;
+        private DevExpress.XtraGrid.Columns.GridColumn RucDni;
+        private DevExpress.XtraGrid.Columns.GridColumn RazonSocial;
+        private DevExpress.XtraGrid.Columns.GridColumn NumeroOC;
+        private DevExpress.XtraGrid.Columns.GridColumn NumeroDocRef;
+        private DevExpress.XtraGrid.Columns.GridColumn NumeroFactura;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalDolares;
+        private DevExpress.XtraGrid.Columns.GridColumn TipoCambio;
+        private DevExpress.XtraGrid.Columns.GridColumn VentaSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn CostoSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
+        private DevExpress.XtraGrid.Columns.GridColumn CostoTotalSolesSinIGV;
+        private DevExpress.XtraGrid.Columns.GridColumn UtilidadSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn UtilidadDolares;
+        private DevExpress.XtraGrid.Columns.GridColumn UtilidadTotalSolesSinIGV;
+        private DevExpress.XtraGrid.Columns.GridColumn ObservacionXLevantar;
     }
 }

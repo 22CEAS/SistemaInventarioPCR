@@ -145,6 +145,52 @@ namespace Modelo
         }
 
 
+        public void SetDisco(DataView data)
+        {
+            foreach (DataRowView row in data)
+            {
+                DiscoDuro disco = new DiscoDuro();
+                disco.IdDisco = Convert.ToInt32(row["IdDisco"].ToString());
+                disco.Tipo.NombreModelo = row["TipoDisco"].ToString();
+                disco.Tamano = row["Tamano"].ToString();
+                disco.Capacidad = Convert.ToInt32(row["Capacidad"].ToString());
+                disco.Cantidad = Convert.ToInt32(row["Cantidad"].ToString());
+                this.Discos.Add(disco);
+            }
+        }
+
+        public void SetMemoria(DataView data)
+        {
+            foreach (DataRowView row in data)
+            {
+                Memoria memoria = new Memoria();
+                memoria.IdMemoria = Convert.ToInt32(row["IdMemoria"].ToString());
+                memoria.Modelo.NombreModelo = row["TipoMemoria"].ToString();
+                memoria.Tipo = row["Tipo2"].ToString();
+                memoria.Capacidad = Convert.ToInt32(row["Capacidad"].ToString());
+                memoria.Cantidad = Convert.ToInt32(row["Cantidad"].ToString());
+                this.Memorias.Add(memoria);
+            }
+        }
+
+        public void SetLicencia(DataView data)
+        {
+            foreach (DataRowView row in data)
+            {
+                Licencia licencia = new Licencia();
+                licencia.IdLicencia = Convert.ToInt32(row["IdLicencia"].ToString());
+                licencia.IdCategoria = Convert.ToInt32(row["IdCategoria"].ToString());
+                licencia.Categoria = row["Categoria"].ToString();
+                licencia.Modelo.IdMarca = Convert.ToInt32(row["IdMarca"].ToString());
+                licencia.Modelo.NombreMarca = row["Marca"].ToString();
+                licencia.Modelo.IdModelo = Convert.ToInt32(row["IdModelo"].ToString());
+                licencia.Modelo.NombreModelo = row["Version"].ToString();
+                licencia.Clave = row["Clave"].ToString();
+                licencia.Ubicacion = row["Ubicacion"].ToString();
+                this.Licencias.Add(licencia);
+            }
+        }
+
         public int IdMarca { get => Modelo.IdMarca; set => Modelo.IdMarca = value; }
         public string MarcaLC { get => Modelo.NombreMarca; set => Modelo.NombreMarca = value; }
         public int IdModelo { get => Modelo.IdModelo; set => Modelo.IdModelo = value; }

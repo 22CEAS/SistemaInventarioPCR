@@ -109,7 +109,7 @@ namespace AccesoDatos
             parametrosEntrada[0] = new MySqlParameter("@_idCliente", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_nroDocumento", MySqlDbType.VarChar, 20);
             parametrosEntrada[2] = new MySqlParameter("@_nombreContacto", MySqlDbType.VarChar, 255);
-            parametrosEntrada[3] = new MySqlParameter("@_direccion", MySqlDbType.VarChar, 20);
+            parametrosEntrada[3] = new MySqlParameter("@_direccion", MySqlDbType.VarChar, 255);
             parametrosEntrada[4] = new MySqlParameter("@_telefono", MySqlDbType.VarChar, 255);
             parametrosEntrada[5] = new MySqlParameter("@_email", MySqlDbType.VarChar, 255);
             parametrosEntrada[6] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
@@ -145,7 +145,7 @@ namespace AccesoDatos
             parametrosEntrada[0] = new MySqlParameter("@_idSucursal", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_nroDocumento", MySqlDbType.VarChar, 20);
             parametrosEntrada[2] = new MySqlParameter("@_nombreContacto", MySqlDbType.VarChar, 255);
-            parametrosEntrada[3] = new MySqlParameter("@_direccion", MySqlDbType.VarChar, 20);
+            parametrosEntrada[3] = new MySqlParameter("@_direccion", MySqlDbType.VarChar, 255);
             parametrosEntrada[4] = new MySqlParameter("@_telefono", MySqlDbType.VarChar, 255);
             parametrosEntrada[5] = new MySqlParameter("@_email", MySqlDbType.VarChar, 255);
             parametrosEntrada[6] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);

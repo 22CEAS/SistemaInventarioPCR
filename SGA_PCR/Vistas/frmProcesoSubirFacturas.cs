@@ -33,7 +33,7 @@ namespace Apolo
 
         public void Inicializado()
         {
-            dgvFacturas.PrimaryGrid.AutoGenerateColumns = false;
+            //dgvFacturas.PrimaryGrid.AutoGenerateColumns = false;
             facturas = new BindingList<Factura>();
             facturaDA = new FacturaDA();
         }
@@ -94,7 +94,11 @@ namespace Apolo
                         }
                         
                     }
-                    dgvFacturas.PrimaryGrid.DataSource = facturas;
+                    //dgvFacturas.PrimaryGrid.DataSource = facturas;
+
+                    dgvLaptops.DataSource = facturas;
+                    vista.OptionsBehavior.AutoPopulateColumns = false;
+                    vista.OptionsSelection.MultiSelect = true;
 
                 }
             }
@@ -124,6 +128,8 @@ namespace Apolo
             cuadroVencimiento = facturaDA.ListarCV();
             foreach (Factura f in facturas)
             {
+                f.ObservacionXLevantar = "Esta laptop no se encuentra en el CV, o el código de la laptop o guia no coincide con ninguna del CV.";
+                    
                 String concatCodActCV = "", facturaCV = "", guiaSalidaCV = "";
                 DateTime fecFinFacCV;
                 DateTime fecIniContrato, fecFinContrato;
@@ -349,7 +355,11 @@ namespace Apolo
                         }
                     }
                 }
-                dgvFacturas.PrimaryGrid.DataSource = facturas;
+                //dgvFacturas.PrimaryGrid.DataSource = facturas;
+
+                dgvLaptops.DataSource = facturas;
+                vista.OptionsBehavior.AutoPopulateColumns = false;
+                vista.OptionsSelection.MultiSelect = true;
             }
         }
 

@@ -1715,6 +1715,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_factura`(
 	IN _ruc NVARCHAR(11),
 	IN _codigoLC NVARCHAR(80),
 	IN _guiaSalida NVARCHAR(255),
+	IN _totalSoles DOUBLE,
+	IN _totalDolares DOUBLE,
+	IN _costoSoles DOUBLE,
+	IN _costoDolares DOUBLE,
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT,
 	IN _usuario_ins NVARCHAR(100),
@@ -1722,8 +1726,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_factura`(
 )
 BEGIN
 	SET @_idFactura=(SELECT IFNULL( MAX(idFactura) , 0 )+1 FROM factura);
-	INSERT INTO factura (idFactura,idSalida,numFactura,fecIniPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,observacion,estado,usuario_ins) values
-	(@_idFactura,_idSalida,_numFactura,_fecIniPago,_fecFinPago,_fecEmisiom,_ruc,_codigoLC,_guiaSalida,_observacion,_estado,_usuario_ins);
+	INSERT INTO factura (idFactura,idSalida,numFactura,fecIniPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,observacion,estado,usuario_ins) values
+	(@_idFactura,_idSalida,_numFactura,_fecIniPago,_fecFinPago,_fecEmisiom,_ruc,_codigoLC,_guiaSalida,_totalSoles,_totalDolares,_costoSoles,_costoDolares,_observacion,_estado,_usuario_ins);
 	COMMIT;
     SET _idFactura = @_idFactura;
 END
@@ -1744,12 +1748,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_cuota`(
 	IN _ruc NVARCHAR(11),
 	IN _codigoLC NVARCHAR(80),
 	IN _guiaSalida NVARCHAR(255),
+	IN _totalSoles DOUBLE,
+	IN _totalDolares DOUBLE,
+	IN _costoSoles DOUBLE,
+	IN _costoDolares DOUBLE,
 	IN _observacion NVARCHAR(255),
     IN _estado TINYINT
 )
 BEGIN
-	INSERT INTO cuota (idFactura,idSalida,idLC,numFactura,fecInicioPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,observacion,estado) values
-	(_idFactura,_idSalida,_idLC,_numFactura,_fecInicioPago,_fecFinPago,_fecEmisiom,_ruc,_codigoLC,_guiaSalida,_observacion,_estado);
+	INSERT INTO cuota (idFactura,idSalida,idLC,numFactura,fecInicioPago,fecFinPago,fecEmisiom,ruc,codigoLC,guiaSalida,totalSoles,totalDolares,costoSoles,costoDolares,observacion,estado) values
+	(_idFactura,_idSalida,_idLC,_numFactura,_fecInicioPago,_fecFinPago,_fecEmisiom,_ruc,_codigoLC,_guiaSalida,_totalSoles,_totalDolares,_costoSoles,_costoDolares,_observacion,_estado);
 	COMMIT;
 END
 $$

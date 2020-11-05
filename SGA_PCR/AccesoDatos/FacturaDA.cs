@@ -103,7 +103,7 @@ namespace AccesoDatos
             objManager.cmd.Dispose();
 
 
-            parametrosEntrada = new MySqlParameter[12];
+            parametrosEntrada = new MySqlParameter[16];
             parametrosEntrada[0] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_numFactura", MySqlDbType.VarChar, 255);
             parametrosEntrada[2] = new MySqlParameter("@_fecIniPago", MySqlDbType.DateTime);
@@ -112,10 +112,14 @@ namespace AccesoDatos
             parametrosEntrada[5] = new MySqlParameter("@_ruc", MySqlDbType.VarChar, 11);
             parametrosEntrada[6] = new MySqlParameter("@_codigoLC", MySqlDbType.VarChar, 255);
             parametrosEntrada[7] = new MySqlParameter("@_guiaSalida", MySqlDbType.VarChar, 255);
-            parametrosEntrada[8] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
-            parametrosEntrada[9] = new MySqlParameter("@_estado", MySqlDbType.Int32);
-            parametrosEntrada[10] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
-            parametrosEntrada[11] = new MySqlParameter("@_idFactura", MySqlDbType.Int32);
+            parametrosEntrada[8] = new MySqlParameter("@_totalSoles", MySqlDbType.Double);
+            parametrosEntrada[9] = new MySqlParameter("@_totalDolares", MySqlDbType.Double);
+            parametrosEntrada[10] = new MySqlParameter("@_costoSoles", MySqlDbType.Double);
+            parametrosEntrada[11] = new MySqlParameter("@_costoDolares", MySqlDbType.Double);
+            parametrosEntrada[12] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
+            parametrosEntrada[13] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+            parametrosEntrada[14] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
+            parametrosEntrada[15] = new MySqlParameter("@_idFactura", MySqlDbType.Int32);
 
             parametrosEntrada[0].Value = factura.IdSalida;
             parametrosEntrada[1].Value = factura.NumeroFactura;
@@ -125,14 +129,18 @@ namespace AccesoDatos
             parametrosEntrada[5].Value = factura.RucDni;
             parametrosEntrada[6].Value = factura.CodigoLC;
             parametrosEntrada[7].Value = factura.NumeroDocRef;
-            parametrosEntrada[8].Value = "";
-            parametrosEntrada[9].Value = 1;
-            parametrosEntrada[10].Value = usuario;
+            parametrosEntrada[8].Value = factura.TotalSoles;
+            parametrosEntrada[9].Value = factura.TotalDolares;
+            parametrosEntrada[10].Value = factura.CostoSoles;
+            parametrosEntrada[11].Value = factura.CostoDolares;
+            parametrosEntrada[12].Value = "";
+            parametrosEntrada[13].Value = 1;
+            parametrosEntrada[14].Value = usuario;
 
             string[] datosSalida = new string[1];
 
             objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_factura",
-                11, 12, out datosSalida, 1);
+                15, 16, out datosSalida, 1);
 
             if (datosSalida != null)
             {
@@ -171,7 +179,7 @@ namespace AccesoDatos
             okey = objManager.EjecutarProcedure(parametrosEntrada, "delete_cuota");
 
 
-            parametrosEntrada = new MySqlParameter[12];
+            parametrosEntrada = new MySqlParameter[16];
             parametrosEntrada[0] = new MySqlParameter("@_idFactura", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_idSalida", MySqlDbType.Int32);
             parametrosEntrada[2] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
@@ -182,8 +190,12 @@ namespace AccesoDatos
             parametrosEntrada[7] = new MySqlParameter("@_ruc", MySqlDbType.VarChar, 11);
             parametrosEntrada[8] = new MySqlParameter("@_codigoLC", MySqlDbType.VarChar, 255);
             parametrosEntrada[9] = new MySqlParameter("@_guiaSalida", MySqlDbType.VarChar, 255);
-            parametrosEntrada[10] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
-            parametrosEntrada[11] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+            parametrosEntrada[10] = new MySqlParameter("@_totalSoles", MySqlDbType.Double);
+            parametrosEntrada[11] = new MySqlParameter("@_totalDolares", MySqlDbType.Double);
+            parametrosEntrada[12] = new MySqlParameter("@_costoSoles", MySqlDbType.Double);
+            parametrosEntrada[13] = new MySqlParameter("@_costoDolares", MySqlDbType.Double);
+            parametrosEntrada[14] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 100);
+            parametrosEntrada[15] = new MySqlParameter("@_estado", MySqlDbType.Int32);
 
             parametrosEntrada[0].Value = factura.IdFactura;
             parametrosEntrada[1].Value = factura.IdSalida;
@@ -195,8 +207,12 @@ namespace AccesoDatos
             parametrosEntrada[7].Value = factura.RucDni;
             parametrosEntrada[8].Value = codigoActCV;
             parametrosEntrada[9].Value = factura.NumeroDocRef;
-            parametrosEntrada[10].Value = "";
-            parametrosEntrada[11].Value = 1;
+            parametrosEntrada[10].Value = factura.TotalSoles;
+            parametrosEntrada[11].Value = factura.TotalDolares;
+            parametrosEntrada[12].Value = factura.CostoSoles;
+            parametrosEntrada[13].Value = factura.CostoDolares;
+            parametrosEntrada[14].Value = "";
+            parametrosEntrada[15].Value = 1;
 
             okey = objManager.EjecutarProcedure(parametrosEntrada, "insert_cuota");
             

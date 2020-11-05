@@ -603,9 +603,81 @@ create view vista_productos_por_facturar as
 		"" AS factura,
 		"" AS fecInicioFactura,
 		"" AS fecFinFactura,
+		"0" AS TotalSoles,
+		"0" AS TotalDolares,
+		"0" AS CostoSoles,
+		"0" AS CostoDolares,
+		"0" AS PendienteFacturarSoles,
+		"0" AS PendienteFacturarDolares,
 		lc.codigo AS codigoEquipo,
 		d.guiaSalida AS guia,
-		DATEDIFF( CURDATE(), s.fecIniContrato ) AS diasVencidos,
+		DATEDIFF( CURDATE(), d.fecIniContrato ) AS diasVencidos,
+		( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
+	FROM
+		salida s
+		INNER JOIN salida_det d ON s.idSalida = d.idSalida
+		INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC 
+	WHERE
+		d.estado = 4 
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c)
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c) and
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c )
+			END
+		
+	UNION
+
+	SELECT
+		( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
+		d.fecIniContrato AS fecIniPlazoAlquiler,
+		d.fecFinContrato AS fecFinPlazoAlquiler,
+		cu.numFactura AS factura,
+		cu.fecInicioPago AS fecInicioFactura,
+		cu.fecFinPago AS fecFinFactura,
+		cu.totalSoles AS TotalSoles,
+		cu.totalDolares AS TotalDolares,
+		cu.costoSoles AS CostoSoles,
+		cu.costoDolares AS CostoDolares,
+		CEIL(DATEDIFF( CURDATE(), cu.fecFinPago )/30)*cu.totalSoles AS PendienteFacturarSoles,
+		CEIL(DATEDIFF( CURDATE(), cu.fecFinPago )/30)*cu.totalDolares AS PendienteFacturarDolares,
+		lc.codigo AS codigoEquipo,
+		d.guiaSalida AS guia,
+		DATEDIFF( CURDATE(), cu.fecFinPago ) AS diasVencidos,
+		( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
+	FROM
+		salida s
+		INNER JOIN salida_det d ON s.idSalida = d.idSalida
+		INNER JOIN laptop_cpu lc ON lc.idLC = d.idLC,
+		cuota cu 
+	WHERE
+		d.estado = 4 
+		AND NOT ( d.fecFinContrato = cu.fecFinPago ) 
+		AND cu.fecFinPago < CURDATE() 
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) or
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
+			END
+	ORDER BY
+		cliente,
+		codigoEquipo ;
+
+DROP VIEW IF EXISTS vista_productos_por_facturar_bk;
+create view vista_productos_por_facturar_bk as
+	SELECT
+		( SELECT c.nombre_razonSocial FROM cliente c WHERE c.idCliente = s.idCliente ) AS cliente,
+		d.fecIniContrato AS fecIniPlazoAlquiler,
+		d.fecFinContrato AS fecFinPlazoAlquiler,
+		"" AS factura,
+		"" AS fecInicioFactura,
+		"" AS fecFinFactura,
+		lc.codigo AS codigoEquipo,
+		d.guiaSalida AS guia,
+		DATEDIFF( CURDATE(), d.fecIniContrato ) AS diasVencidos,
 		( SELECT c.nombreKam FROM cliente c WHERE c.idCliente = s.idCliente ) AS KAM 
 	FROM
 		salida s
@@ -641,7 +713,7 @@ create view vista_productos_por_facturar as
 		cuota cu 
 	WHERE
 		d.estado = 4 
-		AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
+		AND NOT ( d.fecFinContrato = cu.fecFinPago ) 
 		AND cu.fecFinPago < CURDATE() 
 		AND
 			CASE WHEN d.caracteristicas='' THEN
@@ -676,7 +748,7 @@ FROM
 	cuota cu 
 WHERE
 	d.estado = 4 
-	AND NOT ( s.fecFinContrato = cu.fecFinPago ) 
+	AND NOT ( d.fecFinContrato = cu.fecFinPago ) 
 	AND DATEDIFF( cu.fecFinPago, CURDATE() ) <=7 AND DATEDIFF( cu.fecFinPago, CURDATE() ) >=0 
 	AND
 	CASE
@@ -797,6 +869,7 @@ create view vista_laptops_detalle_alquiler_cliente_estado_alquilado as
 Select d.idSalidaDet as IdSalidaDetalle,
 		s.idSucursal as IdSucursal,
 		d.idLC as IdLC,
+		cast(d.fecFinContrato as Date) as FinPlazoAlquiler,
 		s.idCliente as IdCliente,
 		lc.idMarca as idMarca,
 		lc.marca as MarcaLC,
@@ -1106,6 +1179,115 @@ where d.fueDevuelto=0 and d.estado=4
 ORDER BY lc.idLC ;
 
 
+create view vista_laptops_cuadro_vencimiento as
+Select d.idSalidaDet as IdSalidaDetalle,
+		s.idSucursal as IdSucursal,
+		s.idSalida as IdSalida,
+		d.idLC as IdLC,
+		d.fecIniContrato as fecIniContrato,
+		d.fecFinContrato as fecFinContrato,
+		s.idCliente as IdCliente,
+		sc.nombreCliente as Cliente,
+		sc.nombreContacto as Contacto,
+		sc.direccion as DireccionCliente,
+		sc.telefono as TelefonoContacto,
+		lc.idMarca as idMarca,
+		lc.marca as MarcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as NombreModeloLC,
+		lc.codigo as Codigo,
+		lc.tamanoPantalla as TamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as TipoProcesador,
+		p.generacion as GeneracionProcesador,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo,
+		
+		d.guiaSalida AS guia,
+		'' AS factura,
+		'' AS fecInicioFactura,
+		'' AS fecFinFactura,
+		0 AS MontoSoles,
+		0 AS MontoDolares,
+		0 AS TotalDolares,
+		DATEDIFF( CURDATE(), d.fecIniContrato ) AS diasVencidos
+		
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		LEFT JOIN vista_maestro_sucursal_cliente sc on s.idSucursal=sc.idSucursal
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on d.idVideo=v.idVideo ,
+		cuota cu 
+where d.fueDevuelto=0 and d.estado=4
+and  (DATEDIFF( d.fecFinContrato , CURDATE())>=0  )
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c)
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c) and
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c )
+			END
+union
+
+
+Select d.idSalidaDet as IdSalidaDetalle,
+		s.idSucursal as IdSucursal,
+		s.idSalida as IdSalida,
+		d.idLC as IdLC,
+		d.fecIniContrato as fecIniContrato,
+		d.fecFinContrato as fecFinContrato,
+		s.idCliente as IdCliente,
+		sc.nombreCliente as Cliente,
+		sc.nombreContacto as Contacto,
+		sc.direccion as DireccionCliente,
+		sc.telefono as TelefonoContacto,
+		lc.idMarca as idMarca,
+		lc.marca as MarcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as NombreModeloLC,
+		lc.codigo as Codigo,
+		lc.tamanoPantalla as TamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as TipoProcesador,
+		p.generacion as GeneracionProcesador,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo,
+		
+		d.guiaSalida AS guia,
+		cu.numFactura AS factura,
+		cu.fecInicioPago AS fecInicioFactura,
+		cu.fecFinPago AS fecFinFactura,
+		cu.totalSoles AS MontoSoles,
+		cu.totalDolares AS MontoDolares,
+		ROUND((cu.totalDolares+(cu.totalSoles/3.5)),2) AS TotalDolares,
+		DATEDIFF( CURDATE(), cu.fecFinPago ) AS diasVencidos
+		
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		LEFT JOIN vista_maestro_sucursal_cliente sc on s.idSucursal=sc.idSucursal
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on d.idVideo=v.idVideo ,
+		cuota cu 
+where d.fueDevuelto=0 and d.estado=4
+and  (DATEDIFF( d.fecFinContrato , CURDATE())>=0  )
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) or
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
+			END
+ORDER BY IdCliente ;
+
+
 create view vista_laptops_por_vencer as
 Select d.idSalidaDet as IdSalidaDetalle,
 		s.idSucursal as IdSucursal,
@@ -1140,6 +1322,7 @@ From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
 where d.fueDevuelto=0 and d.estado=4
 and  (DATEDIFF( d.fecFinContrato , CURDATE())<7 and DATEDIFF( d.fecFinContrato , CURDATE())>=0  )
 ORDER BY lc.idLC ;
+
 
 
 

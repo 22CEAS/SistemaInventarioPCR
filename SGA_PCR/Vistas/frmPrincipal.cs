@@ -288,7 +288,7 @@ namespace Apolo
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Name == "frmReporteInventario")
+                if (f.Name == "frmReporteCV")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -297,18 +297,18 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteInventario f2 = new frmReporteInventario();
+                frmReporteCV f2 = new frmReporteCV();
                 f2.MdiParent = this;
                 f2.Show();
             }
         }
 
-        private void btnVencimientos_Click(object sender, EventArgs e)
+        private void btnFacturasPorVencer_Click(object sender, EventArgs e)
         {
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Name == "frmReporteCuadroVencimiento")
+                if (f.Name == "frmReporteFacturasPorVencer")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -317,7 +317,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteCuadroVencimiento f2 = new frmReporteCuadroVencimiento();
+                frmReporteFacturasPorVencer f2 = new frmReporteFacturasPorVencer();
                 f2.MdiParent = this;
                 f2.Show();
             }
