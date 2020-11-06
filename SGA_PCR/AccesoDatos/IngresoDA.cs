@@ -104,7 +104,7 @@ namespace AccesoDatos
                 {
                     for (int i = 0; i < det.Cantidad; i++)
                     {
-                        parametrosEntrada = new MySqlParameter[16];
+                        parametrosEntrada = new MySqlParameter[17];
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -120,7 +120,8 @@ namespace AccesoDatos
                         parametrosEntrada[12] = new MySqlParameter("@_ubicacion", MySqlDbType.VarChar, 80);
                         parametrosEntrada[13] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
                         parametrosEntrada[14] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
-                        parametrosEntrada[15] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                        parametrosEntrada[15] = new MySqlParameter("@_compraSubarriendo", MySqlDbType.Int16);
+                        parametrosEntrada[16] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
 
                         parametrosEntrada[0].Value = ingreso.IdIngreso;
                         parametrosEntrada[1].Value = det.IdIngresoDetalle;
@@ -144,12 +145,13 @@ namespace AccesoDatos
                         parametrosEntrada[12].Value = "ALMACEN";
                         parametrosEntrada[13].Value = det.Laptop.Observacion;
                         parametrosEntrada[14].Value = usuario;
+                        parametrosEntrada[15].Value = ingreso.IdTipoIngreso;
 
 
                         datosSalida = new string[1];
 
                         objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_laptop_cpu",
-                            15, 16, out datosSalida, 1);
+                            16, 17, out datosSalida, 1);
                         if (datosSalida != null)
                         {
                             int idLC = Convert.ToInt32(datosSalida[0]);

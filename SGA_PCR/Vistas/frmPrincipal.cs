@@ -127,7 +127,7 @@ namespace Apolo
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Name == "frmArchivoCrearCliente")
+                if (f.Name == "frmCrearCliente")
                 {
                     IsOpen = true;
                     f.Focus();
@@ -147,7 +147,7 @@ namespace Apolo
             bool IsOpen = false;
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Name == "frmArchivoCrearProveedor")
+                if (f.Name == "frmCrearProveedor")
                 {
                     IsOpen = true;
                     f.Focus();

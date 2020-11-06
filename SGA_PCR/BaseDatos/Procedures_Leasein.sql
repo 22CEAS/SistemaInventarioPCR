@@ -358,13 +358,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_laptop_cpu`(
 	IN _ubicacion NVARCHAR(80),
 	IN _observacion NVARCHAR(255),
 	IN _usuario_ins NVARCHAR(100), 
+	IN _compraSubarriendo TINYINT, 
 	OUT _idLC INT
 )
 BEGIN
 	SET @codigo=(SELECT CONCAT("PCR-LAP",IFNULL( MAX( idLC ) , 0 )+1) from laptop_cpu);
 	SET @_idLC=(SELECT IFNULL( MAX( idLC ) , 0 )+1 FROM laptop_cpu);
-	INSERT INTO laptop_cpu (idLC,codigo,idIngreso,idIngresoDet,idModelo,descripcion,tamanoPantalla,idProcesador,idVideo,partNumber,serieFabrica,garantia,fecInicioSeguro,fecFinSeguro,ubicacion,observacion,estado,usuario_ins) values
-	(@_idLC,@codigo,_idIngreso,_idIngresoDet,_idModelo,_descripcion,_tamanoPantalla,_idProcesador,_idVideo,_partNumber,_serieFabrica,_garantia,_fecInicioSeguro,_fecFinSeguro,_ubicacion,_observacion,2,_usuario_ins);
+	INSERT INTO laptop_cpu (idLC,codigo,idIngreso,idIngresoDet,idModelo,descripcion,tamanoPantalla,idProcesador,idVideo,partNumber,serieFabrica,garantia,fecInicioSeguro,fecFinSeguro,ubicacion,observacion,estado,usuario_ins,compraSubarriendo) values
+	(@_idLC,@codigo,_idIngreso,_idIngresoDet,_idModelo,_descripcion,_tamanoPantalla,_idProcesador,_idVideo,_partNumber,_serieFabrica,_garantia,_fecInicioSeguro,_fecFinSeguro,_ubicacion,_observacion,2,_usuario_ins,_compraSubarriendo);
 	COMMIT;
     SET _idLC = @_idLC;
 END
