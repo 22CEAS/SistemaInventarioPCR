@@ -1259,7 +1259,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion`(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
-    IN _idDevolucion TINYINT
+    IN _idDevolucion INT
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
@@ -1278,7 +1278,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion_detalle`(
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
-    IN _idDevolucionDet TINYINT
+    IN _idDevolucionDet INT
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
@@ -1297,7 +1297,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_salida`(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
-    IN _idSalida TINYINT
+    IN _idSalida INT
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
@@ -1316,7 +1316,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_salida_detalle`(
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
-    IN _idSalidaDet TINYINT
+    IN _idSalidaDet INT
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
@@ -1332,7 +1332,7 @@ DELIMITER ;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_devolucion_observacion_deudas`(
-    IN _idDevolucion TINYINT
+    IN _idDevolucion INT
 )
 BEGIN
 	DELETE FROM observacion_deudas where idDevolucion=_idDevolucion;
@@ -1404,7 +1404,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_cambio`(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
-    IN _idCambio TINYINT
+    IN _idCambio INT
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
@@ -1674,7 +1674,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_ingreso`(
 	IN _observacion NVARCHAR(100),
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
-    IN _idIngreso TINYINT
+    IN _idIngreso INT
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
@@ -1863,7 +1863,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `anular_reparacion`(
     IN _estado TINYINT,
 	IN _usuario_mod NVARCHAR(100),
-    IN _idReparacion TINYINT
+    IN _idReparacion INT
 )
 BEGIN
 	SET @fechaModificacion=(SELECT now());
