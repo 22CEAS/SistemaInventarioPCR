@@ -1,9 +1,14 @@
-﻿using System;
+﻿using AccesoDatos;
+using DevExpress.Utils.Win;
+using DevExpress.XtraRichEdit.Model;
+using Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,22 +17,76 @@ namespace Apolo
 {
     public partial class frmLogueo : Form
     {
+
+        Usuarios usuario;
+        UsuariosDA usuarioDA;
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+        int nLeftRect, // x-coordinate of upper-left corner
+        int nTopRect, // y-coordinate of upper-left corner
+        int nRightRect, // x-coordinate of lower-right corner
+        int nBottomRect, // y-coordinate of lower-right corner
+        int nWidthEllipse, // height of ellipse
+        int nHeightEllipse // width of ellipse
+        );
+
+
         public frmLogueo()
         {
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 478, Height, 20, 20));
+            
             InitializeComponent();
+            Inicializado();
+            btnLogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnLogin.Width, btnLogin.Height, 20, 20));
+            btnSalir.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnSalir.Width, btnSalir.Height, 20, 20));
+
+        }
+
+        public void Inicializado()
+        {
+            usuarioDA = new UsuariosDA();
+            usuario = new Usuarios();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            IngresarSistema();
+            
+            if (txtPassword.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("EL USUARIO Y CONTRASEÑA NO PUEDEN SER VACIOS", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (txtPassword.Text.Trim() == usuarioDA.Obtener_clave_usuario(txtUsername.Text))
+                {
+                    IngresarSistema();
+                }
+                else
+                {
+                    MessageBox.Show("USUARIO O CONTRASEÑA ERRONEOS", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            
+
+            
+            
+            
+            
         }
         private void IngresarSistema()
         {
 
-            frmPrincipal frm = new frmPrincipal();
+            TEST_MENU_PRINCIPAL frm = new TEST_MENU_PRINCIPAL();
+            //frmPrincipal frm = new frmPrincipal(); 
+            frm.usuarioConectado.Text = txtUsername.Text;
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            
 
         }
 

@@ -364,6 +364,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reparación";
+            this.Load += new System.EventHandler(this.frmProcesoReparacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpFecReparacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservacion.Properties)).EndInit();

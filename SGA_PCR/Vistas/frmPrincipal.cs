@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,13 @@ namespace Apolo
 {
     public partial class frmPrincipal : Form
     {
+        public enum TipoVista { Archivo, Proceso, Reportes, Configuracion }
+
+
         public frmPrincipal()
         {
             InitializeComponent();
-            lblUsuario.Text = lblUsuario.Text + " CEAS";
+            lblUsuario.Text = lblUsuario.Text + "TEST";
         }
 
         private void btnIngreso_Click(object sender, EventArgs e)
@@ -625,6 +629,16 @@ namespace Apolo
                 f2.MdiParent = this;
                 f2.Show();
             }
+        }
+
+        private void buttonItem4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

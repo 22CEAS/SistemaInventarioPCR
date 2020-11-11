@@ -61,8 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accesos_usuarioDA.cs" />
     <Compile Include="AlquilerDA.cs" />
     <Compile Include="CambioDA.cs" />
+    <Compile Include="UsuariosDA.cs" />
     <Compile Include="ClienteDA.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="DevolucionDA.cs" />

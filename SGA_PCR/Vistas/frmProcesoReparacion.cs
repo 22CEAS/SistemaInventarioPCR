@@ -560,5 +560,10 @@ namespace Apolo
             cmbEquipo.SelectedValue = reparacion.IdLC;
             dtpFecReparacion.Value = reparacion.FechaReparacion;
         }
+
+        private void frmProcesoReparacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
