@@ -25,5 +25,26 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("SELECT * FROM usuario ; ");
         }
+
+        public string Obtener_clave_usuario(string idUsuario)
+        {
+
+            MySqlDataReader reader;
+            string sql = "";
+            string clave = "";
+
+            sql = $"Select * From usuarios where idUsuario='{idUsuario}';";
+
+            reader = objManager.MostrarInformacion(sql);
+
+            while (reader.Read())
+            {
+                clave = reader.GetString("claveUsuario");
+            }
+
+            objManager.conexion.Close(); objManager.conexion.Dispose(); objManager.cmd.Dispose();
+
+            return clave;
+        }
     }
 }

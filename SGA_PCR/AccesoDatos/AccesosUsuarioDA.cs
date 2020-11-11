@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace AccesoDatos
 {
-    public class Accesos_usuarioDA
+    public class AccesosUsuarioDA
     {
         DBManager objManager;
         MySqlParameter[] parametrosEntrada = null;
 
-        public Accesos_usuarioDA()
+        public AccesosUsuarioDA()
         {
             objManager = new DBManager();
         }

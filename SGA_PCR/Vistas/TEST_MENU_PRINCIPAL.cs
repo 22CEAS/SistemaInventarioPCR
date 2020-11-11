@@ -16,7 +16,7 @@ namespace Apolo
     public partial class TEST_MENU_PRINCIPAL : Form
     {
         Accesos_usuarios accesos_usuarios;
-        Accesos_usuarioDA accesos_usuarioDA;
+        AccesosUsuarioDA accesos_usuarioDA;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -46,7 +46,7 @@ namespace Apolo
 
         public void Inicializado()
         {
-            accesos_usuarioDA = new Accesos_usuarioDA();
+            accesos_usuarioDA = new AccesosUsuarioDA();
             accesos_usuarios = new Accesos_usuarios();
             
 

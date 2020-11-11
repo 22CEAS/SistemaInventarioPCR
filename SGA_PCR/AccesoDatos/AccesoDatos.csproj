@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accesos_usuarioDA.cs" />
+    <Compile Include="AccesosUsuarioDA.cs" />
     <Compile Include="AlquilerDA.cs" />
     <Compile Include="CambioDA.cs" />
     <Compile Include="UsuariosDA.cs" />

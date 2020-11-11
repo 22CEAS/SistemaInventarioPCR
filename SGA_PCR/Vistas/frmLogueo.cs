@@ -19,7 +19,7 @@ namespace Apolo
     {
 
         Usuarios usuario;
-        UsuariosDA usuarioDA;
+        UsuarioDA usuarioDA;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -47,7 +47,7 @@ namespace Apolo
 
         public void Inicializado()
         {
-            usuarioDA = new UsuariosDA();
+            usuarioDA = new UsuarioDA();
             usuario = new Usuarios();
         }
 
