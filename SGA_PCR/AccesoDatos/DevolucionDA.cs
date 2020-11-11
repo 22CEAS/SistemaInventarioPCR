@@ -397,7 +397,7 @@ namespace AccesoDatos
 
                     parametrosEntrada[0].Value = 0;
                     parametrosEntrada[1].Value = usuario;
-                    parametrosEntrada[2].Value = det.IdSalidaDetalle;
+                    parametrosEntrada[2].Value = det.IdDetalle;
 
                     objManager.EjecutarProcedure(parametrosEntrada, "anular_devolucion_detalle");
                 }

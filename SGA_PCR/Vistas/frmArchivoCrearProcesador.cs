@@ -373,9 +373,9 @@ namespace Apolo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Imprimir la lista de Discos", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro que desea Imprimir la lista de Procesadores", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                MessageBox.Show("Se imprimio la lista de Discos");
+                MessageBox.Show("Se imprimio la lista de Procesadores");
             }
         }
 

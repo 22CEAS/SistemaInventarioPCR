@@ -203,7 +203,7 @@
             this.dgvSucursalCliente.PrimaryGrid.EnableRowFiltering = true;
             this.dgvSucursalCliente.PrimaryGrid.Filter.Visible = true;
             this.dgvSucursalCliente.PrimaryGrid.MultiSelect = false;
-            this.dgvSucursalCliente.PrimaryGrid.NoRowsText = "No hay ningun Cliente, cree un cliente";
+            this.dgvSucursalCliente.PrimaryGrid.NoRowsText = "No hay ningún sucursal para el cliente seleccionado, cree una sucursal";
             this.dgvSucursalCliente.PrimaryGrid.NullString = "<<null>>";
             this.dgvSucursalCliente.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvSucursalCliente.PrimaryGrid.ShowRowHeaders = false;
