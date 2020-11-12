@@ -104,13 +104,13 @@
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // CodigoLC
             // 
-            this.CodigoLC.Caption = "CodigoLC";
+            this.CodigoLC.Caption = "Código LC";
             this.CodigoLC.FieldName = "Codigo";
-            this.CodigoLC.MaxWidth = 130;
             this.CodigoLC.MinWidth = 130;
             this.CodigoLC.Name = "CodigoLC";
             this.CodigoLC.Visible = true;
@@ -121,7 +121,6 @@
             // 
             this.Marca.Caption = "Marca";
             this.Marca.FieldName = "MarcaLC";
-            this.Marca.MaxWidth = 100;
             this.Marca.MinWidth = 100;
             this.Marca.Name = "Marca";
             this.Marca.Visible = true;
@@ -132,7 +131,6 @@
             // 
             this.Modelo.Caption = "Modelo";
             this.Modelo.FieldName = "NombreModeloLC";
-            this.Modelo.MaxWidth = 200;
             this.Modelo.MinWidth = 200;
             this.Modelo.Name = "Modelo";
             this.Modelo.Visible = true;
@@ -143,7 +141,6 @@
             // 
             this.Procesador.Caption = "Procesador";
             this.Procesador.FieldName = "TipoProcesador";
-            this.Procesador.MaxWidth = 100;
             this.Procesador.MinWidth = 100;
             this.Procesador.Name = "Procesador";
             this.Procesador.Visible = true;
@@ -154,121 +151,108 @@
             // 
             this.Video.Caption = "Video";
             this.Video.FieldName = "NombreModeloVideo";
-            this.Video.MaxWidth = 170;
             this.Video.MinWidth = 170;
             this.Video.Name = "Video";
-            this.Video.Visible = true;
-            this.Video.VisibleIndex = 4;
             this.Video.Width = 170;
             // 
             // CapacidadVideo
             // 
-            this.CapacidadVideo.Caption = "CapacidadVideo";
+            this.CapacidadVideo.Caption = "Capacidad Video";
             this.CapacidadVideo.FieldName = "CapacidadVideo";
-            this.CapacidadVideo.MaxWidth = 130;
             this.CapacidadVideo.MinWidth = 130;
             this.CapacidadVideo.Name = "CapacidadVideo";
             this.CapacidadVideo.Visible = true;
-            this.CapacidadVideo.VisibleIndex = 5;
+            this.CapacidadVideo.VisibleIndex = 4;
             this.CapacidadVideo.Width = 130;
             // 
             // Disco1
             // 
             this.Disco1.Caption = "Disco1";
             this.Disco1.FieldName = "Disco1";
-            this.Disco1.MaxWidth = 70;
             this.Disco1.MinWidth = 70;
             this.Disco1.Name = "Disco1";
             this.Disco1.Visible = true;
-            this.Disco1.VisibleIndex = 6;
+            this.Disco1.VisibleIndex = 5;
             this.Disco1.Width = 70;
             // 
             // CapacidadDisco1
             // 
-            this.CapacidadDisco1.Caption = "CapacidadDisco1";
+            this.CapacidadDisco1.Caption = "Capacidad Disco1";
             this.CapacidadDisco1.FieldName = "CapacidadDisco1";
-            this.CapacidadDisco1.MaxWidth = 130;
             this.CapacidadDisco1.MinWidth = 130;
             this.CapacidadDisco1.Name = "CapacidadDisco1";
             this.CapacidadDisco1.Visible = true;
-            this.CapacidadDisco1.VisibleIndex = 7;
+            this.CapacidadDisco1.VisibleIndex = 6;
             this.CapacidadDisco1.Width = 130;
             // 
             // Disco2
             // 
             this.Disco2.Caption = "Disco2";
             this.Disco2.FieldName = "Disco2";
-            this.Disco2.MaxWidth = 70;
             this.Disco2.MinWidth = 70;
             this.Disco2.Name = "Disco2";
             this.Disco2.Visible = true;
-            this.Disco2.VisibleIndex = 8;
+            this.Disco2.VisibleIndex = 7;
             this.Disco2.Width = 70;
             // 
             // CapacidadDisco2
             // 
-            this.CapacidadDisco2.Caption = "CapacidadDisco2";
+            this.CapacidadDisco2.Caption = "Capacidad Disco2";
             this.CapacidadDisco2.FieldName = "CapacidadDisco2";
-            this.CapacidadDisco2.MaxWidth = 130;
             this.CapacidadDisco2.MinWidth = 130;
             this.CapacidadDisco2.Name = "CapacidadDisco2";
             this.CapacidadDisco2.Visible = true;
-            this.CapacidadDisco2.VisibleIndex = 9;
+            this.CapacidadDisco2.VisibleIndex = 8;
             this.CapacidadDisco2.Width = 130;
             // 
             // MemoriaRam
             // 
-            this.MemoriaRam.Caption = "MemoriaRam";
+            this.MemoriaRam.Caption = "Memoria Ram";
             this.MemoriaRam.FieldName = "CapacidadMemoria";
-            this.MemoriaRam.MaxWidth = 100;
             this.MemoriaRam.MinWidth = 100;
             this.MemoriaRam.Name = "MemoriaRam";
             this.MemoriaRam.Visible = true;
-            this.MemoriaRam.VisibleIndex = 10;
+            this.MemoriaRam.VisibleIndex = 9;
             this.MemoriaRam.Width = 100;
             // 
             // Estado
             // 
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "EstadoNombre";
-            this.Estado.MaxWidth = 130;
             this.Estado.MinWidth = 130;
             this.Estado.Name = "Estado";
             this.Estado.Visible = true;
-            this.Estado.VisibleIndex = 11;
+            this.Estado.VisibleIndex = 10;
             this.Estado.Width = 130;
             // 
             // Cliente
             // 
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "Cliente";
-            this.Cliente.MaxWidth = 150;
             this.Cliente.MinWidth = 150;
             this.Cliente.Name = "Cliente";
             this.Cliente.Visible = true;
-            this.Cliente.VisibleIndex = 12;
+            this.Cliente.VisibleIndex = 11;
             this.Cliente.Width = 150;
             // 
             // Ubicacion
             // 
-            this.Ubicacion.Caption = "Ubicacion";
+            this.Ubicacion.Caption = "Ubicación";
             this.Ubicacion.FieldName = "Ubicacion";
-            this.Ubicacion.MaxWidth = 150;
             this.Ubicacion.MinWidth = 150;
             this.Ubicacion.Name = "Ubicacion";
             this.Ubicacion.Visible = true;
-            this.Ubicacion.VisibleIndex = 13;
+            this.Ubicacion.VisibleIndex = 12;
             this.Ubicacion.Width = 150;
             // 
             // SerieFabrica
             // 
-            this.SerieFabrica.Caption = "SerieFabrica";
+            this.SerieFabrica.Caption = "Serie Fabrica";
             this.SerieFabrica.FieldName = "SerieFabrica";
-            this.SerieFabrica.MaxWidth = 150;
             this.SerieFabrica.MinWidth = 150;
             this.SerieFabrica.Name = "SerieFabrica";
             this.SerieFabrica.Visible = true;
-            this.SerieFabrica.VisibleIndex = 14;
+            this.SerieFabrica.VisibleIndex = 13;
             this.SerieFabrica.Width = 150;
             // 
             // btnExportar

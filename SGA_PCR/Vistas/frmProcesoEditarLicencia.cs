@@ -62,11 +62,11 @@ namespace Apolo
                     if (Convert.ToBoolean(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
                     {
                         licencia = new Licencia();
-                        licencia.IdLicencia = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 5))).Value.ToString());
+                        licencia.IdLicencia = int.Parse(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 6))).Value.ToString());
                         licencia.Categoria = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString();
-                        licencia.Marca = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 2))).Value.ToString();
-                        licencia.Version = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 3))).Value.ToString();
-                        licencia.Clave = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 4))).Value.ToString();
+                        licencia.Marca = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 3))).Value.ToString();
+                        licencia.Version = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 4))).Value.ToString();
+                        licencia.Clave = ((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 5))).Value.ToString();
                         bool exists = licencias.Any(x => x.Categoria.Equals(licencia.Categoria));
                         if (!(exists))
                         {

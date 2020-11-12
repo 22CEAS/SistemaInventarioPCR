@@ -32,6 +32,7 @@
             this.btnExportar = new System.Windows.Forms.Button();
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Direccion = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,7 +53,8 @@
             this.MontoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MontoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GuiaAntigua = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -106,6 +108,7 @@
             this.Contacto,
             this.Direccion,
             this.Codigo,
+            this.Guia,
             this.Marca,
             this.Modelo,
             this.Pantalla,
@@ -113,7 +116,8 @@
             this.Generacion,
             this.Video,
             this.Capacidad,
-            this.Guia,
+            this.CodigoAntiguo,
+            this.GuiaAntigua,
             this.fecIniContrato,
             this.fecFinContrato,
             this.factura,
@@ -125,18 +129,31 @@
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
+            this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            // 
+            // IdSalida
+            // 
+            this.IdSalida.Caption = "Id Salida";
+            this.IdSalida.FieldName = "IdSalida";
+            this.IdSalida.MinWidth = 70;
+            this.IdSalida.Name = "IdSalida";
+            this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.IdSalida.Visible = true;
+            this.IdSalida.VisibleIndex = 0;
+            this.IdSalida.Width = 70;
             // 
             // Cliente
             // 
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "Cliente";
-            this.Cliente.MinWidth = 100;
+            this.Cliente.MinWidth = 250;
             this.Cliente.Name = "Cliente";
             this.Cliente.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Cliente.Visible = true;
             this.Cliente.VisibleIndex = 1;
-            this.Cliente.Width = 100;
+            this.Cliente.Width = 250;
             // 
             // Contacto
             // 
@@ -145,8 +162,6 @@
             this.Contacto.MinWidth = 100;
             this.Contacto.Name = "Contacto";
             this.Contacto.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Contacto.Visible = true;
-            this.Contacto.VisibleIndex = 2;
             this.Contacto.Width = 100;
             // 
             // Direccion
@@ -156,221 +171,210 @@
             this.Direccion.MinWidth = 100;
             this.Direccion.Name = "Direccion";
             this.Direccion.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Direccion.Visible = true;
-            this.Direccion.VisibleIndex = 3;
             this.Direccion.Width = 100;
             // 
             // Codigo
             // 
             this.Codigo.Caption = "Codigo";
             this.Codigo.FieldName = "Codigo";
-            this.Codigo.MaxWidth = 100;
-            this.Codigo.MinWidth = 100;
+            this.Codigo.MinWidth = 150;
             this.Codigo.Name = "Codigo";
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
-            this.Codigo.VisibleIndex = 4;
-            this.Codigo.Width = 100;
+            this.Codigo.VisibleIndex = 2;
+            this.Codigo.Width = 150;
             // 
             // Marca
             // 
             this.Marca.Caption = "Marca";
             this.Marca.FieldName = "MarcaLC";
-            this.Marca.MaxWidth = 100;
             this.Marca.MinWidth = 100;
             this.Marca.Name = "Marca";
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Marca.Visible = true;
-            this.Marca.VisibleIndex = 5;
+            this.Marca.VisibleIndex = 4;
             this.Marca.Width = 100;
             // 
             // Modelo
             // 
             this.Modelo.Caption = "Modelo";
             this.Modelo.FieldName = "NombreModeloLC";
-            this.Modelo.MaxWidth = 100;
             this.Modelo.MinWidth = 100;
             this.Modelo.Name = "Modelo";
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 6;
+            this.Modelo.VisibleIndex = 5;
             this.Modelo.Width = 100;
             // 
             // Pantalla
             // 
             this.Pantalla.Caption = "Pantalla";
             this.Pantalla.FieldName = "TamanoPantalla";
-            this.Pantalla.MaxWidth = 60;
-            this.Pantalla.MinWidth = 60;
+            this.Pantalla.MinWidth = 100;
             this.Pantalla.Name = "Pantalla";
             this.Pantalla.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.Pantalla.Visible = true;
-            this.Pantalla.VisibleIndex = 7;
-            this.Pantalla.Width = 60;
+            this.Pantalla.VisibleIndex = 6;
+            this.Pantalla.Width = 100;
             // 
             // Procesador
             // 
             this.Procesador.Caption = "Procesador";
             this.Procesador.FieldName = "TipoProcesador";
-            this.Procesador.MaxWidth = 70;
-            this.Procesador.MinWidth = 70;
+            this.Procesador.MinWidth = 100;
             this.Procesador.Name = "Procesador";
             this.Procesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Procesador.Visible = true;
-            this.Procesador.VisibleIndex = 8;
-            this.Procesador.Width = 70;
+            this.Procesador.VisibleIndex = 7;
+            this.Procesador.Width = 100;
             // 
             // Generacion
             // 
             this.Generacion.Caption = "Generación";
             this.Generacion.FieldName = "GeneracionProcesador";
-            this.Generacion.MaxWidth = 70;
-            this.Generacion.MinWidth = 70;
+            this.Generacion.MinWidth = 100;
             this.Generacion.Name = "Generacion";
             this.Generacion.Visible = true;
-            this.Generacion.VisibleIndex = 9;
-            this.Generacion.Width = 70;
+            this.Generacion.VisibleIndex = 8;
+            this.Generacion.Width = 100;
             // 
             // Video
             // 
             this.Video.Caption = "Video";
             this.Video.FieldName = "NombreModeloVideo";
-            this.Video.MaxWidth = 100;
             this.Video.MinWidth = 100;
             this.Video.Name = "Video";
-            this.Video.Visible = true;
-            this.Video.VisibleIndex = 10;
             this.Video.Width = 100;
             // 
             // Capacidad
             // 
-            this.Capacidad.Caption = "Capacidad";
+            this.Capacidad.Caption = "Capacidad Video";
             this.Capacidad.FieldName = "CapacidadVideo";
-            this.Capacidad.MaxWidth = 70;
-            this.Capacidad.MinWidth = 70;
+            this.Capacidad.MinWidth = 100;
             this.Capacidad.Name = "Capacidad";
             this.Capacidad.Visible = true;
-            this.Capacidad.VisibleIndex = 11;
-            this.Capacidad.Width = 70;
+            this.Capacidad.VisibleIndex = 9;
+            this.Capacidad.Width = 100;
             // 
             // Guia
             // 
             this.Guia.Caption = "Guia";
             this.Guia.FieldName = "guia";
-            this.Guia.MaxWidth = 100;
             this.Guia.MinWidth = 100;
             this.Guia.Name = "Guia";
             this.Guia.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Guia.Visible = true;
-            this.Guia.VisibleIndex = 12;
+            this.Guia.VisibleIndex = 3;
             this.Guia.Width = 100;
             // 
             // fecIniContrato
             // 
             this.fecIniContrato.Caption = "Inicio Plazo Alquiler";
             this.fecIniContrato.FieldName = "fecIniContrato";
-            this.fecIniContrato.MaxWidth = 100;
             this.fecIniContrato.MinWidth = 100;
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 13;
+            this.fecIniContrato.VisibleIndex = 12;
             this.fecIniContrato.Width = 100;
             // 
             // fecFinContrato
             // 
             this.fecFinContrato.Caption = "Fin Plazo Alquiler";
             this.fecFinContrato.FieldName = "fecFinContrato";
-            this.fecFinContrato.MaxWidth = 100;
             this.fecFinContrato.MinWidth = 100;
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 14;
+            this.fecFinContrato.VisibleIndex = 13;
             this.fecFinContrato.Width = 100;
             // 
             // factura
             // 
             this.factura.Caption = "Factura";
             this.factura.FieldName = "factura";
-            this.factura.MaxWidth = 100;
             this.factura.MinWidth = 100;
             this.factura.Name = "factura";
             this.factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.factura.Visible = true;
-            this.factura.VisibleIndex = 15;
+            this.factura.VisibleIndex = 14;
             this.factura.Width = 100;
             // 
             // fecInicioFactura
             // 
             this.fecInicioFactura.Caption = "Fecha Inicio Factura";
             this.fecInicioFactura.FieldName = "fecInicioFactura";
-            this.fecInicioFactura.MaxWidth = 100;
             this.fecInicioFactura.MinWidth = 100;
             this.fecInicioFactura.Name = "fecInicioFactura";
             this.fecInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecInicioFactura.Visible = true;
-            this.fecInicioFactura.VisibleIndex = 16;
+            this.fecInicioFactura.VisibleIndex = 15;
             this.fecInicioFactura.Width = 100;
             // 
             // fecFinFactura
             // 
             this.fecFinFactura.Caption = "Fecha Fin Factura";
             this.fecFinFactura.FieldName = "fecFinFactura";
-            this.fecFinFactura.MaxWidth = 100;
             this.fecFinFactura.MinWidth = 100;
             this.fecFinFactura.Name = "fecFinFactura";
             this.fecFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinFactura.Visible = true;
-            this.fecFinFactura.VisibleIndex = 17;
+            this.fecFinFactura.VisibleIndex = 16;
             this.fecFinFactura.Width = 100;
             // 
             // MontoSoles
             // 
-            this.MontoSoles.Caption = "MontoSoles";
+            this.MontoSoles.Caption = "Monto Soles";
             this.MontoSoles.FieldName = "MontoSoles";
-            this.MontoSoles.MaxWidth = 100;
             this.MontoSoles.MinWidth = 100;
             this.MontoSoles.Name = "MontoSoles";
             this.MontoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoSoles.Visible = true;
-            this.MontoSoles.VisibleIndex = 18;
+            this.MontoSoles.VisibleIndex = 17;
             this.MontoSoles.Width = 100;
             // 
             // MontoDolares
             // 
-            this.MontoDolares.Caption = "MontoDolares";
+            this.MontoDolares.Caption = "Monto Dolares";
             this.MontoDolares.FieldName = "MontoDolares";
-            this.MontoDolares.MaxWidth = 100;
             this.MontoDolares.MinWidth = 100;
             this.MontoDolares.Name = "MontoDolares";
             this.MontoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoDolares.Visible = true;
-            this.MontoDolares.VisibleIndex = 19;
+            this.MontoDolares.VisibleIndex = 18;
             this.MontoDolares.Width = 100;
             // 
             // TotalDolares
             // 
-            this.TotalDolares.Caption = "TotalDolares";
+            this.TotalDolares.Caption = "Total Dolares";
             this.TotalDolares.FieldName = "TotalDolares";
-            this.TotalDolares.MaxWidth = 100;
             this.TotalDolares.MinWidth = 100;
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 20;
+            this.TotalDolares.VisibleIndex = 19;
             this.TotalDolares.Width = 100;
             // 
-            // IdSalida
+            // CodigoAntiguo
             // 
-            this.IdSalida.Caption = "IdSalida";
-            this.IdSalida.FieldName = "IdSalida";
-            this.IdSalida.MaxWidth = 100;
-            this.IdSalida.MinWidth = 100;
-            this.IdSalida.Name = "IdSalida";
-            this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.IdSalida.Visible = true;
-            this.IdSalida.VisibleIndex = 0;
-            this.IdSalida.Width = 100;
+            this.CodigoAntiguo.Caption = "Código Antiguo";
+            this.CodigoAntiguo.FieldName = "CodigoAntiguo";
+            this.CodigoAntiguo.MinWidth = 120;
+            this.CodigoAntiguo.Name = "CodigoAntiguo";
+            this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CodigoAntiguo.Visible = true;
+            this.CodigoAntiguo.VisibleIndex = 10;
+            this.CodigoAntiguo.Width = 120;
+            // 
+            // GuiaAntigua
+            // 
+            this.GuiaAntigua.Caption = "Guía Antigua";
+            this.GuiaAntigua.FieldName = "GuiaAntigua";
+            this.GuiaAntigua.MinWidth = 100;
+            this.GuiaAntigua.Name = "GuiaAntigua";
+            this.GuiaAntigua.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.GuiaAntigua.Visible = true;
+            this.GuiaAntigua.VisibleIndex = 11;
+            this.GuiaAntigua.Width = 100;
             // 
             // frmReporteCV
             // 
@@ -420,5 +424,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn TotalDolares;
         private DevExpress.XtraGrid.Columns.GridColumn Guia;
         private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn GuiaAntigua;
     }
 }

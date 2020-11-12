@@ -86,13 +86,13 @@
             this.vista.GridControl = this.dgvMemorias;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Modelo
             // 
             this.Modelo.Caption = "Modelo";
             this.Modelo.FieldName = "TipoMemoria";
-            this.Modelo.MaxWidth = 100;
             this.Modelo.MinWidth = 100;
             this.Modelo.Name = "Modelo";
             this.Modelo.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -104,7 +104,6 @@
             // 
             this.TipoMemoria.Caption = "TipoMemoria";
             this.TipoMemoria.FieldName = "Tipo2";
-            this.TipoMemoria.MaxWidth = 100;
             this.TipoMemoria.MinWidth = 100;
             this.TipoMemoria.Name = "TipoMemoria";
             this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -116,7 +115,6 @@
             // 
             this.Capacidad.Caption = "Capacidad";
             this.Capacidad.FieldName = "Capacidad";
-            this.Capacidad.MaxWidth = 100;
             this.Capacidad.MinWidth = 100;
             this.Capacidad.Name = "Capacidad";
             this.Capacidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
@@ -128,36 +126,31 @@
             // 
             this.Frecuencia.Caption = "Frecuencia";
             this.Frecuencia.FieldName = "frecuencia";
-            this.Frecuencia.MaxWidth = 100;
             this.Frecuencia.MinWidth = 100;
             this.Frecuencia.Name = "Frecuencia";
             this.Frecuencia.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.Frecuencia.Visible = true;
-            this.Frecuencia.VisibleIndex = 3;
             this.Frecuencia.Width = 100;
             // 
             // Cantidad
             // 
             this.Cantidad.Caption = "Cantidad";
             this.Cantidad.FieldName = "Cantidad";
-            this.Cantidad.MaxWidth = 100;
             this.Cantidad.MinWidth = 100;
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Cantidad.Visible = true;
-            this.Cantidad.VisibleIndex = 4;
+            this.Cantidad.VisibleIndex = 3;
             this.Cantidad.Width = 100;
             // 
             // Estado
             // 
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "estado";
-            this.Estado.MaxWidth = 100;
             this.Estado.MinWidth = 100;
             this.Estado.Name = "Estado";
             this.Estado.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Estado.Visible = true;
-            this.Estado.VisibleIndex = 5;
+            this.Estado.VisibleIndex = 4;
             this.Estado.Width = 100;
             // 
             // btnExportar

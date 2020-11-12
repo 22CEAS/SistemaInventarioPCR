@@ -28,26 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn199 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn200 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn201 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn202 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn203 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn204 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn205 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn206 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn207 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimeInput3 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.superGridControl5 = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.dgv = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dgvAlquiler = new DevExpress.XtraGrid.GridControl();
+            this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.TipoMemoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tipo2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -131,44 +150,53 @@
             this.dateTimeInput3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dateTimeInput3.TabIndex = 74;
             // 
-            // superGridControl5
+            // dgv
             // 
-            this.superGridControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.superGridControl5.BackColor = System.Drawing.Color.White;
-            this.superGridControl5.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.superGridControl5.ForeColor = System.Drawing.Color.Black;
-            this.superGridControl5.Location = new System.Drawing.Point(60, 140);
-            this.superGridControl5.Name = "superGridControl5";
-            this.superGridControl5.PrimaryGrid.AllowRowHeaderResize = true;
-            this.superGridControl5.PrimaryGrid.AllowRowResize = true;
-            this.superGridControl5.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn13.Name = "Cliente";
-            gridColumn14.Name = "Equipo";
-            gridColumn15.Name = "Código";
-            gridColumn16.Name = "Guía";
-            gridColumn17.Name = "KAM";
-            gridColumn18.Name = "FechaAlquiler";
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn13);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn14);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn15);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn16);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn17);
-            this.superGridControl5.PrimaryGrid.Columns.Add(gridColumn18);
-            this.superGridControl5.PrimaryGrid.DefaultRowHeight = 24;
-            this.superGridControl5.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl5.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.superGridControl5.PrimaryGrid.EnableColumnFiltering = true;
-            this.superGridControl5.PrimaryGrid.EnableFiltering = true;
-            this.superGridControl5.PrimaryGrid.EnableRowFiltering = true;
-            this.superGridControl5.PrimaryGrid.Filter.Visible = true;
-            this.superGridControl5.PrimaryGrid.NullString = "<<null>>";
-            this.superGridControl5.PrimaryGrid.RowHeaderWidth = 45;
-            this.superGridControl5.PrimaryGrid.ShowRowGridIndex = true;
-            this.superGridControl5.Size = new System.Drawing.Size(645, 280);
-            this.superGridControl5.TabIndex = 73;
-            this.superGridControl5.Text = "superGridControl5";
+            this.dgv.BackColor = System.Drawing.Color.White;
+            this.dgv.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgv.ForeColor = System.Drawing.Color.Black;
+            this.dgv.Location = new System.Drawing.Point(60, 140);
+            this.dgv.Name = "dgv";
+            this.dgv.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgv.PrimaryGrid.AllowRowResize = true;
+            this.dgv.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn199.DataPropertyName = "Tipo2";
+            gridColumn199.Name = "";
+            gridColumn200.DataPropertyName = "Capacidad";
+            gridColumn200.Name = "";
+            gridColumn201.DataPropertyName = "TipoMemoria";
+            gridColumn201.Name = "";
+            gridColumn202.Name = "Cliente";
+            gridColumn203.Name = "Equipo";
+            gridColumn204.Name = "Código";
+            gridColumn205.Name = "Guía";
+            gridColumn206.Name = "KAM";
+            gridColumn207.Name = "FechaAlquiler";
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn199);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn200);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn201);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn202);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn203);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn204);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn205);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn206);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn207);
+            this.dgv.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgv.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgv.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgv.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgv.PrimaryGrid.EnableFiltering = true;
+            this.dgv.PrimaryGrid.EnableRowFiltering = true;
+            this.dgv.PrimaryGrid.Filter.Visible = true;
+            this.dgv.PrimaryGrid.NullString = "<<null>>";
+            this.dgv.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgv.PrimaryGrid.ShowRowGridIndex = true;
+            this.dgv.Size = new System.Drawing.Size(645, 88);
+            this.dgv.TabIndex = 73;
+            this.dgv.Text = "superGridControl5";
             // 
             // dateTimeInput1
             // 
@@ -241,11 +269,165 @@
             this.comboBox3.Size = new System.Drawing.Size(167, 21);
             this.comboBox3.TabIndex = 83;
             // 
+            // dgvAlquiler
+            // 
+            this.dgvAlquiler.Location = new System.Drawing.Point(60, 238);
+            this.dgvAlquiler.MainView = this.vista;
+            this.dgvAlquiler.Name = "dgvAlquiler";
+            this.dgvAlquiler.Size = new System.Drawing.Size(645, 189);
+            this.dgvAlquiler.TabIndex = 85;
+            this.dgvAlquiler.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vista});
+            // 
+            // vista
+            // 
+            this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.TipoMemoria,
+            this.Tipo2,
+            this.Capacidad,
+            this.estado,
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8});
+            this.vista.GridControl = this.dgvAlquiler;
+            this.vista.Name = "vista";
+            this.vista.OptionsView.ColumnAutoWidth = false;
+            // 
+            // TipoMemoria
+            // 
+            this.TipoMemoria.Caption = "gridColumn1";
+            this.TipoMemoria.FieldName = "TipoMemoria";
+            this.TipoMemoria.MinWidth = 100;
+            this.TipoMemoria.Name = "TipoMemoria";
+            this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.TipoMemoria.Visible = true;
+            this.TipoMemoria.VisibleIndex = 0;
+            this.TipoMemoria.Width = 100;
+            // 
+            // Tipo2
+            // 
+            this.Tipo2.Caption = "gridColumn1";
+            this.Tipo2.FieldName = "Tipo2";
+            this.Tipo2.MinWidth = 100;
+            this.Tipo2.Name = "Tipo2";
+            this.Tipo2.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Tipo2.Visible = true;
+            this.Tipo2.VisibleIndex = 1;
+            this.Tipo2.Width = 100;
+            // 
+            // Capacidad
+            // 
+            this.Capacidad.Caption = "gridColumn1";
+            this.Capacidad.FieldName = "Capacidad";
+            this.Capacidad.MinWidth = 100;
+            this.Capacidad.Name = "Capacidad";
+            this.Capacidad.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Capacidad.Visible = true;
+            this.Capacidad.VisibleIndex = 2;
+            this.Capacidad.Width = 100;
+            // 
+            // estado
+            // 
+            this.estado.Caption = "gridColumn1";
+            this.estado.FieldName = "estado";
+            this.estado.MinWidth = 100;
+            this.estado.Name = "estado";
+            this.estado.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.estado.Visible = true;
+            this.estado.VisibleIndex = 3;
+            this.estado.Width = 100;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.FieldName = "TipoMemoria";
+            this.gridColumn1.MinWidth = 100;
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.Width = 100;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "gridColumn2";
+            this.gridColumn2.FieldName = "TipoMemoria";
+            this.gridColumn2.MinWidth = 100;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 5;
+            this.gridColumn2.Width = 100;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "gridColumn3";
+            this.gridColumn3.FieldName = "Tipo2";
+            this.gridColumn3.MinWidth = 100;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 6;
+            this.gridColumn3.Width = 100;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "gridColumn4";
+            this.gridColumn4.FieldName = "Tipo2";
+            this.gridColumn4.MinWidth = 100;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 7;
+            this.gridColumn4.Width = 100;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "gridColumn5";
+            this.gridColumn5.FieldName = "Capacidad";
+            this.gridColumn5.MinWidth = 100;
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 8;
+            this.gridColumn5.Width = 100;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "gridColumn6";
+            this.gridColumn6.FieldName = "Capacidad";
+            this.gridColumn6.MinWidth = 100;
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 9;
+            this.gridColumn6.Width = 100;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "gridColumn7";
+            this.gridColumn7.FieldName = "estado";
+            this.gridColumn7.MinWidth = 100;
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 10;
+            this.gridColumn7.Width = 100;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "gridColumn8";
+            this.gridColumn8.FieldName = "estado";
+            this.gridColumn8.MinWidth = 100;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 11;
+            this.gridColumn8.Width = 100;
+            // 
             // frmReporteAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 450);
+            this.Controls.Add(this.dgvAlquiler);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label1);
@@ -257,11 +439,13 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimeInput3);
-            this.Controls.Add(this.superGridControl5);
+            this.Controls.Add(this.dgv);
             this.Name = "frmReporteAlquiler";
             this.Text = "Reporte Alquiler";
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,11 +459,25 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput3;
-        private DevComponents.DotNetBar.SuperGrid.SuperGridControl superGridControl5;
+        private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgv;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private DevExpress.XtraGrid.GridControl dgvAlquiler;
+        private DevExpress.XtraGrid.Views.Grid.GridView vista;
+        private DevExpress.XtraGrid.Columns.GridColumn TipoMemoria;
+        private DevExpress.XtraGrid.Columns.GridColumn Tipo2;
+        private DevExpress.XtraGrid.Columns.GridColumn Capacidad;
+        private DevExpress.XtraGrid.Columns.GridColumn estado;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
     }
 }

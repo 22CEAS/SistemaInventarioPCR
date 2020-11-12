@@ -118,27 +118,30 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 2] = vista.GetRowCellValue(j, "Contacto").ToString();
                 hoja_trabajo.Cells[fila2, 3] = vista.GetRowCellValue(j, "DireccionCliente").ToString();
                 hoja_trabajo.Cells[fila2, 4] = vista.GetRowCellValue(j, "Codigo").ToString();
-                hoja_trabajo.Cells[fila2, 5] = vista.GetRowCellValue(j, "MarcaLC").ToString();
-                hoja_trabajo.Cells[fila2, 6] = vista.GetRowCellValue(j, "NombreModeloLC").ToString();
-                hoja_trabajo.Cells[fila2, 7] = vista.GetRowCellValue(j, "TamanoPantalla").ToString();
-                hoja_trabajo.Cells[fila2, 8] = vista.GetRowCellValue(j, "TipoProcesador").ToString();
-                hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "GeneracionProcesador").ToString();
-                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "NombreModeloVideo").ToString();
-                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "CapacidadVideo").ToString();
+                hoja_trabajo.Cells[fila2, 5] = vista.GetRowCellValue(j, "GuiaSalida").ToString();
+                hoja_trabajo.Cells[fila2, 6] = vista.GetRowCellValue(j, "MarcaLC").ToString();
+                hoja_trabajo.Cells[fila2, 7] = vista.GetRowCellValue(j, "NombreModeloLC").ToString();
+                hoja_trabajo.Cells[fila2, 8] = vista.GetRowCellValue(j, "TamanoPantalla").ToString();
+                hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "TipoProcesador").ToString();
+                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "GeneracionProcesador").ToString();
+                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "NombreModeloVideo").ToString();
+                hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "CapacidadVideo").ToString();
+                hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "CodigoAntiguo").ToString();
+                hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "GuiaAntigua").ToString();
 
                 if (vista.GetRowCellValue(j, "fecIniContrato").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecIniContrato").ToString());
-                    hoja_trabajo.Cells[fila2, 12] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 15] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 12] = "";
+                else hoja_trabajo.Cells[fila2, 15] = "";
 
                 if (vista.GetRowCellValue(j, "fecFinContrato").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecFinContrato").ToString());
-                    hoja_trabajo.Cells[fila2, 13] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 16] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 13] = "";
+                else hoja_trabajo.Cells[fila2, 16] = "";
 
             }
             montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
@@ -153,7 +156,7 @@ namespace Apolo
                 //** Montamos el título en la línea 1 **
                 hoja.Cells[fila, 1] = nombreCabecera;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Merge();
-                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Silver;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Orange;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila];
@@ -164,16 +167,19 @@ namespace Apolo
                 hoja.Cells[fila + 2, 1] = "Cliente";
                 hoja.Cells[fila + 2, 2] = "Contacto";
                 hoja.Cells[fila + 2, 3] = "Direccion Cliente";
-                hoja.Cells[fila + 2, 4] = "Codigo";
-                hoja.Cells[fila + 2, 5] = "Marca LC";
-                hoja.Cells[fila + 2, 6] = "Nombre Modelo LC";
-                hoja.Cells[fila + 2, 7] = "Tamano Pantalla";
-                hoja.Cells[fila + 2, 8] = "Tipo Procesador";
-                hoja.Cells[fila + 2, 9] = "Generacion Procesador";
-                hoja.Cells[fila + 2, 10] = "Nombre Modelo Video";
-                hoja.Cells[fila + 2, 11] = "Capacidad Video";
-                hoja.Cells[fila + 2, 12] = "Fecha Inicio Contrato";
-                hoja.Cells[fila + 2, 13] = "Fecha Fin Contrato";
+                hoja.Cells[fila + 2, 4] = "Código LC";
+                hoja.Cells[fila + 2, 5] = "Guía";
+                hoja.Cells[fila + 2, 6] = "Marca LC";
+                hoja.Cells[fila + 2, 7] = "Nombre Modelo LC";
+                hoja.Cells[fila + 2, 8] = "Tamano Pantalla";
+                hoja.Cells[fila + 2, 9] = "Tipo Procesador";
+                hoja.Cells[fila + 2, 10] = "Generacion Procesador";
+                hoja.Cells[fila + 2, 11] = "Nombre Modelo Video";
+                hoja.Cells[fila + 2, 12] = "Capacidad Video";
+                hoja.Cells[fila + 2, 13] = "Código Antiguo";
+                hoja.Cells[fila + 2, 14] = "Guía Antigua";
+                hoja.Cells[fila + 2, 15] = "Fecha Inicio Contrato";
+                hoja.Cells[fila + 2, 16] = "Fecha Fin Contrato";
 
 
                 int i = vista.Columns.Count + 64;
@@ -184,7 +190,7 @@ namespace Apolo
                 //Ponemos borde a las celdas
                 rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
                 rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                rango.Interior.Color = Color.Silver;
+                rango.Interior.Color = Color.Orange;
                 rango.Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila2];

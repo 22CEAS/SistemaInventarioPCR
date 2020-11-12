@@ -120,50 +120,52 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 3] = vista.GetRowCellValue(j, "Contacto").ToString();
                 hoja_trabajo.Cells[fila2, 4] = vista.GetRowCellValue(j, "DireccionCliente").ToString();
                 hoja_trabajo.Cells[fila2, 5] = vista.GetRowCellValue(j, "Codigo").ToString();
-                hoja_trabajo.Cells[fila2, 6] = vista.GetRowCellValue(j, "MarcaLC").ToString();
-                hoja_trabajo.Cells[fila2, 7] = vista.GetRowCellValue(j, "NombreModeloLC").ToString();
-                hoja_trabajo.Cells[fila2, 8] = vista.GetRowCellValue(j, "TamanoPantalla").ToString();
-                hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "TipoProcesador").ToString();
-                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "GeneracionProcesador").ToString();
-                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "NombreModeloVideo").ToString();
-                hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "CapacidadVideo").ToString();
+                hoja_trabajo.Cells[fila2, 6] = vista.GetRowCellValue(j, "guia").ToString();
+                hoja_trabajo.Cells[fila2, 7] = vista.GetRowCellValue(j, "MarcaLC").ToString();
+                hoja_trabajo.Cells[fila2, 8] = vista.GetRowCellValue(j, "NombreModeloLC").ToString();
+                hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "TamanoPantalla").ToString();
+                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "TipoProcesador").ToString();
+                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "GeneracionProcesador").ToString();
+                hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "NombreModeloVideo").ToString();
+                hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "CapacidadVideo").ToString();
+                hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "CodigoAntiguo").ToString();
+                hoja_trabajo.Cells[fila2, 15] = vista.GetRowCellValue(j, "GuiaAntigua").ToString();
 
-                hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "guia").ToString();
 
                 if (vista.GetRowCellValue(j, "fecIniContrato").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecIniContrato").ToString());
-                    hoja_trabajo.Cells[fila2, 14] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 16] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 14] = "";
+                else hoja_trabajo.Cells[fila2, 16] = "";
 
                 if (vista.GetRowCellValue(j, "fecFinContrato").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecFinContrato").ToString());
-                    hoja_trabajo.Cells[fila2, 15] = aux2.ToString("yyyy/MM/dd");
-                }
-                else hoja_trabajo.Cells[fila2, 15] = "";
-
-                
-                hoja_trabajo.Cells[fila2, 16] = vista.GetRowCellValue(j, "factura").ToString();
-
-                if (vista.GetRowCellValue(j, "fecInicioFactura").ToString().Length > 0)
-                {
-                    DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecInicioFactura").ToString());
                     hoja_trabajo.Cells[fila2, 17] = aux2.ToString("yyyy/MM/dd");
                 }
                 else hoja_trabajo.Cells[fila2, 17] = "";
 
+                
+                hoja_trabajo.Cells[fila2, 18] = vista.GetRowCellValue(j, "factura").ToString();
+
+                if (vista.GetRowCellValue(j, "fecInicioFactura").ToString().Length > 0)
+                {
+                    DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecInicioFactura").ToString());
+                    hoja_trabajo.Cells[fila2, 19] = aux2.ToString("yyyy/MM/dd");
+                }
+                else hoja_trabajo.Cells[fila2, 19] = "";
+
                 if (vista.GetRowCellValue(j, "fecFinFactura").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecFinFactura").ToString());
-                    hoja_trabajo.Cells[fila2, 18] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 20] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 18] = "";
+                else hoja_trabajo.Cells[fila2, 20] = "";
 
-                hoja_trabajo.Cells[fila2, 19] = vista.GetRowCellValue(j, "MontoSoles").ToString();
-                hoja_trabajo.Cells[fila2, 20] = vista.GetRowCellValue(j, "MontoDolares").ToString();
-                hoja_trabajo.Cells[fila2, 21] = vista.GetRowCellValue(j, "TotalDolares").ToString();
+                hoja_trabajo.Cells[fila2, 21] = vista.GetRowCellValue(j, "MontoSoles").ToString();
+                hoja_trabajo.Cells[fila2, 22] = vista.GetRowCellValue(j, "MontoDolares").ToString();
+                hoja_trabajo.Cells[fila2, 23] = vista.GetRowCellValue(j, "TotalDolares").ToString();
 
             }
             montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
@@ -178,7 +180,7 @@ namespace Apolo
                 //** Montamos el título en la línea 1 **
                 hoja.Cells[fila, 1] = nombreCabecera;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Merge();
-                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Silver;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Orange;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila];
@@ -186,26 +188,29 @@ namespace Apolo
 
                 //worksheet.Range[worksheet.Cells[rowNum, columnNum], worksheet.Cells[rowNum, columnNum]].Merge();
 
-                hoja.Cells[fila + 2, 1] = "Cliente";
-                hoja.Cells[fila + 2, 2] = "Contacto";
-                hoja.Cells[fila + 2, 3] = "Direccion Cliente";
-                hoja.Cells[fila + 2, 4] = "Codigo";
-                hoja.Cells[fila + 2, 5] = "Marca LC";
-                hoja.Cells[fila + 2, 6] = "Nombre Modelo LC";
-                hoja.Cells[fila + 2, 7] = "Tamano Pantalla";
-                hoja.Cells[fila + 2, 8] = "Tipo Procesador";
-                hoja.Cells[fila + 2, 9] = "Generacion Procesador";
-                hoja.Cells[fila + 2, 10] = "Nombre Modelo Video";
-                hoja.Cells[fila + 2, 11] = "Capacidad Video";
-                hoja.Cells[fila + 2, 12] = "Guia Salida";
-                hoja.Cells[fila + 2, 13] = "Fecha Inicio Contrato";
-                hoja.Cells[fila + 2, 14] = "Fecha Fin Contrato";
-                hoja.Cells[fila + 2, 15] = "Factura";
-                hoja.Cells[fila + 2, 16] = "Fecha Inicio Factura";
-                hoja.Cells[fila + 2, 17] = "Fecha Fin Factura";
-                hoja.Cells[fila + 2, 18] = "Monto Soles";
-                hoja.Cells[fila + 2, 19] = "Monto Dolares";
-                hoja.Cells[fila + 2, 20] = "Total Dolares";
+                hoja.Cells[fila + 2, 1] = "Id Salida";
+                hoja.Cells[fila + 2, 2] = "Cliente";
+                hoja.Cells[fila + 2, 3] = "Contacto";
+                hoja.Cells[fila + 2, 4] = "Direccion Cliente";
+                hoja.Cells[fila + 2, 5] = "Código";
+                hoja.Cells[fila + 2, 6] = "Guía Salida";
+                hoja.Cells[fila + 2, 7] = "Marca LC";
+                hoja.Cells[fila + 2, 8] = "Nombre Modelo LC";
+                hoja.Cells[fila + 2, 9] = "Tamano Pantalla";
+                hoja.Cells[fila + 2, 10] = "Tipo Procesador";
+                hoja.Cells[fila + 2, 11] = "Generacion Procesador";
+                hoja.Cells[fila + 2, 12] = "Nombre Modelo Video";
+                hoja.Cells[fila + 2, 13] = "Capacidad Video";
+                hoja.Cells[fila + 2, 14] = "Código Antigua";
+                hoja.Cells[fila + 2, 15] = "Guía Salida Antigua";
+                hoja.Cells[fila + 2, 16] = "Fecha Inicio Contrato";
+                hoja.Cells[fila + 2, 17] = "Fecha Fin Contrato";
+                hoja.Cells[fila + 2, 18] = "Factura";
+                hoja.Cells[fila + 2, 19] = "Fecha Inicio Factura";
+                hoja.Cells[fila + 2, 20] = "Fecha Fin Factura";
+                hoja.Cells[fila + 2, 21] = "Monto Soles";
+                hoja.Cells[fila + 2, 22] = "Monto Dolares";
+                hoja.Cells[fila + 2, 23] = "Total Dolares";
 
 
                 int i = vista.Columns.Count + 64;
@@ -216,7 +221,7 @@ namespace Apolo
                 //Ponemos borde a las celdas
                 rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
                 rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                rango.Interior.Color = Color.Silver;
+                rango.Interior.Color = Color.Orange;
                 rango.Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila2];

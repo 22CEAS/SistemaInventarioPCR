@@ -101,24 +101,25 @@
             this.vista.GridControl = this.dgvReparaciones;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
+            this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // IdReparacion
             // 
-            this.IdReparacion.Caption = "IdReparacion";
+            this.IdReparacion.Caption = "Id Reparación";
             this.IdReparacion.FieldName = "IdReparacion";
-            this.IdReparacion.MaxWidth = 75;
-            this.IdReparacion.MinWidth = 75;
+            this.IdReparacion.MinWidth = 100;
             this.IdReparacion.Name = "IdReparacion";
             this.IdReparacion.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.IdReparacion.Visible = true;
             this.IdReparacion.VisibleIndex = 0;
+            this.IdReparacion.Width = 100;
             // 
             // CodigoLC
             // 
-            this.CodigoLC.Caption = "CodigoLC";
+            this.CodigoLC.Caption = "Codigo LC";
             this.CodigoLC.FieldName = "CodigoLC";
-            this.CodigoLC.MaxWidth = 100;
             this.CodigoLC.MinWidth = 100;
             this.CodigoLC.Name = "CodigoLC";
             this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -128,9 +129,8 @@
             // 
             // FechaReparacion
             // 
-            this.FechaReparacion.Caption = "FechaReparacion";
+            this.FechaReparacion.Caption = "Fecha Reparación";
             this.FechaReparacion.FieldName = "FechaReparacion";
-            this.FechaReparacion.MaxWidth = 100;
             this.FechaReparacion.MinWidth = 100;
             this.FechaReparacion.Name = "FechaReparacion";
             this.FechaReparacion.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
@@ -140,9 +140,8 @@
             // 
             // DescripcionComoSeEncontro
             // 
-            this.DescripcionComoSeEncontro.Caption = "DescripcionComoSeEncontro";
+            this.DescripcionComoSeEncontro.Caption = "Descripcion Como Se Encontro";
             this.DescripcionComoSeEncontro.FieldName = "DescripcionComoSeEncontro";
-            this.DescripcionComoSeEncontro.MaxWidth = 250;
             this.DescripcionComoSeEncontro.MinWidth = 250;
             this.DescripcionComoSeEncontro.Name = "DescripcionComoSeEncontro";
             this.DescripcionComoSeEncontro.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -152,9 +151,8 @@
             // 
             // EstadoAntesReparacion
             // 
-            this.EstadoAntesReparacion.Caption = "EstadoAntesReparacion";
+            this.EstadoAntesReparacion.Caption = "Estado Antes Reparación";
             this.EstadoAntesReparacion.FieldName = "EstadoAntesReparacion";
-            this.EstadoAntesReparacion.MaxWidth = 150;
             this.EstadoAntesReparacion.MinWidth = 150;
             this.EstadoAntesReparacion.Name = "EstadoAntesReparacion";
             this.EstadoAntesReparacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -164,9 +162,8 @@
             // 
             // DescripcionReparacion
             // 
-            this.DescripcionReparacion.Caption = "DescripcionReparacion";
+            this.DescripcionReparacion.Caption = "Descripción Reparación";
             this.DescripcionReparacion.FieldName = "DescripcionReparacion";
-            this.DescripcionReparacion.MaxWidth = 250;
             this.DescripcionReparacion.MinWidth = 250;
             this.DescripcionReparacion.Name = "DescripcionReparacion";
             this.DescripcionReparacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -176,9 +173,8 @@
             // 
             // EstadoLuegoReparacion
             // 
-            this.EstadoLuegoReparacion.Caption = "EstadoLuegoReparacion";
+            this.EstadoLuegoReparacion.Caption = "Estado Luego Reparación";
             this.EstadoLuegoReparacion.FieldName = "EstadoLuegoReparacion";
-            this.EstadoLuegoReparacion.MaxWidth = 150;
             this.EstadoLuegoReparacion.MinWidth = 150;
             this.EstadoLuegoReparacion.Name = "EstadoLuegoReparacion";
             this.EstadoLuegoReparacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -190,7 +186,6 @@
             // 
             this.Responsable.Caption = "Responsable";
             this.Responsable.FieldName = "Responsable";
-            this.Responsable.MaxWidth = 150;
             this.Responsable.MinWidth = 150;
             this.Responsable.Name = "Responsable";
             this.Responsable.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -200,9 +195,8 @@
             // 
             // EstadoReparacion
             // 
-            this.EstadoReparacion.Caption = "EstadoReparacion";
+            this.EstadoReparacion.Caption = "Estado Reparación";
             this.EstadoReparacion.FieldName = "Estado";
-            this.EstadoReparacion.MaxWidth = 150;
             this.EstadoReparacion.MinWidth = 150;
             this.EstadoReparacion.Name = "EstadoReparacion";
             this.EstadoReparacion.UnboundType = DevExpress.Data.UnboundColumnType.String;

@@ -27,7 +27,7 @@ namespace AccesoDatos
         public int InsertarFacturas(BindingList<Factura> facturas, string usuario)
         {
 
-            foreach(Factura factura in facturas)
+            foreach (Factura factura in facturas)
             {
                 MySqlDataReader reader;
                 string sql = "";
@@ -215,8 +215,32 @@ namespace AccesoDatos
             parametrosEntrada[15].Value = 1;
 
             okey = objManager.EjecutarProcedure(parametrosEntrada, "insert_cuota");
-            
+
             return 1;
+        }
+
+        public void ActualizarPlazoFinal(Factura factura, string usuario, int IdSalidaDetActual, int IdSalidaDetAntigua)
+        {
+
+            parametrosEntrada = new MySqlParameter[3];
+            parametrosEntrada[0] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
+            parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+
+            parametrosEntrada[0].Value = IdSalidaDetActual;
+            parametrosEntrada[1].Value = factura.FechaFinPago;
+            parametrosEntrada[2].Value = usuario;
+            bool okey = objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_fechaFinalPlazo");
+
+            parametrosEntrada = new MySqlParameter[3];
+            parametrosEntrada[0] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
+            parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+
+            parametrosEntrada[0].Value = IdSalidaDetAntigua;
+            parametrosEntrada[1].Value = factura.FechaFinPago;
+            parametrosEntrada[2].Value = usuario;
+            okey = objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_fechaFinalPlazo");
         }
     }
 }

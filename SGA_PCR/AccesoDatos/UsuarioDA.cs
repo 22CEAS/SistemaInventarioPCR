@@ -33,7 +33,7 @@ namespace AccesoDatos
             string sql = "";
             string clave = "";
 
-            sql = $"Select * From usuarios where idUsuario='{idUsuario}';";
+            sql = $"Select * From usuario where idUsuario='{idUsuario}';";
 
             reader = objManager.MostrarInformacion(sql);
 

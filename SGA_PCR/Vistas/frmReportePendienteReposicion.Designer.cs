@@ -79,13 +79,14 @@
             this.vista.GridControl = this.dgvObservaciones;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
+            this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Cliente
             // 
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "Cliente";
-            this.Cliente.MaxWidth = 150;
             this.Cliente.MinWidth = 150;
             this.Cliente.Name = "Cliente";
             this.Cliente.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -97,7 +98,6 @@
             // 
             this.RUC.Caption = "RUC";
             this.RUC.FieldName = "RUC";
-            this.RUC.MaxWidth = 75;
             this.RUC.MinWidth = 75;
             this.RUC.Name = "RUC";
             this.RUC.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -106,9 +106,8 @@
             // 
             // CodigoLC
             // 
-            this.CodigoLC.Caption = "CodigoLC";
+            this.CodigoLC.Caption = "Código LC";
             this.CodigoLC.FieldName = "CodigoLC";
-            this.CodigoLC.MaxWidth = 100;
             this.CodigoLC.MinWidth = 100;
             this.CodigoLC.Name = "CodigoLC";
             this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -118,9 +117,8 @@
             // 
             // ObservaciónDeuda
             // 
-            this.ObservaciónDeuda.Caption = "ObservaciónDeuda";
+            this.ObservaciónDeuda.Caption = "Observación Deuda";
             this.ObservaciónDeuda.FieldName = "ObservacionDeuda";
-            this.ObservaciónDeuda.MaxWidth = 250;
             this.ObservaciónDeuda.MinWidth = 250;
             this.ObservaciónDeuda.Name = "ObservaciónDeuda";
             this.ObservaciónDeuda.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -130,21 +128,19 @@
             // 
             // GuiaLevantamiento
             // 
-            this.GuiaLevantamiento.Caption = "GuiaLevantamiento";
+            this.GuiaLevantamiento.Caption = "Guia Levantamiento";
             this.GuiaLevantamiento.FieldName = "GuiaLevantamiento";
-            this.GuiaLevantamiento.MaxWidth = 100;
-            this.GuiaLevantamiento.MinWidth = 100;
+            this.GuiaLevantamiento.MinWidth = 150;
             this.GuiaLevantamiento.Name = "GuiaLevantamiento";
             this.GuiaLevantamiento.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.GuiaLevantamiento.Visible = true;
             this.GuiaLevantamiento.VisibleIndex = 4;
-            this.GuiaLevantamiento.Width = 100;
+            this.GuiaLevantamiento.Width = 150;
             // 
             // ObservacionLevantamiento
             // 
-            this.ObservacionLevantamiento.Caption = "ObservacionLevantamiento";
+            this.ObservacionLevantamiento.Caption = "Observación Levantamiento";
             this.ObservacionLevantamiento.FieldName = "ObservacionLevantamiento";
-            this.ObservacionLevantamiento.MaxWidth = 250;
             this.ObservacionLevantamiento.MinWidth = 250;
             this.ObservacionLevantamiento.Name = "ObservacionLevantamiento";
             this.ObservacionLevantamiento.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -154,20 +150,19 @@
             // 
             // FechaLevantamiento
             // 
-            this.FechaLevantamiento.Caption = "FechaLevantamiento";
+            this.FechaLevantamiento.Caption = "Fecha Levantamiento";
             this.FechaLevantamiento.FieldName = "FechaLevantamiento";
-            this.FechaLevantamiento.MaxWidth = 75;
-            this.FechaLevantamiento.MinWidth = 75;
+            this.FechaLevantamiento.MinWidth = 150;
             this.FechaLevantamiento.Name = "FechaLevantamiento";
             this.FechaLevantamiento.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaLevantamiento.Visible = true;
             this.FechaLevantamiento.VisibleIndex = 6;
+            this.FechaLevantamiento.Width = 150;
             // 
             // Estado
             // 
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "Estado";
-            this.Estado.MaxWidth = 80;
             this.Estado.MinWidth = 80;
             this.Estado.Name = "Estado";
             this.Estado.UnboundType = DevExpress.Data.UnboundColumnType.String;

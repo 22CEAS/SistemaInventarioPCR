@@ -95,6 +95,7 @@
             this.vista.GridControl = this.dgvLicencias;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Categoría

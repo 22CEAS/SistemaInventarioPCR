@@ -149,8 +149,10 @@ namespace Apolo
 
                 hoja_trabajo.Cells[fila2, 7] = vista.GetRowCellValue(j, "codigoEquipo").ToString();
                 hoja_trabajo.Cells[fila2, 8] = vista.GetRowCellValue(j, "guia").ToString();
-                hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "diasAntesVencer").ToString();
-                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "KAM").ToString();
+                hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "CodigoAntiguo").ToString();
+                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "GuiaAntigua").ToString();
+                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "diasAntesVencer").ToString();
+                hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "KAM").ToString();
 
             }
             montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
@@ -165,7 +167,7 @@ namespace Apolo
                 //** Montamos el título en la línea 1 **
                 hoja.Cells[fila, 1] = nombreCabecera;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Merge();
-                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Silver;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Orange;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila];
@@ -179,10 +181,12 @@ namespace Apolo
                 hoja.Cells[fila + 2, 4] = "Factura";
                 hoja.Cells[fila + 2, 5] = "Fecha Inicio Factura";
                 hoja.Cells[fila + 2, 6] = "Fecha Fin Factura";
-                hoja.Cells[fila + 2, 7] = "Codigo LC";
-                hoja.Cells[fila + 2, 8] = "Guia";
-                hoja.Cells[fila + 2, 9] = "Días Antes Vencer";
-                hoja.Cells[fila + 2, 10] = "KAM";
+                hoja.Cells[fila + 2, 7] = "Código LC";
+                hoja.Cells[fila + 2, 8] = "Guía";
+                hoja.Cells[fila + 2, 9] = "Código Antiguo";
+                hoja.Cells[fila + 2, 10] = "Guía Antiguo";
+                hoja.Cells[fila + 2, 11] = "Días Antes Vencer";
+                hoja.Cells[fila + 2, 12] = "KAM";
 
 
                 int i = vista.Columns.Count + 64;
@@ -193,7 +197,7 @@ namespace Apolo
                 //Ponemos borde a las celdas
                 rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
                 rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                rango.Interior.Color = Color.Silver;
+                rango.Interior.Color = Color.Orange;
                 rango.Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila2];

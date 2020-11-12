@@ -73,13 +73,13 @@
             this.vista.GridControl = this.dgvDiscos;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // TipoDisco
             // 
             this.TipoDisco.Caption = "TipoDisco";
             this.TipoDisco.FieldName = "TipoDisco";
-            this.TipoDisco.MaxWidth = 100;
             this.TipoDisco.MinWidth = 100;
             this.TipoDisco.Name = "TipoDisco";
             this.TipoDisco.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -91,7 +91,6 @@
             // 
             this.Tamano.Caption = "Tamano";
             this.Tamano.FieldName = "Tamano";
-            this.Tamano.MaxWidth = 100;
             this.Tamano.MinWidth = 100;
             this.Tamano.Name = "Tamano";
             this.Tamano.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
@@ -103,7 +102,6 @@
             // 
             this.Capacidad.Caption = "Capacidad";
             this.Capacidad.FieldName = "Capacidad";
-            this.Capacidad.MaxWidth = 100;
             this.Capacidad.MinWidth = 100;
             this.Capacidad.Name = "Capacidad";
             this.Capacidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
@@ -115,7 +113,6 @@
             // 
             this.Cantidad.Caption = "Cantidad";
             this.Cantidad.FieldName = "Cantidad";
-            this.Cantidad.MaxWidth = 100;
             this.Cantidad.MinWidth = 100;
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
@@ -127,7 +124,6 @@
             // 
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "Estado";
-            this.Estado.MaxWidth = 100;
             this.Estado.MinWidth = 100;
             this.Estado.Name = "Estado";
             this.Estado.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
