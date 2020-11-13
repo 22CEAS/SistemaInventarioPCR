@@ -29,56 +29,56 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn44 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn45 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn46 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn47 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn48 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn49 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn50 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn36 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn37 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn38 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn39 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn40 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn41 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn42 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn43 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn201 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn202 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn203 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn204 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn205 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn206 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn207 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn208 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn209 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn210 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn211 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn212 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn213 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn214 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn215 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn216 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn217 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn218 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn219 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn220 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn221 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn222 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn223 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn224 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn225 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn226 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn227 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn228 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn229 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn230 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn231 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn232 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn233 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn234 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn235 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn236 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn237 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn238 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn239 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn240 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn241 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn242 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn243 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn244 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn245 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn246 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn247 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn248 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn249 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn250 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoIngresoLaptopCpu));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -91,9 +91,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
-            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvMemoria = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabMemoria = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvLicencia = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.tabLicencia = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel5 = new DevComponents.DotNetBar.TabControlPanel();
             this.chbGarantia = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -102,6 +102,18 @@
             this.Nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SerieFabrico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabDetalle = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvProcesador = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.tabProcesador = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvMemoria = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.tabMemoria = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvDiscoDuro = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.tabDiscoDuro = new DevComponents.DotNetBar.TabItem(this.components);
+            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
+            this.dgvVideo = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
+            this.tabVideo = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel7 = new DevComponents.DotNetBar.TabControlPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -116,33 +128,21 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabClavesLicencias = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel6 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvLicencia = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabLicencia = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel4 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvVideo = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabVideo = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvDiscoDuro = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabDiscoDuro = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.dgvProcesador = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.tabProcesador = new DevComponents.DotNetBar.TabItem(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabControlPanel2.SuspendLayout();
+            this.tabControlPanel6.SuspendLayout();
             this.tabControlPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerieFabrica)).BeginInit();
+            this.tabControlPanel1.SuspendLayout();
+            this.tabControlPanel2.SuspendLayout();
+            this.tabControlPanel3.SuspendLayout();
+            this.tabControlPanel4.SuspendLayout();
             this.tabControlPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAntivirus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOffice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWindows)).BeginInit();
-            this.tabControlPanel6.SuspendLayout();
-            this.tabControlPanel4.SuspendLayout();
-            this.tabControlPanel3.SuspendLayout();
-            this.tabControlPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -193,6 +193,8 @@
             // 
             // cmbModelo
             // 
+            this.cmbModelo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbModelo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbModelo.FormattingEnabled = true;
             this.cmbModelo.Location = new System.Drawing.Point(88, 71);
             this.cmbModelo.Name = "cmbModelo";
@@ -241,11 +243,11 @@
             this.tabControl1.BackColor = System.Drawing.SystemColors.Window;
             this.tabControl1.CanReorderTabs = true;
             this.tabControl1.Controls.Add(this.tabControlPanel5);
+            this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.Controls.Add(this.tabControlPanel1);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
             this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel4);
-            this.tabControl1.Controls.Add(this.tabControlPanel6);
             this.tabControl1.Controls.Add(this.tabControlPanel7);
             this.tabControl1.ForeColor = System.Drawing.Color.Black;
             this.tabControl1.Location = new System.Drawing.Point(21, 12);
@@ -264,124 +266,106 @@
             this.tabControl1.Tabs.Add(this.tabLicencia);
             this.tabControl1.Tabs.Add(this.tabClavesLicencias);
             // 
-            // tabControlPanel2
+            // tabControlPanel6
             // 
-            this.tabControlPanel2.Controls.Add(this.dgvMemoria);
-            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel2.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel2.Name = "tabControlPanel2";
-            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(695, 311);
-            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            this.tabControlPanel6.Controls.Add(this.dgvLicencia);
+            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel6.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel6.Name = "tabControlPanel6";
+            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel6.Size = new System.Drawing.Size(695, 311);
+            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
             | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel2.Style.GradientAngle = 90;
-            this.tabControlPanel2.TabIndex = 2;
-            this.tabControlPanel2.TabItem = this.tabMemoria;
+            this.tabControlPanel6.Style.GradientAngle = 90;
+            this.tabControlPanel6.TabIndex = 6;
+            this.tabControlPanel6.TabItem = this.tabLicencia;
             // 
-            // dgvMemoria
+            // dgvLicencia
             // 
-            this.dgvMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvLicencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvMemoria.BackColor = System.Drawing.Color.White;
-            this.dgvMemoria.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvMemoria.ForeColor = System.Drawing.Color.Black;
-            this.dgvMemoria.Location = new System.Drawing.Point(70, 21);
-            this.dgvMemoria.Name = "dgvMemoria";
-            this.dgvMemoria.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvMemoria.PrimaryGrid.AllowRowResize = true;
-            this.dgvMemoria.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn14.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn14.Name = "Seleccionar";
-            gridColumn15.AllowEdit = false;
-            gridColumn15.DataPropertyName = "tipo";
-            gridColumn15.FilterAutoScan = true;
-            gridColumn15.MinimumWidth = 100;
-            gridColumn15.Name = "Modelo";
-            gridColumn15.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn15.Width = 120;
-            gridColumn16.AllowEdit = false;
-            gridColumn16.DataPropertyName = "frecuencia";
-            gridColumn16.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn16.MinimumWidth = 100;
-            gridColumn16.Name = "Frecuencia";
-            gridColumn16.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn16.Width = 120;
-            gridColumn17.AllowEdit = false;
-            gridColumn17.DataPropertyName = "capacidad";
-            gridColumn17.MinimumWidth = 100;
-            gridColumn17.Name = "Capacidad";
-            gridColumn17.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn17.Width = 120;
-            gridColumn18.AllowEdit = false;
-            gridColumn18.DataPropertyName = "estado";
-            gridColumn18.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn18.MinimumWidth = 100;
-            gridColumn18.Name = "Activo";
-            gridColumn18.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn18.Visible = false;
-            gridColumn19.AllowEdit = false;
-            gridColumn19.DataPropertyName = "idMemoria";
-            gridColumn19.MinimumWidth = 50;
-            gridColumn19.Name = "IdMemoria";
-            gridColumn19.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn19.Visible = false;
-            gridColumn19.Width = 50;
-            gridColumn20.AllowEdit = false;
-            gridColumn20.DataPropertyName = "idTipo";
-            gridColumn20.MinimumWidth = 100;
-            gridColumn20.Name = "idTipo";
-            gridColumn20.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn20.Visible = false;
-            gridColumn21.AllowEdit = false;
-            gridColumn21.DataPropertyName = "idCapacidad";
-            gridColumn21.MinimumWidth = 100;
-            gridColumn21.Name = "idCapacidad";
-            gridColumn21.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn21.Visible = false;
-            gridColumn22.AllowEdit = false;
-            gridColumn22.DataPropertyName = "idBusFrecuencia";
-            gridColumn22.MinimumWidth = 100;
-            gridColumn22.Name = "idFrecuencia";
-            gridColumn22.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn22.Visible = false;
-            gridColumn23.DataPropertyName = "tipo2";
-            gridColumn23.Name = "Tipo";
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn14);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn15);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn16);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn17);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn18);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn19);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn20);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn21);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn22);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn23);
-            this.dgvMemoria.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvMemoria.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvMemoria.PrimaryGrid.EnableFiltering = true;
-            this.dgvMemoria.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvMemoria.PrimaryGrid.Filter.Visible = true;
-            this.dgvMemoria.PrimaryGrid.MultiSelect = false;
-            this.dgvMemoria.PrimaryGrid.NoRowsText = "No hay ninguna memoria, cree una memoria";
-            this.dgvMemoria.PrimaryGrid.NullString = "<<null>>";
-            this.dgvMemoria.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvMemoria.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvMemoria.Size = new System.Drawing.Size(560, 264);
-            this.dgvMemoria.TabIndex = 93;
-            this.dgvMemoria.Text = "Tabla Memoria";
+            this.dgvLicencia.BackColor = System.Drawing.Color.White;
+            this.dgvLicencia.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvLicencia.ForeColor = System.Drawing.Color.Black;
+            this.dgvLicencia.Location = new System.Drawing.Point(109, 25);
+            this.dgvLicencia.Name = "dgvLicencia";
+            this.dgvLicencia.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvLicencia.PrimaryGrid.AllowRowResize = true;
+            this.dgvLicencia.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn201.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn201.Name = "Seleccionar";
+            gridColumn202.AllowEdit = false;
+            gridColumn202.DataPropertyName = "Categoria";
+            gridColumn202.FilterAutoScan = true;
+            gridColumn202.MinimumWidth = 100;
+            gridColumn202.Name = "Categoría";
+            gridColumn202.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn202.Width = 120;
+            gridColumn203.AllowEdit = false;
+            gridColumn203.DataPropertyName = "Tipo";
+            gridColumn203.MinimumWidth = 100;
+            gridColumn203.Name = "Tipo";
+            gridColumn203.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn203.Visible = false;
+            gridColumn203.Width = 120;
+            gridColumn204.AllowEdit = false;
+            gridColumn204.DataPropertyName = "Version";
+            gridColumn204.MinimumWidth = 250;
+            gridColumn204.Name = "Versión";
+            gridColumn204.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn204.Width = 250;
+            gridColumn205.AllowEdit = false;
+            gridColumn205.DataPropertyName = "IdCategoria";
+            gridColumn205.MinimumWidth = 50;
+            gridColumn205.Name = "IdCategoria";
+            gridColumn205.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn205.Visible = false;
+            gridColumn205.Width = 50;
+            gridColumn206.AllowEdit = false;
+            gridColumn206.DataPropertyName = "IdMarca";
+            gridColumn206.MinimumWidth = 100;
+            gridColumn206.Name = "IdMarca";
+            gridColumn206.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn206.Visible = false;
+            gridColumn207.AllowEdit = false;
+            gridColumn207.DataPropertyName = "IdModelo";
+            gridColumn207.MinimumWidth = 100;
+            gridColumn207.Name = "IdModelo";
+            gridColumn207.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn207.Visible = false;
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn201);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn202);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn203);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn204);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn205);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn206);
+            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn207);
+            this.dgvLicencia.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvLicencia.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvLicencia.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvLicencia.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvLicencia.PrimaryGrid.EnableFiltering = true;
+            this.dgvLicencia.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvLicencia.PrimaryGrid.Filter.Visible = true;
+            this.dgvLicencia.PrimaryGrid.MultiSelect = false;
+            this.dgvLicencia.PrimaryGrid.NoRowsText = "No hay ninguna licencia, cree una licencia";
+            this.dgvLicencia.PrimaryGrid.NullString = "<<null>>";
+            this.dgvLicencia.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvLicencia.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvLicencia.Size = new System.Drawing.Size(502, 260);
+            this.dgvLicencia.TabIndex = 73;
+            this.dgvLicencia.Text = "Tabla Licencia";
             // 
-            // tabMemoria
+            // tabLicencia
             // 
-            this.tabMemoria.AttachedControl = this.tabControlPanel2;
-            this.tabMemoria.Name = "tabMemoria";
-            this.tabMemoria.Text = "Memoria";
+            this.tabLicencia.AttachedControl = this.tabControlPanel6;
+            this.tabLicencia.Name = "tabLicencia";
+            this.tabLicencia.Text = "Licencias";
             // 
             // tabControlPanel5
             // 
@@ -479,6 +463,492 @@
             this.tabDetalle.Name = "tabDetalle";
             this.tabDetalle.Text = "Detalles";
             // 
+            // tabControlPanel1
+            // 
+            this.tabControlPanel1.Controls.Add(this.dgvProcesador);
+            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel1.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel1.Name = "tabControlPanel1";
+            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel1.Size = new System.Drawing.Size(695, 311);
+            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.GradientAngle = 90;
+            this.tabControlPanel1.TabIndex = 1;
+            this.tabControlPanel1.TabItem = this.tabProcesador;
+            // 
+            // dgvProcesador
+            // 
+            this.dgvProcesador.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProcesador.BackColor = System.Drawing.Color.White;
+            this.dgvProcesador.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvProcesador.ForeColor = System.Drawing.Color.Black;
+            this.dgvProcesador.Location = new System.Drawing.Point(16, 21);
+            this.dgvProcesador.Name = "dgvProcesador";
+            this.dgvProcesador.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvProcesador.PrimaryGrid.AllowRowResize = true;
+            this.dgvProcesador.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn208.DataPropertyName = "Seleccionar";
+            gridColumn208.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn208.Name = "Seleccionar";
+            gridColumn209.AllowEdit = false;
+            gridColumn209.DataPropertyName = "marca";
+            gridColumn209.MinimumWidth = 100;
+            gridColumn209.Name = "Marca";
+            gridColumn209.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn209.Width = 120;
+            gridColumn210.AllowEdit = false;
+            gridColumn210.DataPropertyName = "tipo";
+            gridColumn210.FilterAutoScan = true;
+            gridColumn210.MinimumWidth = 100;
+            gridColumn210.Name = "Tipo";
+            gridColumn210.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn210.Width = 120;
+            gridColumn211.AllowEdit = false;
+            gridColumn211.DataPropertyName = "generacion";
+            gridColumn211.MinimumWidth = 100;
+            gridColumn211.Name = "Generacion";
+            gridColumn211.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn211.Width = 120;
+            gridColumn212.DataPropertyName = "velocidad";
+            gridColumn212.Name = "Velocidad";
+            gridColumn213.DataPropertyName = "velocidadMax";
+            gridColumn213.Name = "VelocidadMax";
+            gridColumn214.AllowEdit = false;
+            gridColumn214.DataPropertyName = "estado";
+            gridColumn214.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn214.MinimumWidth = 100;
+            gridColumn214.Name = "Activo";
+            gridColumn214.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn214.Visible = false;
+            gridColumn215.AllowEdit = false;
+            gridColumn215.DataPropertyName = "idProcesador";
+            gridColumn215.MinimumWidth = 50;
+            gridColumn215.Name = "IdProcesador";
+            gridColumn215.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn215.Visible = false;
+            gridColumn215.Width = 50;
+            gridColumn216.AllowEdit = false;
+            gridColumn216.DataPropertyName = "idTipo";
+            gridColumn216.MinimumWidth = 100;
+            gridColumn216.Name = "IdTipo";
+            gridColumn216.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn216.Visible = false;
+            gridColumn217.AllowEdit = false;
+            gridColumn217.DataPropertyName = "idMarca";
+            gridColumn217.MinimumWidth = 100;
+            gridColumn217.Name = "IdMarca";
+            gridColumn217.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn217.Visible = false;
+            gridColumn218.AllowEdit = false;
+            gridColumn218.DataPropertyName = "idGeneracion";
+            gridColumn218.MinimumWidth = 100;
+            gridColumn218.Name = "IdGeneracion";
+            gridColumn218.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn218.Visible = false;
+            gridColumn219.DataPropertyName = "idVelocidad";
+            gridColumn219.Name = "IdVelocidad";
+            gridColumn219.Visible = false;
+            gridColumn220.DataPropertyName = "idVelocidadMax";
+            gridColumn220.Name = "idVelocidadMax";
+            gridColumn220.Visible = false;
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn208);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn209);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn210);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn211);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn212);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn213);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn214);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn215);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn216);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn217);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn218);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn219);
+            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn220);
+            this.dgvProcesador.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvProcesador.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvProcesador.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvProcesador.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvProcesador.PrimaryGrid.EnableFiltering = true;
+            this.dgvProcesador.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvProcesador.PrimaryGrid.Filter.Visible = true;
+            this.dgvProcesador.PrimaryGrid.MultiSelect = false;
+            this.dgvProcesador.PrimaryGrid.NoRowsText = "No hay ningun procesador, cree un procesador";
+            this.dgvProcesador.PrimaryGrid.NullString = "<<null>>";
+            this.dgvProcesador.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvProcesador.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvProcesador.Size = new System.Drawing.Size(664, 264);
+            this.dgvProcesador.TabIndex = 95;
+            this.dgvProcesador.Text = "Tabla Procesador";
+            // 
+            // tabProcesador
+            // 
+            this.tabProcesador.AttachedControl = this.tabControlPanel1;
+            this.tabProcesador.Name = "tabProcesador";
+            this.tabProcesador.Text = "Procesador";
+            // 
+            // tabControlPanel2
+            // 
+            this.tabControlPanel2.Controls.Add(this.dgvMemoria);
+            this.tabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel2.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel2.Name = "tabControlPanel2";
+            this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel2.Size = new System.Drawing.Size(695, 311);
+            this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel2.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabControlPanel2.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel2.Style.GradientAngle = 90;
+            this.tabControlPanel2.TabIndex = 2;
+            this.tabControlPanel2.TabItem = this.tabMemoria;
+            // 
+            // dgvMemoria
+            // 
+            this.dgvMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvMemoria.BackColor = System.Drawing.Color.White;
+            this.dgvMemoria.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvMemoria.ForeColor = System.Drawing.Color.Black;
+            this.dgvMemoria.Location = new System.Drawing.Point(120, 24);
+            this.dgvMemoria.Name = "dgvMemoria";
+            this.dgvMemoria.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvMemoria.PrimaryGrid.AllowRowResize = true;
+            this.dgvMemoria.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn221.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn221.Name = "Seleccionar";
+            gridColumn222.AllowEdit = false;
+            gridColumn222.DataPropertyName = "tipo";
+            gridColumn222.FilterAutoScan = true;
+            gridColumn222.MinimumWidth = 100;
+            gridColumn222.Name = "Modelo";
+            gridColumn222.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn222.Width = 120;
+            gridColumn223.AllowEdit = false;
+            gridColumn223.DataPropertyName = "frecuencia";
+            gridColumn223.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn223.MinimumWidth = 100;
+            gridColumn223.Name = "Frecuencia";
+            gridColumn223.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn223.Visible = false;
+            gridColumn223.Width = 120;
+            gridColumn224.AllowEdit = false;
+            gridColumn224.DataPropertyName = "capacidad";
+            gridColumn224.MinimumWidth = 100;
+            gridColumn224.Name = "Capacidad";
+            gridColumn224.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn224.Width = 120;
+            gridColumn225.AllowEdit = false;
+            gridColumn225.DataPropertyName = "estado";
+            gridColumn225.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn225.MinimumWidth = 100;
+            gridColumn225.Name = "Activo";
+            gridColumn225.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn225.Visible = false;
+            gridColumn226.AllowEdit = false;
+            gridColumn226.DataPropertyName = "idMemoria";
+            gridColumn226.MinimumWidth = 50;
+            gridColumn226.Name = "IdMemoria";
+            gridColumn226.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn226.Visible = false;
+            gridColumn226.Width = 50;
+            gridColumn227.AllowEdit = false;
+            gridColumn227.DataPropertyName = "idTipo";
+            gridColumn227.MinimumWidth = 100;
+            gridColumn227.Name = "idTipo";
+            gridColumn227.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn227.Visible = false;
+            gridColumn228.AllowEdit = false;
+            gridColumn228.DataPropertyName = "idCapacidad";
+            gridColumn228.MinimumWidth = 100;
+            gridColumn228.Name = "idCapacidad";
+            gridColumn228.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn228.Visible = false;
+            gridColumn229.AllowEdit = false;
+            gridColumn229.DataPropertyName = "idBusFrecuencia";
+            gridColumn229.MinimumWidth = 100;
+            gridColumn229.Name = "idFrecuencia";
+            gridColumn229.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn229.Visible = false;
+            gridColumn230.DataPropertyName = "tipo2";
+            gridColumn230.Name = "Tipo";
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn221);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn222);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn223);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn224);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn225);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn226);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn227);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn228);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn229);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn230);
+            this.dgvMemoria.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvMemoria.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvMemoria.PrimaryGrid.EnableFiltering = true;
+            this.dgvMemoria.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvMemoria.PrimaryGrid.Filter.Visible = true;
+            this.dgvMemoria.PrimaryGrid.MultiSelect = false;
+            this.dgvMemoria.PrimaryGrid.NoRowsText = "No hay ninguna memoria, cree una memoria";
+            this.dgvMemoria.PrimaryGrid.NullString = "<<null>>";
+            this.dgvMemoria.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvMemoria.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvMemoria.Size = new System.Drawing.Size(440, 264);
+            this.dgvMemoria.TabIndex = 93;
+            this.dgvMemoria.Text = "Tabla Memoria";
+            // 
+            // tabMemoria
+            // 
+            this.tabMemoria.AttachedControl = this.tabControlPanel2;
+            this.tabMemoria.Name = "tabMemoria";
+            this.tabMemoria.Text = "Memoria";
+            // 
+            // tabControlPanel3
+            // 
+            this.tabControlPanel3.Controls.Add(this.dgvDiscoDuro);
+            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel3.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel3.Name = "tabControlPanel3";
+            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel3.Size = new System.Drawing.Size(695, 311);
+            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel3.Style.GradientAngle = 90;
+            this.tabControlPanel3.TabIndex = 3;
+            this.tabControlPanel3.TabItem = this.tabDiscoDuro;
+            // 
+            // dgvDiscoDuro
+            // 
+            this.dgvDiscoDuro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDiscoDuro.BackColor = System.Drawing.Color.White;
+            this.dgvDiscoDuro.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvDiscoDuro.ForeColor = System.Drawing.Color.Black;
+            this.dgvDiscoDuro.Location = new System.Drawing.Point(133, 25);
+            this.dgvDiscoDuro.Name = "dgvDiscoDuro";
+            this.dgvDiscoDuro.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvDiscoDuro.PrimaryGrid.AllowRowResize = true;
+            this.dgvDiscoDuro.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn231.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn231.Name = "Seleccionar";
+            gridColumn232.AllowEdit = false;
+            gridColumn232.DataPropertyName = "tipo";
+            gridColumn232.FilterAutoScan = true;
+            gridColumn232.MinimumWidth = 100;
+            gridColumn232.Name = "Tipo";
+            gridColumn232.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn232.Width = 120;
+            gridColumn233.AllowEdit = false;
+            gridColumn233.DataPropertyName = "tamano";
+            gridColumn233.MinimumWidth = 100;
+            gridColumn233.Name = "Tamaño";
+            gridColumn233.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn233.Width = 120;
+            gridColumn234.AllowEdit = false;
+            gridColumn234.DataPropertyName = "capacidad";
+            gridColumn234.MinimumWidth = 100;
+            gridColumn234.Name = "Capacidad";
+            gridColumn234.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn234.Width = 120;
+            gridColumn235.AllowEdit = false;
+            gridColumn235.DataPropertyName = "estado";
+            gridColumn235.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn235.MinimumWidth = 100;
+            gridColumn235.Name = "Activo";
+            gridColumn235.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn235.Visible = false;
+            gridColumn236.AllowEdit = false;
+            gridColumn236.DataPropertyName = "idDisco";
+            gridColumn236.MinimumWidth = 50;
+            gridColumn236.Name = "idDisco";
+            gridColumn236.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn236.Visible = false;
+            gridColumn236.Width = 50;
+            gridColumn237.AllowEdit = false;
+            gridColumn237.DataPropertyName = "idTipo";
+            gridColumn237.MinimumWidth = 100;
+            gridColumn237.Name = "idTipo";
+            gridColumn237.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn237.Visible = false;
+            gridColumn238.AllowEdit = false;
+            gridColumn238.DataPropertyName = "idCapacidad";
+            gridColumn238.MinimumWidth = 100;
+            gridColumn238.Name = "idCapacidad";
+            gridColumn238.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn238.Visible = false;
+            gridColumn239.AllowEdit = false;
+            gridColumn239.DataPropertyName = "idTamano";
+            gridColumn239.MinimumWidth = 100;
+            gridColumn239.Name = "idTamano";
+            gridColumn239.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn239.Visible = false;
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn231);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn232);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn233);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn234);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn235);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn236);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn237);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn238);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn239);
+            this.dgvDiscoDuro.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvDiscoDuro.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvDiscoDuro.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvDiscoDuro.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvDiscoDuro.PrimaryGrid.EnableFiltering = true;
+            this.dgvDiscoDuro.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvDiscoDuro.PrimaryGrid.Filter.Visible = true;
+            this.dgvDiscoDuro.PrimaryGrid.MultiSelect = false;
+            this.dgvDiscoDuro.PrimaryGrid.NoRowsText = "No hay ningun disco, cree un disco";
+            this.dgvDiscoDuro.PrimaryGrid.NullString = "<<null>>";
+            this.dgvDiscoDuro.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvDiscoDuro.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvDiscoDuro.Size = new System.Drawing.Size(460, 260);
+            this.dgvDiscoDuro.TabIndex = 71;
+            this.dgvDiscoDuro.Text = "Tabla Discos Duros";
+            // 
+            // tabDiscoDuro
+            // 
+            this.tabDiscoDuro.AttachedControl = this.tabControlPanel3;
+            this.tabDiscoDuro.Name = "tabDiscoDuro";
+            this.tabDiscoDuro.Text = "Disco Duro";
+            // 
+            // tabControlPanel4
+            // 
+            this.tabControlPanel4.Controls.Add(this.dgvVideo);
+            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel4.Location = new System.Drawing.Point(0, 27);
+            this.tabControlPanel4.Name = "tabControlPanel4";
+            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel4.Size = new System.Drawing.Size(695, 311);
+            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
+            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
+            | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel4.Style.GradientAngle = 90;
+            this.tabControlPanel4.TabIndex = 4;
+            this.tabControlPanel4.TabItem = this.tabVideo;
+            // 
+            // dgvVideo
+            // 
+            this.dgvVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvVideo.BackColor = System.Drawing.Color.White;
+            this.dgvVideo.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
+            this.dgvVideo.ForeColor = System.Drawing.Color.Black;
+            this.dgvVideo.Location = new System.Drawing.Point(86, 29);
+            this.dgvVideo.Name = "dgvVideo";
+            this.dgvVideo.PrimaryGrid.AllowRowHeaderResize = true;
+            this.dgvVideo.PrimaryGrid.AllowRowResize = true;
+            this.dgvVideo.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn240.DataPropertyName = "Seleccionar";
+            gridColumn240.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn240.Name = "Seleccionar";
+            gridColumn241.DataPropertyName = "marca";
+            gridColumn241.Name = "Marca";
+            gridColumn242.AllowEdit = false;
+            gridColumn242.DataPropertyName = "nombreModelo";
+            gridColumn242.FilterAutoScan = true;
+            gridColumn242.MinimumWidth = 150;
+            gridColumn242.Name = "Modelo";
+            gridColumn242.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn242.Width = 150;
+            gridColumn243.AllowEdit = false;
+            gridColumn243.DataPropertyName = "tipo";
+            gridColumn243.MinimumWidth = 100;
+            gridColumn243.Name = "Tipo";
+            gridColumn243.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn244.AllowEdit = false;
+            gridColumn244.DataPropertyName = "capacidad";
+            gridColumn244.MinimumWidth = 100;
+            gridColumn244.Name = "Capacidad";
+            gridColumn244.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn245.AllowEdit = false;
+            gridColumn245.DataPropertyName = "estado";
+            gridColumn245.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn245.MinimumWidth = 100;
+            gridColumn245.Name = "Activo";
+            gridColumn245.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn245.Visible = false;
+            gridColumn246.AllowEdit = false;
+            gridColumn246.DataPropertyName = "idVideo";
+            gridColumn246.MinimumWidth = 50;
+            gridColumn246.Name = "IdVideo";
+            gridColumn246.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn246.Visible = false;
+            gridColumn246.Width = 50;
+            gridColumn247.AllowEdit = false;
+            gridColumn247.DataPropertyName = "idModelo";
+            gridColumn247.MinimumWidth = 100;
+            gridColumn247.Name = "idModelo";
+            gridColumn247.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn247.Visible = false;
+            gridColumn248.DataPropertyName = "idMarca";
+            gridColumn248.Name = "idMarca";
+            gridColumn248.Visible = false;
+            gridColumn249.AllowEdit = false;
+            gridColumn249.DataPropertyName = "idTipo";
+            gridColumn249.MinimumWidth = 100;
+            gridColumn249.Name = "idTipo";
+            gridColumn249.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn249.Visible = false;
+            gridColumn250.AllowEdit = false;
+            gridColumn250.DataPropertyName = "idCapacidad";
+            gridColumn250.MinimumWidth = 100;
+            gridColumn250.Name = "idCapacidad";
+            gridColumn250.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn250.Visible = false;
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn240);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn241);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn242);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn243);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn244);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn245);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn246);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn247);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn248);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn249);
+            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn250);
+            this.dgvVideo.PrimaryGrid.DefaultRowHeight = 24;
+            this.dgvVideo.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvVideo.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
+            this.dgvVideo.PrimaryGrid.EnableColumnFiltering = true;
+            this.dgvVideo.PrimaryGrid.EnableFiltering = true;
+            this.dgvVideo.PrimaryGrid.EnableRowFiltering = true;
+            this.dgvVideo.PrimaryGrid.Filter.Visible = true;
+            this.dgvVideo.PrimaryGrid.MultiSelect = false;
+            this.dgvVideo.PrimaryGrid.NoRowsText = "No hay ninguna tarjeta de video, cree una tarjeta de video";
+            this.dgvVideo.PrimaryGrid.NullString = "<<null>>";
+            this.dgvVideo.PrimaryGrid.RowHeaderWidth = 45;
+            this.dgvVideo.PrimaryGrid.ShowRowHeaders = false;
+            this.dgvVideo.Size = new System.Drawing.Size(553, 253);
+            this.dgvVideo.TabIndex = 106;
+            this.dgvVideo.Text = "Tabla Video";
+            // 
+            // tabVideo
+            // 
+            this.tabVideo.AttachedControl = this.tabControlPanel4;
+            this.tabVideo.Name = "tabVideo";
+            this.tabVideo.Text = "Tarjeta de Video";
+            // 
             // tabControlPanel7
             // 
             this.tabControlPanel7.Controls.Add(this.label9);
@@ -526,11 +996,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(84, 29);
+            this.label5.Location = new System.Drawing.Point(117, 29);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 16);
+            this.label5.Size = new System.Drawing.Size(30, 16);
             this.label5.TabIndex = 129;
-            this.label5.Text = "WINDOWS";
+            this.label5.Text = "S.O";
             // 
             // dgvAntivirus
             // 
@@ -615,7 +1085,7 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Clave Windows";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Clave S.O";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 150;
             // 
@@ -624,472 +1094,6 @@
             this.tabClavesLicencias.AttachedControl = this.tabControlPanel7;
             this.tabClavesLicencias.Name = "tabClavesLicencias";
             this.tabClavesLicencias.Text = "Claves Licencias";
-            // 
-            // tabControlPanel6
-            // 
-            this.tabControlPanel6.Controls.Add(this.dgvLicencia);
-            this.tabControlPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel6.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel6.Name = "tabControlPanel6";
-            this.tabControlPanel6.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel6.Size = new System.Drawing.Size(695, 311);
-            this.tabControlPanel6.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.tabControlPanel6.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.tabControlPanel6.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel6.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel6.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel6.Style.GradientAngle = 90;
-            this.tabControlPanel6.TabIndex = 6;
-            this.tabControlPanel6.TabItem = this.tabLicencia;
-            // 
-            // dgvLicencia
-            // 
-            this.dgvLicencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLicencia.BackColor = System.Drawing.Color.White;
-            this.dgvLicencia.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvLicencia.ForeColor = System.Drawing.Color.Black;
-            this.dgvLicencia.Location = new System.Drawing.Point(72, 24);
-            this.dgvLicencia.Name = "dgvLicencia";
-            this.dgvLicencia.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvLicencia.PrimaryGrid.AllowRowResize = true;
-            this.dgvLicencia.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn44.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn44.Name = "Seleccionar";
-            gridColumn45.AllowEdit = false;
-            gridColumn45.DataPropertyName = "Categoria";
-            gridColumn45.FilterAutoScan = true;
-            gridColumn45.MinimumWidth = 100;
-            gridColumn45.Name = "Categoría";
-            gridColumn45.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn45.Width = 120;
-            gridColumn46.AllowEdit = false;
-            gridColumn46.DataPropertyName = "Tipo";
-            gridColumn46.MinimumWidth = 100;
-            gridColumn46.Name = "Tipo";
-            gridColumn46.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn46.Width = 120;
-            gridColumn47.AllowEdit = false;
-            gridColumn47.DataPropertyName = "Version";
-            gridColumn47.MinimumWidth = 200;
-            gridColumn47.Name = "Versión";
-            gridColumn47.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn47.Width = 200;
-            gridColumn48.AllowEdit = false;
-            gridColumn48.DataPropertyName = "IdCategoria";
-            gridColumn48.MinimumWidth = 50;
-            gridColumn48.Name = "IdCategoria";
-            gridColumn48.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn48.Visible = false;
-            gridColumn48.Width = 50;
-            gridColumn49.AllowEdit = false;
-            gridColumn49.DataPropertyName = "IdMarca";
-            gridColumn49.MinimumWidth = 100;
-            gridColumn49.Name = "IdMarca";
-            gridColumn49.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn49.Visible = false;
-            gridColumn50.AllowEdit = false;
-            gridColumn50.DataPropertyName = "IdModelo";
-            gridColumn50.MinimumWidth = 100;
-            gridColumn50.Name = "IdModelo";
-            gridColumn50.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn50.Visible = false;
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn44);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn45);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn46);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn47);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn48);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn49);
-            this.dgvLicencia.PrimaryGrid.Columns.Add(gridColumn50);
-            this.dgvLicencia.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvLicencia.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLicencia.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvLicencia.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvLicencia.PrimaryGrid.EnableFiltering = true;
-            this.dgvLicencia.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvLicencia.PrimaryGrid.Filter.Visible = true;
-            this.dgvLicencia.PrimaryGrid.MultiSelect = false;
-            this.dgvLicencia.PrimaryGrid.NoRowsText = "No hay ninguna licencia, cree una licencia";
-            this.dgvLicencia.PrimaryGrid.NullString = "<<null>>";
-            this.dgvLicencia.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvLicencia.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvLicencia.Size = new System.Drawing.Size(542, 260);
-            this.dgvLicencia.TabIndex = 73;
-            this.dgvLicencia.Text = "Tabla Licencia";
-            // 
-            // tabLicencia
-            // 
-            this.tabLicencia.AttachedControl = this.tabControlPanel6;
-            this.tabLicencia.Name = "tabLicencia";
-            this.tabLicencia.Text = "Licencias";
-            // 
-            // tabControlPanel4
-            // 
-            this.tabControlPanel4.Controls.Add(this.dgvVideo);
-            this.tabControlPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel4.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel4.Name = "tabControlPanel4";
-            this.tabControlPanel4.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel4.Size = new System.Drawing.Size(695, 311);
-            this.tabControlPanel4.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.tabControlPanel4.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.tabControlPanel4.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel4.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel4.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel4.Style.GradientAngle = 90;
-            this.tabControlPanel4.TabIndex = 4;
-            this.tabControlPanel4.TabItem = this.tabVideo;
-            // 
-            // dgvVideo
-            // 
-            this.dgvVideo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvVideo.BackColor = System.Drawing.Color.White;
-            this.dgvVideo.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvVideo.ForeColor = System.Drawing.Color.Black;
-            this.dgvVideo.Location = new System.Drawing.Point(86, 29);
-            this.dgvVideo.Name = "dgvVideo";
-            this.dgvVideo.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvVideo.PrimaryGrid.AllowRowResize = true;
-            this.dgvVideo.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn33.DataPropertyName = "Seleccionar";
-            gridColumn33.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn33.Name = "Seleccionar";
-            gridColumn34.DataPropertyName = "marca";
-            gridColumn34.Name = "Marca";
-            gridColumn35.AllowEdit = false;
-            gridColumn35.DataPropertyName = "nombreModelo";
-            gridColumn35.FilterAutoScan = true;
-            gridColumn35.MinimumWidth = 150;
-            gridColumn35.Name = "Modelo";
-            gridColumn35.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn35.Width = 150;
-            gridColumn36.AllowEdit = false;
-            gridColumn36.DataPropertyName = "tipo";
-            gridColumn36.MinimumWidth = 100;
-            gridColumn36.Name = "Tipo";
-            gridColumn36.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn37.AllowEdit = false;
-            gridColumn37.DataPropertyName = "capacidad";
-            gridColumn37.MinimumWidth = 100;
-            gridColumn37.Name = "Capacidad";
-            gridColumn37.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn38.AllowEdit = false;
-            gridColumn38.DataPropertyName = "estado";
-            gridColumn38.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn38.MinimumWidth = 100;
-            gridColumn38.Name = "Activo";
-            gridColumn38.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn38.Visible = false;
-            gridColumn39.AllowEdit = false;
-            gridColumn39.DataPropertyName = "idVideo";
-            gridColumn39.MinimumWidth = 50;
-            gridColumn39.Name = "IdVideo";
-            gridColumn39.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn39.Visible = false;
-            gridColumn39.Width = 50;
-            gridColumn40.AllowEdit = false;
-            gridColumn40.DataPropertyName = "idModelo";
-            gridColumn40.MinimumWidth = 100;
-            gridColumn40.Name = "idModelo";
-            gridColumn40.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn40.Visible = false;
-            gridColumn41.DataPropertyName = "idMarca";
-            gridColumn41.Name = "idMarca";
-            gridColumn41.Visible = false;
-            gridColumn42.AllowEdit = false;
-            gridColumn42.DataPropertyName = "idTipo";
-            gridColumn42.MinimumWidth = 100;
-            gridColumn42.Name = "idTipo";
-            gridColumn42.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn42.Visible = false;
-            gridColumn43.AllowEdit = false;
-            gridColumn43.DataPropertyName = "idCapacidad";
-            gridColumn43.MinimumWidth = 100;
-            gridColumn43.Name = "idCapacidad";
-            gridColumn43.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn43.Visible = false;
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn33);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn34);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn35);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn36);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn37);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn38);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn39);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn40);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn41);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn42);
-            this.dgvVideo.PrimaryGrid.Columns.Add(gridColumn43);
-            this.dgvVideo.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvVideo.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvVideo.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvVideo.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvVideo.PrimaryGrid.EnableFiltering = true;
-            this.dgvVideo.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvVideo.PrimaryGrid.Filter.Visible = true;
-            this.dgvVideo.PrimaryGrid.MultiSelect = false;
-            this.dgvVideo.PrimaryGrid.NoRowsText = "No hay ninguna tarjeta de video, cree una tarjeta de video";
-            this.dgvVideo.PrimaryGrid.NullString = "<<null>>";
-            this.dgvVideo.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvVideo.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvVideo.Size = new System.Drawing.Size(553, 253);
-            this.dgvVideo.TabIndex = 106;
-            this.dgvVideo.Text = "Tabla Video";
-            // 
-            // tabVideo
-            // 
-            this.tabVideo.AttachedControl = this.tabControlPanel4;
-            this.tabVideo.Name = "tabVideo";
-            this.tabVideo.Text = "Tarjeta de Video";
-            // 
-            // tabControlPanel3
-            // 
-            this.tabControlPanel3.Controls.Add(this.dgvDiscoDuro);
-            this.tabControlPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel3.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel3.Name = "tabControlPanel3";
-            this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(695, 311);
-            this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel3.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel3.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel3.Style.GradientAngle = 90;
-            this.tabControlPanel3.TabIndex = 3;
-            this.tabControlPanel3.TabItem = this.tabDiscoDuro;
-            // 
-            // dgvDiscoDuro
-            // 
-            this.dgvDiscoDuro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDiscoDuro.BackColor = System.Drawing.Color.White;
-            this.dgvDiscoDuro.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvDiscoDuro.ForeColor = System.Drawing.Color.Black;
-            this.dgvDiscoDuro.Location = new System.Drawing.Point(133, 25);
-            this.dgvDiscoDuro.Name = "dgvDiscoDuro";
-            this.dgvDiscoDuro.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvDiscoDuro.PrimaryGrid.AllowRowResize = true;
-            this.dgvDiscoDuro.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn24.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn24.Name = "Seleccionar";
-            gridColumn25.AllowEdit = false;
-            gridColumn25.DataPropertyName = "tipo";
-            gridColumn25.FilterAutoScan = true;
-            gridColumn25.MinimumWidth = 100;
-            gridColumn25.Name = "Tipo";
-            gridColumn25.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn25.Width = 120;
-            gridColumn26.AllowEdit = false;
-            gridColumn26.DataPropertyName = "tamano";
-            gridColumn26.MinimumWidth = 100;
-            gridColumn26.Name = "Tamaño";
-            gridColumn26.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn26.Width = 120;
-            gridColumn27.AllowEdit = false;
-            gridColumn27.DataPropertyName = "capacidad";
-            gridColumn27.MinimumWidth = 100;
-            gridColumn27.Name = "Capacidad";
-            gridColumn27.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn27.Width = 120;
-            gridColumn28.AllowEdit = false;
-            gridColumn28.DataPropertyName = "estado";
-            gridColumn28.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn28.MinimumWidth = 100;
-            gridColumn28.Name = "Activo";
-            gridColumn28.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn28.Visible = false;
-            gridColumn29.AllowEdit = false;
-            gridColumn29.DataPropertyName = "idDisco";
-            gridColumn29.MinimumWidth = 50;
-            gridColumn29.Name = "idDisco";
-            gridColumn29.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn29.Visible = false;
-            gridColumn29.Width = 50;
-            gridColumn30.AllowEdit = false;
-            gridColumn30.DataPropertyName = "idTipo";
-            gridColumn30.MinimumWidth = 100;
-            gridColumn30.Name = "idTipo";
-            gridColumn30.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn30.Visible = false;
-            gridColumn31.AllowEdit = false;
-            gridColumn31.DataPropertyName = "idCapacidad";
-            gridColumn31.MinimumWidth = 100;
-            gridColumn31.Name = "idCapacidad";
-            gridColumn31.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn31.Visible = false;
-            gridColumn32.AllowEdit = false;
-            gridColumn32.DataPropertyName = "idTamano";
-            gridColumn32.MinimumWidth = 100;
-            gridColumn32.Name = "idTamano";
-            gridColumn32.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn32.Visible = false;
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn24);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn25);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn26);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn27);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn28);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn29);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn30);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn31);
-            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn32);
-            this.dgvDiscoDuro.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvDiscoDuro.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvDiscoDuro.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvDiscoDuro.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvDiscoDuro.PrimaryGrid.EnableFiltering = true;
-            this.dgvDiscoDuro.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvDiscoDuro.PrimaryGrid.Filter.Visible = true;
-            this.dgvDiscoDuro.PrimaryGrid.MultiSelect = false;
-            this.dgvDiscoDuro.PrimaryGrid.NoRowsText = "No hay ningun disco, cree un disco";
-            this.dgvDiscoDuro.PrimaryGrid.NullString = "<<null>>";
-            this.dgvDiscoDuro.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvDiscoDuro.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvDiscoDuro.Size = new System.Drawing.Size(460, 260);
-            this.dgvDiscoDuro.TabIndex = 71;
-            this.dgvDiscoDuro.Text = "Tabla Discos Duros";
-            // 
-            // tabDiscoDuro
-            // 
-            this.tabDiscoDuro.AttachedControl = this.tabControlPanel3;
-            this.tabDiscoDuro.Name = "tabDiscoDuro";
-            this.tabDiscoDuro.Text = "Disco Duro";
-            // 
-            // tabControlPanel1
-            // 
-            this.tabControlPanel1.Controls.Add(this.dgvProcesador);
-            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel1.Location = new System.Drawing.Point(0, 27);
-            this.tabControlPanel1.Name = "tabControlPanel1";
-            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(695, 311);
-            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
-            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(165)))), ((int)(((byte)(199)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right) 
-            | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel1.Style.GradientAngle = 90;
-            this.tabControlPanel1.TabIndex = 1;
-            this.tabControlPanel1.TabItem = this.tabProcesador;
-            // 
-            // dgvProcesador
-            // 
-            this.dgvProcesador.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProcesador.BackColor = System.Drawing.Color.White;
-            this.dgvProcesador.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
-            this.dgvProcesador.ForeColor = System.Drawing.Color.Black;
-            this.dgvProcesador.Location = new System.Drawing.Point(16, 21);
-            this.dgvProcesador.Name = "dgvProcesador";
-            this.dgvProcesador.PrimaryGrid.AllowRowHeaderResize = true;
-            this.dgvProcesador.PrimaryGrid.AllowRowResize = true;
-            this.dgvProcesador.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.DataPropertyName = "Seleccionar";
-            gridColumn1.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn1.Name = "Seleccionar";
-            gridColumn2.AllowEdit = false;
-            gridColumn2.DataPropertyName = "marca";
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Marca";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn2.Width = 120;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.DataPropertyName = "tipo";
-            gridColumn3.FilterAutoScan = true;
-            gridColumn3.MinimumWidth = 100;
-            gridColumn3.Name = "Tipo";
-            gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.Width = 120;
-            gridColumn4.AllowEdit = false;
-            gridColumn4.DataPropertyName = "generacion";
-            gridColumn4.MinimumWidth = 100;
-            gridColumn4.Name = "Generacion";
-            gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn4.Width = 120;
-            gridColumn5.DataPropertyName = "velocidad";
-            gridColumn5.Name = "Velocidad";
-            gridColumn6.DataPropertyName = "velocidadMax";
-            gridColumn6.Name = "VelocidadMax";
-            gridColumn7.AllowEdit = false;
-            gridColumn7.DataPropertyName = "estado";
-            gridColumn7.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn7.MinimumWidth = 100;
-            gridColumn7.Name = "Activo";
-            gridColumn7.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn7.Visible = false;
-            gridColumn8.AllowEdit = false;
-            gridColumn8.DataPropertyName = "idProcesador";
-            gridColumn8.MinimumWidth = 50;
-            gridColumn8.Name = "IdProcesador";
-            gridColumn8.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn8.Visible = false;
-            gridColumn8.Width = 50;
-            gridColumn9.AllowEdit = false;
-            gridColumn9.DataPropertyName = "idTipo";
-            gridColumn9.MinimumWidth = 100;
-            gridColumn9.Name = "IdTipo";
-            gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn9.Visible = false;
-            gridColumn10.AllowEdit = false;
-            gridColumn10.DataPropertyName = "idMarca";
-            gridColumn10.MinimumWidth = 100;
-            gridColumn10.Name = "IdMarca";
-            gridColumn10.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn10.Visible = false;
-            gridColumn11.AllowEdit = false;
-            gridColumn11.DataPropertyName = "idGeneracion";
-            gridColumn11.MinimumWidth = 100;
-            gridColumn11.Name = "IdGeneracion";
-            gridColumn11.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn11.Visible = false;
-            gridColumn12.DataPropertyName = "idVelocidad";
-            gridColumn12.Name = "IdVelocidad";
-            gridColumn12.Visible = false;
-            gridColumn13.DataPropertyName = "idVelocidadMax";
-            gridColumn13.Name = "idVelocidadMax";
-            gridColumn13.Visible = false;
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn10);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn11);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn12);
-            this.dgvProcesador.PrimaryGrid.Columns.Add(gridColumn13);
-            this.dgvProcesador.PrimaryGrid.DefaultRowHeight = 24;
-            this.dgvProcesador.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvProcesador.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
-            this.dgvProcesador.PrimaryGrid.EnableColumnFiltering = true;
-            this.dgvProcesador.PrimaryGrid.EnableFiltering = true;
-            this.dgvProcesador.PrimaryGrid.EnableRowFiltering = true;
-            this.dgvProcesador.PrimaryGrid.Filter.Visible = true;
-            this.dgvProcesador.PrimaryGrid.MultiSelect = false;
-            this.dgvProcesador.PrimaryGrid.NoRowsText = "No hay ningun procesador, cree un procesador";
-            this.dgvProcesador.PrimaryGrid.NullString = "<<null>>";
-            this.dgvProcesador.PrimaryGrid.RowHeaderWidth = 45;
-            this.dgvProcesador.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvProcesador.Size = new System.Drawing.Size(664, 264);
-            this.dgvProcesador.TabIndex = 95;
-            this.dgvProcesador.Text = "Tabla Procesador";
-            // 
-            // tabProcesador
-            // 
-            this.tabProcesador.AttachedControl = this.tabControlPanel1;
-            this.tabProcesador.Name = "tabProcesador";
-            this.tabProcesador.Text = "Procesador";
             // 
             // btnCancelar
             // 
@@ -1149,19 +1153,19 @@
             this.Text = "Registro de Laptop - CPU";
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabControlPanel2.ResumeLayout(false);
+            this.tabControlPanel6.ResumeLayout(false);
             this.tabControlPanel5.ResumeLayout(false);
             this.tabControlPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSerieFabrica)).EndInit();
+            this.tabControlPanel1.ResumeLayout(false);
+            this.tabControlPanel2.ResumeLayout(false);
+            this.tabControlPanel3.ResumeLayout(false);
+            this.tabControlPanel4.ResumeLayout(false);
             this.tabControlPanel7.ResumeLayout(false);
             this.tabControlPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAntivirus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOffice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWindows)).EndInit();
-            this.tabControlPanel6.ResumeLayout(false);
-            this.tabControlPanel4.ResumeLayout(false);
-            this.tabControlPanel3.ResumeLayout(false);
-            this.tabControlPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

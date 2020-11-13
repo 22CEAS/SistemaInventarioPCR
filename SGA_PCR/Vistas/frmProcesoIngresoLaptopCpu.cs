@@ -448,7 +448,14 @@ namespace Apolo
                 tabControl1.SelectedTab = tabVideo;
                 return false;
             }
-
+            //==============================================================================================
+            if (cmbModelo.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar si no\nha seleccionado un modelo correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                tabControl1.SelectedTab = tabDetalle;
+                return false;
+            }
             //==============================================================================================
             filas = tablaProcesador.Rows.Count;
             int cantProcesadores = 0;

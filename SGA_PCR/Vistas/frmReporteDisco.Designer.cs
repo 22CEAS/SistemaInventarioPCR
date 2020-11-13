@@ -43,6 +43,9 @@
             // 
             // dgvDiscos
             // 
+            this.dgvDiscos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDiscos.Location = new System.Drawing.Point(12, 81);
             this.dgvDiscos.MainView = this.vista;
             this.dgvDiscos.Name = "dgvDiscos";
@@ -73,14 +76,14 @@
             this.vista.GridControl = this.dgvDiscos;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // TipoDisco
             // 
             this.TipoDisco.Caption = "TipoDisco";
             this.TipoDisco.FieldName = "TipoDisco";
-            this.TipoDisco.MaxWidth = 100;
-            this.TipoDisco.MinWidth = 100;
+            this.TipoDisco.MinWidth = 40;
             this.TipoDisco.Name = "TipoDisco";
             this.TipoDisco.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoDisco.Visible = true;
@@ -91,8 +94,7 @@
             // 
             this.Tamano.Caption = "Tamano";
             this.Tamano.FieldName = "Tamano";
-            this.Tamano.MaxWidth = 100;
-            this.Tamano.MinWidth = 100;
+            this.Tamano.MinWidth = 40;
             this.Tamano.Name = "Tamano";
             this.Tamano.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.Tamano.Visible = true;
@@ -103,8 +105,7 @@
             // 
             this.Capacidad.Caption = "Capacidad";
             this.Capacidad.FieldName = "Capacidad";
-            this.Capacidad.MaxWidth = 100;
-            this.Capacidad.MinWidth = 100;
+            this.Capacidad.MinWidth = 40;
             this.Capacidad.Name = "Capacidad";
             this.Capacidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Capacidad.Visible = true;
@@ -115,8 +116,7 @@
             // 
             this.Cantidad.Caption = "Cantidad";
             this.Cantidad.FieldName = "Cantidad";
-            this.Cantidad.MaxWidth = 100;
-            this.Cantidad.MinWidth = 100;
+            this.Cantidad.MinWidth = 40;
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Cantidad.Visible = true;
@@ -127,8 +127,7 @@
             // 
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "Estado";
-            this.Estado.MaxWidth = 100;
-            this.Estado.MinWidth = 100;
+            this.Estado.MinWidth = 40;
             this.Estado.Name = "Estado";
             this.Estado.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Estado.Visible = true;
@@ -137,7 +136,7 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportar.AutoSize = true;
             this.btnExportar.BackColor = System.Drawing.Color.Transparent;
             this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -158,13 +157,13 @@
             // frmReporteDisco
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(559, 412);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvDiscos);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "frmReporteDisco";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

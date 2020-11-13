@@ -55,10 +55,13 @@
             // 
             // dgvMemorias
             // 
+            this.dgvMemorias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMemorias.Location = new System.Drawing.Point(40, 81);
             this.dgvMemorias.MainView = this.vista;
             this.dgvMemorias.Name = "dgvMemorias";
-            this.dgvMemorias.Size = new System.Drawing.Size(621, 276);
+            this.dgvMemorias.Size = new System.Drawing.Size(532, 276);
             this.dgvMemorias.TabIndex = 135;
             this.dgvMemorias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -86,14 +89,14 @@
             this.vista.GridControl = this.dgvMemorias;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Modelo
             // 
             this.Modelo.Caption = "Modelo";
             this.Modelo.FieldName = "TipoMemoria";
-            this.Modelo.MaxWidth = 100;
-            this.Modelo.MinWidth = 100;
+            this.Modelo.MinWidth = 40;
             this.Modelo.Name = "Modelo";
             this.Modelo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Modelo.Visible = true;
@@ -104,8 +107,7 @@
             // 
             this.TipoMemoria.Caption = "TipoMemoria";
             this.TipoMemoria.FieldName = "Tipo2";
-            this.TipoMemoria.MaxWidth = 100;
-            this.TipoMemoria.MinWidth = 100;
+            this.TipoMemoria.MinWidth = 40;
             this.TipoMemoria.Name = "TipoMemoria";
             this.TipoMemoria.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoMemoria.Visible = true;
@@ -116,8 +118,7 @@
             // 
             this.Capacidad.Caption = "Capacidad";
             this.Capacidad.FieldName = "Capacidad";
-            this.Capacidad.MaxWidth = 100;
-            this.Capacidad.MinWidth = 100;
+            this.Capacidad.MinWidth = 40;
             this.Capacidad.Name = "Capacidad";
             this.Capacidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Capacidad.Visible = true;
@@ -128,41 +129,36 @@
             // 
             this.Frecuencia.Caption = "Frecuencia";
             this.Frecuencia.FieldName = "frecuencia";
-            this.Frecuencia.MaxWidth = 100;
-            this.Frecuencia.MinWidth = 100;
+            this.Frecuencia.MinWidth = 40;
             this.Frecuencia.Name = "Frecuencia";
             this.Frecuencia.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.Frecuencia.Visible = true;
-            this.Frecuencia.VisibleIndex = 3;
             this.Frecuencia.Width = 100;
             // 
             // Cantidad
             // 
             this.Cantidad.Caption = "Cantidad";
             this.Cantidad.FieldName = "Cantidad";
-            this.Cantidad.MaxWidth = 100;
-            this.Cantidad.MinWidth = 100;
+            this.Cantidad.MinWidth = 40;
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Cantidad.Visible = true;
-            this.Cantidad.VisibleIndex = 4;
+            this.Cantidad.VisibleIndex = 3;
             this.Cantidad.Width = 100;
             // 
             // Estado
             // 
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "estado";
-            this.Estado.MaxWidth = 100;
-            this.Estado.MinWidth = 100;
+            this.Estado.MinWidth = 40;
             this.Estado.Name = "Estado";
             this.Estado.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.Estado.Visible = true;
-            this.Estado.VisibleIndex = 5;
+            this.Estado.VisibleIndex = 4;
             this.Estado.Width = 100;
             // 
             // btnExportar
             // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportar.AutoSize = true;
             this.btnExportar.BackColor = System.Drawing.Color.Transparent;
             this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -171,7 +167,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(586, 12);
+            this.btnExportar.Location = new System.Drawing.Point(483, 12);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 136;
@@ -183,14 +179,14 @@
             // frmReporteMemoria
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(702, 394);
+            this.ClientSize = new System.Drawing.Size(599, 394);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvMemorias);
             this.Controls.Add(this.label2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "frmReporteMemoria";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

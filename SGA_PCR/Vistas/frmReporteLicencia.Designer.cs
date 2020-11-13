@@ -44,7 +44,7 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportar.AutoSize = true;
             this.btnExportar.BackColor = System.Drawing.Color.Transparent;
             this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -64,10 +64,13 @@
             // 
             // dgvLicencias
             // 
+            this.dgvLicencias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLicencias.Location = new System.Drawing.Point(21, 101);
             this.dgvLicencias.MainView = this.vista;
             this.dgvLicencias.Name = "dgvLicencias";
-            this.dgvLicencias.Size = new System.Drawing.Size(1024, 276);
+            this.dgvLicencias.Size = new System.Drawing.Size(1024, 318);
             this.dgvLicencias.TabIndex = 137;
             this.dgvLicencias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -95,13 +98,14 @@
             this.vista.GridControl = this.dgvLicencias;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Categoría
             // 
             this.Categoría.Caption = "Categoría";
             this.Categoría.FieldName = "Categoria";
-            this.Categoría.MinWidth = 150;
+            this.Categoría.MinWidth = 40;
             this.Categoría.Name = "Categoría";
             this.Categoría.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Categoría.Visible = true;
@@ -112,7 +116,7 @@
             // 
             this.Marca.Caption = "Marca";
             this.Marca.FieldName = "Marca";
-            this.Marca.MinWidth = 150;
+            this.Marca.MinWidth = 40;
             this.Marca.Name = "Marca";
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Marca.Visible = true;
@@ -123,7 +127,7 @@
             // 
             this.Version.Caption = "Versión";
             this.Version.FieldName = "Version";
-            this.Version.MinWidth = 150;
+            this.Version.MinWidth = 40;
             this.Version.Name = "Version";
             this.Version.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Version.Visible = true;
@@ -134,7 +138,7 @@
             // 
             this.Clave.Caption = "Clave";
             this.Clave.FieldName = "Clave";
-            this.Clave.MinWidth = 300;
+            this.Clave.MinWidth = 40;
             this.Clave.Name = "Clave";
             this.Clave.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Clave.Visible = true;
@@ -145,7 +149,7 @@
             // 
             this.CodigoLC.Caption = "Código LC";
             this.CodigoLC.FieldName = "CodigoLC";
-            this.CodigoLC.MinWidth = 150;
+            this.CodigoLC.MinWidth = 40;
             this.CodigoLC.Name = "CodigoLC";
             this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoLC.Visible = true;
@@ -156,7 +160,7 @@
             // 
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "NombreEstado";
-            this.Estado.MinWidth = 100;
+            this.Estado.MinWidth = 40;
             this.Estado.Name = "Estado";
             this.Estado.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Estado.Visible = true;
@@ -166,13 +170,13 @@
             // frmReporteLicencia
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1067, 450);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLicencias);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "frmReporteLicencia";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

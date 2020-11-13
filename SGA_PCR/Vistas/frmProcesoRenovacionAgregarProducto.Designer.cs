@@ -51,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnAgregarMeses = new System.Windows.Forms.Button();
+            this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -62,12 +63,12 @@
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(574, 415);
+            this.btnCancelar.Location = new System.Drawing.Point(677, 416);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 65);
+            this.btnCancelar.Size = new System.Drawing.Size(92, 65);
             this.btnCancelar.TabIndex = 126;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -89,7 +90,7 @@
             this.dgvPrueba.Location = new System.Drawing.Point(30, 77);
             this.dgvPrueba.MainView = this.vista;
             this.dgvPrueba.Name = "dgvPrueba";
-            this.dgvPrueba.Size = new System.Drawing.Size(750, 321);
+            this.dgvPrueba.Size = new System.Drawing.Size(874, 321);
             this.dgvPrueba.TabIndex = 130;
             this.dgvPrueba.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -109,6 +110,7 @@
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Codigo,
+            this.CodigoAntiguo,
             this.Marca,
             this.Modelo,
             this.Pantalla,
@@ -128,124 +130,105 @@
             this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsSelection.MultiSelect = true;
             this.vista.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Codigo
             // 
-            this.Codigo.Caption = "Codigo";
+            this.Codigo.Caption = "Código";
             this.Codigo.FieldName = "Codigo";
             this.Codigo.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.Codigo.MaxWidth = 100;
-            this.Codigo.MinWidth = 100;
+            this.Codigo.MinWidth = 140;
             this.Codigo.Name = "Codigo";
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
             this.Codigo.VisibleIndex = 1;
-            this.Codigo.Width = 100;
+            this.Codigo.Width = 140;
             // 
             // Marca
             // 
             this.Marca.Caption = "Marca";
             this.Marca.FieldName = "MarcaLC";
-            this.Marca.MaxWidth = 100;
             this.Marca.MinWidth = 100;
             this.Marca.Name = "Marca";
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Marca.Visible = true;
-            this.Marca.VisibleIndex = 2;
+            this.Marca.VisibleIndex = 3;
             this.Marca.Width = 100;
             // 
             // Modelo
             // 
             this.Modelo.Caption = "Modelo";
             this.Modelo.FieldName = "NombreModeloLC";
-            this.Modelo.MaxWidth = 100;
             this.Modelo.MinWidth = 100;
             this.Modelo.Name = "Modelo";
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 3;
+            this.Modelo.VisibleIndex = 4;
             this.Modelo.Width = 100;
             // 
             // Pantalla
             // 
             this.Pantalla.Caption = "Pantalla";
             this.Pantalla.FieldName = "TamanoPantalla";
-            this.Pantalla.MaxWidth = 60;
             this.Pantalla.MinWidth = 60;
             this.Pantalla.Name = "Pantalla";
             this.Pantalla.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.Pantalla.Visible = true;
-            this.Pantalla.VisibleIndex = 4;
             this.Pantalla.Width = 60;
             // 
             // Procesador
             // 
             this.Procesador.Caption = "Procesador";
             this.Procesador.FieldName = "TipoProcesador";
-            this.Procesador.MaxWidth = 70;
             this.Procesador.MinWidth = 70;
             this.Procesador.Name = "Procesador";
             this.Procesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.Procesador.Visible = true;
-            this.Procesador.VisibleIndex = 5;
             this.Procesador.Width = 70;
             // 
             // Generacion
             // 
             this.Generacion.Caption = "Generación";
             this.Generacion.FieldName = "GeneracionProcesador";
-            this.Generacion.MaxWidth = 70;
             this.Generacion.MinWidth = 70;
             this.Generacion.Name = "Generacion";
-            this.Generacion.Visible = true;
-            this.Generacion.VisibleIndex = 6;
             this.Generacion.Width = 70;
             // 
             // Video
             // 
             this.Video.Caption = "Video";
             this.Video.FieldName = "NombreModeloVideo";
-            this.Video.MaxWidth = 100;
             this.Video.MinWidth = 100;
             this.Video.Name = "Video";
-            this.Video.Visible = true;
-            this.Video.VisibleIndex = 7;
             this.Video.Width = 100;
             // 
             // Capacidad
             // 
             this.Capacidad.Caption = "Capacidad";
             this.Capacidad.FieldName = "CapacidadVideo";
-            this.Capacidad.MaxWidth = 70;
             this.Capacidad.MinWidth = 70;
             this.Capacidad.Name = "Capacidad";
-            this.Capacidad.Visible = true;
-            this.Capacidad.VisibleIndex = 8;
             this.Capacidad.Width = 70;
             // 
             // fecIniContrato
             // 
             this.fecIniContrato.Caption = "Inicio Plazo Alquiler";
             this.fecIniContrato.FieldName = "fecIniContrato";
-            this.fecIniContrato.MaxWidth = 100;
-            this.fecIniContrato.MinWidth = 100;
+            this.fecIniContrato.MinWidth = 140;
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 9;
-            this.fecIniContrato.Width = 100;
+            this.fecIniContrato.VisibleIndex = 5;
+            this.fecIniContrato.Width = 140;
             // 
             // fecFinContrato
             // 
             this.fecFinContrato.Caption = "Fin Plazo Alquiler";
             this.fecFinContrato.FieldName = "fecFinContrato";
-            this.fecFinContrato.MaxWidth = 100;
-            this.fecFinContrato.MinWidth = 100;
+            this.fecFinContrato.MinWidth = 140;
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 10;
-            this.fecFinContrato.Width = 100;
+            this.fecFinContrato.VisibleIndex = 6;
+            this.fecFinContrato.Width = 140;
             // 
             // IdLC
             // 
@@ -298,7 +281,7 @@
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.Image")));
             this.btnSeleccionar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionar.Location = new System.Drawing.Point(660, 413);
+            this.btnSeleccionar.Location = new System.Drawing.Point(775, 414);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(111, 67);
             this.btnSeleccionar.TabIndex = 132;
@@ -318,7 +301,7 @@
             this.btnAgregarMeses.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarMeses.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarMeses.Image")));
             this.btnAgregarMeses.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarMeses.Location = new System.Drawing.Point(287, 12);
+            this.btnAgregarMeses.Location = new System.Drawing.Point(382, 12);
             this.btnAgregarMeses.Name = "btnAgregarMeses";
             this.btnAgregarMeses.Size = new System.Drawing.Size(68, 42);
             this.btnAgregarMeses.TabIndex = 133;
@@ -326,12 +309,23 @@
             this.btnAgregarMeses.UseVisualStyleBackColor = false;
             this.btnAgregarMeses.Click += new System.EventHandler(this.btnAgregarMeses_Click);
             // 
+            // CodigoAntiguo
+            // 
+            this.CodigoAntiguo.Caption = "Código Antiguo";
+            this.CodigoAntiguo.FieldName = "CodigoAntiguo";
+            this.CodigoAntiguo.MinWidth = 140;
+            this.CodigoAntiguo.Name = "CodigoAntiguo";
+            this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CodigoAntiguo.Visible = true;
+            this.CodigoAntiguo.VisibleIndex = 2;
+            this.CodigoAntiguo.Width = 140;
+            // 
             // frmProcesoRenovacionAgregarProducto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(821, 493);
+            this.ClientSize = new System.Drawing.Size(916, 493);
             this.Controls.Add(this.btnAgregarMeses);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.label1);
@@ -376,5 +370,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Button btnAgregarMeses;
+        private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
     }
 }
