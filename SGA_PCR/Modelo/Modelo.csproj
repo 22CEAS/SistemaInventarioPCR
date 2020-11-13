@@ -44,8 +44,11 @@
     <Compile Include="Accesos_usuarios.cs" />
     <Compile Include="Alquiler.cs" />
     <Compile Include="AlquilerDetalle.cs" />
+    <Compile Include="Area.cs" />
     <Compile Include="Cambio.cs" />
     <Compile Include="Categoria.cs" />
+    <Compile Include="ModulosPrincipales.cs" />
+    <Compile Include="Submodulo.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteSucursal.cs" />

@@ -396,5 +396,15 @@ namespace Apolo
                 chbActivo.Checked = (activo == 1) ? true : false;
             }
         }
+
+        private void cmbModelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmArchivoCrearMemoria_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

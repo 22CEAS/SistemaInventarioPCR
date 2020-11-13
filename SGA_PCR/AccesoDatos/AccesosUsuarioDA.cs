@@ -70,5 +70,61 @@ namespace AccesoDatos
             return lista;
 
         }
+
+
+
+        public int GuardarPermisoNuevo(string idSubmodulo, int idUsuario)
+        {
+                parametrosEntrada = new MySqlParameter[2];
+                
+                parametrosEntrada[0] = new MySqlParameter("@_idUsuario", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_idSubmodulo", MySqlDbType.VarChar, 255);
+                
+
+                parametrosEntrada[0].Value = idUsuario;
+                parametrosEntrada[1].Value = idSubmodulo;
+
+
+
+                bool x = objManager.EjecutarProcedure(parametrosEntrada,"insert_permiso");
+
+            if (!x)
+            {
+                MessageBox.Show("ERROR!");
+            }
+
+                objManager.conexion.Close(); objManager.conexion.Dispose(); objManager.cmd.Dispose();
+
+                //MessageBox.Show("PERMISO GUARDADO CORRECAMENTE");
+
+            return 1;
+        }
+
+        public int EliminarPermiso(string idSubmodulo, int idUsuario)
+        {
+            parametrosEntrada = new MySqlParameter[2];
+
+            parametrosEntrada[0] = new MySqlParameter("@_idUsuario", MySqlDbType.Int32);
+            parametrosEntrada[1] = new MySqlParameter("@_idSubmodulo", MySqlDbType.VarChar, 255);
+
+
+            parametrosEntrada[0].Value = idUsuario;
+            parametrosEntrada[1].Value = idSubmodulo;
+
+
+
+            bool x = objManager.EjecutarProcedure(parametrosEntrada, "delete_permiso");
+
+            if (!x)
+            {
+                MessageBox.Show("ERROR!");
+            }
+
+            objManager.conexion.Close(); objManager.conexion.Dispose(); objManager.cmd.Dispose();
+
+            //MessageBox.Show("PERMISO ELIMINADO CORRECAMENTE");
+
+            return 1;
+        }
     }
 }

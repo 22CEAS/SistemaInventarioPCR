@@ -29,41 +29,183 @@ namespace Apolo
         int nHeightEllipse // width of ellipse
         );
 
-        public TEST_MENU_PRINCIPAL()
+        public TEST_MENU_PRINCIPAL(int idUsuario)
         {
+            
             this.FormBorderStyle = FormBorderStyle.None;
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, 1300, 650, 20, 20));
             InitializeComponent();
-            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.White;
+            
+            //Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.White;
             Inicializado();
+            customizeDesign();
+            MenuVertical.Width = 0;
 
-            //CARGAR POSICIONES INICIALES DE LOS BOTONES PRINCIPALES
-            button7.Location = new Point(3, 91);
-            button1.Location = new Point(3, 141);
-            button20.Location = new Point(3, 190);
-            MenuVertical.Width = 80;
+
+            //MessageBox.Show(idUsuario.ToString());
+            usuarioConectado.Text = idUsuario.ToString();
+
+            //VERIFICACION DE PERMISOS (INICIO)
+            verificandoPermisosMaestro();
+            verificandoPermisosProcesos();
+            verificandoPermisosReportes();
+            verificandoPermisosConfiguracion();
+            
         }
+
+
+
+        private void verificandoPermisosMaestro()
+        {
+            //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
+            Button[] botones_archivo = { button2, button4, button6, button3, button5, button8, button9 };
+            string[] idSubmodulo_archivo = { "1a", "2a", "3a", "4a", "5a", "6a", "7a" };
+
+            foreach (Button btn in botones_archivo)
+            {
+                btn.Enabled = false;
+            }
+            List<string> accesos = new List<string>();
+            accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 1);
+            int index = 0;
+
+            foreach (string codigo in accesos)
+            {
+                index = Array.IndexOf(idSubmodulo_archivo, codigo);
+                //MessageBox.Show(codigo+" "+index);
+                botones_archivo[index].Enabled = true;
+            }
+            //FIN LOGICA-------------------
+
+        }
+
+        private void verificandoPermisosProcesos()
+        {
+            //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
+            Button[] botones_procesos = { button16, button14, button12, button15, button13, button11, button10, button17, button18, button19 };
+            string[] idSubmodulo_procesos = { "1b", "2b", "3b", "4b", "5b", "6b", "7b", "8b", "9b", "10b" };
+
+            foreach (Button btn in botones_procesos)
+            {
+                btn.Enabled = false;
+            }
+            List<string> accesos = new List<string>();
+            accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 2);
+            int index = 0;
+
+
+
+            foreach (string codigo in accesos)
+            {
+                index = Array.IndexOf(idSubmodulo_procesos, codigo);
+                botones_procesos[index].Enabled = true;
+            }
+            //FIN LOGICA-------------------
+        }
+        private void verificandoPermisosReportes()
+        {
+            //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
+            Button[] botones_reportes = { button30, button28, button26, button29, button27, button25, button24, button23, button22, button21, button31, button32, button33 };
+            string[] idSubmodulo_reportes = { "1c", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c", "11c", "12c", "13c" };
+
+            foreach (Button btn in botones_reportes)
+            {
+                btn.Enabled = false;
+            }
+            List<string> accesos = new List<string>();
+            accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 3);
+            int index = 0;
+
+            foreach (string codigo in accesos)
+            {
+                index = Array.IndexOf(idSubmodulo_reportes, codigo);
+                botones_reportes[index].Enabled = true;
+            }
+            //FIN LOGICA-------------------
+        }
+
+        private void verificandoPermisosConfiguracion()
+        {
+            //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
+            Button[] botones_configuracion = { btnConfiguracionClientes, btnConfiguracionPermisos };
+            string[] idSubmodulo_configuracion = { "1d", "2d" };
+
+            foreach (Button btn in botones_configuracion)
+            {
+                btn.Enabled = false;
+            }
+            List<string> accesos = new List<string>();
+            accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 4);
+            int index = 0;
+
+            foreach (string codigo in accesos)
+            {
+                index = Array.IndexOf(idSubmodulo_configuracion, codigo);
+                botones_configuracion[index].Enabled = true;
+            }
+            //FIN LOGICA-------------------
+        }
+
+
+
+        private void customizeDesign()
+        {
+            ARCHIVO.Visible = false;
+            PROCESOS.Visible = false;
+            REPORTES.Visible = false;
+            panelConfiguracion.Visible = false;
+        }
+
+
+        private void hideSubMenu()
+        {
+            if (ARCHIVO.Visible == true)
+                ARCHIVO.Visible = false;
+            if (PROCESOS.Visible == true)
+                PROCESOS.Visible = false;
+            if (REPORTES.Visible == true)
+                REPORTES.Visible = false;
+            if (panelConfiguracion.Visible == true)
+                panelConfiguracion.Visible = false;
+        }
+
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+
 
         public void Inicializado()
         {
             accesos_usuarioDA = new AccesosUsuarioDA();
             accesos_usuarios = new Accesos_usuarios();
-            
 
             
         }
+
+
 
 
         private void btnSlideMenu_Click(object sender, EventArgs e)
         {
             if (MenuVertical.Width == 350)
             {
-                MenuVertical.Width = 80;
+                MenuVertical.Width = 80;                
             }
             else
             {
                 MenuVertical.Width = 350;
             }
+
+            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -71,31 +213,17 @@ namespace Apolo
             DialogResult dialogResult = MessageBox.Show("DESEAS SALIR DE APOLO?", "◄ AVISO | LEASEIN S.A.C. ►",MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                frmLogueo log = new frmLogueo();
+                //frmLogueo log = new frmLogueo();
                 this.Hide();
-                log.Show();
+                //log.Show();
+                
 
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button7_MouseClick(object sender, MouseEventArgs e)
         {
             //MessageBox.Show("aa");
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ARCHIVO_MouseHover(object sender, EventArgs e)
@@ -120,64 +248,7 @@ namespace Apolo
 
         private void button7_MouseClick_1(object sender, MouseEventArgs e)
         {
-            if (ARCHIVO.Visible == true)
-            {
-                ARCHIVO.Visible = false;
-
-                //PROCESOS
-                button1.Location = new Point(3,141);
-                PROCESOS.Location = new Point(3, button1.Location.Y + button1.Height + 5);
-
-                //REPORTES
-                if(PROCESOS.Visible==false)
-                    button20.Location = new Point(3, button1.Location.Y + button1.Height + 5);
-                else
-                    button20.Location = new Point(3, PROCESOS.Location.Y + PROCESOS.Height + 5);
-                REPORTES.Location = new Point(3, button20.Location.Y + button20.Height + 5);
-            }
-            else
-            {
-
-
-                //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-                Button[] botones_archivo = { button2, button4, button6, button3, button5, button8, button9 };
-                string[] idSubmodulo_archivo = { "1a", "2a", "3a", "4a", "5a", "6a", "7a" }; 
-
-                foreach (Button btn in botones_archivo)
-                {
-                    btn.Enabled = false;
-                }
-                List<string> accesos = new List<string>();
-                accesos = accesos_usuarioDA.Obtener_accessos(usuarioConectado.Text, 1);
-                int index = 0;
-
-                foreach (string codigo in accesos)
-                {
-                    index = Array.IndexOf(idSubmodulo_archivo, codigo);
-                    MessageBox.Show(codigo+" "+index);
-                    botones_archivo[index].Enabled = true;
-                }
-                //FIN LOGICA-------------------
-
-
-
-
-                ARCHIVO.Visible = true;
-
-                //PROCESOS
-                button1.Location = new Point(3, ARCHIVO.Location.Y+ARCHIVO.Height+5);
-                PROCESOS.Location = new Point(3, button1.Location.Y + button1.Height +5);
-
-                //REPORTES
-                if(PROCESOS.Visible==true)
-                { 
-                    button20.Location = new Point(3, PROCESOS.Location.Y + PROCESOS.Height + 5);
-                }
-                else
-                    button20.Location = new Point(3, button1.Location.Y + button1.Height + 5);
-                REPORTES.Location = new Point(3, button20.Location.Y + button20.Height + 5);
-            }
-
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -198,6 +269,8 @@ namespace Apolo
                 f2.MdiParent = this;
                 f2.Show();
             }
+
+            hideSubMenu();
         }
 
         private void TEST_MENU_PRINCIPAL_Load(object sender, EventArgs e)
@@ -212,11 +285,16 @@ namespace Apolo
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            /*
             if (PROCESOS.Visible == true)
             { 
                 PROCESOS.Visible = false;
+
                 button20.Location = new Point(3, button1.Location.Y + button1.Height);
                 REPORTES.Location = new Point(3, button20.Location.Y + button20.Height + 5);
+
+                btnConfiguracion.Location = new Point(3, button20.Location.Y + button20.Height);
+                panelConfiguracion.Location = new Point(3, btnConfiguracion.Location.Y + btnConfiguracion.Height + 5);
             }
             else
             {
@@ -248,7 +326,16 @@ namespace Apolo
                 //REPORTE
                 button20.Location = new Point(3, PROCESOS.Location.Y + PROCESOS.Height+5);
                 REPORTES.Location = new Point(3, button20.Location.Y + button20.Height+5);
+
+                //REPORTE
+                btnConfiguracion.Location = new Point(3, REPORTES.Location.Y + REPORTES.Height + 5);
+                panelConfiguracion.Location = new Point(3, btnConfiguracion.Location.Y + btnConfiguracion.Height + 5);
             }
+            */
+
+           
+
+            showSubMenu(PROCESOS);
         }
 
         private void MenuVertical_Paint(object sender, PaintEventArgs e)
@@ -585,13 +672,20 @@ namespace Apolo
 
         private void button20_Click(object sender, EventArgs e)
         {
+            /*
             if (REPORTES.Visible == true)
+            { 
                 REPORTES.Visible = false;
+
+            btnConfiguracion.Location = new Point(3, button20.Location.Y + button20.Height);
+            panelConfiguracion.Location = new Point(3, btnConfiguracion.Location.Y + btnConfiguracion.Height + 5);
+            }
+
             else
             {
                 //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
                 Button[] botones_reportes = { button30, button28, button26, button29, button27, button25, button24, button23, button22, button21, button31, button32, button33};
-                string[] idSubmodulo_reportes = { "1c", "2c", "3c", "4c", "5c", "6c", "7c", "8ca", "9ca", "10c", "11c", "12c", "13c" };
+                string[] idSubmodulo_reportes = { "1c", "2c", "3c", "4c", "5c", "6c", "7c", "8c", "9c", "10c", "11c", "12c", "13c" };
 
                 foreach (Button btn in botones_reportes)
                 {
@@ -611,7 +705,14 @@ namespace Apolo
 
                 REPORTES.Location = new Point(3, button20.Location.Y + button20.Height + 5);
                 REPORTES.Visible = true;
+
+                //CONFIGURACION
+                btnConfiguracion.Location = new Point(3, REPORTES.Location.Y + REPORTES.Height);
+                panelConfiguracion.Location = new Point(3, btnConfiguracion.Location.Y + btnConfiguracion.Height + 5);
             }
+            */
+            
+            showSubMenu(REPORTES);
         }
 
         private void button30_Click(object sender, EventArgs e)
@@ -895,6 +996,78 @@ namespace Apolo
         private void usuarioConectado_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(ARCHIVO);
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelConfiguracion);
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button34_Click_1(object sender, EventArgs e)
+        {
+            if (MenuVertical.Width == 350)
+            {
+                MenuVertical.Width = 0;
+            }
+            else
+            {
+                MenuVertical.Width = 350;
+            }
+        }
+
+        private void btnConfiguracionPermisos_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmConfiguracionPermisos")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmConfiguracionPermisos f2 = new frmConfiguracionPermisos();
+                f2.MdiParent = this;
+                f2.Show();
+            }
+        }
+
+        private void btnConfiguracionClientes_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmConfiguracionUsuarios")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmConfiguracionUsuarios f2 = new frmConfiguracionUsuarios();
+                f2.MdiParent = this;
+                f2.Show();
+            }
         }
     }
 }

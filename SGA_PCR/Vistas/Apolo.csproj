@@ -69,6 +69,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmConfiguracionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguracionUsuarios.Designer.cs">
+      <DependentUpon>frmConfiguracionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfiguracionPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguracionPermisos.Designer.cs">
+      <DependentUpon>frmConfiguracionPermisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProcesoAgregarGuia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,6 +407,12 @@
     <Compile Include="TEST_MENU_PRINCIPAL.Designer.cs">
       <DependentUpon>TEST_MENU_PRINCIPAL.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmConfiguracionUsuarios.resx">
+      <DependentUpon>frmConfiguracionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguracionPermisos.resx">
+      <DependentUpon>frmConfiguracionPermisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProcesoAgregarGuia.resx">
       <DependentUpon>frmProcesoAgregarGuia.cs</DependentUpon>
     </EmbeddedResource>
@@ -569,6 +587,7 @@
       <DependentUpon>TEST_MENU_PRINCIPAL.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AccesoDatos.SubmoduloDA.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

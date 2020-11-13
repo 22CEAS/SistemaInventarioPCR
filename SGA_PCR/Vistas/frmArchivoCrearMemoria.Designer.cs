@@ -245,6 +245,7 @@
             this.cmbModelo.Name = "cmbModelo";
             this.cmbModelo.Size = new System.Drawing.Size(117, 21);
             this.cmbModelo.TabIndex = 93;
+            this.cmbModelo.SelectedIndexChanged += new System.EventHandler(this.cmbModelo_SelectedIndexChanged);
             // 
             // dgvMemoria
             // 
@@ -391,6 +392,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Memoria";
+            this.Load += new System.EventHandler(this.frmArchivoCrearMemoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

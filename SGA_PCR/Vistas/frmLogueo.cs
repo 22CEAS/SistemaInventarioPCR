@@ -54,7 +54,7 @@ namespace Apolo
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
-            if (txtPassword.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
+            if (txtUsername.Text.Trim().Length == 0 || txtPassword.Text.Trim().Length == 0)
             {
                 MessageBox.Show("EL USUARIO Y CONTRASEÑA NO PUEDEN SER VACIOS", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
@@ -80,9 +80,18 @@ namespace Apolo
         private void IngresarSistema()
         {
 
-            TEST_MENU_PRINCIPAL frm = new TEST_MENU_PRINCIPAL();
+            int idUsuario = int.Parse(usuarioDA.Obtener_idUsuario(txtUsername.Text));
+
+            TEST_MENU_PRINCIPAL frm = new TEST_MENU_PRINCIPAL(idUsuario);
             //frmPrincipal frm = new frmPrincipal(); 
-            frm.usuarioConectado.Text = txtUsername.Text;
+
+
+            //CORRER QUERY PARA SABER EL ID
+            frm.usuario.Text = txtUsername.Text;
+            //frm.usuarioConectado.Text = usuarioDA.Obtener_idUsuario(txtUsername.Text);
+
+
+
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;

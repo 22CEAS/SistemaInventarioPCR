@@ -63,7 +63,10 @@
   <ItemGroup>
     <Compile Include="AccesosUsuarioDA.cs" />
     <Compile Include="AlquilerDA.cs" />
+    <Compile Include="AreaDA.cs" />
     <Compile Include="CambioDA.cs" />
+    <Compile Include="ModulosPrincipalesDA.cs" />
+    <Compile Include="SubmoduloDA.cs" />
     <Compile Include="UsuariosDA.cs" />
     <Compile Include="ClienteDA.cs" />
     <Compile Include="DBManager.cs" />
