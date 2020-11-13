@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.cmbUsuarios = new System.Windows.Forms.ComboBox();
             this.cmbModulosPrincipales = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,10 +54,12 @@
             // 
             // cmbUsuarios
             // 
+            this.cmbUsuarios.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbUsuarios.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbUsuarios.FormattingEnabled = true;
             this.cmbUsuarios.Location = new System.Drawing.Point(239, 22);
             this.cmbUsuarios.Name = "cmbUsuarios";
-            this.cmbUsuarios.Size = new System.Drawing.Size(121, 21);
+            this.cmbUsuarios.Size = new System.Drawing.Size(155, 21);
             this.cmbUsuarios.TabIndex = 0;
             // 
             // cmbModulosPrincipales
@@ -68,9 +76,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(177, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "USUARIO";
+            this.label1.Text = "NOMBRE";
             // 
             // label2
             // 
@@ -127,11 +135,21 @@
             this.dgvSubmodulos.BackColor = System.Drawing.Color.Silver;
             this.dgvSubmodulos.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvSubmodulos.ForeColor = System.Drawing.Color.Black;
-            this.dgvSubmodulos.Location = new System.Drawing.Point(12, 84);
+            this.dgvSubmodulos.Location = new System.Drawing.Point(73, 84);
             this.dgvSubmodulos.Name = "dgvSubmodulos";
             this.dgvSubmodulos.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvSubmodulos.PrimaryGrid.AllowRowResize = true;
             this.dgvSubmodulos.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn7.Name = "idSubmodulo";
+            gridColumn7.Visible = false;
+            gridColumn8.HeaderText = "Descripcion Sub Modulo";
+            gridColumn8.Name = "descripcionSubmodulo";
+            gridColumn8.Width = 300;
+            gridColumn9.Name = "idModuloP";
+            gridColumn9.Visible = false;
+            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn7);
+            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn8);
+            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn9);
             this.dgvSubmodulos.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvSubmodulos.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvSubmodulos.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -144,7 +162,7 @@
             this.dgvSubmodulos.PrimaryGrid.NullString = "<<null>>";
             this.dgvSubmodulos.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvSubmodulos.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvSubmodulos.Size = new System.Drawing.Size(405, 411);
+            this.dgvSubmodulos.Size = new System.Drawing.Size(301, 411);
             this.dgvSubmodulos.TabIndex = 93;
             this.dgvSubmodulos.Text = "Tabla Memoria";
             this.dgvSubmodulos.Click += new System.EventHandler(this.dgvSubmodulos_Click);
@@ -157,11 +175,21 @@
             this.dgvPermisosUsuario.BackColor = System.Drawing.Color.Silver;
             this.dgvPermisosUsuario.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvPermisosUsuario.ForeColor = System.Drawing.Color.Black;
-            this.dgvPermisosUsuario.Location = new System.Drawing.Point(511, 84);
+            this.dgvPermisosUsuario.Location = new System.Drawing.Point(544, 84);
             this.dgvPermisosUsuario.Name = "dgvPermisosUsuario";
             this.dgvPermisosUsuario.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvPermisosUsuario.PrimaryGrid.AllowRowResize = true;
             this.dgvPermisosUsuario.PrimaryGrid.ColumnHeader.RowHeight = 30;
+            gridColumn10.Name = "idUsuario";
+            gridColumn10.Visible = false;
+            gridColumn11.Name = "idSubmodulo";
+            gridColumn11.Visible = false;
+            gridColumn12.HeaderText = "Descripcion Sub Modulo";
+            gridColumn12.Name = "descripcionSubmodulo";
+            gridColumn12.Width = 300;
+            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn12);
             this.dgvPermisosUsuario.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvPermisosUsuario.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvPermisosUsuario.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -174,7 +202,7 @@
             this.dgvPermisosUsuario.PrimaryGrid.NullString = "<<null>>";
             this.dgvPermisosUsuario.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvPermisosUsuario.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvPermisosUsuario.Size = new System.Drawing.Size(407, 411);
+            this.dgvPermisosUsuario.Size = new System.Drawing.Size(300, 411);
             this.dgvPermisosUsuario.TabIndex = 95;
             this.dgvPermisosUsuario.Text = "Tabla Memoria";
             this.dgvPermisosUsuario.Click += new System.EventHandler(this.dgvPermisosUsuario_Click);
@@ -239,9 +267,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbModulosPrincipales);
             this.Controls.Add(this.cmbUsuarios);
+            this.MaximumSize = new System.Drawing.Size(946, 546);
+            this.MinimumSize = new System.Drawing.Size(946, 546);
             this.Name = "frmConfiguracionPermisos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PERMISOS";
+            this.Load += new System.EventHandler(this.frmConfiguracionPermisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.submoduloDABindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

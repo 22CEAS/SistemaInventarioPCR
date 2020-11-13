@@ -54,7 +54,7 @@ namespace Apolo
             //COMBO BOX LISTADO DE USUARIOS
             tablaUsuario = usuarioDA.ListarUsuarios();
             cmbUsuarios.DataSource = tablaUsuario;
-            cmbUsuarios.DisplayMember = "usuario";
+            cmbUsuarios.DisplayMember = "nombre";
             cmbUsuarios.ValueMember = "idUsuario";
 
             //COMBO BOX LISTADO DE MODULOS PRINCIALES
@@ -170,8 +170,12 @@ namespace Apolo
             idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
             idModuloP = Convert.ToInt32(cmbModulosPrincipales.SelectedValue);
 
+
+            //CONVERTIR DE "USUARIO" a "idUsuario"
+
+
             tablaSubmodulos = SubmoduloDA.ListarSubmodulosPermisos(idModuloP, idUsuario);
-            dgvSubmodulos.PrimaryGrid.AutoGenerateColumns = true;
+            dgvSubmodulos.PrimaryGrid.AutoGenerateColumns = false;
             dgvSubmodulos.PrimaryGrid.DataSource = tablaSubmodulos;
 
             //AQUI MOSTRAR LOS PERMISOS QUE YA TIENE EL USUARIO
@@ -218,6 +222,11 @@ namespace Apolo
         }
 
         private void dgvPermisosUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmConfiguracionPermisos_Load(object sender, EventArgs e)
         {
 
         }

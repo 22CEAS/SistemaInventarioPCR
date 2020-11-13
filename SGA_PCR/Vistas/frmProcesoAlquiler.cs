@@ -494,6 +494,7 @@ namespace Apolo
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             int i = cmbCliente.SelectedIndex;
             if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
             {
@@ -505,6 +506,7 @@ namespace Apolo
                 cmbSucursal.ValueMember = "idSucursal";
                 cmbSucursal.SelectedIndex = (tablaClienteSucursal.Rows.Count>0)?0:-1;
             }
+            
 
         }
 

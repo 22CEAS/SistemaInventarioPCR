@@ -99,7 +99,7 @@
             // MenuVertical
             // 
             this.MenuVertical.AutoScroll = true;
-            this.MenuVertical.AutoScrollMinSize = new System.Drawing.Size(0, 2000);
+            this.MenuVertical.AutoScrollMinSize = new System.Drawing.Size(0, 650);
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.MenuVertical.Controls.Add(this.panelConfiguracion);
             this.MenuVertical.Controls.Add(this.btnConfiguracion);
@@ -874,13 +874,17 @@
             // 
             // BarraTitulo
             // 
+            this.BarraTitulo.Controls.Add(this.usuarioConectado);
             this.BarraTitulo.Controls.Add(this.button34);
+            this.BarraTitulo.Controls.Add(this.label3);
+            this.BarraTitulo.Controls.Add(this.lblHora);
             this.BarraTitulo.Controls.Add(this.pictureBox3);
+            this.BarraTitulo.Controls.Add(this.usuario);
             this.BarraTitulo.Controls.Add(this.label2);
+            this.BarraTitulo.Controls.Add(this.label4);
             this.BarraTitulo.Controls.Add(this.label1);
             this.BarraTitulo.Controls.Add(this.lblFecha);
             this.BarraTitulo.Controls.Add(this.pictureBox1);
-            this.BarraTitulo.Controls.Add(this.lblHora);
             this.BarraTitulo.Controls.Add(this.pictureBox2);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(344, 0);
@@ -914,11 +918,11 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(485, 9);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(437, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 6;
@@ -926,11 +930,11 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(247, 10);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(226, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 5;
@@ -938,11 +942,11 @@
             // 
             // lblFecha
             // 
-            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblFecha.Location = new System.Drawing.Point(342, 10);
+            this.lblFecha.Location = new System.Drawing.Point(309, 9);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(83, 25);
             this.lblFecha.TabIndex = 4;
@@ -951,7 +955,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(77, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(173, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -960,11 +964,11 @@
             // 
             // lblHora
             // 
-            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblHora.Location = new System.Drawing.Point(569, 9);
+            this.lblHora.Location = new System.Drawing.Point(516, 9);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(72, 25);
             this.lblHora.TabIndex = 3;
@@ -990,48 +994,50 @@
             // 
             // usuarioConectado
             // 
-            this.usuarioConectado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuarioConectado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuarioConectado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usuarioConectado.Enabled = false;
-            this.usuarioConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioConectado.Location = new System.Drawing.Point(1050, 615);
+            this.usuarioConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuarioConectado.Location = new System.Drawing.Point(599, 23);
             this.usuarioConectado.Name = "usuarioConectado";
-            this.usuarioConectado.Size = new System.Drawing.Size(222, 30);
+            this.usuarioConectado.Size = new System.Drawing.Size(108, 19);
             this.usuarioConectado.TabIndex = 7;
             this.usuarioConectado.TextChanged += new System.EventHandler(this.usuarioConectado_TextChanged);
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(1006, 618);
+            this.label3.Location = new System.Drawing.Point(594, 1);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 25);
+            this.label3.Size = new System.Drawing.Size(32, 25);
             this.label3.TabIndex = 9;
-            this.label3.Text = "ID:";
+            this.label3.Text = "ID";
             // 
             // usuario
             // 
-            this.usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usuario.Enabled = false;
-            this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuario.Location = new System.Drawing.Point(1050, 579);
+            this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuario.Location = new System.Drawing.Point(713, 24);
             this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(222, 30);
+            this.usuario.Size = new System.Drawing.Size(115, 19);
             this.usuario.TabIndex = 11;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(793, 582);
+            this.label4.Location = new System.Drawing.Point(708, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(251, 25);
+            this.label4.Size = new System.Drawing.Size(70, 25);
             this.label4.TabIndex = 12;
-            this.label4.Text = "USUARIO CONECTADO:";
+            this.label4.Text = "USER";
             // 
             // TEST_MENU_PRINCIPAL
             // 
@@ -1040,11 +1046,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1300, 650);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.usuario);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.BarraTitulo);
-            this.Controls.Add(this.usuarioConectado);
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1065,7 +1067,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
