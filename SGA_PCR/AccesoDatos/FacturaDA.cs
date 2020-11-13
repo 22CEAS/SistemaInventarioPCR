@@ -221,25 +221,31 @@ namespace AccesoDatos
 
         public void ActualizarPlazoFinal(Factura factura, string usuario, int IdSalidaDetActual, int IdSalidaDetAntigua)
         {
+            factura.NumeroOC = factura.NumeroOC.Trim();
+            factura.NumeroOC = (factura.NumeroOC.Length > 0) ? factura.NumeroOC : "";
 
-            parametrosEntrada = new MySqlParameter[3];
+            parametrosEntrada = new MySqlParameter[4];
             parametrosEntrada[0] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
-            parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+            parametrosEntrada[2] = new MySqlParameter("@_documentoRenovacion", MySqlDbType.VarChar, 255);
+            parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
 
             parametrosEntrada[0].Value = IdSalidaDetActual;
             parametrosEntrada[1].Value = factura.FechaFinPago;
-            parametrosEntrada[2].Value = usuario;
+            parametrosEntrada[2].Value = factura.NumeroOC;
+            parametrosEntrada[3].Value = usuario;
             bool okey = objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_fechaFinalPlazo");
 
-            parametrosEntrada = new MySqlParameter[3];
+            parametrosEntrada = new MySqlParameter[4];
             parametrosEntrada[0] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
             parametrosEntrada[1] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
-            parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+            parametrosEntrada[2] = new MySqlParameter("@_documentoRenovacion", MySqlDbType.VarChar, 255);
+            parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
 
             parametrosEntrada[0].Value = IdSalidaDetAntigua;
             parametrosEntrada[1].Value = factura.FechaFinPago;
-            parametrosEntrada[2].Value = usuario;
+            parametrosEntrada[2].Value = factura.NumeroOC;
+            parametrosEntrada[3].Value = usuario;
             okey = objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_fechaFinalPlazo");
         }
     }

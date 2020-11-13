@@ -586,6 +586,9 @@
     <EmbeddedResource Include="TEST_MENU_PRINCIPAL.resx">
       <DependentUpon>TEST_MENU_PRINCIPAL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fonts\Comfortaa-Regular.ttf" />
+    <EmbeddedResource Include="Fonts\Comfortaa-Light.ttf" />
+    <EmbeddedResource Include="Fonts\Comfortaa-Bold.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AccesoDatos.SubmoduloDA.datasource" />
     <None Include="Properties\Settings.settings">
@@ -615,5 +618,6 @@
       <Name>Modelo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

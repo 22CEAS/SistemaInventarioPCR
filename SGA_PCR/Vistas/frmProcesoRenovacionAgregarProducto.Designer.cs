@@ -34,6 +34,7 @@
             this.dgvPrueba = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Marca = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Modelo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Pantalla = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,7 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnAgregarMeses = new System.Windows.Forms.Button();
-            this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +131,7 @@
             this.vista.OptionsSelection.MultiSelect = true;
             this.vista.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.vista.OptionsView.ColumnAutoWidth = false;
+            this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
             // 
             // Codigo
@@ -142,8 +143,19 @@
             this.Codigo.Name = "Codigo";
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
-            this.Codigo.VisibleIndex = 1;
+            this.Codigo.VisibleIndex = 0;
             this.Codigo.Width = 140;
+            // 
+            // CodigoAntiguo
+            // 
+            this.CodigoAntiguo.Caption = "Código Antiguo";
+            this.CodigoAntiguo.FieldName = "CodigoAntiguo";
+            this.CodigoAntiguo.MinWidth = 140;
+            this.CodigoAntiguo.Name = "CodigoAntiguo";
+            this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.CodigoAntiguo.Visible = true;
+            this.CodigoAntiguo.VisibleIndex = 1;
+            this.CodigoAntiguo.Width = 140;
             // 
             // Marca
             // 
@@ -153,7 +165,7 @@
             this.Marca.Name = "Marca";
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Marca.Visible = true;
-            this.Marca.VisibleIndex = 3;
+            this.Marca.VisibleIndex = 2;
             this.Marca.Width = 100;
             // 
             // Modelo
@@ -163,7 +175,7 @@
             this.Modelo.MinWidth = 100;
             this.Modelo.Name = "Modelo";
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 4;
+            this.Modelo.VisibleIndex = 3;
             this.Modelo.Width = 100;
             // 
             // Pantalla
@@ -216,7 +228,7 @@
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 5;
+            this.fecIniContrato.VisibleIndex = 4;
             this.fecIniContrato.Width = 140;
             // 
             // fecFinContrato
@@ -227,7 +239,7 @@
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 6;
+            this.fecFinContrato.VisibleIndex = 5;
             this.fecFinContrato.Width = 140;
             // 
             // IdLC
@@ -308,17 +320,6 @@
             this.btnAgregarMeses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarMeses.UseVisualStyleBackColor = false;
             this.btnAgregarMeses.Click += new System.EventHandler(this.btnAgregarMeses_Click);
-            // 
-            // CodigoAntiguo
-            // 
-            this.CodigoAntiguo.Caption = "Código Antiguo";
-            this.CodigoAntiguo.FieldName = "CodigoAntiguo";
-            this.CodigoAntiguo.MinWidth = 140;
-            this.CodigoAntiguo.Name = "CodigoAntiguo";
-            this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 2;
-            this.CodigoAntiguo.Width = 140;
             // 
             // frmProcesoRenovacionAgregarProducto
             // 
