@@ -47,7 +47,7 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportar.AutoSize = true;
             this.btnExportar.BackColor = System.Drawing.Color.Transparent;
             this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -56,7 +56,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(950, 12);
+            this.btnExportar.Location = new System.Drawing.Point(950, 13);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 136;
@@ -67,10 +67,13 @@
             // 
             // dgvReparaciones
             // 
+            this.dgvReparaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvReparaciones.Location = new System.Drawing.Point(25, 82);
             this.dgvReparaciones.MainView = this.vista;
             this.dgvReparaciones.Name = "dgvReparaciones";
-            this.dgvReparaciones.Size = new System.Drawing.Size(1000, 260);
+            this.dgvReparaciones.Size = new System.Drawing.Size(1000, 372);
             this.dgvReparaciones.TabIndex = 135;
             this.dgvReparaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -109,7 +112,7 @@
             // 
             this.IdReparacion.Caption = "Id Reparación";
             this.IdReparacion.FieldName = "IdReparacion";
-            this.IdReparacion.MinWidth = 100;
+            this.IdReparacion.MinWidth = 40;
             this.IdReparacion.Name = "IdReparacion";
             this.IdReparacion.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.IdReparacion.Visible = true;
@@ -120,7 +123,7 @@
             // 
             this.CodigoLC.Caption = "Codigo LC";
             this.CodigoLC.FieldName = "CodigoLC";
-            this.CodigoLC.MinWidth = 100;
+            this.CodigoLC.MinWidth = 40;
             this.CodigoLC.Name = "CodigoLC";
             this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoLC.Visible = true;
@@ -131,7 +134,7 @@
             // 
             this.FechaReparacion.Caption = "Fecha Reparación";
             this.FechaReparacion.FieldName = "FechaReparacion";
-            this.FechaReparacion.MinWidth = 100;
+            this.FechaReparacion.MinWidth = 40;
             this.FechaReparacion.Name = "FechaReparacion";
             this.FechaReparacion.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaReparacion.Visible = true;
@@ -142,7 +145,7 @@
             // 
             this.DescripcionComoSeEncontro.Caption = "Descripcion Como Se Encontro";
             this.DescripcionComoSeEncontro.FieldName = "DescripcionComoSeEncontro";
-            this.DescripcionComoSeEncontro.MinWidth = 250;
+            this.DescripcionComoSeEncontro.MinWidth = 40;
             this.DescripcionComoSeEncontro.Name = "DescripcionComoSeEncontro";
             this.DescripcionComoSeEncontro.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.DescripcionComoSeEncontro.Visible = true;
@@ -153,7 +156,7 @@
             // 
             this.EstadoAntesReparacion.Caption = "Estado Antes Reparación";
             this.EstadoAntesReparacion.FieldName = "EstadoAntesReparacion";
-            this.EstadoAntesReparacion.MinWidth = 150;
+            this.EstadoAntesReparacion.MinWidth = 40;
             this.EstadoAntesReparacion.Name = "EstadoAntesReparacion";
             this.EstadoAntesReparacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.EstadoAntesReparacion.Visible = true;
@@ -164,7 +167,7 @@
             // 
             this.DescripcionReparacion.Caption = "Descripción Reparación";
             this.DescripcionReparacion.FieldName = "DescripcionReparacion";
-            this.DescripcionReparacion.MinWidth = 250;
+            this.DescripcionReparacion.MinWidth = 40;
             this.DescripcionReparacion.Name = "DescripcionReparacion";
             this.DescripcionReparacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.DescripcionReparacion.Visible = true;
@@ -175,7 +178,7 @@
             // 
             this.EstadoLuegoReparacion.Caption = "Estado Luego Reparación";
             this.EstadoLuegoReparacion.FieldName = "EstadoLuegoReparacion";
-            this.EstadoLuegoReparacion.MinWidth = 150;
+            this.EstadoLuegoReparacion.MinWidth = 40;
             this.EstadoLuegoReparacion.Name = "EstadoLuegoReparacion";
             this.EstadoLuegoReparacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.EstadoLuegoReparacion.Visible = true;
@@ -186,7 +189,7 @@
             // 
             this.Responsable.Caption = "Responsable";
             this.Responsable.FieldName = "Responsable";
-            this.Responsable.MinWidth = 150;
+            this.Responsable.MinWidth = 40;
             this.Responsable.Name = "Responsable";
             this.Responsable.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Responsable.Visible = true;
@@ -197,7 +200,7 @@
             // 
             this.EstadoReparacion.Caption = "Estado Reparación";
             this.EstadoReparacion.FieldName = "Estado";
-            this.EstadoReparacion.MinWidth = 150;
+            this.EstadoReparacion.MinWidth = 40;
             this.EstadoReparacion.Name = "EstadoReparacion";
             this.EstadoReparacion.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.EstadoReparacion.Visible = true;
@@ -207,13 +210,13 @@
             // frmReporteMantenimiento
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1058, 375);
+            this.ClientSize = new System.Drawing.Size(1058, 475);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvReparaciones);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "frmReporteMantenimiento";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

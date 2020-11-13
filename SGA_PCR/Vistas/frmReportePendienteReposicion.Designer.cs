@@ -46,10 +46,13 @@
             // 
             // dgvObservaciones
             // 
+            this.dgvObservaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvObservaciones.Location = new System.Drawing.Point(27, 79);
             this.dgvObservaciones.MainView = this.vista;
             this.dgvObservaciones.Name = "dgvObservaciones";
-            this.dgvObservaciones.Size = new System.Drawing.Size(1018, 260);
+            this.dgvObservaciones.Size = new System.Drawing.Size(1018, 350);
             this.dgvObservaciones.TabIndex = 133;
             this.dgvObservaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -87,7 +90,7 @@
             // 
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "Cliente";
-            this.Cliente.MinWidth = 150;
+            this.Cliente.MinWidth = 40;
             this.Cliente.Name = "Cliente";
             this.Cliente.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Cliente.Visible = true;
@@ -98,7 +101,7 @@
             // 
             this.RUC.Caption = "RUC";
             this.RUC.FieldName = "RUC";
-            this.RUC.MinWidth = 75;
+            this.RUC.MinWidth = 40;
             this.RUC.Name = "RUC";
             this.RUC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RUC.Visible = true;
@@ -108,7 +111,7 @@
             // 
             this.CodigoLC.Caption = "Código LC";
             this.CodigoLC.FieldName = "CodigoLC";
-            this.CodigoLC.MinWidth = 100;
+            this.CodigoLC.MinWidth = 40;
             this.CodigoLC.Name = "CodigoLC";
             this.CodigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoLC.Visible = true;
@@ -119,7 +122,7 @@
             // 
             this.ObservaciónDeuda.Caption = "Observación Deuda";
             this.ObservaciónDeuda.FieldName = "ObservacionDeuda";
-            this.ObservaciónDeuda.MinWidth = 250;
+            this.ObservaciónDeuda.MinWidth = 40;
             this.ObservaciónDeuda.Name = "ObservaciónDeuda";
             this.ObservaciónDeuda.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.ObservaciónDeuda.Visible = true;
@@ -130,7 +133,7 @@
             // 
             this.GuiaLevantamiento.Caption = "Guia Levantamiento";
             this.GuiaLevantamiento.FieldName = "GuiaLevantamiento";
-            this.GuiaLevantamiento.MinWidth = 150;
+            this.GuiaLevantamiento.MinWidth = 40;
             this.GuiaLevantamiento.Name = "GuiaLevantamiento";
             this.GuiaLevantamiento.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.GuiaLevantamiento.Visible = true;
@@ -141,7 +144,7 @@
             // 
             this.ObservacionLevantamiento.Caption = "Observación Levantamiento";
             this.ObservacionLevantamiento.FieldName = "ObservacionLevantamiento";
-            this.ObservacionLevantamiento.MinWidth = 250;
+            this.ObservacionLevantamiento.MinWidth = 40;
             this.ObservacionLevantamiento.Name = "ObservacionLevantamiento";
             this.ObservacionLevantamiento.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.ObservacionLevantamiento.Visible = true;
@@ -152,7 +155,7 @@
             // 
             this.FechaLevantamiento.Caption = "Fecha Levantamiento";
             this.FechaLevantamiento.FieldName = "FechaLevantamiento";
-            this.FechaLevantamiento.MinWidth = 150;
+            this.FechaLevantamiento.MinWidth = 40;
             this.FechaLevantamiento.Name = "FechaLevantamiento";
             this.FechaLevantamiento.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaLevantamiento.Visible = true;
@@ -163,7 +166,7 @@
             // 
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "Estado";
-            this.Estado.MinWidth = 80;
+            this.Estado.MinWidth = 40;
             this.Estado.Name = "Estado";
             this.Estado.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Estado.Visible = true;
@@ -172,7 +175,7 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExportar.AutoSize = true;
             this.btnExportar.BackColor = System.Drawing.Color.Transparent;
             this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -181,7 +184,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(970, 10);
+            this.btnExportar.Location = new System.Drawing.Point(970, 12);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 134;
@@ -193,13 +196,13 @@
             // frmReportePendienteReposicion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1075, 372);
+            this.ClientSize = new System.Drawing.Size(1075, 461);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvObservaciones);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "frmReportePendienteReposicion";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

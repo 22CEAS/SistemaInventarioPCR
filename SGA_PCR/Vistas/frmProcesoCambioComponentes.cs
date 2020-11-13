@@ -479,7 +479,8 @@ namespace Apolo
         {
             string codigo = txtCodigo.Text;
             codigo = codigo.Trim();
-            laptop = laptopDA.DatosLaptopDisponibleSinMemoriaSinDisco(codigo);
+            //laptop = laptopDA.DatosLaptopDisponibleSinMemoriaSinDisco(codigo);
+            laptop = laptopDA.DatosLaptopsSinMemoriaSinDiscoSinFiltros(codigo);
             LlenarDatosLaptop();
         }
 

@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn199 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn200 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn201 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn202 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn203 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn204 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn205 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn206 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn207 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -71,6 +71,8 @@
             // 
             // button2
             // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.Location = new System.Drawing.Point(568, 95);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -80,6 +82,8 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(673, 95);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -99,6 +103,8 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(35, 47);
             this.comboBox2.Name = "comboBox2";
@@ -117,6 +123,8 @@
             // 
             // dateTimeInput3
             // 
+            this.dateTimeInput3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -163,27 +171,27 @@
             this.dgv.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgv.PrimaryGrid.AllowRowResize = true;
             this.dgv.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn199.DataPropertyName = "Tipo2";
-            gridColumn199.Name = "";
-            gridColumn200.DataPropertyName = "Capacidad";
-            gridColumn200.Name = "";
-            gridColumn201.DataPropertyName = "TipoMemoria";
-            gridColumn201.Name = "";
-            gridColumn202.Name = "Cliente";
-            gridColumn203.Name = "Equipo";
-            gridColumn204.Name = "Código";
-            gridColumn205.Name = "Guía";
-            gridColumn206.Name = "KAM";
-            gridColumn207.Name = "FechaAlquiler";
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn199);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn200);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn201);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn202);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn203);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn204);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn205);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn206);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn207);
+            gridColumn27.DataPropertyName = "Tipo2";
+            gridColumn27.Name = "";
+            gridColumn28.DataPropertyName = "Capacidad";
+            gridColumn28.Name = "";
+            gridColumn29.DataPropertyName = "TipoMemoria";
+            gridColumn29.Name = "";
+            gridColumn30.Name = "Cliente";
+            gridColumn31.Name = "Equipo";
+            gridColumn32.Name = "Código";
+            gridColumn33.Name = "Guía";
+            gridColumn34.Name = "KAM";
+            gridColumn35.Name = "FechaAlquiler";
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn27);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn28);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn29);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn30);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn31);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn32);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn33);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn34);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn35);
             this.dgv.PrimaryGrid.DefaultRowHeight = 24;
             this.dgv.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgv.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -200,6 +208,8 @@
             // 
             // dateTimeInput1
             // 
+            this.dateTimeInput1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -245,6 +255,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(568, 45);
             this.comboBox1.Name = "comboBox1";
@@ -263,6 +275,8 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(35, 97);
             this.comboBox3.Name = "comboBox3";
@@ -271,6 +285,9 @@
             // 
             // dgvAlquiler
             // 
+            this.dgvAlquiler.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAlquiler.Location = new System.Drawing.Point(60, 238);
             this.dgvAlquiler.MainView = this.vista;
             this.dgvAlquiler.Name = "dgvAlquiler";
