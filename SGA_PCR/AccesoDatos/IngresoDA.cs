@@ -14,6 +14,7 @@ namespace AccesoDatos
     {
         DBManager objManager;
         MySqlParameter[] parametrosEntrada = null;
+        MySqlParameter[] parametrosEntrada_aux = null;
         int IdCategoriaWindows = 12;
         int IdCategoriaOffice = 13;
         int IdCategoriaAntivirus = 14;
@@ -93,7 +94,26 @@ namespace AccesoDatos
 
             bool error = false;
 
+            
             string[] datosSalida = new string[1];
+
+
+
+            //LOGICA CORRELATIVO
+            string[] codigoSiguiente = new string[1]; //CODIGO CORRELATIVO
+
+            parametrosEntrada_aux = new MySqlParameter[3];
+            parametrosEntrada[0] = new MySqlParameter("@_marcaLap", MySqlDbType.VarChar, 80);
+            parametrosEntrada[1] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
+            parametrosEntrada[2] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
+
+            
+
+            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux, "obtener_codigo_correlativo",
+                            2, 3, out codigoSiguiente, 1);
+
+            string codigo = codigoSiguiente[0];
+            //FIN LOGICA CORRELATIVO
 
             if (ingreso.Detalles.Count > 0)
             {
@@ -104,6 +124,7 @@ namespace AccesoDatos
                 {
                     for (int i = 0; i < det.Cantidad; i++)
                     {
+                        //AQUI PONER PROCEDURE DE CODIGO CORRELATIVO
                         parametrosEntrada = new MySqlParameter[17];
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
@@ -150,8 +171,13 @@ namespace AccesoDatos
 
                         datosSalida = new string[1];
 
+                        //PROCEDURE QUE OBTENGA EL CODIGO
+
+
                         objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_laptop_cpu",
                             16, 17, out datosSalida, 1);
+
+
                         if (datosSalida != null)
                         {
                             int idLC = Convert.ToInt32(datosSalida[0]);
