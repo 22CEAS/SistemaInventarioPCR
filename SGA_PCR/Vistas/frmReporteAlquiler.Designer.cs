@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn28 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn29 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn30 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn31 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn32 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn33 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn34 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn35 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquiler)).BeginInit();
@@ -171,27 +172,27 @@
             this.dgv.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgv.PrimaryGrid.AllowRowResize = true;
             this.dgv.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn27.DataPropertyName = "Tipo2";
-            gridColumn27.Name = "";
-            gridColumn28.DataPropertyName = "Capacidad";
-            gridColumn28.Name = "";
-            gridColumn29.DataPropertyName = "TipoMemoria";
-            gridColumn29.Name = "";
-            gridColumn30.Name = "Cliente";
-            gridColumn31.Name = "Equipo";
-            gridColumn32.Name = "Código";
-            gridColumn33.Name = "Guía";
-            gridColumn34.Name = "KAM";
-            gridColumn35.Name = "FechaAlquiler";
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn27);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn28);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn29);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn30);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn31);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn32);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn33);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn34);
-            this.dgv.PrimaryGrid.Columns.Add(gridColumn35);
+            gridColumn9.DataPropertyName = "Tipo2";
+            gridColumn9.Name = "";
+            gridColumn10.DataPropertyName = "Capacidad";
+            gridColumn10.Name = "";
+            gridColumn11.DataPropertyName = "TipoMemoria";
+            gridColumn11.Name = "";
+            gridColumn12.Name = "Cliente";
+            gridColumn13.Name = "Equipo";
+            gridColumn14.Name = "Código";
+            gridColumn15.Name = "Guía";
+            gridColumn16.Name = "KAM";
+            gridColumn17.Name = "FechaAlquiler";
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn9);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn10);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn11);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn12);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn13);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn14);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn15);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn16);
+            this.dgv.PrimaryGrid.Columns.Add(gridColumn17);
             this.dgv.PrimaryGrid.DefaultRowHeight = 24;
             this.dgv.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgv.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -439,11 +440,22 @@
             this.gridColumn8.VisibleIndex = 11;
             this.gridColumn8.Width = 100;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comfortaa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(31, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 21);
+            this.label3.TabIndex = 86;
+            this.label3.Text = "Código Equipo";
+            // 
             // frmReporteAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvAlquiler);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox3);
@@ -496,5 +508,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private System.Windows.Forms.Label label3;
     }
 }

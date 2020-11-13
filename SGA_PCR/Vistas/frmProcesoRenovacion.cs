@@ -272,7 +272,7 @@ namespace Apolo
             if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Renovación", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int error = 0;
-                error = renovacionDA.InsertarRenovaciones(renovaciones, this.nombreUsuario);
+                error = renovacionDA.InsertarRenovaciones(renovaciones, this.nombreUsuario,DocumentoReferencia);
 
                 if (error == 0)
                 {

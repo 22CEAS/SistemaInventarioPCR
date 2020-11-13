@@ -25,21 +25,23 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * From vista_laptops_detalle_alquiler_plazo_alquiler where idCliente=" + idCliente + " ;");
         }
 
-        public int InsertarRenovaciones(BindingList<Renovacion> renovaciones, string usuario)
+        public int InsertarRenovaciones(BindingList<Renovacion> renovaciones, string usuario,string documentoReferencia)
         {
 
             bool error = false;
 
             foreach(Renovacion renovacion in renovaciones)
             {
-                parametrosEntrada = new MySqlParameter[3];
+                parametrosEntrada = new MySqlParameter[4];
                 parametrosEntrada[0] = new MySqlParameter("@_idSalidaDet", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_fecFinContrato", MySqlDbType.DateTime);
-                parametrosEntrada[2] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                parametrosEntrada[2] = new MySqlParameter("@_documentoRenovacion", MySqlDbType.VarChar, 255);
+                parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
 
                 parametrosEntrada[0].Value = renovacion.IdSalidaDetalle;
                 parametrosEntrada[1].Value = renovacion.FechaFinContrato;
-                parametrosEntrada[2].Value = usuario;
+                parametrosEntrada[2].Value = documentoReferencia;
+                parametrosEntrada[3].Value = usuario;
                 bool okey = objManager.EjecutarProcedure(parametrosEntrada, "update_salida_det_fechaFinalPlazo");
                 if (!okey) return 0;
 

@@ -1784,6 +1784,7 @@ DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `update_salida_det_fechaFinalPlazo`(
 	IN _idSalidaDet INT,
 	IN _fecFinContrato DATETIME,
+	IN _documentoRenovacion NVARCHAR(255),
 	IN _usuario_mod NVARCHAR(100)
 )
 BEGIN
@@ -1791,6 +1792,7 @@ BEGIN
 	UPDATE salida_det 
 	SET fecFinContrato=_fecFinContrato,
 		fec_mod=@fechaModificacion,
+		documentoRenovacion=_documentoRenovacion,
 		usuario_mod=_usuario_mod
 	WHERE idSalidaDet=_idSalidaDet; 
 END
