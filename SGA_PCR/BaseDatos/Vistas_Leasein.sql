@@ -1178,8 +1178,135 @@ From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
 where d.fueDevuelto=0 and d.estado=4
 ORDER BY lc.idLC ;
 
-
 create view vista_laptops_cuadro_vencimiento as
+Select d.idSalidaDet as IdSalidaDetalle,
+		s.idSucursal as IdSucursal,
+		s.idSalida as IdSalida,
+		d.idLC as IdLC,
+		d.fecIniContrato as fecIniContrato,
+		d.fecFinContrato as fecFinContrato,
+		s.idCliente as IdCliente,
+		sc.nombreCliente as Cliente,
+		sc.nombreContacto as Contacto,
+		sc.direccion as DireccionCliente,
+		sc.telefono as TelefonoContacto,
+		lc.idMarca as idMarca,
+		lc.marca as MarcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as NombreModeloLC,
+		lc.codigo as Codigo,
+		lc.tamanoPantalla as TamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as TipoProcesador,
+		p.generacion as GeneracionProcesador,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo,
+				
+		d.guiaSalida AS guia,
+		'' AS factura,
+		'' AS fecInicioFactura,
+		'' AS fecFinFactura,
+		0 AS MontoSoles,
+		0 AS MontoDolares,
+		0 AS TotalDolares,
+		DATEDIFF( CURDATE(), d.fecIniContrato ) AS diasVencidos,
+
+	if(d.observacion is null,'',d.observacion) as CodigoAntiguo,
+	
+	IFNULL((Select dA.guiaSalida as GuiaAntigua
+	From salida_det dA inner join laptop_cpu lc on dA.idLC=lc.idLC
+	where dA.IdSalida=d.idSalida and lc.codigo=d.observacion), '') as GuiaAntigua,
+	
+	IFNULL((Select dA.idSalidaDet as IdSalidaDetAntigua
+	From salida_det dA inner join laptop_cpu lc on dA.idLC=lc.idLC
+	where dA.IdSalida=d.idSalida and lc.codigo=d.observacion), '') as IdSalidaDetAntigua
+		
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		LEFT JOIN vista_maestro_sucursal_cliente sc on s.idSucursal=sc.idSucursal
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on d.idVideo=v.idVideo ,
+		cuota cu 
+where d.fueDevuelto=0 and d.estado=4
+and  (DATEDIFF( d.fecFinContrato , CURDATE())>=0  )
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c)
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c) and
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c )
+			END
+union
+
+
+Select d.idSalidaDet as IdSalidaDetalle,
+		s.idSucursal as IdSucursal,
+		s.idSalida as IdSalida,
+		d.idLC as IdLC,
+		d.fecIniContrato as fecIniContrato,
+		d.fecFinContrato as fecFinContrato,
+		s.idCliente as IdCliente,
+		sc.nombreCliente as Cliente,
+		sc.nombreContacto as Contacto,
+		sc.direccion as DireccionCliente,
+		sc.telefono as TelefonoContacto,
+		lc.idMarca as idMarca,
+		lc.marca as MarcaLC,
+		lc.idModelo as idModelo,
+		lc.nombreModelo as NombreModeloLC,
+		lc.codigo as Codigo,
+		lc.tamanoPantalla as TamanoPantalla,
+		p.idProcesador as idProcesador,
+		p.marca as marcaProcesador,
+		p.tipo as TipoProcesador,
+		p.generacion as GeneracionProcesador,
+		if(v.idVideo is null,0,v.idVideo) as idVideo,
+		if(v.marca is null,'',v.marca) as marcaVideo,
+		if(v.nombreModelo is null,'',v.nombreModelo) as NombreModeloVideo,
+		if(v.capacidad is null,0,v.capacidad) as CapacidadVideo,
+		if(v.tipo is null,'',v.tipo) as tipoVideo,
+		
+		d.guiaSalida AS guia,
+		cu.numFactura AS factura,
+		cu.fecInicioPago AS fecInicioFactura,
+		cu.fecFinPago AS fecFinFactura,
+		cu.totalSoles AS MontoSoles,
+		cu.totalDolares AS MontoDolares,
+		ROUND((cu.totalDolares+(cu.totalSoles/3.5)),2) AS TotalDolares,
+		DATEDIFF( CURDATE(), cu.fecFinPago ) AS diasVencidos,
+
+	if(d.observacion is null,'',d.observacion) as CodigoAntiguo,
+	
+	IFNULL((Select dA.guiaSalida as GuiaAntigua
+	From salida_det dA inner join laptop_cpu lc on dA.idLC=lc.idLC
+	where dA.IdSalida=d.idSalida and lc.codigo=d.observacion), '') as GuiaAntigua,
+	
+	IFNULL((Select dA.idSalidaDet as IdSalidaDetAntigua
+	From salida_det dA inner join laptop_cpu lc on dA.idLC=lc.idLC
+	where dA.IdSalida=d.idSalida and lc.codigo=d.observacion), '') as IdSalidaDetAntigua		
+		
+From salida s INNER JOIN salida_det d on s.idSalida=d.idSalida
+		LEFT JOIN vista_maestro_sucursal_cliente sc on s.idSucursal=sc.idSucursal
+		left join  vista_maestro_laptops lc on d.idLC=lc.idLC
+		left join  vista_maestro_procesador p on d.idProcesador=p.idProcesador 
+		left join vista_maestro_video v on d.idVideo=v.idVideo ,
+		cuota cu 
+where d.fueDevuelto=0 and d.estado=4
+and  (DATEDIFF( d.fecFinContrato , CURDATE())>=0  )
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) or
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
+			END
+ORDER BY Cliente ;
+
+create view vista_laptops_cuadro_vencimiento_bk as
 Select d.idSalidaDet as IdSalidaDetalle,
 		s.idSucursal as IdSucursal,
 		s.idSalida as IdSalida,

@@ -46,7 +46,6 @@
             this.Video = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GuiaAntigua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.factura = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -120,7 +119,6 @@
             this.Video,
             this.Capacidad,
             this.CodigoAntiguo,
-            this.GuiaAntigua,
             this.fecIniContrato,
             this.fecFinContrato,
             this.factura,
@@ -280,17 +278,6 @@
             this.CodigoAntiguo.VisibleIndex = 10;
             this.CodigoAntiguo.Width = 120;
             // 
-            // GuiaAntigua
-            // 
-            this.GuiaAntigua.Caption = "Guía Antigua";
-            this.GuiaAntigua.FieldName = "GuiaAntigua";
-            this.GuiaAntigua.MinWidth = 40;
-            this.GuiaAntigua.Name = "GuiaAntigua";
-            this.GuiaAntigua.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.GuiaAntigua.Visible = true;
-            this.GuiaAntigua.VisibleIndex = 11;
-            this.GuiaAntigua.Width = 100;
-            // 
             // fecIniContrato
             // 
             this.fecIniContrato.Caption = "Inicio Plazo Alquiler";
@@ -299,7 +286,7 @@
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 12;
+            this.fecIniContrato.VisibleIndex = 11;
             this.fecIniContrato.Width = 100;
             // 
             // fecFinContrato
@@ -310,7 +297,7 @@
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 13;
+            this.fecFinContrato.VisibleIndex = 12;
             this.fecFinContrato.Width = 100;
             // 
             // factura
@@ -321,7 +308,7 @@
             this.factura.Name = "factura";
             this.factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.factura.Visible = true;
-            this.factura.VisibleIndex = 14;
+            this.factura.VisibleIndex = 13;
             this.factura.Width = 100;
             // 
             // fecInicioFactura
@@ -332,7 +319,7 @@
             this.fecInicioFactura.Name = "fecInicioFactura";
             this.fecInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecInicioFactura.Visible = true;
-            this.fecInicioFactura.VisibleIndex = 15;
+            this.fecInicioFactura.VisibleIndex = 14;
             this.fecInicioFactura.Width = 100;
             // 
             // fecFinFactura
@@ -343,7 +330,7 @@
             this.fecFinFactura.Name = "fecFinFactura";
             this.fecFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinFactura.Visible = true;
-            this.fecFinFactura.VisibleIndex = 16;
+            this.fecFinFactura.VisibleIndex = 15;
             this.fecFinFactura.Width = 100;
             // 
             // MontoSoles
@@ -354,7 +341,7 @@
             this.MontoSoles.Name = "MontoSoles";
             this.MontoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoSoles.Visible = true;
-            this.MontoSoles.VisibleIndex = 17;
+            this.MontoSoles.VisibleIndex = 16;
             this.MontoSoles.Width = 100;
             // 
             // MontoDolares
@@ -365,7 +352,7 @@
             this.MontoDolares.Name = "MontoDolares";
             this.MontoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoDolares.Visible = true;
-            this.MontoDolares.VisibleIndex = 18;
+            this.MontoDolares.VisibleIndex = 17;
             this.MontoDolares.Width = 100;
             // 
             // TotalDolares
@@ -376,7 +363,7 @@
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 19;
+            this.TotalDolares.VisibleIndex = 18;
             this.TotalDolares.Width = 100;
             // 
             // frmReporteCV
@@ -428,6 +415,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn Guia;
         private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
-        private DevExpress.XtraGrid.Columns.GridColumn GuiaAntigua;
     }
 }

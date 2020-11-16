@@ -40,7 +40,6 @@
             this.MarcaLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NombreModeloLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GuiaAntigua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaInicioContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TipoProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -89,7 +88,6 @@
             this.MarcaLC,
             this.NombreModeloLC,
             this.CodigoAntiguo,
-            this.GuiaAntigua,
             this.FechaInicioContrato,
             this.FechaFinContrato,
             this.TipoProcesador,
@@ -168,7 +166,7 @@
             this.Guía.Name = "Guía";
             this.Guía.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Guía.Visible = true;
-            this.Guía.VisibleIndex = 13;
+            this.Guía.VisibleIndex = 12;
             this.Guía.Width = 200;
             // 
             // MarcaLC
@@ -204,17 +202,6 @@
             this.CodigoAntiguo.VisibleIndex = 8;
             this.CodigoAntiguo.Width = 140;
             // 
-            // GuiaAntigua
-            // 
-            this.GuiaAntigua.Caption = "Guía Antigua";
-            this.GuiaAntigua.FieldName = "GuiaAntigua";
-            this.GuiaAntigua.MinWidth = 40;
-            this.GuiaAntigua.Name = "GuiaAntigua";
-            this.GuiaAntigua.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.GuiaAntigua.Visible = true;
-            this.GuiaAntigua.VisibleIndex = 9;
-            this.GuiaAntigua.Width = 140;
-            // 
             // FechaInicioContrato
             // 
             this.FechaInicioContrato.Caption = "Fecha Inicio Contrato";
@@ -234,7 +221,7 @@
             this.FechaFinContrato.Name = "FechaFinContrato";
             this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaFinContrato.Visible = true;
-            this.FechaFinContrato.VisibleIndex = 10;
+            this.FechaFinContrato.VisibleIndex = 9;
             this.FechaFinContrato.Width = 150;
             // 
             // TipoProcesador
@@ -245,7 +232,7 @@
             this.TipoProcesador.Name = "TipoProcesador";
             this.TipoProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoProcesador.Visible = true;
-            this.TipoProcesador.VisibleIndex = 11;
+            this.TipoProcesador.VisibleIndex = 10;
             this.TipoProcesador.Width = 150;
             // 
             // NombreModeloVideo
@@ -265,7 +252,7 @@
             this.DiasAtrasoRecojo.Name = "DiasAtrasoRecojo";
             this.DiasAtrasoRecojo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.DiasAtrasoRecojo.Visible = true;
-            this.DiasAtrasoRecojo.VisibleIndex = 12;
+            this.DiasAtrasoRecojo.VisibleIndex = 11;
             this.DiasAtrasoRecojo.Width = 150;
             // 
             // MotivoNoRecojo
@@ -285,7 +272,7 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 14;
+            this.KAM.VisibleIndex = 13;
             this.KAM.Width = 200;
             // 
             // btnExportar
@@ -350,6 +337,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
         private System.Windows.Forms.Button btnExportar;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
-        private DevExpress.XtraGrid.Columns.GridColumn GuiaAntigua;
     }
 }

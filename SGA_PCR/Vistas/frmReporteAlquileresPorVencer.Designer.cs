@@ -44,7 +44,6 @@
             this.Video = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Capacidad = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GuiaAntigua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecIniContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fecFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
@@ -92,7 +91,6 @@
             this.Video,
             this.Capacidad,
             this.CodigoAntiguo,
-            this.GuiaAntigua,
             this.fecIniContrato,
             this.fecFinContrato});
             this.vista.GridControl = this.dgvLaptops;
@@ -236,17 +234,6 @@
             this.CodigoAntiguo.VisibleIndex = 9;
             this.CodigoAntiguo.Width = 140;
             // 
-            // GuiaAntigua
-            // 
-            this.GuiaAntigua.Caption = "Guía Antigua";
-            this.GuiaAntigua.FieldName = "GuiaAntigua";
-            this.GuiaAntigua.MinWidth = 40;
-            this.GuiaAntigua.Name = "GuiaAntigua";
-            this.GuiaAntigua.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.GuiaAntigua.Visible = true;
-            this.GuiaAntigua.VisibleIndex = 10;
-            this.GuiaAntigua.Width = 140;
-            // 
             // fecIniContrato
             // 
             this.fecIniContrato.Caption = "Inicio Plazo Alquiler";
@@ -255,7 +242,7 @@
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 11;
+            this.fecIniContrato.VisibleIndex = 10;
             this.fecIniContrato.Width = 100;
             // 
             // fecFinContrato
@@ -266,7 +253,7 @@
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 12;
+            this.fecFinContrato.VisibleIndex = 11;
             this.fecFinContrato.Width = 100;
             // 
             // btnExportar
@@ -331,6 +318,5 @@
         private System.Windows.Forms.Button btnExportar;
         private DevExpress.XtraGrid.Columns.GridColumn GuiaSalida;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
-        private DevExpress.XtraGrid.Columns.GridColumn GuiaAntigua;
     }
 }

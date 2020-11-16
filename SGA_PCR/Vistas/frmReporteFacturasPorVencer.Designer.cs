@@ -41,7 +41,6 @@
             this.CódigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Guía = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GuiaAntigua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DíasAntesVencer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
@@ -104,7 +103,6 @@
             this.CódigoLC,
             this.Guía,
             this.CodigoAntiguo,
-            this.GuiaAntigua,
             this.DíasAntesVencer,
             this.KAM});
             this.vista.GridControl = this.dgvFacturas;
@@ -214,17 +212,6 @@
             this.CodigoAntiguo.VisibleIndex = 8;
             this.CodigoAntiguo.Width = 140;
             // 
-            // GuiaAntigua
-            // 
-            this.GuiaAntigua.Caption = "Guía Antigua";
-            this.GuiaAntigua.FieldName = "GuiaAntigua";
-            this.GuiaAntigua.MinWidth = 40;
-            this.GuiaAntigua.Name = "GuiaAntigua";
-            this.GuiaAntigua.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.GuiaAntigua.Visible = true;
-            this.GuiaAntigua.VisibleIndex = 9;
-            this.GuiaAntigua.Width = 140;
-            // 
             // DíasAntesVencer
             // 
             this.DíasAntesVencer.Caption = "Días Antes Vencer";
@@ -233,7 +220,7 @@
             this.DíasAntesVencer.Name = "DíasAntesVencer";
             this.DíasAntesVencer.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.DíasAntesVencer.Visible = true;
-            this.DíasAntesVencer.VisibleIndex = 10;
+            this.DíasAntesVencer.VisibleIndex = 9;
             this.DíasAntesVencer.Width = 100;
             // 
             // KAM
@@ -244,7 +231,7 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 11;
+            this.KAM.VisibleIndex = 10;
             this.KAM.Width = 200;
             // 
             // frmReporteFacturasPorVencer
@@ -285,6 +272,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn DíasAntesVencer;
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
-        private DevExpress.XtraGrid.Columns.GridColumn GuiaAntigua;
     }
 }

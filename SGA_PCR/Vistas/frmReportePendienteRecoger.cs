@@ -141,10 +141,9 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "TipoProcesador").ToString();
                 hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "NombreModeloVideo").ToString();
                 hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "CodigoAntiguo").ToString();
-                hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "GuiaAntigua").ToString();
-                hoja_trabajo.Cells[fila2, 15] = vista.GetRowCellValue(j, "diasAtrasoRecojo").ToString();
-                hoja_trabajo.Cells[fila2, 16] = vista.GetRowCellValue(j, "motivoNoRecojo").ToString();
-                hoja_trabajo.Cells[fila2, 17] = vista.GetRowCellValue(j, "KAM").ToString();
+                hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "diasAtrasoRecojo").ToString();
+                hoja_trabajo.Cells[fila2, 15] = vista.GetRowCellValue(j, "motivoNoRecojo").ToString();
+                hoja_trabajo.Cells[fila2, 16] = vista.GetRowCellValue(j, "KAM").ToString();
 
 
             }
@@ -181,10 +180,9 @@ namespace Apolo
                 hoja.Cells[fila + 2, 11] = "Tipo Procesador";
                 hoja.Cells[fila + 2, 12] = "Nombre Modelo Video";
                 hoja.Cells[fila + 2, 13] = "Código Antiguo";
-                hoja.Cells[fila + 2, 14] = "Guía Antigua";
-                hoja.Cells[fila + 2, 15] = "Dias Atraso Recojo";
-                hoja.Cells[fila + 2, 16] = "Motivo No Recojo";
-                hoja.Cells[fila + 2, 17] = "KAM";
+                hoja.Cells[fila + 2, 14] = "Dias Atraso Recojo";
+                hoja.Cells[fila + 2, 15] = "Motivo No Recojo";
+                hoja.Cells[fila + 2, 16] = "KAM";
 
 
                 int i = vista.Columns.Count + 64;

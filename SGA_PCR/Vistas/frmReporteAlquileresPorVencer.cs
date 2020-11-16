@@ -127,21 +127,20 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "NombreModeloVideo").ToString();
                 hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "CapacidadVideo").ToString();
                 hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "CodigoAntiguo").ToString();
-                hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "GuiaAntigua").ToString();
 
                 if (vista.GetRowCellValue(j, "fecIniContrato").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecIniContrato").ToString());
-                    hoja_trabajo.Cells[fila2, 15] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 14] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 15] = "";
+                else hoja_trabajo.Cells[fila2, 14] = "";
 
                 if (vista.GetRowCellValue(j, "fecFinContrato").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecFinContrato").ToString());
-                    hoja_trabajo.Cells[fila2, 16] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 15] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 16] = "";
+                else hoja_trabajo.Cells[fila2, 15] = "";
 
             }
             montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
@@ -177,9 +176,8 @@ namespace Apolo
                 hoja.Cells[fila + 2, 11] = "Nombre Modelo Video";
                 hoja.Cells[fila + 2, 12] = "Capacidad Video";
                 hoja.Cells[fila + 2, 13] = "Código Antiguo";
-                hoja.Cells[fila + 2, 14] = "Guía Antigua";
-                hoja.Cells[fila + 2, 15] = "Fecha Inicio Contrato";
-                hoja.Cells[fila + 2, 16] = "Fecha Fin Contrato";
+                hoja.Cells[fila + 2, 14] = "Fecha Inicio Contrato";
+                hoja.Cells[fila + 2, 15] = "Fecha Fin Contrato";
 
 
                 int i = vista.Columns.Count + 64;
