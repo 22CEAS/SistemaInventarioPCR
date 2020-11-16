@@ -129,43 +129,42 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "NombreModeloVideo").ToString();
                 hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "CapacidadVideo").ToString();
                 hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "CodigoAntiguo").ToString();
-                hoja_trabajo.Cells[fila2, 15] = vista.GetRowCellValue(j, "GuiaAntigua").ToString();
 
 
                 if (vista.GetRowCellValue(j, "fecIniContrato").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecIniContrato").ToString());
-                    hoja_trabajo.Cells[fila2, 16] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 15] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 16] = "";
+                else hoja_trabajo.Cells[fila2, 15] = "";
 
                 if (vista.GetRowCellValue(j, "fecFinContrato").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecFinContrato").ToString());
-                    hoja_trabajo.Cells[fila2, 17] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 16] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 17] = "";
+                else hoja_trabajo.Cells[fila2, 16] = "";
 
                 
-                hoja_trabajo.Cells[fila2, 18] = vista.GetRowCellValue(j, "factura").ToString();
+                hoja_trabajo.Cells[fila2, 17] = vista.GetRowCellValue(j, "factura").ToString();
 
                 if (vista.GetRowCellValue(j, "fecInicioFactura").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecInicioFactura").ToString());
-                    hoja_trabajo.Cells[fila2, 19] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 18] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 19] = "";
+                else hoja_trabajo.Cells[fila2, 18] = "";
 
                 if (vista.GetRowCellValue(j, "fecFinFactura").ToString().Length > 0)
                 {
                     DateTime aux2 = DateTime.Parse(vista.GetRowCellValue(j, "fecFinFactura").ToString());
-                    hoja_trabajo.Cells[fila2, 20] = aux2.ToString("yyyy/MM/dd");
+                    hoja_trabajo.Cells[fila2, 19] = aux2.ToString("yyyy/MM/dd");
                 }
-                else hoja_trabajo.Cells[fila2, 20] = "";
+                else hoja_trabajo.Cells[fila2, 19] = "";
 
-                hoja_trabajo.Cells[fila2, 21] = vista.GetRowCellValue(j, "MontoSoles").ToString();
-                hoja_trabajo.Cells[fila2, 22] = vista.GetRowCellValue(j, "MontoDolares").ToString();
-                hoja_trabajo.Cells[fila2, 23] = vista.GetRowCellValue(j, "TotalDolares").ToString();
+                hoja_trabajo.Cells[fila2, 20] = vista.GetRowCellValue(j, "MontoSoles").ToString();
+                hoja_trabajo.Cells[fila2, 21] = vista.GetRowCellValue(j, "MontoDolares").ToString();
+                hoja_trabajo.Cells[fila2, 22] = vista.GetRowCellValue(j, "TotalDolares").ToString();
 
             }
             montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
@@ -201,16 +200,15 @@ namespace Apolo
                 hoja.Cells[fila + 2, 11] = "Generacion Procesador";
                 hoja.Cells[fila + 2, 12] = "Nombre Modelo Video";
                 hoja.Cells[fila + 2, 13] = "Capacidad Video";
-                hoja.Cells[fila + 2, 14] = "Código Antigua";
-                hoja.Cells[fila + 2, 15] = "Guía Salida Antigua";
-                hoja.Cells[fila + 2, 16] = "Fecha Inicio Contrato";
-                hoja.Cells[fila + 2, 17] = "Fecha Fin Contrato";
-                hoja.Cells[fila + 2, 18] = "Factura";
-                hoja.Cells[fila + 2, 19] = "Fecha Inicio Factura";
-                hoja.Cells[fila + 2, 20] = "Fecha Fin Factura";
-                hoja.Cells[fila + 2, 21] = "Monto Soles";
-                hoja.Cells[fila + 2, 22] = "Monto Dolares";
-                hoja.Cells[fila + 2, 23] = "Total Dolares";
+                hoja.Cells[fila + 2, 14] = "Código Antiguo";
+                hoja.Cells[fila + 2, 15] = "Fecha Inicio Contrato";
+                hoja.Cells[fila + 2, 16] = "Fecha Fin Contrato";
+                hoja.Cells[fila + 2, 17] = "Factura";
+                hoja.Cells[fila + 2, 18] = "Fecha Inicio Factura";
+                hoja.Cells[fila + 2, 19] = "Fecha Fin Factura";
+                hoja.Cells[fila + 2, 20] = "Monto Soles";
+                hoja.Cells[fila + 2, 21] = "Monto Dolares";
+                hoja.Cells[fila + 2, 22] = "Total Dolares";
 
 
                 int i = vista.Columns.Count + 64;

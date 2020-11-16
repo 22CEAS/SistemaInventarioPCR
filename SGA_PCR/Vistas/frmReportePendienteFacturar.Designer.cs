@@ -40,7 +40,6 @@
             this.CódigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Guía = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GuiaAntigua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DíasVencidos = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,7 +89,6 @@
             this.CódigoLC,
             this.Guía,
             this.CodigoAntiguo,
-            this.GuiaAntigua,
             this.DíasVencidos,
             this.TotalSoles,
             this.TotalDolares,
@@ -206,17 +204,6 @@
             this.CodigoAntiguo.VisibleIndex = 8;
             this.CodigoAntiguo.Width = 140;
             // 
-            // GuiaAntigua
-            // 
-            this.GuiaAntigua.Caption = "Guía Antigua";
-            this.GuiaAntigua.FieldName = "GuiaAntigua";
-            this.GuiaAntigua.MinWidth = 40;
-            this.GuiaAntigua.Name = "GuiaAntigua";
-            this.GuiaAntigua.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.GuiaAntigua.Visible = true;
-            this.GuiaAntigua.VisibleIndex = 9;
-            this.GuiaAntigua.Width = 140;
-            // 
             // DíasVencidos
             // 
             this.DíasVencidos.Caption = "Días Vencidos";
@@ -225,7 +212,7 @@
             this.DíasVencidos.Name = "DíasVencidos";
             this.DíasVencidos.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.DíasVencidos.Visible = true;
-            this.DíasVencidos.VisibleIndex = 10;
+            this.DíasVencidos.VisibleIndex = 9;
             this.DíasVencidos.Width = 100;
             // 
             // TotalSoles
@@ -236,7 +223,7 @@
             this.TotalSoles.Name = "TotalSoles";
             this.TotalSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalSoles.Visible = true;
-            this.TotalSoles.VisibleIndex = 11;
+            this.TotalSoles.VisibleIndex = 10;
             this.TotalSoles.Width = 100;
             // 
             // TotalDolares
@@ -247,7 +234,7 @@
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 12;
+            this.TotalDolares.VisibleIndex = 11;
             this.TotalDolares.Width = 100;
             // 
             // CostoSoles
@@ -258,7 +245,7 @@
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 13;
+            this.CostoSoles.VisibleIndex = 12;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -269,7 +256,7 @@
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 14;
+            this.CostoDolares.VisibleIndex = 13;
             this.CostoDolares.Width = 100;
             // 
             // PendienteFacturarSoles
@@ -280,7 +267,7 @@
             this.PendienteFacturarSoles.Name = "PendienteFacturarSoles";
             this.PendienteFacturarSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.PendienteFacturarSoles.Visible = true;
-            this.PendienteFacturarSoles.VisibleIndex = 15;
+            this.PendienteFacturarSoles.VisibleIndex = 14;
             this.PendienteFacturarSoles.Width = 100;
             // 
             // PendienteFacturarDolares
@@ -291,7 +278,7 @@
             this.PendienteFacturarDolares.Name = "PendienteFacturarDolares";
             this.PendienteFacturarDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.PendienteFacturarDolares.Visible = true;
-            this.PendienteFacturarDolares.VisibleIndex = 16;
+            this.PendienteFacturarDolares.VisibleIndex = 15;
             this.PendienteFacturarDolares.Width = 100;
             // 
             // KAM
@@ -302,7 +289,7 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 17;
+            this.KAM.VisibleIndex = 16;
             this.KAM.Width = 200;
             // 
             // btnExportar
@@ -368,6 +355,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarSoles;
         private DevExpress.XtraGrid.Columns.GridColumn PendienteFacturarDolares;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
-        private DevExpress.XtraGrid.Columns.GridColumn GuiaAntigua;
     }
 }

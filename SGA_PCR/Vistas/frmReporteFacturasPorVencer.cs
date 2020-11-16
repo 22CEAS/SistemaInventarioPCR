@@ -150,9 +150,8 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 7] = vista.GetRowCellValue(j, "codigoEquipo").ToString();
                 hoja_trabajo.Cells[fila2, 8] = vista.GetRowCellValue(j, "guia").ToString();
                 hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "CodigoAntiguo").ToString();
-                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "GuiaAntigua").ToString();
-                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "diasAntesVencer").ToString();
-                hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "KAM").ToString();
+                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "diasAntesVencer").ToString();
+                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "KAM").ToString();
 
             }
             montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
@@ -184,9 +183,8 @@ namespace Apolo
                 hoja.Cells[fila + 2, 7] = "Código LC";
                 hoja.Cells[fila + 2, 8] = "Guía";
                 hoja.Cells[fila + 2, 9] = "Código Antiguo";
-                hoja.Cells[fila + 2, 10] = "Guía Antiguo";
-                hoja.Cells[fila + 2, 11] = "Días Antes Vencer";
-                hoja.Cells[fila + 2, 12] = "KAM";
+                hoja.Cells[fila + 2, 10] = "Días Antes Vencer";
+                hoja.Cells[fila + 2, 11] = "KAM";
 
 
                 int i = vista.Columns.Count + 64;
