@@ -72,19 +72,19 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.usuarioConectado = new System.Windows.Forms.TextBox();
             this.button34 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.usuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblHora = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.usuarioConectado = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.usuario = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -893,6 +893,19 @@
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
             // 
+            // usuarioConectado
+            // 
+            this.usuarioConectado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuarioConectado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usuarioConectado.Enabled = false;
+            this.usuarioConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuarioConectado.ForeColor = System.Drawing.Color.Transparent;
+            this.usuarioConectado.Location = new System.Drawing.Point(599, 23);
+            this.usuarioConectado.Name = "usuarioConectado";
+            this.usuarioConectado.Size = new System.Drawing.Size(108, 19);
+            this.usuarioConectado.TabIndex = 7;
+            this.usuarioConectado.TextChanged += new System.EventHandler(this.usuarioConectado_TextChanged);
+            // 
             // button34
             // 
             this.button34.Image = ((System.Drawing.Image)(resources.GetObject("button34.Image")));
@@ -902,6 +915,30 @@
             this.button34.TabIndex = 11;
             this.button34.UseVisualStyleBackColor = true;
             this.button34.Click += new System.EventHandler(this.button34_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(594, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "ID";
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblHora.Location = new System.Drawing.Point(516, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(72, 25);
+            this.lblHora.TabIndex = 3;
+            this.lblHora.Text = "HORA";
             // 
             // pictureBox3
             // 
@@ -916,6 +953,17 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
+            // usuario
+            // 
+            this.usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usuario.Enabled = false;
+            this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuario.Location = new System.Drawing.Point(713, 24);
+            this.usuario.Name = "usuario";
+            this.usuario.Size = new System.Drawing.Size(115, 19);
+            this.usuario.TabIndex = 11;
+            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -927,6 +975,18 @@
             this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "HORA:";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(708, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 25);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "USER";
             // 
             // label1
             // 
@@ -962,18 +1022,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // lblHora
-            // 
-            this.lblHora.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblHora.Location = new System.Drawing.Point(516, 9);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(72, 25);
-            this.lblHora.TabIndex = 3;
-            this.lblHora.Text = "HORA";
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -991,53 +1039,6 @@
             // 
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
-            // 
-            // usuarioConectado
-            // 
-            this.usuarioConectado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.usuarioConectado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usuarioConectado.Enabled = false;
-            this.usuarioConectado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuarioConectado.Location = new System.Drawing.Point(599, 23);
-            this.usuarioConectado.Name = "usuarioConectado";
-            this.usuarioConectado.Size = new System.Drawing.Size(108, 19);
-            this.usuarioConectado.TabIndex = 7;
-            this.usuarioConectado.TextChanged += new System.EventHandler(this.usuarioConectado_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(594, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 25);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "ID";
-            // 
-            // usuario
-            // 
-            this.usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.usuario.Enabled = false;
-            this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuario.Location = new System.Drawing.Point(713, 24);
-            this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(115, 19);
-            this.usuario.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(708, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 25);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "USER";
             // 
             // TEST_MENU_PRINCIPAL
             // 

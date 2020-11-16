@@ -89,7 +89,7 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * from vista_lista_ingresos v " + sql + " ;");
         }
 
-        public int IngresosDetallesYAccesorios(Ingreso ingreso, string usuario)
+        public int IngresosDetallesYAccesorios(Ingreso ingreso, string usuario , int idProveedor)
         {
 
             bool error = false;
@@ -98,22 +98,7 @@ namespace AccesoDatos
             string[] datosSalida = new string[1];
 
 
-
-            //LOGICA CORRELATIVO
-            string[] codigoSiguiente = new string[1]; //CODIGO CORRELATIVO
-
-            parametrosEntrada_aux = new MySqlParameter[3];
-            parametrosEntrada[0] = new MySqlParameter("@_marcaLap", MySqlDbType.VarChar, 80);
-            parametrosEntrada[1] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
-            parametrosEntrada[2] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
-
             
-
-            objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux, "obtener_codigo_correlativo",
-                            2, 3, out codigoSiguiente, 1);
-
-            string codigo = codigoSiguiente[0];
-            //FIN LOGICA CORRELATIVO
 
             if (ingreso.Detalles.Count > 0)
             {
@@ -124,8 +109,46 @@ namespace AccesoDatos
                 {
                     for (int i = 0; i < det.Cantidad; i++)
                     {
+                        //LOGICA CORRELATIVO
+                        string[] codigoSiguiente = new string[2]; 
+                        
+
+                        parametrosEntrada_aux = new MySqlParameter[4];
+                        parametrosEntrada_aux[0] = new MySqlParameter("@_marcaLap", MySqlDbType.VarChar, 80);
+                        parametrosEntrada_aux[1] = new MySqlParameter("@_idProveedor", MySqlDbType.Int32);
+                        parametrosEntrada_aux[2] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
+                        parametrosEntrada_aux[3] = new MySqlParameter("@_prefijo", MySqlDbType.VarChar, 80);
+
+                        parametrosEntrada_aux[0].Value = "PCR-LAP";
+                        parametrosEntrada_aux[1].Value = idProveedor;
+                        MessageBox.Show("ID DEL PROVEEDOR: "+idProveedor.ToString());
+                        
+
+
+                        objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada_aux, "obtener_codigo_correlativo",
+                                        2, 4, out codigoSiguiente, 2);
+
+                        string aux = codigoSiguiente[0]; //CODIGO
+                        string aux2 = codigoSiguiente[1]; //PREFIJO
+
+                        int codigoCorr = int.Parse(aux);
+
+                        if (codigoSiguiente != null)
+                        {
+                            //VERIFICACION
+                            MessageBox.Show("El proximo codigo es el: "+(codigoCorr+1));
+                            MessageBox.Show("El proximo prefijo es el: " + aux2);
+                        }
+                        
+
+                        
+
+
+                        //FIN LOGICA CORRELATIVO
+
+
                         //AQUI PONER PROCEDURE DE CODIGO CORRELATIVO
-                        parametrosEntrada = new MySqlParameter[17];
+                        parametrosEntrada = new MySqlParameter[18];
                         parametrosEntrada[0] = new MySqlParameter("@_idIngreso", MySqlDbType.Int32);
                         parametrosEntrada[1] = new MySqlParameter("@_idIngresoDet", MySqlDbType.Int32);
                         parametrosEntrada[2] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
@@ -142,7 +165,8 @@ namespace AccesoDatos
                         parametrosEntrada[13] = new MySqlParameter("@_observacion", MySqlDbType.VarChar, 255);
                         parametrosEntrada[14] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
                         parametrosEntrada[15] = new MySqlParameter("@_compraSubarriendo", MySqlDbType.Int16);
-                        parametrosEntrada[16] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
+                        parametrosEntrada[16] = new MySqlParameter("@_codigo", MySqlDbType.VarChar, 80);
+                        parametrosEntrada[17] = new MySqlParameter("@_idLC", MySqlDbType.Int32);
 
                         parametrosEntrada[0].Value = ingreso.IdIngreso;
                         parametrosEntrada[1].Value = det.IdIngresoDetalle;
@@ -167,6 +191,7 @@ namespace AccesoDatos
                         parametrosEntrada[13].Value = det.Laptop.Observacion;
                         parametrosEntrada[14].Value = usuario;
                         parametrosEntrada[15].Value = ingreso.IdTipoIngreso;
+                        parametrosEntrada[16].Value = aux2 + (codigoCorr + 1).ToString("000");
 
 
                         datosSalida = new string[1];
@@ -175,7 +200,7 @@ namespace AccesoDatos
 
 
                         objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_laptop_cpu",
-                            16, 17, out datosSalida, 1);
+                            17, 18, out datosSalida, 1);
 
 
                         if (datosSalida != null)
@@ -375,7 +400,9 @@ namespace AccesoDatos
                 ingreso.IdIngreso = Convert.ToInt32(datosSalida[0]);
 
                 //Aqui ira la recursividad
-                if (IngresosDetallesYAccesorios(ingreso, usuario) == -1) return -1;
+
+                
+                if (IngresosDetallesYAccesorios(ingreso, usuario , ingreso.IdProveedor) == -1) return -1;
             }
             return ingreso.IdIngreso;
         }
@@ -727,7 +754,7 @@ namespace AccesoDatos
             okey = objManager.EjecutarProcedure(parametrosEntrada, "update_ingreso");
 
             //Aqui ira la recursividad
-            if (IngresosDetallesYAccesorios(ingreso, usuario) == -1) return -1;
+            if (IngresosDetallesYAccesorios(ingreso, usuario,ingreso.IdProveedor) == -1) return -1;
 
             return 0;
         }
