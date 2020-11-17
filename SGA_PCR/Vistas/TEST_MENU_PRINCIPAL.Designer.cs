@@ -181,7 +181,7 @@
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(327, 40);
             this.btnConfiguracion.TabIndex = 21;
-            this.btnConfiguracion.Text = "CONFIGURACION";
+            this.btnConfiguracion.Text = "CONFIGURACIÓN";
             this.btnConfiguracion.UseVisualStyleBackColor = false;
             this.btnConfiguracion.Click += new System.EventHandler(this.btnConfiguracion_Click);
             // 
@@ -904,6 +904,7 @@
             this.usuarioConectado.Name = "usuarioConectado";
             this.usuarioConectado.Size = new System.Drawing.Size(108, 19);
             this.usuarioConectado.TabIndex = 7;
+            this.usuarioConectado.Visible = false;
             this.usuarioConectado.TextChanged += new System.EventHandler(this.usuarioConectado_TextChanged);
             // 
             // button34
@@ -927,6 +928,7 @@
             this.label3.Size = new System.Drawing.Size(32, 25);
             this.label3.TabIndex = 9;
             this.label3.Text = "ID";
+            this.label3.Visible = false;
             // 
             // lblHora
             // 
@@ -959,6 +961,7 @@
             this.usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usuario.Enabled = false;
             this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.usuario.Location = new System.Drawing.Point(713, 24);
             this.usuario.Name = "usuario";
             this.usuario.Size = new System.Drawing.Size(115, 19);
@@ -981,7 +984,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(708, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 25);

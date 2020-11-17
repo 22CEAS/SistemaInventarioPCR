@@ -64,9 +64,6 @@ namespace Apolo
             cmbModulosPrincipales.DisplayMember = "descripcionModuloP";
             cmbModulosPrincipales.ValueMember = "idModuloP";
 
-
-            
-
         }
 
 
@@ -170,8 +167,6 @@ namespace Apolo
             idUsuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
             idModuloP = Convert.ToInt32(cmbModulosPrincipales.SelectedValue);
 
-
-            //CONVERTIR DE "USUARIO" a "idUsuario"
 
 
             tablaSubmodulos = SubmoduloDA.ListarSubmodulosPermisos(idModuloP, idUsuario);
