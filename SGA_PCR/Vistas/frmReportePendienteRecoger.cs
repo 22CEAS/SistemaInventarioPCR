@@ -143,7 +143,15 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "CodigoAntiguo").ToString();
                 hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "diasAtrasoRecojo").ToString();
                 hoja_trabajo.Cells[fila2, 15] = vista.GetRowCellValue(j, "motivoNoRecojo").ToString();
-                hoja_trabajo.Cells[fila2, 16] = vista.GetRowCellValue(j, "KAM").ToString();
+
+                hoja_trabajo.Cells[fila2, 16] = vista.GetRowCellValue(j, "factura").ToString();
+                hoja_trabajo.Cells[fila2, 17] = vista.GetRowCellValue(j, "fecInicioFactura").ToString();
+                hoja_trabajo.Cells[fila2, 18] = vista.GetRowCellValue(j, "fecFinFactura").ToString();
+                hoja_trabajo.Cells[fila2, 19] = vista.GetRowCellValue(j, "MontoSoles").ToString();
+                hoja_trabajo.Cells[fila2, 20] = vista.GetRowCellValue(j, "MontoDolares").ToString();
+                hoja_trabajo.Cells[fila2, 21] = vista.GetRowCellValue(j, "TotalDolares").ToString();
+
+                hoja_trabajo.Cells[fila2, 22] = vista.GetRowCellValue(j, "KAM").ToString();
 
 
             }
@@ -182,7 +190,13 @@ namespace Apolo
                 hoja.Cells[fila + 2, 13] = "Código Antiguo";
                 hoja.Cells[fila + 2, 14] = "Dias Atraso Recojo";
                 hoja.Cells[fila + 2, 15] = "Motivo No Recojo";
-                hoja.Cells[fila + 2, 16] = "KAM";
+                hoja.Cells[fila + 2, 16] = "Factura";
+                hoja.Cells[fila + 2, 17] = "Fecha Inicio Factura";
+                hoja.Cells[fila + 2, 18] = "Fecha Fin Factura";
+                hoja.Cells[fila + 2, 19] = "Monto Soles";
+                hoja.Cells[fila + 2, 20] = "Monto Dolares";
+                hoja.Cells[fila + 2, 21] = "Total Dolares";
+                hoja.Cells[fila + 2, 22] = "KAM";
 
 
                 int i = vista.Columns.Count + 64;

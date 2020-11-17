@@ -38,6 +38,7 @@ namespace Modelo
         private string licenciaWindows;
         private string licenciaAntivirus;
         private string licenciaOffice;
+        private string idSalida;//Esto se usa más en el caso de preAlquiler
 
 
         public LC()
@@ -49,6 +50,7 @@ namespace Modelo
             this.Memorias = new BindingList<Memoria>();
             this.Licencias = new BindingList<Licencia>();
             this.Observacion = "";
+            this.IdSalida = "";
 
         }
 
@@ -211,5 +213,6 @@ namespace Modelo
         public string LicenciaWindows { get => licenciaWindows; set => licenciaWindows = value; }
         public string LicenciaAntivirus { get => licenciaAntivirus; set => licenciaAntivirus = value; }
         public string LicenciaOffice { get => licenciaOffice; set => licenciaOffice = value; }
+        public string IdSalida { get => idSalida; set => idSalida = value; }
     }
 }
