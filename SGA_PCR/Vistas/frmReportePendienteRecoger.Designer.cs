@@ -46,6 +46,12 @@
             this.NombreModeloVideo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiasAtrasoRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MotivoNoRecojo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.factura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecInicioFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fecFinFactura = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MontoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MontoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
@@ -94,6 +100,12 @@
             this.NombreModeloVideo,
             this.DiasAtrasoRecojo,
             this.MotivoNoRecojo,
+            this.factura,
+            this.fecInicioFactura,
+            this.fecFinFactura,
+            this.MontoSoles,
+            this.MontoDolares,
+            this.TotalDolares,
             this.KAM});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
@@ -166,7 +178,7 @@
             this.Guía.Name = "Guía";
             this.Guía.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Guía.Visible = true;
-            this.Guía.VisibleIndex = 12;
+            this.Guía.VisibleIndex = 5;
             this.Guía.Width = 200;
             // 
             // MarcaLC
@@ -177,7 +189,7 @@
             this.MarcaLC.Name = "MarcaLC";
             this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.MarcaLC.Visible = true;
-            this.MarcaLC.VisibleIndex = 5;
+            this.MarcaLC.VisibleIndex = 6;
             this.MarcaLC.Width = 150;
             // 
             // NombreModeloLC
@@ -188,7 +200,7 @@
             this.NombreModeloLC.Name = "NombreModeloLC";
             this.NombreModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NombreModeloLC.Visible = true;
-            this.NombreModeloLC.VisibleIndex = 6;
+            this.NombreModeloLC.VisibleIndex = 7;
             this.NombreModeloLC.Width = 200;
             // 
             // CodigoAntiguo
@@ -210,7 +222,7 @@
             this.FechaInicioContrato.Name = "FechaInicioContrato";
             this.FechaInicioContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaInicioContrato.Visible = true;
-            this.FechaInicioContrato.VisibleIndex = 7;
+            this.FechaInicioContrato.VisibleIndex = 9;
             this.FechaInicioContrato.Width = 150;
             // 
             // FechaFinContrato
@@ -221,7 +233,7 @@
             this.FechaFinContrato.Name = "FechaFinContrato";
             this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaFinContrato.Visible = true;
-            this.FechaFinContrato.VisibleIndex = 9;
+            this.FechaFinContrato.VisibleIndex = 10;
             this.FechaFinContrato.Width = 150;
             // 
             // TipoProcesador
@@ -232,7 +244,7 @@
             this.TipoProcesador.Name = "TipoProcesador";
             this.TipoProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoProcesador.Visible = true;
-            this.TipoProcesador.VisibleIndex = 10;
+            this.TipoProcesador.VisibleIndex = 11;
             this.TipoProcesador.Width = 150;
             // 
             // NombreModeloVideo
@@ -252,7 +264,7 @@
             this.DiasAtrasoRecojo.Name = "DiasAtrasoRecojo";
             this.DiasAtrasoRecojo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.DiasAtrasoRecojo.Visible = true;
-            this.DiasAtrasoRecojo.VisibleIndex = 11;
+            this.DiasAtrasoRecojo.VisibleIndex = 12;
             this.DiasAtrasoRecojo.Width = 150;
             // 
             // MotivoNoRecojo
@@ -264,6 +276,72 @@
             this.MotivoNoRecojo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.MotivoNoRecojo.Width = 200;
             // 
+            // factura
+            // 
+            this.factura.Caption = "Factura";
+            this.factura.FieldName = "factura";
+            this.factura.MinWidth = 40;
+            this.factura.Name = "factura";
+            this.factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.factura.Visible = true;
+            this.factura.VisibleIndex = 13;
+            this.factura.Width = 150;
+            // 
+            // fecInicioFactura
+            // 
+            this.fecInicioFactura.Caption = "Fecha Inicio Factura";
+            this.fecInicioFactura.FieldName = "fecInicioFactura";
+            this.fecInicioFactura.MinWidth = 40;
+            this.fecInicioFactura.Name = "fecInicioFactura";
+            this.fecInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.fecInicioFactura.Visible = true;
+            this.fecInicioFactura.VisibleIndex = 14;
+            this.fecInicioFactura.Width = 150;
+            // 
+            // fecFinFactura
+            // 
+            this.fecFinFactura.Caption = "Fecha Fin Factura";
+            this.fecFinFactura.FieldName = "fecFinFactura";
+            this.fecFinFactura.MinWidth = 40;
+            this.fecFinFactura.Name = "fecFinFactura";
+            this.fecFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.fecFinFactura.Visible = true;
+            this.fecFinFactura.VisibleIndex = 15;
+            this.fecFinFactura.Width = 150;
+            // 
+            // MontoSoles
+            // 
+            this.MontoSoles.Caption = "Monto Soles";
+            this.MontoSoles.FieldName = "MontoSoles";
+            this.MontoSoles.MinWidth = 40;
+            this.MontoSoles.Name = "MontoSoles";
+            this.MontoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.MontoSoles.Visible = true;
+            this.MontoSoles.VisibleIndex = 16;
+            this.MontoSoles.Width = 150;
+            // 
+            // MontoDolares
+            // 
+            this.MontoDolares.Caption = "Monto Dolares";
+            this.MontoDolares.FieldName = "MontoDolares";
+            this.MontoDolares.MinWidth = 40;
+            this.MontoDolares.Name = "MontoDolares";
+            this.MontoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.MontoDolares.Visible = true;
+            this.MontoDolares.VisibleIndex = 17;
+            this.MontoDolares.Width = 150;
+            // 
+            // TotalDolares
+            // 
+            this.TotalDolares.Caption = "Total Dolares";
+            this.TotalDolares.FieldName = "TotalDolares";
+            this.TotalDolares.MinWidth = 40;
+            this.TotalDolares.Name = "TotalDolares";
+            this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.TotalDolares.Visible = true;
+            this.TotalDolares.VisibleIndex = 18;
+            this.TotalDolares.Width = 150;
+            // 
             // KAM
             // 
             this.KAM.Caption = "KAM";
@@ -272,7 +350,7 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 13;
+            this.KAM.VisibleIndex = 19;
             this.KAM.Width = 200;
             // 
             // btnExportar
@@ -337,5 +415,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
         private System.Windows.Forms.Button btnExportar;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn factura;
+        private DevExpress.XtraGrid.Columns.GridColumn fecInicioFactura;
+        private DevExpress.XtraGrid.Columns.GridColumn fecFinFactura;
+        private DevExpress.XtraGrid.Columns.GridColumn MontoSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn MontoDolares;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalDolares;
     }
 }

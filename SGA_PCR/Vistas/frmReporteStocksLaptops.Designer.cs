@@ -48,6 +48,7 @@
             this.Ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SerieFabrica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
+            this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +104,8 @@
             this.Estado,
             this.Cliente,
             this.Ubicacion,
-            this.SerieFabrica});
+            this.SerieFabrica,
+            this.IdSalida});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -278,6 +280,17 @@
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
+            // IdSalida
+            // 
+            this.IdSalida.Caption = "Id Salida";
+            this.IdSalida.FieldName = "IdSalida";
+            this.IdSalida.MinWidth = 40;
+            this.IdSalida.Name = "IdSalida";
+            this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.IdSalida.Visible = true;
+            this.IdSalida.VisibleIndex = 14;
+            this.IdSalida.Width = 80;
+            // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -321,5 +334,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Ubicacion;
         private DevExpress.XtraGrid.Columns.GridColumn SerieFabrica;
         private System.Windows.Forms.Button btnExportar;
+        private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
     }
 }

@@ -132,6 +132,8 @@ namespace Apolo
                 laptop.Discos = null;
                 laptop.Memorias = null;
 
+                laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
+
                 laptops.Add(laptop);
                 rec++;
             }
@@ -224,6 +226,7 @@ namespace Apolo
                 hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "Cliente").ToString();
                 hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "Ubicacion").ToString();
                 hoja_trabajo.Cells[fila2, 15] = vista.GetRowCellValue(j, "SerieFabrica").ToString();
+                hoja_trabajo.Cells[fila2, 16] = vista.GetRowCellValue(j, "IdSalida").ToString();
 
 
             }
@@ -239,7 +242,7 @@ namespace Apolo
                 //** Montamos el título en la línea 1 **
                 hoja.Cells[fila, 1] = nombreCabecera;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Merge();
-                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Silver;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Orange;
                 hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila];
@@ -261,7 +264,8 @@ namespace Apolo
                 hoja.Cells[fila + 2, 12] = "Estado Nombre";
                 hoja.Cells[fila + 2, 13] = "Cliente";
                 hoja.Cells[fila + 2, 14] = "Ubicacion";
-                hoja.Cells[fila + 2, 15] = "SerieFabrica";
+                hoja.Cells[fila + 2, 15] = "Serie Fábrica";
+                hoja.Cells[fila + 2, 16] = "Id Salida";
 
 
                 int i = vista.Columns.Count + 64;
@@ -272,7 +276,7 @@ namespace Apolo
                 //Ponemos borde a las celdas
                 rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
                 rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                rango.Interior.Color = Color.Silver;
+                rango.Interior.Color = Color.Orange;
                 rango.Style.Font.Bold = true;
                 //Centramos los textos
                 rango = hoja.Rows[fila2];

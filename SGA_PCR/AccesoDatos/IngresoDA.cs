@@ -121,7 +121,7 @@ namespace AccesoDatos
 
                         parametrosEntrada_aux[0].Value = "PCR-LAP";
                         parametrosEntrada_aux[1].Value = idProveedor;
-                        MessageBox.Show("ID DEL PROVEEDOR: "+idProveedor.ToString());
+                        //MessageBox.Show("ID DEL PROVEEDOR: "+idProveedor.ToString());
                         
 
 
@@ -136,8 +136,8 @@ namespace AccesoDatos
                         if (codigoSiguiente != null)
                         {
                             //VERIFICACION
-                            MessageBox.Show("El proximo codigo es el: "+(codigoCorr+1));
-                            MessageBox.Show("El proximo prefijo es el: " + aux2);
+                            //MessageBox.Show("El proximo codigo es el: "+(codigoCorr+1));
+                            //MessageBox.Show("El proximo prefijo es el: " + aux2);
                         }
                         
 

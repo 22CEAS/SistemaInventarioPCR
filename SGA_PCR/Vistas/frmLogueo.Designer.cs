@@ -117,7 +117,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(220, 19);
             this.txtPassword.TabIndex = 18;
-            this.txtPassword.Text = "contraseñaPCR";
+            this.txtPassword.Text = "111111";
             // 
             // pictureBox2
             // 
@@ -153,7 +153,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(220, 19);
             this.txtUsername.TabIndex = 15;
-            this.txtUsername.Text = "ADMIN";
+            this.txtUsername.Text = "gen";
             // 
             // btnSalir
             // 

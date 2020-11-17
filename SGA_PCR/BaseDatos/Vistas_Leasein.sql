@@ -550,7 +550,145 @@ From laptop_cpu l
 	
 
 /*En la tabla salida se comparara la fecha final de alquiler con el dia actual.*/
+
 create view vista_productos_por_recoger as
+SELECT
+	d.idSalidaDet AS IdSalidaDetalle,
+	s.idSucursal AS IdSucursal,
+	d.idLC AS IdLC,
+	d.fecIniContrato AS fecIniContrato,
+	d.fecFinContrato AS fecFinContrato,
+	s.idCliente AS IdCliente,
+	sc.nombreCliente AS Cliente,
+	sc.nombreContacto AS Contacto,
+	sc.direccion AS DireccionCliente,
+	sc.telefono AS TelefonoContacto,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+IF (( v.idVideo IS NULL ), 0, v.idVideo ) AS idVideo,
+IF (( v.marca IS NULL ), '', v.marca ) AS marcaVideo,
+IF (( v.nombreModelo IS NULL ), '', v.nombreModelo ) AS NombreModeloVideo,
+IF (( v.capacidad IS NULL ), 0, v.capacidad ) AS CapacidadVideo,
+IF (( v.tipo IS NULL ), '', v.tipo ) AS tipoVideo,
+(to_days(curdate()) - to_days( d.fecFinContrato )) AS diasAtrasoRecojo,
+	d.guiaSalida AS guia,
+	d.motivoNoRecojo AS motivoNoRecojo,(
+	SELECT c.nombreKam 
+	FROM cliente c 
+	WHERE ( c.idCliente = s.idCliente )) AS KAM,
+	d.estado AS estado,
+IF (( d.observacion IS NULL ), '', d.observacion ) AS CodigoAntiguo,
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua ,
+		
+	'' AS factura,
+	'' AS fecInicioFactura,
+	'' AS fecFinFactura,
+	0 AS MontoSoles,
+	0 AS MontoDolares,
+	0 AS TotalDolares
+	
+FROM
+	((((( salida s JOIN salida_det d ON (( s.idSalida = d.idSalida 
+)))
+LEFT JOIN vista_maestro_sucursal_cliente sc ON (( s.idSucursal = sc.idSucursal  ))) LEFT JOIN vista_maestro_laptops lc ON (( d.idLC = lc.idLC  )))
+LEFT JOIN vista_maestro_procesador p ON ((
+d.idProcesador = p.idProcesador 
+))) LEFT JOIN vista_maestro_video v ON (( d.idVideo = v.idVideo  )))  ,
+		cuota cu 
+WHERE
+	(( d.fueDevuelto = 0  ) AND ((( d.estado = 4 ) AND (( to_days( d.fecFinContrato ) - to_days( curdate())) < 0 )) 
+		OR ( d.estado = 9 ))) 
+		
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c)
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida ) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c) and
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) NOT IN ( SELECT CONCAT( c.idLC, '-', c.idSalida ) FROM cuota c )
+			END
+
+
+UNION 
+
+
+
+SELECT
+	d.idSalidaDet AS IdSalidaDetalle,
+	s.idSucursal AS IdSucursal,
+	d.idLC AS IdLC,
+	d.fecIniContrato AS fecIniContrato,
+	d.fecFinContrato AS fecFinContrato,
+	s.idCliente AS IdCliente,
+	sc.nombreCliente AS Cliente,
+	sc.nombreContacto AS Contacto,
+	sc.direccion AS DireccionCliente,
+	sc.telefono AS TelefonoContacto,
+	lc.idMarca AS idMarca,
+	lc.marca AS MarcaLC,
+	lc.idModelo AS idModelo,
+	lc.nombreModelo AS NombreModeloLC,
+	lc.codigo AS Codigo,
+	lc.tamanoPantalla AS TamanoPantalla,
+	p.idProcesador AS idProcesador,
+	p.marca AS marcaProcesador,
+	p.tipo AS TipoProcesador,
+	p.generacion AS GeneracionProcesador,
+IF (( v.idVideo IS NULL ), 0, v.idVideo ) AS idVideo,
+IF (( v.marca IS NULL ), '', v.marca ) AS marcaVideo,
+IF (( v.nombreModelo IS NULL ), '', v.nombreModelo ) AS NombreModeloVideo,
+IF (( v.capacidad IS NULL ), 0, v.capacidad ) AS CapacidadVideo,
+IF (( v.tipo IS NULL ), '', v.tipo ) AS tipoVideo,
+(to_days(curdate()) - to_days( d.fecFinContrato )) AS diasAtrasoRecojo,
+	d.guiaSalida AS guia,
+	d.motivoNoRecojo AS motivoNoRecojo,(
+	SELECT c.nombreKam 
+	FROM cliente c 
+	WHERE ( c.idCliente = s.idCliente )) AS KAM,
+	d.estado AS estado,
+IF (( d.observacion IS NULL ), '', d.observacion ) AS CodigoAntiguo,
+	'' AS GuiaAntigua,
+	0 AS IdSalidaDetAntigua ,
+	
+	cu.numFactura AS factura,
+	cu.fecInicioPago AS fecInicioFactura,
+	cu.fecFinPago AS fecFinFactura,
+	cu.totalSoles AS MontoSoles,
+	cu.totalDolares AS MontoDolares,
+	ROUND((cu.totalDolares+(cu.totalSoles/3.5)),2) AS TotalDolares
+	
+FROM
+	((((( salida s JOIN salida_det d ON (( s.idSalida = d.idSalida 
+)))
+LEFT JOIN vista_maestro_sucursal_cliente sc ON (( s.idSucursal = sc.idSucursal  ))) LEFT JOIN vista_maestro_laptops lc ON (( d.idLC = lc.idLC  )))
+LEFT JOIN vista_maestro_procesador p ON ((
+d.idProcesador = p.idProcesador 
+))) LEFT JOIN vista_maestro_video v ON (( d.idVideo = v.idVideo  ))) ,
+		cuota cu 
+WHERE
+	(( d.fueDevuelto = 0  ) AND ((( d.estado = 4 ) AND (( to_days( d.fecFinContrato ) - to_days( curdate())) < 0 )) 
+		OR ( d.estado = 9 ))) 
+		AND
+			CASE WHEN d.caracteristicas='' THEN
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) 
+			ELSE
+				CONCAT( d.idLC, '-', d.idSalida )= CONCAT( cu.idLC, '-', cu.idSalida ) or
+				(SELECT CONCAT( ca.IdLCAntiguo, '-', d.idSalida ) from cambio ca where ca.IdCambio=d.caracteristicas) = CONCAT( cu.idLC, '-', cu.idSalida )
+			END
+		
+ORDER BY
+	IdLC;
+
+
+create view vista_productos_por_recoger_bk as
 Select d.idSalidaDet as IdSalidaDetalle,
 		s.idSucursal as IdSucursal,
 		d.idLC as IdLC,
@@ -1481,10 +1619,12 @@ SELECT lc.idLC as idLC,
 		lc.estado as idEstado,
 		(SELECT nombreEstado from estados e where lc.estado=e.idEstado) as estado,
 		IFNULL((SELECT direccion from cliente_sucursal cs where lc.ubicacion=cs.IdSucursal),lc.ubicacion) as ubicacion,
-		IFNULL((SELECT ct.nombre_razonSocial from cliente ct inner join cliente_sucursal cs on ct.idCliente=cs.idCliente where lc.ubicacion=cs.IdSucursal),'') as cliente
+		IFNULL((SELECT ct.nombre_razonSocial from cliente ct inner join cliente_sucursal cs on ct.idCliente=cs.idCliente where lc.ubicacion=cs.IdSucursal),'') as cliente,
+		IFNULL(d.idSalida,'') as idSalida
 FROM vista_maestro_laptops lc 
 		left join  vista_maestro_procesador p on lc.idProcesador=p.idProcesador 
 		left join vista_maestro_video v on lc.idVideo=v.idVideo 
+		left join salida_det d on lc.idLC=d.idLC and d.estado=6 and d.fueDevuelto=0
 ORDER BY lc.idLC;
 
 
