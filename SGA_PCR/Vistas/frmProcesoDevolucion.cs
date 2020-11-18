@@ -60,7 +60,9 @@ namespace Apolo
             cmbCliente.DataSource = tablaCliente;
             cmbCliente.DisplayMember = "nombre_razonSocial";
             cmbCliente.ValueMember = "idCliente";
+
             cmbCliente.SelectedIndex = 0;
+
             int i = cmbCliente.SelectedIndex;
 
             int idCliente = Convert.ToInt32(tablaCliente.Rows[i]["idCliente"].ToString());
@@ -332,6 +334,8 @@ namespace Apolo
                                MessageBoxIcon.Error);
                 return;
             }
+
+           
 
             ObtenerDatosDevolucion();
 

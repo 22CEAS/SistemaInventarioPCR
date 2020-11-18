@@ -234,7 +234,7 @@ namespace Apolo
             cmbEstado.DataSource = tablaEstados;
             cmbEstado.DisplayMember = "nombre";
             cmbEstado.ValueMember = "idEstado";
-            cmbEstado.SelectedIndex = tablaEstados.Rows.Count > 0 ? 0 : -1;
+            cmbEstado.SelectedIndex = tablaEstados.Rows.Count > 0 ? -1 : -1;
 
             tablaDatosLaptop.Rows.Clear();
             cmbEquipo.DataSource= tablaDatosLaptop;
@@ -242,7 +242,7 @@ namespace Apolo
             cmbEquipo.DataSource = tablaDatosLaptop;
             cmbEquipo.DisplayMember = "codigo";
             cmbEquipo.ValueMember = "idLC";
-            cmbEquipo.SelectedIndex = tablaDatosLaptop.Rows.Count > 0 ? 0 : -1;
+            cmbEquipo.SelectedIndex = tablaDatosLaptop.Rows.Count > 0 ? -1 : -1;
         }
 
 
@@ -256,6 +256,12 @@ namespace Apolo
             if (cmbEquipo.SelectedValue == null)
             {
                 MessageBox.Show("No se puede grabar una Reparacion si no\nha seleccionado una laptop correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+            if (cmbEstado.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar una Reparacion si no\nha seleccionado una estado correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 return;
             }

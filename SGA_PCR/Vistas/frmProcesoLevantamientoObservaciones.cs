@@ -238,6 +238,15 @@ namespace Apolo
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            
+        
+            if (cmbCliente.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar el Levantamiento de Observacion si no\nha seleccionado un cliente correcto.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+            
             estadoComponentes(TipoVista.Nuevo);
         }
 

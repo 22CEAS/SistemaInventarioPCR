@@ -1316,6 +1316,20 @@ namespace Apolo
                                MessageBoxIcon.Error);
                 return;
             }
+
+            if (cmbTipoIngreso.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica el tipo de ingreso.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return ;
+            }
+
+            if (cmbMonedaTipo.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se puede grabar un Ingreso si no\nespecifica el tipo de moneda.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                return;
+            }
             ObtenerDatosIngreso();
             if (ValidarDatos())
             {
