@@ -227,57 +227,66 @@ namespace Apolo
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            GridRow aux = (GridRow)dgvVideo.PrimaryGrid.ActiveRow;
-            if (aux != null)
+            try
             {
-                estadoComponentes(TipoVista.Modificar);
-                videoOld = new Video();
-
-                video.IdVideo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[10])).Value.ToString());
-                int idTipo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[8])).Value.ToString());
-                int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[9])).Value.ToString());
-                int idModelo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[6])).Value.ToString());
-                int idMarca = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[7])).Value.ToString());
-                int activo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[5])).Value.ToString());
-                cmbTipo.SelectedValue = idTipo;
-                cmbCapacidad.SelectedValue = idCapacidad;
-                cmbMarca.SelectedValue = idMarca;
-
-                int i = cmbMarca.SelectedIndex;
-                if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+                GridRow aux = (GridRow)dgvVideo.PrimaryGrid.ActiveRow;
+                if (aux != null)
                 {
-                    tablaModelo = videoDA.ListarModeloVideo(idMarca);
-                    cmbModelo.DataSource = (tablaModelo.Rows.Count > 0) ? tablaModelo : null;
-                    cmbModelo.DisplayMember = "NombreModelo";
-                    cmbModelo.ValueMember = "IdModelo";
-                    cmbModelo.SelectedIndex = (tablaModelo.Rows.Count > 0) ? 0 : -1;
+                    estadoComponentes(TipoVista.Modificar);
+                    videoOld = new Video();
+
+                    video.IdVideo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[10])).Value.ToString());
+                    int idTipo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[9])).Value.ToString());
+                    int idModelo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+                    int idMarca = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[7])).Value.ToString());
+                    int activo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                    cmbTipo.SelectedValue = idTipo;
+                    cmbCapacidad.SelectedValue = idCapacidad;
+                    cmbMarca.SelectedValue = idMarca;
+
+                    int i = cmbMarca.SelectedIndex;
+                    if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+                    {
+                        tablaModelo = videoDA.ListarModeloVideo(idMarca);
+                        cmbModelo.DataSource = (tablaModelo.Rows.Count > 0) ? tablaModelo : null;
+                        cmbModelo.DisplayMember = "NombreModelo";
+                        cmbModelo.ValueMember = "IdModelo";
+                        cmbModelo.SelectedIndex = (tablaModelo.Rows.Count > 0) ? 0 : -1;
+                    }
+
+                    cmbModelo.SelectedValue = idModelo;
+                    chbActivo.Checked = (activo == 1) ? true : false;
+
+
+
+                    int indice;
+                    indice = cmbModelo.SelectedIndex;
+                    videoOld.Modelo.IdModelo = int.Parse(cmbModelo.SelectedValue.ToString());
+                    //videoOld.Modelo.NombreModelo = tablaModelo.Rows[indice]["NombreModelo"].ToString();
+
+                    indice = cmbMarca.SelectedIndex;
+                    videoOld.Modelo.IdMarca = int.Parse(cmbMarca.SelectedValue.ToString());
+                    //videoOld.Modelo.NombreMarca = tablaMarca.Rows[indice]["nombre"].ToString();
+
+
+                    indice = cmbTipo.SelectedIndex;
+                    videoOld.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
+                    //videoOld.Tipo = tablaTipo.Rows[indice]["descripcion"].ToString();
+
+                    indice = cmbCapacidad.SelectedIndex;
+                    videoOld.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());
+                    //videoOld.Capacidad = Convert.ToInt32(tablaCapacidad.Rows[indice]["descripcion"].ToString());
+
+                    videoOld.Estado = activo;
+
                 }
-
-                cmbModelo.SelectedValue = idModelo;
-                chbActivo.Checked = (activo == 1) ? true : false;
-
-
-
-                int indice;
-                indice = cmbModelo.SelectedIndex;
-                videoOld.Modelo.IdModelo = int.Parse(cmbModelo.SelectedValue.ToString());
-                //videoOld.Modelo.NombreModelo = tablaModelo.Rows[indice]["NombreModelo"].ToString();
-
-                indice = cmbMarca.SelectedIndex;
-                videoOld.Modelo.IdMarca = int.Parse(cmbMarca.SelectedValue.ToString());
-                //videoOld.Modelo.NombreMarca = tablaMarca.Rows[indice]["nombre"].ToString();
-
-
-                indice = cmbTipo.SelectedIndex;
-                videoOld.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
-                //videoOld.Tipo = tablaTipo.Rows[indice]["descripcion"].ToString();
-
-                indice = cmbCapacidad.SelectedIndex;
-                videoOld.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());
-                //videoOld.Capacidad = Convert.ToInt32(tablaCapacidad.Rows[indice]["descripcion"].ToString());
-
-                videoOld.Estado = activo;
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message+" Comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                estadoComponentes(TipoVista.Anular);
+                return;
             }
         }
 
@@ -446,6 +455,36 @@ namespace Apolo
                 cmbModelo.ValueMember = "IdModelo";
                 cmbModelo.SelectedIndex = (tablaModelo.Rows.Count > 0) ? 0 : -1;
             }
+        }
+
+        private void btnAgregarCapacidadVideo_Click(object sender, EventArgs e)
+        {
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "VIDEO_CAPACIDAD");
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
+        }
+
+        private void btnAgregarTipoVideo_Click(object sender, EventArgs e)
+        {
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "VIDEO_TIPO");
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
+        }
+
+        private void btnAgregarModeloVideo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarMarcaVideo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

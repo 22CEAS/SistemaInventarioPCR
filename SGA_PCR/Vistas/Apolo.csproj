@@ -75,6 +75,12 @@
     <Compile Include="frmArchivoAuxiliar.Designer.cs">
       <DependentUpon>frmArchivoAuxiliar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArchivoMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArchivoMarca.Designer.cs">
+      <DependentUpon>frmArchivoMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConfiguracionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +421,9 @@
     </Compile>
     <EmbeddedResource Include="frmArchivoAuxiliar.resx">
       <DependentUpon>frmArchivoAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArchivoMarca.resx">
+      <DependentUpon>frmArchivoMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConfiguracionUsuarios.resx">
       <DependentUpon>frmConfiguracionUsuarios.cs</DependentUpon>

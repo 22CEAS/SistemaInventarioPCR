@@ -221,44 +221,54 @@ namespace Apolo
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            GridRow aux = (GridRow)dgvMemoria.PrimaryGrid.ActiveRow;
-            if (aux != null)
+            try
             {
-                estadoComponentes(TipoVista.Modificar);
-                memoriaOld = new Memoria();
+                GridRow aux = (GridRow)dgvMemoria.PrimaryGrid.ActiveRow;
+                if (aux != null)
+                {
+                    estadoComponentes(TipoVista.Modificar);
+                    memoriaOld = new Memoria();
 
-                memoria.IdMemoria = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[5])).Value.ToString());
-                int idModelo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[6])).Value.ToString());
-                int idTipo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[7])).Value.ToString());
-                //int idFrecuencia = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
-                int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
-                int activo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[4])).Value.ToString());
-                cmbModelo.SelectedValue = idModelo;
-                cmbTipo.SelectedValue = idTipo;
-                //cmbFrecuencia.SelectedValue = idFrecuencia;
-                cmbCapacidad.SelectedValue = idCapacidad;
-                chbActivo.Checked = (activo == 1) ? true : false;
+                    memoria.IdMemoria = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                    int idModelo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+                    int idTipo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[7])).Value.ToString());
+                    //int idFrecuencia = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    int activo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[4])).Value.ToString());
+                    cmbModelo.SelectedValue = idModelo;
+                    cmbTipo.SelectedValue = idTipo;
+                    //cmbFrecuencia.SelectedValue = idFrecuencia;
+                    cmbCapacidad.SelectedValue = idCapacidad;
+                    chbActivo.Checked = (activo == 1) ? true : false;
 
 
-                int indice;
-                indice = cmbModelo.SelectedIndex;
-                memoriaOld.Modelo.IdModelo = int.Parse(cmbModelo.SelectedValue.ToString());
-                //memoriaOld.Modelo.NombreModelo = tablaModelo.Rows[indice]["nombre"].ToString();
+                    int indice;
+                    indice = cmbModelo.SelectedIndex;
+                    memoriaOld.Modelo.IdModelo = int.Parse(cmbModelo.SelectedValue.ToString());
+                    //memoriaOld.Modelo.NombreModelo = tablaModelo.Rows[indice]["nombre"].ToString();
 
-                indice = cmbTipo.SelectedIndex;
-                memoriaOld.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
-                //memoriaOld.Tipo = tablaTipo.Rows[indice]["descripcion"].ToString();
+                    indice = cmbTipo.SelectedIndex;
+                    memoriaOld.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
+                    //memoriaOld.Tipo = tablaTipo.Rows[indice]["descripcion"].ToString();
 
-                //indice = cmbFrecuencia.SelectedIndex;
-                //memoriaOld.IdBusFrecuencia = int.Parse(cmbFrecuencia.SelectedValue.ToString());
-                //memoriaOld.BusFrecuencia = Convert.ToInt32(tablaFrecuencia.Rows[indice]["descripcion"].ToString());
+                    //indice = cmbFrecuencia.SelectedIndex;
+                    //memoriaOld.IdBusFrecuencia = int.Parse(cmbFrecuencia.SelectedValue.ToString());
+                    //memoriaOld.BusFrecuencia = Convert.ToInt32(tablaFrecuencia.Rows[indice]["descripcion"].ToString());
 
-                indice = cmbCapacidad.SelectedIndex;
-                memoriaOld.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());
-                //memoriaOld.Capacidad = int.Parse(tablaCapacidad.Rows[indice]["descripcion"].ToString());
+                    indice = cmbCapacidad.SelectedIndex;
+                    memoriaOld.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());
+                    //memoriaOld.Capacidad = int.Parse(tablaCapacidad.Rows[indice]["descripcion"].ToString());
 
-                memoriaOld.Estado = activo;
+                    memoriaOld.Estado = activo;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                estadoComponentes(TipoVista.Anular);
+                return;
+            }
+            
         }
 
         private void llenar_Datos_Memorias()
@@ -405,6 +415,30 @@ namespace Apolo
                 chbActivo.Checked = (activo == 1) ? true : false;
             }
         }
-        
+
+        private void btnAgregarCapacidadMemoria_Click(object sender, EventArgs e)
+        {
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "MEMORIA_CAPACIDAD");
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
+        }
+
+        private void btnAgregarTipoMemoria_Click(object sender, EventArgs e)
+        {
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "MEMORIA_CATEGORIA");
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
+        }
+
+        private void btnAgregarModeloMemoria_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

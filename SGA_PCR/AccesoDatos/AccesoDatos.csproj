@@ -66,6 +66,7 @@
     <Compile Include="AreaDA.cs" />
     <Compile Include="AuxiliarDA.cs" />
     <Compile Include="CambioDA.cs" />
+    <Compile Include="MarcaDA.cs" />
     <Compile Include="ModulosPrincipalesDA.cs" />
     <Compile Include="SubmoduloDA.cs" />
     <Compile Include="UsuariosDA.cs" />
