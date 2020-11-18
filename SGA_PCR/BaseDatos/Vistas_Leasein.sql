@@ -1708,3 +1708,14 @@ Select o.idObservacionDeudas as IdObservacion,
 From observacion_deudas o ;
 
 
+DROP view IF EXISTS `vista_procesador_marca`;
+create view vista_procesador_marca as
+SELECT
+	m.idMarca as IdMarca,
+	m.nombre as Nombre,
+	m.idCategoria as IdCategoria,
+	m.estado as Estado
+FROM marca m 
+WHERE m.idCategoria = 9  
+	AND m.estado = 1 ;
+

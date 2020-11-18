@@ -36,6 +36,7 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoCrearDiscoDuro));
             this.cmbCapacidad = new System.Windows.Forms.ComboBox();
             this.cmbTamano = new System.Windows.Forms.ComboBox();
@@ -50,6 +51,9 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.btnAgregarTipoDisco = new System.Windows.Forms.Button();
+            this.btnAgregarCapacidadDisco = new System.Windows.Forms.Button();
+            this.btnAgregarTamanoDisco = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbCapacidad
@@ -61,7 +65,7 @@
             this.cmbCapacidad.FormattingEnabled = true;
             this.cmbCapacidad.Location = new System.Drawing.Point(25, 261);
             this.cmbCapacidad.Name = "cmbCapacidad";
-            this.cmbCapacidad.Size = new System.Drawing.Size(117, 21);
+            this.cmbCapacidad.Size = new System.Drawing.Size(143, 21);
             this.cmbCapacidad.TabIndex = 77;
             // 
             // cmbTamano
@@ -71,7 +75,7 @@
             this.cmbTamano.FormattingEnabled = true;
             this.cmbTamano.Location = new System.Drawing.Point(25, 171);
             this.cmbTamano.Name = "cmbTamano";
-            this.cmbTamano.Size = new System.Drawing.Size(117, 21);
+            this.cmbTamano.Size = new System.Drawing.Size(143, 21);
             this.cmbTamano.TabIndex = 73;
             // 
             // cmbTipo
@@ -81,7 +85,7 @@
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Location = new System.Drawing.Point(25, 82);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(117, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(143, 21);
             this.cmbTipo.TabIndex = 72;
             // 
             // dgvDiscoDuro
@@ -92,19 +96,16 @@
             this.dgvDiscoDuro.BackColor = System.Drawing.Color.White;
             this.dgvDiscoDuro.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvDiscoDuro.ForeColor = System.Drawing.Color.Black;
-            this.dgvDiscoDuro.Location = new System.Drawing.Point(163, 30);
-            this.dgvDiscoDuro.MaximumSize = new System.Drawing.Size(450, 352);
-            this.dgvDiscoDuro.MinimumSize = new System.Drawing.Size(450, 352);
+            this.dgvDiscoDuro.Location = new System.Drawing.Point(233, 30);
+            this.dgvDiscoDuro.MaximumSize = new System.Drawing.Size(526, 352);
+            this.dgvDiscoDuro.MinimumSize = new System.Drawing.Size(526, 352);
             this.dgvDiscoDuro.Name = "dgvDiscoDuro";
             this.dgvDiscoDuro.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvDiscoDuro.PrimaryGrid.AllowRowResize = true;
             this.dgvDiscoDuro.PrimaryGrid.ColumnHeader.RowHeight = 30;
             gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "idDisco";
-            gridColumn1.MinimumWidth = 50;
-            gridColumn1.Name = "Id";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn1.Width = 50;
+            gridColumn1.DataPropertyName = "codigo";
+            gridColumn1.Name = "Código";
             gridColumn2.AllowEdit = false;
             gridColumn2.DataPropertyName = "tipo";
             gridColumn2.FilterAutoScan = true;
@@ -145,6 +146,13 @@
             gridColumn8.Name = "idTamano";
             gridColumn8.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn8.Visible = false;
+            gridColumn9.AllowEdit = false;
+            gridColumn9.DataPropertyName = "idDisco";
+            gridColumn9.MinimumWidth = 50;
+            gridColumn9.Name = "Id";
+            gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn9.Visible = false;
+            gridColumn9.Width = 50;
             this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn1);
             this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn2);
             this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn3);
@@ -153,6 +161,7 @@
             this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn6);
             this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn7);
             this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn8);
+            this.dgvDiscoDuro.PrimaryGrid.Columns.Add(gridColumn9);
             this.dgvDiscoDuro.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvDiscoDuro.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvDiscoDuro.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -165,7 +174,7 @@
             this.dgvDiscoDuro.PrimaryGrid.NullString = "<<null>>";
             this.dgvDiscoDuro.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvDiscoDuro.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvDiscoDuro.Size = new System.Drawing.Size(450, 352);
+            this.dgvDiscoDuro.Size = new System.Drawing.Size(526, 352);
             this.dgvDiscoDuro.TabIndex = 70;
             this.dgvDiscoDuro.Text = "Tabla Discos Duros";
             this.dgvDiscoDuro.Click += new System.EventHandler(this.dgvDiscoDuro_Click);
@@ -180,7 +189,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditar.Location = new System.Drawing.Point(630, 100);
+            this.btnEditar.Location = new System.Drawing.Point(789, 100);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 65);
             this.btnEditar.TabIndex = 85;
@@ -200,7 +209,7 @@
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNuevo.Location = new System.Drawing.Point(630, 33);
+            this.btnNuevo.Location = new System.Drawing.Point(789, 33);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 63);
             this.btnNuevo.TabIndex = 84;
@@ -220,7 +229,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(630, 179);
+            this.btnGrabar.Location = new System.Drawing.Point(789, 179);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 83;
@@ -240,7 +249,7 @@
             this.btnImprimir.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(635, 319);
+            this.btnImprimir.Location = new System.Drawing.Point(794, 319);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 63);
             this.btnImprimir.TabIndex = 87;
@@ -259,7 +268,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(630, 248);
+            this.btnCancelar.Location = new System.Drawing.Point(789, 248);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 86;
@@ -328,12 +337,71 @@
             this.labelX3.TabIndex = 91;
             this.labelX3.Text = "Capacidad:";
             // 
+            // btnAgregarTipoDisco
+            // 
+            this.btnAgregarTipoDisco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarTipoDisco.AutoSize = true;
+            this.btnAgregarTipoDisco.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarTipoDisco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTipoDisco.FlatAppearance.BorderSize = 0;
+            this.btnAgregarTipoDisco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTipoDisco.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarTipoDisco.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTipoDisco.Image")));
+            this.btnAgregarTipoDisco.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarTipoDisco.Location = new System.Drawing.Point(174, 68);
+            this.btnAgregarTipoDisco.Name = "btnAgregarTipoDisco";
+            this.btnAgregarTipoDisco.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarTipoDisco.TabIndex = 111;
+            this.btnAgregarTipoDisco.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarTipoDisco.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarCapacidadDisco
+            // 
+            this.btnAgregarCapacidadDisco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarCapacidadDisco.AutoSize = true;
+            this.btnAgregarCapacidadDisco.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarCapacidadDisco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarCapacidadDisco.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCapacidadDisco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCapacidadDisco.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCapacidadDisco.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCapacidadDisco.Image")));
+            this.btnAgregarCapacidadDisco.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarCapacidadDisco.Location = new System.Drawing.Point(174, 248);
+            this.btnAgregarCapacidadDisco.Name = "btnAgregarCapacidadDisco";
+            this.btnAgregarCapacidadDisco.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarCapacidadDisco.TabIndex = 110;
+            this.btnAgregarCapacidadDisco.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarCapacidadDisco.UseVisualStyleBackColor = false;
+            this.btnAgregarCapacidadDisco.Click += new System.EventHandler(this.btnAgregarCapacidadDisco_Click);
+            // 
+            // btnAgregarTamanoDisco
+            // 
+            this.btnAgregarTamanoDisco.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarTamanoDisco.AutoSize = true;
+            this.btnAgregarTamanoDisco.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarTamanoDisco.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTamanoDisco.FlatAppearance.BorderSize = 0;
+            this.btnAgregarTamanoDisco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTamanoDisco.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarTamanoDisco.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTamanoDisco.Image")));
+            this.btnAgregarTamanoDisco.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarTamanoDisco.Location = new System.Drawing.Point(174, 158);
+            this.btnAgregarTamanoDisco.Name = "btnAgregarTamanoDisco";
+            this.btnAgregarTamanoDisco.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarTamanoDisco.TabIndex = 109;
+            this.btnAgregarTamanoDisco.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarTamanoDisco.UseVisualStyleBackColor = false;
+            this.btnAgregarTamanoDisco.Click += new System.EventHandler(this.btnAgregarTamanoDisco_Click);
+            // 
             // frmArchivoCrearDiscoDuro
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(738, 414);
+            this.ClientSize = new System.Drawing.Size(897, 414);
+            this.Controls.Add(this.btnAgregarTipoDisco);
+            this.Controls.Add(this.btnAgregarCapacidadDisco);
+            this.Controls.Add(this.btnAgregarTamanoDisco);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
@@ -348,15 +416,14 @@
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.dgvDiscoDuro);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(754, 453);
+            this.MaximumSize = new System.Drawing.Size(913, 453);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(754, 453);
+            this.MinimumSize = new System.Drawing.Size(913, 453);
             this.Name = "frmArchivoCrearDiscoDuro";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Disco Duro";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCrearDiscoDuro_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,5 +443,8 @@
         internal DevComponents.DotNetBar.LabelX labelX1;
         internal DevComponents.DotNetBar.LabelX labelX2;
         internal DevComponents.DotNetBar.LabelX labelX3;
+        private System.Windows.Forms.Button btnAgregarTipoDisco;
+        private System.Windows.Forms.Button btnAgregarCapacidadDisco;
+        private System.Windows.Forms.Button btnAgregarTamanoDisco;
     }
 }

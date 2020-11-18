@@ -72,6 +72,7 @@
             gridColumn3.MinimumWidth = 100;
             gridColumn3.Name = "Frecuencia";
             gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn3.Visible = false;
             gridColumn3.Width = 120;
             gridColumn4.AllowEdit = false;
             gridColumn4.DataPropertyName = "capacidad";
@@ -135,7 +136,7 @@
             this.dgvMemoria.PrimaryGrid.NullString = "<<null>>";
             this.dgvMemoria.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvMemoria.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvMemoria.Size = new System.Drawing.Size(568, 247);
+            this.dgvMemoria.Size = new System.Drawing.Size(461, 247);
             this.dgvMemoria.TabIndex = 94;
             this.dgvMemoria.Text = "Tabla Memoria";
             // 

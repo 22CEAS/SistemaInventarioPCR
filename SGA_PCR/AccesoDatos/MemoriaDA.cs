@@ -55,7 +55,8 @@ namespace AccesoDatos
 
         public int GuardarNuevaMemoria(Memoria memoria, string usuario)
         {
-            string sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idBusFrecuencia=" + memoria.IdBusFrecuencia + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " ;" ;
+            //string sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idBusFrecuencia=" + memoria.IdBusFrecuencia + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " ;" ;
+            string sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " ;";
             MySqlDataReader reader;
             reader = objManager.MostrarInformacion(sql);
 
@@ -80,8 +81,8 @@ namespace AccesoDatos
                 parametrosEntrada[11] = new MySqlParameter("@_idMemoria", MySqlDbType.Int32);
 
                 parametrosEntrada[0].Value = memoria.Modelo.IdModelo;
-                parametrosEntrada[1].Value = memoria.IdBusFrecuencia;
-                parametrosEntrada[2].Value = memoria.BusFrecuencia;
+                parametrosEntrada[1].Value = 1;
+                parametrosEntrada[2].Value = 1333;
                 parametrosEntrada[3].Value = memoria.IdCapacidad;
                 parametrosEntrada[4].Value = memoria.Capacidad;
                 parametrosEntrada[5].Value = memoria.Cantidad;
@@ -115,14 +116,16 @@ namespace AccesoDatos
         public int ModificarMemoria(Memoria memoria, string usuario, int actualizarEstado)
         {
             string sql = "";
+            //if (actualizarEstado == 1)
+            //    sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idBusFrecuencia=" + memoria.IdBusFrecuencia + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " and estado = " + memoria.Estado + " ;";
+            //else
+            //    sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idBusFrecuencia=" + memoria.IdBusFrecuencia + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " ;" ;
+
             if (actualizarEstado == 1)
-            {
-                sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idBusFrecuencia=" + memoria.IdBusFrecuencia + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " and estado = " + memoria.Estado + " ;";
-            }
+                sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " and estado = " + memoria.Estado + " ;";
             else
-            {
-                sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idBusFrecuencia=" + memoria.IdBusFrecuencia + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " ;" ;
-            }
+                sql = "Select * From memoria where idModelo=" + memoria.Modelo.IdModelo + " and idTipo=" + memoria.IdTipo + " and idCapacidad=" + memoria.IdCapacidad + " ;";
+
 
             MySqlDataReader reader;
             reader = objManager.MostrarInformacion(sql);
@@ -146,8 +149,8 @@ namespace AccesoDatos
                 parametrosEntrada[9] = new MySqlParameter("@_idMemoria", MySqlDbType.Int32);
 
                 parametrosEntrada[0].Value = memoria.Modelo.IdModelo;
-                parametrosEntrada[1].Value = memoria.IdBusFrecuencia;
-                parametrosEntrada[2].Value = memoria.BusFrecuencia;
+                parametrosEntrada[1].Value = 1;
+                parametrosEntrada[2].Value = 1333;
                 parametrosEntrada[3].Value = memoria.IdCapacidad;
                 parametrosEntrada[4].Value = memoria.Capacidad;
                 parametrosEntrada[5].Value = memoria.Estado;

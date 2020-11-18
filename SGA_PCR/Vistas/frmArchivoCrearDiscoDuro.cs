@@ -187,6 +187,7 @@ namespace Apolo
                     break;
             }
         }
+
         public void limpiarComponentes()
         {
             cmbTipo.SelectedIndex = -1;
@@ -203,7 +204,7 @@ namespace Apolo
                 estadoComponentes(TipoVista.Modificar);
                 discoOld = new DiscoDuro();
 
-                disco.IdDisco = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[0])).Value.ToString());
+                disco.IdDisco = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[8])).Value.ToString());
                 int idTipo = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[5])).Value.ToString());
                 int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[6])).Value.ToString());
                 int idTamano = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[7])).Value.ToString());
@@ -214,11 +215,11 @@ namespace Apolo
                 chbActivo.Checked = (activo == 1) ? true : false;
 
                 discoOld.Tipo.IdModelo = idTipo;
-                discoOld.Tipo.NombreModelo = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[1])).Value.ToString();
+                //discoOld.Tipo.NombreModelo = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[1])).Value.ToString();
                 discoOld.IdTamano = idTamano;
-                discoOld.Tamano = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                //discoOld.Tamano = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[2])).Value.ToString();
                 discoOld.IdCapacidad = idCapacidad;
-                discoOld.Capacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[3])).Value.ToString());
+                //discoOld.Capacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[3])).Value.ToString());
                 discoOld.Estado = activo;
             }
         }
@@ -245,13 +246,13 @@ namespace Apolo
             llenar_Datos_Disco();
             if (disco.IdDisco == 0)
             {
-                if (MessageBox.Show("Estas seguro deseas Crear este tipo de Disco", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("¿Estás seguro que deseas Crear este tipo de Disco?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idDisco = discoDA.GuardarNuevoDiscoDuro(disco, this.nombreUsuario);
 
                     if (idDisco > 0)
                     {
-                        MessageBox.Show("Se guardó éxitosamente el disco con ID: " + idDisco, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se guardó exitosamente el disco con Código: DIS-" + idDisco, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else if (idDisco == 0)
@@ -264,9 +265,9 @@ namespace Apolo
             {
 
                 disco.Estado = (chbActivo.Checked) ? 1 : 0;
-                if ((disco.Tipo.IdModelo==discoOld.Tipo.IdModelo && disco.Tipo.NombreModelo== discoOld.Tipo.NombreModelo &&
-                    disco.IdTamano== discoOld.IdTamano && disco.Tamano== discoOld.Tamano &&
-                    disco.IdCapacidad== discoOld.IdCapacidad && disco.Capacidad == discoOld.Capacidad &&
+                if ((disco.Tipo.IdModelo==discoOld.Tipo.IdModelo && 
+                    disco.IdTamano== discoOld.IdTamano && 
+                    disco.IdCapacidad== discoOld.IdCapacidad && 
                     disco.Estado == discoOld.Estado))
                 //if (disco == discoOld)
                 {
@@ -274,13 +275,13 @@ namespace Apolo
                     return;
                 }
 
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("¿Estás seguro que desea Guardar los cambios?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idDisco;
 
-                    if ((disco.Tipo.IdModelo == discoOld.Tipo.IdModelo && disco.Tipo.NombreModelo == discoOld.Tipo.NombreModelo &&
-                    disco.IdTamano == discoOld.IdTamano && disco.Tamano == discoOld.Tamano &&
-                    disco.IdCapacidad == discoOld.IdCapacidad && disco.Capacidad == discoOld.Capacidad &&
+                    if ((disco.Tipo.IdModelo == discoOld.Tipo.IdModelo && 
+                    disco.IdTamano == discoOld.IdTamano && 
+                    disco.IdCapacidad == discoOld.IdCapacidad && 
                     disco.Estado != discoOld.Estado))
                     //if(disco==discoOld)
                     {
@@ -293,7 +294,7 @@ namespace Apolo
 
                     if (idDisco > 0)
                     {
-                        MessageBox.Show("Se Modificó el disco con ID : " + disco.IdDisco + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Se Modificó el disco con Código : DIS-" + disco.IdDisco + " con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else if (idDisco == 0)
@@ -307,6 +308,7 @@ namespace Apolo
             Cursor.Current = Cursors.Default;
 
         }
+
         private void llenar_Datos_Disco()
         {
             int indice;
@@ -323,6 +325,7 @@ namespace Apolo
             disco.Capacidad = Convert.ToInt32(tablaCapacidad.Rows[indice]["descripcion"].ToString());
 
         }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             estadoComponentes(TipoVista.Anular);
@@ -330,23 +333,19 @@ namespace Apolo
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro que desea Imprimir la lista de Discos", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            if (MessageBox.Show("¿Estás seguro que desea Imprimir la lista de Discos?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
-                MessageBox.Show("Se imprimio la lista de Discos");
+                MessageBox.Show("Se imprimió la lista de Discos");
             }
         }
-
-        private void frmCrearDiscoDuro_FormClosed(object sender, FormClosedEventArgs e)
-        {
-        }
-
+        
         private void dgvDiscoDuro_Click(object sender, EventArgs e)
         {
             GridRow aux = (GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow;
             if (aux != null)
             {
                 estadoComponentes(TipoVista.Vista);
-                disco.IdDisco = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[0])).Value.ToString());
+                disco.IdDisco = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[8])).Value.ToString());
                 int idTipo = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[5])).Value.ToString());
                 int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[6])).Value.ToString());
                 int idTamano = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[7])).Value.ToString());
@@ -356,6 +355,26 @@ namespace Apolo
                 cmbTamano.SelectedValue = idTamano;
                 chbActivo.Checked = (activo == 1) ? true : false;
             }
+        }
+
+        private void btnAgregarTamanoDisco_Click(object sender, EventArgs e)
+        {
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario,this.nombreUsuario, "DISCO_TAMANO");
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
+        }
+
+        private void btnAgregarCapacidadDisco_Click(object sender, EventArgs e)
+        {
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "DISCO_CAPACIDAD");
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
         }
     }
 }

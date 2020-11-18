@@ -20,7 +20,7 @@ namespace Apolo
         DataTable tablaMemorias;
         DataTable tablaTipo;
         DataTable tablaModelo;
-        DataTable tablaFrecuencia;
+        //DataTable tablaFrecuencia;
         DataTable tablaCapacidad;
 
         Memoria memoria;
@@ -62,10 +62,10 @@ namespace Apolo
             cmbModelo.DisplayMember = "nombre";
             cmbModelo.ValueMember = "idModelo";
 
-            tablaFrecuencia = memoriaDA.ListarMemoriaFrecuencia();
-            cmbFrecuencia.DataSource = tablaFrecuencia;
-            cmbFrecuencia.DisplayMember = "descripcion";
-            cmbFrecuencia.ValueMember = "idAuxiliar";
+            //tablaFrecuencia = memoriaDA.ListarMemoriaFrecuencia();
+            //cmbFrecuencia.DataSource = tablaFrecuencia;
+            //cmbFrecuencia.DisplayMember = "descripcion";
+            //cmbFrecuencia.ValueMember = "idAuxiliar";
 
             tablaCapacidad = memoriaDA.ListarMemoriaCapacidad();
             cmbCapacidad.DataSource = tablaCapacidad;
@@ -89,7 +89,7 @@ namespace Apolo
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
-                    cmbFrecuencia.Enabled = false;
+                    //cmbFrecuencia.Enabled = false;
                     cmbCapacidad.Enabled = false;
                     cmbModelo.Enabled = false;
                     cmbTipo.Enabled = false;
@@ -104,7 +104,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = true;
                     btnEditar.Enabled = false;
-                    cmbFrecuencia.Enabled = true;
+                    //cmbFrecuencia.Enabled = true;
                     cmbCapacidad.Enabled = true;
                     cmbModelo.Enabled = true;
                     cmbTipo.Enabled = true;
@@ -118,7 +118,7 @@ namespace Apolo
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
-                    cmbFrecuencia.Enabled = false;
+                    //cmbFrecuencia.Enabled = false;
                     cmbCapacidad.Enabled = false;
                     cmbModelo.Enabled = false;
                     cmbTipo.Enabled = false;
@@ -137,7 +137,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = true;
                     btnEditar.Enabled = false;
-                    cmbFrecuencia.Enabled = true;
+                    //cmbFrecuencia.Enabled = true;
                     cmbCapacidad.Enabled = true;
                     cmbModelo.Enabled = true;
                     cmbTipo.Enabled = true;
@@ -151,7 +151,7 @@ namespace Apolo
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
-                    cmbFrecuencia.Enabled = false;
+                    //cmbFrecuencia.Enabled = false;
                     cmbCapacidad.Enabled = false;
                     cmbModelo.Enabled = false;
                     cmbTipo.Enabled = false;
@@ -165,7 +165,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = false;
-                    cmbFrecuencia.Enabled = false;
+                    //cmbFrecuencia.Enabled = false;
                     cmbCapacidad.Enabled = false;
                     cmbModelo.Enabled = false;
                     cmbTipo.Enabled = false;
@@ -180,7 +180,7 @@ namespace Apolo
                     btnImprimir.Enabled = false;
                     btnGrabar.Enabled = true;
                     btnEditar.Enabled = false;
-                    cmbFrecuencia.Enabled = true;
+                    //cmbFrecuencia.Enabled = true;
                     cmbCapacidad.Enabled = true;
                     cmbModelo.Enabled = true;
                     cmbTipo.Enabled = true;
@@ -194,7 +194,7 @@ namespace Apolo
                     btnImprimir.Enabled = true;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = true;
-                    cmbFrecuencia.Enabled = false;
+                    //cmbFrecuencia.Enabled = false;
                     cmbCapacidad.Enabled = false;
                     cmbModelo.Enabled = false;
                     cmbTipo.Enabled = false;
@@ -210,7 +210,7 @@ namespace Apolo
             cmbModelo.SelectedIndex = -1;
             cmbTipo.SelectedIndex = -1;
             cmbCapacidad.SelectedIndex = -1;
-            cmbFrecuencia.SelectedIndex = -1;
+            //cmbFrecuencia.SelectedIndex = -1;
             chbActivo.Checked = false;
         }
 
@@ -227,15 +227,15 @@ namespace Apolo
                 estadoComponentes(TipoVista.Modificar);
                 memoriaOld = new Memoria();
 
-                memoria.IdMemoria = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[0])).Value.ToString());
+                memoria.IdMemoria = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[5])).Value.ToString());
                 int idModelo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[6])).Value.ToString());
                 int idTipo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[7])).Value.ToString());
-                int idFrecuencia = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
-                int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[9])).Value.ToString());
-                int activo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                //int idFrecuencia = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                int activo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[4])).Value.ToString());
                 cmbModelo.SelectedValue = idModelo;
                 cmbTipo.SelectedValue = idTipo;
-                cmbFrecuencia.SelectedValue = idFrecuencia;
+                //cmbFrecuencia.SelectedValue = idFrecuencia;
                 cmbCapacidad.SelectedValue = idCapacidad;
                 chbActivo.Checked = (activo == 1) ? true : false;
 
@@ -243,19 +243,19 @@ namespace Apolo
                 int indice;
                 indice = cmbModelo.SelectedIndex;
                 memoriaOld.Modelo.IdModelo = int.Parse(cmbModelo.SelectedValue.ToString());
-                memoriaOld.Modelo.NombreModelo = tablaModelo.Rows[indice]["nombre"].ToString();
+                //memoriaOld.Modelo.NombreModelo = tablaModelo.Rows[indice]["nombre"].ToString();
 
                 indice = cmbTipo.SelectedIndex;
                 memoriaOld.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
-                memoriaOld.Tipo = tablaTipo.Rows[indice]["descripcion"].ToString();
+                //memoriaOld.Tipo = tablaTipo.Rows[indice]["descripcion"].ToString();
 
-                indice = cmbFrecuencia.SelectedIndex;
-                memoriaOld.IdBusFrecuencia = int.Parse(cmbFrecuencia.SelectedValue.ToString());
-                memoriaOld.BusFrecuencia = Convert.ToInt32(tablaFrecuencia.Rows[indice]["descripcion"].ToString());
+                //indice = cmbFrecuencia.SelectedIndex;
+                //memoriaOld.IdBusFrecuencia = int.Parse(cmbFrecuencia.SelectedValue.ToString());
+                //memoriaOld.BusFrecuencia = Convert.ToInt32(tablaFrecuencia.Rows[indice]["descripcion"].ToString());
 
                 indice = cmbCapacidad.SelectedIndex;
                 memoriaOld.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());
-                memoriaOld.Capacidad = int.Parse(tablaCapacidad.Rows[indice]["descripcion"].ToString());
+                //memoriaOld.Capacidad = int.Parse(tablaCapacidad.Rows[indice]["descripcion"].ToString());
 
                 memoriaOld.Estado = activo;
             }
@@ -268,9 +268,9 @@ namespace Apolo
             memoria.Modelo.IdModelo = int.Parse(cmbModelo.SelectedValue.ToString());
             memoria.Modelo.NombreModelo = tablaModelo.Rows[indice]["nombre"].ToString();
 
-            indice = cmbFrecuencia.SelectedIndex;
-            memoria.IdBusFrecuencia = int.Parse(cmbFrecuencia.SelectedValue.ToString());
-            memoria.BusFrecuencia = Convert.ToInt32(tablaFrecuencia.Rows[indice]["descripcion"].ToString());
+            //indice = cmbFrecuencia.SelectedIndex;
+            //memoria.IdBusFrecuencia = int.Parse(cmbFrecuencia.SelectedValue.ToString());
+            //memoria.BusFrecuencia = Convert.ToInt32(tablaFrecuencia.Rows[indice]["descripcion"].ToString());
 
             indice = cmbCapacidad.SelectedIndex;
             memoria.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());
@@ -287,12 +287,13 @@ namespace Apolo
             Cursor.Current = Cursors.WaitCursor;
             int i = cmbModelo.SelectedIndex;
             int j = cmbCapacidad.SelectedIndex;
-            int k = cmbFrecuencia.SelectedIndex;
+            //int k = cmbFrecuencia.SelectedIndex;
             int l = cmbTipo.SelectedIndex;
 
-            if (!(i >= 0 && j >= 0 && k >= 0 && l >= 0)) //Esto verifica que se ha seleccionado algún item del comboBox
+            //if (!(i >= 0 && j >= 0 && k >= 0 && l >= 0)) //Esto verifica que se ha seleccionado algún item del comboBox
+            if (!(i >= 0 && j >= 0 && l >= 0)) //Esto verifica que se ha seleccionado algún item del comboBox
             {
-                MessageBox.Show("No se puede crear una memoria si no\ntiene todas sus características completas.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede crear una memoria si no\ntiene todas sus características completas.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Cursor.Current = Cursors.Default;
                 return;
             }
@@ -300,13 +301,13 @@ namespace Apolo
             llenar_Datos_Memorias();
             if (memoria.IdMemoria == 0)
             {
-                if (MessageBox.Show("Estas seguro deseas Crear este tipo de Memoria", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("¿Estás seguro deseas Crear este tipo de Memoria?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idMemoria = memoriaDA.GuardarNuevaMemoria(memoria, this.nombreUsuario);
 
                     if (idMemoria > 0)
                     {
-                        MessageBox.Show("Se guardó éxitosamente la memoria con ID: " + idMemoria, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se guardó exitosamente la memoria con Código: MEM-" + idMemoria, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else if (idMemoria == 0)
@@ -319,10 +320,14 @@ namespace Apolo
             {
 
                 memoria.Estado = (chbActivo.Checked) ? 1 : 0;
-                if ((memoria.Modelo.IdModelo == memoriaOld.Modelo.IdModelo && memoria.Modelo.NombreModelo == memoriaOld.Modelo.NombreModelo &&
-                    memoria.IdCapacidad == memoriaOld.IdCapacidad && memoria.Capacidad == memoriaOld.Capacidad &&
-                    memoria.IdBusFrecuencia == memoriaOld.IdBusFrecuencia && memoria.BusFrecuencia == memoriaOld.BusFrecuencia &&
-                    memoria.IdTipo == memoriaOld.IdTipo && memoria.Tipo == memoriaOld.Tipo &&
+                //if ((memoria.Modelo.IdModelo == memoriaOld.Modelo.IdModelo && memoria.Modelo.NombreModelo == memoriaOld.Modelo.NombreModelo &&
+                //    memoria.IdCapacidad == memoriaOld.IdCapacidad && memoria.Capacidad == memoriaOld.Capacidad &&
+                //    memoria.IdBusFrecuencia == memoriaOld.IdBusFrecuencia && memoria.BusFrecuencia == memoriaOld.BusFrecuencia &&
+                //    memoria.IdTipo == memoriaOld.IdTipo && memoria.Tipo == memoriaOld.Tipo &&
+                //    memoria.Estado == memoriaOld.Estado))
+                if ((memoria.Modelo.IdModelo == memoriaOld.Modelo.IdModelo && 
+                    memoria.IdCapacidad == memoriaOld.IdCapacidad && 
+                    memoria.IdTipo == memoriaOld.IdTipo && 
                     memoria.Estado == memoriaOld.Estado))
                 //if (disco == discoOld)
                 {
@@ -330,14 +335,18 @@ namespace Apolo
                     return;
                 }
 
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("¿Estás seguro que desea Guardar los cambios?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idMemoria;
 
-                    if ((memoria.Modelo.IdModelo == memoriaOld.Modelo.IdModelo && memoria.Modelo.NombreModelo == memoriaOld.Modelo.NombreModelo &&
-                    memoria.IdCapacidad == memoriaOld.IdCapacidad && memoria.Capacidad == memoriaOld.Capacidad &&
-                    memoria.IdBusFrecuencia == memoriaOld.IdBusFrecuencia && memoria.BusFrecuencia == memoriaOld.BusFrecuencia &&
-                    memoria.IdTipo == memoriaOld.IdTipo && memoria.Tipo == memoriaOld.Tipo &&
+                    //if ((memoria.Modelo.IdModelo == memoriaOld.Modelo.IdModelo && memoria.Modelo.NombreModelo == memoriaOld.Modelo.NombreModelo &&
+                    //memoria.IdCapacidad == memoriaOld.IdCapacidad && memoria.Capacidad == memoriaOld.Capacidad &&
+                    //memoria.IdBusFrecuencia == memoriaOld.IdBusFrecuencia && memoria.BusFrecuencia == memoriaOld.BusFrecuencia &&
+                    //memoria.IdTipo == memoriaOld.IdTipo && memoria.Tipo == memoriaOld.Tipo &&
+                    //memoria.Estado != memoriaOld.Estado))
+                    if ((memoria.Modelo.IdModelo == memoriaOld.Modelo.IdModelo && 
+                    memoria.IdCapacidad == memoriaOld.IdCapacidad && 
+                    memoria.IdTipo == memoriaOld.IdTipo && 
                     memoria.Estado != memoriaOld.Estado))
                     //if(disco==discoOld)
                     {
@@ -350,7 +359,7 @@ namespace Apolo
 
                     if (idMemoria > 0)
                     {
-                        MessageBox.Show("Se Modificó la memoria con ID : " + memoria.IdMemoria + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Se Modificó la memoria con Código : MEM-" + memoria.IdMemoria + " con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else if (idMemoria == 0)
@@ -383,28 +392,19 @@ namespace Apolo
             if (aux != null)
             {
                 estadoComponentes(TipoVista.Vista);
-                memoria.IdMemoria = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[0])).Value.ToString());
+                memoria.IdMemoria = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[5])).Value.ToString());
                 int idModelo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[6])).Value.ToString());
                 int idTipo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[7])).Value.ToString());
-                int idFrecuencia = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
-                int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[9])).Value.ToString());
-                int activo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                //int idFrecuencia = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                int activo = int.Parse(((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[4])).Value.ToString());
                 cmbModelo.SelectedValue = idModelo;
                 cmbTipo.SelectedValue = idTipo;
-                cmbFrecuencia.SelectedValue = idFrecuencia;
+                //cmbFrecuencia.SelectedValue = idFrecuencia;
                 cmbCapacidad.SelectedValue = idCapacidad;
                 chbActivo.Checked = (activo == 1) ? true : false;
             }
         }
-
-        private void cmbModelo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmArchivoCrearMemoria_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

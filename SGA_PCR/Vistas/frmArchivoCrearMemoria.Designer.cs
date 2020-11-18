@@ -38,9 +38,7 @@
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.chbActivo = new System.Windows.Forms.CheckBox();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -49,11 +47,13 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
             this.cmbCapacidad = new System.Windows.Forms.ComboBox();
-            this.cmbFrecuencia = new System.Windows.Forms.ComboBox();
             this.cmbModelo = new System.Windows.Forms.ComboBox();
             this.dgvMemoria = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.btnAgregarModeloMemoria = new System.Windows.Forms.Button();
+            this.btnAgregarCapacidadMemoria = new System.Windows.Forms.Button();
+            this.btnAgregarTipoMemoria = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelX3
@@ -65,26 +65,11 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(22, 263);
+            this.labelX3.Location = new System.Drawing.Point(22, 221);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(66, 16);
             this.labelX3.TabIndex = 104;
             this.labelX3.Text = "Capacidad:";
-            // 
-            // labelX2
-            // 
-            this.labelX2.AutoSize = true;
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(22, 173);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(68, 16);
-            this.labelX2.TabIndex = 103;
-            this.labelX2.Text = "Frecuencia:";
             // 
             // labelX1
             // 
@@ -109,7 +94,7 @@
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(22, 354);
+            this.chbActivo.Location = new System.Drawing.Point(22, 314);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 101;
@@ -221,20 +206,10 @@
             this.cmbCapacidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbCapacidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCapacidad.FormattingEnabled = true;
-            this.cmbCapacidad.Location = new System.Drawing.Point(22, 285);
+            this.cmbCapacidad.Location = new System.Drawing.Point(22, 243);
             this.cmbCapacidad.Name = "cmbCapacidad";
             this.cmbCapacidad.Size = new System.Drawing.Size(117, 21);
             this.cmbCapacidad.TabIndex = 95;
-            // 
-            // cmbFrecuencia
-            // 
-            this.cmbFrecuencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbFrecuencia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFrecuencia.FormattingEnabled = true;
-            this.cmbFrecuencia.Location = new System.Drawing.Point(22, 195);
-            this.cmbFrecuencia.Name = "cmbFrecuencia";
-            this.cmbFrecuencia.Size = new System.Drawing.Size(117, 21);
-            this.cmbFrecuencia.TabIndex = 94;
             // 
             // cmbModelo
             // 
@@ -245,7 +220,6 @@
             this.cmbModelo.Name = "cmbModelo";
             this.cmbModelo.Size = new System.Drawing.Size(117, 21);
             this.cmbModelo.TabIndex = 93;
-            this.cmbModelo.SelectedIndexChanged += new System.EventHandler(this.cmbModelo_SelectedIndexChanged);
             // 
             // dgvMemoria
             // 
@@ -255,42 +229,41 @@
             this.dgvMemoria.BackColor = System.Drawing.Color.White;
             this.dgvMemoria.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvMemoria.ForeColor = System.Drawing.Color.Black;
-            this.dgvMemoria.Location = new System.Drawing.Point(158, 25);
+            this.dgvMemoria.Location = new System.Drawing.Point(211, 25);
             this.dgvMemoria.Name = "dgvMemoria";
             this.dgvMemoria.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvMemoria.PrimaryGrid.AllowRowResize = true;
             this.dgvMemoria.PrimaryGrid.ColumnHeader.RowHeight = 30;
             gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "idMemoria";
-            gridColumn1.MinimumWidth = 50;
-            gridColumn1.Name = "Id";
-            gridColumn1.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn1.Width = 50;
+            gridColumn1.DataPropertyName = "codigo";
+            gridColumn1.Name = "Código";
             gridColumn2.AllowEdit = false;
             gridColumn2.DataPropertyName = "tipo";
             gridColumn2.FilterAutoScan = true;
             gridColumn2.MinimumWidth = 100;
             gridColumn2.Name = "Modelo";
             gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn3.AllowEdit = false;
             gridColumn3.DataPropertyName = "tipo2";
             gridColumn3.Name = "Tipo";
             gridColumn4.AllowEdit = false;
-            gridColumn4.DataPropertyName = "frecuencia";
-            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
+            gridColumn4.DataPropertyName = "capacidad";
             gridColumn4.MinimumWidth = 100;
-            gridColumn4.Name = "Frecuencia";
+            gridColumn4.Name = "Capacidad";
             gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn5.AllowEdit = false;
-            gridColumn5.DataPropertyName = "capacidad";
+            gridColumn5.DataPropertyName = "estado";
+            gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
             gridColumn5.MinimumWidth = 100;
-            gridColumn5.Name = "Capacidad";
+            gridColumn5.Name = "Activo";
             gridColumn5.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn6.AllowEdit = false;
-            gridColumn6.DataPropertyName = "estado";
-            gridColumn6.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn6.MinimumWidth = 100;
-            gridColumn6.Name = "Activo";
+            gridColumn6.DataPropertyName = "idMemoria";
+            gridColumn6.MinimumWidth = 50;
+            gridColumn6.Name = "Id";
             gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn6.Visible = false;
+            gridColumn6.Width = 50;
             gridColumn7.AllowEdit = false;
             gridColumn7.DataPropertyName = "idTipo";
             gridColumn7.MinimumWidth = 100;
@@ -301,17 +274,11 @@
             gridColumn8.Name = "idTipo";
             gridColumn8.Visible = false;
             gridColumn9.AllowEdit = false;
-            gridColumn9.DataPropertyName = "idBusFrecuencia";
+            gridColumn9.DataPropertyName = "idCapacidad";
             gridColumn9.MinimumWidth = 100;
-            gridColumn9.Name = "idFrecuencia";
+            gridColumn9.Name = "idCapacidad";
             gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn9.Visible = false;
-            gridColumn10.AllowEdit = false;
-            gridColumn10.DataPropertyName = "idCapacidad";
-            gridColumn10.MinimumWidth = 100;
-            gridColumn10.Name = "idCapacidad";
-            gridColumn10.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn10.Visible = false;
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn1);
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn2);
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn3);
@@ -321,7 +288,6 @@
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn7);
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn8);
             this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn9);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn10);
             this.dgvMemoria.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -334,7 +300,7 @@
             this.dgvMemoria.PrimaryGrid.NullString = "<<null>>";
             this.dgvMemoria.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvMemoria.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvMemoria.Size = new System.Drawing.Size(550, 352);
+            this.dgvMemoria.Size = new System.Drawing.Size(513, 352);
             this.dgvMemoria.TabIndex = 92;
             this.dgvMemoria.Text = "Tabla Memoria";
             this.dgvMemoria.Click += new System.EventHandler(this.dgvMemoria_Click);
@@ -348,7 +314,7 @@
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(22, 105);
+            this.labelX4.Location = new System.Drawing.Point(22, 130);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(30, 16);
             this.labelX4.TabIndex = 106;
@@ -359,10 +325,64 @@
             this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(22, 127);
+            this.cmbTipo.Location = new System.Drawing.Point(22, 152);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(117, 21);
             this.cmbTipo.TabIndex = 105;
+            // 
+            // btnAgregarModeloMemoria
+            // 
+            this.btnAgregarModeloMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarModeloMemoria.AutoSize = true;
+            this.btnAgregarModeloMemoria.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarModeloMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarModeloMemoria.FlatAppearance.BorderSize = 0;
+            this.btnAgregarModeloMemoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarModeloMemoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarModeloMemoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarModeloMemoria.Image")));
+            this.btnAgregarModeloMemoria.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarModeloMemoria.Location = new System.Drawing.Point(145, 53);
+            this.btnAgregarModeloMemoria.Name = "btnAgregarModeloMemoria";
+            this.btnAgregarModeloMemoria.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarModeloMemoria.TabIndex = 111;
+            this.btnAgregarModeloMemoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarModeloMemoria.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarCapacidadMemoria
+            // 
+            this.btnAgregarCapacidadMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarCapacidadMemoria.AutoSize = true;
+            this.btnAgregarCapacidadMemoria.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarCapacidadMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarCapacidadMemoria.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCapacidadMemoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCapacidadMemoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCapacidadMemoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCapacidadMemoria.Image")));
+            this.btnAgregarCapacidadMemoria.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarCapacidadMemoria.Location = new System.Drawing.Point(145, 233);
+            this.btnAgregarCapacidadMemoria.Name = "btnAgregarCapacidadMemoria";
+            this.btnAgregarCapacidadMemoria.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarCapacidadMemoria.TabIndex = 110;
+            this.btnAgregarCapacidadMemoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarCapacidadMemoria.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregarTipoMemoria
+            // 
+            this.btnAgregarTipoMemoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarTipoMemoria.AutoSize = true;
+            this.btnAgregarTipoMemoria.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarTipoMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTipoMemoria.FlatAppearance.BorderSize = 0;
+            this.btnAgregarTipoMemoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTipoMemoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarTipoMemoria.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTipoMemoria.Image")));
+            this.btnAgregarTipoMemoria.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarTipoMemoria.Location = new System.Drawing.Point(145, 143);
+            this.btnAgregarTipoMemoria.Name = "btnAgregarTipoMemoria";
+            this.btnAgregarTipoMemoria.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarTipoMemoria.TabIndex = 109;
+            this.btnAgregarTipoMemoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarTipoMemoria.UseVisualStyleBackColor = false;
             // 
             // frmArchivoCrearMemoria
             // 
@@ -370,10 +390,12 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(838, 414);
+            this.Controls.Add(this.btnAgregarModeloMemoria);
+            this.Controls.Add(this.btnAgregarCapacidadMemoria);
+            this.Controls.Add(this.btnAgregarTipoMemoria);
             this.Controls.Add(this.labelX4);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.labelX3);
-            this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.chbActivo);
             this.Controls.Add(this.btnImprimir);
@@ -382,7 +404,6 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.cmbCapacidad);
-            this.Controls.Add(this.cmbFrecuencia);
             this.Controls.Add(this.cmbModelo);
             this.Controls.Add(this.dgvMemoria);
             this.MaximizeBox = false;
@@ -392,7 +413,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Memoria";
-            this.Load += new System.EventHandler(this.frmArchivoCrearMemoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,7 +421,6 @@
         #endregion
 
         internal DevComponents.DotNetBar.LabelX labelX3;
-        internal DevComponents.DotNetBar.LabelX labelX2;
         internal DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.CheckBox chbActivo;
         private System.Windows.Forms.Button btnImprimir;
@@ -410,10 +429,12 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.ComboBox cmbCapacidad;
-        private System.Windows.Forms.ComboBox cmbFrecuencia;
         private System.Windows.Forms.ComboBox cmbModelo;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvMemoria;
         internal DevComponents.DotNetBar.LabelX labelX4;
         private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.Button btnAgregarModeloMemoria;
+        private System.Windows.Forms.Button btnAgregarCapacidadMemoria;
+        private System.Windows.Forms.Button btnAgregarTipoMemoria;
     }
 }

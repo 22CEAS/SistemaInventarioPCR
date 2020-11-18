@@ -45,6 +45,7 @@
     <Compile Include="Alquiler.cs" />
     <Compile Include="AlquilerDetalle.cs" />
     <Compile Include="Area.cs" />
+    <Compile Include="Auxiliar.cs" />
     <Compile Include="Cambio.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="ModulosPrincipales.cs" />

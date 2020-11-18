@@ -233,7 +233,7 @@ namespace Apolo
                 estadoComponentes(TipoVista.Modificar);
                 videoOld = new Video();
 
-                video.IdVideo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[0])).Value.ToString());
+                video.IdVideo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[10])).Value.ToString());
                 int idTipo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[8])).Value.ToString());
                 int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[9])).Value.ToString());
                 int idModelo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[6])).Value.ToString());
@@ -261,20 +261,20 @@ namespace Apolo
                 int indice;
                 indice = cmbModelo.SelectedIndex;
                 videoOld.Modelo.IdModelo = int.Parse(cmbModelo.SelectedValue.ToString());
-                videoOld.Modelo.NombreModelo = tablaModelo.Rows[indice]["NombreModelo"].ToString();
+                //videoOld.Modelo.NombreModelo = tablaModelo.Rows[indice]["NombreModelo"].ToString();
 
                 indice = cmbMarca.SelectedIndex;
                 videoOld.Modelo.IdMarca = int.Parse(cmbMarca.SelectedValue.ToString());
-                videoOld.Modelo.NombreMarca = tablaMarca.Rows[indice]["nombre"].ToString();
+                //videoOld.Modelo.NombreMarca = tablaMarca.Rows[indice]["nombre"].ToString();
 
 
                 indice = cmbTipo.SelectedIndex;
                 videoOld.IdTipo = int.Parse(cmbTipo.SelectedValue.ToString());
-                videoOld.Tipo = tablaTipo.Rows[indice]["descripcion"].ToString();
+                //videoOld.Tipo = tablaTipo.Rows[indice]["descripcion"].ToString();
 
                 indice = cmbCapacidad.SelectedIndex;
                 videoOld.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());
-                videoOld.Capacidad = Convert.ToInt32(tablaCapacidad.Rows[indice]["descripcion"].ToString());
+                //videoOld.Capacidad = Convert.ToInt32(tablaCapacidad.Rows[indice]["descripcion"].ToString());
 
                 videoOld.Estado = activo;
 
@@ -304,13 +304,13 @@ namespace Apolo
             llenar_Datos_Video();
             if (video.IdVideo == 0)
             {
-                if (MessageBox.Show("Estas seguro deseas Crear este tipo de Video", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("¿Estás seguro deseas Crear este tipo de Video?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idVideo = videoDA.GuardarNuevoVideo(video, this.nombreUsuario);
 
                     if (idVideo > 0)
                     {
-                        MessageBox.Show("Se guardó éxitosamente el video con ID: " + idVideo, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Se guardó exitosamente el video con Código: VID-" + idVideo, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else if (idVideo == 0)
@@ -323,10 +323,10 @@ namespace Apolo
             {
 
                 video.Estado = (chbActivo.Checked) ? 1 : 0;
-                if ((video.Modelo.IdModelo == videoOld.Modelo.IdModelo && video.Modelo.NombreModelo == videoOld.Modelo.NombreModelo &&
-                    video.Modelo.IdMarca == videoOld.Modelo.IdMarca && video.Modelo.NombreMarca == videoOld.Modelo.NombreMarca &&
-                    video.IdCapacidad == videoOld.IdCapacidad && video.Capacidad == videoOld.Capacidad &&
-                    video.IdTipo == videoOld.IdTipo && video.Tipo == videoOld.Tipo &&
+                if ((video.Modelo.IdModelo == videoOld.Modelo.IdModelo && 
+                    video.Modelo.IdMarca == videoOld.Modelo.IdMarca && 
+                    video.IdCapacidad == videoOld.IdCapacidad && 
+                    video.IdTipo == videoOld.IdTipo && 
                     video.Estado == videoOld.Estado))
                 //if (disco == discoOld)
                 {
@@ -334,14 +334,14 @@ namespace Apolo
                     return;
                 }
 
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBox.Show("¿Estás seguro que desea Guardar los cambios?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
                     int idVideo;
 
-                    if ((video.Modelo.IdModelo == videoOld.Modelo.IdModelo && video.Modelo.NombreModelo == videoOld.Modelo.NombreModelo &&
-                    video.Modelo.IdMarca == videoOld.Modelo.IdMarca && video.Modelo.NombreMarca == videoOld.Modelo.NombreMarca &&
-                    video.IdCapacidad == videoOld.IdCapacidad && video.Capacidad == videoOld.Capacidad &&
-                    video.IdTipo == videoOld.IdTipo && video.Tipo == videoOld.Tipo &&
+                    if ((video.Modelo.IdModelo == videoOld.Modelo.IdModelo && 
+                    video.Modelo.IdMarca == videoOld.Modelo.IdMarca && 
+                    video.IdCapacidad == videoOld.IdCapacidad && 
+                    video.IdTipo == videoOld.IdTipo && 
                     video.Estado != videoOld.Estado))
                     //if(disco==discoOld)
                     {
@@ -354,7 +354,7 @@ namespace Apolo
 
                     if (idVideo > 0)
                     {
-                        MessageBox.Show("Se Modificó el video con ID : " + video.IdVideo + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Se Modificó el video con Código : VID-" + video.IdVideo + " con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         estadoComponentes(TipoVista.Guardar);
                     }
                     else if (idVideo == 0)
@@ -409,7 +409,7 @@ namespace Apolo
             if (aux != null)
             {
                 estadoComponentes(TipoVista.Vista);
-                video.IdVideo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[0])).Value.ToString());
+                video.IdVideo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[10])).Value.ToString());
                 int idTipo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[8])).Value.ToString());
                 int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[9])).Value.ToString());
                 int idModelo = int.Parse(((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[6])).Value.ToString());
