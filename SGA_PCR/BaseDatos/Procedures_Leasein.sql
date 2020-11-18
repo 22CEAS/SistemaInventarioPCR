@@ -1905,3 +1905,36 @@ $$
 DELIMITER ;
 
 
+DROP PROCEDURE IF EXISTS `insert_auxiliar`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_auxiliar`(
+	IN _cod_tabla NVARCHAR(255),
+	IN _descripcion NVARCHAR(255),
+	IN _activo TINYINT,
+	OUT _idAuxiliar INT
+)
+BEGIN
+	SET _idAuxiliar=(SELECT IFNULL( MAX(idAuxiliar) , 0 )+1 FROM auxiliar where cod_tabla=_cod_tabla);
+	INSERT INTO auxiliar (idAuxiliar,cod_tabla,descripcion,activo) values
+	(_idAuxiliar,_cod_tabla,_descripcion,_activo);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS `update_auxiliar`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_auxiliar`(
+	IN _cod_tabla NVARCHAR(255),
+	IN _descripcion NVARCHAR(255),
+	IN _activo TINYINT,
+	IN _idAuxiliar INT
+)
+BEGIN
+	UPDATE auxiliar 
+	SET descripcion=_descripcion,
+	activo=_activo
+	where cod_tabla=_cod_tabla and idAuxiliar=_idAuxiliar;
+END
+$$
+DELIMITER ;

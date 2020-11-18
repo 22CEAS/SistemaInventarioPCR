@@ -27,6 +27,14 @@ namespace AccesoDatos
         }
         public DataTable ListarTipoProcesadores()
         {
+            return objManager.MostrarTablaDatos("SELECT * FROM vista_procesador_modelo ;");
+        }
+        //public DataTable ListarTipoProcesadores(int IdMarca)
+        //{
+        //    return objManager.MostrarTablaDatos("SELECT * FROM vista_procesador_modelo where idMarca=" + IdMarca + " ;");
+        //}
+        public DataTable ListarMarcaProcesadores()
+        {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_procesador_marca ;");
         }
         public DataTable ListarProcesadorGeneracion()
@@ -42,10 +50,10 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("SELECT * FROM vista_procesador_velocidad_maxima ;");
         }
 
-
         public int GuardarNuevoProcesador(Procesador procesador, string usuario)
         {
-            string sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " and idVelocidad=" + procesador.IdVelocidad + " and idVelocidadMax=" + procesador.IdVelocidadMax + " ;";
+            //string sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " and idVelocidad=" + procesador.IdVelocidad + " and idVelocidadMax=" + procesador.IdVelocidadMax + " ;";
+            string sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " ;";
             MySqlDataReader reader;
             reader = objManager.MostrarInformacion(sql);
 
@@ -70,10 +78,10 @@ namespace AccesoDatos
                 parametrosEntrada[0].Value = procesador.Modelo.IdModelo;
                 parametrosEntrada[1].Value = procesador.IdGeneracion;
                 parametrosEntrada[2].Value = procesador.Generacion;
-                parametrosEntrada[3].Value = procesador.IdVelocidad;
-                parametrosEntrada[4].Value = procesador.Velocidad;
-                parametrosEntrada[5].Value = procesador.IdVelocidadMax;
-                parametrosEntrada[6].Value = procesador.VelocidadMax;
+                parametrosEntrada[3].Value = 1;
+                parametrosEntrada[4].Value = 1;
+                parametrosEntrada[5].Value = 1;
+                parametrosEntrada[6].Value = 1;
                 parametrosEntrada[7].Value = procesador.Observacion;
                 parametrosEntrada[8].Value = usuario;
 
@@ -101,14 +109,14 @@ namespace AccesoDatos
         public int ModificarProcesador(Procesador procesador, string usuario, int actualizarEstado)
         {
             string sql = "";
+            //if (actualizarEstado == 1)
+            //    sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " and idVelocidad=" + procesador.IdVelocidad + " and idVelocidadMax= " + procesador.IdVelocidadMax  + " and estado=" + procesador.Estado + " ;";
+            //else
+            //    sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " and idVelocidad=" + procesador.IdVelocidad + " and idVelocidadMax=" + procesador.IdVelocidadMax + " ;";
             if (actualizarEstado == 1)
-            {
-                sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " and idVelocidad=" + procesador.IdVelocidad + " and idVelocidadMax= " + procesador.IdVelocidadMax  + " and estado=" + procesador.Estado + " ;";
-            }
+                sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " and estado=" + procesador.Estado + " ;";
             else
-            {
-                sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " and idVelocidad=" + procesador.IdVelocidad + " and idVelocidadMax=" + procesador.IdVelocidadMax + " ;";
-            }
+                sql = "Select * From procesador where idModelo=" + procesador.Modelo.IdModelo + " and idGeneracion=" + procesador.IdGeneracion + " ;";
 
             MySqlDataReader reader;
             reader = objManager.MostrarInformacion(sql);
@@ -134,10 +142,10 @@ namespace AccesoDatos
                 parametrosEntrada[0].Value = procesador.Modelo.IdModelo;
                 parametrosEntrada[1].Value = procesador.IdGeneracion;
                 parametrosEntrada[2].Value = procesador.Generacion;
-                parametrosEntrada[3].Value = procesador.IdVelocidad;
-                parametrosEntrada[4].Value = procesador.Velocidad;
-                parametrosEntrada[5].Value = procesador.IdVelocidadMax;
-                parametrosEntrada[6].Value = procesador.VelocidadMax;
+                parametrosEntrada[3].Value = 1;
+                parametrosEntrada[4].Value = 1;
+                parametrosEntrada[5].Value = 1;
+                parametrosEntrada[6].Value = 1;
                 parametrosEntrada[7].Value = procesador.Estado;
                 parametrosEntrada[8].Value = usuario;
                 parametrosEntrada[9].Value = procesador.IdProcesador;

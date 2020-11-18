@@ -29,17 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoCrearProcesador));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn13 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn14 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn15 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn16 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn17 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn18 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.chbActivo = new System.Windows.Forms.CheckBox();
@@ -48,28 +45,15 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
-            this.cmbVelocidadMax = new System.Windows.Forms.ComboBox();
             this.cmbGeneracion = new System.Windows.Forms.ComboBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.dgvProcesadores = new DevComponents.DotNetBar.SuperGrid.SuperGridControl();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.cmbVelocidad = new System.Windows.Forms.ComboBox();
+            this.btnAgregarTipoProcesador = new System.Windows.Forms.Button();
+            this.btnAgregarGeneracionProcesador = new System.Windows.Forms.Button();
+            this.btnAgregarMarcaProcesador = new System.Windows.Forms.Button();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // labelX3
-            // 
-            this.labelX3.AutoSize = true;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.ForeColor = System.Drawing.Color.Black;
-            this.labelX3.Location = new System.Drawing.Point(12, 259);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(88, 16);
-            this.labelX3.TabIndex = 104;
-            this.labelX3.Text = "Velocidad Max:";
             // 
             // labelX2
             // 
@@ -80,7 +64,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.ForeColor = System.Drawing.Color.Black;
-            this.labelX2.Location = new System.Drawing.Point(12, 117);
+            this.labelX2.Location = new System.Drawing.Point(26, 202);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(71, 16);
             this.labelX2.TabIndex = 103;
@@ -95,7 +79,7 @@
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.ForeColor = System.Drawing.Color.Black;
-            this.labelX1.Location = new System.Drawing.Point(12, 28);
+            this.labelX1.Location = new System.Drawing.Point(26, 121);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(30, 16);
             this.labelX1.TabIndex = 102;
@@ -109,7 +93,7 @@
             this.chbActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbActivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chbActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbActivo.Location = new System.Drawing.Point(12, 331);
+            this.chbActivo.Location = new System.Drawing.Point(26, 288);
             this.chbActivo.Name = "chbActivo";
             this.chbActivo.Size = new System.Drawing.Size(62, 17);
             this.chbActivo.TabIndex = 101;
@@ -214,26 +198,14 @@
             this.btnGrabar.UseVisualStyleBackColor = false;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
-            // cmbVelocidadMax
-            // 
-            this.cmbVelocidadMax.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbVelocidadMax.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbVelocidadMax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbVelocidadMax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVelocidadMax.FormattingEnabled = true;
-            this.cmbVelocidadMax.Location = new System.Drawing.Point(12, 281);
-            this.cmbVelocidadMax.Name = "cmbVelocidadMax";
-            this.cmbVelocidadMax.Size = new System.Drawing.Size(126, 21);
-            this.cmbVelocidadMax.TabIndex = 95;
-            // 
             // cmbGeneracion
             // 
             this.cmbGeneracion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbGeneracion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGeneracion.FormattingEnabled = true;
-            this.cmbGeneracion.Location = new System.Drawing.Point(12, 139);
+            this.cmbGeneracion.Location = new System.Drawing.Point(26, 224);
             this.cmbGeneracion.Name = "cmbGeneracion";
-            this.cmbGeneracion.Size = new System.Drawing.Size(126, 21);
+            this.cmbGeneracion.Size = new System.Drawing.Size(155, 21);
             this.cmbGeneracion.TabIndex = 94;
             // 
             // cmbTipo
@@ -241,9 +213,9 @@
             this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(12, 50);
+            this.cmbTipo.Location = new System.Drawing.Point(26, 143);
             this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(126, 21);
+            this.cmbTipo.Size = new System.Drawing.Size(155, 21);
             this.cmbTipo.TabIndex = 93;
             // 
             // dgvProcesadores
@@ -254,76 +226,65 @@
             this.dgvProcesadores.BackColor = System.Drawing.Color.White;
             this.dgvProcesadores.FilterExprColors.SysFunction = System.Drawing.Color.DarkRed;
             this.dgvProcesadores.ForeColor = System.Drawing.Color.Black;
-            this.dgvProcesadores.Location = new System.Drawing.Point(165, 31);
+            this.dgvProcesadores.Location = new System.Drawing.Point(261, 31);
             this.dgvProcesadores.MaximumSize = new System.Drawing.Size(550, 352);
-            this.dgvProcesadores.MinimumSize = new System.Drawing.Size(450, 352);
+            this.dgvProcesadores.MinimumSize = new System.Drawing.Size(419, 352);
             this.dgvProcesadores.Name = "dgvProcesadores";
             this.dgvProcesadores.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvProcesadores.PrimaryGrid.AllowRowResize = true;
             this.dgvProcesadores.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn11.AllowEdit = false;
-            gridColumn11.DataPropertyName = "idProcesador";
-            gridColumn11.MinimumWidth = 50;
-            gridColumn11.Name = "Id";
-            gridColumn11.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn11.Width = 50;
-            gridColumn12.AllowEdit = false;
-            gridColumn12.DataPropertyName = "tipo";
-            gridColumn12.FilterAutoScan = true;
-            gridColumn12.MinimumWidth = 100;
-            gridColumn12.Name = "Tipo";
-            gridColumn12.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn13.AllowEdit = false;
-            gridColumn13.DataPropertyName = "generacion";
-            gridColumn13.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
-            gridColumn13.MinimumWidth = 100;
-            gridColumn13.Name = "Generación";
-            gridColumn13.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn14.AllowEdit = false;
-            gridColumn14.DataPropertyName = "velocidad";
-            gridColumn14.MinimumWidth = 100;
-            gridColumn14.Name = "Velocidad";
-            gridColumn14.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn15.AllowEdit = false;
-            gridColumn15.DataPropertyName = "velocidadMax";
-            gridColumn15.Name = "VelocidadMax";
-            gridColumn16.AllowEdit = false;
-            gridColumn16.DataPropertyName = "estado";
-            gridColumn16.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn16.MinimumWidth = 100;
-            gridColumn16.Name = "Activo";
-            gridColumn16.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn17.AllowEdit = false;
-            gridColumn17.DataPropertyName = "idTipo";
-            gridColumn17.MinimumWidth = 100;
-            gridColumn17.Name = "idTipo";
-            gridColumn17.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn17.Visible = false;
+            gridColumn17.DataPropertyName = "codigo";
+            gridColumn17.Name = "Código";
             gridColumn18.AllowEdit = false;
-            gridColumn18.DataPropertyName = "idGeneracion";
+            gridColumn18.DataPropertyName = "tipo";
+            gridColumn18.FilterAutoScan = true;
             gridColumn18.MinimumWidth = 100;
-            gridColumn18.Name = "idGeneracion";
+            gridColumn18.Name = "Tipo";
             gridColumn18.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn18.Visible = false;
             gridColumn19.AllowEdit = false;
-            gridColumn19.DataPropertyName = "idVelocidad";
+            gridColumn19.DataPropertyName = "generacion";
+            gridColumn19.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDoubleInputEditControl);
             gridColumn19.MinimumWidth = 100;
-            gridColumn19.Name = "idVelocidad";
+            gridColumn19.Name = "Generación";
             gridColumn19.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn19.Visible = false;
-            gridColumn20.DataPropertyName = "idVelocidadMax";
-            gridColumn20.Name = "idVelocidadMax";
-            gridColumn20.Visible = false;
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn11);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn12);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn13);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn14);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn15);
-            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn16);
+            gridColumn20.AllowEdit = false;
+            gridColumn20.DataPropertyName = "estado";
+            gridColumn20.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn20.MinimumWidth = 100;
+            gridColumn20.Name = "Activo";
+            gridColumn20.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn21.AllowEdit = false;
+            gridColumn21.DataPropertyName = "idProcesador";
+            gridColumn21.MinimumWidth = 50;
+            gridColumn21.Name = "Id";
+            gridColumn21.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn21.Visible = false;
+            gridColumn21.Width = 50;
+            gridColumn22.AllowEdit = false;
+            gridColumn22.DataPropertyName = "idTipo";
+            gridColumn22.MinimumWidth = 100;
+            gridColumn22.Name = "idTipo";
+            gridColumn22.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn22.Visible = false;
+            gridColumn23.AllowEdit = false;
+            gridColumn23.DataPropertyName = "idGeneracion";
+            gridColumn23.MinimumWidth = 100;
+            gridColumn23.Name = "idGeneracion";
+            gridColumn23.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn23.Visible = false;
+            gridColumn24.AllowEdit = false;
+            gridColumn24.DataPropertyName = "idMarca";
+            gridColumn24.Name = "idMarca";
+            gridColumn24.Visible = false;
             this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn17);
             this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn18);
             this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn19);
             this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn20);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn21);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn22);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn23);
+            this.dgvProcesadores.PrimaryGrid.Columns.Add(gridColumn24);
             this.dgvProcesadores.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvProcesadores.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvProcesadores.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -332,41 +293,97 @@
             this.dgvProcesadores.PrimaryGrid.EnableRowFiltering = true;
             this.dgvProcesadores.PrimaryGrid.Filter.Visible = true;
             this.dgvProcesadores.PrimaryGrid.MultiSelect = false;
-            this.dgvProcesadores.PrimaryGrid.NoRowsText = "No hay ningun procesador, cree un procesador";
+            this.dgvProcesadores.PrimaryGrid.NoRowsText = "No hay ningún procesador, cree un procesador";
             this.dgvProcesadores.PrimaryGrid.NullString = "<<null>>";
             this.dgvProcesadores.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvProcesadores.PrimaryGrid.ShowRowHeaders = false;
-            this.dgvProcesadores.Size = new System.Drawing.Size(550, 352);
+            this.dgvProcesadores.Size = new System.Drawing.Size(431, 352);
             this.dgvProcesadores.TabIndex = 92;
             this.dgvProcesadores.Text = "Tabla Procesadores";
             this.dgvProcesadores.Click += new System.EventHandler(this.dgvProcesadores_Click);
             // 
-            // labelX4
+            // btnAgregarTipoProcesador
             // 
-            this.labelX4.AutoSize = true;
+            this.btnAgregarTipoProcesador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarTipoProcesador.AutoSize = true;
+            this.btnAgregarTipoProcesador.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarTipoProcesador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarTipoProcesador.FlatAppearance.BorderSize = 0;
+            this.btnAgregarTipoProcesador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarTipoProcesador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarTipoProcesador.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTipoProcesador.Image")));
+            this.btnAgregarTipoProcesador.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarTipoProcesador.Location = new System.Drawing.Point(187, 133);
+            this.btnAgregarTipoProcesador.Name = "btnAgregarTipoProcesador";
+            this.btnAgregarTipoProcesador.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarTipoProcesador.TabIndex = 104;
+            this.btnAgregarTipoProcesador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarTipoProcesador.UseVisualStyleBackColor = false;
+            this.btnAgregarTipoProcesador.Click += new System.EventHandler(this.btnAgregarTipoProcesador_Click);
+            // 
+            // btnAgregarGeneracionProcesador
+            // 
+            this.btnAgregarGeneracionProcesador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarGeneracionProcesador.AutoSize = true;
+            this.btnAgregarGeneracionProcesador.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarGeneracionProcesador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarGeneracionProcesador.FlatAppearance.BorderSize = 0;
+            this.btnAgregarGeneracionProcesador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarGeneracionProcesador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarGeneracionProcesador.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarGeneracionProcesador.Image")));
+            this.btnAgregarGeneracionProcesador.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarGeneracionProcesador.Location = new System.Drawing.Point(187, 213);
+            this.btnAgregarGeneracionProcesador.Name = "btnAgregarGeneracionProcesador";
+            this.btnAgregarGeneracionProcesador.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarGeneracionProcesador.TabIndex = 105;
+            this.btnAgregarGeneracionProcesador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarGeneracionProcesador.UseVisualStyleBackColor = false;
+            this.btnAgregarGeneracionProcesador.Click += new System.EventHandler(this.btnAgregarGeneracionProcesador_Click);
+            // 
+            // btnAgregarMarcaProcesador
+            // 
+            this.btnAgregarMarcaProcesador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarMarcaProcesador.AutoSize = true;
+            this.btnAgregarMarcaProcesador.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarMarcaProcesador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarMarcaProcesador.FlatAppearance.BorderSize = 0;
+            this.btnAgregarMarcaProcesador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarMarcaProcesador.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarMarcaProcesador.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarMarcaProcesador.Image")));
+            this.btnAgregarMarcaProcesador.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarMarcaProcesador.Location = new System.Drawing.Point(187, 64);
+            this.btnAgregarMarcaProcesador.Name = "btnAgregarMarcaProcesador";
+            this.btnAgregarMarcaProcesador.Size = new System.Drawing.Size(42, 38);
+            this.btnAgregarMarcaProcesador.TabIndex = 108;
+            this.btnAgregarMarcaProcesador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregarMarcaProcesador.UseVisualStyleBackColor = false;
+            this.btnAgregarMarcaProcesador.Click += new System.EventHandler(this.btnAgregarMarcaProcesador_Click);
+            // 
+            // labelX3
+            // 
+            this.labelX3.AutoSize = true;
             // 
             // 
             // 
-            this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.ForeColor = System.Drawing.Color.Black;
-            this.labelX4.Location = new System.Drawing.Point(12, 186);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(61, 16);
-            this.labelX4.TabIndex = 106;
-            this.labelX4.Text = "Velocidad:";
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.Color.Black;
+            this.labelX3.Location = new System.Drawing.Point(26, 52);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(41, 16);
+            this.labelX3.TabIndex = 107;
+            this.labelX3.Text = "Marca:";
             // 
-            // cmbVelocidad
+            // cmbMarca
             // 
-            this.cmbVelocidad.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbVelocidad.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbVelocidad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbVelocidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVelocidad.FormattingEnabled = true;
-            this.cmbVelocidad.Location = new System.Drawing.Point(12, 208);
-            this.cmbVelocidad.Name = "cmbVelocidad";
-            this.cmbVelocidad.Size = new System.Drawing.Size(126, 21);
-            this.cmbVelocidad.TabIndex = 105;
+            this.cmbMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(26, 74);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(155, 21);
+            this.cmbMarca.TabIndex = 106;
+            this.cmbMarca.SelectedIndexChanged += new System.EventHandler(this.cmbMarca_SelectedIndexChanged);
             // 
             // frmArchivoCrearProcesador
             // 
@@ -374,9 +391,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(845, 414);
-            this.Controls.Add(this.labelX4);
-            this.Controls.Add(this.cmbVelocidad);
+            this.Controls.Add(this.btnAgregarMarcaProcesador);
             this.Controls.Add(this.labelX3);
+            this.Controls.Add(this.cmbMarca);
+            this.Controls.Add(this.btnAgregarGeneracionProcesador);
+            this.Controls.Add(this.btnAgregarTipoProcesador);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.chbActivo);
@@ -385,7 +404,6 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnGrabar);
-            this.Controls.Add(this.cmbVelocidadMax);
             this.Controls.Add(this.cmbGeneracion);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.dgvProcesadores);
@@ -402,8 +420,6 @@
         }
 
         #endregion
-
-        internal DevComponents.DotNetBar.LabelX labelX3;
         internal DevComponents.DotNetBar.LabelX labelX2;
         internal DevComponents.DotNetBar.LabelX labelX1;
         private System.Windows.Forms.CheckBox chbActivo;
@@ -412,11 +428,13 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnGrabar;
-        private System.Windows.Forms.ComboBox cmbVelocidadMax;
         private System.Windows.Forms.ComboBox cmbGeneracion;
         private System.Windows.Forms.ComboBox cmbTipo;
         private DevComponents.DotNetBar.SuperGrid.SuperGridControl dgvProcesadores;
-        internal DevComponents.DotNetBar.LabelX labelX4;
-        private System.Windows.Forms.ComboBox cmbVelocidad;
+        private System.Windows.Forms.Button btnAgregarTipoProcesador;
+        private System.Windows.Forms.Button btnAgregarGeneracionProcesador;
+        private System.Windows.Forms.Button btnAgregarMarcaProcesador;
+        internal DevComponents.DotNetBar.LabelX labelX3;
+        private System.Windows.Forms.ComboBox cmbMarca;
     }
 }

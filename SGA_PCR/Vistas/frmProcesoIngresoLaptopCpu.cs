@@ -1,6 +1,7 @@
 ﻿using AccesoDatos;
 using DevComponents.DotNetBar.SuperGrid;
 using Modelo;
+using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -611,7 +612,7 @@ namespace Apolo
                 }
                 else if (filasDgv > aux)
                 {
-                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Windows", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     tabControl1.SelectedTab = tabClavesLicencias;
                     return false;
                 }
@@ -646,7 +647,7 @@ namespace Apolo
                 }
                 else if (filasDgv > aux)
                 {
-                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Antivirus", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más en la licencia de Office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     tabControl1.SelectedTab = tabClavesLicencias;
                     return false;
                 }
@@ -736,13 +737,13 @@ namespace Apolo
             
             if (filasDgv < aux)
             {
-                MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Falta ingresar " + (aux - filasDgv) + " filas para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
             else if (filasDgv > aux)
             {
-                MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Hay " + (filasDgv - aux) + " filas de más para las series de fábrica", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabDetalle;
                 return false;
             }
@@ -909,6 +910,97 @@ namespace Apolo
             else
                 resultado = true;
             return resultado;
+        }
+
+        private void btnSubirSeries_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    //DE ESTA MANERA FILTRAMOS TODOS LOS ARCHIVOS EXCEL EN EL NAVEGADOR DE ARCHIVOS
+                    Filter = "Excel | *.xls;*.xlsx;",
+
+                    //AQUÍ INDICAMOS QUE NOMBRE TENDRÁ EL NAVEGADOR DE ARCHIVOS COMO TITULO
+                    Title = "Seleccionar Archivo"
+                };
+
+                //EN CASO DE SELECCIONAR EL ARCHIVO, ENTONCES PROCEDEMOS A ABRIR EL ARCHIVO CORRESPONDIENTE
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable miDataTable = new DataTable();
+                    miDataTable.Columns.Add("serie");
+
+                    path = openFileDialog.FileName;
+                    SLDocument sl = new SLDocument(path);
+
+                    int iRow = 2;
+                    while (!string.IsNullOrEmpty(sl.GetCellValueAsString(iRow, 1)))
+                    {
+                        DataRow Renglon = miDataTable.NewRow();
+                        Renglon["serie"] = sl.GetCellValueAsString(iRow, 1);
+                        iRow++;
+                        miDataTable.Rows.Add(Renglon);
+                    }
+
+                    dgvSerieFabrica.DataSource = miDataTable;
+                    dgvSerieFabrica.AutoGenerateColumns= false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+
+
+        }
+
+        private void btnSubirSO_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string path;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog
+                {
+                    //DE ESTA MANERA FILTRAMOS TODOS LOS ARCHIVOS EXCEL EN EL NAVEGADOR DE ARCHIVOS
+                    Filter = "Excel | *.xls;*.xlsx;",
+
+                    //AQUÍ INDICAMOS QUE NOMBRE TENDRÁ EL NAVEGADOR DE ARCHIVOS COMO TITULO
+                    Title = "Seleccionar Archivo"
+                };
+
+                //EN CASO DE SELECCIONAR EL ARCHIVO, ENTONCES PROCEDEMOS A ABRIR EL ARCHIVO CORRESPONDIENTE
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable miDataTable = new DataTable();
+                    miDataTable.Columns.Add("sistemaOperativo");
+
+                    path = openFileDialog.FileName;
+                    SLDocument sl = new SLDocument(path);
+
+                    int iRow = 2;
+                    while (!string.IsNullOrEmpty(sl.GetCellValueAsString(iRow, 1)))
+                    {
+                        DataRow Renglon = miDataTable.NewRow();
+                        Renglon["sistemaOperativo"] = sl.GetCellValueAsString(iRow, 1);
+                        iRow++;
+                        miDataTable.Rows.Add(Renglon);
+                    }
+
+                    dgvWindows.DataSource = miDataTable;
+                    dgvWindows.AutoGenerateColumns = false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+
         }
     }
 }
