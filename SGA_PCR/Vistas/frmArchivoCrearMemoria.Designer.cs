@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchivoCrearMemoria));
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn19 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn20 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn21 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn22 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn23 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn24 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn25 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn26 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn27 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.chbActivo = new System.Windows.Forms.CheckBox();
@@ -234,60 +234,60 @@
             this.dgvMemoria.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvMemoria.PrimaryGrid.AllowRowResize = true;
             this.dgvMemoria.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn1.AllowEdit = false;
-            gridColumn1.DataPropertyName = "codigo";
-            gridColumn1.Name = "Código";
-            gridColumn2.AllowEdit = false;
-            gridColumn2.DataPropertyName = "tipo";
-            gridColumn2.FilterAutoScan = true;
-            gridColumn2.MinimumWidth = 100;
-            gridColumn2.Name = "Modelo";
-            gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn3.AllowEdit = false;
-            gridColumn3.DataPropertyName = "tipo2";
-            gridColumn3.Name = "Tipo";
-            gridColumn4.AllowEdit = false;
-            gridColumn4.DataPropertyName = "capacidad";
-            gridColumn4.MinimumWidth = 100;
-            gridColumn4.Name = "Capacidad";
-            gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn5.AllowEdit = false;
-            gridColumn5.DataPropertyName = "estado";
-            gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
-            gridColumn5.MinimumWidth = 100;
-            gridColumn5.Name = "Activo";
-            gridColumn5.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn6.AllowEdit = false;
-            gridColumn6.DataPropertyName = "idMemoria";
-            gridColumn6.MinimumWidth = 50;
-            gridColumn6.Name = "Id";
-            gridColumn6.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn6.Visible = false;
-            gridColumn6.Width = 50;
-            gridColumn7.AllowEdit = false;
-            gridColumn7.DataPropertyName = "idTipo";
-            gridColumn7.MinimumWidth = 100;
-            gridColumn7.Name = "idModelo";
-            gridColumn7.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn7.Visible = false;
-            gridColumn8.DataPropertyName = "idTipo2";
-            gridColumn8.Name = "idTipo";
-            gridColumn8.Visible = false;
-            gridColumn9.AllowEdit = false;
-            gridColumn9.DataPropertyName = "idCapacidad";
-            gridColumn9.MinimumWidth = 100;
-            gridColumn9.Name = "idCapacidad";
-            gridColumn9.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn9.Visible = false;
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn1);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn2);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn3);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn4);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn5);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn6);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn9);
+            gridColumn19.AllowEdit = false;
+            gridColumn19.DataPropertyName = "codigo";
+            gridColumn19.Name = "Código";
+            gridColumn20.AllowEdit = false;
+            gridColumn20.DataPropertyName = "tipo";
+            gridColumn20.FilterAutoScan = true;
+            gridColumn20.MinimumWidth = 100;
+            gridColumn20.Name = "Modelo";
+            gridColumn20.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn21.AllowEdit = false;
+            gridColumn21.DataPropertyName = "tipo2";
+            gridColumn21.Name = "Tipo";
+            gridColumn22.AllowEdit = false;
+            gridColumn22.DataPropertyName = "capacidad";
+            gridColumn22.MinimumWidth = 100;
+            gridColumn22.Name = "Capacidad";
+            gridColumn22.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn23.AllowEdit = false;
+            gridColumn23.DataPropertyName = "estado";
+            gridColumn23.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridCheckBoxXEditControl);
+            gridColumn23.MinimumWidth = 100;
+            gridColumn23.Name = "Activo";
+            gridColumn23.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn24.AllowEdit = false;
+            gridColumn24.DataPropertyName = "idMemoria";
+            gridColumn24.MinimumWidth = 50;
+            gridColumn24.Name = "Id";
+            gridColumn24.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn24.Visible = false;
+            gridColumn24.Width = 50;
+            gridColumn25.AllowEdit = false;
+            gridColumn25.DataPropertyName = "idTipo";
+            gridColumn25.MinimumWidth = 100;
+            gridColumn25.Name = "idModelo";
+            gridColumn25.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn25.Visible = false;
+            gridColumn26.DataPropertyName = "idTipo2";
+            gridColumn26.Name = "idTipo";
+            gridColumn26.Visible = false;
+            gridColumn27.AllowEdit = false;
+            gridColumn27.DataPropertyName = "idCapacidad";
+            gridColumn27.MinimumWidth = 100;
+            gridColumn27.Name = "idCapacidad";
+            gridColumn27.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn27.Visible = false;
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn19);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn20);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn21);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn22);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn23);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn24);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn25);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn26);
+            this.dgvMemoria.PrimaryGrid.Columns.Add(gridColumn27);
             this.dgvMemoria.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvMemoria.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -347,6 +347,7 @@
             this.btnAgregarModeloMemoria.TabIndex = 111;
             this.btnAgregarModeloMemoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarModeloMemoria.UseVisualStyleBackColor = false;
+            this.btnAgregarModeloMemoria.Click += new System.EventHandler(this.btnAgregarModeloMemoria_Click);
             // 
             // btnAgregarCapacidadMemoria
             // 
@@ -365,6 +366,7 @@
             this.btnAgregarCapacidadMemoria.TabIndex = 110;
             this.btnAgregarCapacidadMemoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarCapacidadMemoria.UseVisualStyleBackColor = false;
+            this.btnAgregarCapacidadMemoria.Click += new System.EventHandler(this.btnAgregarCapacidadMemoria_Click);
             // 
             // btnAgregarTipoMemoria
             // 
@@ -383,6 +385,7 @@
             this.btnAgregarTipoMemoria.TabIndex = 109;
             this.btnAgregarTipoMemoria.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarTipoMemoria.UseVisualStyleBackColor = false;
+            this.btnAgregarTipoMemoria.Click += new System.EventHandler(this.btnAgregarTipoMemoria_Click);
             // 
             // frmArchivoCrearMemoria
             // 

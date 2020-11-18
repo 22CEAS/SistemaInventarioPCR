@@ -198,30 +198,45 @@ namespace Apolo
         
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            GridRow aux = (GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow;
-            if (aux != null)
+            try
             {
-                estadoComponentes(TipoVista.Modificar);
-                discoOld = new DiscoDuro();
+                GridRow aux = (GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow;
+                if (aux != null)
+                {
+                    estadoComponentes(TipoVista.Modificar);
+                    discoOld = new DiscoDuro();
 
-                disco.IdDisco = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[8])).Value.ToString());
-                int idTipo = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[5])).Value.ToString());
-                int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[6])).Value.ToString());
-                int idTamano = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[7])).Value.ToString());
-                int activo = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[4])).Value.ToString());
-                cmbTipo.SelectedValue = idTipo;
-                cmbCapacidad.SelectedValue = idCapacidad;
-                cmbTamano.SelectedValue = idTamano;
-                chbActivo.Checked = (activo == 1) ? true : false;
+                    disco.IdDisco = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    int idTipo = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                    int idCapacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+                    int idTamano = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[7])).Value.ToString());
+                    int activo = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[4])).Value.ToString());
+                    cmbTipo.SelectedValue = idTipo;
+                    cmbCapacidad.SelectedValue = idCapacidad;
+                    cmbTamano.SelectedValue = idTamano;
+                    chbActivo.Checked = (activo == 1) ? true : false;
 
-                discoOld.Tipo.IdModelo = idTipo;
-                //discoOld.Tipo.NombreModelo = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                discoOld.IdTamano = idTamano;
-                //discoOld.Tamano = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                discoOld.IdCapacidad = idCapacidad;
-                //discoOld.Capacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-                discoOld.Estado = activo;
+
+                    discoOld.Tipo.IdModelo = int.Parse(cmbTipo.SelectedValue.ToString());
+                    discoOld.IdTamano = int.Parse(cmbTamano.SelectedValue.ToString());
+                    discoOld.IdCapacidad = int.Parse(cmbCapacidad.SelectedValue.ToString());
+
+                    discoOld.Tipo.IdModelo = idTipo;
+                    //discoOld.Tipo.NombreModelo = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[1])).Value.ToString();
+                    discoOld.IdTamano = idTamano;
+                    //discoOld.Tamano = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                    discoOld.IdCapacidad = idCapacidad;
+                    //discoOld.Capacidad = int.Parse(((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[3])).Value.ToString());
+                    discoOld.Estado = activo;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                estadoComponentes(TipoVista.Anular);
+                return;
+            }
+            
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

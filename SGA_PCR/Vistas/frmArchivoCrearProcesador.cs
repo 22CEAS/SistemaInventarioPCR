@@ -234,58 +234,69 @@ namespace Apolo
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            GridRow aux = (GridRow)dgvProcesadores.PrimaryGrid.ActiveRow;
-            if (aux != null)
+            try
             {
-                estadoComponentes(TipoVista.Modificar);
-                procesadorOld = new Procesador();
-
-
-                procesador.IdProcesador = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[4])).Value.ToString());
-                int idTipo = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[5])).Value.ToString());
-                int idMarca = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[7])).Value.ToString());
-                //int idVelocidad = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[8])).Value.ToString());
-                //int idVelocidadMax = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[9])).Value.ToString());
-                int idGeneracion = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[6])).Value.ToString());
-                int activo = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-                cmbMarca.SelectedValue = idMarca;
-                //cmbVelocidad.SelectedValue = idVelocidad;
-                //cmbVelocidadMax.SelectedValue = idVelocidadMax;
-                cmbGeneracion.SelectedValue = idGeneracion;
-                chbActivo.Checked = (activo == 1) ? true : false;
-
-                int i = cmbMarca.SelectedIndex;
-                if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+                GridRow aux = (GridRow)dgvProcesadores.PrimaryGrid.ActiveRow;
+                if (aux != null)
                 {
-                    viewTipo = new DataView(tablaTipo);
-                    viewTipo.RowFilter = "idMarca = " + idMarca.ToString();
-                    cmbTipo.DataSource = (viewTipo.Count > 0) ? viewTipo : null;
-                    cmbTipo.DisplayMember = "nombre";
-                    cmbTipo.ValueMember = "idModelo";
-                    cmbTipo.SelectedIndex = (viewTipo.Count > 0) ? 0 : -1;
+                    estadoComponentes(TipoVista.Modificar);
+                    procesadorOld = new Procesador();
+
+
+                    procesador.IdProcesador = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[4])).Value.ToString());
+                    int idTipo = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[5])).Value.ToString());
+                    int idMarca = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[7])).Value.ToString());
+                    //int idVelocidad = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                    //int idVelocidadMax = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[9])).Value.ToString());
+                    int idGeneracion = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[6])).Value.ToString());
+                    int activo = int.Parse(((GridCell)(((GridRow)dgvProcesadores.PrimaryGrid.ActiveRow)[3])).Value.ToString());
+                    cmbMarca.SelectedValue = idMarca;
+                    int auxTry= int.Parse(cmbMarca.SelectedValue.ToString());
+                    //cmbVelocidad.SelectedValue = idVelocidad;
+                    //cmbVelocidadMax.SelectedValue = idVelocidadMax;
+                    cmbGeneracion.SelectedValue = idGeneracion;
+                    chbActivo.Checked = (activo == 1) ? true : false;
+
+                    int i = cmbMarca.SelectedIndex;
+                    if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+                    {
+                        viewTipo = new DataView(tablaTipo);
+                        viewTipo.RowFilter = "idMarca = " + idMarca.ToString();
+                        cmbTipo.DataSource = (viewTipo.Count > 0) ? viewTipo : null;
+                        cmbTipo.DisplayMember = "nombre";
+                        cmbTipo.ValueMember = "idModelo";
+                        cmbTipo.SelectedIndex = (viewTipo.Count > 0) ? 0 : -1;
+                    }
+                    cmbTipo.SelectedValue = idTipo;
+
+
+                    int indice;
+                    indice = cmbTipo.SelectedIndex;
+                    procesadorOld.Modelo.IdModelo = int.Parse(cmbTipo.SelectedValue.ToString());
+                    //procesadorOld.Modelo.NombreModelo = tablaTipo.Rows[indice]["nombre"].ToString();
+
+                    indice = cmbGeneracion.SelectedIndex;
+                    procesadorOld.IdGeneracion = int.Parse(cmbGeneracion.SelectedValue.ToString());
+                    //procesadorOld.Generacion = Convert.ToInt32(tablaGeneracion.Rows[indice]["descripcion"].ToString());
+
+                    //indice = cmbVelocidad.SelectedIndex;
+                    //procesadorOld.IdVelocidad = int.Parse(cmbVelocidad.SelectedValue.ToString());
+                    //procesadorOld.Velocidad = tablaVelocidad.Rows[indice]["descripcion"].ToString();
+
+                    //indice = cmbVelocidadMax.SelectedIndex;
+                    //procesadorOld.IdVelocidadMax = int.Parse(cmbVelocidadMax.SelectedValue.ToString());
+                    //procesadorOld.VelocidadMax = Convert.ToDouble(tablaVelocidadMax.Rows[indice]["descripcion"].ToString());
+
+                    procesadorOld.Estado = activo;
                 }
-                cmbTipo.SelectedValue = idTipo;
-
-
-                int indice;
-                indice = cmbTipo.SelectedIndex;
-                procesadorOld.Modelo.IdModelo = int.Parse(cmbTipo.SelectedValue.ToString());
-                //procesadorOld.Modelo.NombreModelo = tablaTipo.Rows[indice]["nombre"].ToString();
-
-                indice = cmbGeneracion.SelectedIndex;
-                procesadorOld.IdGeneracion = int.Parse(cmbGeneracion.SelectedValue.ToString());
-                //procesadorOld.Generacion = Convert.ToInt32(tablaGeneracion.Rows[indice]["descripcion"].ToString());
-
-                //indice = cmbVelocidad.SelectedIndex;
-                //procesadorOld.IdVelocidad = int.Parse(cmbVelocidad.SelectedValue.ToString());
-                //procesadorOld.Velocidad = tablaVelocidad.Rows[indice]["descripcion"].ToString();
-
-                //indice = cmbVelocidadMax.SelectedIndex;
-                //procesadorOld.IdVelocidadMax = int.Parse(cmbVelocidadMax.SelectedValue.ToString());
-                //procesadorOld.VelocidadMax = Convert.ToDouble(tablaVelocidadMax.Rows[indice]["descripcion"].ToString());
-
-                procesadorOld.Estado = activo;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                estadoComponentes(TipoVista.Anular);
+                return;
+            }
+            
         }
 
         private void llenar_Datos_Procesador()
@@ -479,7 +490,12 @@ namespace Apolo
 
         private void btnAgregarGeneracionProcesador_Click(object sender, EventArgs e)
         {
-
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "PROCESADOR_GENERACION");
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
         }
     }
 }
