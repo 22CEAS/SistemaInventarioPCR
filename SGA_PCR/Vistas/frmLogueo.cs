@@ -88,6 +88,7 @@ namespace Apolo
 
             //CORRER QUERY PARA SABER EL ID
             frm.usuario.Text = txtUsername.Text;
+            frm.lblUser.Text = txtUsername.Text;
             //frm.usuarioConectado.Text = usuarioDA.Obtener_idUsuario(txtUsername.Text);
 
 

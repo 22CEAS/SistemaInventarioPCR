@@ -421,11 +421,15 @@ namespace Apolo
 
         public void limpiarComponentes()
         {
+            cmbTipoIngreso.SelectedIndex = -1;
+            cmbProveedor.SelectedIndex = -1;
+            cmbMonedaTipo.SelectedIndex = -1;
+
             txtNroIngreso.Text = "";
+            txtRUC.Text = "";
             txtGuia.Text = "";
             txtFactura.Text = "";
             txtMontoCambio.Text = "";
-            cmbProveedor.SelectedIndex = 0;
             dtpFechaIngreso.Value = DateTime.Now;
             dgvDisco.PrimaryGrid.DataSource = null;
             dgvMemorias.PrimaryGrid.DataSource = null;

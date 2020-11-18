@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -50,6 +51,7 @@ namespace Apolo
 
             dgvCliente.PrimaryGrid.AutoGenerateColumns = false;
             dgvCliente.PrimaryGrid.DataSource = tablaCliente;
+            
 
             tablaTipoDocumento = clienteDA.ListarTipoDocumento();
             cmbTipoDocumento.DataSource = tablaTipoDocumento;
@@ -319,10 +321,74 @@ namespace Apolo
 
         }
 
+        //EXPRESIONES REGULARES PARA LAS VALIDACIONES
+        private bool validacionSoloNumeros(string numero) //PROBADO
+        {
+            return Regex.IsMatch(numero, "^[0-9]*$") ? true : false;
+        }
+
+        private bool validacionCorreoLeasein(string correo) //PROBADO
+        {
+            string expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            return Regex.IsMatch(correo, expresion) ? true : false;
+        }
+
+        private bool validacionRuc(string documento)
+        {
+            return documento.Substring(0, 2) == "10" || documento.Substring(0, 2) == "20" ? true : false;
+        }
 
         public bool validarCampos()
         {
             bool isError = false;
+
+            //VALIDACION DOCUMENTO
+            if (cmbTipoDocumento.SelectedIndex == -1)
+                isError = true;
+            else
+            {
+                if (cmbTipoDocumento.SelectedIndex == 0) //DNI
+                {
+                    if (validacionSoloNumeros(txtNroDocumento.Text.Trim()) == false || txtNroDocumento.Text.Trim().Length != 8)
+                    {
+                        //MessageBox.Show("REVISAR EL DNI");
+                        isError = true;
+                    }
+                }
+                else if (cmbTipoDocumento.SelectedIndex == 1) //RUC
+                {
+                    if (validacionSoloNumeros(txtNroDocumento.Text.Trim()) == false || txtNroDocumento.Text.Trim().Length != 11 || validacionRuc(txtNroDocumento.Text.Trim())==false)
+                    {
+                        //MessageBox.Show("REVISAR EL RUC");
+                        isError = true;
+                    }
+                }
+                else //CE
+                {
+                    if (txtNroDocumento.Text.Trim().Length > 12)
+                    {
+                        //MessageBox.Show("REVISAR EL CE");
+                        isError = true;
+                    }
+                }
+
+            }
+
+
+            if (validacionCorreoLeasein(txtEmail.Text.Trim()) == false)
+            {
+                //MessageBox.Show("REVISAR EL CORREO");
+                isError = true;
+            }
+
+
+            if (validacionSoloNumeros(txtTelefono.Text.Trim()) == false)
+            {
+                //MessageBox.Show("REVISAR EL TELEFONO");
+                isError = true;
+            }
+
+
             if (txtNroDocumento.Text == "") isError = true;
             if (txtRazonSocial.Text == "") isError = true;
             if (cmbTipoDocumento.SelectedIndex == -1) isError = true;
@@ -390,6 +456,7 @@ namespace Apolo
 
         }
 
+        /*
         private void txtNroDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Para obligar a que sólo se introduzcan números
@@ -407,6 +474,12 @@ namespace Apolo
                 //el resto de teclas pulsadas se desactivan
                 e.Handled = true;
             }
+        }
+        */
+
+        private void txtNroDocumento_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

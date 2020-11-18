@@ -242,9 +242,9 @@ namespace Apolo
 
         public void limpiarComponentes()
         {
+            cmbCliente.SelectedIndex = 0;
             txtNroDevolucion.Text = "";
             txtNroGuia.Text = "";
-            cmbCliente.SelectedIndex = 0;
             dtpFechaIngreso.Value = DateTime.Now;
             dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
         }

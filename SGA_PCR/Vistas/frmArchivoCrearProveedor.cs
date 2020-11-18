@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -351,10 +352,41 @@ namespace Apolo
 
         }
 
+        //EXPRESIONES REGULARES PARA LAS VALIDACIONES
+        private bool validacionSoloNumeros(string numero) //PROBADO
+        {
+            return Regex.IsMatch(numero, "^[0-9]*$") ? true : false;
+        }
+
+        private bool validacionCorreoLeasein(string correo) //PROBADO
+        {
+            string expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            return Regex.IsMatch(correo, expresion) ? true : false;
+        }
+
+        private bool validacionRuc(string documento)
+        {
+            return documento.Substring(0, 2) == "10" || documento.Substring(0, 2) == "20" ? true : false;
+        }
 
         public bool validarCampos()
         {
             bool isError = false;
+
+            if (validacionRuc(txtRuc.Text.Trim()) == false || validacionSoloNumeros(txtRuc.Text.Trim())==false || txtRuc.Text.Trim().Length!=11)
+                isError = true;
+
+            if (validacionSoloNumeros(txtTelefono.Text.Trim()) == false || validacionSoloNumeros(txtTelContacto.Text.Trim()) == false)
+                isError = true;
+
+            if (validacionCorreoLeasein(txtEmail.Text.Trim()) == false || validacionCorreoLeasein(txtEmailContacto.Text.Trim()) == false)
+                isError = true;
+
+            if (validacionSoloNumeros(txtAbreviacion.Text.Trim()) == false)
+                isError = true;
+
+
+
             if (txtRuc.Text == "") isError = true;
             if (txtRazonSocial.Text == "") isError = true;
             /*if (txtAbreviacion.Text == "") isError = true;
@@ -447,5 +479,9 @@ namespace Apolo
             chbActivo.Checked = (estado == 1) ? true : false;
         }
 
+        private void txtAbreviacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

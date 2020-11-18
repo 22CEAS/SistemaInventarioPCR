@@ -397,7 +397,13 @@ namespace Apolo
             dtpFechaTraslado.Value = DateTime.Now;
             dtpIniPlazo.Value = DateTime.Now;
             dtpFinPlazo.Value = DateTime.Now;
-            cmbCliente.SelectedIndex = 0;
+
+            
+            cmbCliente.SelectedIndex = -1;
+            cmbSucursal.SelectedIndex = -1;
+            txtNroDocumento.Text = "";
+            
+
             dgvDisco.PrimaryGrid.DataSource = null;
             dgvMemorias.PrimaryGrid.DataSource = null;
             dgvLicencia.PrimaryGrid.DataSource = null;

@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -292,12 +293,41 @@ namespace Apolo
             Cursor.Current = Cursors.Default;
         }
 
+        //VALIDACIONES CON EXPRESIONES REGULARES
+        private bool validacionSoloNumeros(string numero) //PROBADO
+        {
+            return Regex.IsMatch(numero, "^[0-9]*$") ? true : false;
+        }
+
+        private bool validacionSoloLetras(string palabra) //PROBADO
+        {
+            return Regex.IsMatch(palabra, "^[a-zA-Z ]+$") ? true : false;
+
+        }
+
+        private bool validacionCorreoLeasein(string correo) //PROBADO
+        {
+            string expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            return Regex.IsMatch(correo, expresion) ? true : false;
+        }
+
+
         public bool validarCampos()
         {
             bool isError = false;
+
+
+            if (validacionCorreoLeasein(txtEmail.Text.Trim()) == false)
+                isError=true;
+
+            if (validacionSoloNumeros(txtTelefono.Text.Trim()) == false)
+                isError = true;
+
             if (txtNroDocumento.Text == "") isError = true;
             if (txtNombreContacto.Text == "") isError = true;
             if (txtDireccion.Text == "") isError = true;
+            if (txtEmail.Text == "") isError = true;
+            if (txtTelefono.Text == "") isError = true;
             if (cmbCliente.SelectedIndex == -1) isError = true;
             return isError;
         }

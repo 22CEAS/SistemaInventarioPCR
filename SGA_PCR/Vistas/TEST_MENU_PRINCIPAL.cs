@@ -44,6 +44,7 @@ namespace Apolo
 
             //MessageBox.Show(idUsuario.ToString());
             usuarioConectado.Text = idUsuario.ToString();
+            
 
             //VERIFICACION DE PERMISOS (INICIO)
             verificandoPermisosMaestro();

@@ -81,7 +81,7 @@
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Black;
-            this.labelX5.Location = new System.Drawing.Point(30, 45);
+            this.labelX5.Location = new System.Drawing.Point(329, 45);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(87, 16);
             this.labelX5.TabIndex = 124;
@@ -157,12 +157,14 @@
             gridColumn2.Name = "Nro Documento";
             gridColumn2.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn3.AllowEdit = false;
+            gridColumn3.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleLeft;
             gridColumn3.DataPropertyName = "nombreContacto";
             gridColumn3.MinimumWidth = 250;
             gridColumn3.Name = "Nombre";
             gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
             gridColumn3.Width = 250;
             gridColumn4.AllowEdit = false;
+            gridColumn4.AutoSizeMode = DevComponents.DotNetBar.SuperGrid.ColumnAutoSizeMode.AllCells;
             gridColumn4.DataPropertyName = "direccion";
             gridColumn4.MinimumWidth = 150;
             gridColumn4.Name = "Direccion";
@@ -329,7 +331,7 @@
             // 
             // txtNroDocumento
             // 
-            this.txtNroDocumento.Location = new System.Drawing.Point(30, 64);
+            this.txtNroDocumento.Location = new System.Drawing.Point(329, 64);
             this.txtNroDocumento.MaxLength = 11;
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(152, 20);
@@ -345,7 +347,7 @@
             this.labelX6.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.ForeColor = System.Drawing.Color.Black;
-            this.labelX6.Location = new System.Drawing.Point(219, 45);
+            this.labelX6.Location = new System.Drawing.Point(518, 45);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(100, 16);
             this.labelX6.TabIndex = 128;
@@ -353,7 +355,7 @@
             // 
             // txtNombreContacto
             // 
-            this.txtNombreContacto.Location = new System.Drawing.Point(219, 64);
+            this.txtNombreContacto.Location = new System.Drawing.Point(518, 64);
             this.txtNombreContacto.MaxLength = 250;
             this.txtNombreContacto.Name = "txtNombreContacto";
             this.txtNombreContacto.Size = new System.Drawing.Size(225, 20);
@@ -368,7 +370,7 @@
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.ForeColor = System.Drawing.Color.Black;
-            this.labelX7.Location = new System.Drawing.Point(468, 44);
+            this.labelX7.Location = new System.Drawing.Point(26, 45);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(55, 16);
             this.labelX7.TabIndex = 130;
@@ -376,7 +378,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(468, 63);
+            this.txtDireccion.Location = new System.Drawing.Point(26, 64);
             this.txtDireccion.MaxLength = 255;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(290, 20);
