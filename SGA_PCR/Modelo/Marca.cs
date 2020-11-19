@@ -17,6 +17,7 @@ namespace Modelo
 
         public Marca()
         {
+            this.Estado = 1;
             this.Modelos= new BindingList<Modelo>();
         }
         public Marca(int idMarca, string nombreMarca, int idCategoria, BindingList<Modelo> modelos, int estado)

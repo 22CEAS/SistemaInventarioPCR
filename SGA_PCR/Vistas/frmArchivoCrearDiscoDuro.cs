@@ -391,5 +391,15 @@ namespace Apolo
             Inicializado();
             estadoComponentes(TipoVista.Inicial);
         }
+
+        private void btnAgregarTipoDisco_Click(object sender, EventArgs e)
+        {
+            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, 10);
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
+        }
     }
 }

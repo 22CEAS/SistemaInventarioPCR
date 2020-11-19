@@ -16,7 +16,7 @@ namespace Modelo
 
         public Modelo()
         {
-
+            this.Estado = 1;
         }
 
         public Modelo(int idModelo, string nombreModelo, int idMarca, string nombreMarca, int estado)

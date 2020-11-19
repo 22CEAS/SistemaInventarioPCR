@@ -480,12 +480,22 @@ namespace Apolo
 
         private void btnAgregarTipoProcesador_Click(object sender, EventArgs e)
         {
-
+            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, 9);
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
         }
 
         private void btnAgregarMarcaProcesador_Click(object sender, EventArgs e)
         {
-
+            frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, 9);
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
         }
 
         private void btnAgregarGeneracionProcesador_Click(object sender, EventArgs e)
