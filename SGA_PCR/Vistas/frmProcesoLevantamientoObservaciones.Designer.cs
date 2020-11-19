@@ -363,7 +363,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 16);
             this.label5.TabIndex = 195;
-            this.label5.Text = "Observacion Levantamiento";
+            this.label5.Text = "Observación Levantamiento";
             // 
             // frmProcesoLevantamientoObservaciones
             // 

@@ -130,7 +130,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(55, 16);
             this.labelX2.TabIndex = 121;
-            this.labelX2.Text = "Telefono:";
+            this.labelX2.Text = "Teléfono:";
             // 
             // dgvSucursalCliente
             // 

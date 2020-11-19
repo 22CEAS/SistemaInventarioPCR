@@ -527,7 +527,7 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(319, 45);
             this.button18.TabIndex = 18;
-            this.button18.Text = "> CAMBIO DESCRIPCION";
+            this.button18.Text = "> CAMBIO DESCRIPCIÓN";
             this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button18.UseVisualStyleBackColor = false;
@@ -565,7 +565,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(319, 45);
             this.button10.TabIndex = 16;
-            this.button10.Text = "> REPARACION";
+            this.button10.Text = "> REPARACIÓN";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button10.UseVisualStyleBackColor = false;
@@ -641,7 +641,7 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(316, 45);
             this.button14.TabIndex = 12;
-            this.button14.Text = "> DEVOLUCION";
+            this.button14.Text = "> DEVOLUCIÓN";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button14.UseVisualStyleBackColor = false;
@@ -660,7 +660,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(319, 45);
             this.button15.TabIndex = 11;
-            this.button15.Text = "> RENOVACION";
+            this.button15.Text = "> RENOVACIÓN";
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button15.UseVisualStyleBackColor = false;

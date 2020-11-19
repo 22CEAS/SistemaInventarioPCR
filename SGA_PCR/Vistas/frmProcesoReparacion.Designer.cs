@@ -310,7 +310,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 16);
             this.label5.TabIndex = 192;
-            this.label5.Text = "Reparacion N°:";
+            this.label5.Text = "Reparación N°:";
             // 
             // txtNroReparacion
             // 
