@@ -374,7 +374,7 @@ namespace Apolo
 
             }
 
-
+            /*
             if (validacionCorreoLeasein(txtEmail.Text.Trim()) == false)
             {
                 //MessageBox.Show("REVISAR EL CORREO");
@@ -387,7 +387,7 @@ namespace Apolo
                 //MessageBox.Show("REVISAR EL TELEFONO");
                 isError = true;
             }
-
+            */
 
             if (txtNroDocumento.Text == "") isError = true;
             if (txtRazonSocial.Text == "") isError = true;

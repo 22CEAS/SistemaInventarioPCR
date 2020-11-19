@@ -103,6 +103,9 @@ namespace Apolo
             //cmbDestino.DisplayMember = "nombre";
             //cmbDestino.ValueMember = "idDestino";
 
+
+            
+
         }
 
 
@@ -155,6 +158,7 @@ namespace Apolo
                 dgvWindows.Rows.Add(row);
             }
 
+            /*
             foreach (String clave in detalleTraido.Office)
             {
                 DataGridViewRow row = (DataGridViewRow)dgvOffice.Rows[0].Clone();
@@ -168,7 +172,7 @@ namespace Apolo
                 row.Cells[1].Value = clave;
                 dgvAntivirus.Rows.Add(row);
             }
-
+            */
             tablaLicencia.Columns.Add("Seleccionar", typeof(bool));
             for (int i = 0; i < tablaLicencia.Rows.Count; i++)
             {
@@ -293,7 +297,7 @@ namespace Apolo
                 }
             }
             detalle.Windows = windows;
-
+            /*
             for (int i = 0; i < dgvOffice.Rows.Count; i++)
             {
                 if (!dgvOffice.Rows[i].IsNewRow)
@@ -319,7 +323,7 @@ namespace Apolo
                 }
             }
             detalle.Antivirus = antivirus;
-
+            */
 
             int filas = tablaProcesador.Rows.Count;
             for (int i = 0; i < filas; i++)
@@ -541,8 +545,8 @@ namespace Apolo
             //==============================================================================================
             filas = tablaLicencia.Rows.Count;
             int cantWindows = 0;
-            int cantOffice = 0;
-            int cantAntivirus = 0;
+            //int cantOffice = 0;
+            //int cantAntivirus = 0;
 
             for (int i = 0; i < filas; i++)
             {
@@ -554,6 +558,7 @@ namespace Apolo
                         {
                             cantWindows++;
                         }
+                        /*
                         else if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString() == "OFFICE")
                         {
                             cantOffice++;
@@ -562,6 +567,7 @@ namespace Apolo
                         {
                             cantAntivirus++;
                         }
+                        */
                     }
                 }
             }
@@ -572,6 +578,7 @@ namespace Apolo
                 return false;
             }
             
+            /*
             if (cantOffice > 1)
             {
                 MessageBox.Show("Solo puede seleccionar una licencia office", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -585,6 +592,7 @@ namespace Apolo
                 tabControl1.SelectedTab = tabLicencia;
                 return false;
             }
+            */
 
             int aux;
             int filasDgv;
@@ -624,7 +632,7 @@ namespace Apolo
 
             //==============================================================================================
 
-
+            /*
             if (cantOffice == 1)
             {
                 for (int i = 0; i < dgvOffice.Rows.Count; i++)
@@ -689,6 +697,8 @@ namespace Apolo
                     return false;
                 }
             }
+
+    */
 
             //==============================================================================================
 
@@ -845,7 +855,7 @@ namespace Apolo
         {
             dgvWindows.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
-
+        /*
         private void dgvOffice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvOffice.CurrentRow == null)
@@ -877,7 +887,7 @@ namespace Apolo
         {
             dgvAntivirus.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
-
+        */
         private void txtPantalla_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = solonumeros1(Convert.ToInt32(e.KeyChar));
@@ -1054,6 +1064,92 @@ namespace Apolo
                 cmbModelo.ValueMember = "idModelo";
                 cmbModelo.SelectedIndex = 0;
             }
+        }
+
+        private void tabControlPanel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProcesadorSeleccionado_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            GridRow aux = (GridRow)dgvProcesador.PrimaryGrid.ActiveRow;
+            GridRow aux2 = (GridRow)dgvMemoria.PrimaryGrid.ActiveRow;
+            GridRow aux3 = (GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow;
+        
+            GridRow aux4 = (GridRow)dgvVideo.PrimaryGrid.ActiveRow;
+            GridRow aux5 = (GridRow)dgvLicencia.PrimaryGrid.ActiveRow;
+
+
+            //CAMPOS OBLIGATORIOS
+            if (aux != null)
+            {
+                //PROCESADOR
+                string MarcaP = ((GridCell)(((GridRow)dgvProcesador.PrimaryGrid.ActiveRow)[1])).Value.ToString();
+                string TipoP = ((GridCell)(((GridRow)dgvProcesador.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                string GeneracionP = ((GridCell)(((GridRow)dgvProcesador.PrimaryGrid.ActiveRow)[3])).Value.ToString();
+                txtProcesadorSeleccionado.Text = $"{MarcaP} {TipoP} {GeneracionP}";
+            }
+            else
+            {
+                txtProcesadorSeleccionado.Text = "NN";
+            }
+
+            if (aux2 != null)
+            {
+                //MEMORIA
+                string ModeloM = ((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[1])).Value.ToString();
+                string CapacidadM = ((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[3])).Value.ToString();
+                string TipoM = ((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[9])).Value.ToString();
+                txtMemoriaSeleccionada.Text = $"{ModeloM} {CapacidadM} {TipoM}";
+            }
+            else
+            {
+                txtMemoriaSeleccionada.Text = "NN";
+            }
+
+            if (aux3 != null)
+            {
+                //DISCO DURO
+                string TipoDD = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[1])).Value.ToString();
+                string TamDD = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                string CapacidadDD = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[3])).Value.ToString();
+                txtDiscoDuroSeleccionado.Text = $"{TipoDD} {TamDD} {CapacidadDD}";
+            }
+            else
+            {
+                txtDiscoDuroSeleccionado.Text = "NN";
+            }
+
+            if (aux4 != null)
+            {
+                string MarcaTDV = ((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[1])).Value.ToString();
+                string TipoTDV = ((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[3])).Value.ToString();
+                string CapacidadTDV = ((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[4])).Value.ToString();
+                txtTdvSeleccionado.Text = $"{MarcaTDV} {TipoTDV} {CapacidadTDV}";
+            }
+            else
+            {
+                txtTdvSeleccionado.Text = "NN";
+            }
+
+            if (aux5 != null)
+            {
+                string CategoriaL = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[1])).Value.ToString();
+                string VersionL = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value.ToString();
+                txtLicenciaSeleccionada.Text = $"{CategoriaL} {VersionL}";
+            }
+            else
+            {
+                txtLicenciaSeleccionada.Text = "NN";
+            }
+
         }
     }
 }

@@ -1359,7 +1359,7 @@ namespace Apolo
                     }
                     dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
 
-                    MessageBox.Show("Se guradó el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guardó el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     ingreso.IdIngreso = idIngreso;
                     txtNroIngreso.Text = idIngreso.ToString();
                     estadoComponentes(TipoVista.Guardar);

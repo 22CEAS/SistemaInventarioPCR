@@ -316,18 +316,20 @@ namespace Apolo
         {
             bool isError = false;
 
-
+            /*
             if (validacionCorreoLeasein(txtEmail.Text.Trim()) == false)
                 isError=true;
 
             if (validacionSoloNumeros(txtTelefono.Text.Trim()) == false)
                 isError = true;
+            */
+
 
             if (txtNroDocumento.Text == "") isError = true;
             if (txtNombreContacto.Text == "") isError = true;
             if (txtDireccion.Text == "") isError = true;
-            if (txtEmail.Text == "") isError = true;
-            if (txtTelefono.Text == "") isError = true;
+            //if (txtEmail.Text == "") isError = true;
+            //if (txtTelefono.Text == "") isError = true;
             if (cmbCliente.SelectedIndex == -1) isError = true;
             return isError;
         }
