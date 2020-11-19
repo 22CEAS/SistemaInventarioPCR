@@ -1938,3 +1938,82 @@ BEGIN
 END
 $$
 DELIMITER ;
+
+DROP PROCEDURE IF EXISTS `insert_marca`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_marca`(
+	IN _idCategoria INT,
+	IN _nombre NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idMarca INT
+)
+BEGIN
+	SET _idMarca=(SELECT IFNULL( MAX(idMarca) , 0 )+1 FROM marca);
+	INSERT INTO marca (idMarca,idCategoria,nombre,estado,usuario_ins) values
+	(_idMarca,_idCategoria,_nombre,_estado,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS `update_marca`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_marca`(
+	IN _idCategoria INT,
+	IN _nombre NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idMarca INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE marca 
+	SET nombre=_nombre,
+	fec_mod=@fechaModificacion,
+	usuario_mod=_usuario_mod,
+	estado=_estado
+	where idMarca=_idMarca ;
+END
+$$
+DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS `insert_modelo`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_modelo`(
+	IN _idMarca INT,
+	IN _nombre NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_ins NVARCHAR(100), 
+	OUT _idModelo INT
+)
+BEGIN
+	SET _idModelo=(SELECT IFNULL( MAX(idModelo) , 0 )+1 FROM modelo);
+	INSERT INTO modelo (idModelo,idMarca,nombre,estado,usuario_ins) values
+	(_idModelo,_idMarca,_nombre,_estado,_usuario_ins);
+	COMMIT;
+END
+$$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS `update_modelo`;
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_modelo`(
+	IN _idMarca INT,
+	IN _nombre NVARCHAR(255),
+	IN _estado TINYINT,
+	IN _usuario_mod NVARCHAR(100), 
+	IN _idModelo INT
+)
+BEGIN
+	SET @fechaModificacion=(SELECT now());
+	UPDATE modelo 
+	SET nombre=_nombre,
+	fec_mod=@fechaModificacion,
+	usuario_mod=_usuario_mod,
+	estado=_estado
+	where idModelo=_idModelo ;
+END
+$$
+DELIMITER ;

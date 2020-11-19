@@ -26,7 +26,7 @@ namespace AccesoDatos
 
         public int GuardarNuevaMarca(Marca marca, string usuario)
         {
-            string sql = "Select * From marca where cod_tabla ='" + marca.IdCategoria + "' and nombre= '" + marca.NombreMarca + "' ;";
+            string sql = "Select * From marca where idCategoria ='" + marca.IdCategoria + "' and nombre= '" + marca.NombreMarca + "' ;";
             MySqlDataReader reader;
             reader = objManager.MostrarInformacion(sql);
 
@@ -36,20 +36,22 @@ namespace AccesoDatos
                 objManager.conexion.Dispose();
                 objManager.cmd.Dispose();
 
-                parametrosEntrada = new MySqlParameter[4];
+                parametrosEntrada = new MySqlParameter[5];
                 parametrosEntrada[0] = new MySqlParameter("@_idCategoria", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_nombre", MySqlDbType.VarChar, 255);
                 parametrosEntrada[2] = new MySqlParameter("@_estado", MySqlDbType.Int32);
-                parametrosEntrada[3] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
+                parametrosEntrada[4] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
 
                 parametrosEntrada[0].Value = marca.IdCategoria;
                 parametrosEntrada[1].Value = marca.NombreMarca;
                 parametrosEntrada[2].Value = marca.Estado;
+                parametrosEntrada[3].Value = usuario;
 
                 string[] datosSalida = new string[1];
 
                 objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_marca",
-                    3, 4, out datosSalida, 1);
+                    4, 5, out datosSalida, 1);
 
                 if (datosSalida != null)
                 {
@@ -87,18 +89,121 @@ namespace AccesoDatos
                 objManager.conexion.Dispose();
                 objManager.cmd.Dispose();
 
-                parametrosEntrada = new MySqlParameter[4];
+                parametrosEntrada = new MySqlParameter[5];
                 parametrosEntrada[0] = new MySqlParameter("@_idCategoria", MySqlDbType.Int32);
                 parametrosEntrada[1] = new MySqlParameter("@_nombre", MySqlDbType.VarChar, 255);
                 parametrosEntrada[2] = new MySqlParameter("@_estado", MySqlDbType.Int32);
-                parametrosEntrada[3] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                parametrosEntrada[4] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
 
                 parametrosEntrada[0].Value = marca.IdCategoria;
                 parametrosEntrada[1].Value = marca.NombreMarca;
                 parametrosEntrada[2].Value = marca.Estado;
-                parametrosEntrada[3].Value = marca.IdMarca;
+                parametrosEntrada[3].Value = usuario;
+                parametrosEntrada[4].Value = marca.IdMarca;
 
                 bool aux = objManager.EjecutarProcedure(parametrosEntrada, "update_marca");
+                return ((aux) ? 1 : -1);
+            }
+            else
+            {
+                objManager.conexion.Close();
+                objManager.conexion.Dispose();
+                objManager.cmd.Dispose();
+                return 0;
+            }
+        }
+
+
+
+        public DataTable ListarModelos()
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM modelo; ");
+        }
+
+        public DataTable ListarMarcas(int idCategoria)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM marca where idCategoria=" + idCategoria + " ; ");
+        }
+        public int GuardarNuevoModelo(Modelo.Modelo modelo, string usuario)
+        {
+            string sql = "Select * From modelo where idMarca ='" + modelo.IdMarca + "' and nombre= '" + modelo.NombreModelo + "' ;";
+            MySqlDataReader reader;
+            reader = objManager.MostrarInformacion(sql);
+
+            if (!(reader.HasRows))
+            {
+                objManager.conexion.Close();
+                objManager.conexion.Dispose();
+                objManager.cmd.Dispose();
+
+                parametrosEntrada = new MySqlParameter[5];
+                parametrosEntrada[0] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_nombre", MySqlDbType.VarChar, 255);
+                parametrosEntrada[2] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_usuario_ins", MySqlDbType.VarChar, 100);
+                parametrosEntrada[4] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+
+                parametrosEntrada[0].Value = modelo.IdMarca;
+                parametrosEntrada[1].Value = modelo.NombreModelo;
+                parametrosEntrada[2].Value = modelo.Estado;
+                parametrosEntrada[3].Value = usuario;
+
+                string[] datosSalida = new string[1];
+
+                objManager.EjecutarProcedureConDatosDevueltos(parametrosEntrada, "insert_modelo",
+                    4, 5, out datosSalida, 1);
+
+                if (datosSalida != null)
+                {
+                    int idModelo = Convert.ToInt32(datosSalida[0]);
+                    return idModelo;
+                }
+                return -1;
+            }
+            else
+            {
+                objManager.conexion.Close();
+                objManager.conexion.Dispose();
+                objManager.cmd.Dispose();
+                return 0;
+            }
+        }
+        public int ModificarModelo(Modelo.Modelo modelo, string usuario, int actualizarEstado)
+        {
+            string sql = "";
+            if (actualizarEstado == 1)
+            {
+                sql = "Select * From modelo where idMarca ='" + modelo.IdMarca + "' and nombre= '" + modelo.NombreModelo + "' and estado=" + modelo.Estado + " ;";
+            }
+            else
+            {
+                sql = "Select * From modelo where idMarca ='" + modelo.IdMarca + "' and nombre= '" + modelo.NombreModelo + "' ;";
+            }
+
+            MySqlDataReader reader;
+            reader = objManager.MostrarInformacion(sql);
+
+            if (!(reader.HasRows))
+            {
+                objManager.conexion.Close();
+                objManager.conexion.Dispose();
+                objManager.cmd.Dispose();
+
+                parametrosEntrada = new MySqlParameter[5];
+                parametrosEntrada[0] = new MySqlParameter("@_idMarca", MySqlDbType.Int32);
+                parametrosEntrada[1] = new MySqlParameter("@_nombre", MySqlDbType.VarChar, 255);
+                parametrosEntrada[2] = new MySqlParameter("@_estado", MySqlDbType.Int32);
+                parametrosEntrada[3] = new MySqlParameter("@_usuario_mod", MySqlDbType.VarChar, 100);
+                parametrosEntrada[4] = new MySqlParameter("@_idModelo", MySqlDbType.Int32);
+
+                parametrosEntrada[0].Value = modelo.IdMarca;
+                parametrosEntrada[1].Value = modelo.NombreModelo;
+                parametrosEntrada[2].Value = modelo.Estado;
+                parametrosEntrada[3].Value = usuario;
+                parametrosEntrada[4].Value = modelo.IdModelo;
+
+                bool aux = objManager.EjecutarProcedure(parametrosEntrada, "update_modelo");
                 return ((aux) ? 1 : -1);
             }
             else

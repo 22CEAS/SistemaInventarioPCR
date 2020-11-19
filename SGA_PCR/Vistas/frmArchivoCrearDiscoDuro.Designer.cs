@@ -354,6 +354,7 @@
             this.btnAgregarTipoDisco.TabIndex = 111;
             this.btnAgregarTipoDisco.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarTipoDisco.UseVisualStyleBackColor = false;
+            this.btnAgregarTipoDisco.Click += new System.EventHandler(this.btnAgregarTipoDisco_Click);
             // 
             // btnAgregarCapacidadDisco
             // 

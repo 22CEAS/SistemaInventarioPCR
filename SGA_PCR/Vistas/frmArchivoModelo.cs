@@ -13,26 +13,29 @@ using System.Windows.Forms;
 
 namespace Apolo
 {
-    public partial class frmArchivoMarca : Form
+    public partial class frmArchivoModelo : Form
     {
         public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular }
+        DataTable tablaModelo;
         DataTable tablaMarca;
-        DataView viewMarca;
+        DataView viewModelo;
+
         Marca marca;
-        Marca marcaOld;
+        Modelo.Modelo modelo;
+        Modelo.Modelo modeloOld;
         MarcaDA marcaDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
         private int idCategoria;
 
-        public frmArchivoMarca()
+        public frmArchivoModelo()
         {
             InitializeComponent();
             Inicializado();
             estadoComponentes(TipoVista.Inicial);
         }
 
-        public frmArchivoMarca(int idUsuario, string nombreUsuario, int idCategoria)
+        public frmArchivoModelo(int idUsuario, string nombreUsuario, int idCategoria)
         {
             InitializeComponent();
             this.idUsuario = idUsuario;
@@ -45,14 +48,33 @@ namespace Apolo
         public void Inicializado()
         {
             marcaDA = new MarcaDA();
+            modelo = new Modelo.Modelo();
             marca = new Marca();
-            tablaMarca = marcaDA.ListarMarcas();
-            viewMarca = new DataView(tablaMarca);
+            tablaModelo = marcaDA.ListarModelos();
+            tablaMarca = marcaDA.ListarMarcas(this.idCategoria);
+            
+            viewModelo = new DataView(tablaModelo);
 
-            viewMarca.RowFilter = "idCategoria = " + idCategoria ;
+            
+            cmbMarca.DataSource = tablaMarca;
+            cmbMarca.DisplayMember = "nombre";
+            cmbMarca.ValueMember = "idMarca";
+            cmbMarca.SelectedIndex = -1;
 
-            dgvMarca.PrimaryGrid.AutoGenerateColumns = false;
-            dgvMarca.PrimaryGrid.DataSource = viewMarca;
+            dgvModelo.PrimaryGrid.DataSource = null;
+            dgvModelo.PrimaryGrid.AutoGenerateColumns = false;
+
+            if (this.idCategoria == 8 || this.idCategoria==10)
+            {
+                cmbMarca.SelectedIndex = 0;
+                lblMarca.Visible = false;
+                cmbMarca.Visible = false;
+                lblModelo.Location= new Point(35, 16);
+                txtDescripcion.Location = new Point(35, 35);
+                chbActivo.Location = new Point(369, 35);
+                dgvModelo.Location = new Point(35, 89);
+                dgvModelo.Size= new Size(322, 322);
+            }
 
         }
         public void estadoComponentes(TipoVista estado)
@@ -61,14 +83,14 @@ namespace Apolo
             {
                 case TipoVista.Inicial: //ya esta
 
-                    btnNuevo.Enabled = true;
+                    btnNuevo.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     btnCancelar.Enabled = false;
                     btnGrabar.Enabled = false;
-                    btnEditar.Enabled = true;
+                    btnEditar.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     txtDescripcion.Enabled = false;
                     chbActivo.Enabled = false;
                     limpiarComponentes();
-                    marca = new Marca();
+                    modelo = new Modelo.Modelo();
                     break;
                 case TipoVista.Nuevo: //ya esta
                     //Inicializado(idUsuario, nombreUsuario);
@@ -79,21 +101,17 @@ namespace Apolo
                     txtDescripcion.Enabled = true;
                     chbActivo.Enabled = false;
                     limpiarComponentes();
-                    marca = new Marca();
+                    modelo = new Modelo.Modelo();
                     break;
                 case TipoVista.Guardar: //ya esta listo
-                    btnNuevo.Enabled = true;
+                    btnNuevo.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     btnCancelar.Enabled = false;
                     btnGrabar.Enabled = false;
-                    btnEditar.Enabled = true;
+                    btnEditar.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     txtDescripcion.Enabled = false;
                     chbActivo.Enabled = false;
-                    marca = new Marca();
-                    dgvMarca.PrimaryGrid.DataSource = null;
-                    tablaMarca = marcaDA.ListarMarcas();
-                    viewMarca = new DataView(tablaMarca);
-                    viewMarca.RowFilter = "idCategoria = " + idCategoria;
-                    dgvMarca.PrimaryGrid.DataSource = viewMarca;
+                    modelo = new Modelo.Modelo();
+                    actualizarGrid();
                     break;
                 case TipoVista.Modificar:
                     btnNuevo.Enabled = false;
@@ -103,27 +121,27 @@ namespace Apolo
                     txtDescripcion.Enabled = true;
                     chbActivo.Enabled = true;
                     limpiarComponentes();
-                    marca = new Marca();
+                    modelo = new Modelo.Modelo();
                     break;
                 case TipoVista.Vista:
-                    btnNuevo.Enabled = true;
+                    btnNuevo.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     btnCancelar.Enabled = false;
                     btnGrabar.Enabled = false;
-                    btnEditar.Enabled = true;
+                    btnEditar.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     txtDescripcion.Enabled = false;
                     chbActivo.Enabled = false;
                     //limpiarComponentes();
-                    marca = new Marca();
+                    modelo = new Modelo.Modelo();
                     break;
                 case TipoVista.Limpiar: //ya esta
-                    btnNuevo.Enabled = true;
+                    btnNuevo.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     btnCancelar.Enabled = false;
                     btnGrabar.Enabled = false;
                     btnEditar.Enabled = false;
                     txtDescripcion.Enabled = false;
                     chbActivo.Enabled = false;
                     limpiarComponentes();
-                    marca = new Marca();
+                    modelo = new Modelo.Modelo();
                     break;
                 case TipoVista.Duplicar:  //ya esta
                     //Inicializado(idUsuario, nombreUsuario);
@@ -134,17 +152,17 @@ namespace Apolo
                     txtDescripcion.Enabled = true;
                     chbActivo.Enabled = true;
                     limpiarComponentes();
-                    marca = new Marca();
+                    modelo = new Modelo.Modelo();
                     break;
                 case TipoVista.Anular:  //ya esta
-                    btnNuevo.Enabled = true;
+                    btnNuevo.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     btnCancelar.Enabled = false;
                     btnGrabar.Enabled = false;
-                    btnEditar.Enabled = true;
+                    btnEditar.Enabled = (cmbMarca.SelectedIndex != -1) ? true : false;
                     txtDescripcion.Enabled = false;
                     chbActivo.Enabled = false;
                     limpiarComponentes();
-                    marca = new Marca();
+                    modelo = new Modelo.Modelo();
                     break;
             }
         }
@@ -161,34 +179,34 @@ namespace Apolo
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            GridRow aux = (GridRow)dgvMarca.PrimaryGrid.ActiveRow;
+            GridRow aux = (GridRow)dgvModelo.PrimaryGrid.ActiveRow;
             if (aux != null)
             {
                 estadoComponentes(TipoVista.Modificar);
-                marcaOld = new Marca();
+                modeloOld = new Modelo.Modelo();
 
-                marca.IdMarca = int.Parse(((GridCell)(((GridRow)dgvMarca.PrimaryGrid.ActiveRow)[3])).Value.ToString());
-                string descripcion = ((GridCell)(((GridRow)dgvMarca.PrimaryGrid.ActiveRow)[0])).Value.ToString();
-                int activo = int.Parse(((GridCell)(((GridRow)dgvMarca.PrimaryGrid.ActiveRow)[1])).Value.ToString());
-                marca.IdCategoria = int.Parse(((GridCell)(((GridRow)dgvMarca.PrimaryGrid.ActiveRow)[2])).Value.ToString());
+                modelo.IdModelo = int.Parse(((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[3])).Value.ToString());
+                string descripcion = ((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[0])).Value.ToString();
+                int activo = int.Parse(((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[1])).Value.ToString());
+                modelo.IdMarca = int.Parse(((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[2])).Value.ToString());
                 chbActivo.Checked = (activo == 1) ? true : false;
                 txtDescripcion.Text = descripcion;
 
-                marcaOld.NombreMarca = descripcion;
-                marcaOld.IdCategoria = idCategoria;
-                marcaOld.Estado = activo;
+                modeloOld.NombreModelo = descripcion;
+                modeloOld.IdMarca = int.Parse(((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[2])).Value.ToString());
+                modeloOld.Estado = activo;
 
             }
         }
 
-        private void llenar_Marcas()
+        private void llenar_Modelos()
         {
-            marca.IdCategoria = this.idCategoria;
+            modelo.IdMarca = int.Parse(cmbMarca.SelectedValue.ToString());
 
             string aux = txtDescripcion.Text;
             aux = aux.Trim();
             aux = aux.ToUpper();
-            marca.NombreMarca = aux;
+            modelo.NombreModelo = aux;
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -203,19 +221,19 @@ namespace Apolo
                 return;
             }
 
-            llenar_Marcas();
-            if (marca.IdMarca == 0)
+            llenar_Modelos();
+            if (modelo.IdModelo == 0)
             {
                 if (MessageBox.Show("¿Estás seguro que deseas Crear esta nueva descripción?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    int idMarca = marcaDA.GuardarNuevaMarca(marca, this.nombreUsuario);
+                    int idModelo = marcaDA.GuardarNuevoModelo(modelo, this.nombreUsuario);
 
-                    if (idMarca > 0)
+                    if (idModelo > 0)
                     {
                         MessageBox.Show("Se guardó con éxito la Descripción ", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                         estadoComponentes(TipoVista.Guardar);
                     }
-                    else if (idMarca == 0)
+                    else if (idModelo == 0)
                         MessageBox.Show("Ya existe una Descripcion con las mismas características", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     else
                         MessageBox.Show("No se pudo guardar esta Descripción", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -223,9 +241,9 @@ namespace Apolo
             }
             else
             {
-                marca.Estado = (chbActivo.Checked) ? 1 : 0;
-                if ((marca.NombreMarca == marcaOld.NombreMarca &&
-                    marca.Estado == marcaOld.Estado))
+                modelo.Estado = (chbActivo.Checked) ? 1 : 0;
+                if ((modelo.NombreModelo == modeloOld.NombreModelo &&
+                    modelo.Estado == modeloOld.Estado))
                 {
                     //MessageBox.Show("Son identicos", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     return;
@@ -233,24 +251,24 @@ namespace Apolo
 
                 if (MessageBox.Show("¿Estás seguro que desea Guardar los cambios?", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    int idMarca;
+                    int idModelo;
 
-                    if ((marca.NombreMarca == marcaOld.NombreMarca &&
-                    marca.Estado != marcaOld.Estado))
+                    if ((modelo.NombreModelo == modeloOld.NombreModelo &&
+                    modelo.Estado != modeloOld.Estado))
                     {
-                        idMarca = marcaDA.ModificarMarca(marca, this.nombreUsuario, 1);
+                        idModelo = marcaDA.ModificarModelo(modelo, this.nombreUsuario, 1);
                     }
                     else
                     {
-                        idMarca = marcaDA.ModificarMarca(marca, this.nombreUsuario, 0);
+                        idModelo = marcaDA.ModificarModelo(modelo, this.nombreUsuario, 0);
                     }
 
-                    if (idMarca > 0)
+                    if (idModelo > 0)
                     {
                         MessageBox.Show("Se Modificó la descripción con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         estadoComponentes(TipoVista.Guardar);
                     }
-                    else if (idMarca == 0)
+                    else if (idModelo == 0)
                         MessageBox.Show("Ya existe uno con la misma descripción", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     else
                         MessageBox.Show("No se pudo guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
@@ -266,19 +284,60 @@ namespace Apolo
             estadoComponentes(TipoVista.Anular);
         }
 
-        private void dgvMarca_Click(object sender, EventArgs e)
+        private void dgvModelo_Click(object sender, EventArgs e)
         {
-            GridRow aux = (GridRow)dgvMarca.PrimaryGrid.ActiveRow;
+            GridRow aux = (GridRow)dgvModelo.PrimaryGrid.ActiveRow;
             if (aux != null)
             {
                 estadoComponentes(TipoVista.Vista);
-                string descripcion = ((GridCell)(((GridRow)dgvMarca.PrimaryGrid.ActiveRow)[0])).Value.ToString();
-                int activo = int.Parse(((GridCell)(((GridRow)dgvMarca.PrimaryGrid.ActiveRow)[1])).Value.ToString());
-                marca.IdCategoria = int.Parse(((GridCell)(((GridRow)dgvMarca.PrimaryGrid.ActiveRow)[2])).Value.ToString());
-                marca.IdMarca = int.Parse(((GridCell)(((GridRow)dgvMarca.PrimaryGrid.ActiveRow)[3])).Value.ToString());
+                string descripcion = ((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[0])).Value.ToString();
+                int activo = int.Parse(((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[1])).Value.ToString());
+                modelo.IdMarca = int.Parse(((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[2])).Value.ToString());
+                modelo.IdModelo = int.Parse(((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[3])).Value.ToString());
                 chbActivo.Checked = (activo == 1) ? true : false;
                 txtDescripcion.Text = descripcion;
             }
+        }
+
+        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i = cmbMarca.SelectedIndex;
+            if (cmbMarca.SelectedIndex != -1)
+            {
+                //MessageBox.Show(cmbMarca.SelectedValue.ToString());
+                //int idCliente = int.Parse(cmbMarca.SelectedValue.ToString());
+                int idMatca = Convert.ToInt32(tablaMarca.Rows[i]["idMarca"].ToString());
+
+                tablaModelo = marcaDA.ListarModelos();
+                
+                viewModelo = new DataView(tablaModelo);
+
+                viewModelo.RowFilter = "idMarca = " + idMatca;
+                dgvModelo.PrimaryGrid.AutoGenerateColumns = false;
+                dgvModelo.PrimaryGrid.DataSource = viewModelo;
+
+            }
+            estadoComponentes(TipoVista.Inicial);
+        }
+        private void actualizarGrid()
+        {
+            int i = cmbMarca.SelectedIndex;
+            if (cmbMarca.SelectedIndex != -1)
+            {
+                //MessageBox.Show(cmbMarca.SelectedValue.ToString());
+                //int idCliente = int.Parse(cmbMarca.SelectedValue.ToString());
+                int idMatca = Convert.ToInt32(tablaMarca.Rows[i]["idMarca"].ToString());
+
+                tablaModelo = marcaDA.ListarModelos();
+
+                viewModelo = new DataView(tablaModelo);
+
+                viewModelo.RowFilter = "idMarca = " + idMatca;
+                dgvModelo.PrimaryGrid.AutoGenerateColumns = false;
+                dgvModelo.PrimaryGrid.DataSource = viewModelo;
+
+            }
+            estadoComponentes(TipoVista.Inicial);
         }
     }
 }

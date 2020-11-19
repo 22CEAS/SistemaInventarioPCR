@@ -479,12 +479,23 @@ namespace Apolo
 
         private void btnAgregarModeloVideo_Click(object sender, EventArgs e)
         {
+            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, 11);
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
 
         }
 
         private void btnAgregarMarcaVideo_Click(object sender, EventArgs e)
         {
-
+            frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, 11);
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
         }
     }
 }
