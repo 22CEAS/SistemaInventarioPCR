@@ -307,9 +307,9 @@
             this.btnAgregarLicencia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarLicencia.Location = new System.Drawing.Point(704, 512);
             this.btnAgregarLicencia.Name = "btnAgregarLicencia";
-            this.btnAgregarLicencia.Size = new System.Drawing.Size(69, 25);
+            this.btnAgregarLicencia.Size = new System.Drawing.Size(81, 45);
             this.btnAgregarLicencia.TabIndex = 12;
-            this.btnAgregarLicencia.Text = "Agregar";
+            this.btnAgregarLicencia.Text = "Agregar\r\nLicencias";
             this.btnAgregarLicencia.UseVisualStyleBackColor = true;
             this.btnAgregarLicencia.Click += new System.EventHandler(this.btnAgregarLicencia_Click);
             // 
@@ -318,9 +318,9 @@
             this.btnAgregarDisco.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarDisco.Location = new System.Drawing.Point(1150, 363);
             this.btnAgregarDisco.Name = "btnAgregarDisco";
-            this.btnAgregarDisco.Size = new System.Drawing.Size(69, 25);
+            this.btnAgregarDisco.Size = new System.Drawing.Size(86, 40);
             this.btnAgregarDisco.TabIndex = 11;
-            this.btnAgregarDisco.Text = "Agregar";
+            this.btnAgregarDisco.Text = "Agregar\r\nDiscos";
             this.btnAgregarDisco.UseVisualStyleBackColor = true;
             this.btnAgregarDisco.Click += new System.EventHandler(this.btnAgregarDisco_Click);
             // 
@@ -329,9 +329,9 @@
             this.btnAgregarMemoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarMemoria.Location = new System.Drawing.Point(1151, 202);
             this.btnAgregarMemoria.Name = "btnAgregarMemoria";
-            this.btnAgregarMemoria.Size = new System.Drawing.Size(69, 25);
+            this.btnAgregarMemoria.Size = new System.Drawing.Size(85, 45);
             this.btnAgregarMemoria.TabIndex = 10;
-            this.btnAgregarMemoria.Text = "Agregar";
+            this.btnAgregarMemoria.Text = "Agregar\r\nMemorias";
             this.btnAgregarMemoria.UseVisualStyleBackColor = true;
             this.btnAgregarMemoria.Click += new System.EventHandler(this.btnAgregarMemoria_Click);
             // 
@@ -348,13 +348,16 @@
             gridColumn2.AllowEdit = false;
             gridColumn2.DataPropertyName = "Marca";
             gridColumn2.Name = "Marca";
+            gridColumn2.Visible = false;
             gridColumn3.AllowEdit = false;
             gridColumn3.DataPropertyName = "Version";
             gridColumn3.Name = "Versión";
+            gridColumn3.Width = 150;
             gridColumn4.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn4.DataPropertyName = "Clave";
             gridColumn4.Name = "Clave";
             gridColumn4.SortIndicator = DevComponents.DotNetBar.SuperGrid.SortIndicator.None;
+            gridColumn4.Width = 150;
             gridColumn5.ColumnSortMode = DevComponents.DotNetBar.SuperGrid.ColumnSortMode.None;
             gridColumn5.DataPropertyName = "Cantidad";
             gridColumn5.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridIntegerInputEditControl);

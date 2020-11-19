@@ -68,13 +68,14 @@
             gridColumn3.MinimumWidth = 100;
             gridColumn3.Name = "Tipo";
             gridColumn3.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
+            gridColumn3.Visible = false;
             gridColumn3.Width = 120;
             gridColumn4.AllowEdit = false;
             gridColumn4.DataPropertyName = "Version";
             gridColumn4.MinimumWidth = 180;
             gridColumn4.Name = "Versión";
             gridColumn4.ResizeMode = DevComponents.DotNetBar.SuperGrid.ColumnResizeMode.MaintainTotalWidth;
-            gridColumn4.Width = 180;
+            gridColumn4.Width = 300;
             gridColumn5.AllowEdit = false;
             gridColumn5.DataPropertyName = "IdCategoria";
             gridColumn5.MinimumWidth = 50;

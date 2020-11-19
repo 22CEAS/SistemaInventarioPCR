@@ -26,6 +26,9 @@ namespace Apolo
         VideoDA videoDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
+        private string videoTipo = "VIDEO_TIPO";
+        private string videoCapacidad = "VIDEO_CAPACIDAD";
+        private int videoIdCategoria= 11;
 
 
         public frmArchivoCrearTarjetaVideo()
@@ -459,7 +462,7 @@ namespace Apolo
 
         private void btnAgregarCapacidadVideo_Click(object sender, EventArgs e)
         {
-            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "VIDEO_CAPACIDAD");
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, this.videoCapacidad);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -469,7 +472,7 @@ namespace Apolo
 
         private void btnAgregarTipoVideo_Click(object sender, EventArgs e)
         {
-            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "VIDEO_TIPO");
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, this.videoTipo);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -479,7 +482,7 @@ namespace Apolo
 
         private void btnAgregarModeloVideo_Click(object sender, EventArgs e)
         {
-            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, 11);
+            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, this.videoIdCategoria);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -490,7 +493,7 @@ namespace Apolo
 
         private void btnAgregarMarcaVideo_Click(object sender, EventArgs e)
         {
-            frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, 11);
+            frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, this.videoIdCategoria);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }

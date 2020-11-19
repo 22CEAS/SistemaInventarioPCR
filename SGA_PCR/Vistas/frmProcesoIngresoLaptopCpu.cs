@@ -39,6 +39,8 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
+        private int laptopIdCategoria = 1;
+
         public frmProcesoIngresoLaptopCpu()
         {
             InitializeComponent();
@@ -1001,6 +1003,57 @@ namespace Apolo
                 MessageBox.Show(ex.Message, "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
 
+        }
+
+        private void btnAgregarMarcaLaptop_Click(object sender, EventArgs e)
+        {
+            frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, this.laptopIdCategoria);
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+
+            tablaMarca = ingresoDA.ListarMarcas();
+            cmbMarca.DataSource = tablaMarca;
+            cmbMarca.DisplayMember = "nombre";
+            cmbMarca.ValueMember = "idMarca";
+            cmbMarca.SelectedIndex = 0;
+            int i = cmbMarca.SelectedIndex;
+
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
+                tablaModelo = ingresoDA.ListarModelos(idMarca);
+                cmbModelo.DataSource = tablaModelo;
+                cmbModelo.DisplayMember = "nombre";
+                cmbModelo.ValueMember = "idModelo";
+                cmbModelo.SelectedIndex = 0;
+            }
+
+        }
+
+        private void btnAgregarModeloLaptop_Click(object sender, EventArgs e)
+        {
+            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, this.laptopIdCategoria);
+            if (frmBP.ShowDialog() == DialogResult.OK)
+            {
+            }
+
+            tablaMarca = ingresoDA.ListarMarcas();
+            cmbMarca.DataSource = tablaMarca;
+            cmbMarca.DisplayMember = "nombre";
+            cmbMarca.ValueMember = "idMarca";
+            cmbMarca.SelectedIndex = 0;
+            int i = cmbMarca.SelectedIndex;
+
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                int idMarca = Convert.ToInt32(cmbMarca.SelectedValue.ToString());
+                tablaModelo = ingresoDA.ListarModelos(idMarca);
+                cmbModelo.DataSource = tablaModelo;
+                cmbModelo.DisplayMember = "nombre";
+                cmbModelo.ValueMember = "idModelo";
+                cmbModelo.SelectedIndex = 0;
+            }
         }
     }
 }

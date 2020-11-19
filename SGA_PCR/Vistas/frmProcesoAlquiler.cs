@@ -31,6 +31,10 @@ namespace Apolo
         private string nombreUsuario = "CEAS";
         private int maxCantidadDiscos=2;
 
+        private string licenciaCategoriaSO = "S.O";
+        private string licenciaCategoriaOffice = "OFFICE";
+        private string licenciaCategoriaAntivirus = "ANTIVIRUS";
+
         public frmProcesoAlquiler()
         {
             InitializeComponent();
@@ -1228,9 +1232,9 @@ namespace Apolo
 
                 if (det.Laptop.Licencias.Count > 0)
                 {
-                    windows = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "WINDOWS");
-                    office = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "OFFICE");
-                    antivirus = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "ANTIVIRUS");
+                    windows = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaSO);
+                    office = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaOffice);
+                    antivirus = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaAntivirus);
 
                 }
 
@@ -1296,7 +1300,7 @@ namespace Apolo
                 hoja.Cells[fila + 6, 8] = "Disco 2";
                 hoja.Cells[fila + 6, 9] = "Memoria";
                 hoja.Cells[fila + 6, 10] = "Pantalla";
-                hoja.Cells[fila + 6, 11] = "Windows";
+                hoja.Cells[fila + 6, 11] = "S.O";
                 hoja.Cells[fila + 6, 12] = "Office";
                 hoja.Cells[fila + 6, 13] = "Antivirus";
                 

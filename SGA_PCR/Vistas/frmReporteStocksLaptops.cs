@@ -25,6 +25,10 @@ namespace Apolo
         DataTable tablaMemoria;
         DataTable tablaLicencia;
 
+        private string licenciaCategoriaSO = "S.O";
+        private string licenciaCategoriaOffice = "OFFICE";
+        private string licenciaCategoriaAntivirus = "ANTIVIRUS";
+
         public frmReporteStocksLaptops()
         {
             InitializeComponent();
@@ -118,9 +122,9 @@ namespace Apolo
 
                 if (laptop.Licencias.Count > 0)
                 {
-                    windows = laptop.Licencias.SingleOrDefault(p => p.Categoria == "WINDOWS");
-                    office = laptop.Licencias.SingleOrDefault(p => p.Categoria == "OFFICE");
-                    antivirus = laptop.Licencias.SingleOrDefault(p => p.Categoria == "ANTIVIRUS");
+                    windows = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaSO);
+                    office = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaOffice);
+                    antivirus = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaAntivirus);
 
                 }
 

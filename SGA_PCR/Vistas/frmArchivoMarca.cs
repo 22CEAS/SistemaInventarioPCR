@@ -49,7 +49,7 @@ namespace Apolo
             tablaMarca = marcaDA.ListarMarcas();
             viewMarca = new DataView(tablaMarca);
 
-            viewMarca.RowFilter = "idCategoria = " + idCategoria ;
+            viewMarca.RowFilter = "idCategoria = " + this.idCategoria ;
 
             dgvMarca.PrimaryGrid.AutoGenerateColumns = false;
             dgvMarca.PrimaryGrid.DataSource = viewMarca;
@@ -92,7 +92,7 @@ namespace Apolo
                     dgvMarca.PrimaryGrid.DataSource = null;
                     tablaMarca = marcaDA.ListarMarcas();
                     viewMarca = new DataView(tablaMarca);
-                    viewMarca.RowFilter = "idCategoria = " + idCategoria;
+                    viewMarca.RowFilter = "idCategoria = " + this.idCategoria;
                     dgvMarca.PrimaryGrid.DataSource = viewMarca;
                     break;
                 case TipoVista.Modificar:

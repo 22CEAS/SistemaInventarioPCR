@@ -30,6 +30,10 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
+        private string licenciaCategoriaSO = "S.O";
+        private string licenciaCategoriaOffice = "OFFICE";
+        private string licenciaCategoriaAntivirus = "ANTIVIRUS";
+
         public frmProcesoIngreso()
         {
             InitializeComponent();
@@ -1011,9 +1015,9 @@ namespace Apolo
 
                 if (det.Laptop.Licencias.Count > 0)
                 {
-                    windows = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "WINDOWS");
-                    office = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "OFFICE");
-                    antivirus = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "ANTIVIRUS");
+                    windows = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaSO);
+                    office = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaOffice);
+                    antivirus = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaAntivirus);
 
                 }
 
@@ -1160,7 +1164,7 @@ namespace Apolo
                     hoja.Cells[filaDetalle - 1, 10] = "Disco 1";
                     hoja.Cells[filaDetalle - 1, 11] = "Disco 2";
                     hoja.Cells[filaDetalle - 1, 12] = "Memoria";
-                    hoja.Cells[filaDetalle - 1, 13] = "Windows";
+                    hoja.Cells[filaDetalle - 1, 13] = "S.O";
                     hoja.Cells[filaDetalle - 1, 14] = "Office";
                     hoja.Cells[filaDetalle - 1, 15] = "Antivirus";
 
@@ -1646,5 +1650,7 @@ namespace Apolo
             //MessageBox.Show("Entro aqui");
             //int aux = ingreso.Detalles.Count;
         }
+
+        
     }
 }

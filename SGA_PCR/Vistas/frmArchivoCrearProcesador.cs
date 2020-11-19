@@ -33,6 +33,9 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
+        private string procesadorGeneracion = "PROCESADOR_GENERACION";
+        private int procesadorIdCategoria = 9;
+
         public frmArchivoCrearProcesador()
         {
             InitializeComponent();
@@ -480,7 +483,7 @@ namespace Apolo
 
         private void btnAgregarTipoProcesador_Click(object sender, EventArgs e)
         {
-            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, 9);
+            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, this.procesadorIdCategoria);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -490,7 +493,7 @@ namespace Apolo
 
         private void btnAgregarMarcaProcesador_Click(object sender, EventArgs e)
         {
-            frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, 9);
+            frmArchivoMarca frmBP = new frmArchivoMarca(this.idUsuario, this.nombreUsuario, this.procesadorIdCategoria);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -500,7 +503,7 @@ namespace Apolo
 
         private void btnAgregarGeneracionProcesador_Click(object sender, EventArgs e)
         {
-            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "PROCESADOR_GENERACION");
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, this.procesadorGeneracion);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }

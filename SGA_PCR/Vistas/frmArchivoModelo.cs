@@ -27,6 +27,8 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
         private int idCategoria;
+        private int idMemoriaCategoria =8;
+        private int idCategoriaDisco =10;
 
         public frmArchivoModelo()
         {
@@ -64,7 +66,7 @@ namespace Apolo
             dgvModelo.PrimaryGrid.DataSource = null;
             dgvModelo.PrimaryGrid.AutoGenerateColumns = false;
 
-            if (this.idCategoria == 8 || this.idCategoria==10)
+            if (this.idCategoria == this.idMemoriaCategoria || this.idCategoria==this.idCategoriaDisco)
             {
                 cmbMarca.SelectedIndex = 0;
                 lblMarca.Visible = false;
@@ -324,8 +326,6 @@ namespace Apolo
             int i = cmbMarca.SelectedIndex;
             if (cmbMarca.SelectedIndex != -1)
             {
-                //MessageBox.Show(cmbMarca.SelectedValue.ToString());
-                //int idCliente = int.Parse(cmbMarca.SelectedValue.ToString());
                 int idMatca = Convert.ToInt32(tablaMarca.Rows[i]["idMarca"].ToString());
 
                 tablaModelo = marcaDA.ListarModelos();

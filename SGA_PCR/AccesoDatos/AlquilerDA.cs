@@ -15,6 +15,10 @@ namespace AccesoDatos
         DBManager objManager;
         MySqlParameter[] parametrosEntrada = null;
 
+        private string licenciaCategoriaSO = "S.O";
+        private string licenciaCategoriaOffice = "OFFICE";
+        private string licenciaCategoriaAntivirus = "ANTIVIRUS";
+
         public AlquilerDA()
         {
             objManager = new DBManager();
@@ -521,9 +525,9 @@ namespace AccesoDatos
                 }
                 if (det.Laptop.Licencias.Count > 0)
                 {
-                        windows = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "WINDOWS");
-                        office = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "OFFICE");
-                        antivirus = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == "ANTIVIRUS");
+                        windows = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaSO);
+                        office = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaOffice);
+                        antivirus = det.Laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaAntivirus);
                     
                 }
                 idWindows = (windows != null) ? windows.IdLicencia : 0;

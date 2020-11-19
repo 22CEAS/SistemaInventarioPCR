@@ -26,6 +26,10 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario="CEAS";
 
+        private string discoTamano = "DISCO_TAMANO";
+        private string discoCapacidad = "DISCO_CAPACIDAD";
+        private int idCategoriaDisco = 10;
+
 
         public frmArchivoCrearDiscoDuro()
         {
@@ -374,7 +378,7 @@ namespace Apolo
 
         private void btnAgregarTamanoDisco_Click(object sender, EventArgs e)
         {
-            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario,this.nombreUsuario, "DISCO_TAMANO");
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario,this.nombreUsuario, this.discoTamano);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -384,7 +388,7 @@ namespace Apolo
 
         private void btnAgregarCapacidadDisco_Click(object sender, EventArgs e)
         {
-            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "DISCO_CAPACIDAD");
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, this.discoCapacidad);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -394,7 +398,7 @@ namespace Apolo
 
         private void btnAgregarTipoDisco_Click(object sender, EventArgs e)
         {
-            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, 10);
+            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, this.idCategoriaDisco);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }

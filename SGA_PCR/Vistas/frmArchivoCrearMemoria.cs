@@ -31,6 +31,10 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
+        private string memoriaCapacidad = "MEMORIA_CAPACIDAD";
+        private string memoriaCategoria = "MEMORIA_CATEGORIA";
+        private int idMemoriaCategoria = 8;
+
         public frmArchivoCrearMemoria()
         {
             InitializeComponent();
@@ -418,7 +422,7 @@ namespace Apolo
 
         private void btnAgregarCapacidadMemoria_Click(object sender, EventArgs e)
         {
-            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "MEMORIA_CAPACIDAD");
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, this.memoriaCapacidad);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -428,7 +432,7 @@ namespace Apolo
 
         private void btnAgregarTipoMemoria_Click(object sender, EventArgs e)
         {
-            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, "MEMORIA_CATEGORIA");
+            frmArchivoAuxiliar frmBP = new frmArchivoAuxiliar(this.idUsuario, this.nombreUsuario, this.memoriaCategoria);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
@@ -438,7 +442,7 @@ namespace Apolo
 
         private void btnAgregarModeloMemoria_Click(object sender, EventArgs e)
         {
-            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, 8);
+            frmArchivoModelo frmBP = new frmArchivoModelo(this.idUsuario, this.nombreUsuario, this.idMemoriaCategoria);
             if (frmBP.ShowDialog() == DialogResult.OK)
             {
             }
