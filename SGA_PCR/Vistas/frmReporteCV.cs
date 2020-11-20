@@ -1,16 +1,21 @@
 ﻿using AccesoDatos;
 using DevComponents.DotNetBar.SuperGrid;
+using DevExpress.Export;
+using DevExpress.Printing.ExportHelpers;
+using DevExpress.XtraPrinting;
 using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Apolo
 {
@@ -47,6 +52,37 @@ namespace Apolo
             vista.OptionsSelection.MultiSelect = true;
         }
 
+        
+        //DAR FORMATO A COLUMNAS
+        void op_CustomizeCell(DevExpress.Export.CustomizeCellEventArgs ea)
+        {
+            if (ea.ColumnFieldName=="X")
+            {
+                ea.Formatting.BackColor = Color.Red;
+                ea.Handled = true;
+            }
+        }
+        
+
+        void options_CustomizeSheetHeader(DevExpress.Export.ContextEventArgs e)
+        {
+            // Create a new row.
+            CellObject row = new CellObject();
+            XlFormattingObject rowFormatting = new XlFormattingObject();
+            // Specify row values.
+            row.Value = "CUADRO DE VENCIMIENTO";
+            rowFormatting.Font = new XlCellFont { Bold = true, Size = 14 };
+            rowFormatting.BackColor = Color.Orange;
+            rowFormatting.Alignment = new DevExpress.Export.Xl.XlCellAlignment { HorizontalAlignment = DevExpress.Export.Xl.XlHorizontalAlignment.Center, VerticalAlignment = DevExpress.Export.Xl.XlVerticalAlignment.Top };
+            row.Formatting = rowFormatting;
+            // Add the created row to the output document.
+            e.ExportContext.AddRow(new[] { row });
+            // Add an empty row to the output document.
+            e.ExportContext.AddRow();
+            // Merge cells of two new rows. 
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(18, 1))); //EL 18 SON LAS COLUMNAS QUE TIENE EL REPORTE
+        }
+
         private void btnExportar_Click(object sender, EventArgs e)
         {
 
@@ -54,38 +90,14 @@ namespace Apolo
             {
                 Cursor.Current = Cursors.WaitCursor;
                 try
-                {
-
-                    SaveFileDialog fichero = new SaveFileDialog();
-                    //fichero.Filter = "Excel (*.xls)|*.xls";
-                    fichero.Filter = "Excel(*.xlsx) | *.xlsx";
-                    fichero.FileName = "CuadroVencimiento";
-                    if (fichero.ShowDialog() == DialogResult.OK)
-                    {
-                        Excel.Application aplicacion;
-                        Excel.Workbook libros_trabajo;
-                        Excel.Worksheet hoja_pre_alquiler;
-
-                        aplicacion = new Excel.Application();
-                        libros_trabajo = (Excel.Workbook)aplicacion.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
-
-                        hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
-                        hoja_pre_alquiler.Name = "CuadroVencimiento";
-                        string cabecera = "Reporte Cuadro de Vencimiento";
-                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, cabecera);
-
-
-                        ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
-
-                        //libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlWorkbookNormal);
-                        libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlOpenXMLWorkbook);
-                        libros_trabajo.Close(true);
-                        releaseObject(libros_trabajo);
-                        aplicacion.Quit();
-                        releaseObject(aplicacion);
-                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
+                {                   
+                        DevExpress.Export.ExportSettings.DefaultExportType = ExportType.DataAware;
+                        XlsxExportOptionsEx options = new XlsxExportOptionsEx();
+                        options.CustomizeSheetHeader += options_CustomizeSheetHeader;
+                        //options.CustomizeCell += op_CustomizeCell;
+                        string file = "CUADRO DE VENCIMIENTO.xlsx";
+                        dgvLaptops.ExportToXlsx(file,options);
+                        System.Diagnostics.Process.Start(file);
                 }
                 catch (Exception ex)
                 {
@@ -253,6 +265,11 @@ namespace Apolo
             {
                 GC.Collect();
             }
+        }
+
+        private void dgvLaptops_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

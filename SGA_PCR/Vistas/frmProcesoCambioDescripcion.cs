@@ -513,5 +513,10 @@ namespace Apolo
                 ((GridCell)(((GridRow)dgvDisco.PrimaryGrid.ActiveRow)[2])).Value = cantidadDisco;
             }
         }
+
+        private void txtVideoCapacidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

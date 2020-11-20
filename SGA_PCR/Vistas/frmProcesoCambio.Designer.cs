@@ -134,14 +134,14 @@
             this.dtpFechaCambio.Name = "dtpFechaCambio";
             this.dtpFechaCambio.Size = new System.Drawing.Size(141, 20);
             this.dtpFechaCambio.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFechaCambio.TabIndex = 44;
+            this.dtpFechaCambio.TabIndex = 5;
             // 
             // txtGuiaRemision
             // 
             this.txtGuiaRemision.Location = new System.Drawing.Point(25, 152);
             this.txtGuiaRemision.Name = "txtGuiaRemision";
             this.txtGuiaRemision.Size = new System.Drawing.Size(148, 20);
-            this.txtGuiaRemision.TabIndex = 43;
+            this.txtGuiaRemision.TabIndex = 4;
             // 
             // label8
             // 
@@ -158,7 +158,7 @@
             this.txtCodigoLaptop.Location = new System.Drawing.Point(25, 94);
             this.txtCodigoLaptop.Name = "txtCodigoLaptop";
             this.txtCodigoLaptop.Size = new System.Drawing.Size(148, 20);
-            this.txtCodigoLaptop.TabIndex = 78;
+            this.txtCodigoLaptop.TabIndex = 1;
             this.txtCodigoLaptop.TextChanged += new System.EventHandler(this.txtCodigoLaptop_TextChanged);
             this.txtCodigoLaptop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoLaptop_KeyPress);
             // 
@@ -177,7 +177,7 @@
             this.txtNroTicket.Location = new System.Drawing.Point(381, 152);
             this.txtNroTicket.Name = "txtNroTicket";
             this.txtNroTicket.Size = new System.Drawing.Size(110, 20);
-            this.txtNroTicket.TabIndex = 80;
+            this.txtNroTicket.TabIndex = 6;
             // 
             // btnBuscar
             // 
@@ -238,7 +238,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
             this.txtCliente.Size = new System.Drawing.Size(269, 20);
-            this.txtCliente.TabIndex = 156;
+            this.txtCliente.TabIndex = 2;
             // 
             // txtRucDni
             // 
@@ -246,7 +246,7 @@
             this.txtRucDni.Name = "txtRucDni";
             this.txtRucDni.ReadOnly = true;
             this.txtRucDni.Size = new System.Drawing.Size(124, 20);
-            this.txtRucDni.TabIndex = 157;
+            this.txtRucDni.TabIndex = 3;
             // 
             // btnAgregarProducto
             // 
@@ -254,7 +254,7 @@
             this.btnAgregarProducto.Location = new System.Drawing.Point(543, 147);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
-            this.btnAgregarProducto.TabIndex = 166;
+            this.btnAgregarProducto.TabIndex = 7;
             this.btnAgregarProducto.Text = "Agregar Producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);

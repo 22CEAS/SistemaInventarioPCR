@@ -64,7 +64,7 @@
             this.btnSubirFactura.Location = new System.Drawing.Point(1021, 12);
             this.btnSubirFactura.Name = "btnSubirFactura";
             this.btnSubirFactura.Size = new System.Drawing.Size(75, 41);
-            this.btnSubirFactura.TabIndex = 58;
+            this.btnSubirFactura.TabIndex = 0;
             this.btnSubirFactura.Text = "Subir Factura";
             this.btnSubirFactura.UseVisualStyleBackColor = true;
             this.btnSubirFactura.Click += new System.EventHandler(this.btnSubirFactura_Click);
@@ -75,7 +75,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(1120, 12);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 41);
-            this.btnGrabar.TabIndex = 73;
+            this.btnGrabar.TabIndex = 1;
             this.btnGrabar.Text = "Grabar Factura";
             this.btnGrabar.UseVisualStyleBackColor = true;
             this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
@@ -86,7 +86,7 @@
             this.btnValidar.Location = new System.Drawing.Point(1224, 12);
             this.btnValidar.Name = "btnValidar";
             this.btnValidar.Size = new System.Drawing.Size(75, 41);
-            this.btnValidar.TabIndex = 74;
+            this.btnValidar.TabIndex = 2;
             this.btnValidar.Text = "Validar Factura";
             this.btnValidar.UseVisualStyleBackColor = true;
             this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);

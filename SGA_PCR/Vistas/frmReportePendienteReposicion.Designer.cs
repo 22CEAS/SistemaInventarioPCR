@@ -88,6 +88,8 @@
             // 
             // Cliente
             // 
+            this.Cliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cliente.AppearanceHeader.Options.UseBackColor = true;
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "Cliente";
             this.Cliente.MinWidth = 40;
@@ -99,6 +101,8 @@
             // 
             // RUC
             // 
+            this.RUC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RUC.AppearanceHeader.Options.UseBackColor = true;
             this.RUC.Caption = "RUC";
             this.RUC.FieldName = "RUC";
             this.RUC.MinWidth = 40;
@@ -109,6 +113,8 @@
             // 
             // CodigoLC
             // 
+            this.CodigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CodigoLC.AppearanceHeader.Options.UseBackColor = true;
             this.CodigoLC.Caption = "Código LC";
             this.CodigoLC.FieldName = "CodigoLC";
             this.CodigoLC.MinWidth = 40;
@@ -120,6 +126,8 @@
             // 
             // ObservaciónDeuda
             // 
+            this.ObservaciónDeuda.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ObservaciónDeuda.AppearanceHeader.Options.UseBackColor = true;
             this.ObservaciónDeuda.Caption = "Observación Deuda";
             this.ObservaciónDeuda.FieldName = "ObservacionDeuda";
             this.ObservaciónDeuda.MinWidth = 40;
@@ -131,6 +139,8 @@
             // 
             // GuiaLevantamiento
             // 
+            this.GuiaLevantamiento.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.GuiaLevantamiento.AppearanceHeader.Options.UseBackColor = true;
             this.GuiaLevantamiento.Caption = "Guia Levantamiento";
             this.GuiaLevantamiento.FieldName = "GuiaLevantamiento";
             this.GuiaLevantamiento.MinWidth = 40;
@@ -142,6 +152,8 @@
             // 
             // ObservacionLevantamiento
             // 
+            this.ObservacionLevantamiento.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ObservacionLevantamiento.AppearanceHeader.Options.UseBackColor = true;
             this.ObservacionLevantamiento.Caption = "Observación Levantamiento";
             this.ObservacionLevantamiento.FieldName = "ObservacionLevantamiento";
             this.ObservacionLevantamiento.MinWidth = 40;
@@ -153,6 +165,8 @@
             // 
             // FechaLevantamiento
             // 
+            this.FechaLevantamiento.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaLevantamiento.AppearanceHeader.Options.UseBackColor = true;
             this.FechaLevantamiento.Caption = "Fecha Levantamiento";
             this.FechaLevantamiento.FieldName = "FechaLevantamiento";
             this.FechaLevantamiento.MinWidth = 40;
@@ -164,6 +178,8 @@
             // 
             // Estado
             // 
+            this.Estado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Estado.AppearanceHeader.Options.UseBackColor = true;
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "Estado";
             this.Estado.MinWidth = 40;

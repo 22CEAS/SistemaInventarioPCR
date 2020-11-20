@@ -47,8 +47,8 @@
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SerieFabrica = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnExportar = new System.Windows.Forms.Button();
             this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -114,6 +114,8 @@
             // 
             // CodigoLC
             // 
+            this.CodigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CodigoLC.AppearanceHeader.Options.UseBackColor = true;
             this.CodigoLC.Caption = "Código LC";
             this.CodigoLC.FieldName = "Codigo";
             this.CodigoLC.MinWidth = 40;
@@ -124,6 +126,8 @@
             // 
             // Marca
             // 
+            this.Marca.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Marca.AppearanceHeader.Options.UseBackColor = true;
             this.Marca.Caption = "Marca";
             this.Marca.FieldName = "MarcaLC";
             this.Marca.MinWidth = 40;
@@ -134,6 +138,8 @@
             // 
             // Modelo
             // 
+            this.Modelo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Modelo.AppearanceHeader.Options.UseBackColor = true;
             this.Modelo.Caption = "Modelo";
             this.Modelo.FieldName = "NombreModeloLC";
             this.Modelo.MinWidth = 40;
@@ -144,6 +150,8 @@
             // 
             // Procesador
             // 
+            this.Procesador.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Procesador.AppearanceHeader.Options.UseBackColor = true;
             this.Procesador.Caption = "Procesador";
             this.Procesador.FieldName = "TipoProcesador";
             this.Procesador.MinWidth = 40;
@@ -154,6 +162,8 @@
             // 
             // Video
             // 
+            this.Video.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Video.AppearanceHeader.Options.UseBackColor = true;
             this.Video.Caption = "Video";
             this.Video.FieldName = "NombreModeloVideo";
             this.Video.MinWidth = 40;
@@ -162,6 +172,8 @@
             // 
             // CapacidadVideo
             // 
+            this.CapacidadVideo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CapacidadVideo.AppearanceHeader.Options.UseBackColor = true;
             this.CapacidadVideo.Caption = "Capacidad Video";
             this.CapacidadVideo.FieldName = "CapacidadVideo";
             this.CapacidadVideo.MinWidth = 40;
@@ -172,6 +184,8 @@
             // 
             // Disco1
             // 
+            this.Disco1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Disco1.AppearanceHeader.Options.UseBackColor = true;
             this.Disco1.Caption = "Disco1";
             this.Disco1.FieldName = "Disco1";
             this.Disco1.MinWidth = 40;
@@ -182,6 +196,8 @@
             // 
             // CapacidadDisco1
             // 
+            this.CapacidadDisco1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CapacidadDisco1.AppearanceHeader.Options.UseBackColor = true;
             this.CapacidadDisco1.Caption = "Capacidad Disco1";
             this.CapacidadDisco1.FieldName = "CapacidadDisco1";
             this.CapacidadDisco1.MinWidth = 40;
@@ -192,6 +208,8 @@
             // 
             // Disco2
             // 
+            this.Disco2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Disco2.AppearanceHeader.Options.UseBackColor = true;
             this.Disco2.Caption = "Disco2";
             this.Disco2.FieldName = "Disco2";
             this.Disco2.MinWidth = 40;
@@ -202,6 +220,8 @@
             // 
             // CapacidadDisco2
             // 
+            this.CapacidadDisco2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CapacidadDisco2.AppearanceHeader.Options.UseBackColor = true;
             this.CapacidadDisco2.Caption = "Capacidad Disco2";
             this.CapacidadDisco2.FieldName = "CapacidadDisco2";
             this.CapacidadDisco2.MinWidth = 40;
@@ -212,6 +232,8 @@
             // 
             // MemoriaRam
             // 
+            this.MemoriaRam.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.MemoriaRam.AppearanceHeader.Options.UseBackColor = true;
             this.MemoriaRam.Caption = "Memoria Ram";
             this.MemoriaRam.FieldName = "CapacidadMemoria";
             this.MemoriaRam.MinWidth = 40;
@@ -222,6 +244,8 @@
             // 
             // Estado
             // 
+            this.Estado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Estado.AppearanceHeader.Options.UseBackColor = true;
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "EstadoNombre";
             this.Estado.MinWidth = 40;
@@ -232,6 +256,8 @@
             // 
             // Cliente
             // 
+            this.Cliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cliente.AppearanceHeader.Options.UseBackColor = true;
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "Cliente";
             this.Cliente.MinWidth = 40;
@@ -242,6 +268,8 @@
             // 
             // Ubicacion
             // 
+            this.Ubicacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Ubicacion.AppearanceHeader.Options.UseBackColor = true;
             this.Ubicacion.Caption = "Ubicación";
             this.Ubicacion.FieldName = "Ubicacion";
             this.Ubicacion.MinWidth = 40;
@@ -252,6 +280,8 @@
             // 
             // SerieFabrica
             // 
+            this.SerieFabrica.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SerieFabrica.AppearanceHeader.Options.UseBackColor = true;
             this.SerieFabrica.Caption = "Serie Fabrica";
             this.SerieFabrica.FieldName = "SerieFabrica";
             this.SerieFabrica.MinWidth = 40;
@@ -259,6 +289,19 @@
             this.SerieFabrica.Visible = true;
             this.SerieFabrica.VisibleIndex = 13;
             this.SerieFabrica.Width = 150;
+            // 
+            // IdSalida
+            // 
+            this.IdSalida.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IdSalida.AppearanceHeader.Options.UseBackColor = true;
+            this.IdSalida.Caption = "Id Salida";
+            this.IdSalida.FieldName = "IdSalida";
+            this.IdSalida.MinWidth = 40;
+            this.IdSalida.Name = "IdSalida";
+            this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.IdSalida.Visible = true;
+            this.IdSalida.VisibleIndex = 14;
+            this.IdSalida.Width = 80;
             // 
             // btnExportar
             // 
@@ -279,17 +322,6 @@
             this.btnExportar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // IdSalida
-            // 
-            this.IdSalida.Caption = "Id Salida";
-            this.IdSalida.FieldName = "IdSalida";
-            this.IdSalida.MinWidth = 40;
-            this.IdSalida.Name = "IdSalida";
-            this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.IdSalida.Visible = true;
-            this.IdSalida.VisibleIndex = 14;
-            this.IdSalida.Width = 80;
             // 
             // frmReporteStocksLaptops
             // 

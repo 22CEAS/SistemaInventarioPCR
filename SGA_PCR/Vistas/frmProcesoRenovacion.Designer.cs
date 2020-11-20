@@ -55,7 +55,7 @@
             this.btnAgregarProducto.Location = new System.Drawing.Point(425, 88);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
-            this.btnAgregarProducto.TabIndex = 177;
+            this.btnAgregarProducto.TabIndex = 3;
             this.btnAgregarProducto.Text = "Agregar Producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
@@ -128,7 +128,7 @@
             this.cmbCliente.Location = new System.Drawing.Point(26, 35);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(349, 21);
-            this.cmbCliente.TabIndex = 168;
+            this.cmbCliente.TabIndex = 1;
             this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // labelX1
@@ -243,7 +243,7 @@
             this.txtReferencia.Location = new System.Drawing.Point(27, 88);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(170, 20);
-            this.txtReferencia.TabIndex = 160;
+            this.txtReferencia.TabIndex = 2;
             // 
             // btnBorrar
             // 

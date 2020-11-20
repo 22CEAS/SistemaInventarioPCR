@@ -120,14 +120,14 @@
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(141, 20);
             this.dtpFechaIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFechaIngreso.TabIndex = 20;
+            this.dtpFechaIngreso.TabIndex = 3;
             // 
             // txtNroGuia
             // 
             this.txtNroGuia.Location = new System.Drawing.Point(33, 143);
             this.txtNroGuia.Name = "txtNroGuia";
             this.txtNroGuia.Size = new System.Drawing.Size(170, 20);
-            this.txtNroGuia.TabIndex = 19;
+            this.txtNroGuia.TabIndex = 2;
             // 
             // dgvLaptopsSeleccionados
             // 
@@ -217,7 +217,7 @@
             this.cmbCliente.Location = new System.Drawing.Point(32, 90);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(349, 21);
-            this.cmbCliente.TabIndex = 138;
+            this.cmbCliente.TabIndex = 1;
             this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // btnBuscar
@@ -362,7 +362,7 @@
             this.btnAgregarProducto.Location = new System.Drawing.Point(431, 143);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
-            this.btnAgregarProducto.TabIndex = 156;
+            this.btnAgregarProducto.TabIndex = 4;
             this.btnAgregarProducto.Text = "Agregar Producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);

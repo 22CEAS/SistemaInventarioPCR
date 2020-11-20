@@ -103,6 +103,8 @@
             // 
             // Categoría
             // 
+            this.Categoría.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Categoría.AppearanceHeader.Options.UseBackColor = true;
             this.Categoría.Caption = "Categoría";
             this.Categoría.FieldName = "Categoria";
             this.Categoría.MinWidth = 40;
@@ -114,6 +116,8 @@
             // 
             // Marca
             // 
+            this.Marca.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Marca.AppearanceHeader.Options.UseBackColor = true;
             this.Marca.Caption = "Marca";
             this.Marca.FieldName = "Marca";
             this.Marca.MinWidth = 40;
@@ -125,6 +129,8 @@
             // 
             // Version
             // 
+            this.Version.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Version.AppearanceHeader.Options.UseBackColor = true;
             this.Version.Caption = "Versión";
             this.Version.FieldName = "Version";
             this.Version.MinWidth = 40;
@@ -136,6 +142,8 @@
             // 
             // Clave
             // 
+            this.Clave.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Clave.AppearanceHeader.Options.UseBackColor = true;
             this.Clave.Caption = "Clave";
             this.Clave.FieldName = "Clave";
             this.Clave.MinWidth = 40;
@@ -147,6 +155,8 @@
             // 
             // CodigoLC
             // 
+            this.CodigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CodigoLC.AppearanceHeader.Options.UseBackColor = true;
             this.CodigoLC.Caption = "Código LC";
             this.CodigoLC.FieldName = "CodigoLC";
             this.CodigoLC.MinWidth = 40;
@@ -158,6 +168,8 @@
             // 
             // Estado
             // 
+            this.Estado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Estado.AppearanceHeader.Options.UseBackColor = true;
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "NombreEstado";
             this.Estado.MinWidth = 40;
