@@ -1,6 +1,7 @@
 ﻿using AccesoDatos;
 using DevComponents.DotNetBar.SuperGrid;
 using Modelo;
+using SpreadsheetLight;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -195,6 +196,29 @@ namespace Apolo
             {
                 GC.Collect();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string pathFile = AppDomain.CurrentDomain.BaseDirectory + "miExcel.xlsx";
+
+            SLDocument oSLDocument = new SLDocument();
+
+            System.Data.DataTable dt = new System.Data.DataTable();
+
+            //columnas
+            dt.Columns.Add("Nombre", typeof(string));
+            dt.Columns.Add("Edad", typeof(int));
+            dt.Columns.Add("Sexo", typeof(string));
+
+            //registros , rows
+            dt.Rows.Add("Pepe", 19, "Hombre");
+            dt.Rows.Add("Ana", 20, "Mujer");
+            dt.Rows.Add("Perla", 30, "Mujer");
+
+            oSLDocument.ImportDataTable(1, 1, dt, true);
+
+            oSLDocument.SaveAs(pathFile);
         }
     }
 }

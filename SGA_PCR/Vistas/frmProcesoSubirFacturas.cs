@@ -71,6 +71,7 @@ namespace Apolo
                             fact.FechaPago = sl.GetCellValueAsDateTime(iRow, 1);
                             fact.TipoPago = sl.GetCellValueAsString(iRow, 2);
                             fact.CodigoLC = sl.GetCellValueAsString(iRow, 3);
+                            fact.Descripcion = sl.GetCellValueAsString(iRow, 4);
                             fact.FechaIniPago = sl.GetCellValueAsDateTime(iRow, 5);
                             fact.FechaFinPago = sl.GetCellValueAsDateTime(iRow, 6);
                             fact.RucDni = sl.GetCellValueAsString(iRow, 7);
@@ -82,11 +83,12 @@ namespace Apolo
                             fact.TotalDolares = sl.GetCellValueAsDouble(iRow, 13);
                             fact.TipoCambio = sl.GetCellValueAsDouble(iRow, 14);
                             fact.VentaSoles = sl.GetCellValueAsDouble(iRow, 15);
+                            fact.Proveedor = sl.GetCellValueAsString(iRow, 16);
                             fact.CostoSoles = sl.GetCellValueAsDouble(iRow, 17);
                             fact.CostoDolares = sl.GetCellValueAsDouble(iRow, 18);
-                            fact.CostoTotalSolesSinIGV = 0;
                             fact.UtilidadSoles = sl.GetCellValueAsDouble(iRow, 19);
                             fact.UtilidadDolares = sl.GetCellValueAsDouble(iRow, 20);
+                            fact.CostoTotalSolesSinIGV = 0;
                             fact.UtilidadTotalSolesSinIGV = 0;
 
                             facturas.Add(fact);
@@ -168,6 +170,39 @@ namespace Apolo
                             {
                                 if (facturaCV != f.NumeroFactura)
                                 {
+                                    if (facturaCV.Length == 0)
+                                    {
+                                        TimeSpan tSpan = f.FechaIniPago - fecIniContrato;
+                                        int numDiasTrans = tSpan.Days;
+                                        if (numDiasTrans != 0)
+                                        {
+                                            f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias entre la fecha Inicio del Plazo de Alquiler y la fecha inicial de la factura.";
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            if (flag == 2)//2 es grabar
+                                            {
+                                                facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                f.ObservacionXLevantar = "Se grabo correctamente la factura.";
+                                                if (fecFinContrato < f.FechaFinPago)
+                                                {
+                                                    facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
+                                                    f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
+                                                }
+                                            }
+                                            else
+                                            {
+                                                f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
+                                                if (fecFinContrato < f.FechaFinPago)
+                                                {
+                                                    f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
+                                                }
+                                            }
+
+                                            break;
+                                        }
+                                    }
                                     if (fecFinFacCV < f.FechaIniPago)
                                     {
                                         if (fecFinFacCV.ToString() == "31/12/1999 00:00:00")//es su primer ingreso

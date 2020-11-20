@@ -198,7 +198,9 @@ namespace Modelo
         public int IdModelo { get => Modelo.IdModelo; set => Modelo.IdModelo = value; }
         public string NombreModeloLC { get => Modelo.NombreModelo; set => Modelo.NombreModelo = value; }
         public int IdProcesador { get => Procesador.IdProcesador; set => Procesador.IdProcesador = value; }
+        public int IdTipoProcesador { get => Procesador.Modelo.IdModelo; set => Procesador.Modelo.IdModelo = value; }
         public string TipoProcesador { get => Procesador.Modelo.NombreModelo; set => Procesador.Modelo.NombreModelo = value; }
+        public int IdGeneracionProcesador { get => Procesador.IdGeneracion; set => Procesador.IdGeneracion = value; }
         public int GeneracionProcesador { get => Procesador.Generacion; set => Procesador.Generacion = value; }
         public int IdVideo { get => Video.IdVideo; set => Video.IdVideo = value; }
         public string NombreModeloVideo { get => Video.Modelo.NombreModelo; set => Video.Modelo.NombreModelo = value; }
