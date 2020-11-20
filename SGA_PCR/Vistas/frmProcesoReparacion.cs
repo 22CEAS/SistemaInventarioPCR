@@ -296,7 +296,7 @@ namespace Apolo
                         MessageBox.Show("Hubo error en Registrar la Reparacion, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
-                    MessageBox.Show("Se guradó la Reparacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guardó la Reparacion", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     reparacion.IdReparacion = idReparacion;
                     reparacionOld = new Reparacion(reparacion);
                     txtNroReparacion.Text = idReparacion.ToString();

@@ -29,6 +29,7 @@ namespace Apolo
 
         private int idUsuario;
         private string nombreUsuario = "CEAS";
+        //private string lap_mac=
 
         private string licenciaCategoriaSO = "S.O";
         private string licenciaCategoriaOffice = "OFFICE";
@@ -1346,6 +1347,7 @@ namespace Apolo
             {
                 if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                 {
+                    
                     int idIngreso = ingresoDA.InsertarIngreso(ingreso, this.nombreUsuario);
 
                     if (idIngreso == -1)

@@ -190,6 +190,9 @@ namespace Apolo
                                                     facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                     f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
                                                 }
+
+                                               
+                                                
                                             }
                                             else
                                             {

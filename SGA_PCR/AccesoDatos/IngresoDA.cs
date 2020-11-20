@@ -19,6 +19,8 @@ namespace AccesoDatos
         int IdCategoriaOffice = 13;
         int IdCategoriaAntivirus = 14;
 
+        private int idMarcaApple = 1;
+
         public IngresoDA()
         {
             objManager = new DBManager();
@@ -119,8 +121,18 @@ namespace AccesoDatos
                         parametrosEntrada_aux[2] = new MySqlParameter("@_proximoCodigo", MySqlDbType.Int32);
                         parametrosEntrada_aux[3] = new MySqlParameter("@_prefijo", MySqlDbType.VarChar, 80);
 
-                        parametrosEntrada_aux[0].Value = "PCR-LAP";
-                        parametrosEntrada_aux[1].Value = idProveedor;
+
+                        //! VALIDAR SI ES UNA LAP NORMAL O UNA MAC
+                        if (det.LaptopIdMarca == this.idMarcaApple) //APPLE  
+                        {
+                            parametrosEntrada_aux[0].Value = "PCR-MAC"; 
+                        }
+                        else
+                        {
+                            parametrosEntrada_aux[0].Value = "PCR-LAP";
+                        }
+
+                         parametrosEntrada_aux[1].Value = idProveedor;
                         //MessageBox.Show("ID DEL PROVEEDOR: "+idProveedor.ToString());
                         
 
@@ -130,6 +142,9 @@ namespace AccesoDatos
 
                         string aux = codigoSiguiente[0]; //CODIGO
                         string aux2 = codigoSiguiente[1]; //PREFIJO
+
+                        MessageBox.Show($"El siguiente codigo es el: {aux} {aux2}");
+
 
                         int codigoCorr = int.Parse(aux);
 
@@ -401,7 +416,7 @@ namespace AccesoDatos
 
                 //Aqui ira la recursividad
 
-                
+                //! AQUI PASAR TAMBIEN SI EL PCR-LAP O MAC
                 if (IngresosDetallesYAccesorios(ingreso, usuario , ingreso.IdProveedor) == -1) return -1;
             }
             return ingreso.IdIngreso;
@@ -443,7 +458,7 @@ namespace AccesoDatos
 
 
                 parametrosEntrada[0].Value = ingreso.IdIngreso;
-                parametrosEntrada[1].Value = det.LaptopIdMarca;
+                parametrosEntrada[1].Value = det.LaptopIdMarca; //MessageBox.Show(parametrosEntrada[1].Value.ToString());
                 parametrosEntrada[2].Value = det.LaptopIdModelo;
                 parametrosEntrada[3].Value = det.Laptop.PartNumber;
                 parametrosEntrada[4].Value = det.LaptopTamanoPantalla;
