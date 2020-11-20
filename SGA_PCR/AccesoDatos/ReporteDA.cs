@@ -104,5 +104,14 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * from vista_licencia_lista;");
         }
 
+        public DataTable tablaProcesadoresModelos(int id)
+        {
+            return objManager.MostrarTablaDatos("Select mo.* From modelo mo inner join marca ma on mo.idMarca=ma.idMarca where ma.idCategoria="+ id+" ; ");
+        }
+        public DataTable tablaProcesadoresGeneracion(string descripcion)
+        {
+            return objManager.MostrarTablaDatos("Select * From auxiliar where cod_tabla = '"+ descripcion+"' order by (0 + descripcion);");
+        }
+
     }
 }

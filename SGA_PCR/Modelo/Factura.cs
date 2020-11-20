@@ -13,6 +13,7 @@ namespace Modelo
         private DateTime fechaPago;
         private string tipoPago;
         private string codigoLC;
+        private string descripcion;
         private int idLC;
         private DateTime fechaIniPago;
         private DateTime fechaFinPago;
@@ -25,6 +26,7 @@ namespace Modelo
         private Double totalDolares;
         private Double tipoCambio;
         private Double ventaSoles;
+        private string proveedor;
         private Double costoSoles;
         private Double costoDolares;
         private Double costoTotalSolesSinIGV;
@@ -57,5 +59,7 @@ namespace Modelo
         public int IdSalida { get => idSalida; set => idSalida = value; }
         public string ObservacionXLevantar { get => observacionXLevantar; set => observacionXLevantar = value; }
         public int IdLC { get => idLC; set => idLC = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public string Proveedor { get => proveedor; set => proveedor = value; }
     }
 }

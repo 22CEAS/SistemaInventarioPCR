@@ -36,6 +36,7 @@
             this.FechaPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TipoPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Descripcion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaIniPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinPago = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RucDni = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,11 +50,10 @@
             this.VentaSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CostoTotalSolesSinIGV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UtilidadSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UtilidadDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.UtilidadTotalSolesSinIGV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ObservacionXLevantar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Proveedor = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +118,7 @@
             this.FechaPago,
             this.TipoPago,
             this.CodigoLC,
+            this.Descripcion,
             this.FechaIniPago,
             this.FechaFinPago,
             this.RucDni,
@@ -129,12 +130,11 @@
             this.TotalDolares,
             this.TipoCambio,
             this.VentaSoles,
+            this.Proveedor,
             this.CostoSoles,
             this.CostoDolares,
-            this.CostoTotalSolesSinIGV,
             this.UtilidadSoles,
             this.UtilidadDolares,
-            this.UtilidadTotalSolesSinIGV,
             this.ObservacionXLevantar});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
@@ -174,6 +174,17 @@
             this.CodigoLC.VisibleIndex = 2;
             this.CodigoLC.Width = 100;
             // 
+            // Descripcion
+            // 
+            this.Descripcion.Caption = "Descripción";
+            this.Descripcion.FieldName = "Descripcion";
+            this.Descripcion.MinWidth = 100;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Descripcion.Visible = true;
+            this.Descripcion.VisibleIndex = 3;
+            this.Descripcion.Width = 100;
+            // 
             // FechaIniPago
             // 
             this.FechaIniPago.Caption = "FechaIniPago";
@@ -182,7 +193,7 @@
             this.FechaIniPago.Name = "FechaIniPago";
             this.FechaIniPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.FechaIniPago.Visible = true;
-            this.FechaIniPago.VisibleIndex = 3;
+            this.FechaIniPago.VisibleIndex = 4;
             this.FechaIniPago.Width = 100;
             // 
             // FechaFinPago
@@ -193,7 +204,7 @@
             this.FechaFinPago.Name = "FechaFinPago";
             this.FechaFinPago.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.FechaFinPago.Visible = true;
-            this.FechaFinPago.VisibleIndex = 4;
+            this.FechaFinPago.VisibleIndex = 5;
             this.FechaFinPago.Width = 100;
             // 
             // RucDni
@@ -204,7 +215,7 @@
             this.RucDni.Name = "RucDni";
             this.RucDni.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RucDni.Visible = true;
-            this.RucDni.VisibleIndex = 5;
+            this.RucDni.VisibleIndex = 6;
             this.RucDni.Width = 100;
             // 
             // RazonSocial
@@ -215,7 +226,7 @@
             this.RazonSocial.Name = "RazonSocial";
             this.RazonSocial.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.RazonSocial.Visible = true;
-            this.RazonSocial.VisibleIndex = 6;
+            this.RazonSocial.VisibleIndex = 7;
             this.RazonSocial.Width = 100;
             // 
             // NumeroOC
@@ -226,7 +237,7 @@
             this.NumeroOC.Name = "NumeroOC";
             this.NumeroOC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NumeroOC.Visible = true;
-            this.NumeroOC.VisibleIndex = 7;
+            this.NumeroOC.VisibleIndex = 8;
             this.NumeroOC.Width = 100;
             // 
             // NumeroDocRef
@@ -237,7 +248,7 @@
             this.NumeroDocRef.Name = "NumeroDocRef";
             this.NumeroDocRef.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NumeroDocRef.Visible = true;
-            this.NumeroDocRef.VisibleIndex = 8;
+            this.NumeroDocRef.VisibleIndex = 9;
             this.NumeroDocRef.Width = 100;
             // 
             // NumeroFactura
@@ -248,7 +259,7 @@
             this.NumeroFactura.Name = "NumeroFactura";
             this.NumeroFactura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NumeroFactura.Visible = true;
-            this.NumeroFactura.VisibleIndex = 9;
+            this.NumeroFactura.VisibleIndex = 10;
             this.NumeroFactura.Width = 100;
             // 
             // TotalSoles
@@ -259,7 +270,7 @@
             this.TotalSoles.Name = "TotalSoles";
             this.TotalSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TotalSoles.Visible = true;
-            this.TotalSoles.VisibleIndex = 10;
+            this.TotalSoles.VisibleIndex = 11;
             this.TotalSoles.Width = 100;
             // 
             // TotalDolares
@@ -270,7 +281,7 @@
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 11;
+            this.TotalDolares.VisibleIndex = 12;
             this.TotalDolares.Width = 100;
             // 
             // TipoCambio
@@ -281,7 +292,7 @@
             this.TipoCambio.Name = "TipoCambio";
             this.TipoCambio.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoCambio.Visible = true;
-            this.TipoCambio.VisibleIndex = 12;
+            this.TipoCambio.VisibleIndex = 13;
             this.TipoCambio.Width = 100;
             // 
             // VentaSoles
@@ -292,7 +303,7 @@
             this.VentaSoles.Name = "VentaSoles";
             this.VentaSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.VentaSoles.Visible = true;
-            this.VentaSoles.VisibleIndex = 13;
+            this.VentaSoles.VisibleIndex = 14;
             this.VentaSoles.Width = 100;
             // 
             // CostoSoles
@@ -303,7 +314,7 @@
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 14;
+            this.CostoSoles.VisibleIndex = 16;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -314,19 +325,8 @@
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 15;
+            this.CostoDolares.VisibleIndex = 17;
             this.CostoDolares.Width = 100;
-            // 
-            // CostoTotalSolesSinIGV
-            // 
-            this.CostoTotalSolesSinIGV.Caption = "CostoTotalSolesSinIGV";
-            this.CostoTotalSolesSinIGV.FieldName = "CostoTotalSolesSinIGV";
-            this.CostoTotalSolesSinIGV.MinWidth = 100;
-            this.CostoTotalSolesSinIGV.Name = "CostoTotalSolesSinIGV";
-            this.CostoTotalSolesSinIGV.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.CostoTotalSolesSinIGV.Visible = true;
-            this.CostoTotalSolesSinIGV.VisibleIndex = 16;
-            this.CostoTotalSolesSinIGV.Width = 100;
             // 
             // UtilidadSoles
             // 
@@ -336,7 +336,7 @@
             this.UtilidadSoles.Name = "UtilidadSoles";
             this.UtilidadSoles.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.UtilidadSoles.Visible = true;
-            this.UtilidadSoles.VisibleIndex = 17;
+            this.UtilidadSoles.VisibleIndex = 18;
             this.UtilidadSoles.Width = 100;
             // 
             // UtilidadDolares
@@ -347,19 +347,8 @@
             this.UtilidadDolares.Name = "UtilidadDolares";
             this.UtilidadDolares.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.UtilidadDolares.Visible = true;
-            this.UtilidadDolares.VisibleIndex = 18;
+            this.UtilidadDolares.VisibleIndex = 19;
             this.UtilidadDolares.Width = 100;
-            // 
-            // UtilidadTotalSolesSinIGV
-            // 
-            this.UtilidadTotalSolesSinIGV.Caption = "UtilidadTotalSolesSinIGV";
-            this.UtilidadTotalSolesSinIGV.FieldName = "UtilidadTotalSolesSinIGV";
-            this.UtilidadTotalSolesSinIGV.MinWidth = 100;
-            this.UtilidadTotalSolesSinIGV.Name = "UtilidadTotalSolesSinIGV";
-            this.UtilidadTotalSolesSinIGV.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.UtilidadTotalSolesSinIGV.Visible = true;
-            this.UtilidadTotalSolesSinIGV.VisibleIndex = 19;
-            this.UtilidadTotalSolesSinIGV.Width = 100;
             // 
             // ObservacionXLevantar
             // 
@@ -371,6 +360,17 @@
             this.ObservacionXLevantar.Visible = true;
             this.ObservacionXLevantar.VisibleIndex = 20;
             this.ObservacionXLevantar.Width = 300;
+            // 
+            // Proveedor
+            // 
+            this.Proveedor.Caption = "Proveedor";
+            this.Proveedor.FieldName = "Proveedor";
+            this.Proveedor.MinWidth = 100;
+            this.Proveedor.Name = "Proveedor";
+            this.Proveedor.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Proveedor.Visible = true;
+            this.Proveedor.VisibleIndex = 15;
+            this.Proveedor.Width = 100;
             // 
             // frmProcesoSubirFacturas
             // 
@@ -418,10 +418,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn VentaSoles;
         private DevExpress.XtraGrid.Columns.GridColumn CostoSoles;
         private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
-        private DevExpress.XtraGrid.Columns.GridColumn CostoTotalSolesSinIGV;
         private DevExpress.XtraGrid.Columns.GridColumn UtilidadSoles;
         private DevExpress.XtraGrid.Columns.GridColumn UtilidadDolares;
-        private DevExpress.XtraGrid.Columns.GridColumn UtilidadTotalSolesSinIGV;
         private DevExpress.XtraGrid.Columns.GridColumn ObservacionXLevantar;
+        private DevExpress.XtraGrid.Columns.GridColumn Descripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn Proveedor;
     }
 }
