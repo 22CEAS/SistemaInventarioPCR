@@ -1325,7 +1325,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPartNumber;
-        private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbModelo;
         private System.Windows.Forms.Label label4;
@@ -1381,5 +1380,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtProcesadorSeleccionado;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox cmbMarca;
     }
 }
