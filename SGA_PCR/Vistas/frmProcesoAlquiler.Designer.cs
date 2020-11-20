@@ -126,7 +126,7 @@
             this.btnAgregarProducto.Location = new System.Drawing.Point(973, 145);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
-            this.btnAgregarProducto.TabIndex = 26;
+            this.btnAgregarProducto.TabIndex = 8;
             this.btnAgregarProducto.Text = "Agregar Producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
             this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
@@ -184,7 +184,7 @@
             this.dtpFechaTraslado.Name = "dtpFechaTraslado";
             this.dtpFechaTraslado.Size = new System.Drawing.Size(115, 20);
             this.dtpFechaTraslado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFechaTraslado.TabIndex = 20;
+            this.dtpFechaTraslado.TabIndex = 1;
             // 
             // txtNroDocumento
             // 
@@ -247,7 +247,7 @@
             this.dtpIniPlazo.Name = "dtpIniPlazo";
             this.dtpIniPlazo.Size = new System.Drawing.Size(123, 20);
             this.dtpIniPlazo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpIniPlazo.TabIndex = 34;
+            this.dtpIniPlazo.TabIndex = 2;
             this.dtpIniPlazo.ValueChanged += new System.EventHandler(this.dtpIniPlazo_ValueChanged);
             // 
             // label8
@@ -311,7 +311,7 @@
             this.dtpFinPlazo.Name = "dtpFinPlazo";
             this.dtpFinPlazo.Size = new System.Drawing.Size(113, 20);
             this.dtpFinPlazo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFinPlazo.TabIndex = 41;
+            this.dtpFinPlazo.TabIndex = 3;
             this.dtpFinPlazo.ValueChanged += new System.EventHandler(this.dtpFinPlazo_ValueChanged);
             // 
             // label11
@@ -549,7 +549,7 @@
             this.txtNroContrato.Location = new System.Drawing.Point(693, 151);
             this.txtNroContrato.Name = "txtNroContrato";
             this.txtNroContrato.Size = new System.Drawing.Size(85, 20);
-            this.txtNroContrato.TabIndex = 55;
+            this.txtNroContrato.TabIndex = 6;
             // 
             // labelX2
             // 
@@ -571,7 +571,7 @@
             this.txtNroOC.Location = new System.Drawing.Point(837, 153);
             this.txtNroOC.Name = "txtNroOC";
             this.txtNroOC.Size = new System.Drawing.Size(85, 20);
-            this.txtNroOC.TabIndex = 57;
+            this.txtNroOC.TabIndex = 7;
             // 
             // cmbCliente
             // 
@@ -582,7 +582,7 @@
             this.cmbCliente.Location = new System.Drawing.Point(112, 110);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(466, 21);
-            this.cmbCliente.TabIndex = 132;
+            this.cmbCliente.TabIndex = 4;
             this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // dgvLaptopsSeleccionados
@@ -683,7 +683,7 @@
             this.cmbSucursal.Location = new System.Drawing.Point(112, 149);
             this.cmbSucursal.Name = "cmbSucursal";
             this.cmbSucursal.Size = new System.Drawing.Size(466, 21);
-            this.cmbSucursal.TabIndex = 135;
+            this.cmbSucursal.TabIndex = 5;
             // 
             // btnGuardarMemoria
             // 

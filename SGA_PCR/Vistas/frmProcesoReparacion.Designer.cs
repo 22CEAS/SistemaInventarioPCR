@@ -96,7 +96,7 @@
             this.dtpFecReparacion.Name = "dtpFecReparacion";
             this.dtpFecReparacion.Size = new System.Drawing.Size(165, 22);
             this.dtpFecReparacion.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFecReparacion.TabIndex = 42;
+            this.dtpFecReparacion.TabIndex = 1;
             // 
             // label15
             // 
@@ -264,7 +264,7 @@
             this.cmbEstado.Location = new System.Drawing.Point(496, 113);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(167, 24);
-            this.cmbEstado.TabIndex = 187;
+            this.cmbEstado.TabIndex = 2;
             // 
             // txtDescripcion
             // 
@@ -273,14 +273,14 @@
             this.txtDescripcion.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Properties.Appearance.Options.UseFont = true;
             this.txtDescripcion.Size = new System.Drawing.Size(615, 83);
-            this.txtDescripcion.TabIndex = 189;
+            this.txtDescripcion.TabIndex = 4;
             // 
             // txtObservacion
             // 
             this.txtObservacion.Location = new System.Drawing.Point(41, 183);
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(615, 83);
-            this.txtObservacion.TabIndex = 190;
+            this.txtObservacion.TabIndex = 3;
             // 
             // btnBuscar
             // 
@@ -329,7 +329,7 @@
             this.cmbEquipo.Location = new System.Drawing.Point(41, 113);
             this.cmbEquipo.Name = "cmbEquipo";
             this.cmbEquipo.Size = new System.Drawing.Size(177, 24);
-            this.cmbEquipo.TabIndex = 194;
+            this.cmbEquipo.TabIndex = 0;
             // 
             // frmProcesoReparacion
             // 

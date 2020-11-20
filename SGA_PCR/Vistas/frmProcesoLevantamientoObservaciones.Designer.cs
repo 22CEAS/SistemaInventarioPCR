@@ -82,7 +82,7 @@
             this.btnAgregarObservacion.Location = new System.Drawing.Point(422, 137);
             this.btnAgregarObservacion.Name = "btnAgregarObservacion";
             this.btnAgregarObservacion.Size = new System.Drawing.Size(166, 29);
-            this.btnAgregarObservacion.TabIndex = 177;
+            this.btnAgregarObservacion.TabIndex = 3;
             this.btnAgregarObservacion.Text = "Agregar Observacion";
             this.btnAgregarObservacion.UseVisualStyleBackColor = true;
             this.btnAgregarObservacion.Click += new System.EventHandler(this.btnAgregarObservacion_Click);
@@ -179,7 +179,7 @@
             this.btnGrabar.Location = new System.Drawing.Point(560, 326);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(94, 64);
-            this.btnGrabar.TabIndex = 172;
+            this.btnGrabar.TabIndex = 6;
             this.btnGrabar.Text = "Grabar";
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGrabar.UseVisualStyleBackColor = false;
@@ -232,7 +232,7 @@
             this.cmbCliente.Location = new System.Drawing.Point(23, 93);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(349, 21);
-            this.cmbCliente.TabIndex = 168;
+            this.cmbCliente.TabIndex = 0;
             this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // labelX1
@@ -321,14 +321,14 @@
             this.dtpFechaIngreso.Name = "dtpFechaIngreso";
             this.dtpFechaIngreso.Size = new System.Drawing.Size(141, 20);
             this.dtpFechaIngreso.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dtpFechaIngreso.TabIndex = 161;
+            this.dtpFechaIngreso.TabIndex = 2;
             // 
             // txtNroGuia
             // 
             this.txtNroGuia.Location = new System.Drawing.Point(24, 146);
             this.txtNroGuia.Name = "txtNroGuia";
             this.txtNroGuia.Size = new System.Drawing.Size(170, 20);
-            this.txtNroGuia.TabIndex = 160;
+            this.txtNroGuia.TabIndex = 1;
             // 
             // txtObservacionDeuda
             // 
@@ -336,14 +336,14 @@
             this.txtObservacionDeuda.Name = "txtObservacionDeuda";
             this.txtObservacionDeuda.Properties.ReadOnly = true;
             this.txtObservacionDeuda.Size = new System.Drawing.Size(528, 167);
-            this.txtObservacionDeuda.TabIndex = 191;
+            this.txtObservacionDeuda.TabIndex = 4;
             // 
             // txtObservacionLevantamiento
             // 
             this.txtObservacionLevantamiento.Location = new System.Drawing.Point(24, 437);
             this.txtObservacionLevantamiento.Name = "txtObservacionLevantamiento";
             this.txtObservacionLevantamiento.Size = new System.Drawing.Size(528, 192);
-            this.txtObservacionLevantamiento.TabIndex = 192;
+            this.txtObservacionLevantamiento.TabIndex = 5;
             // 
             // label2
             // 

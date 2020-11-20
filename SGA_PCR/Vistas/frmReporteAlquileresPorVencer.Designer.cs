@@ -102,6 +102,8 @@
             // 
             // Cliente
             // 
+            this.Cliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cliente.AppearanceHeader.Options.UseBackColor = true;
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "Cliente";
             this.Cliente.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
@@ -114,6 +116,8 @@
             // 
             // Contacto
             // 
+            this.Contacto.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Contacto.AppearanceHeader.Options.UseBackColor = true;
             this.Contacto.Caption = "Contacto";
             this.Contacto.FieldName = "Contacto";
             this.Contacto.MinWidth = 40;
@@ -123,6 +127,8 @@
             // 
             // Direccion
             // 
+            this.Direccion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Direccion.AppearanceHeader.Options.UseBackColor = true;
             this.Direccion.Caption = "Direccion";
             this.Direccion.FieldName = "DireccionCliente";
             this.Direccion.MinWidth = 40;
@@ -132,6 +138,8 @@
             // 
             // Codigo
             // 
+            this.Codigo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Codigo.AppearanceHeader.Options.UseBackColor = true;
             this.Codigo.Caption = "Código LC";
             this.Codigo.FieldName = "Codigo";
             this.Codigo.MinWidth = 40;
@@ -143,6 +151,8 @@
             // 
             // GuiaSalida
             // 
+            this.GuiaSalida.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.GuiaSalida.AppearanceHeader.Options.UseBackColor = true;
             this.GuiaSalida.Caption = "Guía Salida";
             this.GuiaSalida.FieldName = "GuiaSalida";
             this.GuiaSalida.MinWidth = 40;
@@ -154,6 +164,8 @@
             // 
             // Marca
             // 
+            this.Marca.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Marca.AppearanceHeader.Options.UseBackColor = true;
             this.Marca.Caption = "Marca";
             this.Marca.FieldName = "MarcaLC";
             this.Marca.MinWidth = 40;
@@ -165,6 +177,8 @@
             // 
             // Modelo
             // 
+            this.Modelo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Modelo.AppearanceHeader.Options.UseBackColor = true;
             this.Modelo.Caption = "Modelo";
             this.Modelo.FieldName = "NombreModeloLC";
             this.Modelo.MinWidth = 40;
@@ -175,6 +189,8 @@
             // 
             // Pantalla
             // 
+            this.Pantalla.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Pantalla.AppearanceHeader.Options.UseBackColor = true;
             this.Pantalla.Caption = "Pantalla";
             this.Pantalla.FieldName = "TamanoPantalla";
             this.Pantalla.MinWidth = 40;
@@ -186,6 +202,8 @@
             // 
             // Procesador
             // 
+            this.Procesador.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Procesador.AppearanceHeader.Options.UseBackColor = true;
             this.Procesador.Caption = "Procesador";
             this.Procesador.FieldName = "TipoProcesador";
             this.Procesador.MinWidth = 40;
@@ -197,6 +215,8 @@
             // 
             // Generacion
             // 
+            this.Generacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Generacion.AppearanceHeader.Options.UseBackColor = true;
             this.Generacion.Caption = "Generación";
             this.Generacion.FieldName = "GeneracionProcesador";
             this.Generacion.MinWidth = 40;
@@ -207,6 +227,8 @@
             // 
             // Video
             // 
+            this.Video.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Video.AppearanceHeader.Options.UseBackColor = true;
             this.Video.Caption = "Video";
             this.Video.FieldName = "NombreModeloVideo";
             this.Video.MinWidth = 40;
@@ -215,6 +237,8 @@
             // 
             // Capacidad
             // 
+            this.Capacidad.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Capacidad.AppearanceHeader.Options.UseBackColor = true;
             this.Capacidad.Caption = "Capacidad Video";
             this.Capacidad.FieldName = "CapacidadVideo";
             this.Capacidad.MinWidth = 40;
@@ -225,6 +249,8 @@
             // 
             // CodigoAntiguo
             // 
+            this.CodigoAntiguo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CodigoAntiguo.AppearanceHeader.Options.UseBackColor = true;
             this.CodigoAntiguo.Caption = "Código Antiguo";
             this.CodigoAntiguo.FieldName = "CodigoAntiguo";
             this.CodigoAntiguo.MinWidth = 40;
@@ -236,6 +262,8 @@
             // 
             // fecIniContrato
             // 
+            this.fecIniContrato.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.fecIniContrato.AppearanceHeader.Options.UseBackColor = true;
             this.fecIniContrato.Caption = "Inicio Plazo Alquiler";
             this.fecIniContrato.FieldName = "fecIniContrato";
             this.fecIniContrato.MinWidth = 40;
@@ -247,6 +275,8 @@
             // 
             // fecFinContrato
             // 
+            this.fecFinContrato.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.fecFinContrato.AppearanceHeader.Options.UseBackColor = true;
             this.fecFinContrato.Caption = "Fin Plazo Alquiler";
             this.fecFinContrato.FieldName = "fecFinContrato";
             this.fecFinContrato.MinWidth = 40;

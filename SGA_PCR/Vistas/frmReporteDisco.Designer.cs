@@ -81,6 +81,8 @@
             // 
             // TipoDisco
             // 
+            this.TipoDisco.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TipoDisco.AppearanceHeader.Options.UseBackColor = true;
             this.TipoDisco.Caption = "TipoDisco";
             this.TipoDisco.FieldName = "TipoDisco";
             this.TipoDisco.MinWidth = 40;
@@ -92,6 +94,8 @@
             // 
             // Tamano
             // 
+            this.Tamano.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Tamano.AppearanceHeader.Options.UseBackColor = true;
             this.Tamano.Caption = "Tamano";
             this.Tamano.FieldName = "Tamano";
             this.Tamano.MinWidth = 40;
@@ -103,6 +107,8 @@
             // 
             // Capacidad
             // 
+            this.Capacidad.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Capacidad.AppearanceHeader.Options.UseBackColor = true;
             this.Capacidad.Caption = "Capacidad";
             this.Capacidad.FieldName = "Capacidad";
             this.Capacidad.MinWidth = 40;
@@ -114,6 +120,8 @@
             // 
             // Cantidad
             // 
+            this.Cantidad.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cantidad.AppearanceHeader.Options.UseBackColor = true;
             this.Cantidad.Caption = "Cantidad";
             this.Cantidad.FieldName = "Cantidad";
             this.Cantidad.MinWidth = 40;
@@ -125,6 +133,8 @@
             // 
             // Estado
             // 
+            this.Estado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Estado.AppearanceHeader.Options.UseBackColor = true;
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "Estado";
             this.Estado.MinWidth = 40;

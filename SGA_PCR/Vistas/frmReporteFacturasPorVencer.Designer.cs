@@ -114,6 +114,8 @@
             // 
             // Cliente
             // 
+            this.Cliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cliente.AppearanceHeader.Options.UseBackColor = true;
             this.Cliente.Caption = "Cliente";
             this.Cliente.FieldName = "cliente";
             this.Cliente.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
@@ -126,6 +128,8 @@
             // 
             // FechaInicioContrato
             // 
+            this.FechaInicioContrato.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaInicioContrato.AppearanceHeader.Options.UseBackColor = true;
             this.FechaInicioContrato.Caption = "Inicio Plazo Alquiler";
             this.FechaInicioContrato.FieldName = "fecIniPlazoAlquiler";
             this.FechaInicioContrato.MinWidth = 40;
@@ -137,6 +141,8 @@
             // 
             // FechaFinContrato
             // 
+            this.FechaFinContrato.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaFinContrato.AppearanceHeader.Options.UseBackColor = true;
             this.FechaFinContrato.Caption = "Fin Plazo Alquiler";
             this.FechaFinContrato.FieldName = "fecFinPlazoAlquiler";
             this.FechaFinContrato.MinWidth = 40;
@@ -148,6 +154,8 @@
             // 
             // Factura
             // 
+            this.Factura.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Factura.AppearanceHeader.Options.UseBackColor = true;
             this.Factura.Caption = "Factura";
             this.Factura.FieldName = "factura";
             this.Factura.MinWidth = 40;
@@ -159,6 +167,8 @@
             // 
             // FechaInicioFactura
             // 
+            this.FechaInicioFactura.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaInicioFactura.AppearanceHeader.Options.UseBackColor = true;
             this.FechaInicioFactura.Caption = "Fecha Inicio Factura";
             this.FechaInicioFactura.FieldName = "fecInicioFactura";
             this.FechaInicioFactura.MinWidth = 40;
@@ -170,6 +180,8 @@
             // 
             // FechaFinFactura
             // 
+            this.FechaFinFactura.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaFinFactura.AppearanceHeader.Options.UseBackColor = true;
             this.FechaFinFactura.Caption = "Fecha Fin Factura";
             this.FechaFinFactura.FieldName = "fecFinFactura";
             this.FechaFinFactura.MinWidth = 40;
@@ -181,6 +193,8 @@
             // 
             // CódigoLC
             // 
+            this.CódigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CódigoLC.AppearanceHeader.Options.UseBackColor = true;
             this.CódigoLC.Caption = "Código LC";
             this.CódigoLC.FieldName = "codigoEquipo";
             this.CódigoLC.MinWidth = 40;
@@ -192,6 +206,8 @@
             // 
             // Guía
             // 
+            this.Guía.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Guía.AppearanceHeader.Options.UseBackColor = true;
             this.Guía.Caption = "Guía";
             this.Guía.FieldName = "guia";
             this.Guía.MinWidth = 40;
@@ -203,6 +219,8 @@
             // 
             // CodigoAntiguo
             // 
+            this.CodigoAntiguo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CodigoAntiguo.AppearanceHeader.Options.UseBackColor = true;
             this.CodigoAntiguo.Caption = "Código Antiguo";
             this.CodigoAntiguo.FieldName = "CodigoAntiguo";
             this.CodigoAntiguo.MinWidth = 40;
@@ -214,6 +232,8 @@
             // 
             // DíasAntesVencer
             // 
+            this.DíasAntesVencer.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DíasAntesVencer.AppearanceHeader.Options.UseBackColor = true;
             this.DíasAntesVencer.Caption = "Días Antes Vencer";
             this.DíasAntesVencer.FieldName = "diasAntesVencer";
             this.DíasAntesVencer.MinWidth = 40;
@@ -225,6 +245,8 @@
             // 
             // KAM
             // 
+            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.KAM.AppearanceHeader.Options.UseBackColor = true;
             this.KAM.Caption = "KAM";
             this.KAM.FieldName = "KAM";
             this.KAM.MinWidth = 40;

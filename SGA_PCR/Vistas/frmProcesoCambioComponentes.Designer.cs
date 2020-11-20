@@ -102,7 +102,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(37, 39);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(180, 20);
-            this.txtCodigo.TabIndex = 80;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // label2
@@ -121,7 +121,7 @@
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.ReadOnly = true;
             this.txtModelo.Size = new System.Drawing.Size(180, 20);
-            this.txtModelo.TabIndex = 84;
+            this.txtModelo.TabIndex = 1;
             // 
             // label3
             // 
@@ -139,7 +139,7 @@
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(180, 20);
-            this.txtMarca.TabIndex = 86;
+            this.txtMarca.TabIndex = 2;
             // 
             // label4
             // 
@@ -157,7 +157,7 @@
             this.txtProcesadorGeneracion.Name = "txtProcesadorGeneracion";
             this.txtProcesadorGeneracion.ReadOnly = true;
             this.txtProcesadorGeneracion.Size = new System.Drawing.Size(180, 20);
-            this.txtProcesadorGeneracion.TabIndex = 92;
+            this.txtProcesadorGeneracion.TabIndex = 5;
             // 
             // label5
             // 
@@ -175,7 +175,7 @@
             this.txtProcesador.Name = "txtProcesador";
             this.txtProcesador.ReadOnly = true;
             this.txtProcesador.Size = new System.Drawing.Size(179, 20);
-            this.txtProcesador.TabIndex = 90;
+            this.txtProcesador.TabIndex = 4;
             // 
             // label6
             // 
@@ -193,7 +193,7 @@
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.ReadOnly = true;
             this.txtPantalla.Size = new System.Drawing.Size(180, 20);
-            this.txtPantalla.TabIndex = 88;
+            this.txtPantalla.TabIndex = 3;
             // 
             // btnAgregarLicencia
             // 
@@ -201,7 +201,7 @@
             this.btnAgregarLicencia.Location = new System.Drawing.Point(684, 364);
             this.btnAgregarLicencia.Name = "btnAgregarLicencia";
             this.btnAgregarLicencia.Size = new System.Drawing.Size(69, 25);
-            this.btnAgregarLicencia.TabIndex = 156;
+            this.btnAgregarLicencia.TabIndex = 14;
             this.btnAgregarLicencia.Text = "Agregar";
             this.btnAgregarLicencia.UseVisualStyleBackColor = true;
             this.btnAgregarLicencia.Click += new System.EventHandler(this.btnAgregarLicencia_Click);
@@ -212,7 +212,7 @@
             this.btnCaducidadLicencia.Location = new System.Drawing.Point(684, 437);
             this.btnCaducidadLicencia.Name = "btnCaducidadLicencia";
             this.btnCaducidadLicencia.Size = new System.Drawing.Size(69, 25);
-            this.btnCaducidadLicencia.TabIndex = 155;
+            this.btnCaducidadLicencia.TabIndex = 16;
             this.btnCaducidadLicencia.Text = "Caducidad";
             this.btnCaducidadLicencia.UseVisualStyleBackColor = true;
             this.btnCaducidadLicencia.Click += new System.EventHandler(this.btnCaducidadLicencia_Click);
@@ -223,7 +223,7 @@
             this.btnAgregarDisco.Location = new System.Drawing.Point(684, 194);
             this.btnAgregarDisco.Name = "btnAgregarDisco";
             this.btnAgregarDisco.Size = new System.Drawing.Size(69, 25);
-            this.btnAgregarDisco.TabIndex = 154;
+            this.btnAgregarDisco.TabIndex = 11;
             this.btnAgregarDisco.Text = "Agregar";
             this.btnAgregarDisco.UseVisualStyleBackColor = true;
             this.btnAgregarDisco.Click += new System.EventHandler(this.btnAgregarDisco_Click);
@@ -234,7 +234,7 @@
             this.btnGuardarDisco.Location = new System.Drawing.Point(684, 267);
             this.btnGuardarDisco.Name = "btnGuardarDisco";
             this.btnGuardarDisco.Size = new System.Drawing.Size(69, 25);
-            this.btnGuardarDisco.TabIndex = 153;
+            this.btnGuardarDisco.TabIndex = 13;
             this.btnGuardarDisco.Text = "Guardar";
             this.btnGuardarDisco.UseVisualStyleBackColor = true;
             this.btnGuardarDisco.Click += new System.EventHandler(this.btnGuardarDisco_Click);
@@ -245,7 +245,7 @@
             this.btnAgregarMemoria.Location = new System.Drawing.Point(684, 37);
             this.btnAgregarMemoria.Name = "btnAgregarMemoria";
             this.btnAgregarMemoria.Size = new System.Drawing.Size(69, 25);
-            this.btnAgregarMemoria.TabIndex = 152;
+            this.btnAgregarMemoria.TabIndex = 8;
             this.btnAgregarMemoria.Text = "Agregar";
             this.btnAgregarMemoria.UseVisualStyleBackColor = true;
             this.btnAgregarMemoria.Click += new System.EventHandler(this.btnAgregarMemoria_Click);
@@ -256,7 +256,7 @@
             this.btnGuardarMemoria.Location = new System.Drawing.Point(684, 110);
             this.btnGuardarMemoria.Name = "btnGuardarMemoria";
             this.btnGuardarMemoria.Size = new System.Drawing.Size(69, 25);
-            this.btnGuardarMemoria.TabIndex = 151;
+            this.btnGuardarMemoria.TabIndex = 10;
             this.btnGuardarMemoria.Text = "Guardar";
             this.btnGuardarMemoria.UseVisualStyleBackColor = true;
             this.btnGuardarMemoria.Click += new System.EventHandler(this.btnGuardarMemoria_Click);
@@ -312,7 +312,7 @@
             this.btnEliminarLicencia.Location = new System.Drawing.Point(684, 400);
             this.btnEliminarLicencia.Name = "btnEliminarLicencia";
             this.btnEliminarLicencia.Size = new System.Drawing.Size(69, 25);
-            this.btnEliminarLicencia.TabIndex = 149;
+            this.btnEliminarLicencia.TabIndex = 15;
             this.btnEliminarLicencia.Text = "Eliminar";
             this.btnEliminarLicencia.UseVisualStyleBackColor = true;
             this.btnEliminarLicencia.Click += new System.EventHandler(this.btnEliminarLicencia_Click);
@@ -421,7 +421,7 @@
             this.btnEditarDisco.Location = new System.Drawing.Point(684, 231);
             this.btnEditarDisco.Name = "btnEditarDisco";
             this.btnEditarDisco.Size = new System.Drawing.Size(69, 25);
-            this.btnEditarDisco.TabIndex = 145;
+            this.btnEditarDisco.TabIndex = 12;
             this.btnEditarDisco.Text = "Editar";
             this.btnEditarDisco.UseVisualStyleBackColor = true;
             this.btnEditarDisco.Click += new System.EventHandler(this.btnEditarDisco_Click);
@@ -432,7 +432,7 @@
             this.btnEditarMemoria.Location = new System.Drawing.Point(684, 73);
             this.btnEditarMemoria.Name = "btnEditarMemoria";
             this.btnEditarMemoria.Size = new System.Drawing.Size(69, 25);
-            this.btnEditarMemoria.TabIndex = 144;
+            this.btnEditarMemoria.TabIndex = 9;
             this.btnEditarMemoria.Text = "Editar";
             this.btnEditarMemoria.UseVisualStyleBackColor = true;
             this.btnEditarMemoria.Click += new System.EventHandler(this.btnEditarMemoria_Click);
@@ -473,7 +473,7 @@
             this.txtVideoCapacidad.Name = "txtVideoCapacidad";
             this.txtVideoCapacidad.ReadOnly = true;
             this.txtVideoCapacidad.Size = new System.Drawing.Size(180, 20);
-            this.txtVideoCapacidad.TabIndex = 159;
+            this.txtVideoCapacidad.TabIndex = 7;
             // 
             // label7
             // 
@@ -491,7 +491,7 @@
             this.txtVideo.Name = "txtVideo";
             this.txtVideo.ReadOnly = true;
             this.txtVideo.Size = new System.Drawing.Size(179, 20);
-            this.txtVideo.TabIndex = 157;
+            this.txtVideo.TabIndex = 6;
             // 
             // frmProcesoCambioComponentes
             // 

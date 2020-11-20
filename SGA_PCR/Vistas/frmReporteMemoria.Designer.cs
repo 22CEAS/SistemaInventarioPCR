@@ -94,6 +94,8 @@
             // 
             // Modelo
             // 
+            this.Modelo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Modelo.AppearanceHeader.Options.UseBackColor = true;
             this.Modelo.Caption = "Modelo";
             this.Modelo.FieldName = "TipoMemoria";
             this.Modelo.MinWidth = 40;
@@ -105,6 +107,8 @@
             // 
             // TipoMemoria
             // 
+            this.TipoMemoria.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.TipoMemoria.AppearanceHeader.Options.UseBackColor = true;
             this.TipoMemoria.Caption = "TipoMemoria";
             this.TipoMemoria.FieldName = "Tipo2";
             this.TipoMemoria.MinWidth = 40;
@@ -116,6 +120,8 @@
             // 
             // Capacidad
             // 
+            this.Capacidad.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Capacidad.AppearanceHeader.Options.UseBackColor = true;
             this.Capacidad.Caption = "Capacidad";
             this.Capacidad.FieldName = "Capacidad";
             this.Capacidad.MinWidth = 40;
@@ -127,6 +133,8 @@
             // 
             // Frecuencia
             // 
+            this.Frecuencia.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Frecuencia.AppearanceHeader.Options.UseBackColor = true;
             this.Frecuencia.Caption = "Frecuencia";
             this.Frecuencia.FieldName = "frecuencia";
             this.Frecuencia.MinWidth = 40;
@@ -136,6 +144,8 @@
             // 
             // Cantidad
             // 
+            this.Cantidad.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cantidad.AppearanceHeader.Options.UseBackColor = true;
             this.Cantidad.Caption = "Cantidad";
             this.Cantidad.FieldName = "Cantidad";
             this.Cantidad.MinWidth = 40;
@@ -147,6 +157,8 @@
             // 
             // Estado
             // 
+            this.Estado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Estado.AppearanceHeader.Options.UseBackColor = true;
             this.Estado.Caption = "Estado";
             this.Estado.FieldName = "estado";
             this.Estado.MinWidth = 40;

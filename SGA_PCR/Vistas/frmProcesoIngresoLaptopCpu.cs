@@ -39,6 +39,8 @@ namespace Apolo
         private int idUsuario;
         private string nombreUsuario = "CEAS";
 
+        private string LicenciaSO = "S.O";
+
         private int laptopIdCategoria = 1;
 
         public frmProcesoIngresoLaptopCpu()
@@ -554,7 +556,7 @@ namespace Apolo
                 {
                     if (Convert.ToBoolean(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
                     {
-                        if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString() == "WINDOWS")
+                        if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString() == LicenciaSO)
                         {
                             cantWindows++;
                         }
@@ -571,9 +573,9 @@ namespace Apolo
                     }
                 }
             }
-            if (cantWindows > 1)
+            if (cantWindows > 1) //! AQUI SE VALIDA QUE SOLO SE PUEDA INGRESAR 1 LICENCIA O NIGUNA, PERO NUNCA MAS DE 1
             {
-                MessageBox.Show("Solo puede seleccionar una licencia windows", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show($"Solo puede seleccionar una licencia. Usted seleccionó {cantWindows}", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 tabControl1.SelectedTab = tabLicencia;
                 return false;
             }
@@ -598,6 +600,31 @@ namespace Apolo
             int filasDgv;
             //==============================================================================================
 
+
+
+            /*
+
+            //! CODIGO DE LICENCIAS SEGUN EL NUMERO DE ACTIVOS A INGRESAR 
+            int canActivos = int.Parse(txtCantidad.Text);
+            int claveSO = dgvWindows.RowCount;
+
+            if (cantWindows == 1)
+            { 
+                if (canActivos < claveSO)
+                {
+                    MessageBox.Show("NO PUEDE HABER MAS LICENCIAS DE S.O QUE ACTIVOS");
+                    return false;
+                }
+
+                if (canActivos < claveSO)
+                {
+                    MessageBox.Show("NO PUEDE HABER MAS LICENCIAS DE S.O QUE ACTIVOS");
+                    return false;
+                }
+            }
+
+
+            */
             if (cantWindows == 1)
             {
                 for (int i = 0; i < dgvWindows.Rows.Count; i++)
@@ -1078,75 +1105,207 @@ namespace Apolo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool flag = true;
 
-            GridRow aux = (GridRow)dgvProcesador.PrimaryGrid.ActiveRow;
-            GridRow aux2 = (GridRow)dgvMemoria.PrimaryGrid.ActiveRow;
-            GridRow aux3 = (GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow;
-        
-            GridRow aux4 = (GridRow)dgvVideo.PrimaryGrid.ActiveRow;
-            GridRow aux5 = (GridRow)dgvLicencia.PrimaryGrid.ActiveRow;
+            tabControl1.SelectedTab = tabProcesador;
+            tabControl1.SelectedTab = tabMemoria;
+            tabControl1.SelectedTab = tabVideo;
+            tabControl1.SelectedTab = tabDiscoDuro;
+            tabControl1.SelectedTab = tabLicencia;
+            tabControl1.SelectedTab = tabClavesLicencias;
+            tabControl1.SelectedTab = tabDetalle;
 
-
-            //CAMPOS OBLIGATORIOS
-            if (aux != null)
+            //============================================================================================== PROCESADOR
+            int filas = tablaProcesador.Rows.Count;
+            int canProces = 0;
+            for (int i = 0; i < filas; i++)
             {
-                //PROCESADOR
-                string MarcaP = ((GridCell)(((GridRow)dgvProcesador.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                string TipoP = ((GridCell)(((GridRow)dgvProcesador.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                string GeneracionP = ((GridCell)(((GridRow)dgvProcesador.PrimaryGrid.ActiveRow)[3])).Value.ToString();
-                txtProcesadorSeleccionado.Text = $"{MarcaP} {TipoP} {GeneracionP}";
+                if (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 0))).Value != null)
+                {
+                    if (Convert.ToBoolean(((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        
+                        string MarcaP = (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 1))).Value.ToString());
+                        string TipoP = (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 2))).Value.ToString());
+                        string GeneracionP = (((GridCell)(dgvProcesador.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+
+                        canProces++;
+                        txtProcesadorSeleccionado.ForeColor = Color.White;
+                        txtProcesadorSeleccionado.BackColor = Color.Green;
+                        txtProcesadorSeleccionado.Text = $"{MarcaP} {TipoP} {GeneracionP}";
+                    }
+                }
             }
-            else
+            if (canProces > 1)
             {
+                txtProcesadorSeleccionado.ForeColor = Color.Yellow;
+                txtProcesadorSeleccionado.BackColor = Color.Red;
+                txtProcesadorSeleccionado.Text = $"{canProces} SELECCIOANADOS";
+            }
+            if (canProces == 0)
+            {
+                txtProcesadorSeleccionado.ForeColor = Color.Yellow;
+                txtProcesadorSeleccionado.BackColor = Color.Red;
                 txtProcesadorSeleccionado.Text = "NN";
             }
 
-            if (aux2 != null)
+            //============================================================================================== MEMORIAS
+            int filas2 = tablaMemoria.Rows.Count;
+            int canMemo = 0;
+            for (int i = 0; i < filas2; i++)
             {
-                //MEMORIA
-                string ModeloM = ((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                string CapacidadM = ((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[3])).Value.ToString();
-                string TipoM = ((GridCell)(((GridRow)dgvMemoria.PrimaryGrid.ActiveRow)[9])).Value.ToString();
-                txtMemoriaSeleccionada.Text = $"{ModeloM} {CapacidadM} {TipoM}";
+                if (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 0))).Value != null)
+                {
+                    if (Convert.ToBoolean(((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        string ModeloM = (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 1))).Value.ToString());
+                        string CapacidadM = (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+                        string TipoM = (((GridCell)(dgvMemoria.PrimaryGrid.GetCell(i, 9))).Value.ToString());
+
+                        canMemo++;
+                        txtMemoriaSeleccionada.ForeColor = Color.White;
+                        txtMemoriaSeleccionada.BackColor = Color.Green;
+                        txtMemoriaSeleccionada.Text = $"{ModeloM} {CapacidadM} {TipoM}";
+                    }
+                }
             }
-            else
+            if (canMemo > 1) //MAXIMO 4
             {
+                if (canMemo > 4)
+                {
+                    txtMemoriaSeleccionada.ForeColor = Color.Yellow;
+                    txtMemoriaSeleccionada.BackColor = Color.Red;
+                    txtMemoriaSeleccionada.Text = $"{canMemo} SELECCIONADAS";
+                }
+                else
+                {
+                    txtMemoriaSeleccionada.ForeColor = Color.White;
+                    txtMemoriaSeleccionada.BackColor = Color.Green;
+                    txtMemoriaSeleccionada.Text = $"{canMemo} SELECCIONADAS";
+                }
+
+            }
+            if (canMemo == 0)
+            {
+                txtMemoriaSeleccionada.ForeColor = Color.Yellow;
+                txtMemoriaSeleccionada.BackColor = Color.Red;
                 txtMemoriaSeleccionada.Text = "NN";
             }
 
-            if (aux3 != null)
+            //============================================================================================== DISCO DURO
+            int filas3 = tablaDisco.Rows.Count;
+            int canDis = 0;
+            for (int i = 0; i < filas3; i++)
             {
-                //DISCO DURO
-                string TipoDD = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                string TamDD = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[2])).Value.ToString();
-                string CapacidadDD = ((GridCell)(((GridRow)dgvDiscoDuro.PrimaryGrid.ActiveRow)[3])).Value.ToString();
-                txtDiscoDuroSeleccionado.Text = $"{TipoDD} {TamDD} {CapacidadDD}";
+                if (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value != null)
+                {
+                    if (Convert.ToBoolean(((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        string TipoDD = (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 1))).Value.ToString());
+                        string TamDD = (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 2))).Value.ToString());
+                        string CapacidadDD = (((GridCell)(dgvDiscoDuro.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+                        
+
+                        canDis++;
+                        txtDiscoDuroSeleccionado.ForeColor = Color.White;
+                        txtDiscoDuroSeleccionado.BackColor = Color.Green;
+                        txtDiscoDuroSeleccionado.Text = $"{TipoDD} {TamDD} {CapacidadDD}";
+
+                    }
+                }
             }
-            else
+            if (canDis > 1) //MAXIMO 2
             {
+                if (canDis > 2)
+                {
+                    txtDiscoDuroSeleccionado.ForeColor = Color.Yellow;
+                    txtDiscoDuroSeleccionado.BackColor = Color.Red;
+                    txtDiscoDuroSeleccionado.Text = $"{canDis} SELECCIONADOS";
+                }
+                else
+                {
+                    txtDiscoDuroSeleccionado.ForeColor = Color.White;
+                    txtDiscoDuroSeleccionado.BackColor = Color.Green;
+                    txtDiscoDuroSeleccionado.Text = $"{canDis} SELECCIONADOS";
+                }
+
+            }
+            if (canDis == 0)
+            {
+                txtDiscoDuroSeleccionado.ForeColor = Color.Yellow;
+                txtDiscoDuroSeleccionado.BackColor = Color.Red;
                 txtDiscoDuroSeleccionado.Text = "NN";
             }
 
-            if (aux4 != null)
+
+            //============================================================================================== TARJETA DE VIDEO
+            int filas4 = tablaVideo.Rows.Count;
+            int canTarj = 0;
+            for (int i = 0; i < filas4; i++)
             {
-                string MarcaTDV = ((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                string TipoTDV = ((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[3])).Value.ToString();
-                string CapacidadTDV = ((GridCell)(((GridRow)dgvVideo.PrimaryGrid.ActiveRow)[4])).Value.ToString();
-                txtTdvSeleccionado.Text = $"{MarcaTDV} {TipoTDV} {CapacidadTDV}";
+                if (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 0))).Value != null)
+                {
+                    if (Convert.ToBoolean(((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        string MarcaTDV = (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 1))).Value.ToString());
+                        string TipoTDV = (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+                        string CapacidadTDV = (((GridCell)(dgvVideo.PrimaryGrid.GetCell(i, 4))).Value.ToString());
+
+                        canTarj++;
+                        txtTdvSeleccionado.ForeColor = Color.White;
+                        txtTdvSeleccionado.BackColor = Color.Green;
+                        txtTdvSeleccionado.Text = $"{MarcaTDV} {TipoTDV} {CapacidadTDV}";
+
+                    }
+                }
             }
-            else
+            if (canTarj > 1) 
             {
+                txtTdvSeleccionado.ForeColor = Color.Yellow;
+                txtTdvSeleccionado.BackColor = Color.Red;
+                txtTdvSeleccionado.Text = $"{canTarj} SELECCIONADOS";
+
+
+            }
+            if (canTarj == 0)
+            {
+                txtTdvSeleccionado.ForeColor = Color.White;
+                txtTdvSeleccionado.BackColor = Color.Green;
                 txtTdvSeleccionado.Text = "NN";
             }
 
-            if (aux5 != null)
+            //============================================================================================== LICENCIAS
+
+            int filas5 = tablaLicencia.Rows.Count;
+            int canLic = 0;
+            for (int i = 0; i < filas4; i++)
             {
-                string CategoriaL = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[1])).Value.ToString();
-                string VersionL = ((GridCell)(((GridRow)dgvLicencia.PrimaryGrid.ActiveRow)[3])).Value.ToString();
-                txtLicenciaSeleccionada.Text = $"{CategoriaL} {VersionL}";
+                if (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value != null)
+                {
+                    if (Convert.ToBoolean(((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 0))).Value.ToString()) == true)
+                    {
+                        string CategoriaLic = (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 1))).Value.ToString());
+                        string VersionLic = (((GridCell)(dgvLicencia.PrimaryGrid.GetCell(i, 3))).Value.ToString());
+
+                        canLic++;
+                        txtLicenciaSeleccionada.ForeColor = Color.White;
+                        txtLicenciaSeleccionada.BackColor = Color.Green;
+                        txtLicenciaSeleccionada.Text = $"{CategoriaLic} {VersionLic}";
+                    }
+                }
             }
-            else
+            if (canLic > 1)
             {
+                txtLicenciaSeleccionada.ForeColor = Color.Yellow;
+                txtLicenciaSeleccionada.BackColor = Color.Red;
+                txtLicenciaSeleccionada.Text = $"{canLic} SELECCIONADAS";
+
+
+            }
+            if (canLic == 0)
+            {
+                txtLicenciaSeleccionada.ForeColor = Color.White;
+                txtLicenciaSeleccionada.BackColor = Color.Green;
                 txtLicenciaSeleccionada.Text = "NN";
             }
 

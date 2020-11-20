@@ -110,6 +110,8 @@
             // 
             // IdReparacion
             // 
+            this.IdReparacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IdReparacion.AppearanceHeader.Options.UseBackColor = true;
             this.IdReparacion.Caption = "Id Reparación";
             this.IdReparacion.FieldName = "IdReparacion";
             this.IdReparacion.MinWidth = 40;
@@ -121,6 +123,8 @@
             // 
             // CodigoLC
             // 
+            this.CodigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CodigoLC.AppearanceHeader.Options.UseBackColor = true;
             this.CodigoLC.Caption = "Codigo LC";
             this.CodigoLC.FieldName = "CodigoLC";
             this.CodigoLC.MinWidth = 40;
@@ -132,6 +136,8 @@
             // 
             // FechaReparacion
             // 
+            this.FechaReparacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.FechaReparacion.AppearanceHeader.Options.UseBackColor = true;
             this.FechaReparacion.Caption = "Fecha Reparación";
             this.FechaReparacion.FieldName = "FechaReparacion";
             this.FechaReparacion.MinWidth = 40;
@@ -143,6 +149,8 @@
             // 
             // DescripcionComoSeEncontro
             // 
+            this.DescripcionComoSeEncontro.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DescripcionComoSeEncontro.AppearanceHeader.Options.UseBackColor = true;
             this.DescripcionComoSeEncontro.Caption = "Descripcion Como Se Encontro";
             this.DescripcionComoSeEncontro.FieldName = "DescripcionComoSeEncontro";
             this.DescripcionComoSeEncontro.MinWidth = 40;
@@ -154,6 +162,8 @@
             // 
             // EstadoAntesReparacion
             // 
+            this.EstadoAntesReparacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.EstadoAntesReparacion.AppearanceHeader.Options.UseBackColor = true;
             this.EstadoAntesReparacion.Caption = "Estado Antes Reparación";
             this.EstadoAntesReparacion.FieldName = "EstadoAntesReparacion";
             this.EstadoAntesReparacion.MinWidth = 40;
@@ -165,6 +175,8 @@
             // 
             // DescripcionReparacion
             // 
+            this.DescripcionReparacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.DescripcionReparacion.AppearanceHeader.Options.UseBackColor = true;
             this.DescripcionReparacion.Caption = "Descripción Reparación";
             this.DescripcionReparacion.FieldName = "DescripcionReparacion";
             this.DescripcionReparacion.MinWidth = 40;
@@ -176,6 +188,8 @@
             // 
             // EstadoLuegoReparacion
             // 
+            this.EstadoLuegoReparacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.EstadoLuegoReparacion.AppearanceHeader.Options.UseBackColor = true;
             this.EstadoLuegoReparacion.Caption = "Estado Luego Reparación";
             this.EstadoLuegoReparacion.FieldName = "EstadoLuegoReparacion";
             this.EstadoLuegoReparacion.MinWidth = 40;
@@ -187,6 +201,8 @@
             // 
             // Responsable
             // 
+            this.Responsable.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Responsable.AppearanceHeader.Options.UseBackColor = true;
             this.Responsable.Caption = "Responsable";
             this.Responsable.FieldName = "Responsable";
             this.Responsable.MinWidth = 40;
@@ -198,6 +214,8 @@
             // 
             // EstadoReparacion
             // 
+            this.EstadoReparacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.EstadoReparacion.AppearanceHeader.Options.UseBackColor = true;
             this.EstadoReparacion.Caption = "Estado Reparación";
             this.EstadoReparacion.FieldName = "Estado";
             this.EstadoReparacion.MinWidth = 40;
