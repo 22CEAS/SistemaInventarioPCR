@@ -54,6 +54,9 @@
             this.MontoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MontoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -131,7 +134,10 @@
             this.fecFinFactura,
             this.MontoSoles,
             this.MontoDolares,
-            this.TotalDolares});
+            this.TotalDolares,
+            this.CostoSoles,
+            this.CostoDolares,
+            this.VersionOffice});
             this.vista.GridControl = this.dgvLaptops;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -411,6 +417,45 @@
             this.TotalDolares.VisibleIndex = 18;
             this.TotalDolares.Width = 100;
             // 
+            // VersionOffice
+            // 
+            this.VersionOffice.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.VersionOffice.AppearanceHeader.Options.UseBackColor = true;
+            this.VersionOffice.Caption = "Versión Office";
+            this.VersionOffice.FieldName = "VersionOffice";
+            this.VersionOffice.MinWidth = 40;
+            this.VersionOffice.Name = "VersionOffice";
+            this.VersionOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.VersionOffice.Visible = true;
+            this.VersionOffice.VisibleIndex = 21;
+            this.VersionOffice.Width = 100;
+            // 
+            // CostoDolares
+            // 
+            this.CostoDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CostoDolares.AppearanceHeader.Options.UseBackColor = true;
+            this.CostoDolares.Caption = "Costo Dolares";
+            this.CostoDolares.FieldName = "CostoDolares";
+            this.CostoDolares.MinWidth = 40;
+            this.CostoDolares.Name = "CostoDolares";
+            this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.CostoDolares.Visible = true;
+            this.CostoDolares.VisibleIndex = 20;
+            this.CostoDolares.Width = 100;
+            // 
+            // CostoSoles
+            // 
+            this.CostoSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CostoSoles.AppearanceHeader.Options.UseBackColor = true;
+            this.CostoSoles.Caption = "Costo Soles";
+            this.CostoSoles.FieldName = "CostoSoles";
+            this.CostoSoles.MinWidth = 40;
+            this.CostoSoles.Name = "CostoSoles";
+            this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.CostoSoles.Visible = true;
+            this.CostoSoles.VisibleIndex = 19;
+            this.CostoSoles.Width = 100;
+            // 
             // frmReporteCV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -460,5 +505,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn Guia;
         private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn VersionOffice;
+        private DevExpress.XtraGrid.Columns.GridColumn CostoSoles;
+        private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
     }
 }
