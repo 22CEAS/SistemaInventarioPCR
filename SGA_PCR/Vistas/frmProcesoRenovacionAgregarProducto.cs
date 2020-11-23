@@ -18,6 +18,7 @@ namespace Apolo
         DataTable tablaLaptops;
         Renovacion detalle;
         BindingList<Renovacion> detalles;
+        BindingList<RenovacionProductosAuxiliar> auxiliares;
         RenovacionDA renovacionDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -41,20 +42,42 @@ namespace Apolo
 
             renovacionDA = new RenovacionDA();
             detalles = new BindingList<Renovacion>();
-            tablaLaptops = renovacionDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
 
-            dgvPrueba.DataSource = tablaLaptops;
+            tablaLaptops = renovacionDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
+            auxiliares = new BindingList<RenovacionProductosAuxiliar>();
+            int rec = 0;
+            while (rec < tablaLaptops.Rows.Count)
+            {
+                RenovacionProductosAuxiliar auxiliar = new RenovacionProductosAuxiliar();
+                auxiliar.IdLC = Convert.ToInt32(tablaLaptops.Rows[rec]["IdLC"].ToString());
+                auxiliar.Codigo = tablaLaptops.Rows[rec]["Codigo"].ToString();
+                auxiliar.CodigoAntiguo = tablaLaptops.Rows[rec]["CodigoAntiguo"].ToString();
+                auxiliar.MarcaLC = tablaLaptops.Rows[rec]["MarcaLC"].ToString();
+                auxiliar.NombreModeloLC = tablaLaptops.Rows[rec]["NombreModeloLC"].ToString();
+                auxiliar.IdSalidaDetalle = Convert.ToInt32(tablaLaptops.Rows[rec]["IdSalidaDetalle"].ToString());
+                auxiliar.IdSucursal = Convert.ToInt32(tablaLaptops.Rows[rec]["IdSucursal"].ToString());
+                auxiliar.fecIniContrato = Convert.ToDateTime(tablaLaptops.Rows[rec]["fecIniContrato"].ToString());
+                auxiliar.fecFinContrato = Convert.ToDateTime(tablaLaptops.Rows[rec]["fecFinContrato"].ToString());
+
+                auxiliares.Add(auxiliar);
+                rec++;
+            }
+            
+            dgvRenovacionProductos.DataSource = auxiliares;
             vista.OptionsBehavior.AutoPopulateColumns = false;
             vista.OptionsSelection.MultiSelect = true;
+
         }
 
         public bool llenarListaLaptops()
         {
             bool flag = false;
             int filas = tablaLaptops.Rows.Count;
+            vista.ClearColumnsFilter();
             for (int i = 0; i < filas; i++)
             {
-                if (vista.IsRowSelected(i))
+                bool aux2 = bool.Parse(vista.GetRowCellValue(i, "Seleccion").ToString());
+                if (aux2)
                 {
                     detalle = new Renovacion();
                     detalle.IdLC = int.Parse(vista.GetRowCellValue(i, "IdLC").ToString());
@@ -83,6 +106,7 @@ namespace Apolo
         private void btnAgregarMeses_Click(object sender, EventArgs e)
         {
             //string visibe = (vista.IsRowVisible(i).ToString());
+            vista.ClearColumnsFilter();
             int filas = tablaLaptops.Rows.Count;
             string mes = txtCantMeses.Text;
             mes = mes.Trim();
@@ -91,7 +115,8 @@ namespace Apolo
             {
                 for (int i = 0; i < filas; i++)
                 {
-                    if (vista.IsRowSelected(i))
+                    bool aux2 = bool.Parse(vista.GetRowCellValue(i, "Seleccion").ToString());
+                    if (aux2)
                     {
                         detalle = new Renovacion();
                         int aux;
@@ -143,5 +168,22 @@ namespace Apolo
             }
         }
 
+        private void btnSeleccionarFilas_Click(object sender, EventArgs e)
+        {
+            int filas = vista.RowCount;
+            for (int i = 0; i < filas; i++)
+            {
+                vista.SetRowCellValue(i, "Seleccion", true);
+            }
+        }
+
+        private void btnDeseleccionarFilas_Click(object sender, EventArgs e)
+        {
+            int filas = vista.RowCount;
+            for (int i = 0; i < filas; i++)
+            {
+                vista.SetRowCellValue(i, "Seleccion", false);
+            }
+        }
     }
 }
