@@ -43,14 +43,9 @@ namespace Apolo
 
         public void Inicializado()
         {
-
-            reporteDA = new ReporteDA();
-            tablaLaptops = reporteDA.ListarCuadroVencimiento();
-
-            dgvLaptops.DataSource = tablaLaptops;
-            vista.OptionsBehavior.AutoPopulateColumns = false;
-            vista.OptionsSelection.MultiSelect = true;
+            //
         }
+
 
         
         //DAR FORMATO A COLUMNAS
@@ -275,6 +270,73 @@ namespace Apolo
         private void button1_Click(object sender, EventArgs e)
         {
            
+        }
+
+      
+
+
+
+
+        private async void cargarData_Click(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: 0";
+            Task<bool> task = new Task<bool>(cargarDataTabla);
+            task.Start();
+            giftCarga.Image = Image.FromFile(@"C:\Users\USUARIO\Documents\GitHub\SistemaInventarioPCR\SGA_PCR\Imagenes\progress.gif");
+            giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
+            bool resultado = await task;
+            giftCarga.Enabled = false;
+            giftCarga.Visible = false;
+            estadoCarga.Visible = false;
+            cargarData.Text = "DATA CARGADA";
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+            cargarData.Visible = false;
+            //cantidadTotal.Text = vista.RowCount.ToString();
+
+        }
+
+        public bool cargarDataTabla()
+        {
+            try
+            {
+                reporteDA = new ReporteDA();
+                tablaLaptops = reporteDA.ListarCuadroVencimiento();
+
+                dgvLaptops.DataSource = tablaLaptops;
+                vista.OptionsBehavior.AutoPopulateColumns = false;
+                vista.OptionsSelection.MultiSelect = true;
+                
+                
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show(e.Message); OMITIMOS EL MENSAJE
+            }
+
+
+
+            return true;
+        }
+
+        private void frmReporteCV_Load(object sender, EventArgs e)
+        {
+            cargarData.PerformClick();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cantidadTotal_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

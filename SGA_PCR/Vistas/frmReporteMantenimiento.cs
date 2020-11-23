@@ -209,5 +209,19 @@ namespace Apolo
             }
         }
 
+        private void verResumen_Click(object sender, EventArgs e)
+        {
+            cantidadTotal.Text = vista.RowCount.ToString();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cantidadTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -49,6 +49,9 @@
             this.SerieFabrica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.verResumen = new System.Windows.Forms.Button();
+            this.cantidadTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +119,7 @@
             // 
             this.CodigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.CodigoLC.AppearanceHeader.Options.UseBackColor = true;
-            this.CodigoLC.Caption = "Código LC";
+            this.CodigoLC.Caption = "Código";
             this.CodigoLC.FieldName = "Codigo";
             this.CodigoLC.MinWidth = 40;
             this.CodigoLC.Name = "CodigoLC";
@@ -323,11 +326,43 @@
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(414, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 16);
+            this.label2.TabIndex = 162;
+            this.label2.Text = "CANTIDAD REGISTROS:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // verResumen
+            // 
+            this.verResumen.Location = new System.Drawing.Point(411, 12);
+            this.verResumen.Name = "verResumen";
+            this.verResumen.Size = new System.Drawing.Size(115, 19);
+            this.verResumen.TabIndex = 161;
+            this.verResumen.Text = "VER RESUMEN";
+            this.verResumen.UseVisualStyleBackColor = true;
+            this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
+            // 
+            // cantidadTotal
+            // 
+            this.cantidadTotal.Location = new System.Drawing.Point(582, 38);
+            this.cantidadTotal.Name = "cantidadTotal";
+            this.cantidadTotal.Size = new System.Drawing.Size(91, 20);
+            this.cantidadTotal.TabIndex = 160;
+            this.cantidadTotal.TextChanged += new System.EventHandler(this.cantidadTotal_TextChanged);
+            // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1188, 461);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.verResumen);
+            this.Controls.Add(this.cantidadTotal);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
             this.Controls.Add(this.label1);
@@ -367,5 +402,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn SerieFabrica;
         private System.Windows.Forms.Button btnExportar;
         private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button verResumen;
+        private System.Windows.Forms.TextBox cantidadTotal;
     }
 }

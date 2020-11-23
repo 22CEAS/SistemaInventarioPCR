@@ -507,7 +507,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 16);
             this.label13.TabIndex = 48;
-            this.label13.Text = "Licencia:";
+            this.label13.Text = "Software:";
             // 
             // label14
             // 

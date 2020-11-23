@@ -43,6 +43,9 @@
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DíasAntesVencer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.verResumen = new System.Windows.Forms.Button();
+            this.cantidadTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -195,7 +198,7 @@
             // 
             this.CódigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.CódigoLC.AppearanceHeader.Options.UseBackColor = true;
-            this.CódigoLC.Caption = "Código LC";
+            this.CódigoLC.Caption = "Código";
             this.CódigoLC.FieldName = "codigoEquipo";
             this.CódigoLC.MinWidth = 40;
             this.CódigoLC.Name = "CódigoLC";
@@ -256,11 +259,41 @@
             this.KAM.VisibleIndex = 10;
             this.KAM.Width = 200;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(340, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.TabIndex = 147;
+            this.label1.Text = "CANTIDAD REGISTROS:";
+            // 
+            // verResumen
+            // 
+            this.verResumen.Location = new System.Drawing.Point(337, 12);
+            this.verResumen.Name = "verResumen";
+            this.verResumen.Size = new System.Drawing.Size(115, 19);
+            this.verResumen.TabIndex = 146;
+            this.verResumen.Text = "VER RESUMEN";
+            this.verResumen.UseVisualStyleBackColor = true;
+            this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
+            // 
+            // cantidadTotal
+            // 
+            this.cantidadTotal.Location = new System.Drawing.Point(508, 38);
+            this.cantidadTotal.Name = "cantidadTotal";
+            this.cantidadTotal.Size = new System.Drawing.Size(91, 20);
+            this.cantidadTotal.TabIndex = 145;
+            // 
             // frmReporteFacturasPorVencer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1219, 515);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.verResumen);
+            this.Controls.Add(this.cantidadTotal);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvFacturas);
             this.MaximizeBox = false;
@@ -294,5 +327,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn DíasAntesVencer;
         private DevExpress.XtraGrid.Columns.GridColumn KAM;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button verResumen;
+        private System.Windows.Forms.TextBox cantidadTotal;
     }
 }

@@ -49,7 +49,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(620, 268);
+            this.btnCancelar.Location = new System.Drawing.Point(688, 293);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 126;
@@ -69,7 +69,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(697, 270);
+            this.btnGrabar.Location = new System.Drawing.Point(765, 295);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 125;
@@ -129,7 +129,7 @@
             this.dgvObservaciones.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvObservaciones.PrimaryGrid.ShowRowHeaders = false;
             this.dgvObservaciones.PrimaryGrid.UseAlternateColumnStyle = true;
-            this.dgvObservaciones.Size = new System.Drawing.Size(750, 208);
+            this.dgvObservaciones.Size = new System.Drawing.Size(832, 247);
             this.dgvObservaciones.TabIndex = 124;
             this.dgvObservaciones.Text = "Tabla Laptops";
             // 
@@ -138,7 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 345);
+            this.ClientSize = new System.Drawing.Size(882, 370);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.dgvObservaciones);

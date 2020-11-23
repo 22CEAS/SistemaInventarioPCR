@@ -52,11 +52,14 @@
             this.MontoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MontoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalDolares = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnExportar = new System.Windows.Forms.Button();
-            this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CostoSoles = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CostoDolares = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.verResumen = new System.Windows.Forms.Button();
+            this.cantidadTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -177,7 +180,7 @@
             // 
             this.CódigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.CódigoLC.AppearanceHeader.Options.UseBackColor = true;
-            this.CódigoLC.Caption = "Código LC";
+            this.CódigoLC.Caption = "Código";
             this.CódigoLC.FieldName = "Codigo";
             this.CódigoLC.MinWidth = 40;
             this.CódigoLC.Name = "CódigoLC";
@@ -390,18 +393,31 @@
             this.TotalDolares.VisibleIndex = 18;
             this.TotalDolares.Width = 150;
             // 
-            // KAM
+            // CostoSoles
             // 
-            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.KAM.AppearanceHeader.Options.UseBackColor = true;
-            this.KAM.Caption = "KAM";
-            this.KAM.FieldName = "KAM";
-            this.KAM.MinWidth = 40;
-            this.KAM.Name = "KAM";
-            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 22;
-            this.KAM.Width = 200;
+            this.CostoSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CostoSoles.AppearanceHeader.Options.UseBackColor = true;
+            this.CostoSoles.Caption = "Costo Soles";
+            this.CostoSoles.FieldName = "CostoSoles";
+            this.CostoSoles.MinWidth = 40;
+            this.CostoSoles.Name = "CostoSoles";
+            this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.CostoSoles.Visible = true;
+            this.CostoSoles.VisibleIndex = 19;
+            this.CostoSoles.Width = 100;
+            // 
+            // CostoDolares
+            // 
+            this.CostoDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CostoDolares.AppearanceHeader.Options.UseBackColor = true;
+            this.CostoDolares.Caption = "Costo Dolares";
+            this.CostoDolares.FieldName = "CostoDolares";
+            this.CostoDolares.MinWidth = 40;
+            this.CostoDolares.Name = "CostoDolares";
+            this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.CostoDolares.Visible = true;
+            this.CostoDolares.VisibleIndex = 20;
+            this.CostoDolares.Width = 100;
             // 
             // VersionOffice
             // 
@@ -415,6 +431,19 @@
             this.VersionOffice.Visible = true;
             this.VersionOffice.VisibleIndex = 21;
             this.VersionOffice.Width = 100;
+            // 
+            // KAM
+            // 
+            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.KAM.AppearanceHeader.Options.UseBackColor = true;
+            this.KAM.Caption = "KAM";
+            this.KAM.FieldName = "KAM";
+            this.KAM.MinWidth = 40;
+            this.KAM.Name = "KAM";
+            this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.KAM.Visible = true;
+            this.KAM.VisibleIndex = 22;
+            this.KAM.Width = 200;
             // 
             // btnExportar
             // 
@@ -436,37 +465,43 @@
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
-            // CostoDolares
+            // label1
             // 
-            this.CostoDolares.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CostoDolares.AppearanceHeader.Options.UseBackColor = true;
-            this.CostoDolares.Caption = "Costo Dolares";
-            this.CostoDolares.FieldName = "CostoDolares";
-            this.CostoDolares.MinWidth = 40;
-            this.CostoDolares.Name = "CostoDolares";
-            this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 20;
-            this.CostoDolares.Width = 100;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(333, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.TabIndex = 153;
+            this.label1.Text = "CANTIDAD REGISTROS:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // CostoSoles
+            // verResumen
             // 
-            this.CostoSoles.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CostoSoles.AppearanceHeader.Options.UseBackColor = true;
-            this.CostoSoles.Caption = "Costo Soles";
-            this.CostoSoles.FieldName = "CostoSoles";
-            this.CostoSoles.MinWidth = 40;
-            this.CostoSoles.Name = "CostoSoles";
-            this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
-            this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 19;
-            this.CostoSoles.Width = 100;
+            this.verResumen.Location = new System.Drawing.Point(330, 12);
+            this.verResumen.Name = "verResumen";
+            this.verResumen.Size = new System.Drawing.Size(115, 19);
+            this.verResumen.TabIndex = 152;
+            this.verResumen.Text = "VER RESUMEN";
+            this.verResumen.UseVisualStyleBackColor = true;
+            this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
+            // 
+            // cantidadTotal
+            // 
+            this.cantidadTotal.Location = new System.Drawing.Point(501, 38);
+            this.cantidadTotal.Name = "cantidadTotal";
+            this.cantidadTotal.Size = new System.Drawing.Size(91, 20);
+            this.cantidadTotal.TabIndex = 151;
+            this.cantidadTotal.TextChanged += new System.EventHandler(this.cantidadTotal_TextChanged);
             // 
             // frmReportePendienteRecoger
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1296, 506);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.verResumen);
+            this.Controls.Add(this.cantidadTotal);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
             this.MaximizeBox = false;
@@ -513,5 +548,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn VersionOffice;
         private DevExpress.XtraGrid.Columns.GridColumn CostoSoles;
         private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button verResumen;
+        private System.Windows.Forms.TextBox cantidadTotal;
     }
 }

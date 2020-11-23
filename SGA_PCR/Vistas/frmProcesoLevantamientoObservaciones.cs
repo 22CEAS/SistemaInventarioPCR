@@ -299,7 +299,7 @@ namespace Apolo
                     return;
                 }
 
-                MessageBox.Show("Se guradó el Levantamiento", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                MessageBox.Show("Se guardó el Levantamiento", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 estadoComponentes(TipoVista.Guardar);
             }
 

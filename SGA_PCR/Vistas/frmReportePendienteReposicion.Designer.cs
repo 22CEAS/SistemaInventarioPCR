@@ -40,6 +40,9 @@
             this.FechaLevantamiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.verResumen = new System.Windows.Forms.Button();
+            this.cantidadTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +118,7 @@
             // 
             this.CodigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.CodigoLC.AppearanceHeader.Options.UseBackColor = true;
-            this.CodigoLC.Caption = "Código LC";
+            this.CodigoLC.Caption = "Código";
             this.CodigoLC.FieldName = "CodigoLC";
             this.CodigoLC.MinWidth = 40;
             this.CodigoLC.Name = "CodigoLC";
@@ -209,11 +212,43 @@
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(305, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.TabIndex = 156;
+            this.label1.Text = "CANTIDAD REGISTROS:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // verResumen
+            // 
+            this.verResumen.Location = new System.Drawing.Point(302, 12);
+            this.verResumen.Name = "verResumen";
+            this.verResumen.Size = new System.Drawing.Size(115, 19);
+            this.verResumen.TabIndex = 155;
+            this.verResumen.Text = "VER RESUMEN";
+            this.verResumen.UseVisualStyleBackColor = true;
+            this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
+            // 
+            // cantidadTotal
+            // 
+            this.cantidadTotal.Location = new System.Drawing.Point(473, 38);
+            this.cantidadTotal.Name = "cantidadTotal";
+            this.cantidadTotal.Size = new System.Drawing.Size(91, 20);
+            this.cantidadTotal.TabIndex = 154;
+            this.cantidadTotal.TextChanged += new System.EventHandler(this.cantidadTotal_TextChanged);
+            // 
             // frmReportePendienteReposicion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1075, 461);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.verResumen);
+            this.Controls.Add(this.cantidadTotal);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvObservaciones);
             this.MaximizeBox = false;
@@ -243,5 +278,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn FechaLevantamiento;
         private DevExpress.XtraGrid.Columns.GridColumn Estado;
         private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button verResumen;
+        private System.Windows.Forms.TextBox cantidadTotal;
     }
 }

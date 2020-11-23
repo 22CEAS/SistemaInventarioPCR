@@ -143,7 +143,7 @@
             this.Codigo.Name = "Codigo";
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
-            this.Codigo.VisibleIndex = 0;
+            this.Codigo.VisibleIndex = 1;
             this.Codigo.Width = 140;
             // 
             // CodigoAntiguo
@@ -154,7 +154,7 @@
             this.CodigoAntiguo.Name = "CodigoAntiguo";
             this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 1;
+            this.CodigoAntiguo.VisibleIndex = 2;
             this.CodigoAntiguo.Width = 140;
             // 
             // Marca
@@ -165,7 +165,7 @@
             this.Marca.Name = "Marca";
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Marca.Visible = true;
-            this.Marca.VisibleIndex = 2;
+            this.Marca.VisibleIndex = 3;
             this.Marca.Width = 100;
             // 
             // Modelo
@@ -175,7 +175,7 @@
             this.Modelo.MinWidth = 100;
             this.Modelo.Name = "Modelo";
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 3;
+            this.Modelo.VisibleIndex = 4;
             this.Modelo.Width = 100;
             // 
             // Pantalla
@@ -228,7 +228,7 @@
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 4;
+            this.fecIniContrato.VisibleIndex = 5;
             this.fecIniContrato.Width = 140;
             // 
             // fecFinContrato
@@ -239,7 +239,7 @@
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 5;
+            this.fecFinContrato.VisibleIndex = 6;
             this.fecFinContrato.Width = 140;
             // 
             // IdLC

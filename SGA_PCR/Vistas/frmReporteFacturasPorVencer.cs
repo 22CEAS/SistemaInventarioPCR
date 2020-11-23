@@ -230,6 +230,11 @@ namespace Apolo
                 GC.Collect();
             }
         }
+
+        private void verResumen_Click(object sender, EventArgs e)
+        {
+            cantidadTotal.Text = vista.RowCount.ToString();
+        }
     }
 }
 

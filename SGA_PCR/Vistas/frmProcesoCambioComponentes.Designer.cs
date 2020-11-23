@@ -323,9 +323,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(266, 327);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 16);
+            this.label13.Size = new System.Drawing.Size(63, 16);
             this.label13.TabIndex = 148;
-            this.label13.Text = "Licencia:";
+            this.label13.Text = "Software:";
             // 
             // dgvDisco
             // 

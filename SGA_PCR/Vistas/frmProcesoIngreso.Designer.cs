@@ -309,7 +309,7 @@
             this.btnAgregarLicencia.Name = "btnAgregarLicencia";
             this.btnAgregarLicencia.Size = new System.Drawing.Size(81, 45);
             this.btnAgregarLicencia.TabIndex = 12;
-            this.btnAgregarLicencia.Text = "Agregar\r\nLicencias";
+            this.btnAgregarLicencia.Text = "Agregar\r\nSoftware";
             this.btnAgregarLicencia.UseVisualStyleBackColor = true;
             this.btnAgregarLicencia.Click += new System.EventHandler(this.btnAgregarLicencia_Click);
             // 
