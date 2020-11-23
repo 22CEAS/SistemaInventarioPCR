@@ -31,8 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcesoRenovacionAgregarProducto));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtCantMeses = new System.Windows.Forms.TextBox();
-            this.dgvPrueba = new DevExpress.XtraGrid.GridControl();
+            this.dgvRenovacionProductos = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Marca = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,8 +53,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnAgregarMeses = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).BeginInit();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.btnSeleccionarFilas = new System.Windows.Forms.Button();
+            this.btnDeseleccionarFilas = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -78,21 +83,23 @@
             // txtCantMeses
             // 
             this.txtCantMeses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantMeses.Location = new System.Drawing.Point(157, 23);
+            this.txtCantMeses.Location = new System.Drawing.Point(643, 31);
             this.txtCantMeses.Name = "txtCantMeses";
             this.txtCantMeses.Size = new System.Drawing.Size(124, 22);
             this.txtCantMeses.TabIndex = 129;
             this.txtCantMeses.TextChanged += new System.EventHandler(this.txtCantMeses_TextChanged);
             this.txtCantMeses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantMeses_KeyPress);
             // 
-            // dgvPrueba
+            // dgvRenovacionProductos
             // 
-            this.dgvPrueba.Location = new System.Drawing.Point(30, 77);
-            this.dgvPrueba.MainView = this.vista;
-            this.dgvPrueba.Name = "dgvPrueba";
-            this.dgvPrueba.Size = new System.Drawing.Size(874, 321);
-            this.dgvPrueba.TabIndex = 130;
-            this.dgvPrueba.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgvRenovacionProductos.Location = new System.Drawing.Point(30, 77);
+            this.dgvRenovacionProductos.MainView = this.vista;
+            this.dgvRenovacionProductos.Name = "dgvRenovacionProductos";
+            this.dgvRenovacionProductos.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
+            this.dgvRenovacionProductos.Size = new System.Drawing.Size(874, 321);
+            this.dgvRenovacionProductos.TabIndex = 130;
+            this.dgvRenovacionProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
             // 
             // vista
@@ -109,6 +116,7 @@
             this.vista.Appearance.Row.Options.UseFont = true;
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Seleccionar,
             this.Codigo,
             this.CodigoAntiguo,
             this.Marca,
@@ -125,22 +133,33 @@
             this.IdProcesador,
             this.IdSalidaDetalle,
             this.IdSucursal});
-            this.vista.GridControl = this.dgvPrueba;
+            this.vista.GridControl = this.dgvRenovacionProductos;
             this.vista.Name = "vista";
-            this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsSelection.MultiSelect = true;
-            this.vista.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.Caption = "Seleccionar";
+            this.Seleccionar.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.Seleccionar.FieldName = "Seleccion";
+            this.Seleccionar.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.Seleccionar.MinWidth = 50;
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            this.Seleccionar.Visible = true;
+            this.Seleccionar.VisibleIndex = 0;
+            this.Seleccionar.Width = 100;
             // 
             // Codigo
             // 
             this.Codigo.Caption = "Código";
             this.Codigo.FieldName = "Codigo";
-            this.Codigo.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Codigo.MinWidth = 140;
             this.Codigo.Name = "Codigo";
+            this.Codigo.OptionsColumn.AllowEdit = false;
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
             this.Codigo.VisibleIndex = 1;
@@ -152,6 +171,7 @@
             this.CodigoAntiguo.FieldName = "CodigoAntiguo";
             this.CodigoAntiguo.MinWidth = 140;
             this.CodigoAntiguo.Name = "CodigoAntiguo";
+            this.CodigoAntiguo.OptionsColumn.AllowEdit = false;
             this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoAntiguo.Visible = true;
             this.CodigoAntiguo.VisibleIndex = 2;
@@ -163,6 +183,7 @@
             this.Marca.FieldName = "MarcaLC";
             this.Marca.MinWidth = 100;
             this.Marca.Name = "Marca";
+            this.Marca.OptionsColumn.AllowEdit = false;
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Marca.Visible = true;
             this.Marca.VisibleIndex = 3;
@@ -174,6 +195,7 @@
             this.Modelo.FieldName = "NombreModeloLC";
             this.Modelo.MinWidth = 100;
             this.Modelo.Name = "Modelo";
+            this.Modelo.OptionsColumn.AllowEdit = false;
             this.Modelo.Visible = true;
             this.Modelo.VisibleIndex = 4;
             this.Modelo.Width = 100;
@@ -226,6 +248,7 @@
             this.fecIniContrato.FieldName = "fecIniContrato";
             this.fecIniContrato.MinWidth = 140;
             this.fecIniContrato.Name = "fecIniContrato";
+            this.fecIniContrato.OptionsColumn.AllowEdit = false;
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
             this.fecIniContrato.VisibleIndex = 5;
@@ -237,6 +260,7 @@
             this.fecFinContrato.FieldName = "fecFinContrato";
             this.fecFinContrato.MinWidth = 140;
             this.fecFinContrato.Name = "fecFinContrato";
+            this.fecFinContrato.OptionsColumn.AllowEdit = false;
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
             this.fecFinContrato.VisibleIndex = 6;
@@ -275,10 +299,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 26);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(513, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 15);
+            this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 131;
             this.label1.Text = "Número de Meses";
             // 
@@ -313,7 +337,7 @@
             this.btnAgregarMeses.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarMeses.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarMeses.Image")));
             this.btnAgregarMeses.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregarMeses.Location = new System.Drawing.Point(382, 12);
+            this.btnAgregarMeses.Location = new System.Drawing.Point(784, 20);
             this.btnAgregarMeses.Name = "btnAgregarMeses";
             this.btnAgregarMeses.Size = new System.Drawing.Size(68, 42);
             this.btnAgregarMeses.TabIndex = 133;
@@ -321,16 +345,63 @@
             this.btnAgregarMeses.UseVisualStyleBackColor = false;
             this.btnAgregarMeses.Click += new System.EventHandler(this.btnAgregarMeses_Click);
             // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
+            // btnSeleccionarFilas
+            // 
+            this.btnSeleccionarFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSeleccionarFilas.AutoSize = true;
+            this.btnSeleccionarFilas.BackColor = System.Drawing.Color.Transparent;
+            this.btnSeleccionarFilas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionarFilas.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionarFilas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
+            this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(28, 12);
+            this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
+            this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
+            this.btnSeleccionarFilas.TabIndex = 136;
+            this.btnSeleccionarFilas.Text = "Seleccionar Filas";
+            this.btnSeleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSeleccionarFilas.UseVisualStyleBackColor = false;
+            this.btnSeleccionarFilas.Click += new System.EventHandler(this.btnSeleccionarFilas_Click);
+            // 
+            // btnDeseleccionarFilas
+            // 
+            this.btnDeseleccionarFilas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeseleccionarFilas.AutoSize = true;
+            this.btnDeseleccionarFilas.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeseleccionarFilas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeseleccionarFilas.FlatAppearance.BorderSize = 0;
+            this.btnDeseleccionarFilas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
+            this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(150, 12);
+            this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
+            this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
+            this.btnDeseleccionarFilas.TabIndex = 137;
+            this.btnDeseleccionarFilas.Text = "Deseleccionar Filas";
+            this.btnDeseleccionarFilas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeseleccionarFilas.UseVisualStyleBackColor = false;
+            this.btnDeseleccionarFilas.Click += new System.EventHandler(this.btnDeseleccionarFilas_Click);
+            // 
             // frmProcesoRenovacionAgregarProducto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(916, 493);
+            this.Controls.Add(this.btnDeseleccionarFilas);
+            this.Controls.Add(this.btnSeleccionarFilas);
             this.Controls.Add(this.btnAgregarMeses);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvPrueba);
+            this.Controls.Add(this.dgvRenovacionProductos);
             this.Controls.Add(this.txtCantMeses);
             this.Controls.Add(this.btnCancelar);
             this.MaximizeBox = false;
@@ -340,8 +411,9 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Producto";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrueba)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,7 +423,7 @@
 
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtCantMeses;
-        private DevExpress.XtraGrid.GridControl dgvPrueba;
+        private DevExpress.XtraGrid.GridControl dgvRenovacionProductos;
         private DevExpress.XtraGrid.Views.Grid.GridView vista;
         private DevExpress.XtraGrid.Columns.GridColumn Marca;
         private DevExpress.XtraGrid.Columns.GridColumn Modelo;
@@ -372,5 +444,9 @@
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.Button btnAgregarMeses;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn Seleccionar;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private System.Windows.Forms.Button btnSeleccionarFilas;
+        private System.Windows.Forms.Button btnDeseleccionarFilas;
     }
 }
