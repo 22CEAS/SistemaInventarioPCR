@@ -304,5 +304,15 @@ namespace Apolo
             cargarData.Visible = false;
 
         }
+
+        private void dgvFacturas_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+        }
+
+        private void dgvFacturas_MouseHover(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+        }
     }
 }

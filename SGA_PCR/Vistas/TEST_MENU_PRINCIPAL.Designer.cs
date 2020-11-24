@@ -63,6 +63,7 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.ARCHIVO = new System.Windows.Forms.Panel();
+            this.btnKAM = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -123,7 +124,7 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1717);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1751);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(327, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -178,7 +179,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1677);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1711);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(327, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -203,7 +204,7 @@
             this.REPORTES.Controls.Add(this.button29);
             this.REPORTES.Controls.Add(this.button30);
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.REPORTES.Location = new System.Drawing.Point(0, 1007);
+            this.REPORTES.Location = new System.Drawing.Point(0, 1041);
             this.REPORTES.Name = "REPORTES";
             this.REPORTES.Size = new System.Drawing.Size(327, 670);
             this.REPORTES.TabIndex = 20;
@@ -467,7 +468,7 @@
             this.button20.ForeColor = System.Drawing.Color.White;
             this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(0, 967);
+            this.button20.Location = new System.Drawing.Point(0, 1001);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(327, 40);
             this.button20.TabIndex = 18;
@@ -489,7 +490,7 @@
             this.PROCESOS.Controls.Add(this.button15);
             this.PROCESOS.Controls.Add(this.button16);
             this.PROCESOS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PROCESOS.Location = new System.Drawing.Point(0, 453);
+            this.PROCESOS.Location = new System.Drawing.Point(0, 487);
             this.PROCESOS.Name = "PROCESOS";
             this.PROCESOS.Size = new System.Drawing.Size(327, 514);
             this.PROCESOS.TabIndex = 17;
@@ -696,7 +697,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 413);
+            this.button1.Location = new System.Drawing.Point(0, 447);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(327, 40);
             this.button1.TabIndex = 10;
@@ -707,6 +708,7 @@
             // ARCHIVO
             // 
             this.ARCHIVO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ARCHIVO.Controls.Add(this.btnKAM);
             this.ARCHIVO.Controls.Add(this.button9);
             this.ARCHIVO.Controls.Add(this.button8);
             this.ARCHIVO.Controls.Add(this.button6);
@@ -717,9 +719,28 @@
             this.ARCHIVO.Dock = System.Windows.Forms.DockStyle.Top;
             this.ARCHIVO.Location = new System.Drawing.Point(0, 40);
             this.ARCHIVO.Name = "ARCHIVO";
-            this.ARCHIVO.Size = new System.Drawing.Size(327, 373);
+            this.ARCHIVO.Size = new System.Drawing.Size(327, 407);
             this.ARCHIVO.TabIndex = 9;
             this.ARCHIVO.Visible = false;
+            // 
+            // btnKAM
+            // 
+            this.btnKAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnKAM.FlatAppearance.BorderSize = 0;
+            this.btnKAM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnKAM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKAM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKAM.ForeColor = System.Drawing.Color.Black;
+            this.btnKAM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKAM.Location = new System.Drawing.Point(6, 356);
+            this.btnKAM.Name = "btnKAM";
+            this.btnKAM.Size = new System.Drawing.Size(316, 45);
+            this.btnKAM.TabIndex = 17;
+            this.btnKAM.Text = "> KAM";
+            this.btnKAM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKAM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKAM.UseVisualStyleBackColor = false;
+            this.btnKAM.Click += new System.EventHandler(this.button35_Click);
             // 
             // button9
             // 
@@ -1147,5 +1168,6 @@
         public System.Windows.Forms.TextBox usuario;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Button btnKAM;
     }
 }

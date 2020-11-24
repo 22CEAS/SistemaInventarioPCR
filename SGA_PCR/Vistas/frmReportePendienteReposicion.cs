@@ -60,7 +60,7 @@ namespace Apolo
             // Add an empty row to the output document.
             e.ExportContext.AddRow();
             // Merge cells of two new rows. 
-            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(7, 1)));
+            e.ExportContext.MergeCells(new DevExpress.Export.Xl.XlCellRange(new DevExpress.Export.Xl.XlCellPosition(0, 0), new DevExpress.Export.Xl.XlCellPosition(8, 1)));
         }
 
 
@@ -240,6 +240,16 @@ namespace Apolo
         private void frmReportePendienteReposicion_Load(object sender, EventArgs e)
         {
             cargarData.PerformClick();
+        }
+
+        private void dgvObservaciones_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+        }
+
+        private void dgvObservaciones_MouseHover(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
         }
     }
 }

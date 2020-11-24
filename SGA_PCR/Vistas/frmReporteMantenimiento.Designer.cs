@@ -82,6 +82,8 @@
             this.dgvReparaciones.TabIndex = 135;
             this.dgvReparaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+            this.dgvReparaciones.MouseLeave += new System.EventHandler(this.dgvReparaciones_MouseLeave);
+            this.dgvReparaciones.MouseHover += new System.EventHandler(this.dgvReparaciones_MouseHover);
             // 
             // vista
             // 

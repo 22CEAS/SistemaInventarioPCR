@@ -185,5 +185,6 @@ namespace Apolo
                 vista.SetRowCellValue(i, "Seleccion", false);
             }
         }
+
     }
 }

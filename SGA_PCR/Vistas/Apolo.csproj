@@ -77,6 +77,12 @@
     <Compile Include="frmArchivoAuxiliar.Designer.cs">
       <DependentUpon>frmArchivoAuxiliar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArchivoKam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArchivoKam.Designer.cs">
+      <DependentUpon>frmArchivoKam.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmArchivoMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +441,9 @@
     </Compile>
     <EmbeddedResource Include="frmArchivoAuxiliar.resx">
       <DependentUpon>frmArchivoAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArchivoKam.resx">
+      <DependentUpon>frmArchivoKam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoMarca.resx">
       <DependentUpon>frmArchivoMarca.cs</DependentUpon>

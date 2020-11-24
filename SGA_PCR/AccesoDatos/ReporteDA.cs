@@ -94,6 +94,11 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("Select * from vista_lista_observaciones ;");
         }
 
+        public DataTable ListarObservacionesConKAM() //! ACTUALIZACION DE REPORTE CON KAM
+        {
+            return objManager.MostrarTablaDatos("Select * from vista_lista_observaciones ;");
+        }
+
         public DataTable ListarReparaciones()
         {
             return objManager.MostrarTablaDatos("Select * from vista_lista_reparaciones v ;");

@@ -39,6 +39,7 @@
             this.ObservacionLevantamiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaLevantamiento = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
@@ -61,6 +62,8 @@
             this.dgvObservaciones.TabIndex = 133;
             this.dgvObservaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+            this.dgvObservaciones.MouseLeave += new System.EventHandler(this.dgvObservaciones_MouseLeave);
+            this.dgvObservaciones.MouseHover += new System.EventHandler(this.dgvObservaciones_MouseHover);
             // 
             // vista
             // 
@@ -83,7 +86,8 @@
             this.GuiaLevantamiento,
             this.ObservacionLevantamiento,
             this.FechaLevantamiento,
-            this.Estado});
+            this.Estado,
+            this.KAM});
             this.vista.GridControl = this.dgvObservaciones;
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
@@ -194,6 +198,16 @@
             this.Estado.VisibleIndex = 7;
             this.Estado.Width = 80;
             // 
+            // KAM
+            // 
+            this.KAM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.KAM.AppearanceHeader.Options.UseBackColor = true;
+            this.KAM.Caption = "KAM";
+            this.KAM.FieldName = "KAM";
+            this.KAM.Name = "KAM";
+            this.KAM.Visible = true;
+            this.KAM.VisibleIndex = 8;
+            // 
             // btnExportar
             // 
             this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -299,5 +313,6 @@
         private System.Windows.Forms.Button verResumen;
         public System.Windows.Forms.PictureBox giftCarga;
         public System.Windows.Forms.Button cargarData;
+        private DevExpress.XtraGrid.Columns.GridColumn KAM;
     }
 }

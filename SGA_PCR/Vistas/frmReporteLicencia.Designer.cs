@@ -79,6 +79,8 @@
             this.dgvLicencias.TabIndex = 137;
             this.dgvLicencias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+            this.dgvLicencias.MouseLeave += new System.EventHandler(this.dgvLicencias_MouseLeave);
+            this.dgvLicencias.MouseHover += new System.EventHandler(this.dgvLicencias_MouseHover);
             // 
             // vista
             // 
