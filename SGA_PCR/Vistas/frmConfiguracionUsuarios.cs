@@ -279,6 +279,7 @@ namespace Apolo
 
                 string idArea = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[12])).Value.ToString();
                 cmbArea.SelectedValue = idArea;
+                
 
             }
             estadoComponentes(TipoVista.Modificar);

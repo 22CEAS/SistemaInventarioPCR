@@ -238,5 +238,15 @@ namespace Apolo
         {
             cargarData.PerformClick();
         }
+
+        private void dgvMemorias_MouseHover(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+        }
+
+        private void dgvMemorias_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+        }
     }
 }

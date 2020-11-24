@@ -25,6 +25,11 @@ namespace AccesoDatos
             return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_Cliente ;");
         }
 
+        public DataTable ListarClientesKAM()
+        {
+            return objManager.MostrarTablaDatos("select c.nombre_razonSocial, IF(u.estado=1, u.nombre, '') as nombre from cliente c inner join usuario u on c.idKAM = u.idUsuario ");
+        }
+
         public DataTable ListarKamEncargado(int idCliente)
         {
             return objManager.MostrarTablaDatos($"SELECT u.idUsuario,u.nombre FROM cliente c INNER JOIN usuario u on c.idKAM = u.idUsuario where idCliente = {idCliente}; ");
@@ -78,6 +83,25 @@ namespace AccesoDatos
             return -1;
             
         }
+
+
+        public int RelacionKAM(string cliente, int idKam)
+        {
+
+            parametrosEntrada = new MySqlParameter[2];
+            parametrosEntrada[0] = new MySqlParameter("@_Nombre_razonSocial", MySqlDbType.VarChar, 200);
+            parametrosEntrada[1] = new MySqlParameter("@_idKam", MySqlDbType.Int32);
+
+            parametrosEntrada[0].Value = cliente;
+            parametrosEntrada[1].Value = idKam;
+
+
+            bool aux = objManager.EjecutarProcedure(parametrosEntrada, "relacion_KAM");
+            return ((aux) ? 1 : -1);
+
+        }
+
+
         public int ModificarCliente(Cliente cliente, string usuario)
         {
             

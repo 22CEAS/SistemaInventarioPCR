@@ -58,6 +58,8 @@
             this.dgvDiscos.TabIndex = 137;
             this.dgvDiscos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+            this.dgvDiscos.MouseLeave += new System.EventHandler(this.dgvDiscos_MouseLeave);
+            this.dgvDiscos.MouseHover += new System.EventHandler(this.dgvDiscos_MouseHover);
             // 
             // vista
             // 

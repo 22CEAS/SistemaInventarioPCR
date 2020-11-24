@@ -34,6 +34,7 @@
             this.dgvRenovacionProductos = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Seleccionar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CodigoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Marca = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,7 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnAgregarMeses = new System.Windows.Forms.Button();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.btnSeleccionarFilas = new System.Windows.Forms.Button();
             this.btnDeseleccionarFilas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).BeginInit();
@@ -101,6 +101,7 @@
             this.dgvRenovacionProductos.TabIndex = 130;
             this.dgvRenovacionProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+
             // 
             // vista
             // 
@@ -152,6 +153,11 @@
             this.Seleccionar.Visible = true;
             this.Seleccionar.VisibleIndex = 0;
             this.Seleccionar.Width = 100;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // Codigo
             // 
@@ -344,11 +350,6 @@
             this.btnAgregarMeses.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarMeses.UseVisualStyleBackColor = false;
             this.btnAgregarMeses.Click += new System.EventHandler(this.btnAgregarMeses_Click);
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // btnSeleccionarFilas
             // 

@@ -59,8 +59,8 @@ namespace Apolo
         private void verificandoPermisosMaestro()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_archivo = { button2, button4, button6, button3, button5, button8, button9 };
-            string[] idSubmodulo_archivo = { "1a", "2a", "3a", "4a", "5a", "6a", "7a" };
+            Button[] botones_archivo = { button2, button4, button6, button3, button5, button8, button9,btnKAM };
+            string[] idSubmodulo_archivo = { "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a" };
 
             foreach (Button btn in botones_archivo)
             {
@@ -1066,6 +1066,26 @@ namespace Apolo
             if (IsOpen == false)
             {
                 frmConfiguracionUsuarios f2 = new frmConfiguracionUsuarios();
+                f2.MdiParent = this;
+                f2.Show();
+            }
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoKam")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmArchivoKam f2 = new frmArchivoKam();
                 f2.MdiParent = this;
                 f2.Show();
             }

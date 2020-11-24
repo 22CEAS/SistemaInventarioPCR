@@ -101,6 +101,8 @@
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
             this.dgvLaptops.Click += new System.EventHandler(this.dgvLaptops_Click);
+            this.dgvLaptops.MouseLeave += new System.EventHandler(this.dgvLaptops_MouseLeave);
+            this.dgvLaptops.MouseHover += new System.EventHandler(this.dgvLaptops_MouseHover);
             // 
             // vista
             // 

@@ -59,6 +59,8 @@
             this.dgvMemorias.TabIndex = 135;
             this.dgvMemorias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+            this.dgvMemorias.MouseLeave += new System.EventHandler(this.dgvMemorias_MouseLeave);
+            this.dgvMemorias.MouseHover += new System.EventHandler(this.dgvMemorias_MouseHover);
             // 
             // vista
             // 

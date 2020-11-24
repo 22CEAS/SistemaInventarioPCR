@@ -84,6 +84,8 @@
             this.dgvFacturas.TabIndex = 136;
             this.dgvFacturas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
+            this.dgvFacturas.MouseLeave += new System.EventHandler(this.dgvFacturas_MouseLeave);
+            this.dgvFacturas.MouseHover += new System.EventHandler(this.dgvFacturas_MouseHover);
             // 
             // vista
             // 

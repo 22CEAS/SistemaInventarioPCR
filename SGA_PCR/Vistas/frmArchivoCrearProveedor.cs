@@ -373,7 +373,11 @@ namespace Apolo
         {
             bool isError = false;
 
-            if (validacionRuc(txtRuc.Text.Trim()) == false || validacionSoloNumeros(txtRuc.Text.Trim())==false || txtRuc.Text.Trim().Length!=11)
+            if (txtRuc.Text == "") isError = true;
+            if (txtRuc.Text.Trim().Length==0) isError = true;
+            if (txtRazonSocial.Text == "") isError = true;
+
+            if (txtRuc.Text.Trim().Length == 0 || validacionRuc(txtRuc.Text.Trim()) == false || validacionSoloNumeros(txtRuc.Text.Trim())==false || txtRuc.Text.Trim().Length!=11)
                 isError = true;
 
             if (validacionSoloNumeros(txtTelefono.Text.Trim()) == false || validacionSoloNumeros(txtTelContacto.Text.Trim()) == false)
@@ -387,8 +391,7 @@ namespace Apolo
 
 
 
-            if (txtRuc.Text == "") isError = true;
-            if (txtRazonSocial.Text == "") isError = true;
+            
             /*if (txtAbreviacion.Text == "") isError = true;
             if (txtNombreComercial.Text == "") isError = true;
             if (txtTelefono.Text == "") isError = true;

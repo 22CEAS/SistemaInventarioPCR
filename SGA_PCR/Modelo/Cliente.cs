@@ -15,7 +15,9 @@ namespace Modelo
         private string nombre_razonSocial;
         private string telefono;
         private string email;
+        private string KAM;
         private Usuario kam;
+        private bool seleccionar;
         private int estado;
         private BindingList<ClienteSucursal> sucursales;
 
@@ -26,7 +28,9 @@ namespace Modelo
             this.Sucursales = new BindingList<ClienteSucursal>();
         }
 
-        public Cliente(int idCliente, int tipoDocumento, string nroDocumento, string nombre_razonSocial, string telefono, string email, Usuario kam, int estado)
+
+
+        public Cliente(int idCliente, int tipoDocumento, string nroDocumento, string nombre_razonSocial, string telefono, string email, Usuario kam,bool seleccionar, int estado)
         {
             this.IdCliente = idCliente;
             this.TipoDocumento = tipoDocumento;
@@ -35,6 +39,7 @@ namespace Modelo
             this.Telefono = telefono;
             this.Email = email;
             this.Kam = kam;
+            this.Seleccionar = seleccionar;
             this.Estado = estado;
         }
 
@@ -47,5 +52,7 @@ namespace Modelo
         public Usuario Kam { get => kam; set => kam = value; }
         public int Estado { get => estado; set => estado = value; }
         public BindingList<ClienteSucursal> Sucursales { get => sucursales; set => sucursales = value; }
+        public bool Seleccionar { get => seleccionar; set => seleccionar = value; }
+        public string KAM1 { get => KAM; set => KAM = value; }
     }
 }
