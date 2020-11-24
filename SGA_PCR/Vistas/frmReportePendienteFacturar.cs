@@ -262,15 +262,12 @@ namespace Apolo
         {
             try
             {
-
                 reporteDA = new ReporteDA();
                 tablaLaptops = reporteDA.ListarLaptopsPorFacturar();
 
                 dgvFacturas.DataSource = tablaLaptops;
                 vista.OptionsBehavior.AutoPopulateColumns = false;
                 vista.OptionsSelection.MultiSelect = true;
-
-
             }
             catch (Exception e)
             {
@@ -297,7 +294,7 @@ namespace Apolo
             label1.Text = $"CANTIDAD REGISTRO: 0";
             Task<bool> task = new Task<bool>(cargarDataTabla);
             task.Start();
-            giftCarga.Image = Image.FromFile(@"C:\Users\USUARIO\Documents\GitHub\SistemaInventarioPCR\SGA_PCR\Imagenes\progress.gif");
+            giftCarga.Image = Image.FromFile(@".\progress.gif");
             giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
             bool resultado = await task;
             giftCarga.Enabled = false;

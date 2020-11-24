@@ -24,6 +24,12 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_maestro_Cliente ;");
         }
+
+        public DataTable ListarKamEncargado(int idCliente)
+        {
+            return objManager.MostrarTablaDatos($"SELECT u.idUsuario,u.nombre FROM cliente c INNER JOIN usuario u on c.idKAM = u.idUsuario where idCliente = {idCliente}; ");
+        }
+
         public DataTable ListarTipoDocumento()
         {
             return objManager.MostrarTablaDatos("SELECT * FROM vista_documento_tipo ;");

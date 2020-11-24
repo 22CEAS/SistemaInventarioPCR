@@ -201,7 +201,7 @@ namespace Apolo
             label1.Text = $"CANTIDAD REGISTRO: 0";
             Task<bool> task = new Task<bool>(cargarDataTabla);
             task.Start();
-            giftCarga.Image = Image.FromFile(@"C:\Users\USUARIO\Documents\GitHub\SistemaInventarioPCR\SGA_PCR\Imagenes\progress.gif");
+            giftCarga.Image = Image.FromFile(@".\progress.gif");
             giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
             bool resultado = await task;
             giftCarga.Enabled = false;

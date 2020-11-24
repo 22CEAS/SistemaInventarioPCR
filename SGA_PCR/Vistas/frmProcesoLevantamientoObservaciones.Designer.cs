@@ -51,6 +51,8 @@
             this.txtObservacionLevantamiento = new DevExpress.XtraEditors.MemoEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbKamEncargado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservacionDeuda.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtObservacionLevantamiento.Properties)).BeginInit();
@@ -332,7 +334,7 @@
             // 
             // txtObservacionDeuda
             // 
-            this.txtObservacionDeuda.Location = new System.Drawing.Point(24, 219);
+            this.txtObservacionDeuda.Location = new System.Drawing.Point(18, 219);
             this.txtObservacionDeuda.Name = "txtObservacionDeuda";
             this.txtObservacionDeuda.Properties.ReadOnly = true;
             this.txtObservacionDeuda.Size = new System.Drawing.Size(528, 167);
@@ -365,12 +367,36 @@
             this.label5.TabIndex = 195;
             this.label5.Text = "Observación Levantamiento";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(459, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 16);
+            this.label6.TabIndex = 196;
+            this.label6.Text = "KAM Encargado";
+            // 
+            // cmbKamEncargado
+            // 
+            this.cmbKamEncargado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbKamEncargado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbKamEncargado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbKamEncargado.Enabled = false;
+            this.cmbKamEncargado.FormattingEnabled = true;
+            this.cmbKamEncargado.Location = new System.Drawing.Point(462, 28);
+            this.cmbKamEncargado.Name = "cmbKamEncargado";
+            this.cmbKamEncargado.Size = new System.Drawing.Size(133, 21);
+            this.cmbKamEncargado.TabIndex = 197;
+            // 
             // frmProcesoLevantamientoObservaciones
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(681, 674);
+            this.Controls.Add(this.cmbKamEncargado);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtObservacionLevantamiento);
@@ -432,5 +458,7 @@
         private DevExpress.XtraEditors.MemoEdit txtObservacionLevantamiento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbKamEncargado;
     }
 }

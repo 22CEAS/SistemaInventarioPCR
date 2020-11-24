@@ -18,7 +18,9 @@ namespace Apolo
     {
         public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular }
         DataTable tablaCliente;
+        DataTable tablaUsuario;
         ClienteDA clienteDA;
+        UsuarioDA usuarioDA;
         ObservacionDA observacionDA;
         Observacion observacion;
 
@@ -44,6 +46,7 @@ namespace Apolo
         public void Inicializado()
         {
             clienteDA = new ClienteDA();
+            usuarioDA = new UsuarioDA();
             observacionDA = new ObservacionDA();
             observacion = new Observacion();
             
@@ -58,7 +61,13 @@ namespace Apolo
 
             int idCliente = Convert.ToInt32(tablaCliente.Rows[i]["idCliente"].ToString());
             txtNroDocumento.Text = tablaCliente.Rows[i]["nroDocumento"].ToString();
-            
+
+            //!OBTENER KAM ENCARGADO
+            tablaUsuario = clienteDA.ListarKamEncargado(idCliente);
+            cmbKamEncargado.DataSource = tablaUsuario;
+            cmbKamEncargado.DisplayMember = "nombre";
+            cmbKamEncargado.ValueMember = "idUsuario";
+
             ObtenerDatosObservacion();
 
         }
@@ -522,6 +531,12 @@ namespace Apolo
                 observacion = new Observacion();
                 int idCliente = Convert.ToInt32(tablaCliente.Rows[i]["idCliente"].ToString());
                 txtNroDocumento.Text = tablaCliente.Rows[i]["nroDocumento"].ToString();
+
+                tablaUsuario = clienteDA.ListarKamEncargado(idCliente);
+                cmbKamEncargado.DataSource = tablaUsuario;
+                cmbKamEncargado.DisplayMember = "nombre";
+                cmbKamEncargado.ValueMember = "idUsuario";
+
                 observacion.IdCliente = idCliente;
                 txtObservacionDeuda.Text = "";
                 txtObservacionLevantamiento.Text = "";
