@@ -287,11 +287,9 @@ namespace Apolo
             bool resultado = await task;
             giftCarga.Enabled = false;
             giftCarga.Visible = false;
-            estadoCarga.Visible = false;
             cargarData.Text = "DATA CARGADA";
             label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
             cargarData.Visible = false;
-            //cantidadTotal.Text = vista.RowCount.ToString();
 
         }
 

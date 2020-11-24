@@ -41,13 +41,7 @@ namespace Apolo
 
         public void Inicializado()
         {
-
-            reporteDA = new ReporteDA();
-            tablaLaptops = reporteDA.ListarLaptopsFacturasPorVencer();
-
-            dgvFacturas.DataSource = tablaLaptops;
-            vista.OptionsBehavior.AutoPopulateColumns = false;
-            vista.OptionsSelection.MultiSelect = true;
+            cargarData.PerformClick();
         }
 
         void options_CustomizeSheetHeader(DevExpress.Export.ContextEventArgs e)
@@ -231,9 +225,59 @@ namespace Apolo
             }
         }
 
-        private void verResumen_Click(object sender, EventArgs e)
+        private bool cargarDataTabla1()
         {
-            cantidadTotal.Text = vista.RowCount.ToString();
+            try
+            {
+
+                reporteDA = new ReporteDA();
+                tablaLaptops = reporteDA.ListarLaptopsFacturasPorVencer();
+
+                dgvFacturas.DataSource = tablaLaptops;
+                vista.OptionsBehavior.AutoPopulateColumns = false;
+                vista.OptionsSelection.MultiSelect = true;
+
+
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show(e.Message); OMITIMOS EL MENSAJE
+            }
+
+
+
+            return true;
+        }
+
+
+        
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+
+        }
+
+        private void frmReporteFacturasPorVencer_Load(object sender, EventArgs e)
+        {
+            cargarData.PerformClick();
+        }
+
+        private async void cargarData_Click_1(object sender, EventArgs e)
+        {
+
+            label1.Text = $"CANTIDAD REGISTRO: 0";
+            Task<bool> task1 = new Task<bool>(cargarDataTabla1);
+            task1.Start();
+            giftCarga.Image = Image.FromFile(@"C:\Users\USUARIO\Documents\GitHub\SistemaInventarioPCR\SGA_PCR\Imagenes\progress.gif");
+            giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
+            bool resultado = await task1;
+            giftCarga.Enabled = false;
+            giftCarga.Visible = false;
+            cargarData.Text = "DATA CARGADA";
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+            cargarData.Visible = false;
+
         }
     }
 }

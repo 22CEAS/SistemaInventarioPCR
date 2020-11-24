@@ -42,12 +42,7 @@ namespace Apolo
         public void Inicializado()
         {
 
-            reporteDA = new ReporteDA();
-            tablaReparaciones = reporteDA.ListarReparaciones();
-
-            dgvReparaciones.DataSource = tablaReparaciones;
-            vista.OptionsBehavior.AutoPopulateColumns = false;
-            vista.OptionsSelection.MultiSelect = true;
+           //
         }
 
 
@@ -211,17 +206,48 @@ namespace Apolo
 
         private void verResumen_Click(object sender, EventArgs e)
         {
-            cantidadTotal.Text = vista.RowCount.ToString();
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private async void cargarData_Click(object sender, EventArgs e)
         {
-
+            label1.Text = $"CANTIDAD REGISTRO: 0";
+            Task<bool> task = new Task<bool>(cargarDataTabla);
+            task.Start();
+            giftCarga.Image = Image.FromFile(@"C:\Users\USUARIO\Documents\GitHub\SistemaInventarioPCR\SGA_PCR\Imagenes\progress.gif");
+            giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
+            bool resultado = await task;
+            giftCarga.Enabled = false;
+            giftCarga.Visible = false;
+            cargarData.Text = "DATA CARGADA";
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+            cargarData.Visible = false;
         }
 
-        private void cantidadTotal_TextChanged(object sender, EventArgs e)
+        public bool cargarDataTabla()
         {
+            try
+            {
+                reporteDA = new ReporteDA();
+                tablaReparaciones = reporteDA.ListarReparaciones();
 
+                dgvReparaciones.DataSource = tablaReparaciones;
+                vista.OptionsBehavior.AutoPopulateColumns = false;
+                vista.OptionsSelection.MultiSelect = true;
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show(e.Message); OMITIMOS EL MENSAJE
+            }
+
+
+
+            return true;
+        }
+
+        private void frmReporteMantenimiento_Load(object sender, EventArgs e)
+        {
+            cargarData.PerformClick();
         }
     }
 }

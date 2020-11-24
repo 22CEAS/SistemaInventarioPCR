@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteStocksLaptops));
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,32 +48,24 @@
             this.SerieFabrica = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnExportar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
-            this.cantidadTotal = new System.Windows.Forms.TextBox();
+            this.giftCarga = new System.Windows.Forms.PictureBox();
+            this.cargarData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 16);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Reporte de Laptops";
             // 
             // dgvLaptops
             // 
             this.dgvLaptops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptops.Location = new System.Drawing.Point(12, 71);
+            this.dgvLaptops.Location = new System.Drawing.Point(11, 147);
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1145, 367);
+            this.dgvLaptops.Size = new System.Drawing.Size(1145, 381);
             this.dgvLaptops.TabIndex = 132;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -326,46 +317,58 @@
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(414, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 16);
-            this.label2.TabIndex = 162;
-            this.label2.Text = "CANTIDAD REGISTROS:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.TabIndex = 148;
+            this.label1.Text = "CANTIDAD REGISTROS:";
             // 
             // verResumen
             // 
-            this.verResumen.Location = new System.Drawing.Point(411, 12);
+            this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.verResumen.Location = new System.Drawing.Point(18, 30);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
-            this.verResumen.TabIndex = 161;
+            this.verResumen.TabIndex = 147;
             this.verResumen.Text = "VER RESUMEN";
-            this.verResumen.UseVisualStyleBackColor = true;
+            this.verResumen.UseVisualStyleBackColor = false;
             this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
             // 
-            // cantidadTotal
+            // giftCarga
             // 
-            this.cantidadTotal.Location = new System.Drawing.Point(582, 38);
-            this.cantidadTotal.Name = "cantidadTotal";
-            this.cantidadTotal.Size = new System.Drawing.Size(91, 20);
-            this.cantidadTotal.TabIndex = 160;
-            this.cantidadTotal.TextChanged += new System.EventHandler(this.cantidadTotal_TextChanged);
+            this.giftCarga.Location = new System.Drawing.Point(526, 12);
+            this.giftCarga.Name = "giftCarga";
+            this.giftCarga.Size = new System.Drawing.Size(123, 82);
+            this.giftCarga.TabIndex = 146;
+            this.giftCarga.TabStop = false;
+            // 
+            // cargarData
+            // 
+            this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cargarData.Location = new System.Drawing.Point(526, 100);
+            this.cargarData.Name = "cargarData";
+            this.cargarData.Size = new System.Drawing.Size(113, 19);
+            this.cargarData.TabIndex = 145;
+            this.cargarData.Text = "CARGANDO DATA";
+            this.cargarData.UseVisualStyleBackColor = true;
+            this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
             // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1188, 461);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1188, 540);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.verResumen);
-            this.Controls.Add(this.cantidadTotal);
+            this.Controls.Add(this.giftCarga);
+            this.Controls.Add(this.cargarData);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLaptops);
-            this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 400);
@@ -374,15 +377,16 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario Laptops";
+            this.Load += new System.EventHandler(this.frmReporteStocksLaptops_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl dgvLaptops;
         private DevExpress.XtraGrid.Views.Grid.GridView vista;
         private DevExpress.XtraGrid.Columns.GridColumn CodigoLC;
@@ -402,8 +406,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn SerieFabrica;
         private System.Windows.Forms.Button btnExportar;
         private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button verResumen;
-        private System.Windows.Forms.TextBox cantidadTotal;
+        public System.Windows.Forms.PictureBox giftCarga;
+        public System.Windows.Forms.Button cargarData;
     }
 }

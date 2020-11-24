@@ -45,9 +45,11 @@
             this.KAM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
-            this.cantidadTotal = new System.Windows.Forms.TextBox();
+            this.giftCarga = new System.Windows.Forms.PictureBox();
+            this.cargarData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExportar
@@ -263,28 +265,41 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(340, 42);
+            this.label1.Location = new System.Drawing.Point(45, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 16);
-            this.label1.TabIndex = 147;
+            this.label1.TabIndex = 148;
             this.label1.Text = "CANTIDAD REGISTROS:";
             // 
             // verResumen
             // 
-            this.verResumen.Location = new System.Drawing.Point(337, 12);
+            this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.verResumen.Location = new System.Drawing.Point(42, 17);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
-            this.verResumen.TabIndex = 146;
+            this.verResumen.TabIndex = 147;
             this.verResumen.Text = "VER RESUMEN";
-            this.verResumen.UseVisualStyleBackColor = true;
-            this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
+            this.verResumen.UseVisualStyleBackColor = false;
             // 
-            // cantidadTotal
+            // giftCarga
             // 
-            this.cantidadTotal.Location = new System.Drawing.Point(508, 38);
-            this.cantidadTotal.Name = "cantidadTotal";
-            this.cantidadTotal.Size = new System.Drawing.Size(91, 20);
-            this.cantidadTotal.TabIndex = 145;
+            this.giftCarga.Location = new System.Drawing.Point(550, -1);
+            this.giftCarga.Name = "giftCarga";
+            this.giftCarga.Size = new System.Drawing.Size(123, 82);
+            this.giftCarga.TabIndex = 146;
+            this.giftCarga.TabStop = false;
+            // 
+            // cargarData
+            // 
+            this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cargarData.Location = new System.Drawing.Point(550, 87);
+            this.cargarData.Name = "cargarData";
+            this.cargarData.Size = new System.Drawing.Size(113, 19);
+            this.cargarData.TabIndex = 145;
+            this.cargarData.Text = "CARGANDO DATA";
+            this.cargarData.UseVisualStyleBackColor = true;
+            this.cargarData.Click += new System.EventHandler(this.cargarData_Click_1);
             // 
             // frmReporteFacturasPorVencer
             // 
@@ -293,7 +308,8 @@
             this.ClientSize = new System.Drawing.Size(1219, 515);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.verResumen);
-            this.Controls.Add(this.cantidadTotal);
+            this.Controls.Add(this.giftCarga);
+            this.Controls.Add(this.cargarData);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvFacturas);
             this.MaximizeBox = false;
@@ -304,8 +320,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturas Por Vencer";
+            this.Load += new System.EventHandler(this.frmReporteFacturasPorVencer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,6 +347,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn CodigoAntiguo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button verResumen;
-        private System.Windows.Forms.TextBox cantidadTotal;
+        public System.Windows.Forms.PictureBox giftCarga;
+        public System.Windows.Forms.Button cargarData;
     }
 }

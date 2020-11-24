@@ -59,8 +59,6 @@
             this.VersionOffice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cargarData = new System.Windows.Forms.Button();
             this.giftCarga = new System.Windows.Forms.PictureBox();
-            this.estadoCarga = new System.Windows.Forms.Label();
-            this.cantidadTotal = new System.Windows.Forms.TextBox();
             this.verResumen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
@@ -95,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLaptops.EmbeddedNavigator.Appearance.BackColor = System.Drawing.Color.White;
             this.dgvLaptops.EmbeddedNavigator.Appearance.Options.UseBackColor = true;
-            this.dgvLaptops.Location = new System.Drawing.Point(45, 112);
+            this.dgvLaptops.Location = new System.Drawing.Point(42, 123);
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
             this.dgvLaptops.Size = new System.Drawing.Size(1245, 337);
@@ -468,7 +466,7 @@
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(45, 89);
+            this.cargarData.Location = new System.Drawing.Point(550, 90);
             this.cargarData.Name = "cargarData";
             this.cargarData.Size = new System.Drawing.Size(113, 19);
             this.cargarData.TabIndex = 138;
@@ -478,36 +476,17 @@
             // 
             // giftCarga
             // 
-            this.giftCarga.Location = new System.Drawing.Point(45, 1);
+            this.giftCarga.Location = new System.Drawing.Point(550, 2);
             this.giftCarga.Name = "giftCarga";
             this.giftCarga.Size = new System.Drawing.Size(123, 82);
             this.giftCarga.TabIndex = 140;
             this.giftCarga.TabStop = false;
             // 
-            // estadoCarga
-            // 
-            this.estadoCarga.AutoSize = true;
-            this.estadoCarga.Location = new System.Drawing.Point(164, 92);
-            this.estadoCarga.Name = "estadoCarga";
-            this.estadoCarga.Size = new System.Drawing.Size(100, 13);
-            this.estadoCarga.TabIndex = 141;
-            this.estadoCarga.Text = "CARGANDO DATA";
-            this.estadoCarga.Visible = false;
-            // 
-            // cantidadTotal
-            // 
-            this.cantidadTotal.Enabled = false;
-            this.cantidadTotal.Location = new System.Drawing.Point(632, 42);
-            this.cantidadTotal.Name = "cantidadTotal";
-            this.cantidadTotal.Size = new System.Drawing.Size(91, 20);
-            this.cantidadTotal.TabIndex = 142;
-            this.cantidadTotal.TextChanged += new System.EventHandler(this.cantidadTotal_TextChanged);
-            // 
             // verResumen
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(361, 12);
+            this.verResumen.Location = new System.Drawing.Point(42, 20);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
             this.verResumen.TabIndex = 143;
@@ -519,7 +498,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(364, 42);
+            this.label1.Location = new System.Drawing.Point(45, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 16);
             this.label1.TabIndex = 144;
@@ -533,9 +512,7 @@
             this.ClientSize = new System.Drawing.Size(1302, 461);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.verResumen);
-            this.Controls.Add(this.cantidadTotal);
             this.Controls.Add(this.dgvLaptops);
-            this.Controls.Add(this.estadoCarga);
             this.Controls.Add(this.giftCarga);
             this.Controls.Add(this.cargarData);
             this.Controls.Add(this.btnExportar);
@@ -588,8 +565,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn CostoDolares;
         public System.Windows.Forms.Button cargarData;
         public System.Windows.Forms.PictureBox giftCarga;
-        private System.Windows.Forms.Label estadoCarga;
-        private System.Windows.Forms.TextBox cantidadTotal;
         private System.Windows.Forms.Button verResumen;
         private System.Windows.Forms.Label label1;
     }

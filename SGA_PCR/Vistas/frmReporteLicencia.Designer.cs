@@ -40,9 +40,11 @@
             this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.verResumen = new System.Windows.Forms.Button();
-            this.cantidadTotal = new System.Windows.Forms.TextBox();
+            this.giftCarga = new System.Windows.Forms.PictureBox();
+            this.cargarData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLicencias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExportar
@@ -70,10 +72,10 @@
             this.dgvLicencias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLicencias.Location = new System.Drawing.Point(21, 101);
+            this.dgvLicencias.Location = new System.Drawing.Point(21, 148);
             this.dgvLicencias.MainView = this.vista;
             this.dgvLicencias.Name = "dgvLicencias";
-            this.dgvLicencias.Size = new System.Drawing.Size(1024, 318);
+            this.dgvLicencias.Size = new System.Drawing.Size(1024, 316);
             this.dgvLicencias.TabIndex = 137;
             this.dgvLicencias.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -160,7 +162,7 @@
             // 
             this.CodigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.CodigoLC.AppearanceHeader.Options.UseBackColor = true;
-            this.CodigoLC.Caption = "Código LC";
+            this.CodigoLC.Caption = "Código";
             this.CodigoLC.FieldName = "CodigoLC";
             this.CodigoLC.MinWidth = 40;
             this.CodigoLC.Name = "CodigoLC";
@@ -186,39 +188,52 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 51);
+            this.label1.Location = new System.Drawing.Point(28, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 16);
-            this.label1.TabIndex = 171;
+            this.label1.TabIndex = 152;
             this.label1.Text = "CANTIDAD REGISTROS:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // verResumen
             // 
-            this.verResumen.Location = new System.Drawing.Point(21, 21);
+            this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.verResumen.Location = new System.Drawing.Point(25, 20);
             this.verResumen.Name = "verResumen";
             this.verResumen.Size = new System.Drawing.Size(115, 19);
-            this.verResumen.TabIndex = 170;
+            this.verResumen.TabIndex = 151;
             this.verResumen.Text = "VER RESUMEN";
-            this.verResumen.UseVisualStyleBackColor = true;
+            this.verResumen.UseVisualStyleBackColor = false;
             this.verResumen.Click += new System.EventHandler(this.verResumen_Click);
             // 
-            // cantidadTotal
+            // giftCarga
             // 
-            this.cantidadTotal.Location = new System.Drawing.Point(192, 47);
-            this.cantidadTotal.Name = "cantidadTotal";
-            this.cantidadTotal.Size = new System.Drawing.Size(91, 20);
-            this.cantidadTotal.TabIndex = 169;
-            this.cantidadTotal.TextChanged += new System.EventHandler(this.cantidadTotal_TextChanged);
+            this.giftCarga.Location = new System.Drawing.Point(452, 12);
+            this.giftCarga.Name = "giftCarga";
+            this.giftCarga.Size = new System.Drawing.Size(123, 82);
+            this.giftCarga.TabIndex = 150;
+            this.giftCarga.TabStop = false;
+            // 
+            // cargarData
+            // 
+            this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.cargarData.Location = new System.Drawing.Point(452, 100);
+            this.cargarData.Name = "cargarData";
+            this.cargarData.Size = new System.Drawing.Size(113, 19);
+            this.cargarData.TabIndex = 149;
+            this.cargarData.Text = "CARGANDO DATA";
+            this.cargarData.UseVisualStyleBackColor = true;
+            this.cargarData.Click += new System.EventHandler(this.cargarData_Click);
             // 
             // frmReporteLicencia
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1067, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 495);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.verResumen);
-            this.Controls.Add(this.cantidadTotal);
+            this.Controls.Add(this.giftCarga);
+            this.Controls.Add(this.cargarData);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.dgvLicencias);
             this.MaximizeBox = false;
@@ -229,8 +244,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Licencias";
+            this.Load += new System.EventHandler(this.frmReporteLicencia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLicencias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,6 +266,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn Estado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button verResumen;
-        private System.Windows.Forms.TextBox cantidadTotal;
+        public System.Windows.Forms.PictureBox giftCarga;
+        public System.Windows.Forms.Button cargarData;
     }
 }

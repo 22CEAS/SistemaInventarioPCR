@@ -49,106 +49,7 @@ namespace Apolo
         public void Inicializado()
         {
 
-            reporteDA = new ReporteDA();
-            tablaLaptops = reporteDA.ListarLaptopsInventario();
-
-            BindingList<LC> laptops = new BindingList<LC>();
-            tablaDisco = reporteDA.ListarLaptopDisco();
-            tablaMemoria = reporteDA.ListarLaptopMemoria();
-            tablaLicencia = reporteDA.ListarLaptopLicencia();
-            DataView viewDisco = new DataView(tablaDisco);
-            DataView viewMemoria = new DataView(tablaMemoria);
-            DataView viewLicencia = new DataView(tablaLicencia);
-            int rec = 0;
-            while (rec < tablaLaptops.Rows.Count)
-            {
-                LC laptop = new LC();
-                laptop.IdLC = Convert.ToInt32(tablaLaptops.Rows[rec]["idLC"].ToString());
-                laptop.Codigo = tablaLaptops.Rows[rec]["codigo"].ToString();
-                laptop.MarcaLC = tablaLaptops.Rows[rec]["marcaLC"].ToString();
-                laptop.NombreModeloLC = tablaLaptops.Rows[rec]["nombreModeloLC"].ToString();
-                laptop.TipoProcesador = tablaLaptops.Rows[rec]["tipoProcesador"].ToString();
-                laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length>0? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString():"";
-                laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
-                laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
-                laptop.Cliente = tablaLaptops.Rows[rec]["cliente"].ToString();
-                laptop.Ubicacion = tablaLaptops.Rows[rec]["ubicacion"].ToString();
-                laptop.SerieFabrica = tablaLaptops.Rows[rec]["serieFabrica"].ToString();
-                //tablaDisco = reporteDA.ListarLaptopDisco(laptop.IdLC);
-                //tablaMemoria = reporteDA.ListarLaptopMemoria(laptop.IdLC);
-                //tablaLicencia = reporteDA.ListarLaptopLicencia(laptop.IdLC);
-                //laptop.SetDisco(tablaDisco);
-                //laptop.SetMemoria(tablaMemoria);
-                //laptop.SetLicencia(tablaLicencia);
-                viewDisco.RowFilter = "idLC = "+ laptop.IdLC.ToString();
-                viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();
-                viewLicencia.RowFilter = "idLC = " + laptop.IdLC.ToString();
-                laptop.SetDisco(viewDisco);
-                laptop.SetMemoria(viewMemoria);
-                laptop.SetLicencia(viewLicencia);
-                
-                string tipoDisco1 = ""; int capDisco1 = 0; string tipoDisco2 = ""; int capDisco2 = 0;
-                if (laptop.Discos.Count > 0)
-                {
-                    if (laptop.Discos.Count == 1)
-                    {
-                        laptop.Disco1 = laptop.Discos[0].TipoDisco;
-                        laptop.CapacidadDisco1 = (laptop.Discos[0].Cantidad * laptop.Discos[0].Capacidad).ToString() + " GB";
-                        laptop.Disco2 = "";
-                        laptop.CapacidadDisco2 ="";
-                    }
-                    else if (laptop.Discos.Count >= 2)
-                    {
-                        laptop.Disco1 = laptop.Discos[0].TipoDisco;
-                        laptop.CapacidadDisco1 = (laptop.Discos[0].Cantidad * laptop.Discos[0].Capacidad).ToString() + " GB";
-
-                        laptop.Disco2 = laptop.Discos[1].TipoDisco;
-                        laptop.CapacidadDisco2 = (laptop.Discos[1].Cantidad * laptop.Discos[1].Capacidad).ToString()+ " GB";
-                    }
-                }
-                else if (laptop.Discos.Count == 0)
-                {
-                    laptop.Disco1 = "";
-                    laptop.CapacidadDisco1 = "";
-                    laptop.Disco2 = "";
-                    laptop.CapacidadDisco2 = "";
-                }
-
-                int capacidadMem = 0;
-                foreach (Memoria mem in laptop.Memorias)
-                {
-                    capacidadMem += mem.Capacidad * mem.Cantidad;
-                }
-                laptop.CapacidadMemoria = capacidadMem.ToString() + " GB";
-
-                Licencia windows = null; Licencia office = null; Licencia antivirus = null;
-
-                if (laptop.Licencias.Count > 0)
-                {
-                    windows = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaSO);
-                    office = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaOffice);
-                    antivirus = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaAntivirus);
-
-                }
-
-                laptop.LicenciaWindows = (windows != null) ? windows.Version : "";
-                laptop.LicenciaOffice = (office != null) ? office.Version : "";
-                laptop.LicenciaAntivirus = (antivirus != null) ? antivirus.Version : "";
-
-                laptop.Licencias = null;
-                laptop.Discos = null;
-                laptop.Memorias = null;
-
-                laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
-
-                laptops.Add(laptop);
-                rec++;
-            }
-
-
-            dgvLaptops.DataSource = laptops;
-            vista.OptionsBehavior.AutoPopulateColumns = false;
-            vista.OptionsSelection.MultiSelect = true;
+            //
         }
 
 
@@ -319,17 +220,142 @@ namespace Apolo
 
         private void verResumen_Click(object sender, EventArgs e)
         {
-            cantidadTotal.Text = vista.RowCount.ToString();
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private async void cargarData_Click(object sender, EventArgs e)
         {
-
+            label1.Text = $"CANTIDAD REGISTRO: 0";
+            Task<bool> task = new Task<bool>(cargarDataTabla);
+            task.Start();
+            giftCarga.Image = Image.FromFile(@"C:\Users\USUARIO\Documents\GitHub\SistemaInventarioPCR\SGA_PCR\Imagenes\progress.gif");
+            giftCarga.SizeMode = PictureBoxSizeMode.StretchImage;
+            bool resultado = await task;
+            giftCarga.Enabled = false;
+            giftCarga.Visible = false;
+            cargarData.Text = "DATA CARGADA";
+            label1.Text = $"CANTIDAD REGISTRO: {vista.RowCount.ToString()}";
+            cargarData.Visible = false;
         }
 
-        private void cantidadTotal_TextChanged(object sender, EventArgs e)
+        public bool cargarDataTabla()
         {
+            try
+            {
+                reporteDA = new ReporteDA();
+                tablaLaptops = reporteDA.ListarLaptopsInventario();
 
+                BindingList<LC> laptops = new BindingList<LC>();
+                tablaDisco = reporteDA.ListarLaptopDisco();
+                tablaMemoria = reporteDA.ListarLaptopMemoria();
+                tablaLicencia = reporteDA.ListarLaptopLicencia();
+                DataView viewDisco = new DataView(tablaDisco);
+                DataView viewMemoria = new DataView(tablaMemoria);
+                DataView viewLicencia = new DataView(tablaLicencia);
+                int rec = 0;
+                while (rec < tablaLaptops.Rows.Count)
+                {
+                    LC laptop = new LC();
+                    laptop.IdLC = Convert.ToInt32(tablaLaptops.Rows[rec]["idLC"].ToString());
+                    laptop.Codigo = tablaLaptops.Rows[rec]["codigo"].ToString();
+                    laptop.MarcaLC = tablaLaptops.Rows[rec]["marcaLC"].ToString();
+                    laptop.NombreModeloLC = tablaLaptops.Rows[rec]["nombreModeloLC"].ToString();
+                    laptop.TipoProcesador = tablaLaptops.Rows[rec]["tipoProcesador"].ToString();
+                    laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length > 0 ? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString() : "";
+                    laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
+                    laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
+                    laptop.Cliente = tablaLaptops.Rows[rec]["cliente"].ToString();
+                    laptop.Ubicacion = tablaLaptops.Rows[rec]["ubicacion"].ToString();
+                    laptop.SerieFabrica = tablaLaptops.Rows[rec]["serieFabrica"].ToString();
+                    //tablaDisco = reporteDA.ListarLaptopDisco(laptop.IdLC);
+                    //tablaMemoria = reporteDA.ListarLaptopMemoria(laptop.IdLC);
+                    //tablaLicencia = reporteDA.ListarLaptopLicencia(laptop.IdLC);
+                    //laptop.SetDisco(tablaDisco);
+                    //laptop.SetMemoria(tablaMemoria);
+                    //laptop.SetLicencia(tablaLicencia);
+                    viewDisco.RowFilter = "idLC = " + laptop.IdLC.ToString();
+                    viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();
+                    viewLicencia.RowFilter = "idLC = " + laptop.IdLC.ToString();
+                    laptop.SetDisco(viewDisco);
+                    laptop.SetMemoria(viewMemoria);
+                    laptop.SetLicencia(viewLicencia);
+
+                    string tipoDisco1 = ""; int capDisco1 = 0; string tipoDisco2 = ""; int capDisco2 = 0;
+                    if (laptop.Discos.Count > 0)
+                    {
+                        if (laptop.Discos.Count == 1)
+                        {
+                            laptop.Disco1 = laptop.Discos[0].TipoDisco;
+                            laptop.CapacidadDisco1 = (laptop.Discos[0].Cantidad * laptop.Discos[0].Capacidad).ToString() + " GB";
+                            laptop.Disco2 = "";
+                            laptop.CapacidadDisco2 = "";
+                        }
+                        else if (laptop.Discos.Count >= 2)
+                        {
+                            laptop.Disco1 = laptop.Discos[0].TipoDisco;
+                            laptop.CapacidadDisco1 = (laptop.Discos[0].Cantidad * laptop.Discos[0].Capacidad).ToString() + " GB";
+
+                            laptop.Disco2 = laptop.Discos[1].TipoDisco;
+                            laptop.CapacidadDisco2 = (laptop.Discos[1].Cantidad * laptop.Discos[1].Capacidad).ToString() + " GB";
+                        }
+                    }
+                    else if (laptop.Discos.Count == 0)
+                    {
+                        laptop.Disco1 = "";
+                        laptop.CapacidadDisco1 = "";
+                        laptop.Disco2 = "";
+                        laptop.CapacidadDisco2 = "";
+                    }
+
+                    int capacidadMem = 0;
+                    foreach (Memoria mem in laptop.Memorias)
+                    {
+                        capacidadMem += mem.Capacidad * mem.Cantidad;
+                    }
+                    laptop.CapacidadMemoria = capacidadMem.ToString() + " GB";
+
+                    Licencia windows = null; Licencia office = null; Licencia antivirus = null;
+
+                    if (laptop.Licencias.Count > 0)
+                    {
+                        windows = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaSO);
+                        office = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaOffice);
+                        antivirus = laptop.Licencias.SingleOrDefault(p => p.Categoria == this.licenciaCategoriaAntivirus);
+
+                    }
+
+                    laptop.LicenciaWindows = (windows != null) ? windows.Version : "";
+                    laptop.LicenciaOffice = (office != null) ? office.Version : "";
+                    laptop.LicenciaAntivirus = (antivirus != null) ? antivirus.Version : "";
+
+                    laptop.Licencias = null;
+                    laptop.Discos = null;
+                    laptop.Memorias = null;
+
+                    laptop.IdSalida = tablaLaptops.Rows[rec]["idSalida"].ToString();
+
+                    laptops.Add(laptop);
+                    rec++;
+                }
+
+
+                dgvLaptops.DataSource = laptops;
+                vista.OptionsBehavior.AutoPopulateColumns = false;
+                vista.OptionsSelection.MultiSelect = true;
+
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show(e.Message); OMITIMOS EL MENSAJE
+            }
+
+
+            return true;
+        }
+
+        private void frmReporteStocksLaptops_Load(object sender, EventArgs e)
+        {
+            cargarData.PerformClick();
         }
     }
 }
