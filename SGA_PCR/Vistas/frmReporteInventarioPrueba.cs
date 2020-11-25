@@ -18,7 +18,6 @@ namespace Apolo
     {
 
         DataTable tablaLaptops;
-        DataTable tablaLaptops2;
         ReporteDA reporteDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -159,6 +158,7 @@ namespace Apolo
                 laptops.Add(laptop);
                 rec++;
             }
+
             this.cantGeneraciones = tablaProcesadoresGeneracion.Rows.Count;
             this.cantModeloProcesador = tablaProcesadoresModelos.Rows.Count;
 
@@ -169,6 +169,7 @@ namespace Apolo
             {
                 this.arregloLCGeneral[i] = new int[this.cantModeloProcesador];
                 this.arregloLCApple[i] = new int[this.cantModeloProcesador];
+
                 for (int j = 0; j < this.cantModeloProcesador; j++)
                 {
                     int idGen = int.Parse(tablaProcesadoresGeneracion.Rows[i]["idAuxiliar"].ToString());
@@ -177,16 +178,6 @@ namespace Apolo
                     this.arregloLCGeneral[i][j] = cantidad.Count;
                     cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca == this.idMarcaAppleLC && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
                     this.arregloLCApple[i][j] = cantidad.Count;
-                }
-            }
-
-            for (int i = 0; i < this.cantGeneraciones; i++)
-            {
-                for (int j = 0; j < this.cantModeloProcesador; j++)
-                {
-                    string generacion = tablaProcesadoresGeneracion.Rows[i]["descripcion"].ToString();
-                    string nombreProcesador = tablaProcesadoresModelos.Rows[j]["nombre"].ToString();
-                    int cant = arregloLCGeneral[i][j];
                 }
             }
 
@@ -243,8 +234,7 @@ namespace Apolo
         {
             Excel.Range rango;
 
-            //Recorremos el DataGridView rellenando la hoja de trabajo
-            //int filas = tablaLaptops.Rows.Count;
+            
             int cantColumnas = tablaProcesadoresGeneracion.Rows.Count + 3;
             int filas = vista.RowCount;
 
@@ -339,7 +329,6 @@ namespace Apolo
                 }
 
                 hoja.Cells[fila + 1, cantGeneraciones + 2] = "Total en Almacen";
-
                 hoja.Cells[fila + 1, 1] = "Generación";
                 hoja.Cells[fila + 2, 1] = "LAPTOP";
 
@@ -366,6 +355,7 @@ namespace Apolo
                     rango = hoja.Columns[j + 1];
                     rango.ColumnWidth = 15;
                 }
+
                 rango = hoja.Rows[fila + 3 + cantModeloProcesador];
                 rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
@@ -374,6 +364,7 @@ namespace Apolo
                     rango = hoja.Columns[j + 1];
                     rango.ColumnWidth = 15;
                 }
+
             }
             catch (Exception ex)
             {

@@ -24,6 +24,8 @@ namespace Apolo
 
         private int idUsuario;
         private string nombreUsuario = "CEAS";
+        private int maxNumDias=3;
+        private int minNumDias=-1;
 
         public frmProcesoSubirFacturas()
         {
@@ -150,7 +152,9 @@ namespace Apolo
                     fecFinFacCV = DateTime.Parse(cuadroVencimiento.Rows[i]["fecFinPago"].ToString());
                     idLcActual = int.Parse(cuadroVencimiento.Rows[i]["IdLCActual"].ToString());
                     fecIniContrato = DateTime.Parse(cuadroVencimiento.Rows[i]["fecIniContrato"].ToString());
+                    fecIniContrato = DateTime.Parse(fecIniContrato.ToShortDateString());
                     fecFinContrato = DateTime.Parse(cuadroVencimiento.Rows[i]["fecFinContrato"].ToString());
+                    fecFinContrato = DateTime.Parse(fecFinContrato.ToShortDateString());
 
                     concatCodAntCV = cuadroVencimiento.Rows[i]["concatCodAntCV"].ToString();
                     facturaAntCV = cuadroVencimiento.Rows[i]["numFacturaAntigua"].ToString();
@@ -163,56 +167,21 @@ namespace Apolo
 
                     if ((concatCodSis == concatCodActCV && f.NumeroDocRef == guiaSalidaCV) || (concatCodSis == concatCodAntCV && f.NumeroDocRef == guiaSalidaAntCV))
                     {
-                        if (f.FechaIniPago < f.FechaFinPago)
+                        if (f.FechaIniPago <= f.FechaFinPago)
                         {
-                            
-                            if (guiaSalidaAntCV.Length == 0)//no ha habido cambio
+                            if (f.NumeroFactura.Length != 0)
                             {
-                                if (facturaCV != f.NumeroFactura)
+                                if (guiaSalidaAntCV.Length == 0)//no ha habido cambio
                                 {
-                                    if (facturaCV.Length == 0)
+                                    if (facturaCV != f.NumeroFactura)
                                     {
-                                        TimeSpan tSpan = f.FechaIniPago - fecIniContrato;
-                                        int numDiasTrans = tSpan.Days;
-                                        if (numDiasTrans != 0)
-                                        {
-                                            f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias entre la fecha Inicio del Plazo de Alquiler y la fecha inicial de la factura.";
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            if (flag == 2)//2 es grabar
-                                            {
-                                                facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
-                                                f.ObservacionXLevantar = "Se grabo correctamente la factura.";
-                                                if (fecFinContrato < f.FechaFinPago)
-                                                {
-                                                    facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
-                                                    f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
-                                                }
-
-                                               
-                                                
-                                            }
-                                            else
-                                            {
-                                                f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
-                                                if (fecFinContrato < f.FechaFinPago)
-                                                {
-                                                    f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
-                                                }
-                                            }
-
-                                            break;
-                                        }
-                                    }
-                                    if (fecFinFacCV < f.FechaIniPago)
-                                    {
-                                        if (fecFinFacCV.ToString() == "31/12/1999 00:00:00")//es su primer ingreso
+                                        if (facturaCV.Length == 0)
                                         {
                                             TimeSpan tSpan = f.FechaIniPago - fecIniContrato;
                                             int numDiasTrans = tSpan.Days;
-                                            if (numDiasTrans != 0)
+                                            //if (numDiasTrans != 0)
+                                            //{
+                                            if (numDiasTrans > this.maxNumDias || numDiasTrans < this.minNumDias)
                                             {
                                                 f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias entre la fecha Inicio del Plazo de Alquiler y la fecha inicial de la factura.";
                                                 break;
@@ -223,7 +192,131 @@ namespace Apolo
                                                 {
                                                     facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
                                                     f.ObservacionXLevantar = "Se grabo correctamente la factura.";
+                                                    //if (fecFinContrato < f.FechaFinPago)
+                                                    if (fecFinContrato != f.FechaFinPago)//&& tipoContrato==Palabra
+                                                    {
+                                                        facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
+                                                        f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                    f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
                                                     if (fecFinContrato < f.FechaFinPago)
+                                                    {
+                                                        f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
+                                                    }
+                                                }
+
+                                                break;
+                                            }
+                                        }
+                                        if (fecFinFacCV < f.FechaIniPago)
+                                        {
+                                            if (fecFinFacCV.ToString() == "31/12/1999 00:00:00")//es su primer ingreso
+                                            {
+                                                TimeSpan tSpan = f.FechaIniPago - fecIniContrato;
+                                                int numDiasTrans = tSpan.Days;
+                                                //if (numDiasTrans != 0)
+                                                if (numDiasTrans > this.maxNumDias || numDiasTrans < this.minNumDias)
+                                                {
+                                                    f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias entre la fecha Inicio del Plazo de Alquiler y la fecha inicial de la factura.";
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    if (flag == 2)//2 es grabar
+                                                    {
+                                                        facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                        f.ObservacionXLevantar = "Se grabo correctamente la factura.";
+                                                        //if (fecFinContrato < f.FechaFinPago)
+                                                        if (fecFinContrato != f.FechaFinPago)//&& tipoContrato==Palabra
+                                                        {
+                                                            facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
+                                                            f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
+                                                        if (fecFinContrato < f.FechaFinPago)
+                                                        {
+                                                            f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
+                                                        }
+                                                    }
+
+                                                    break;
+                                                }
+                                            }
+                                            else//verifica que las fechas sean consecutivas
+                                            {
+                                                TimeSpan tSpan = f.FechaIniPago - fecFinFacCV;
+                                                int numDiasTrans = tSpan.Days;
+                                                if (numDiasTrans != 1)
+                                                {
+                                                    f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias.";
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    if (flag == 2)//2 es grabar
+                                                    {
+                                                        facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                        f.ObservacionXLevantar = "Se grabo correctamente la factura.";
+                                                        if (fecFinContrato < f.FechaFinPago)
+                                                        {
+                                                            facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
+                                                            f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        f.ObservacionXLevantar = "Todo Bien.";
+                                                        if (fecFinContrato < f.FechaFinPago)
+                                                        {
+                                                            f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
+                                                        }
+                                                    }
+
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            f.ObservacionXLevantar = "Error en la fechas, la fecha final de la ultima factura pagada es mayor o igual a la fecha inicio de esta nueva factura";
+                                            break;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        f.ObservacionXLevantar = "Esta factura ya esta registrada";
+                                        break;
+                                    }
+                                }
+                                else //esto es en el caso de que si ha habido un cambio
+                                {
+                                    if (facturaCV.Length == 0)//no se ha grabado nada con la laptop actual
+                                    {
+                                        if (facturaAntCV.Length == 0)//no se grabo nada con la laptop antigua
+                                        {
+                                            TimeSpan tSpan = f.FechaIniPago - fecIniContrato;
+                                            int numDiasTrans = tSpan.Days;
+                                            //if (numDiasTrans != 0)
+                                            if (numDiasTrans > this.maxNumDias || numDiasTrans < this.minNumDias)
+                                            {
+                                                f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias entre la fecha Inicio del Plazo de Alquiler y la fecha inicial de la factura.";
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                if (flag == 2)//2 es grabar
+                                                {
+                                                    facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                    f.ObservacionXLevantar = "Se grabo correctamente la factura.";
+                                                    //if (fecFinContrato < f.FechaFinPago)
+                                                    if (fecFinContrato != f.FechaFinPago)//&& tipoContrato==Palabra
                                                     {
                                                         facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
                                                         f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
@@ -241,96 +334,64 @@ namespace Apolo
                                                 break;
                                             }
                                         }
-                                        else//verifica que las fechas sean consecutivas
+                                        else //si se grabo nada con la laptop antigua
                                         {
-                                            TimeSpan tSpan = f.FechaIniPago - fecFinFacCV;
-                                            int numDiasTrans = tSpan.Days;
-                                            if (numDiasTrans != 1)
+                                            if (facturaAntCV != f.NumeroFactura)
                                             {
-                                                f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias.";
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                if (flag == 2)//2 es grabar
+                                                if (fecFinFacAntCV < f.FechaIniPago)
                                                 {
-                                                    facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
-                                                    f.ObservacionXLevantar = "Se grabo correctamente la factura.";
-                                                    if (fecFinContrato < f.FechaFinPago)
+                                                    TimeSpan tSpan = f.FechaIniPago - fecFinFacAntCV;
+                                                    int numDiasTrans = tSpan.Days;
+                                                    if (numDiasTrans != 1)
                                                     {
-                                                        facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
-                                                        f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
+                                                        f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias.";
+                                                        break;
+                                                    }
+                                                    else
+                                                    {
+                                                        if (flag == 2)//2 es grabar
+                                                        {
+                                                            facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
+                                                            f.ObservacionXLevantar = "Se grabo correctamente la factura.";
+                                                            if (fecFinContrato < f.FechaFinPago)
+                                                            {
+                                                                facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
+                                                                f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            f.ObservacionXLevantar = "Todo Bien.";
+                                                            if (fecFinContrato < f.FechaFinPago)
+                                                            {
+                                                                f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
+                                                            }
+                                                        }
+
+                                                        break;
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    f.ObservacionXLevantar = "Todo Bien.";
-                                                    if (fecFinContrato < f.FechaFinPago)
-                                                    {
-                                                        f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
-                                                    }
-                                                }
-
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    else
-                                    {
-                                        f.ObservacionXLevantar = "Error en la fechas, la fecha final de la ultima factura pagada es mayor o igual a la fecha inicio de esta nueva factura";
-                                        break;
-                                    }
-                                }
-                                else
-                                {
-                                    f.ObservacionXLevantar = "Esta factura ya esta registrada";
-                                    break;
-                                }
-                            }
-                            else //esto es en el caso de que si ha habido un cambio
-                            {
-                                if (facturaCV.Length == 0)//no se ha grabado nada con la laptop actual
-                                {
-                                    if (facturaAntCV.Length == 0)//no se grabo nada con la laptop antigua
-                                    {
-                                        TimeSpan tSpan = f.FechaIniPago - fecIniContrato;
-                                        int numDiasTrans = tSpan.Days;
-                                        if (numDiasTrans != 0)
-                                        {
-                                            f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias entre la fecha Inicio del Plazo de Alquiler y la fecha inicial de la factura.";
-                                            break;
-                                        }
-                                        else
-                                        {
-                                            if (flag == 2)//2 es grabar
-                                            {
-                                                facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
-                                                f.ObservacionXLevantar = "Se grabo correctamente la factura.";
-                                                if (fecFinContrato < f.FechaFinPago)
-                                                {
-                                                    facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
-                                                    f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
+                                                    f.ObservacionXLevantar = "Error en la fechas, la fecha final de la ultima factura pagada es mayor o igual a la fecha inicio de esta nueva factura";
+                                                    break;
                                                 }
                                             }
                                             else
                                             {
-                                                f.ObservacionXLevantar = "Todo Bien, es la primera factura, no hay factura anterior.";
-                                                if (fecFinContrato < f.FechaFinPago)
-                                                {
-                                                    f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
-                                                }
+                                                f.ObservacionXLevantar = "Esta factura ya esta registrada";
+                                                break;
                                             }
-
-                                            break;
                                         }
+
                                     }
-                                    else //si se grabo nada con la laptop antigua
+                                    else //si se grabo con la la laptop actual
                                     {
-                                        if (facturaAntCV != f.NumeroFactura)
+                                        if (facturaCV != f.NumeroFactura)
                                         {
-                                            if (fecFinFacAntCV < f.FechaIniPago)
+                                            if (fecFinFacCV < f.FechaIniPago)
                                             {
-                                                TimeSpan tSpan = f.FechaIniPago - fecFinFacAntCV;
+                                                TimeSpan tSpan = f.FechaIniPago - fecFinFacCV;
                                                 int numDiasTrans = tSpan.Days;
                                                 if (numDiasTrans != 1)
                                                 {
@@ -373,59 +434,14 @@ namespace Apolo
                                             break;
                                         }
                                     }
-
                                 }
-                                else //si se grabo con la la laptop actual
-                                {
-                                    if (facturaCV != f.NumeroFactura)
-                                    {
-                                        if (fecFinFacCV < f.FechaIniPago)
-                                        {
-                                            TimeSpan tSpan = f.FechaIniPago - fecFinFacCV;
-                                            int numDiasTrans = tSpan.Days;
-                                            if (numDiasTrans != 1)
-                                            {
-                                                f.ObservacionXLevantar = "Esta factura tiene errores en la fecha. Hay un Salto de fechas de " + numDiasTrans + " dias.";
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                if (flag == 2)//2 es grabar
-                                                {
-                                                    facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
-                                                    f.ObservacionXLevantar = "Se grabo correctamente la factura.";
-                                                    if (fecFinContrato < f.FechaFinPago)
-                                                    {
-                                                        facturaDA.ActualizarPlazoFinal(f, this.nombreUsuario, IdSalidaDetActual, IdSalidaDetAntigua);
-                                                        f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizó el Plazo";
-                                                    }
-                                                }
-                                                else
-                                                {
-                                                    f.ObservacionXLevantar = "Todo Bien.";
-                                                    if (fecFinContrato < f.FechaFinPago)
-                                                    {
-                                                        f.ObservacionXLevantar = f.ObservacionXLevantar + " Se actualizará el Plazo";
-                                                    }
-                                                }
 
-                                                break;
-                                            }
-                                        }
-                                        else
-                                        {
-                                            f.ObservacionXLevantar = "Error en la fechas, la fecha final de la ultima factura pagada es mayor o igual a la fecha inicio de esta nueva factura";
-                                            break;
-                                        }
-                                    }
-                                    else
-                                    {
-                                        f.ObservacionXLevantar = "Esta factura ya esta registrada";
-                                        break;
-                                    }
-                                }
                             }
-                            
+                            else
+                            {
+                                f.ObservacionXLevantar = "Error en la factura, el numero de la factura está vacio";
+                                break;
+                            }
                         }
                         else
                         {

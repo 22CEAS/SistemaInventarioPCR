@@ -32,6 +32,21 @@ namespace Apolo
         private string licenciaCategoriaOffice = "OFFICE";
         private string licenciaCategoriaAntivirus = "ANTIVIRUS";
 
+        DataTable tablaProcesadoresModelos;
+        DataTable tablaProcesadoresGeneracion;
+
+        private BindingList<LC> laptops;
+
+        private int estadoDisponible = 2;
+        private int idMarcaAppleLC = 1;
+        private int idMarcaApplePC = 8;
+        private int idCategoriaProcesador = 9;
+        private string codTablaProcesadorGeneracion = "PROCESADOR_GENERACION";
+        private int cantGeneraciones;
+        private int cantModeloProcesador;
+        private int[][] arregloLCGeneral;
+        private int[][] arregloLCApple;
+
         public frmReporteStocksLaptops()
         {
             InitializeComponent();
@@ -88,6 +103,7 @@ namespace Apolo
                     string file = "INVENTARIOS LAPTOPS.xlsx";
                     dgvLaptops.ExportToXlsx(file, options);
                     System.Diagnostics.Process.Start(file);
+                    //btnExportar2_Click();
                 }
                 catch (Exception ex)
                 {
@@ -98,44 +114,117 @@ namespace Apolo
             }
         }
 
+        private void btnExportar2_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Estas seguro que desea Exportar el reporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                try
+                {
+
+                    SaveFileDialog fichero = new SaveFileDialog();
+                    //fichero.Filter = "Excel (*.xls)|*.xls";
+                    fichero.Filter = "Excel(*.xlsx) | *.xlsx";
+                    fichero.FileName = "Laptops";
+                    if (fichero.ShowDialog() == DialogResult.OK)
+                    {
+                        Excel.Application aplicacion;
+                        Excel.Workbook libros_trabajo;
+                        Excel.Worksheet hoja_pre_alquiler;
+
+                        aplicacion = new Excel.Application();
+                        libros_trabajo = (Excel.Workbook)aplicacion.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+
+                        hoja_pre_alquiler = (Excel.Worksheet)libros_trabajo.Worksheets.Add();
+                        hoja_pre_alquiler.Name = "Laptops";
+                        string cabecera = "Equipos Disponibles";
+                        ExportarDataGridViewExcel(ref hoja_pre_alquiler, cabecera);
+
+
+                        ((Excel.Worksheet)aplicacion.ActiveWorkbook.Sheets["Hoja1"]).Delete();
+
+                        libros_trabajo.SaveAs(fichero.FileName, Excel.XlFileFormat.xlOpenXMLWorkbook);
+                        libros_trabajo.Close(true);
+                        releaseObject(libros_trabajo);
+                        aplicacion.Quit();
+                        releaseObject(aplicacion);
+                        MessageBox.Show("Se generó el reporte con éxito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString(), "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
         public void ExportarDataGridViewExcel(ref Excel.Worksheet hoja_trabajo, string nombreCabecera)
         {
             Excel.Range rango;
 
-            //Recorremos el DataGridView rellenando la hoja de trabajo
-            //int filas = tablaLaptops.Rows.Count;
+            int cantColumnas = tablaProcesadoresGeneracion.Rows.Count + 3;
             int filas = vista.RowCount;
-            for (int j = 0; j < filas; j++)
+
+            int k = cantColumnas - 1 + 64;
+            char columF = (char)k;
+            int fila2 = 3;
+            string filaBorde = fila2.ToString();
+            char columI = 'A';
+            //Ponemos borde a las celdas
+            rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+            rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+            rango.Style.Font.Bold = false;
+
+
+            for (int i = 1; i <= this.cantModeloProcesador * 2 + 4; i++)
             {
-                int k = vista.Columns.Count + 64;
-                char columF = (char)k;
-                int fila2 = j + 4;
-                string filaBorde = fila2.ToString();
-                char columI = 'A';
-                //Ponemos borde a las celdas
-                rango = hoja_trabajo.Range[columI + fila2.ToString(), columF + fila2.ToString()];
+                rango = hoja_trabajo.Range[columI + i.ToString(), columF + i.ToString()];
                 rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                rango.Style.Font.Bold = false;
-
-                hoja_trabajo.Cells[fila2, 1] = vista.GetRowCellValue(j, "Codigo").ToString();
-                hoja_trabajo.Cells[fila2, 2] = vista.GetRowCellValue(j, "MarcaLC").ToString();
-                hoja_trabajo.Cells[fila2, 3] = vista.GetRowCellValue(j, "NombreModeloLC").ToString();
-                hoja_trabajo.Cells[fila2, 4] = vista.GetRowCellValue(j, "TipoProcesador").ToString();
-                hoja_trabajo.Cells[fila2, 5] = vista.GetRowCellValue(j, "NombreModeloVideo").ToString();
-                hoja_trabajo.Cells[fila2, 6] = vista.GetRowCellValue(j, "CapacidadVideo").ToString();
-                hoja_trabajo.Cells[fila2, 7] = vista.GetRowCellValue(j, "Disco1").ToString();
-                hoja_trabajo.Cells[fila2, 8] = vista.GetRowCellValue(j, "CapacidadDisco1").ToString();
-                hoja_trabajo.Cells[fila2, 9] = vista.GetRowCellValue(j, "Disco2").ToString();
-                hoja_trabajo.Cells[fila2, 10] = vista.GetRowCellValue(j, "CapacidadDisco2").ToString();
-                hoja_trabajo.Cells[fila2, 11] = vista.GetRowCellValue(j, "CapacidadMemoria").ToString();
-                hoja_trabajo.Cells[fila2, 12] = vista.GetRowCellValue(j, "EstadoNombre").ToString();
-                hoja_trabajo.Cells[fila2, 13] = vista.GetRowCellValue(j, "Cliente").ToString();
-                hoja_trabajo.Cells[fila2, 14] = vista.GetRowCellValue(j, "Ubicacion").ToString();
-                hoja_trabajo.Cells[fila2, 15] = vista.GetRowCellValue(j, "SerieFabrica").ToString();
-                hoja_trabajo.Cells[fila2, 16] = vista.GetRowCellValue(j, "IdSalida").ToString();
-
-
             }
+
+            for (int i = 0; i < this.cantGeneraciones; i++)
+            {
+                int cantGenLCGeneral = 0;
+                int cantGenLCApple = 0;
+                for (int j = 0; j < this.cantModeloProcesador; j++)
+                {
+                    string generacion = tablaProcesadoresGeneracion.Rows[i]["descripcion"].ToString();
+                    string nombreProcesador = tablaProcesadoresModelos.Rows[j]["nombre"].ToString();
+
+                    hoja_trabajo.Cells[fila2 + 1 + j, i + 2] = arregloLCGeneral[i][j];
+
+                    hoja_trabajo.Cells[fila2 + 1 + cantModeloProcesador + 1 + j, i + 2] = arregloLCApple[i][j];
+
+                    cantGenLCGeneral += arregloLCGeneral[i][j];
+                    cantGenLCApple += arregloLCApple[i][j];
+                }
+                hoja_trabajo.Cells[fila2, i + 2] = cantGenLCGeneral;
+                hoja_trabajo.Cells[fila2 + cantModeloProcesador + 1, i + 2] = cantGenLCApple;
+            }
+
+
+            for (int j = 0; j < this.cantModeloProcesador; j++)
+            {
+                int cantProLCGeneral = 0;
+                int cantProLCApple = 0;
+                for (int i = 0; i < this.cantGeneraciones; i++)
+                {
+                    cantProLCGeneral += arregloLCGeneral[i][j];
+                    cantProLCApple += arregloLCApple[i][j];
+                }
+                hoja_trabajo.Cells[fila2 + 1 + j, cantGeneraciones + 2] = cantProLCGeneral;
+                hoja_trabajo.Cells[fila2 + cantModeloProcesador + 1 + 1 + j, cantGeneraciones + 2] = cantProLCApple;
+            }
+
+            var cantidadLCGeneral = new BindingList<LC>(laptops.Where(p => p.IdMarca != this.idMarcaAppleLC && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
+            var cantidadLCApple = new BindingList<LC>(laptops.Where(p => p.IdMarca == this.idMarcaAppleLC && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
+
+            hoja_trabajo.Cells[fila2, cantGeneraciones + 2] = cantidadLCGeneral.Count;
+            hoja_trabajo.Cells[fila2 + cantModeloProcesador + 1, cantGeneraciones + 2] = cantidadLCApple.Count;
+
             montaCabeceras(1, ref hoja_trabajo, nombreCabecera);
         }
 
@@ -144,55 +233,67 @@ namespace Apolo
             try
             {
                 Excel.Range rango;
+                int cantColumnas = tablaProcesadoresGeneracion.Rows.Count + 2;
 
                 //** Montamos el título en la línea 1 **
                 hoja.Cells[fila, 1] = nombreCabecera;
-                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Merge();
-                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Interior.Color = Color.Orange;
-                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, vista.Columns.Count]].Style.Font.Bold = true;
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, cantColumnas]].Merge();
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, cantColumnas]].Interior.Color = Color.FromArgb(196, 89, 19);//FromArgb(255, 132, 0)
+                hoja.Range[hoja.Cells[fila, 1], hoja.Cells[fila, cantColumnas]].Style.Font.Bold = true;
+
+                hoja.Range[hoja.Cells[fila + 1, 1], hoja.Cells[fila + 1, cantColumnas - 1]].Interior.Color = Color.FromArgb(196, 89, 19);
+                hoja.Range[hoja.Cells[fila + 1, cantColumnas], hoja.Cells[fila + 1, cantColumnas]].Interior.Color = Color.FromArgb(130, 61, 10);
+
+                hoja.Range[hoja.Cells[fila + 2, 1], hoja.Cells[fila + 2, cantColumnas]].Interior.Color = Color.FromArgb(252, 228, 215);
+                hoja.Range[hoja.Cells[fila + 3 + cantModeloProcesador, 1], hoja.Cells[fila + 3 + cantModeloProcesador, cantColumnas]].Interior.Color = Color.FromArgb(252, 228, 215);
+
                 //Centramos los textos
                 rango = hoja.Rows[fila];
                 rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-                //worksheet.Range[worksheet.Cells[rowNum, columnNum], worksheet.Cells[rowNum, columnNum]].Merge();
+                for (int k = 0; k < cantGeneraciones; k++)
+                {
+                    string genPro = tablaProcesadoresGeneracion.Rows[k]["descripcion"].ToString();
+                    hoja.Cells[fila + 1, k + 2] = genPro;
+                }
 
-                hoja.Cells[fila + 2, 1] = "Codigo";
-                hoja.Cells[fila + 2, 2] = "Marca LC";
-                hoja.Cells[fila + 2, 3] = "Nombre Modelo LC";
-                hoja.Cells[fila + 2, 4] = "Tipo Procesador";
-                hoja.Cells[fila + 2, 5] = "Nombre Modelo Video";
-                hoja.Cells[fila + 2, 6] = "Capacidad Video";
-                hoja.Cells[fila + 2, 7] = "Disco1";
-                hoja.Cells[fila + 2, 8] = "Capacidad Disco1";
-                hoja.Cells[fila + 2, 9] = "Disco2";
-                hoja.Cells[fila + 2, 10] = "Capacidad Disco2";
-                hoja.Cells[fila + 2, 11] = "Capacidad Memoria";
-                hoja.Cells[fila + 2, 12] = "Estado Nombre";
-                hoja.Cells[fila + 2, 13] = "Cliente";
-                hoja.Cells[fila + 2, 14] = "Ubicacion";
-                hoja.Cells[fila + 2, 15] = "Serie Fábrica";
-                hoja.Cells[fila + 2, 16] = "Id Salida";
+                hoja.Cells[fila + 1, cantGeneraciones + 2] = "Total en Almacen";
+                hoja.Cells[fila + 1, 1] = "Generación";
+                hoja.Cells[fila + 2, 1] = "LAPTOP";
 
+                for (int k = 0; k < cantModeloProcesador; k++)
+                {
+                    string modPro = tablaProcesadoresModelos.Rows[k]["nombre"].ToString();
+                    hoja.Cells[fila + 3 + k, 1] = modPro;
+                }
 
-                int i = vista.Columns.Count + 64;
-                char columF = (char)i;
+                hoja.Cells[fila + 3 + cantModeloProcesador, 1] = "MACKBOOK";
+
+                for (int k = 0; k < cantModeloProcesador; k++)
+                {
+                    string modPro = tablaProcesadoresModelos.Rows[k]["nombre"].ToString();
+                    hoja.Cells[fila + 3 + cantModeloProcesador + 1 + k, 1] = modPro;
+                }
+
                 int fila2 = fila + 2;
-                string filaBorde = fila2.ToString();
-                char columI = 'A';
-                //Ponemos borde a las celdas
-                rango = hoja.Range[columI + fila2.ToString(), columF + fila2.ToString()];
-                rango.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                rango.Interior.Color = Color.Orange;
-                rango.Style.Font.Bold = true;
-                //Centramos los textos
                 rango = hoja.Rows[fila2];
                 rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
 
-                for (int j = 0; j < vista.Columns.Count; j++)
+                for (int j = 0; j < cantColumnas + 2; j++)
                 {
                     rango = hoja.Columns[j + 1];
-                    rango.ColumnWidth = 25;
+                    rango.ColumnWidth = 15;
                 }
+
+                rango = hoja.Rows[fila + 3 + cantModeloProcesador];
+                rango.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                for (int j = 0; j < cantColumnas + 2; j++)
+                {
+                    rango = hoja.Columns[j + 1];
+                    rango.ColumnWidth = 15;
+                }
+
             }
             catch (Exception ex)
             {
@@ -244,8 +345,10 @@ namespace Apolo
             {
                 reporteDA = new ReporteDA();
                 tablaLaptops = reporteDA.ListarLaptopsInventario();
+                tablaProcesadoresModelos = reporteDA.tablaProcesadoresModelos(idCategoriaProcesador);
+                tablaProcesadoresGeneracion = reporteDA.tablaProcesadoresGeneracion(codTablaProcesadorGeneracion);
 
-                BindingList<LC> laptops = new BindingList<LC>();
+                laptops = new BindingList<LC>();
                 tablaDisco = reporteDA.ListarLaptopDisco();
                 tablaMemoria = reporteDA.ListarLaptopMemoria();
                 tablaLicencia = reporteDA.ListarLaptopLicencia();
@@ -258,29 +361,28 @@ namespace Apolo
                     LC laptop = new LC();
                     laptop.IdLC = Convert.ToInt32(tablaLaptops.Rows[rec]["idLC"].ToString());
                     laptop.Codigo = tablaLaptops.Rows[rec]["codigo"].ToString();
+                    laptop.IdMarca = int.Parse(tablaLaptops.Rows[rec]["idMarca"].ToString());
                     laptop.MarcaLC = tablaLaptops.Rows[rec]["marcaLC"].ToString();
                     laptop.NombreModeloLC = tablaLaptops.Rows[rec]["nombreModeloLC"].ToString();
                     laptop.TipoProcesador = tablaLaptops.Rows[rec]["tipoProcesador"].ToString();
+                    laptop.IdGeneracionProcesador = int.Parse(tablaLaptops.Rows[rec]["idGeneracionProcesador"].ToString());
+                    laptop.GeneracionProcesador = int.Parse(tablaLaptops.Rows[rec]["generacionProcesador"].ToString());
+                    laptop.IdTipoProcesador = int.Parse(tablaLaptops.Rows[rec]["idTipoProcesador"].ToString());
                     laptop.NombreModeloVideo = tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString().Length > 0 ? tablaLaptops.Rows[rec]["nombreModeloVideo"].ToString() : "";
                     laptop.CapacidadVideo = Convert.ToInt32(tablaLaptops.Rows[rec]["capacidadVideo"].ToString());
                     laptop.EstadoNombre = tablaLaptops.Rows[rec]["estado"].ToString();
+                    laptop.Estado = int.Parse(tablaLaptops.Rows[rec]["idEstado"].ToString());
                     laptop.Cliente = tablaLaptops.Rows[rec]["cliente"].ToString();
                     laptop.Ubicacion = tablaLaptops.Rows[rec]["ubicacion"].ToString();
                     laptop.SerieFabrica = tablaLaptops.Rows[rec]["serieFabrica"].ToString();
-                    //tablaDisco = reporteDA.ListarLaptopDisco(laptop.IdLC);
-                    //tablaMemoria = reporteDA.ListarLaptopMemoria(laptop.IdLC);
-                    //tablaLicencia = reporteDA.ListarLaptopLicencia(laptop.IdLC);
-                    //laptop.SetDisco(tablaDisco);
-                    //laptop.SetMemoria(tablaMemoria);
-                    //laptop.SetLicencia(tablaLicencia);
+
                     viewDisco.RowFilter = "idLC = " + laptop.IdLC.ToString();
                     viewMemoria.RowFilter = "idLC = " + laptop.IdLC.ToString();
                     viewLicencia.RowFilter = "idLC = " + laptop.IdLC.ToString();
                     laptop.SetDisco(viewDisco);
                     laptop.SetMemoria(viewMemoria);
                     laptop.SetLicencia(viewLicencia);
-
-                    string tipoDisco1 = ""; int capDisco1 = 0; string tipoDisco2 = ""; int capDisco2 = 0;
+                    
                     if (laptop.Discos.Count > 0)
                     {
                         if (laptop.Discos.Count == 1)
@@ -336,6 +438,28 @@ namespace Apolo
 
                     laptops.Add(laptop);
                     rec++;
+                }
+
+                this.cantGeneraciones = tablaProcesadoresGeneracion.Rows.Count;
+                this.cantModeloProcesador = tablaProcesadoresModelos.Rows.Count;
+
+                this.arregloLCGeneral = new int[cantGeneraciones][];
+                this.arregloLCApple = new int[cantGeneraciones][];
+
+                for (int i = 0; i < this.cantGeneraciones; i++)
+                {
+                    this.arregloLCGeneral[i] = new int[this.cantModeloProcesador];
+                    this.arregloLCApple[i] = new int[this.cantModeloProcesador];
+
+                    for (int j = 0; j < this.cantModeloProcesador; j++)
+                    {
+                        int idGen = int.Parse(tablaProcesadoresGeneracion.Rows[i]["idAuxiliar"].ToString());
+                        int idModPro = int.Parse(tablaProcesadoresModelos.Rows[j]["idModelo"].ToString());
+                        var cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca != this.idMarcaAppleLC && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
+                        this.arregloLCGeneral[i][j] = cantidad.Count;
+                        cantidad = new BindingList<LC>(laptops.Where(p => p.IdMarca == this.idMarcaAppleLC && p.IdGeneracionProcesador == idGen && p.IdTipoProcesador == idModPro && p.IdMarca != this.idMarcaApplePC && p.Estado == this.estadoDisponible).ToList());
+                        this.arregloLCApple[i][j] = cantidad.Count;
+                    }
                 }
 
 
