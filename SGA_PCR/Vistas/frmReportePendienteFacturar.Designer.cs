@@ -32,6 +32,7 @@
             this.dgvFacturas = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ruc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaInicioContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FechaFinContrato = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Factura = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -88,6 +89,7 @@
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Cliente,
+            this.ruc,
             this.FechaInicioContrato,
             this.FechaFinContrato,
             this.Factura,
@@ -125,6 +127,16 @@
             this.Cliente.VisibleIndex = 0;
             this.Cliente.Width = 200;
             // 
+            // ruc
+            // 
+            this.ruc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ruc.AppearanceHeader.Options.UseBackColor = true;
+            this.ruc.Caption = "Ruc";
+            this.ruc.FieldName = "ruc";
+            this.ruc.Name = "ruc";
+            this.ruc.Visible = true;
+            this.ruc.VisibleIndex = 1;
+            // 
             // FechaInicioContrato
             // 
             this.FechaInicioContrato.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -135,7 +147,7 @@
             this.FechaInicioContrato.Name = "FechaInicioContrato";
             this.FechaInicioContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaInicioContrato.Visible = true;
-            this.FechaInicioContrato.VisibleIndex = 1;
+            this.FechaInicioContrato.VisibleIndex = 2;
             this.FechaInicioContrato.Width = 140;
             // 
             // FechaFinContrato
@@ -148,7 +160,7 @@
             this.FechaFinContrato.Name = "FechaFinContrato";
             this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaFinContrato.Visible = true;
-            this.FechaFinContrato.VisibleIndex = 2;
+            this.FechaFinContrato.VisibleIndex = 3;
             this.FechaFinContrato.Width = 140;
             // 
             // Factura
@@ -161,7 +173,7 @@
             this.Factura.Name = "Factura";
             this.Factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Factura.Visible = true;
-            this.Factura.VisibleIndex = 3;
+            this.Factura.VisibleIndex = 4;
             this.Factura.Width = 140;
             // 
             // FechaInicioFactura
@@ -174,7 +186,7 @@
             this.FechaInicioFactura.Name = "FechaInicioFactura";
             this.FechaInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaInicioFactura.Visible = true;
-            this.FechaInicioFactura.VisibleIndex = 4;
+            this.FechaInicioFactura.VisibleIndex = 5;
             this.FechaInicioFactura.Width = 140;
             // 
             // FechaFinFactura
@@ -187,7 +199,7 @@
             this.FechaFinFactura.Name = "FechaFinFactura";
             this.FechaFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaFinFactura.Visible = true;
-            this.FechaFinFactura.VisibleIndex = 5;
+            this.FechaFinFactura.VisibleIndex = 6;
             this.FechaFinFactura.Width = 140;
             // 
             // CódigoLC
@@ -200,7 +212,7 @@
             this.CódigoLC.Name = "CódigoLC";
             this.CódigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CódigoLC.Visible = true;
-            this.CódigoLC.VisibleIndex = 6;
+            this.CódigoLC.VisibleIndex = 7;
             this.CódigoLC.Width = 140;
             // 
             // Guía
@@ -213,7 +225,7 @@
             this.Guía.Name = "Guía";
             this.Guía.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Guía.Visible = true;
-            this.Guía.VisibleIndex = 7;
+            this.Guía.VisibleIndex = 8;
             this.Guía.Width = 140;
             // 
             // CodigoAntiguo
@@ -226,7 +238,7 @@
             this.CodigoAntiguo.Name = "CodigoAntiguo";
             this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 8;
+            this.CodigoAntiguo.VisibleIndex = 9;
             this.CodigoAntiguo.Width = 140;
             // 
             // DíasVencidos
@@ -239,7 +251,7 @@
             this.DíasVencidos.Name = "DíasVencidos";
             this.DíasVencidos.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.DíasVencidos.Visible = true;
-            this.DíasVencidos.VisibleIndex = 9;
+            this.DíasVencidos.VisibleIndex = 10;
             this.DíasVencidos.Width = 100;
             // 
             // TotalSoles
@@ -252,7 +264,7 @@
             this.TotalSoles.Name = "TotalSoles";
             this.TotalSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalSoles.Visible = true;
-            this.TotalSoles.VisibleIndex = 10;
+            this.TotalSoles.VisibleIndex = 11;
             this.TotalSoles.Width = 100;
             // 
             // TotalDolares
@@ -265,7 +277,7 @@
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 11;
+            this.TotalDolares.VisibleIndex = 12;
             this.TotalDolares.Width = 100;
             // 
             // CostoSoles
@@ -278,7 +290,7 @@
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 12;
+            this.CostoSoles.VisibleIndex = 13;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -291,7 +303,7 @@
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 13;
+            this.CostoDolares.VisibleIndex = 14;
             this.CostoDolares.Width = 100;
             // 
             // PendienteFacturarSoles
@@ -304,7 +316,7 @@
             this.PendienteFacturarSoles.Name = "PendienteFacturarSoles";
             this.PendienteFacturarSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.PendienteFacturarSoles.Visible = true;
-            this.PendienteFacturarSoles.VisibleIndex = 14;
+            this.PendienteFacturarSoles.VisibleIndex = 15;
             this.PendienteFacturarSoles.Width = 100;
             // 
             // PendienteFacturarDolares
@@ -317,7 +329,7 @@
             this.PendienteFacturarDolares.Name = "PendienteFacturarDolares";
             this.PendienteFacturarDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.PendienteFacturarDolares.Visible = true;
-            this.PendienteFacturarDolares.VisibleIndex = 15;
+            this.PendienteFacturarDolares.VisibleIndex = 16;
             this.PendienteFacturarDolares.Width = 100;
             // 
             // KAM
@@ -330,7 +342,7 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 16;
+            this.KAM.VisibleIndex = 17;
             this.KAM.Width = 200;
             // 
             // btnExportar
@@ -447,5 +459,6 @@
         private System.Windows.Forms.Button verResumen;
         public System.Windows.Forms.PictureBox giftCarga;
         public System.Windows.Forms.Button cargarData;
+        private DevExpress.XtraGrid.Columns.GridColumn ruc;
     }
 }

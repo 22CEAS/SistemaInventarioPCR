@@ -32,6 +32,7 @@
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Ruc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Direccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,6 +87,7 @@
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Cliente,
+            this.Ruc,
             this.Contacto,
             this.Direccion,
             this.Codigo,
@@ -121,6 +123,16 @@
             this.Cliente.VisibleIndex = 0;
             this.Cliente.Width = 250;
             // 
+            // Ruc
+            // 
+            this.Ruc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Ruc.AppearanceHeader.Options.UseBackColor = true;
+            this.Ruc.Caption = "Ruc";
+            this.Ruc.FieldName = "Ruc";
+            this.Ruc.Name = "Ruc";
+            this.Ruc.Visible = true;
+            this.Ruc.VisibleIndex = 1;
+            // 
             // Contacto
             // 
             this.Contacto.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -153,7 +165,7 @@
             this.Codigo.Name = "Codigo";
             this.Codigo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Codigo.Visible = true;
-            this.Codigo.VisibleIndex = 1;
+            this.Codigo.VisibleIndex = 2;
             this.Codigo.Width = 150;
             // 
             // GuiaSalida
@@ -166,7 +178,7 @@
             this.GuiaSalida.Name = "GuiaSalida";
             this.GuiaSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.GuiaSalida.Visible = true;
-            this.GuiaSalida.VisibleIndex = 2;
+            this.GuiaSalida.VisibleIndex = 3;
             this.GuiaSalida.Width = 140;
             // 
             // Marca
@@ -179,7 +191,7 @@
             this.Marca.Name = "Marca";
             this.Marca.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Marca.Visible = true;
-            this.Marca.VisibleIndex = 3;
+            this.Marca.VisibleIndex = 4;
             this.Marca.Width = 100;
             // 
             // Modelo
@@ -191,7 +203,7 @@
             this.Modelo.MinWidth = 40;
             this.Modelo.Name = "Modelo";
             this.Modelo.Visible = true;
-            this.Modelo.VisibleIndex = 4;
+            this.Modelo.VisibleIndex = 5;
             this.Modelo.Width = 100;
             // 
             // Pantalla
@@ -204,7 +216,7 @@
             this.Pantalla.Name = "Pantalla";
             this.Pantalla.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.Pantalla.Visible = true;
-            this.Pantalla.VisibleIndex = 5;
+            this.Pantalla.VisibleIndex = 6;
             this.Pantalla.Width = 70;
             // 
             // Procesador
@@ -217,7 +229,7 @@
             this.Procesador.Name = "Procesador";
             this.Procesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Procesador.Visible = true;
-            this.Procesador.VisibleIndex = 6;
+            this.Procesador.VisibleIndex = 7;
             this.Procesador.Width = 100;
             // 
             // Generacion
@@ -229,7 +241,7 @@
             this.Generacion.MinWidth = 40;
             this.Generacion.Name = "Generacion";
             this.Generacion.Visible = true;
-            this.Generacion.VisibleIndex = 7;
+            this.Generacion.VisibleIndex = 8;
             this.Generacion.Width = 100;
             // 
             // Video
@@ -251,7 +263,7 @@
             this.Capacidad.MinWidth = 40;
             this.Capacidad.Name = "Capacidad";
             this.Capacidad.Visible = true;
-            this.Capacidad.VisibleIndex = 8;
+            this.Capacidad.VisibleIndex = 9;
             this.Capacidad.Width = 100;
             // 
             // CodigoAntiguo
@@ -264,7 +276,7 @@
             this.CodigoAntiguo.Name = "CodigoAntiguo";
             this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 9;
+            this.CodigoAntiguo.VisibleIndex = 10;
             this.CodigoAntiguo.Width = 140;
             // 
             // fecIniContrato
@@ -277,7 +289,7 @@
             this.fecIniContrato.Name = "fecIniContrato";
             this.fecIniContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecIniContrato.Visible = true;
-            this.fecIniContrato.VisibleIndex = 10;
+            this.fecIniContrato.VisibleIndex = 11;
             this.fecIniContrato.Width = 100;
             // 
             // fecFinContrato
@@ -290,7 +302,7 @@
             this.fecFinContrato.Name = "fecFinContrato";
             this.fecFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinContrato.Visible = true;
-            this.fecFinContrato.VisibleIndex = 11;
+            this.fecFinContrato.VisibleIndex = 12;
             this.fecFinContrato.Width = 100;
             // 
             // btnExportar
@@ -406,5 +418,6 @@
         private System.Windows.Forms.Button verResumen;
         public System.Windows.Forms.PictureBox giftCarga;
         public System.Windows.Forms.Button cargarData;
+        private DevExpress.XtraGrid.Columns.GridColumn Ruc;
     }
 }

@@ -34,6 +34,7 @@
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ruc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Direccion = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Codigo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -122,6 +123,7 @@
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.IdSalida,
             this.Cliente,
+            this.ruc,
             this.Contacto,
             this.Direccion,
             this.Codigo,
@@ -149,7 +151,6 @@
             this.vista.Name = "vista";
             this.vista.OptionsBehavior.Editable = false;
             this.vista.OptionsSelection.MultiSelect = true;
-            this.vista.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
@@ -164,7 +165,7 @@
             this.IdSalida.Name = "IdSalida";
             this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.IdSalida.Visible = true;
-            this.IdSalida.VisibleIndex = 1;
+            this.IdSalida.VisibleIndex = 0;
             this.IdSalida.Width = 70;
             // 
             // Cliente
@@ -179,6 +180,16 @@
             this.Cliente.Visible = true;
             this.Cliente.VisibleIndex = 2;
             this.Cliente.Width = 250;
+            // 
+            // ruc
+            // 
+            this.ruc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ruc.AppearanceHeader.Options.UseBackColor = true;
+            this.ruc.Caption = "Ruc";
+            this.ruc.FieldName = "ruc";
+            this.ruc.Name = "ruc";
+            this.ruc.Visible = true;
+            this.ruc.VisibleIndex = 1;
             // 
             // Contacto
             // 
@@ -569,5 +580,6 @@
         public System.Windows.Forms.PictureBox giftCarga;
         private System.Windows.Forms.Button verResumen;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn ruc;
     }
 }

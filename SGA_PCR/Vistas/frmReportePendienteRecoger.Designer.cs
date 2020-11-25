@@ -32,6 +32,7 @@
             this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
             this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Ruc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DireccionCliente = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TelefonoContacto = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -96,6 +97,7 @@
             this.vista.Appearance.Row.Options.UseForeColor = true;
             this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Cliente,
+            this.Ruc,
             this.Contacto,
             this.DireccionCliente,
             this.TelefonoContacto,
@@ -141,6 +143,16 @@
             this.Cliente.VisibleIndex = 0;
             this.Cliente.Width = 200;
             // 
+            // Ruc
+            // 
+            this.Ruc.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Ruc.AppearanceHeader.Options.UseBackColor = true;
+            this.Ruc.Caption = "Ruc";
+            this.Ruc.FieldName = "Ruc";
+            this.Ruc.Name = "Ruc";
+            this.Ruc.Visible = true;
+            this.Ruc.VisibleIndex = 1;
+            // 
             // Contacto
             // 
             this.Contacto.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -151,7 +163,7 @@
             this.Contacto.Name = "Contacto";
             this.Contacto.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Contacto.Visible = true;
-            this.Contacto.VisibleIndex = 1;
+            this.Contacto.VisibleIndex = 2;
             this.Contacto.Width = 200;
             // 
             // DireccionCliente
@@ -164,7 +176,7 @@
             this.DireccionCliente.Name = "DireccionCliente";
             this.DireccionCliente.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.DireccionCliente.Visible = true;
-            this.DireccionCliente.VisibleIndex = 2;
+            this.DireccionCliente.VisibleIndex = 3;
             this.DireccionCliente.Width = 300;
             // 
             // TelefonoContacto
@@ -177,7 +189,7 @@
             this.TelefonoContacto.Name = "TelefonoContacto";
             this.TelefonoContacto.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TelefonoContacto.Visible = true;
-            this.TelefonoContacto.VisibleIndex = 3;
+            this.TelefonoContacto.VisibleIndex = 4;
             this.TelefonoContacto.Width = 100;
             // 
             // CódigoLC
@@ -190,7 +202,7 @@
             this.CódigoLC.Name = "CódigoLC";
             this.CódigoLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CódigoLC.Visible = true;
-            this.CódigoLC.VisibleIndex = 4;
+            this.CódigoLC.VisibleIndex = 5;
             this.CódigoLC.Width = 150;
             // 
             // Guía
@@ -203,7 +215,7 @@
             this.Guía.Name = "Guía";
             this.Guía.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Guía.Visible = true;
-            this.Guía.VisibleIndex = 5;
+            this.Guía.VisibleIndex = 6;
             this.Guía.Width = 200;
             // 
             // MarcaLC
@@ -216,7 +228,7 @@
             this.MarcaLC.Name = "MarcaLC";
             this.MarcaLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.MarcaLC.Visible = true;
-            this.MarcaLC.VisibleIndex = 6;
+            this.MarcaLC.VisibleIndex = 7;
             this.MarcaLC.Width = 150;
             // 
             // NombreModeloLC
@@ -229,7 +241,7 @@
             this.NombreModeloLC.Name = "NombreModeloLC";
             this.NombreModeloLC.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NombreModeloLC.Visible = true;
-            this.NombreModeloLC.VisibleIndex = 7;
+            this.NombreModeloLC.VisibleIndex = 8;
             this.NombreModeloLC.Width = 200;
             // 
             // CodigoAntiguo
@@ -242,7 +254,7 @@
             this.CodigoAntiguo.Name = "CodigoAntiguo";
             this.CodigoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.CodigoAntiguo.Visible = true;
-            this.CodigoAntiguo.VisibleIndex = 8;
+            this.CodigoAntiguo.VisibleIndex = 9;
             this.CodigoAntiguo.Width = 140;
             // 
             // FechaInicioContrato
@@ -255,7 +267,7 @@
             this.FechaInicioContrato.Name = "FechaInicioContrato";
             this.FechaInicioContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaInicioContrato.Visible = true;
-            this.FechaInicioContrato.VisibleIndex = 9;
+            this.FechaInicioContrato.VisibleIndex = 10;
             this.FechaInicioContrato.Width = 150;
             // 
             // FechaFinContrato
@@ -268,7 +280,7 @@
             this.FechaFinContrato.Name = "FechaFinContrato";
             this.FechaFinContrato.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.FechaFinContrato.Visible = true;
-            this.FechaFinContrato.VisibleIndex = 10;
+            this.FechaFinContrato.VisibleIndex = 11;
             this.FechaFinContrato.Width = 150;
             // 
             // TipoProcesador
@@ -281,7 +293,7 @@
             this.TipoProcesador.Name = "TipoProcesador";
             this.TipoProcesador.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.TipoProcesador.Visible = true;
-            this.TipoProcesador.VisibleIndex = 11;
+            this.TipoProcesador.VisibleIndex = 12;
             this.TipoProcesador.Width = 150;
             // 
             // NombreModeloVideo
@@ -305,7 +317,7 @@
             this.DiasAtrasoRecojo.Name = "DiasAtrasoRecojo";
             this.DiasAtrasoRecojo.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.DiasAtrasoRecojo.Visible = true;
-            this.DiasAtrasoRecojo.VisibleIndex = 12;
+            this.DiasAtrasoRecojo.VisibleIndex = 13;
             this.DiasAtrasoRecojo.Width = 150;
             // 
             // MotivoNoRecojo
@@ -329,7 +341,7 @@
             this.factura.Name = "factura";
             this.factura.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.factura.Visible = true;
-            this.factura.VisibleIndex = 13;
+            this.factura.VisibleIndex = 14;
             this.factura.Width = 150;
             // 
             // fecInicioFactura
@@ -342,7 +354,7 @@
             this.fecInicioFactura.Name = "fecInicioFactura";
             this.fecInicioFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecInicioFactura.Visible = true;
-            this.fecInicioFactura.VisibleIndex = 14;
+            this.fecInicioFactura.VisibleIndex = 15;
             this.fecInicioFactura.Width = 150;
             // 
             // fecFinFactura
@@ -355,7 +367,7 @@
             this.fecFinFactura.Name = "fecFinFactura";
             this.fecFinFactura.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.fecFinFactura.Visible = true;
-            this.fecFinFactura.VisibleIndex = 15;
+            this.fecFinFactura.VisibleIndex = 16;
             this.fecFinFactura.Width = 150;
             // 
             // MontoSoles
@@ -368,7 +380,7 @@
             this.MontoSoles.Name = "MontoSoles";
             this.MontoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoSoles.Visible = true;
-            this.MontoSoles.VisibleIndex = 16;
+            this.MontoSoles.VisibleIndex = 17;
             this.MontoSoles.Width = 150;
             // 
             // MontoDolares
@@ -381,7 +393,7 @@
             this.MontoDolares.Name = "MontoDolares";
             this.MontoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.MontoDolares.Visible = true;
-            this.MontoDolares.VisibleIndex = 17;
+            this.MontoDolares.VisibleIndex = 18;
             this.MontoDolares.Width = 150;
             // 
             // TotalDolares
@@ -394,7 +406,7 @@
             this.TotalDolares.Name = "TotalDolares";
             this.TotalDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.TotalDolares.Visible = true;
-            this.TotalDolares.VisibleIndex = 18;
+            this.TotalDolares.VisibleIndex = 19;
             this.TotalDolares.Width = 150;
             // 
             // CostoSoles
@@ -407,7 +419,7 @@
             this.CostoSoles.Name = "CostoSoles";
             this.CostoSoles.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoSoles.Visible = true;
-            this.CostoSoles.VisibleIndex = 19;
+            this.CostoSoles.VisibleIndex = 20;
             this.CostoSoles.Width = 100;
             // 
             // CostoDolares
@@ -420,7 +432,7 @@
             this.CostoDolares.Name = "CostoDolares";
             this.CostoDolares.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.CostoDolares.Visible = true;
-            this.CostoDolares.VisibleIndex = 20;
+            this.CostoDolares.VisibleIndex = 21;
             this.CostoDolares.Width = 100;
             // 
             // VersionOffice
@@ -433,7 +445,7 @@
             this.VersionOffice.Name = "VersionOffice";
             this.VersionOffice.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.VersionOffice.Visible = true;
-            this.VersionOffice.VisibleIndex = 21;
+            this.VersionOffice.VisibleIndex = 22;
             this.VersionOffice.Width = 100;
             // 
             // KAM
@@ -446,7 +458,7 @@
             this.KAM.Name = "KAM";
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KAM.Visible = true;
-            this.KAM.VisibleIndex = 22;
+            this.KAM.VisibleIndex = 23;
             this.KAM.Width = 200;
             // 
             // btnExportar
@@ -571,5 +583,6 @@
         private System.Windows.Forms.Button verResumen;
         public System.Windows.Forms.PictureBox giftCarga;
         public System.Windows.Forms.Button cargarData;
+        private DevExpress.XtraGrid.Columns.GridColumn Ruc;
     }
 }
