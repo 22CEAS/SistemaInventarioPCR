@@ -47,6 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtReferencia = new System.Windows.Forms.TextBox();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbTipoSalida = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnAgregarProducto
@@ -181,10 +183,9 @@
             gridColumn3.DataPropertyName = "ModeloLC";
             gridColumn3.MinimumWidth = 100;
             gridColumn3.Name = "Modelo";
-            gridColumn4.AllowEdit = false;
             gridColumn4.DataPropertyName = "FechaIniContrato";
             gridColumn4.DefaultNewRowCellValue = "";
-            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimeInputEditControl);
+            gridColumn4.EditorType = typeof(DevComponents.DotNetBar.SuperGrid.GridDateTimePickerEditControl);
             gridColumn4.Name = "Inicio Plazo Alquiler";
             gridColumn4.Width = 110;
             gridColumn5.DataPropertyName = "FechaFinContrato";
@@ -216,13 +217,12 @@
             this.dgvLaptopsSeleccionados.Size = new System.Drawing.Size(520, 318);
             this.dgvLaptopsSeleccionados.TabIndex = 165;
             this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
-            this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 65);
+            this.label3.Location = new System.Drawing.Point(202, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 16);
             this.label3.TabIndex = 163;
@@ -240,7 +240,7 @@
             // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(27, 88);
+            this.txtReferencia.Location = new System.Drawing.Point(205, 88);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(170, 20);
             this.txtReferencia.TabIndex = 2;
@@ -265,12 +265,34 @@
             this.btnBorrar.UseVisualStyleBackColor = false;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(23, 70);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 16);
+            this.label7.TabIndex = 180;
+            this.label7.Text = "Tipo";
+            // 
+            // cmbTipoSalida
+            // 
+            this.cmbTipoSalida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbTipoSalida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoSalida.FormattingEnabled = true;
+            this.cmbTipoSalida.Location = new System.Drawing.Point(26, 88);
+            this.cmbTipoSalida.Name = "cmbTipoSalida";
+            this.cmbTipoSalida.Size = new System.Drawing.Size(151, 21);
+            this.cmbTipoSalida.TabIndex = 179;
+            // 
             // frmProcesoRenovacion
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(681, 490);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbTipoSalida);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.btnCancelar);
@@ -308,5 +330,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtReferencia;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cmbTipoSalida;
     }
 }

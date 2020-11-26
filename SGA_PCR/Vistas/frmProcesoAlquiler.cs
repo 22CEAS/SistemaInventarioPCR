@@ -60,7 +60,7 @@ namespace Apolo
             artTemp = new LC();
             dtpFechaTraslado.Value = DateTime.Now;
             dtpIniPlazo.Value = DateTime.Now;
-            dtpFinPlazo.Value = DateTime.Now;
+            //dtpFinPlazo.Value = DateTime.Now;
             dtpFinPlazo.MinDate = dtpIniPlazo.Value;
 
             tablaCliente = clienteDA.ListarClientes();
@@ -157,8 +157,8 @@ namespace Apolo
                     cmbCliente.Enabled = true;
                     cmbSucursal.Enabled = true;
                     dtpFechaTraslado.Enabled = true;
-                    dtpIniPlazo.Enabled = true;
-                    dtpFinPlazo.Enabled = true;
+                    dtpIniPlazo.Enabled = false;
+                    dtpFinPlazo.Enabled = false;
                     txtNroContrato.Enabled = true;
                     txtNroOC.Enabled = true;
                     txtNroDocumento.Enabled = true;
@@ -226,8 +226,8 @@ namespace Apolo
                     cmbCliente.Enabled = true;
                     cmbSucursal.Enabled = true;
                     dtpFechaTraslado.Enabled = true;
-                    dtpIniPlazo.Enabled = true;
-                    dtpFinPlazo.Enabled = true;
+                    dtpIniPlazo.Enabled = false;
+                    dtpFinPlazo.Enabled = false;
                     txtNroContrato.Enabled = true;
                     txtNroOC.Enabled = true;
                     txtNroDocumento.Enabled = true;
@@ -400,7 +400,7 @@ namespace Apolo
             txtNroOC.Text = "";
             dtpFechaTraslado.Value = DateTime.Now;
             dtpIniPlazo.Value = DateTime.Now;
-            dtpFinPlazo.Value = DateTime.Now;
+            //dtpFinPlazo.Value = DateTime.Now;
 
             
             cmbCliente.SelectedIndex = -1;
@@ -496,6 +496,11 @@ namespace Apolo
         {
             if (dtpFinPlazo.Value < dtpIniPlazo.Value) dtpFinPlazo.Value = dtpIniPlazo.Value;
             dtpFinPlazo.MinDate = dtpIniPlazo.Value;
+            DateTime aux= dtpIniPlazo.Value;
+            aux = aux.AddMonths(1);
+            dtpFinPlazo.Value = aux.AddDays(-1);
+
+
 
             TimeSpan tSpan = dtpFinPlazo.Value - dtpIniPlazo.Value;
             int numDiasTrans = tSpan.Days + 1;
@@ -1587,6 +1592,11 @@ namespace Apolo
             TimeSpan tSpan = dtpFinPlazo.Value - dtpIniPlazo.Value;
             int numDiasTrans = tSpan.Days+1;
             lblNroDias.Text = numDiasTrans.ToString()+" días";
+        }
+
+        private void dtpFechaTraslado_ValueChanged(object sender, EventArgs e)
+        {
+            dtpIniPlazo.Value = dtpFechaTraslado.Value;
         }
     }
 }

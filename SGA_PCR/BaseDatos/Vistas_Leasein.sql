@@ -1719,3 +1719,10 @@ FROM marca m
 WHERE m.idCategoria = 9  
 	AND m.estado = 1 ;
 
+
+
+DROP view IF EXISTS `vista_salida_tipo`;
+create view vista_salida_tipo as
+Select idAuxiliar, descripcion
+from auxiliar
+where cod_tabla="SALIDA_TIPO" and activo=1;

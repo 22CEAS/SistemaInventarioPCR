@@ -49,7 +49,6 @@
     <Compile Include="Cambio.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="ModulosPrincipales.cs" />
-    <Compile Include="RenovacionProductosAuxiliar.cs" />
     <Compile Include="Submodulo.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Cliente.cs" />

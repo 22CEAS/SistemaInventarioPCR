@@ -19,17 +19,23 @@ namespace Apolo
         public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular }
         DataTable tablaCliente;
         DataTable tablaLaptops;
+        DataTable tablaSalidasTipos;
         ClienteDA clienteDA;
         AlquilerDA alquilerDA;
         RenovacionDA renovacionDA;
         BindingList<Renovacion> renovaciones;
         Renovacion renovacionTemp;
+
         int IdCliente;
         String DocumentoReferencia;
         String NumeroDniRuc;
 
+        int IdSalidaTipo;
+        String NombreSalidaTipo;
+
         private int idUsuario;
         private string nombreUsuario = "CEAS";
+        private int idPalabra =3;
 
 
         public frmProcesoRenovacion()
@@ -70,6 +76,11 @@ namespace Apolo
 
             tablaLaptops = renovacionDA.ListarLaptopsClientesEstadoAlquilado(idCliente);
 
+            tablaSalidasTipos = renovacionDA.ListarSalidasTipo();
+            cmbTipoSalida.DataSource = tablaSalidasTipos;
+            cmbTipoSalida.DisplayMember = "descripcion";
+            cmbTipoSalida.ValueMember = "idAuxiliar";
+
             ObtenerDatosRenovacion();
             dgvLaptopsSeleccionados.PrimaryGrid.AutoGenerateColumns = false;
 
@@ -86,6 +97,18 @@ namespace Apolo
             aux2 = txtNroDocumento.Text;
             NumeroDniRuc = aux2.Trim();
 
+            
+            int i = cmbTipoSalida.SelectedIndex;
+            if (i >= 0) //Esto verifica que se ha seleccionado algún item del comboBox
+            {
+                IdSalidaTipo = Convert.ToInt32(tablaSalidasTipos.Rows[i]["idAuxiliar"].ToString());
+                NombreSalidaTipo = tablaSalidasTipos.Rows[i]["descripcion"].ToString();
+            }
+            else
+            {
+                NombreSalidaTipo = "";
+            }
+
         }
 
         public void estadoComponentes(TipoVista estado)
@@ -94,6 +117,7 @@ namespace Apolo
             {
                 case TipoVista.Inicial:
                     cmbCliente.Enabled = false;
+                    cmbTipoSalida.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
@@ -107,6 +131,7 @@ namespace Apolo
                     break;
                 case TipoVista.Nuevo:
                     cmbCliente.Enabled = true;
+                    cmbTipoSalida.Enabled = true;
                     txtReferencia.Enabled = true;
                     txtNroDocumento.Enabled = true;
                     dgvLaptopsSeleccionados.Enabled = true;
@@ -121,6 +146,7 @@ namespace Apolo
                     break;
                 case TipoVista.Guardar:
                     cmbCliente.Enabled = false;
+                    cmbTipoSalida.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
@@ -132,6 +158,7 @@ namespace Apolo
                     break;
                 case TipoVista.Modificar:
                     cmbCliente.Enabled = true;
+                    cmbTipoSalida.Enabled = true;
                     txtReferencia.Enabled = true;
                     txtNroDocumento.Enabled = true;
                     dgvLaptopsSeleccionados.Enabled = true;
@@ -143,6 +170,7 @@ namespace Apolo
                     break;
                 case TipoVista.Vista:
                     cmbCliente.Enabled = false;
+                    cmbTipoSalida.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
@@ -155,6 +183,7 @@ namespace Apolo
                     break;
                 case TipoVista.Limpiar:
                     cmbCliente.Enabled = false;
+                    cmbTipoSalida.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
@@ -168,6 +197,7 @@ namespace Apolo
                     break;
                 case TipoVista.Duplicar:
                     cmbCliente.Enabled = false;
+                    cmbTipoSalida.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
@@ -181,6 +211,7 @@ namespace Apolo
                     break;
                 case TipoVista.Anular:
                     cmbCliente.Enabled = false;
+                    cmbTipoSalida.Enabled = false;
                     txtReferencia.Enabled = false;
                     txtNroDocumento.Enabled = false;
                     dgvLaptopsSeleccionados.Enabled = false;
@@ -197,6 +228,7 @@ namespace Apolo
         {
             txtReferencia.Text = "";
             cmbCliente.SelectedIndex = 0;
+            cmbTipoSalida.SelectedIndex = -1;
             dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
         }
 
@@ -233,7 +265,7 @@ namespace Apolo
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            Cursor.Current = Cursors.WaitCursor;
+            Cursor.Current = Cursors.WaitCursor;            
 
             if (cmbCliente.SelectedValue == null)
             {
@@ -262,17 +294,25 @@ namespace Apolo
                 return;
             }
 
-            //if (DocumentoReferencia.Length == 0)
-            //{
-            //    MessageBox.Show("No se puede grabar esta Devolución\nnecesita ingresar un documento de referencia.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
-            //                MessageBoxIcon.Error);
-            //    return;
-            //}
+            
+            if (cmbTipoSalida.SelectedValue == null)
+            {
+                MessageBox.Show("No se puede grabar una Renovacion si no\nha seleccionado un tipo de renovación.", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+            else if (Convert.ToInt32(cmbTipoSalida.SelectedValue.ToString()) != this.idPalabra && DocumentoReferencia.Length == 0)
+            {
+                MessageBox.Show("Si se ha seleccionado Orden de Compra o Contrato ingrese un documento", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+
 
             if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Renovación", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int error = 0;
-                error = renovacionDA.InsertarRenovaciones(renovaciones, this.nombreUsuario,DocumentoReferencia);
+                error = renovacionDA.InsertarRenovaciones(renovaciones, this.nombreUsuario,DocumentoReferencia,IdSalidaTipo, NombreSalidaTipo);
 
                 if (error == 0)
                 {
@@ -293,11 +333,6 @@ namespace Apolo
                 renovaciones = new BindingList<Renovacion>();
                 dgvLaptopsSeleccionados.PrimaryGrid.DataSource = null;
             }
-        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -334,9 +369,6 @@ namespace Apolo
 
             dgvLaptopsSeleccionados.PrimaryGrid.DataSource = renovaciones;
         }
-
-        private void dgvLaptopsSeleccionados_DoubleClick(object sender, EventArgs e)
-        {}
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {

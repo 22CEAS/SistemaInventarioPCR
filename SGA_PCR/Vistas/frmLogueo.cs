@@ -69,13 +69,7 @@ namespace Apolo
                     MessageBox.Show("USUARIO O CONTRASEÑA ERRONEOS", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            
-
-            
-            
-            
-            
+                        
         }
         private void IngresarSistema()
         {

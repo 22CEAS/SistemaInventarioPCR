@@ -251,7 +251,7 @@
             this.dgvUsuarios.PrimaryGrid.EnableRowFiltering = true;
             this.dgvUsuarios.PrimaryGrid.Filter.Visible = true;
             this.dgvUsuarios.PrimaryGrid.MultiSelect = false;
-            this.dgvUsuarios.PrimaryGrid.NoRowsText = "No hay ninguna memoria, cree una memoria";
+            this.dgvUsuarios.PrimaryGrid.NoRowsText = "No hay ningún usuario, cree un usuario";
             this.dgvUsuarios.PrimaryGrid.NullString = "<<null>>";
             this.dgvUsuarios.PrimaryGrid.RowHeaderWidth = 45;
             this.dgvUsuarios.PrimaryGrid.ShowRowHeaders = false;
@@ -261,8 +261,9 @@
             // 
             // frmConfiguracionUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnCancelar);
@@ -281,7 +282,11 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtDni);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConfiguracionUsuarios";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "USUARIOS";
             this.Load += new System.EventHandler(this.frmConfiguracionUsuarios_Load);
