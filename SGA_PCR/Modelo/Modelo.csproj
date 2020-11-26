@@ -48,7 +48,9 @@
     <Compile Include="Auxiliar.cs" />
     <Compile Include="Cambio.cs" />
     <Compile Include="Categoria.cs" />
+    <Compile Include="Estados.cs" />
     <Compile Include="ModulosPrincipales.cs" />
+    <Compile Include="Perfil.cs" />
     <Compile Include="Submodulo.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Cliente.cs" />

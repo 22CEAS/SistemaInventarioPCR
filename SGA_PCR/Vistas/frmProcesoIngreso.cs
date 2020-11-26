@@ -138,6 +138,7 @@ namespace Apolo
                 ingreso.Total += d.Precio * d.Cantidad;
             }
 
+            
 
         }
 
@@ -445,30 +446,41 @@ namespace Apolo
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            try
+            if (cmbTipoIngreso.SelectedIndex != -1)
             {
-                IngresoDetalle detalle = new IngresoDetalle();
-                using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu())
+                //! 0 -> COMPRA
+                //! 1 -> SUBARRIENDO
+                string tipo = cmbTipoIngreso.SelectedIndex.ToString();
+
+                try
                 {
-                    if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    IngresoDetalle detalle = new IngresoDetalle();
+                    using (frmProcesoIngresoLaptopCpu frm = new frmProcesoIngresoLaptopCpu(tipo))
                     {
-                        BindingList<IngresoDetalle> auxiliares = new BindingList<IngresoDetalle>();
-                        foreach (IngresoDetalle aux in ingreso.Detalles)
+                        if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                         {
-                            auxiliares.Add(aux);
+                            BindingList<IngresoDetalle> auxiliares = new BindingList<IngresoDetalle>();
+                            foreach (IngresoDetalle aux in ingreso.Detalles)
+                            {
+                                auxiliares.Add(aux);
+                            }
+                            detalle = frm.DETALLE;
+                            detalle.IdIngresoDetalle = ingreso.Detalles.Count + 1;
+                            auxiliares.Add(detalle);
+                            ingreso.Detalles = auxiliares;
+                            //ingreso.Detalles.Add(detalle);
+                            dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
                         }
-                        detalle = frm.DETALLE;
-                        detalle.IdIngresoDetalle = ingreso.Detalles.Count + 1;
-                        auxiliares.Add(detalle);
-                        ingreso.Detalles = auxiliares;
-                        //ingreso.Detalles.Add(detalle);
-                        dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
                     }
                 }
-            }
-            catch
-            {
+                catch
+                {
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el tipo de ingreso");
             }
 
         }
@@ -1343,43 +1355,60 @@ namespace Apolo
 
             Cursor.Current = Cursors.WaitCursor;
 
-            if (numIngreso.Length == 0)
+
+            //VALIDAR SI ES COMPRA (0)  O ARRENDAMIENTO (1)
+            //! 0 -> COMPRA
+            //! 1 -> SUBARRIENDO
+            string tipo = cmbTipoIngreso.SelectedIndex.ToString();
+
+            if (tipo == "0") //! -> COMPRA
             {
-                if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+
+                if (numIngreso.Length == 0)
                 {
-                    
-                    int idIngreso = ingresoDA.InsertarIngreso(ingreso, this.nombreUsuario);
-
-                    if (idIngreso == -1)
+                    if (MessageBox.Show("Estas seguro que deseas Guardar este proceso de Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
                     {
-                        MessageBox.Show("Hubo error en Registrar el Ingreso, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                        return;
-                    }
-                    for(int i=0;i<ingreso.Detalles.Count;i++)
-                    {
-                        ingreso.Detalles[i].IdIngresoDetalle = i + 1;
-                    }
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
 
-                    MessageBox.Show("Se guardó el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    ingreso.IdIngreso = idIngreso;
-                    txtNroIngreso.Text = idIngreso.ToString();
-                    estadoComponentes(TipoVista.Guardar);
+                        int idIngreso = ingresoDA.InsertarIngreso(ingreso, this.nombreUsuario);
+
+                        if (idIngreso == -1)
+                        {
+                            MessageBox.Show("Hubo error en Registrar el Ingreso, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                            return;
+                        }
+                        for (int i = 0; i < ingreso.Detalles.Count; i++)
+                        {
+                            ingreso.Detalles[i].IdIngresoDetalle = i + 1;
+                        }
+                        dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+
+                        MessageBox.Show("Se guardó el Ingreso", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                        ingreso.IdIngreso = idIngreso;
+                        txtNroIngreso.Text = idIngreso.ToString();
+                        estadoComponentes(TipoVista.Guardar);
+                    }
+                }
+                else
+                {
+                    if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+                    {
+                        ingresoDA.ModificarIngreso(ingreso, this.nombreUsuario);
+                        for (int i = 0; i < ingreso.Detalles.Count; i++)
+                        {
+                            ingreso.Detalles[i].IdIngresoDetalle = i + 1;
+                        }
+                        dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
+                        MessageBox.Show("Se Modifico el Ingreso N° :" + txtNroIngreso.Text + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        estadoComponentes(TipoVista.Guardar);
+                    }
                 }
             }
             else
             {
-                if (MessageBox.Show("Estas seguro que desea Guardar los cambios", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
-                {
-                    ingresoDA.ModificarIngreso(ingreso, this.nombreUsuario);
-                    for (int i = 0; i < ingreso.Detalles.Count; i++)
-                    {
-                        ingreso.Detalles[i].IdIngresoDetalle = i + 1;
-                    }
-                    dgvLaptopsSeleccionados.PrimaryGrid.DataSource = ingreso.Detalles;
-                    MessageBox.Show("Se Modifico el Ingreso N° :" + txtNroIngreso.Text + " con exito", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    estadoComponentes(TipoVista.Guardar);
-                }
+                //SUBARRIENDO
+                MessageBox.Show("PROCESO DE SUBARRIENDO");
+               
+
             }
 
 
@@ -1653,6 +1682,14 @@ namespace Apolo
             //int aux = ingreso.Detalles.Count;
         }
 
-        
+        private void frmProcesoIngreso_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvLaptopsSeleccionados_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

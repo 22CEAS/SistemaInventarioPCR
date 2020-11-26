@@ -18,6 +18,8 @@ namespace Apolo
         public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular }
         DataTable tablaObservaciones;
         Observacion observacion;
+        BindingList<Observacion> detalles;
+        BindingList<Observacion> auxiliares;
         ObservacionDA observacionDA;
         private int idUsuario;
         private string nombreUsuario = "CEAS";
@@ -39,22 +41,46 @@ namespace Apolo
 
         public void Inicializado(int idCliente)
         {
-
-        
+            
             //! TABLA NORMAL    
+            /*
             observacionDA = new ObservacionDA();
 
             tablaObservaciones = observacionDA.ListarObservaciones(idCliente);
 
             dgvObservaciones.PrimaryGrid.AutoGenerateColumns = false;
             dgvObservaciones.PrimaryGrid.DataSource = tablaObservaciones;
-
+            /*
             //! TABLA DEV EXPRESS
             
             observacionDA = new ObservacionDA();
             tablaObservaciones = observacionDA.ListarObservaciones(idCliente);
 
             dgvObs.DataSource = tablaObservaciones;
+            vista.OptionsBehavior.AutoPopulateColumns = false;
+            vista.OptionsSelection.MultiSelect = true;
+            */
+
+
+
+            observacionDA = new ObservacionDA();
+            detalles = new BindingList<Observacion>();
+
+            tablaObservaciones = observacionDA.ListarObservaciones(idCliente);
+            auxiliares = new BindingList<Observacion>();
+            int rec = 0;
+            while (rec < tablaObservaciones.Rows.Count)
+            {
+                Observacion auxiliar = new Observacion();
+                auxiliar.CodigoLC = tablaObservaciones.Rows[rec]["CodigoLC"].ToString();
+                auxiliar.ObservacionDeuda = tablaObservaciones.Rows[rec]["ObservacionDeuda"].ToString();
+                auxiliar.IdLC = Convert.ToInt32(tablaObservaciones.Rows[rec]["IdLC"].ToString());
+                auxiliar.IdObervacion = Convert.ToInt32(tablaObservaciones.Rows[rec]["IdObservacion"].ToString());
+                auxiliares.Add(auxiliar);
+                rec++;
+            }
+
+            dgvObs.DataSource = auxiliares;
             vista.OptionsBehavior.AutoPopulateColumns = false;
             vista.OptionsSelection.MultiSelect = true;
         }
@@ -86,27 +112,24 @@ namespace Apolo
             
             int flag = 0;
             int filas = tablaObservaciones.Rows.Count;
-
             vista.ClearColumnsFilter();
             for (int i = 0; i < filas; i++)
             {
-                bool aux2 = bool.Parse(vista.GetRowCellValue(i, "seleccion").ToString());
-                MessageBox.Show(aux2.ToString());
-                
-                
+                bool aux2 = bool.Parse(vista.GetRowCellValue(i, "Seleccion").ToString());
+                //MessageBox.Show(aux2.ToString());
                 if (aux2)
                 {
                     observacion = new Observacion();
                     observacion.IdLC = int.Parse(vista.GetRowCellValue(i, "IdLC").ToString());
                     observacion.CodigoLC = vista.GetRowCellValue(i, "CodigoLC").ToString();
                     observacion.ObservacionDeuda = vista.GetRowCellValue(i, "ObservacionDeuda").ToString();
-                    observacion.IdObervacion = int.Parse(vista.GetRowCellValue(i, "IdObservacion").ToString());
+                    observacion.IdObervacion = int.Parse(vista.GetRowCellValue(i, "IdObervacion").ToString());
                     flag++;
 
                 }
                
         }
-        MessageBox.Show("FIN CICLO");
+        //MessageBox.Show("FIN CICLO");
             return flag;
              
 

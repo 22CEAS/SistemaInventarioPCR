@@ -20,10 +20,18 @@ namespace Apolo
         public enum TipoVista { Inicial, Nuevo, Modificar, Guardar, Vista, Limpiar, Duplicar, Anular , Cancelar}
 
         DataTable tablaAreas;
+        DataTable tablaPerfiles;
+        DataTable tablaEstados;
         DataTable tablaUsuarios;
 
         Area area;
         AreaDA areaDA;
+
+        Perfil perfil;
+        PerfilDA perfilDA;
+
+        Estados estados;
+        EstadosDA estadosDA;
 
         Usuario usuario;
         UsuarioDA usuarioDA;
@@ -41,14 +49,38 @@ namespace Apolo
             areaDA = new AreaDA();
             area = new Area();
 
+            perfilDA = new PerfilDA();
+            perfil = new Perfil();
+
+            estadosDA= new EstadosDA();
+            estados = new Estados();
+
             usuarioDA = new UsuarioDA();
             usuario = new Usuario();
 
-            //COMBO BOX LISTADO DE USUARIOS
+            //! AREA
             tablaAreas = areaDA.ListarAreas();
             cmbArea.DataSource = tablaAreas;
             cmbArea.DisplayMember = "descripcionArea";
             cmbArea.ValueMember = "idArea";
+
+            //! PERFIL
+            tablaPerfiles = perfilDA.ListarPerfiles();
+            cmbPerfil.DataSource = tablaPerfiles;
+            cmbPerfil.DisplayMember = "descripcion";
+            cmbPerfil.ValueMember = "idPerfil";
+
+
+            //! ESTADO
+            tablaEstados = estadosDA.ListarEstados();
+            cmbEstado.DataSource = tablaEstados;
+            cmbEstado.DisplayMember = "nombreEstado";
+            cmbEstado.ValueMember = "idEstado";
+
+
+            cmbArea.SelectedIndex = -1;
+            cmbEstado.SelectedIndex = -1;
+            cmbPerfil.SelectedIndex = -1;
 
             llenadoTablaUsuarios();
         }
@@ -57,7 +89,7 @@ namespace Apolo
         {
             //RELLENAR TABLA DE USUARIOS
             tablaUsuarios = usuarioDA.ListarUsuario();
-            dgvUsuarios.PrimaryGrid.AutoGenerateColumns = true;
+            dgvUsuarios.PrimaryGrid.AutoGenerateColumns = false;
             dgvUsuarios.PrimaryGrid.DataSource = tablaUsuarios;
         }
 
@@ -79,10 +111,14 @@ namespace Apolo
                     txtClaveUsuario.Enabled = false;
                     txtEmail.Enabled = false;
                     cmbArea.Enabled = false;
+                    cmbEstado.Enabled = false;
+                    cmbPerfil.Enabled = false;
+
                     dgvUsuarios.Enabled = true;
                     break;
                 case TipoVista.Nuevo: //ya esta
                     //Inicializado(idUsuario, nombreUsuario);
+                    limpiar_componentes();
                     btnNuevo.Enabled = false;
                     btnCancelar.Enabled = true;
                     btnGrabar.Enabled = true;
@@ -94,6 +130,8 @@ namespace Apolo
                     txtClaveUsuario.Enabled = true;
                     txtEmail.Enabled = true;
                     cmbArea.Enabled = true;
+                    cmbEstado.Enabled = true;
+                    cmbPerfil.Enabled = true;
                     dgvUsuarios.Enabled = false;
                     break;
                 case TipoVista.Guardar: //ya esta listo
@@ -116,6 +154,8 @@ namespace Apolo
                     txtClaveUsuario.Enabled = true;
                     txtEmail.Enabled = true;
                     cmbArea.Enabled = true;
+                    cmbEstado.Enabled = true;
+                    cmbPerfil.Enabled = true;
                     dgvUsuarios.Enabled = false;
                     break;
                 case TipoVista.Cancelar://ya esta //Inicializado(idUsuario, nombreUsuario);
@@ -130,6 +170,8 @@ namespace Apolo
                     txtClaveUsuario.Enabled = false;
                     txtEmail.Enabled = false;
                     cmbArea.Enabled = false;
+                    cmbEstado.Enabled = false;
+                    cmbPerfil.Enabled = false;
                     dgvUsuarios.Enabled = true;
                     limpiar_componentes();
                     break;
@@ -150,6 +192,9 @@ namespace Apolo
             txtUsuario.Text = "";
             txtClaveUsuario.Text = "";
             txtEmail.Text = "";
+            cmbArea.SelectedIndex = -1;
+            cmbEstado.SelectedIndex = -1;
+            cmbPerfil.SelectedIndex = -1;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -185,29 +230,53 @@ namespace Apolo
                         {
                             if (txtEmail.Text.Trim().Length > 0 && validacionCorreoLeasein(txtEmail.Text.Trim())==true)
                             {
-                                //INSERTAR CON PROCEDURE -> RECUPERAMOS LOS ELEMENTOS
-
-                                string dni = txtDni.Text.Trim();
-                                string nombre = txtNombre.Text.Trim();
-                                string usuario = txtUsuario.Text.Trim();
-                                string claveUsuario = txtClaveUsuario.Text.Trim();
-                                string email = txtEmail.Text.Trim();
-                                int idArea = Convert.ToInt32(cmbArea.SelectedValue);
-
-
-                                int resultado = usuarioDA.InsertarNuevoUsuario(dni,nombre,usuario,claveUsuario,email,idArea); //orUpdate
-                                if (resultado == 0)
+                                //VALIDACION DE COMBOBOXS
+                                if (cmbArea.SelectedIndex != -1)
                                 {
-                                    MessageBox.Show("OCURRIO UN ERROR AL GUARDAR/MODIFICAR EL NUEVO USUARIO");
+                                    if (cmbPerfil.SelectedIndex != -1)
+                                    {
+                                        if (cmbEstado.SelectedIndex != -1)
+                                        {
+                                            //INSERTAR CON PROCEDURE -> RECUPERAMOS LOS ELEMENTOS
+
+                                            string dni = txtDni.Text.Trim();
+                                            string nombre = txtNombre.Text.Trim();
+                                            string usuario = txtUsuario.Text.Trim();
+                                            string claveUsuario = txtClaveUsuario.Text.Trim();
+                                            string email = txtEmail.Text.Trim();
+                                            int idArea = Convert.ToInt32(cmbArea.SelectedValue);
+                                            int idPerfil = Convert.ToInt32(cmbPerfil.SelectedValue);
+                                            int idEstado = Convert.ToInt32(cmbEstado.SelectedValue);
+
+
+                                            int resultado = usuarioDA.InsertarNuevoUsuario(dni, nombre, usuario, claveUsuario, email, idArea, idPerfil, idEstado); //orUpdate
+                                            if (resultado == 0)
+                                            {
+                                                MessageBox.Show("OCURRIO UN ERROR AL GUARDAR/MODIFICAR EL NUEVO USUARIO");
+                                            }
+                                            else
+                                            {
+
+                                                MessageBox.Show("NUEVO USUARIO GUARDADO/MODIFICADO CORRECTAMENTE");
+                                                llenadoTablaUsuarios(); //ACTUALIZA LA TABLA
+                                                limpiar_componentes();
+                                                estadoComponentes(TipoVista.Inicial);
+
+                                            }
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("DEBES SELECCIONAR UN ESTADO", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("DEBES SELECCIONAR UN PERFIL", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    }
                                 }
                                 else
                                 {
-                                    
-                                    MessageBox.Show("NUEVO USUARIO GUARDADO/MODIFICADO CORRECTAMENTE");
-                                    llenadoTablaUsuarios(); //ACTUALIZA LA TABLA
-                                    limpiar_componentes();
-                                    estadoComponentes(TipoVista.Inicial);
-                                    
+                                    MessageBox.Show("DEBES SELECCIONAR UN AREA", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
                             }
                             else
@@ -274,15 +343,44 @@ namespace Apolo
                 string claveUsuario = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[4])).Value.ToString();
                 txtClaveUsuario.Text = claveUsuario;
 
-                string email = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[6])).Value.ToString();
+                string email = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[7])).Value.ToString();
                 txtEmail.Text=email;
 
-                string idArea = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[12])).Value.ToString();
+                string idArea = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[14])).Value.ToString();
                 cmbArea.SelectedValue = idArea;
-                
+
+                string idPerfil = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[5])).Value.ToString();
+                cmbPerfil.SelectedValue = idPerfil;
+
+                string idEstado = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[8])).Value.ToString();
+                cmbEstado.SelectedValue = idEstado;
+
 
             }
             estadoComponentes(TipoVista.Modificar);
+        }
+
+        private void dgvUsuarios_Click(object sender, EventArgs e)
+        {
+         
+            
+            GridRow aux = (GridRow)dgvUsuarios.PrimaryGrid.ActiveRow;
+            
+            
+            if (aux != null)
+            {
+
+                txtDni.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[1])).Value.ToString();
+                txtNombre.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[2])).Value.ToString();
+                txtUsuario.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[3])).Value.ToString();
+                txtClaveUsuario.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[4])).Value.ToString();
+                txtEmail.Text = ((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[7])).Value.ToString();
+                cmbArea.SelectedIndex= int.Parse(((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[14])).Value.ToString())-1;
+
+                cmbEstado.SelectedIndex = int.Parse(((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[8])).Value.ToString());
+                cmbPerfil.SelectedIndex = int.Parse(((GridCell)(((GridRow)dgvUsuarios.PrimaryGrid.ActiveRow)[5])).Value.ToString())-1;
+            }
+            
         }
     }
 }

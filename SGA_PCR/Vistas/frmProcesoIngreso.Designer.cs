@@ -731,6 +731,7 @@
             this.dgvLaptopsSeleccionados.TabIndex = 153;
             this.dgvLaptopsSeleccionados.Text = "Tabla Laptops";
             this.dgvLaptopsSeleccionados.SortChanged += new System.EventHandler<DevComponents.DotNetBar.SuperGrid.GridEventArgs>(this.dgvLaptopsSeleccionados_SortChanged);
+            this.dgvLaptopsSeleccionados.Click += new System.EventHandler(this.dgvLaptopsSeleccionados_Click);
             this.dgvLaptopsSeleccionados.DoubleClick += new System.EventHandler(this.dgvLaptopsSeleccionados_DoubleClick);
             // 
             // label9
@@ -837,6 +838,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Ingreso";
+            this.Load += new System.EventHandler(this.frmProcesoIngreso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtpFechaIngreso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -861,7 +863,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNroIngreso;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cmbTipoIngreso;
         private System.Windows.Forms.Button btnAgregarLicencia;
         private System.Windows.Forms.Button btnAgregarDisco;
         private System.Windows.Forms.Button btnAgregarMemoria;
@@ -885,5 +886,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtMontoCambio;
         private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.ComboBox cmbTipoIngreso;
     }
 }

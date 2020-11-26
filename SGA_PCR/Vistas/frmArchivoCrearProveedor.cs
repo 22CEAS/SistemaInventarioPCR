@@ -380,22 +380,43 @@ namespace Apolo
             if (txtRuc.Text.Trim().Length == 0 || validacionRuc(txtRuc.Text.Trim()) == false || validacionSoloNumeros(txtRuc.Text.Trim())==false || txtRuc.Text.Trim().Length!=11)
                 isError = true;
 
-            if (validacionSoloNumeros(txtTelefono.Text.Trim()) == false || validacionSoloNumeros(txtTelContacto.Text.Trim()) == false)
-                isError = true;
+            
 
-            if (validacionCorreoLeasein(txtEmail.Text.Trim()) == false || validacionCorreoLeasein(txtEmailContacto.Text.Trim()) == false)
+            if(txtTelefono.Text.Trim().Length!=0)
+            { 
+                if (validacionSoloNumeros(txtTelefono.Text.Trim()) == false)
+                    isError = true;
+            }
+
+            if(txtTelContacto.Text.Trim().Length != 0)
+            { 
+                if ( validacionSoloNumeros(txtTelContacto.Text.Trim()) == false)
+                    isError = true;
+            }
+
+            if (txtEmail.Text.Trim().Length != 0)
+            { 
+                if (validacionCorreoLeasein(txtEmail.Text.Trim()) == false)
                 isError = true;
+            }
+
+            if (txtEmailContacto.Text.Trim().Length != 0)
+            {
+                if (validacionCorreoLeasein(txtEmailContacto.Text.Trim()) == false)
+                    isError = true;
+            }
 
             if (validacionSoloNumeros(txtAbreviacion.Text.Trim()) == false)
                 isError = true;
 
 
-
-            
-            /*if (txtAbreviacion.Text == "") isError = true;
             if (txtNombreComercial.Text == "") isError = true;
-            if (txtTelefono.Text == "") isError = true;
             if (txtDireccion.Text == "") isError = true;
+            if (txtAbreviacion.Text == "") isError = true;
+            if (txtAbreviacion.Text.Trim().Length == 0) isError = true;
+
+            /*if (txtAbreviacion.Text == "") isError = true;
+            if (txtTelefono.Text == "") isError = true;
             if (txtEmail.Text == "") isError = true;
             if (txtNombreContacto.Text == "") isError = true;
             if (txtTelContacto.Text == "") isError = true;

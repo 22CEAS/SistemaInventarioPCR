@@ -365,7 +365,7 @@ namespace Apolo
                         MessageBox.Show("Hubo error en Registrar la Devolución, comunicarse con tu soporte", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                         return;
                     }
-                    MessageBox.Show("Se guradó la devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                    MessageBox.Show("Se guardó la devolución", "◄ AVISO | LEASEIN S.A.C. ►", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                     devolucion.IdDevolucion = idDevolucion;
                     txtNroDevolucion.Text = idDevolucion.ToString();
                     estadoComponentes(TipoVista.Guardar);

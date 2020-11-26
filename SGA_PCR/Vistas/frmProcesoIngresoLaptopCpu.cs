@@ -43,18 +43,25 @@ namespace Apolo
 
         private int laptopIdCategoria = 1;
 
-        public frmProcesoIngresoLaptopCpu()
+        public frmProcesoIngresoLaptopCpu(string tipoIngreso)
         {
             InitializeComponent();
             Inicializado();
+
+            if (tipoIngreso == "1")
+            {
+                dgvSerieFabrica.Columns[1].HeaderText = "Codigo Laptop";              
+            }
         }
 
         public frmProcesoIngresoLaptopCpu(IngresoDetalle detalleTraido)
         {
             InitializeComponent();
             Inicializado();
+            
             ObtenerListaLaptops(detalleTraido);
         }
+
 
         public void Inicializado()
         {
@@ -794,7 +801,7 @@ namespace Apolo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+
             // 'Comprobar que tenga filas
             if (validarDatos())
             {
