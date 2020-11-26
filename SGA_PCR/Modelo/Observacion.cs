@@ -22,6 +22,7 @@ namespace Modelo
         private DateTime fechaLevantamiento;
         private int idEstado;
         private String estado;
+        private bool seleccion;
 
         public Observacion()
         {
@@ -42,5 +43,6 @@ namespace Modelo
         public string Estado { get => estado; set => estado = value; }
         public string RUC { get => rUC; set => rUC = value; }
         public DateTime FechaLevantamiento { get => fechaLevantamiento; set => fechaLevantamiento = value; }
+        public bool Seleccion { get => seleccion; set => seleccion = value; }
     }
 }
