@@ -123,7 +123,7 @@
             // btnAgregarProducto
             // 
             this.btnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarProducto.Location = new System.Drawing.Point(973, 145);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(918, 149);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(124, 29);
             this.btnAgregarProducto.TabIndex = 8;
@@ -185,6 +185,7 @@
             this.dtpFechaTraslado.Size = new System.Drawing.Size(115, 20);
             this.dtpFechaTraslado.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.dtpFechaTraslado.TabIndex = 1;
+            this.dtpFechaTraslado.ValueChanged += new System.EventHandler(this.dtpFechaTraslado_ValueChanged);
             // 
             // txtNroDocumento
             // 
@@ -543,6 +544,7 @@
             this.labelX1.Size = new System.Drawing.Size(76, 18);
             this.labelX1.TabIndex = 56;
             this.labelX1.Text = "N° Contrato";
+            this.labelX1.Visible = false;
             // 
             // txtNroContrato
             // 
@@ -550,6 +552,7 @@
             this.txtNroContrato.Name = "txtNroContrato";
             this.txtNroContrato.Size = new System.Drawing.Size(85, 20);
             this.txtNroContrato.TabIndex = 6;
+            this.txtNroContrato.Visible = false;
             // 
             // labelX2
             // 
@@ -565,6 +568,7 @@
             this.labelX2.Size = new System.Drawing.Size(42, 18);
             this.labelX2.TabIndex = 58;
             this.labelX2.Text = "N° OC";
+            this.labelX2.Visible = false;
             // 
             // txtNroOC
             // 
@@ -572,6 +576,7 @@
             this.txtNroOC.Name = "txtNroOC";
             this.txtNroOC.Size = new System.Drawing.Size(85, 20);
             this.txtNroOC.TabIndex = 7;
+            this.txtNroOC.Visible = false;
             // 
             // cmbCliente
             // 

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn7 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn8 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn9 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn10 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn11 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
-            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn12 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn1 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn2 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn3 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn4 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn5 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
+            DevComponents.DotNetBar.SuperGrid.GridColumn gridColumn6 = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.cmbUsuarios = new System.Windows.Forms.ComboBox();
             this.cmbModulosPrincipales = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -140,16 +140,16 @@
             this.dgvSubmodulos.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvSubmodulos.PrimaryGrid.AllowRowResize = true;
             this.dgvSubmodulos.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn7.Name = "idSubmodulo";
-            gridColumn7.Visible = false;
-            gridColumn8.HeaderText = "Descripcion Sub Modulo";
-            gridColumn8.Name = "descripcionSubmodulo";
-            gridColumn8.Width = 300;
-            gridColumn9.Name = "idModuloP";
-            gridColumn9.Visible = false;
-            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn7);
-            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn8);
-            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn9);
+            gridColumn1.Name = "idSubmodulo";
+            gridColumn1.Visible = false;
+            gridColumn2.HeaderText = "Descripcion Sub Modulo";
+            gridColumn2.Name = "descripcionSubmodulo";
+            gridColumn2.Width = 300;
+            gridColumn3.Name = "idModuloP";
+            gridColumn3.Visible = false;
+            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn1);
+            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn2);
+            this.dgvSubmodulos.PrimaryGrid.Columns.Add(gridColumn3);
             this.dgvSubmodulos.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvSubmodulos.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvSubmodulos.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -180,16 +180,16 @@
             this.dgvPermisosUsuario.PrimaryGrid.AllowRowHeaderResize = true;
             this.dgvPermisosUsuario.PrimaryGrid.AllowRowResize = true;
             this.dgvPermisosUsuario.PrimaryGrid.ColumnHeader.RowHeight = 30;
-            gridColumn10.Name = "idUsuario";
-            gridColumn10.Visible = false;
-            gridColumn11.Name = "idSubmodulo";
-            gridColumn11.Visible = false;
-            gridColumn12.HeaderText = "Descripcion Sub Modulo";
-            gridColumn12.Name = "descripcionSubmodulo";
-            gridColumn12.Width = 300;
-            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn10);
-            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn11);
-            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn12);
+            gridColumn4.Name = "idUsuario";
+            gridColumn4.Visible = false;
+            gridColumn5.Name = "idSubmodulo";
+            gridColumn5.Visible = false;
+            gridColumn6.HeaderText = "Descripcion Sub Modulo";
+            gridColumn6.Name = "descripcionSubmodulo";
+            gridColumn6.Width = 300;
+            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn4);
+            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn5);
+            this.dgvPermisosUsuario.PrimaryGrid.Columns.Add(gridColumn6);
             this.dgvPermisosUsuario.PrimaryGrid.DefaultRowHeight = 24;
             this.dgvPermisosUsuario.PrimaryGrid.DefaultVisualStyles.CellStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
             this.dgvPermisosUsuario.PrimaryGrid.DefaultVisualStyles.FilterColumnHeaderStyles.Default.Alignment = DevComponents.DotNetBar.SuperGrid.Style.Alignment.MiddleCenter;
@@ -251,8 +251,9 @@
             // 
             // frmConfiguracionPermisos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(930, 507);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -267,9 +268,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbModulosPrincipales);
             this.Controls.Add(this.cmbUsuarios);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(946, 546);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(946, 546);
             this.Name = "frmConfiguracionPermisos";
+            this.ShowIcon = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PERMISOS";
             this.Load += new System.EventHandler(this.frmConfiguracionPermisos_Load);

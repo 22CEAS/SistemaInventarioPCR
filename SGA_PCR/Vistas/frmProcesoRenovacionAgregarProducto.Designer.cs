@@ -51,11 +51,15 @@
             this.IdProcesador = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdSalidaDetalle = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IdSucursal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GuiaSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnAgregarMeses = new System.Windows.Forms.Button();
             this.btnSeleccionarFilas = new System.Windows.Forms.Button();
             this.btnDeseleccionarFilas = new System.Windows.Forms.Button();
+            this.FechaIniContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FechaFinContratoAntiguo = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRenovacionProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -101,7 +105,6 @@
             this.dgvRenovacionProductos.TabIndex = 130;
             this.dgvRenovacionProductos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
-
             // 
             // vista
             // 
@@ -133,7 +136,11 @@
             this.IdVideo,
             this.IdProcesador,
             this.IdSalidaDetalle,
-            this.IdSucursal});
+            this.IdSucursal,
+            this.IdSalida,
+            this.GuiaSalida,
+            this.FechaIniContratoAntiguo,
+            this.FechaFinContratoAntiguo});
             this.vista.GridControl = this.dgvRenovacionProductos;
             this.vista.Name = "vista";
             this.vista.OptionsSelection.MultiSelect = true;
@@ -302,6 +309,20 @@
             this.IdSucursal.FieldName = "IdSucursal";
             this.IdSucursal.Name = "IdSucursal";
             // 
+            // IdSalida
+            // 
+            this.IdSalida.Caption = "IdSalida";
+            this.IdSalida.FieldName = "IdSalida";
+            this.IdSalida.Name = "IdSalida";
+            this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            // 
+            // GuiaSalida
+            // 
+            this.GuiaSalida.Caption = "GuiaSalida";
+            this.GuiaSalida.FieldName = "GuiaSalida";
+            this.GuiaSalida.Name = "GuiaSalida";
+            this.GuiaSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -391,6 +412,20 @@
             this.btnDeseleccionarFilas.UseVisualStyleBackColor = false;
             this.btnDeseleccionarFilas.Click += new System.EventHandler(this.btnDeseleccionarFilas_Click);
             // 
+            // FechaIniContratoAntiguo
+            // 
+            this.FechaIniContratoAntiguo.Caption = "FechaIniContratoAntiguo";
+            this.FechaIniContratoAntiguo.FieldName = "FechaIniContratoAntiguo";
+            this.FechaIniContratoAntiguo.Name = "FechaIniContratoAntiguo";
+            this.FechaIniContratoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            // 
+            // FechaFinContratoAntiguo
+            // 
+            this.FechaFinContratoAntiguo.Caption = "FechaFinContratoAntiguo";
+            this.FechaFinContratoAntiguo.FieldName = "FechaFinContratoAntiguo";
+            this.FechaFinContratoAntiguo.Name = "FechaFinContratoAntiguo";
+            this.FechaFinContratoAntiguo.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            // 
             // frmProcesoRenovacionAgregarProducto
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -449,5 +484,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private System.Windows.Forms.Button btnSeleccionarFilas;
         private System.Windows.Forms.Button btnDeseleccionarFilas;
+        private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn GuiaSalida;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaIniContratoAntiguo;
+        private DevExpress.XtraGrid.Columns.GridColumn FechaFinContratoAntiguo;
     }
 }
