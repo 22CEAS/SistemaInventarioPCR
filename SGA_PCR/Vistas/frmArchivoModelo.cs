@@ -194,7 +194,7 @@ namespace Apolo
                 chbActivo.Checked = (activo == 1) ? true : false;
                 txtDescripcion.Text = descripcion;
 
-                modeloOld.NombreModelo = descripcion;
+                modeloOld.NombreModelo = descripcion.ToUpper();
                 modeloOld.IdMarca = int.Parse(((GridCell)(((GridRow)dgvModelo.PrimaryGrid.ActiveRow)[2])).Value.ToString());
                 modeloOld.Estado = activo;
 

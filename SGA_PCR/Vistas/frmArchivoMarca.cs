@@ -174,7 +174,7 @@ namespace Apolo
                 chbActivo.Checked = (activo == 1) ? true : false;
                 txtDescripcion.Text = descripcion;
 
-                marcaOld.NombreMarca = descripcion;
+                marcaOld.NombreMarca = descripcion.ToUpper();
                 marcaOld.IdCategoria = idCategoria;
                 marcaOld.Estado = activo;
 
