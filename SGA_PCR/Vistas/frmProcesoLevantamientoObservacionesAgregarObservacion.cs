@@ -40,16 +40,29 @@ namespace Apolo
         public void Inicializado(int idCliente)
         {
 
+        
+            //! TABLA NORMAL    
             observacionDA = new ObservacionDA();
 
             tablaObservaciones = observacionDA.ListarObservaciones(idCliente);
 
             dgvObservaciones.PrimaryGrid.AutoGenerateColumns = false;
             dgvObservaciones.PrimaryGrid.DataSource = tablaObservaciones;
+
+            //! TABLA DEV EXPRESS
+            
+            observacionDA = new ObservacionDA();
+            tablaObservaciones = observacionDA.ListarObservaciones(idCliente);
+
+            dgvObs.DataSource = tablaObservaciones;
+            vista.OptionsBehavior.AutoPopulateColumns = false;
+            vista.OptionsSelection.MultiSelect = true;
         }
 
         public int llenarListaObservaciones()
         {
+            //! VERIFICAR CON LA NUEVA TABLA DE DEVEXPRESS
+            /*
             int flag = 0;
             int filas = tablaObservaciones.Rows.Count;
             for (int i = 0; i < filas; i++)
@@ -68,6 +81,36 @@ namespace Apolo
                 }
             }
             return flag;
+            */
+
+            
+            int flag = 0;
+            int filas = tablaObservaciones.Rows.Count;
+
+            vista.ClearColumnsFilter();
+            for (int i = 0; i < filas; i++)
+            {
+                bool aux2 = bool.Parse(vista.GetRowCellValue(i, "seleccion").ToString());
+                MessageBox.Show(aux2.ToString());
+                
+                
+                if (aux2)
+                {
+                    observacion = new Observacion();
+                    observacion.IdLC = int.Parse(vista.GetRowCellValue(i, "IdLC").ToString());
+                    observacion.CodigoLC = vista.GetRowCellValue(i, "CodigoLC").ToString();
+                    observacion.ObservacionDeuda = vista.GetRowCellValue(i, "ObservacionDeuda").ToString();
+                    observacion.IdObervacion = int.Parse(vista.GetRowCellValue(i, "IdObservacion").ToString());
+                    flag++;
+
+                }
+               
+        }
+        MessageBox.Show("FIN CICLO");
+            return flag;
+             
+
+
         }
 
         public Observacion OBSERVACION { get => observacion; set => observacion = value; }
