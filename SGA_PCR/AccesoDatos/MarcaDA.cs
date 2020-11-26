@@ -125,6 +125,12 @@ namespace AccesoDatos
         {
             return objManager.MostrarTablaDatos("SELECT * FROM marca where idCategoria=" + idCategoria + " ; ");
         }
+
+        public DataTable ListarMarcas(int idCategoriaSO, int idCategoriaOffice, int idCategoriaAntivirus)
+        {
+            return objManager.MostrarTablaDatos("SELECT * FROM marca where idCategoria=" + idCategoriaSO+ " or idCategoria=" + idCategoriaOffice + " or idCategoria=" + idCategoriaAntivirus + " ; ");
+        }
+
         public int GuardarNuevoModelo(Modelo.Modelo modelo, string usuario)
         {
             string sql = "Select * From modelo where idMarca ='" + modelo.IdMarca + "' and nombre= '" + modelo.NombreModelo + "' ;";

@@ -83,6 +83,12 @@
     <Compile Include="frmArchivoKam.Designer.cs">
       <DependentUpon>frmArchivoKam.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArchivoLicencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArchivoLicencias.Designer.cs">
+      <DependentUpon>frmArchivoLicencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmArchivoMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,12 @@
     </Compile>
     <Compile Include="frmProcesoReparacionBuscar.Designer.cs">
       <DependentUpon>frmProcesoReparacionBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProcesoSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcesoSalida.Designer.cs">
+      <DependentUpon>frmProcesoSalida.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReporteAlquileresPorVencer.cs">
       <SubType>Form</SubType>
@@ -444,6 +456,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoKam.resx">
       <DependentUpon>frmArchivoKam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArchivoLicencias.resx">
+      <DependentUpon>frmArchivoLicencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmArchivoMarca.resx">
       <DependentUpon>frmArchivoMarca.cs</DependentUpon>
