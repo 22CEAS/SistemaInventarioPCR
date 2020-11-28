@@ -550,6 +550,9 @@
     <EmbeddedResource Include="frmProcesoReparacionBuscar.resx">
       <DependentUpon>frmProcesoReparacionBuscar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProcesoSalida.resx">
+      <DependentUpon>frmProcesoSalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteAlquileresPorVencer.resx">
       <DependentUpon>frmReporteAlquileresPorVencer.cs</DependentUpon>
     </EmbeddedResource>
