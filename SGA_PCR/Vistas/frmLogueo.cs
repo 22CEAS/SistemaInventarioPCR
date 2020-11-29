@@ -76,7 +76,7 @@ namespace Apolo
 
             int idUsuario = int.Parse(usuarioDA.Obtener_idUsuario(txtUsername.Text));
 
-            TEST_MENU_PRINCIPAL frm = new TEST_MENU_PRINCIPAL(idUsuario);
+            TEST_MENU_PRINCIPAL frm = new TEST_MENU_PRINCIPAL(idUsuario,txtUsername.Text);
             //frmPrincipal frm = new frmPrincipal(); 
 
 

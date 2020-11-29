@@ -33,6 +33,14 @@ namespace Apolo
             Inicializado();
         }
 
+        public frmProcesoSubirFacturas(int idUsuario, string nombreUsuario)
+        {
+            InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
+            Inicializado();
+        }
+
         public void Inicializado()
         {
             //dgvFacturas.PrimaryGrid.AutoGenerateColumns = false;
@@ -94,9 +102,9 @@ namespace Apolo
                             fact.UtilidadTotalSolesSinIGV = 0;
 
                             facturas.Add(fact);
-                            iRow++;
                         }
-                        
+                        iRow++;
+
                     }
                     //dgvFacturas.PrimaryGrid.DataSource = facturas;
 

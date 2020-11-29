@@ -41,6 +41,16 @@ namespace Apolo
             Inicializado();
             estadoComponentes(TipoVista.Inicial);
         }
+        
+        public frmProcesoIngreso(int idUsuario, string nombreUsuario)
+        {
+            InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
+            Inicializado();
+            estadoComponentes(TipoVista.Inicial);
+        }
+
         public void Inicializado()
         {
 

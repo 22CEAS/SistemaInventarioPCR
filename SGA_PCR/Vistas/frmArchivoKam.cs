@@ -33,6 +33,14 @@ namespace Apolo
 
         }
 
+        public frmArchivoKam(int idUsuario, string nombreUsuario)
+        {
+            InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.nombreUsuario = nombreUsuario;
+            Inicializado();
+        }
+
         public void InicializarRelacionClienteKam()
         {
             clienteDA = new ClienteDA();
