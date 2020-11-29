@@ -130,8 +130,8 @@ namespace AccesoDatos
                                             1, 3, out cantidadArrendamiento, 2);
                         int cantidadDeArrendamientos = int.Parse(cantidadArrendamiento[0]); //VERIFICA SI EXISTE EL CODIGO
                         int idLCarrendamiento = int.Parse(cantidadArrendamiento[1]); //CODIGO LC EXISTENTE
-                        MessageBox.Show(cantidadDeArrendamientos.ToString());
-                        MessageBox.Show(idLCarrendamiento.ToString());
+                        //MessageBox.Show(cantidadDeArrendamientos.ToString());
+                        //MessageBox.Show(idLCarrendamiento.ToString());
 
                         string aux = "";
                         string aux2 = "";
@@ -237,7 +237,7 @@ namespace AccesoDatos
                         }
                         else //SI ES ARRENDAMIENTO GUARDA LO QUE ELLOS HAN INGRESADO
                         {
-                            MessageBox.Show(det.Series[i]);
+                            //MessageBox.Show(det.Series[i]);
                             parametrosEntrada[16].Value = det.Series[i];
                         }
 
