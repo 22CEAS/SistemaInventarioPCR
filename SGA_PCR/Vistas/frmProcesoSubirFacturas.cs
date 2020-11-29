@@ -33,14 +33,6 @@ namespace Apolo
             Inicializado();
         }
 
-        public frmProcesoSubirFacturas(int idUsuario, string nombreUsuario)
-        {
-            InitializeComponent();
-            this.idUsuario = idUsuario;
-            this.nombreUsuario = nombreUsuario;
-            Inicializado();
-        }
-
         public void Inicializado()
         {
             //dgvFacturas.PrimaryGrid.AutoGenerateColumns = false;
@@ -102,9 +94,9 @@ namespace Apolo
                             fact.UtilidadTotalSolesSinIGV = 0;
 
                             facturas.Add(fact);
+                            iRow++;
                         }
-                        iRow++;
-
+                        
                     }
                     //dgvFacturas.PrimaryGrid.DataSource = facturas;
 
@@ -199,7 +191,7 @@ namespace Apolo
                                                 if (flag == 2)//2 es grabar
                                                 {
                                                     facturaDA.InsertarFactura(f, this.nombreUsuario, idLcActual, idLcAntigua, codigoActCV);
-                                                    f.ObservacionXLevantar = "Se grabo correctamente la factura.";
+                                                    f.ObservacionXLevantar = "Se grabó correctamente la factura.";
                                                     //if (fecFinContrato < f.FechaFinPago)
                                                     if (fecFinContrato != f.FechaFinPago)//&& tipoContrato==Palabra
                                                     {

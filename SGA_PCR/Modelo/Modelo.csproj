@@ -49,7 +49,6 @@
     <Compile Include="Cambio.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Estados.cs" />
-    <Compile Include="IngresoSalida.cs" />
     <Compile Include="ModulosPrincipales.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Submodulo.cs" />
@@ -73,6 +72,8 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Renovacion.cs" />
     <Compile Include="Reparacion.cs" />
+    <Compile Include="Salida.cs" />
+    <Compile Include="SalidaDetalle.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Video.cs" />
   </ItemGroup>

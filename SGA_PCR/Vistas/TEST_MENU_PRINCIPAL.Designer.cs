@@ -63,6 +63,7 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.ARCHIVO = new System.Windows.Forms.Panel();
+            this.btnLicencias = new System.Windows.Forms.Button();
             this.btnKAM = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -114,7 +115,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(344, 650);
+            this.MenuVertical.Size = new System.Drawing.Size(344, 788);
             this.MenuVertical.TabIndex = 0;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
             // 
@@ -124,7 +125,7 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1751);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1801);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(327, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -179,7 +180,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1711);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1761);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(327, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -204,7 +205,7 @@
             this.REPORTES.Controls.Add(this.button29);
             this.REPORTES.Controls.Add(this.button30);
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.REPORTES.Location = new System.Drawing.Point(0, 1041);
+            this.REPORTES.Location = new System.Drawing.Point(0, 1091);
             this.REPORTES.Name = "REPORTES";
             this.REPORTES.Size = new System.Drawing.Size(327, 670);
             this.REPORTES.TabIndex = 20;
@@ -468,7 +469,7 @@
             this.button20.ForeColor = System.Drawing.Color.White;
             this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(0, 1001);
+            this.button20.Location = new System.Drawing.Point(0, 1051);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(327, 40);
             this.button20.TabIndex = 18;
@@ -490,7 +491,7 @@
             this.PROCESOS.Controls.Add(this.button15);
             this.PROCESOS.Controls.Add(this.button16);
             this.PROCESOS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PROCESOS.Location = new System.Drawing.Point(0, 487);
+            this.PROCESOS.Location = new System.Drawing.Point(0, 537);
             this.PROCESOS.Name = "PROCESOS";
             this.PROCESOS.Size = new System.Drawing.Size(327, 514);
             this.PROCESOS.TabIndex = 17;
@@ -697,7 +698,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 447);
+            this.button1.Location = new System.Drawing.Point(0, 497);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(327, 40);
             this.button1.TabIndex = 10;
@@ -708,6 +709,7 @@
             // ARCHIVO
             // 
             this.ARCHIVO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ARCHIVO.Controls.Add(this.btnLicencias);
             this.ARCHIVO.Controls.Add(this.btnKAM);
             this.ARCHIVO.Controls.Add(this.button9);
             this.ARCHIVO.Controls.Add(this.button8);
@@ -719,9 +721,28 @@
             this.ARCHIVO.Dock = System.Windows.Forms.DockStyle.Top;
             this.ARCHIVO.Location = new System.Drawing.Point(0, 40);
             this.ARCHIVO.Name = "ARCHIVO";
-            this.ARCHIVO.Size = new System.Drawing.Size(327, 407);
+            this.ARCHIVO.Size = new System.Drawing.Size(327, 457);
             this.ARCHIVO.TabIndex = 9;
             this.ARCHIVO.Visible = false;
+            // 
+            // btnLicencias
+            // 
+            this.btnLicencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLicencias.FlatAppearance.BorderSize = 0;
+            this.btnLicencias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnLicencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLicencias.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLicencias.ForeColor = System.Drawing.Color.Black;
+            this.btnLicencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLicencias.Location = new System.Drawing.Point(3, 406);
+            this.btnLicencias.Name = "btnLicencias";
+            this.btnLicencias.Size = new System.Drawing.Size(316, 45);
+            this.btnLicencias.TabIndex = 18;
+            this.btnLicencias.Text = "> LICENCIAS";
+            this.btnLicencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLicencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLicencias.UseVisualStyleBackColor = false;
+            this.btnLicencias.Click += new System.EventHandler(this.btnLicencias_Click);
             // 
             // btnKAM
             // 
@@ -1085,7 +1106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1300, 788);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1169,5 +1190,6 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Button btnKAM;
+        private System.Windows.Forms.Button btnLicencias;
     }
 }

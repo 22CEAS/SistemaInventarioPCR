@@ -41,16 +41,6 @@ namespace Apolo
             Inicializado();
             estadoComponentes(TipoVista.Inicial);
         }
-        
-        public frmProcesoIngreso(int idUsuario, string nombreUsuario)
-        {
-            InitializeComponent();
-            this.idUsuario = idUsuario;
-            this.nombreUsuario = nombreUsuario;
-            Inicializado();
-            estadoComponentes(TipoVista.Inicial);
-        }
-
         public void Inicializado()
         {
 
@@ -1369,10 +1359,7 @@ namespace Apolo
             //VALIDAR SI ES COMPRA (0)  O ARRENDAMIENTO (1)
             //! 0 -> COMPRA
             //! 1 -> SUBARRIENDO
-            string tipo = cmbTipoIngreso.SelectedIndex.ToString();
-
-            if (tipo == "0") //! -> COMPRA
-            {
+            
 
                 if (numIngreso.Length == 0)
                 {
@@ -1412,16 +1399,6 @@ namespace Apolo
                         estadoComponentes(TipoVista.Guardar);
                     }
                 }
-            }
-            else
-            {
-                //SUBARRIENDO
-                MessageBox.Show("PROCESO DE SUBARRIENDO");
-               
-
-            }
-
-
         }
 
         private void dgvMemorias_CellValueChanged(object sender, GridCellValueChangedEventArgs e)
