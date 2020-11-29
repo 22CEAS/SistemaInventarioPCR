@@ -74,7 +74,7 @@
             this.btnDeseleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeseleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnDeseleccionarFilas.Image")));
             this.btnDeseleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(279, 50);
+            this.btnDeseleccionarFilas.Location = new System.Drawing.Point(336, 50);
             this.btnDeseleccionarFilas.Name = "btnDeseleccionarFilas";
             this.btnDeseleccionarFilas.Size = new System.Drawing.Size(144, 50);
             this.btnDeseleccionarFilas.TabIndex = 139;
@@ -94,7 +94,7 @@
             this.btnSeleccionarFilas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionarFilas.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarFilas.Image")));
             this.btnSeleccionarFilas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSeleccionarFilas.Location = new System.Drawing.Point(145, 50);
+            this.btnSeleccionarFilas.Location = new System.Drawing.Point(202, 50);
             this.btnSeleccionarFilas.Name = "btnSeleccionarFilas";
             this.btnSeleccionarFilas.Size = new System.Drawing.Size(128, 50);
             this.btnSeleccionarFilas.TabIndex = 138;
@@ -105,12 +105,12 @@
             // 
             // dgvClienteKam
             // 
-            this.dgvClienteKam.Location = new System.Drawing.Point(80, 117);
+            this.dgvClienteKam.Location = new System.Drawing.Point(33, 117);
             this.dgvClienteKam.MainView = this.vista;
             this.dgvClienteKam.Name = "dgvClienteKam";
             this.dgvClienteKam.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.dgvClienteKam.Size = new System.Drawing.Size(494, 321);
+            this.dgvClienteKam.Size = new System.Drawing.Size(703, 321);
             this.dgvClienteKam.TabIndex = 140;
             this.dgvClienteKam.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -136,7 +136,6 @@
             this.vista.Name = "vista";
             this.vista.OptionsEditForm.ShowOnDoubleClick = DevExpress.Utils.DefaultBoolean.False;
             this.vista.OptionsSelection.MultiSelect = true;
-            this.vista.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
@@ -160,17 +159,17 @@
             // 
             this.CLIENTE.Caption = "CLIENTE";
             this.CLIENTE.FieldName = "Nombre_razonSocial";
-            this.CLIENTE.MinWidth = 200;
+            this.CLIENTE.MinWidth = 100;
             this.CLIENTE.Name = "CLIENTE";
             this.CLIENTE.Visible = true;
             this.CLIENTE.VisibleIndex = 1;
-            this.CLIENTE.Width = 200;
+            this.CLIENTE.Width = 350;
             // 
             // KAM
             // 
             this.KAM.Caption = "KAM";
             this.KAM.FieldName = "KAM1";
-            this.KAM.MinWidth = 200;
+            this.KAM.MinWidth = 100;
             this.KAM.Name = "KAM";
             this.KAM.OptionsColumn.AllowEdit = false;
             this.KAM.UnboundType = DevExpress.Data.UnboundColumnType.String;
@@ -189,7 +188,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(596, 208);
+            this.btnGrabar.Location = new System.Drawing.Point(573, 23);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(119, 63);
             this.btnGrabar.TabIndex = 141;
@@ -202,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 450);
+            this.ClientSize = new System.Drawing.Size(783, 450);
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.dgvClienteKam);
             this.Controls.Add(this.btnDeseleccionarFilas);

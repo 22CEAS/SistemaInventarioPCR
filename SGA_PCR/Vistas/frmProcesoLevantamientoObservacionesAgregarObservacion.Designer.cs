@@ -58,7 +58,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(458, 134);
+            this.btnCancelar.Location = new System.Drawing.Point(645, 289);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 65);
             this.btnCancelar.TabIndex = 126;
@@ -78,7 +78,7 @@
             this.btnGrabar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrabar.Image = ((System.Drawing.Image)(resources.GetObject("btnGrabar.Image")));
             this.btnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnGrabar.Location = new System.Drawing.Point(535, 136);
+            this.btnGrabar.Location = new System.Drawing.Point(722, 291);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(75, 63);
             this.btnGrabar.TabIndex = 125;
@@ -89,14 +89,14 @@
             // 
             // dgvObs
             // 
-            this.dgvObs.Location = new System.Drawing.Point(12, 12);
+            this.dgvObs.Location = new System.Drawing.Point(12, 26);
             this.dgvObs.MainView = this.vista;
             this.dgvObs.Name = "dgvObs";
             this.dgvObs.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemCheckedComboBoxEdit1,
             this.repositoryItemButtonEdit1});
-            this.dgvObs.Size = new System.Drawing.Size(403, 321);
+            this.dgvObs.Size = new System.Drawing.Size(800, 257);
             this.dgvObs.TabIndex = 131;
             this.dgvObs.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -123,7 +123,6 @@
             this.vista.GridControl = this.dgvObs;
             this.vista.Name = "vista";
             this.vista.OptionsSelection.MultiSelect = true;
-            this.vista.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.vista.OptionsView.ColumnAutoWidth = false;
             this.vista.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.vista.OptionsView.ShowAutoFilterRow = true;
@@ -168,7 +167,7 @@
             this.ObservacionDeuda.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.ObservacionDeuda.Visible = true;
             this.ObservacionDeuda.VisibleIndex = 2;
-            this.ObservacionDeuda.Width = 140;
+            this.ObservacionDeuda.Width = 520;
             // 
             // IdLC
             // 
@@ -208,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(657, 352);
+            this.ClientSize = new System.Drawing.Size(837, 366);
             this.Controls.Add(this.dgvObs);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
