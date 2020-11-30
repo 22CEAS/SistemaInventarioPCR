@@ -677,25 +677,3 @@ CREATE TABLE reparacion(
     REFERENCES laptop_cpu(idLC)
 )ENGINE=INNODB;
 
-
-DROP TABLE IF EXISTS `ingresos_salidas_internas`;
-CREATE TABLE ingresos_salidas_internas(
-		idIngresoSalida INT NOT NULL PRIMARY KEY,
-		idLC INT NOT NULL,
-		codigoLC NVARCHAR(80) NOT NULL,
-		estadoLCAnt TINYINT NOT NULL,
-		estadoLCAct TINYINT NOT NULL,
-		fechaIngresoSalida DATE NOT NULL,
-		documentoIdentidad NVARCHAR(255),
-		nombrePersona NVARCHAR(1000),
-		documentoReferencial NVARCHAR(255),
-		tipoIngresoSalida INT NOT NULL,
-		estado TINYINT NOT NULL,
-		fec_ins DATETIME DEFAULT CURRENT_TIMESTAMP,
-		fec_mod DATETIME DEFAULT CURRENT_TIMESTAMP,
-		usuario_ins NVARCHAR(100),
-		usuario_mod NVARCHAR(100),
-		FOREIGN KEY (idLC)
-    REFERENCES laptop_cpu(idLC)
-)ENGINE=INNODB;
-

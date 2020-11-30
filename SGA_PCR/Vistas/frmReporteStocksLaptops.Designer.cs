@@ -53,6 +53,20 @@
             this.giftCarga = new System.Windows.Forms.PictureBox();
             this.cargarData = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblDisponible = new System.Windows.Forms.Label();
+            this.lblAlquilados = new System.Windows.Forms.Label();
+            this.lblInutilizables = new System.Windows.Forms.Label();
+            this.lblPersonal = new System.Windows.Forms.Label();
+            this.lblDanado = new System.Windows.Forms.Label();
+            this.lblTotalLaptops = new System.Windows.Forms.Label();
+            this.txtDisponibles = new System.Windows.Forms.TextBox();
+            this.txtAlquilados = new System.Windows.Forms.TextBox();
+            this.txtInutilizables = new System.Windows.Forms.TextBox();
+            this.txtPersonales = new System.Windows.Forms.TextBox();
+            this.txtDanados = new System.Windows.Forms.TextBox();
+            this.txtTotalLaptops = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCantidadFiltrada = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giftCarga)).BeginInit();
@@ -63,10 +77,10 @@
             this.dgvLaptops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLaptops.Location = new System.Drawing.Point(11, 147);
+            this.dgvLaptops.Location = new System.Drawing.Point(11, 227);
             this.dgvLaptops.MainView = this.vista;
             this.dgvLaptops.Name = "dgvLaptops";
-            this.dgvLaptops.Size = new System.Drawing.Size(1145, 381);
+            this.dgvLaptops.Size = new System.Drawing.Size(1144, 371);
             this.dgvLaptops.TabIndex = 132;
             this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.vista});
@@ -311,7 +325,7 @@
             this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnExportar.Image")));
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExportar.Location = new System.Drawing.Point(1081, 5);
+            this.btnExportar.Location = new System.Drawing.Point(975, 69);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(75, 63);
             this.btnExportar.TabIndex = 139;
@@ -324,19 +338,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 60);
+            this.label1.Location = new System.Drawing.Point(914, 149);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 16);
+            this.label1.Size = new System.Drawing.Size(148, 16);
             this.label1.TabIndex = 148;
-            this.label1.Text = "CANTIDAD REGISTROS:";
+            this.label1.Text = "CANTIDAD FILTRADA:";
             // 
             // verResumen
             // 
             this.verResumen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.verResumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.verResumen.Location = new System.Drawing.Point(18, 30);
+            this.verResumen.Location = new System.Drawing.Point(1175, 598);
             this.verResumen.Name = "verResumen";
-            this.verResumen.Size = new System.Drawing.Size(115, 19);
+            this.verResumen.Size = new System.Drawing.Size(10, 10);
             this.verResumen.TabIndex = 147;
             this.verResumen.Text = "VER RESUMEN";
             this.verResumen.UseVisualStyleBackColor = false;
@@ -344,16 +358,16 @@
             // 
             // giftCarga
             // 
-            this.giftCarga.Location = new System.Drawing.Point(526, 12);
+            this.giftCarga.Location = new System.Drawing.Point(510, 12);
             this.giftCarga.Name = "giftCarga";
-            this.giftCarga.Size = new System.Drawing.Size(123, 82);
+            this.giftCarga.Size = new System.Drawing.Size(186, 109);
             this.giftCarga.TabIndex = 146;
             this.giftCarga.TabStop = false;
             // 
             // cargarData
             // 
             this.cargarData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.cargarData.Location = new System.Drawing.Point(526, 100);
+            this.cargarData.Location = new System.Drawing.Point(548, 127);
             this.cargarData.Name = "cargarData";
             this.cargarData.Size = new System.Drawing.Size(113, 19);
             this.cargarData.TabIndex = 145;
@@ -372,7 +386,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(1087, 74);
+            this.button1.Location = new System.Drawing.Point(1068, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 57);
             this.button1.TabIndex = 149;
@@ -381,11 +395,184 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnExportar2_Click);
             // 
+            // lblDisponible
+            // 
+            this.lblDisponible.AutoSize = true;
+            this.lblDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisponible.Location = new System.Drawing.Point(16, 42);
+            this.lblDisponible.Name = "lblDisponible";
+            this.lblDisponible.Size = new System.Drawing.Size(96, 16);
+            this.lblDisponible.TabIndex = 150;
+            this.lblDisponible.Text = "DISPONIBLES";
+            // 
+            // lblAlquilados
+            // 
+            this.lblAlquilados.AutoSize = true;
+            this.lblAlquilados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlquilados.Location = new System.Drawing.Point(16, 69);
+            this.lblAlquilados.Name = "lblAlquilados";
+            this.lblAlquilados.Size = new System.Drawing.Size(92, 16);
+            this.lblAlquilados.TabIndex = 151;
+            this.lblAlquilados.Text = "ALQUILADOS";
+            // 
+            // lblInutilizables
+            // 
+            this.lblInutilizables.AutoSize = true;
+            this.lblInutilizables.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInutilizables.Location = new System.Drawing.Point(16, 96);
+            this.lblInutilizables.Name = "lblInutilizables";
+            this.lblInutilizables.Size = new System.Drawing.Size(104, 16);
+            this.lblInutilizables.TabIndex = 152;
+            this.lblInutilizables.Text = "INUTILIZABLES";
+            // 
+            // lblPersonal
+            // 
+            this.lblPersonal.AutoSize = true;
+            this.lblPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonal.Location = new System.Drawing.Point(16, 121);
+            this.lblPersonal.Name = "lblPersonal";
+            this.lblPersonal.Size = new System.Drawing.Size(81, 16);
+            this.lblPersonal.TabIndex = 153;
+            this.lblPersonal.Text = "PERSONAL";
+            // 
+            // lblDanado
+            // 
+            this.lblDanado.AutoSize = true;
+            this.lblDanado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDanado.Location = new System.Drawing.Point(16, 152);
+            this.lblDanado.Name = "lblDanado";
+            this.lblDanado.Size = new System.Drawing.Size(66, 16);
+            this.lblDanado.TabIndex = 155;
+            this.lblDanado.Text = "DAÑADO";
+            // 
+            // lblTotalLaptops
+            // 
+            this.lblTotalLaptops.AutoSize = true;
+            this.lblTotalLaptops.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalLaptops.Location = new System.Drawing.Point(16, 185);
+            this.lblTotalLaptops.Name = "lblTotalLaptops";
+            this.lblTotalLaptops.Size = new System.Drawing.Size(139, 32);
+            this.lblTotalLaptops.TabIndex = 158;
+            this.lblTotalLaptops.Text = "TOTAL DE LAPTOPS\r\n EN LA EMPRESA";
+            this.lblTotalLaptops.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtDisponibles
+            // 
+            this.txtDisponibles.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDisponibles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtDisponibles.Location = new System.Drawing.Point(126, 38);
+            this.txtDisponibles.Name = "txtDisponibles";
+            this.txtDisponibles.ReadOnly = true;
+            this.txtDisponibles.Size = new System.Drawing.Size(160, 22);
+            this.txtDisponibles.TabIndex = 159;
+            this.txtDisponibles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDisponibles.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // txtAlquilados
+            // 
+            this.txtAlquilados.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAlquilados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlquilados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtAlquilados.Location = new System.Drawing.Point(126, 65);
+            this.txtAlquilados.Name = "txtAlquilados";
+            this.txtAlquilados.ReadOnly = true;
+            this.txtAlquilados.Size = new System.Drawing.Size(160, 22);
+            this.txtAlquilados.TabIndex = 160;
+            this.txtAlquilados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAlquilados.TextChanged += new System.EventHandler(this.txtAlquilados_TextChanged);
+            // 
+            // txtInutilizables
+            // 
+            this.txtInutilizables.BackColor = System.Drawing.SystemColors.Control;
+            this.txtInutilizables.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInutilizables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtInutilizables.Location = new System.Drawing.Point(126, 92);
+            this.txtInutilizables.Name = "txtInutilizables";
+            this.txtInutilizables.ReadOnly = true;
+            this.txtInutilizables.Size = new System.Drawing.Size(160, 22);
+            this.txtInutilizables.TabIndex = 161;
+            this.txtInutilizables.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtInutilizables.TextChanged += new System.EventHandler(this.txtInutilizables_TextChanged);
+            // 
+            // txtPersonales
+            // 
+            this.txtPersonales.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPersonales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtPersonales.Location = new System.Drawing.Point(126, 120);
+            this.txtPersonales.Name = "txtPersonales";
+            this.txtPersonales.ReadOnly = true;
+            this.txtPersonales.Size = new System.Drawing.Size(160, 22);
+            this.txtPersonales.TabIndex = 162;
+            this.txtPersonales.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPersonales.TextChanged += new System.EventHandler(this.txtPersonales_TextChanged);
+            // 
+            // txtDanados
+            // 
+            this.txtDanados.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDanados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDanados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtDanados.Location = new System.Drawing.Point(126, 148);
+            this.txtDanados.Name = "txtDanados";
+            this.txtDanados.ReadOnly = true;
+            this.txtDanados.Size = new System.Drawing.Size(160, 22);
+            this.txtDanados.TabIndex = 164;
+            this.txtDanados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDanados.TextChanged += new System.EventHandler(this.txtDanados_TextChanged);
+            // 
+            // txtTotalLaptops
+            // 
+            this.txtTotalLaptops.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalLaptops.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtTotalLaptops.Location = new System.Drawing.Point(178, 185);
+            this.txtTotalLaptops.Name = "txtTotalLaptops";
+            this.txtTotalLaptops.ReadOnly = true;
+            this.txtTotalLaptops.Size = new System.Drawing.Size(57, 24);
+            this.txtTotalLaptops.TabIndex = 167;
+            this.txtTotalLaptops.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(150, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.TabIndex = 168;
+            this.label2.Text = "RESUMEN";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtCantidadFiltrada
+            // 
+            this.txtCantidadFiltrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadFiltrada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtCantidadFiltrada.Location = new System.Drawing.Point(1068, 148);
+            this.txtCantidadFiltrada.Name = "txtCantidadFiltrada";
+            this.txtCantidadFiltrada.Size = new System.Drawing.Size(86, 22);
+            this.txtCantidadFiltrada.TabIndex = 169;
+            this.txtCantidadFiltrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmReporteStocksLaptops
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1188, 540);
+            this.ClientSize = new System.Drawing.Size(1187, 610);
+            this.Controls.Add(this.txtCantidadFiltrada);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtTotalLaptops);
+            this.Controls.Add(this.txtDanados);
+            this.Controls.Add(this.txtPersonales);
+            this.Controls.Add(this.txtInutilizables);
+            this.Controls.Add(this.txtAlquilados);
+            this.Controls.Add(this.txtDisponibles);
+            this.Controls.Add(this.lblTotalLaptops);
+            this.Controls.Add(this.lblDanado);
+            this.Controls.Add(this.lblPersonal);
+            this.Controls.Add(this.lblInutilizables);
+            this.Controls.Add(this.lblAlquilados);
+            this.Controls.Add(this.lblDisponible);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.verResumen);
@@ -435,5 +622,19 @@
         public System.Windows.Forms.PictureBox giftCarga;
         public System.Windows.Forms.Button cargarData;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblDisponible;
+        private System.Windows.Forms.Label lblAlquilados;
+        private System.Windows.Forms.Label lblInutilizables;
+        private System.Windows.Forms.Label lblPersonal;
+        private System.Windows.Forms.Label lblDanado;
+        private System.Windows.Forms.Label lblTotalLaptops;
+        private System.Windows.Forms.TextBox txtAlquilados;
+        private System.Windows.Forms.TextBox txtInutilizables;
+        private System.Windows.Forms.TextBox txtPersonales;
+        private System.Windows.Forms.TextBox txtDanados;
+        public System.Windows.Forms.TextBox txtDisponibles;
+        private System.Windows.Forms.TextBox txtTotalLaptops;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCantidadFiltrada;
     }
 }

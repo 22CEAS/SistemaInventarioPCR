@@ -67,7 +67,6 @@
     <Compile Include="AuxiliarDA.cs" />
     <Compile Include="CambioDA.cs" />
     <Compile Include="EstadosDA.cs" />
-    <Compile Include="IngresoSalidaDA.cs" />
     <Compile Include="MarcaDA.cs" />
     <Compile Include="ModulosPrincipalesDA.cs" />
     <Compile Include="PerfilDA.cs" />

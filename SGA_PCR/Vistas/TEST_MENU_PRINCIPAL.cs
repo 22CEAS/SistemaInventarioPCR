@@ -29,10 +29,7 @@ namespace Apolo
         int nHeightEllipse // width of ellipse
         );
 
-        private int idUser;
-        private string nameUser;
-
-        public TEST_MENU_PRINCIPAL(int idUsuario, string nombreUsuario)
+        public TEST_MENU_PRINCIPAL(int idUsuario)
         {
             
             this.FormBorderStyle = FormBorderStyle.None;
@@ -47,14 +44,14 @@ namespace Apolo
 
             //MessageBox.Show(idUsuario.ToString());
             usuarioConectado.Text = idUsuario.ToString();
-            this.idUser = idUsuario;
-            this.nameUser = nombreUsuario;
+            
 
             //VERIFICACION DE PERMISOS (INICIO)
             verificandoPermisosMaestro();
             verificandoPermisosProcesos();
             verificandoPermisosReportes();
             verificandoPermisosConfiguracion();
+
             
         }
 
@@ -63,8 +60,8 @@ namespace Apolo
         private void verificandoPermisosMaestro()
         {
             //BLOQUEAR O DESBLOQUEAR ITEMS DENTRO DE ARCHIVO-------------------
-            Button[] botones_archivo = { button2, button4, button6, button3, button5, button8, button9,btnKAM };
-            string[] idSubmodulo_archivo = { "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a" };
+            Button[] botones_archivo = { button2, button4, button6, button3, button5, button8, button9,btnKAM,btnLicencias };
+            string[] idSubmodulo_archivo = { "1a", "2a", "3a", "4a", "5a", "6a", "7a", "8a", "9a" };
 
             foreach (Button btn in botones_archivo)
             {
@@ -270,7 +267,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmArchivoCrearProcesador f2 = new frmArchivoCrearProcesador(this.idUser,this.nameUser);
+                frmArchivoCrearProcesador f2 = new frmArchivoCrearProcesador();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -368,7 +365,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmArchivoCrearDiscoDuro f2 = new frmArchivoCrearDiscoDuro(this.idUser, this.nameUser);
+                frmArchivoCrearDiscoDuro f2 = new frmArchivoCrearDiscoDuro();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -388,7 +385,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmArchivoCrearMemoria f2 = new frmArchivoCrearMemoria(this.idUser, this.nameUser);
+                frmArchivoCrearMemoria f2 = new frmArchivoCrearMemoria();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -408,7 +405,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmArchivoCrearTarjetaVideo f2 = new frmArchivoCrearTarjetaVideo(this.idUser, this.nameUser);
+                frmArchivoCrearTarjetaVideo f2 = new frmArchivoCrearTarjetaVideo();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -428,7 +425,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmArchivoCrearCliente f2 = new frmArchivoCrearCliente(this.idUser, this.nameUser);
+                frmArchivoCrearCliente f2 = new frmArchivoCrearCliente();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -449,7 +446,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmArchivoClienteSucursal f2 = new frmArchivoClienteSucursal(this.idUser, this.nameUser);
+                frmArchivoClienteSucursal f2 = new frmArchivoClienteSucursal();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -469,7 +466,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmArchivoCrearProveedor f2 = new frmArchivoCrearProveedor(this.idUser, this.nameUser);
+                frmArchivoCrearProveedor f2 = new frmArchivoCrearProveedor();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -489,7 +486,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoIngreso f2 = new frmProcesoIngreso(this.idUser, this.nameUser);
+                frmProcesoIngreso f2 = new frmProcesoIngreso();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -509,7 +506,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoDevolucion f2 = new frmProcesoDevolucion(this.idUser, this.nameUser);
+                frmProcesoDevolucion f2 = new frmProcesoDevolucion();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -529,7 +526,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoAlquiler f2 = new frmProcesoAlquiler(this.idUser, this.nameUser);
+                frmProcesoAlquiler f2 = new frmProcesoAlquiler();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -549,7 +546,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoRenovacion f2 = new frmProcesoRenovacion(this.idUser, this.nameUser);
+                frmProcesoRenovacion f2 = new frmProcesoRenovacion();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -569,7 +566,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoCambio f2 = new frmProcesoCambio(this.idUser, this.nameUser);
+                frmProcesoCambio f2 = new frmProcesoCambio();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -589,7 +586,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoSubirFacturas f2 = new frmProcesoSubirFacturas(this.idUser, this.nameUser);
+                frmProcesoSubirFacturas f2 = new frmProcesoSubirFacturas();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -609,7 +606,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoReparacion f2 = new frmProcesoReparacion(this.idUser, this.nameUser);
+                frmProcesoReparacion f2 = new frmProcesoReparacion();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -629,7 +626,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoCambioComponentes f2 = new frmProcesoCambioComponentes(this.idUser, this.nameUser);
+                frmProcesoCambioComponentes f2 = new frmProcesoCambioComponentes();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -649,7 +646,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoCambioDescripcion f2 = new frmProcesoCambioDescripcion(this.idUser, this.nameUser);
+                frmProcesoCambioDescripcion f2 = new frmProcesoCambioDescripcion();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -669,7 +666,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmProcesoLevantamientoObservaciones f2 = new frmProcesoLevantamientoObservaciones(this.idUser, this.nameUser);
+                frmProcesoLevantamientoObservaciones f2 = new frmProcesoLevantamientoObservaciones();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -734,7 +731,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteCV f2 = new frmReporteCV(this.idUser, this.nameUser);
+                frmReporteCV f2 = new frmReporteCV();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -755,7 +752,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteFacturasPorVencer f2 = new frmReporteFacturasPorVencer(this.idUser, this.nameUser);
+                frmReporteFacturasPorVencer f2 = new frmReporteFacturasPorVencer();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -775,7 +772,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReportePendienteFacturar f2 = new frmReportePendienteFacturar(this.idUser, this.nameUser);
+                frmReportePendienteFacturar f2 = new frmReportePendienteFacturar();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -795,7 +792,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReportePendienteRecoger f2 = new frmReportePendienteRecoger(this.idUser, this.nameUser);
+                frmReportePendienteRecoger f2 = new frmReportePendienteRecoger();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -818,7 +815,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReportePendienteReposicion f2 = new frmReportePendienteReposicion(this.idUser, this.nameUser);
+                frmReportePendienteReposicion f2 = new frmReportePendienteReposicion();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -838,7 +835,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteAlquileresPorVencer f2 = new frmReporteAlquileresPorVencer(this.idUser, this.nameUser);
+                frmReporteAlquileresPorVencer f2 = new frmReporteAlquileresPorVencer();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -858,7 +855,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteStocksLaptops f2 = new frmReporteStocksLaptops(this.idUser, this.nameUser);
+                frmReporteStocksLaptops f2 = new frmReporteStocksLaptops();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -878,7 +875,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteMemoria f2 = new frmReporteMemoria(this.idUser, this.nameUser);
+                frmReporteMemoria f2 = new frmReporteMemoria();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -898,7 +895,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteDisco f2 = new frmReporteDisco(this.idUser, this.nameUser);
+                frmReporteDisco f2 = new frmReporteDisco();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -918,7 +915,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteLicencia f2 = new frmReporteLicencia(this.idUser, this.nameUser);
+                frmReporteLicencia f2 = new frmReporteLicencia();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -938,7 +935,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteAlquiler f2 = new frmReporteAlquiler(this.idUser, this.nameUser);
+                frmReporteAlquiler f2 = new frmReporteAlquiler();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -978,7 +975,7 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmReporteMantenimiento f2 = new frmReporteMantenimiento(this.idUser, this.nameUser);
+                frmReporteMantenimiento f2 = new frmReporteMantenimiento();
                 f2.MdiParent = this;
                 f2.Show();
             }
@@ -1089,7 +1086,27 @@ namespace Apolo
             }
             if (IsOpen == false)
             {
-                frmArchivoKam f2 = new frmArchivoKam(this.idUser, this.nameUser);
+                frmArchivoKam f2 = new frmArchivoKam();
+                f2.MdiParent = this;
+                f2.Show();
+            }
+        }
+
+        private void btnLicencias_Click(object sender, EventArgs e)
+        {
+            bool IsOpen = false;
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "frmArchivoLicencias")
+                {
+                    IsOpen = true;
+                    f.Focus();
+                    break;
+                }
+            }
+            if (IsOpen == false)
+            {
+                frmArchivoLicencias f2 = new frmArchivoLicencias();
                 f2.MdiParent = this;
                 f2.Show();
             }

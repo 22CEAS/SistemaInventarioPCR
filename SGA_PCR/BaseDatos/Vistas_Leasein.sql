@@ -1719,65 +1719,10 @@ FROM marca m
 WHERE m.idCategoria = 9  
 	AND m.estado = 1 ;
 
+
+
 DROP view IF EXISTS `vista_salida_tipo`;
 create view vista_salida_tipo as
 Select idAuxiliar, descripcion
 from auxiliar
 where cod_tabla="SALIDA_TIPO" and activo=1;
-
-
-
-
-DROP view IF EXISTS `vista_laptops_disponibles_danados`;
-create view vista_laptops_disponibles_danados as
-SELECT
-	lc.codigo AS codigo,
-	lc.idLC AS idLC,
-	lc.marca AS marcaLC,
-	lc.nombreModelo AS nombreModeloLC,
-	lc.observacion AS observacion,
-	lc.estado AS idEstado,
-	(	SELECT e.nombreEstado FROM	estados e WHERE	( e.idEstado = lc.estado )) AS nombreEstado 
-FROM
-	vista_maestro_laptops lc 
-WHERE
-		lc.estado = 2 or lc.estado = 3
-ORDER BY
-	lc.codigo;
-	
-DROP view IF EXISTS `vista_laptops_personal_prestamo`;
-create view vista_laptops_personal_prestamo as
-SELECT
-	lc.codigo AS codigo,
-	lc.idLC AS idLC,
-	lc.marca AS marcaLC,
-	lc.nombreModelo AS nombreModeloLC,
-	lc.observacion AS observacion,
-	lc.estado AS idEstado,
-	(	SELECT e.nombreEstado FROM	estados e WHERE	( e.idEstado = lc.estado )) AS nombreEstado 
-FROM
-	vista_maestro_laptops lc 
-WHERE
-		lc.estado = 12 or lc.estado = 13
-ORDER BY
-	lc.codigo;
-
-DROP view IF EXISTS `vista_estados_Venta_Personal_Prestamo`;
-create view vista_estados_Venta_Personal_Prestamo as
-SELECT *
-FROM
-	estados
-WHERE
-		idEstado=5 or idEstado=12 or idEstado=13
-ORDER BY
-	nombreEstado;
-
-DROP view IF EXISTS `vista_estados_Disponible_Danado`;
-create view vista_estados_Disponible_Danado as
-SELECT *
-FROM
-	estados
-WHERE
-		idEstado=2 or idEstado=3
-ORDER BY
-	nombreEstado;
