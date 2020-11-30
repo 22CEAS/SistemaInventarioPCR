@@ -51,6 +51,7 @@
             this.button30 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.PROCESOS = new System.Windows.Forms.Panel();
+            this.btnMovimientosInternos = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -88,7 +89,38 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
-            this.btnMovimientosInternos = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblLaptopsDisponibles = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnVerDetalleDispo = new System.Windows.Forms.Button();
+            this.VerDetallePronos = new System.Windows.Forms.Button();
+            this.dgvLaptops = new DevExpress.XtraGrid.GridControl();
+            this.vista = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.CodigoLC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Marca = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Modelo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Procesador = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Video = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CapacidadVideo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Disco1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CapacidadDisco1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Disco2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CapacidadDisco2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MemoriaRam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Estado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Cliente = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Ubicacion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SerieFabrica = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IdSalida = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -98,6 +130,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vista)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -498,6 +537,25 @@
             this.PROCESOS.Size = new System.Drawing.Size(327, 573);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
+            // 
+            // btnMovimientosInternos
+            // 
+            this.btnMovimientosInternos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMovimientosInternos.FlatAppearance.BorderSize = 0;
+            this.btnMovimientosInternos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMovimientosInternos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMovimientosInternos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovimientosInternos.ForeColor = System.Drawing.Color.Black;
+            this.btnMovimientosInternos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMovimientosInternos.Location = new System.Drawing.Point(0, 513);
+            this.btnMovimientosInternos.Name = "btnMovimientosInternos";
+            this.btnMovimientosInternos.Size = new System.Drawing.Size(319, 45);
+            this.btnMovimientosInternos.TabIndex = 20;
+            this.btnMovimientosInternos.Text = "> MOVIMIENTOS INTERNOS";
+            this.btnMovimientosInternos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMovimientosInternos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMovimientosInternos.UseVisualStyleBackColor = false;
+            this.btnMovimientosInternos.Click += new System.EventHandler(this.btnProcesosInternos_Click);
             // 
             // button19
             // 
@@ -1102,32 +1160,405 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
-            // btnMovimientosInternos
+            // panel1
             // 
-            this.btnMovimientosInternos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnMovimientosInternos.FlatAppearance.BorderSize = 0;
-            this.btnMovimientosInternos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
-            this.btnMovimientosInternos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMovimientosInternos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMovimientosInternos.ForeColor = System.Drawing.Color.Black;
-            this.btnMovimientosInternos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovimientosInternos.Location = new System.Drawing.Point(0, 513);
-            this.btnMovimientosInternos.Name = "btnMovimientosInternos";
-            this.btnMovimientosInternos.Size = new System.Drawing.Size(319, 45);
-            this.btnMovimientosInternos.TabIndex = 20;
-            this.btnMovimientosInternos.Text = "> MOVIMIENTOS INTERNOS";
-            this.btnMovimientosInternos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMovimientosInternos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMovimientosInternos.UseVisualStyleBackColor = false;
-            this.btnMovimientosInternos.Click += new System.EventHandler(this.btnProcesosInternos_Click);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.lblLaptopsDisponibles);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(369, 56);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(250, 130);
+            this.panel1.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(6, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(241, 24);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "LAPTOPS DISPONIBLES";
+            // 
+            // lblLaptopsDisponibles
+            // 
+            this.lblLaptopsDisponibles.AutoSize = true;
+            this.lblLaptopsDisponibles.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLaptopsDisponibles.ForeColor = System.Drawing.Color.White;
+            this.lblLaptopsDisponibles.Location = new System.Drawing.Point(3, 59);
+            this.lblLaptopsDisponibles.Name = "lblLaptopsDisponibles";
+            this.lblLaptopsDisponibles.Size = new System.Drawing.Size(93, 37);
+            this.lblLaptopsDisponibles.TabIndex = 1;
+            this.lblLaptopsDisponibles.Text = "2960";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(122, 41);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(111, 76);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(631, 228);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Location = new System.Drawing.Point(369, 228);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(250, 130);
+            this.panel2.TabIndex = 4;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(122, 41);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(111, 76);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(3, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 37);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "120";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(6, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(241, 24);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "LAPTOPS A REGRESAR";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Location = new System.Drawing.Point(369, 414);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(342, 178);
+            this.panel3.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(113, 112);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(108, 55);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "120";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(6, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(326, 72);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "PRONOSTICADOR DE LAPTOPS \r\nDISPONIBLES A LA \r\nFECHA: ";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnVerDetalleDispo
+            // 
+            this.btnVerDetalleDispo.Location = new System.Drawing.Point(369, 188);
+            this.btnVerDetalleDispo.Name = "btnVerDetalleDispo";
+            this.btnVerDetalleDispo.Size = new System.Drawing.Size(250, 26);
+            this.btnVerDetalleDispo.TabIndex = 6;
+            this.btnVerDetalleDispo.Text = "VER DETALLE";
+            this.btnVerDetalleDispo.UseVisualStyleBackColor = true;
+            this.btnVerDetalleDispo.Click += new System.EventHandler(this.btnVerDetalleDispo_Click);
+            // 
+            // VerDetallePronos
+            // 
+            this.VerDetallePronos.Location = new System.Drawing.Point(369, 364);
+            this.VerDetallePronos.Name = "VerDetallePronos";
+            this.VerDetallePronos.Size = new System.Drawing.Size(250, 26);
+            this.VerDetallePronos.TabIndex = 7;
+            this.VerDetallePronos.Text = "VER DETALLE";
+            this.VerDetallePronos.UseVisualStyleBackColor = true;
+            // 
+            // dgvLaptops
+            // 
+            this.dgvLaptops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLaptops.Location = new System.Drawing.Point(884, 56);
+            this.dgvLaptops.MainView = this.vista;
+            this.dgvLaptops.Name = "dgvLaptops";
+            this.dgvLaptops.Size = new System.Drawing.Size(404, 158);
+            this.dgvLaptops.TabIndex = 133;
+            this.dgvLaptops.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.vista});
+            this.dgvLaptops.Visible = false;
+            // 
+            // vista
+            // 
+            this.vista.Appearance.HeaderPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vista.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.vista.Appearance.HeaderPanel.Options.UseFont = true;
+            this.vista.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.vista.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.vista.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.vista.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.vista.Appearance.Row.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vista.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.vista.Appearance.Row.Options.UseFont = true;
+            this.vista.Appearance.Row.Options.UseForeColor = true;
+            this.vista.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.CodigoLC,
+            this.Marca,
+            this.Modelo,
+            this.Procesador,
+            this.Video,
+            this.CapacidadVideo,
+            this.Disco1,
+            this.CapacidadDisco1,
+            this.Disco2,
+            this.CapacidadDisco2,
+            this.MemoriaRam,
+            this.Estado,
+            this.Cliente,
+            this.Ubicacion,
+            this.SerieFabrica,
+            this.IdSalida});
+            this.vista.GridControl = this.dgvLaptops;
+            this.vista.Name = "vista";
+            this.vista.OptionsBehavior.Editable = false;
+            this.vista.OptionsView.ColumnAutoWidth = false;
+            this.vista.OptionsView.ShowAutoFilterRow = true;
+            // 
+            // CodigoLC
+            // 
+            this.CodigoLC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CodigoLC.AppearanceHeader.Options.UseBackColor = true;
+            this.CodigoLC.Caption = "Código";
+            this.CodigoLC.FieldName = "Codigo";
+            this.CodigoLC.MinWidth = 40;
+            this.CodigoLC.Name = "CodigoLC";
+            this.CodigoLC.Visible = true;
+            this.CodigoLC.VisibleIndex = 0;
+            this.CodigoLC.Width = 130;
+            // 
+            // Marca
+            // 
+            this.Marca.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Marca.AppearanceHeader.Options.UseBackColor = true;
+            this.Marca.Caption = "Marca";
+            this.Marca.FieldName = "MarcaLC";
+            this.Marca.MinWidth = 40;
+            this.Marca.Name = "Marca";
+            this.Marca.Visible = true;
+            this.Marca.VisibleIndex = 1;
+            this.Marca.Width = 100;
+            // 
+            // Modelo
+            // 
+            this.Modelo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Modelo.AppearanceHeader.Options.UseBackColor = true;
+            this.Modelo.Caption = "Modelo";
+            this.Modelo.FieldName = "NombreModeloLC";
+            this.Modelo.MinWidth = 40;
+            this.Modelo.Name = "Modelo";
+            this.Modelo.Visible = true;
+            this.Modelo.VisibleIndex = 2;
+            this.Modelo.Width = 200;
+            // 
+            // Procesador
+            // 
+            this.Procesador.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Procesador.AppearanceHeader.Options.UseBackColor = true;
+            this.Procesador.Caption = "Procesador";
+            this.Procesador.FieldName = "TipoProcesador";
+            this.Procesador.MinWidth = 40;
+            this.Procesador.Name = "Procesador";
+            this.Procesador.Visible = true;
+            this.Procesador.VisibleIndex = 3;
+            this.Procesador.Width = 100;
+            // 
+            // Video
+            // 
+            this.Video.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Video.AppearanceHeader.Options.UseBackColor = true;
+            this.Video.Caption = "Video";
+            this.Video.FieldName = "NombreModeloVideo";
+            this.Video.MinWidth = 40;
+            this.Video.Name = "Video";
+            this.Video.Width = 170;
+            // 
+            // CapacidadVideo
+            // 
+            this.CapacidadVideo.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CapacidadVideo.AppearanceHeader.Options.UseBackColor = true;
+            this.CapacidadVideo.Caption = "Capacidad Video";
+            this.CapacidadVideo.FieldName = "CapacidadVideo";
+            this.CapacidadVideo.MinWidth = 40;
+            this.CapacidadVideo.Name = "CapacidadVideo";
+            this.CapacidadVideo.Visible = true;
+            this.CapacidadVideo.VisibleIndex = 4;
+            this.CapacidadVideo.Width = 130;
+            // 
+            // Disco1
+            // 
+            this.Disco1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Disco1.AppearanceHeader.Options.UseBackColor = true;
+            this.Disco1.Caption = "Disco1";
+            this.Disco1.FieldName = "Disco1";
+            this.Disco1.MinWidth = 40;
+            this.Disco1.Name = "Disco1";
+            this.Disco1.Visible = true;
+            this.Disco1.VisibleIndex = 5;
+            this.Disco1.Width = 70;
+            // 
+            // CapacidadDisco1
+            // 
+            this.CapacidadDisco1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CapacidadDisco1.AppearanceHeader.Options.UseBackColor = true;
+            this.CapacidadDisco1.Caption = "Capacidad Disco1";
+            this.CapacidadDisco1.FieldName = "CapacidadDisco1";
+            this.CapacidadDisco1.MinWidth = 40;
+            this.CapacidadDisco1.Name = "CapacidadDisco1";
+            this.CapacidadDisco1.Visible = true;
+            this.CapacidadDisco1.VisibleIndex = 6;
+            this.CapacidadDisco1.Width = 130;
+            // 
+            // Disco2
+            // 
+            this.Disco2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Disco2.AppearanceHeader.Options.UseBackColor = true;
+            this.Disco2.Caption = "Disco2";
+            this.Disco2.FieldName = "Disco2";
+            this.Disco2.MinWidth = 40;
+            this.Disco2.Name = "Disco2";
+            this.Disco2.Visible = true;
+            this.Disco2.VisibleIndex = 7;
+            this.Disco2.Width = 70;
+            // 
+            // CapacidadDisco2
+            // 
+            this.CapacidadDisco2.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.CapacidadDisco2.AppearanceHeader.Options.UseBackColor = true;
+            this.CapacidadDisco2.Caption = "Capacidad Disco2";
+            this.CapacidadDisco2.FieldName = "CapacidadDisco2";
+            this.CapacidadDisco2.MinWidth = 40;
+            this.CapacidadDisco2.Name = "CapacidadDisco2";
+            this.CapacidadDisco2.Visible = true;
+            this.CapacidadDisco2.VisibleIndex = 8;
+            this.CapacidadDisco2.Width = 130;
+            // 
+            // MemoriaRam
+            // 
+            this.MemoriaRam.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.MemoriaRam.AppearanceHeader.Options.UseBackColor = true;
+            this.MemoriaRam.Caption = "Memoria Ram";
+            this.MemoriaRam.FieldName = "CapacidadMemoria";
+            this.MemoriaRam.MinWidth = 40;
+            this.MemoriaRam.Name = "MemoriaRam";
+            this.MemoriaRam.Visible = true;
+            this.MemoriaRam.VisibleIndex = 9;
+            this.MemoriaRam.Width = 100;
+            // 
+            // Estado
+            // 
+            this.Estado.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Estado.AppearanceHeader.Options.UseBackColor = true;
+            this.Estado.Caption = "Estado";
+            this.Estado.FieldName = "EstadoNombre";
+            this.Estado.MinWidth = 40;
+            this.Estado.Name = "Estado";
+            this.Estado.Visible = true;
+            this.Estado.VisibleIndex = 10;
+            this.Estado.Width = 130;
+            // 
+            // Cliente
+            // 
+            this.Cliente.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cliente.AppearanceHeader.Options.UseBackColor = true;
+            this.Cliente.Caption = "Cliente";
+            this.Cliente.FieldName = "Cliente";
+            this.Cliente.MinWidth = 40;
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Visible = true;
+            this.Cliente.VisibleIndex = 11;
+            this.Cliente.Width = 150;
+            // 
+            // Ubicacion
+            // 
+            this.Ubicacion.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Ubicacion.AppearanceHeader.Options.UseBackColor = true;
+            this.Ubicacion.Caption = "Ubicación";
+            this.Ubicacion.FieldName = "Ubicacion";
+            this.Ubicacion.MinWidth = 40;
+            this.Ubicacion.Name = "Ubicacion";
+            this.Ubicacion.Visible = true;
+            this.Ubicacion.VisibleIndex = 12;
+            this.Ubicacion.Width = 150;
+            // 
+            // SerieFabrica
+            // 
+            this.SerieFabrica.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SerieFabrica.AppearanceHeader.Options.UseBackColor = true;
+            this.SerieFabrica.Caption = "Serie Fabrica";
+            this.SerieFabrica.FieldName = "SerieFabrica";
+            this.SerieFabrica.MinWidth = 40;
+            this.SerieFabrica.Name = "SerieFabrica";
+            this.SerieFabrica.Visible = true;
+            this.SerieFabrica.VisibleIndex = 13;
+            this.SerieFabrica.Width = 150;
+            // 
+            // IdSalida
+            // 
+            this.IdSalida.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.IdSalida.AppearanceHeader.Options.UseBackColor = true;
+            this.IdSalida.Caption = "Id Salida";
+            this.IdSalida.FieldName = "IdSalida";
+            this.IdSalida.MinWidth = 40;
+            this.IdSalida.Name = "IdSalida";
+            this.IdSalida.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.IdSalida.Visible = true;
+            this.IdSalida.VisibleIndex = 14;
+            this.IdSalida.Width = 80;
             // 
             // TEST_MENU_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1300, 788);
+            this.Controls.Add(this.dgvLaptops);
+            this.Controls.Add(this.VerDetallePronos);
+            this.Controls.Add(this.btnVerDetalleDispo);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1148,6 +1579,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaptops)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1213,5 +1654,37 @@
         private System.Windows.Forms.Button btnKAM;
         private System.Windows.Forms.Button btnLicencias;
         private System.Windows.Forms.Button btnMovimientosInternos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblLaptopsDisponibles;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnVerDetalleDispo;
+        private System.Windows.Forms.Button VerDetallePronos;
+        private DevExpress.XtraGrid.GridControl dgvLaptops;
+        private DevExpress.XtraGrid.Views.Grid.GridView vista;
+        private DevExpress.XtraGrid.Columns.GridColumn CodigoLC;
+        private DevExpress.XtraGrid.Columns.GridColumn Marca;
+        private DevExpress.XtraGrid.Columns.GridColumn Modelo;
+        private DevExpress.XtraGrid.Columns.GridColumn Procesador;
+        private DevExpress.XtraGrid.Columns.GridColumn Video;
+        private DevExpress.XtraGrid.Columns.GridColumn CapacidadVideo;
+        private DevExpress.XtraGrid.Columns.GridColumn Disco1;
+        private DevExpress.XtraGrid.Columns.GridColumn CapacidadDisco1;
+        private DevExpress.XtraGrid.Columns.GridColumn Disco2;
+        private DevExpress.XtraGrid.Columns.GridColumn CapacidadDisco2;
+        private DevExpress.XtraGrid.Columns.GridColumn MemoriaRam;
+        private DevExpress.XtraGrid.Columns.GridColumn Estado;
+        private DevExpress.XtraGrid.Columns.GridColumn Cliente;
+        private DevExpress.XtraGrid.Columns.GridColumn Ubicacion;
+        private DevExpress.XtraGrid.Columns.GridColumn SerieFabrica;
+        private DevExpress.XtraGrid.Columns.GridColumn IdSalida;
     }
 }
