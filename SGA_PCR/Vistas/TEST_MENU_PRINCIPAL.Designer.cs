@@ -88,6 +88,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.horafecha = new System.Windows.Forms.Timer(this.components);
+            this.btnMovimientosInternos = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.panelConfiguracion.SuspendLayout();
             this.REPORTES.SuspendLayout();
@@ -125,7 +126,7 @@
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionPermisos);
             this.panelConfiguracion.Controls.Add(this.btnConfiguracionClientes);
             this.panelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1801);
+            this.panelConfiguracion.Location = new System.Drawing.Point(0, 1860);
             this.panelConfiguracion.Name = "panelConfiguracion";
             this.panelConfiguracion.Size = new System.Drawing.Size(327, 107);
             this.panelConfiguracion.TabIndex = 22;
@@ -180,7 +181,7 @@
             this.btnConfiguracion.ForeColor = System.Drawing.Color.White;
             this.btnConfiguracion.Image = ((System.Drawing.Image)(resources.GetObject("btnConfiguracion.Image")));
             this.btnConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1761);
+            this.btnConfiguracion.Location = new System.Drawing.Point(0, 1820);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(327, 40);
             this.btnConfiguracion.TabIndex = 21;
@@ -205,7 +206,7 @@
             this.REPORTES.Controls.Add(this.button29);
             this.REPORTES.Controls.Add(this.button30);
             this.REPORTES.Dock = System.Windows.Forms.DockStyle.Top;
-            this.REPORTES.Location = new System.Drawing.Point(0, 1091);
+            this.REPORTES.Location = new System.Drawing.Point(0, 1150);
             this.REPORTES.Name = "REPORTES";
             this.REPORTES.Size = new System.Drawing.Size(327, 670);
             this.REPORTES.TabIndex = 20;
@@ -469,7 +470,7 @@
             this.button20.ForeColor = System.Drawing.Color.White;
             this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
             this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button20.Location = new System.Drawing.Point(0, 1051);
+            this.button20.Location = new System.Drawing.Point(0, 1110);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(327, 40);
             this.button20.TabIndex = 18;
@@ -480,6 +481,7 @@
             // PROCESOS
             // 
             this.PROCESOS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.PROCESOS.Controls.Add(this.btnMovimientosInternos);
             this.PROCESOS.Controls.Add(this.button19);
             this.PROCESOS.Controls.Add(this.button18);
             this.PROCESOS.Controls.Add(this.button17);
@@ -493,7 +495,7 @@
             this.PROCESOS.Dock = System.Windows.Forms.DockStyle.Top;
             this.PROCESOS.Location = new System.Drawing.Point(0, 537);
             this.PROCESOS.Name = "PROCESOS";
-            this.PROCESOS.Size = new System.Drawing.Size(327, 514);
+            this.PROCESOS.Size = new System.Drawing.Size(327, 573);
             this.PROCESOS.TabIndex = 17;
             this.PROCESOS.Visible = false;
             // 
@@ -1100,6 +1102,25 @@
             this.horafecha.Enabled = true;
             this.horafecha.Tick += new System.EventHandler(this.horafecha_Tick);
             // 
+            // btnMovimientosInternos
+            // 
+            this.btnMovimientosInternos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMovimientosInternos.FlatAppearance.BorderSize = 0;
+            this.btnMovimientosInternos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(104)))), ((int)(((byte)(0)))));
+            this.btnMovimientosInternos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMovimientosInternos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMovimientosInternos.ForeColor = System.Drawing.Color.Black;
+            this.btnMovimientosInternos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMovimientosInternos.Location = new System.Drawing.Point(0, 513);
+            this.btnMovimientosInternos.Name = "btnMovimientosInternos";
+            this.btnMovimientosInternos.Size = new System.Drawing.Size(319, 45);
+            this.btnMovimientosInternos.TabIndex = 20;
+            this.btnMovimientosInternos.Text = "> MOVIMIENTOS INTERNOS";
+            this.btnMovimientosInternos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMovimientosInternos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMovimientosInternos.UseVisualStyleBackColor = false;
+            this.btnMovimientosInternos.Click += new System.EventHandler(this.btnProcesosInternos_Click);
+            // 
             // TEST_MENU_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1191,5 +1212,6 @@
         public System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Button btnKAM;
         private System.Windows.Forms.Button btnLicencias;
+        private System.Windows.Forms.Button btnMovimientosInternos;
     }
 }
